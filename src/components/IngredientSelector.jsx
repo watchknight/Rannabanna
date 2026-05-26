@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react'
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
 import { translateCategory } from '../utils/translations'
@@ -76,7 +76,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
     }
   }, [categories])
 
-  const handleScroll = (direction) => {
+  const handleScroll = useCallback((direction) => {
     if (tabsRef.current) {
       const scrollAmount = 240
       tabsRef.current.scrollBy({
@@ -84,7 +84,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
         behavior: 'smooth'
       })
     }
-  }
+  }, [])
 
   // Sync initial selections if they change (e.g. on navigation back)
   const initialSelectedIdsStr = initialSelectedIds.join(',')
@@ -104,7 +104,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
   }, [])
 
   // Handle Select/Unselect toggle
-  const toggleIngredient = (id) => {
+  const toggleIngredient = useCallback((id) => {
     setSelectedIds(prev => {
       if (prev.includes(id)) {
         return prev.filter(item => item !== id)
@@ -114,12 +114,12 @@ function IngredientSelector({ initialSelectedIds = [] }) {
     })
     setSearchQuery('')
     setIsDropdownOpen(false)
-  }
+  }, [])
 
   // Clear all selections
-  const clearAll = () => {
+  const clearAll = useCallback(() => {
     setSelectedIds([])
-  }
+  }, [])
 
   // Filtered ingredients for the grid display
   const gridIngredients = useMemo(() => {

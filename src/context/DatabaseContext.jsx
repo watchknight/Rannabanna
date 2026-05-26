@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import { cuisines as staticCuisines } from '../data/cuisines.js';
 import { ingredients as staticIngredients } from '../data/ingredients.js';
 import { recipes as staticRecipes } from '../data/recipes.js';
@@ -18,20 +18,20 @@ export function DatabaseProvider({ children }) {
     return localStorage.getItem('rannabanna-language') || 'en';
   });
 
-  const setLanguage = (lang) => {
+  const setLanguage = useCallback((lang) => {
     localStorage.setItem('rannabanna-language', lang);
     setLanguageState(lang);
-  };
+  }, []);
 
   // Sleek, deterministic translation lookup helper
-  const t = (key, replacements = {}) => {
+  const t = useCallback((key, replacements = {}) => {
     const dict = translations[language] || translations['en'];
     let val = dict[key] || translations['en'][key] || key;
     Object.keys(replacements).forEach(k => {
       val = val.replace(`{${k}}`, replacements[k]);
     });
     return val;
-  };
+  }, [language]);
 
   // Fetch cuisines, ingredients, and recipes list on mount
   useEffect(() => {
@@ -114,7 +114,7 @@ export function DatabaseProvider({ children }) {
     });
   }, []);
 
-  const value = {
+  const value = useMemo(() => ({
     cuisines,
     ingredients,
     recipes,
@@ -126,7 +126,19 @@ export function DatabaseProvider({ children }) {
     fetchRecipeDetail,
     getCuisineById,
     addCustomRecipeToLocalState
-  };
+  }), [
+    cuisines,
+    ingredients,
+    recipes,
+    loading,
+    error,
+    language,
+    setLanguage,
+    t,
+    fetchRecipeDetail,
+    getCuisineById,
+    addCustomRecipeToLocalState
+  ]);
 
   return (
     <DatabaseContext.Provider value={value}>
