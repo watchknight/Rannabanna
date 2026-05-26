@@ -1,0 +1,36 @@
+{
+  "name": "rannabanna",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Global ingredient-based cooking platform — discover recipes from any cuisine using what you have",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "vite",
+    "server": "node server/index.js",
+    "db:seed": "node server/seed.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "better-sqlite3": "^12.10.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "firebase-tools": "^13.35.1",
+    "vite": "^5.0.8"
+  },
+  "overrides": {
+    "uuid": "9.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime SQLite Database
+server/rannabanna.db
+server/rannabanna.db-journal
+
+# Local Node modules
+node_modules/
+
+# Firebase Private Credentials
+server/config/service-account.json
+
+# Production builds
+dist/
+tmp/
+.temp/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
