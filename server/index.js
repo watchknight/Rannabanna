@@ -200,7 +200,9 @@ if (fs.existsSync(distPath)) {
         .replace(/<meta name="twitter:url" content="[^"]*"/, `<meta name="twitter:url" content="${cleanUrl}"`);
 
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
       return res.status(200).send(html);
     } catch (err) {
       return res.sendFile(path.join(distPath, 'index.html'));
