@@ -102,6 +102,12 @@ export function DatabaseProvider({ children }) {
 
   // API helper to fetch a specific recipe with full SQLite detail
   const fetchRecipeDetail = useCallback(async (recipeId) => {
+    // 1. Check in-memory state for dynamically generated custom AI recipes
+    const customInState = (recipes || []).find(r => r.id === recipeId);
+    if (customInState && Array.isArray(customInState.ingredients) && Array.isArray(customInState.steps)) {
+      return customInState;
+    }
+
     try {
       const res = await fetch(`${API_BASE}/api/recipes/${recipeId}`);
       if (!res.ok) throw new Error('Recipe not found in database');
@@ -113,7 +119,7 @@ export function DatabaseProvider({ children }) {
     } catch (err) {
       console.warn(`API fetch for recipe ${recipeId} failed, falling back to local static files:`, err);
       // staticRecipes contains full recipe data (ingredients + steps); server-hydrated recipes may be summaries only
-      const local = staticRecipes.find(r => r.id === recipeId);
+      const local = staticRecipes.find(r => r.id === recipeId) || (recipes || []).find(r => r.id === recipeId);
       if (!local) throw new Error('Recipe not found');
       return { ...local, difficulty: local.difficulty || 'intermediate' };
     }

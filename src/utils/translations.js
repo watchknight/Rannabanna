@@ -53,6 +53,9 @@ export const translations = {
     generatingCustomBtn: "👨‍🍳 Designing Recipe...",
     customRecipeFeaturedTitle: "✨ Your Bespoke Custom Recipe (100% Match!)",
     customChefError: "⚠️ Error: Could not generate custom recipe.",
+    aiGeneratedBadge: "✨ AI Generated",
+    aiRecipePoweredBy: "Crafted with Gemini 3.8 Flash",
+    tryAgainBtn: "Try Again",
     
     // Filters Panel
     filtersTitle: "Refine Your Search",
@@ -290,6 +293,9 @@ export const translations = {
     generatingCustomBtn: "👨‍🍳 রেসিপি তৈরি হচ্ছে...",
     customRecipeFeaturedTitle: "✨ আপনার কাস্টম রেসিপি (১০০% ম্যাচ!)",
     customChefError: "⚠️ ত্রুটি: কাস্টম রেসিপি তৈরি করা সম্ভব হয়নি।",
+    aiGeneratedBadge: "✨ এআই রেসিপি",
+    aiRecipePoweredBy: "জেমিনি ৩.৮ ফ্ল্যাশ দ্বারা প্রস্তুত",
+    tryAgainBtn: "পুনরায় চেষ্টা করুন",
     
     // Filters Panel
     filtersTitle: "অনুসন্ধান ফিল্টার করুন",

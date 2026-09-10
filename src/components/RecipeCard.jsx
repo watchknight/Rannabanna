@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
 import { adjustTime } from '../utils/servingsScaler'
 
-function RecipeCard({ recipe, selectedIds = [], targetServings = null }) {
+function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomBespoke = false }) {
   const navigate = useNavigate()
   const { cuisines, language, t, toBengaliNumber } = useDatabase()
   
+  const isAi = isCustomBespoke || recipe.isAiGenerated || recipe.id?.startsWith('custom-')
   const cuisine = (cuisines || []).find(c => c.id === recipe.cuisineId)
   const baseServings = recipe.baseServings || recipe.servings || 4
   const activeServings = targetServings ? Number(targetServings) : baseServings
@@ -31,7 +32,7 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null }) {
 
   const title = language === 'bn' ? (recipe.titleBn || recipe.title) : recipe.title
   const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
-  const cuisineName = language === 'bn' ? (cuisine?.nameBn || cuisine?.name || recipe.cuisineId) : (cuisine?.name || recipe.cuisineId)
+  const cuisineName = language === 'bn' ? (cuisine?.nameBn || cuisine?.name || recipe.cuisine || recipe.cuisineId) : (cuisine?.name || recipe.cuisine || recipe.cuisineId)
   const displayTime = language === 'bn' ? toBengaliNumber(totalTime) : totalTime
   const displayCalories = language === 'bn' 
     ? toBengaliNumber(Math.round(((recipe.calories || 0) * activeServings) / baseServings) || (recipe.calories || 0))
@@ -40,17 +41,46 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null }) {
 
   return (
     <div 
-      className="recipe-card glass-panel glass-panel-hover animate-scale-in"
+      className={`recipe-card glass-panel glass-panel-hover animate-scale-in ${isAi ? 'recipe-card-ai' : ''}`}
       onClick={handleCardClick}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardClick(); } }}
       tabIndex={0}
       role="button"
       aria-label={`${title} (${cuisineName}), ${displayTime} ${t('mins')}, ${displayCalories} ${language === 'bn' ? 'ক্যালোরি' : 'kcal'}`}
       id={`recipe-card-${recipe.id}`}
+      style={isAi ? { border: '1px solid rgba(139, 92, 246, 0.4)', boxShadow: '0 4px 20px rgba(139, 92, 246, 0.15)' } : {}}
     >
-      <div className="recipe-card-img-placeholder">
+      <div className="recipe-card-img-placeholder" style={{ position: 'relative' }}>
         <span className="recipe-card-emoji" role="img" aria-label={title}>{recipe.imageEmoji || '🍲'}</span>
-        {recipe.matchPercentage !== undefined && (
+        
+        {/* Visual badge distinguishing AI-generated custom recipes */}
+        {isAi && (
+          <span 
+            className="badge badge-ai-generated"
+            style={{
+              position: 'absolute',
+              top: '10px',
+              left: '10px',
+              background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)',
+              color: '#ffffff',
+              fontSize: '0.72rem',
+              fontWeight: '700',
+              padding: '3px 9px',
+              borderRadius: '20px',
+              boxShadow: '0 2px 8px rgba(124, 58, 237, 0.4)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '4px',
+              zIndex: 2,
+              letterSpacing: '0.3px'
+            }}
+            id={`ai-badge-${recipe.id}`}
+          >
+            <span>✨</span> {t('aiGeneratedBadge')}
+          </span>
+        )}
+
+        {recipe.matchPercentage !== undefined && !isAi && (
           <span className={`badge recipe-match-badge ${getMatchBadgeClass(recipe.matchPercentage)}`}>
             {displayMatchPct}% {t('matchPercentageBadge')}
           </span>

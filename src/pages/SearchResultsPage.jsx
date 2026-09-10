@@ -76,11 +76,11 @@ function SearchResultsPage() {
     setCustomGenerating(true)
     setCustomError(null)
 
-    // Set up AbortController with generous timeout for AI generation (25 seconds)
+    // Set up AbortController with generous timeout for AI generation (30 seconds)
     const controller = new AbortController()
     const timeoutId = setTimeout(() => {
       controller.abort()
-    }, 25000)
+    }, 30000)
 
     try {
       const response = await fetch(`${API_BASE}/api/custom-recipe`, {
@@ -88,47 +88,44 @@ function SearchResultsPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ingredientIds: selectedIds }),
+        body: JSON.stringify({ 
+          ingredientIds: selectedIds,
+          cuisineId: filters.cuisine || 'any',
+          cuisine: filters.cuisine !== 'all' ? filters.cuisine : null,
+          filters: {
+            maxTime: filters.maxTime,
+            dietaryRestrictions: filters.dietary
+          }
+        }),
         signal: controller.signal
       })
 
       clearTimeout(timeoutId)
 
-      if (!response.ok) {
-        throw new Error('Failed to generate bespoke recipe')
+      const data = await response.json().catch(() => null)
+
+      if (!response.ok || !data) {
+        const errMsg = data?.error || data?.message || (language === 'bn' ? 'কাস্টম রেসিপি তৈরিতে সমস্যা হয়েছে।' : 'Failed to generate custom recipe.')
+        throw new Error(errMsg)
       }
 
-      const data = await response.json()
+      const generated = data.recipe || data
+      if (!generated || !generated.title) {
+        throw new Error(language === 'bn' ? 'অসম্পূর্ণ রেসিপি তৈরি হয়েছে।' : 'Incomplete recipe generated.')
+      }
+
       // Seed dynamically into the local React state database
-      addCustomRecipeToLocalState(data)
-      setCustomRecipe(data)
+      addCustomRecipeToLocalState(generated)
+      setCustomRecipe(generated)
     } catch (err) {
       clearTimeout(timeoutId)
       const isTimeout = err.name === 'AbortError'
-      console.warn(
-        isTimeout 
-          ? 'Backend custom recipe call timed out (1500ms limit reached). Falling back to high-precision local expert engine...'
-          : 'Backend custom recipe call failed. Falling back to high-precision local expert engine:', 
-        err
-      )
-
-      // Zero-lag instant local generation fallback
-      try {
-        const localRecipe = generateLocalCustomRecipe(selectedObjects, 'any')
-        if (localRecipe) {
-          // Assign a unique client-side custom ID to support deep-linking
-          localRecipe.id = `custom-local-${Date.now()}-${Math.floor(Math.random() * 1000)}`
-          
-          // Seed the fully detailed custom recipe in context
-          addCustomRecipeToLocalState(localRecipe)
-          setCustomRecipe(localRecipe)
-        } else {
-          throw new Error('Local chef engine could not process selected ingredients')
-        }
-      } catch (localErr) {
-        console.error('Local recipe generator failed:', localErr)
-        setCustomError('Could not generate custom recipe')
-      }
+      const errorMsg = isTimeout 
+        ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা শেষ হয়ে গেছে। পুনরায় চেষ্টা করুন।' : 'Recipe generation timed out. Please try again.')
+        : (err.message || t('customChefError'))
+      
+      console.warn('Backend custom recipe call failed:', err)
+      setCustomError(errorMsg)
     } finally {
       setCustomGenerating(false)
     }
@@ -271,21 +268,95 @@ function SearchResultsPage() {
                       boxShadow: 'var(--shadow-neon)',
                       padding: '10px 18px',
                       fontSize: '0.9rem',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px'
                     }}
                     id="trigger-custom-chef-btn"
                   >
-                    {customGenerating ? t('generatingCustomBtn') : t('generateCustomBtn')}
+                    {customGenerating ? (
+                      <>
+                        <span className="animate-spin" style={{ display: 'inline-block' }}>✨</span>
+                        <span>{t('generatingCustomBtn')}</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>🪄</span>
+                        <span>{t('generateCustomBtn')}</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </div>
 
+              {/* Graceful Inline Error State */}
               {customError && (
-                <div style={{ marginTop: 'var(--spacing-md)', color: '#FF3B30', fontSize: '0.85rem' }} id="custom-chef-error">
-                  {t('customChefError')}
+                <div 
+                  className="glass-panel"
+                  style={{ 
+                    marginTop: 'var(--spacing-md)', 
+                    padding: '10px 14px',
+                    borderRadius: 'var(--radius-sm)',
+                    border: '1px solid rgba(239, 68, 68, 0.4)',
+                    background: 'rgba(239, 68, 68, 0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '12px',
+                    flexWrap: 'wrap'
+                  }} 
+                  id="custom-chef-error"
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f87171', fontSize: '0.85rem' }}>
+                    <span>⚠️</span>
+                    <span>{customError}</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleGenerateCustom}
+                    className="btn btn-secondary"
+                    style={{ fontSize: '0.8rem', padding: '4px 10px', height: 'auto', minHeight: 'unset' }}
+                    id="custom-chef-retry-btn"
+                  >
+                    🔄 {t('tryAgainBtn')}
+                  </button>
                 </div>
               )}
             </div>
+
+            {/* Active Loading State while waiting for Gemini 3.8 Flash */}
+            {customGenerating && (
+              <div 
+                className="match-section glass-panel animate-pulse" 
+                style={{
+                  border: '2px dashed var(--brand-pink)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: 'var(--spacing-xl)',
+                  marginBottom: 'var(--spacing-xl)',
+                  textAlign: 'center',
+                  background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(219, 39, 119, 0.08) 100%)',
+                  boxShadow: '0 4px 20px rgba(124, 58, 237, 0.15)'
+                }}
+                id="custom-recipe-generating-indicator"
+              >
+                <div style={{ fontSize: '2.6rem', marginBottom: 'var(--spacing-xs)' }} className="animate-bounce">
+                  ✨👩‍🍳
+                </div>
+                <h3 style={{ margin: '0 0 6px 0', color: 'var(--brand-pink)', fontSize: '1.2rem' }}>
+                  {language === 'bn' ? 'জেমিনি এআই শেফ আপনার কাস্টম রেসিপি প্রস্তুত করছে...' : 'Gemini AI Chef is crafting your custom recipe...'}
+                </h3>
+                <p style={{ margin: '0 auto', color: 'var(--text-secondary)', fontSize: '0.88rem', maxWidth: '520px' }}>
+                  {language === 'bn' 
+                    ? 'আপনার নির্বাচিত উপকরণ ও ফিল্টারের ওপর ভিত্তি করে বাস্তবসম্মত, সুস্বাদু রান্নাপ্রণালী তৈরি হচ্ছে।' 
+                    : 'Analyzing your selected ingredients and cooking preferences to engineer a delicious, authentic step-by-step recipe.'}
+                </p>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: 'var(--spacing-md)', fontSize: '0.78rem', color: '#A78BFA' }}>
+                  <span className="animate-spin" style={{ display: 'inline-block' }}>⚡</span>
+                  <span>{language === 'bn' ? 'মডেল: জেমিনি ৩.৮ ফ্ল্যাশ' : 'Powered by Gemini 3.8 Flash'}</span>
+                </div>
+              </div>
+            )}
 
             {/* Display generated Custom Recipe as featured section */}
             {customRecipe && (
@@ -353,9 +424,24 @@ function SearchResultsPage() {
                   onClick={handleGenerateCustom}
                   disabled={customGenerating}
                   id="empty-state-custom-chef-btn"
-                  style={{ marginTop: 'var(--spacing-md)' }}
+                  style={{ 
+                    marginTop: 'var(--spacing-md)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}
                 >
-                  {customGenerating ? t('generatingCustomBtn') : t('generateCustomBtn')}
+                  {customGenerating ? (
+                    <>
+                      <span className="animate-spin" style={{ display: 'inline-block' }}>✨</span>
+                      <span>{t('generatingCustomBtn')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>🪄</span>
+                      <span>{t('generateCustomBtn')}</span>
+                    </>
+                  )}
                 </button>
               </div>
             ) : (

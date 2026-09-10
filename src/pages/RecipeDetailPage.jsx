@@ -160,16 +160,38 @@ function RecipeDetailPage() {
         </div>
 
         <div className="recipe-detail-info">
-          <span 
-            className="recipe-card-cuisine" 
-            style={{ 
-              color: cuisine?.color || 'var(--brand-orange)',
-              fontSize: '0.85rem',
-              fontWeight: '800'
-            }}
-          >
-            {cuisine?.emoji} {cuisineName} {language === 'bn' ? 'রন্ধনশৈলী' : 'Cuisine'}
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '6px' }}>
+            <span 
+              className="recipe-card-cuisine" 
+              style={{ 
+                color: cuisine?.color || 'var(--brand-orange)',
+                fontSize: '0.85rem',
+                fontWeight: '800'
+              }}
+            >
+              {cuisine?.emoji} {cuisineName} {language === 'bn' ? 'রন্ধনশৈলী' : 'Cuisine'}
+            </span>
+            {(recipe.isAiGenerated || recipe.id?.startsWith('custom-')) && (
+              <span 
+                className="badge"
+                style={{
+                  background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)',
+                  color: '#ffffff',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  padding: '3px 10px',
+                  borderRadius: '20px',
+                  boxShadow: '0 2px 8px rgba(124, 58, 237, 0.35)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px'
+                }}
+                id="recipe-detail-ai-badge"
+              >
+                <span>✨</span> {t('aiGeneratedBadge')} • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small>
+              </span>
+            )}
+          </div>
           <h1 className="recipe-detail-title">{title}</h1>
           <p className="hero-subtitle" style={{ margin: 0, fontSize: '1.05rem', textAlign: 'left' }}>
             {desc}
