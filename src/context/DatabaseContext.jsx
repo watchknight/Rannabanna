@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, use
 import { cuisines as staticCuisines } from '../data/cuisines.js';
 import { ingredients as staticIngredients } from '../data/ingredients.js';
 import { recipes as staticRecipes } from '../data/recipes.js';
-import { translations } from '../utils/translations.js';
+import { translations, toBengaliNumber } from '../utils/translations.js';
 import { API_BASE } from '../utils/apiConfig.js';
 
 const DatabaseContext = createContext(null);
@@ -20,17 +20,27 @@ export function DatabaseProvider({ children }) {
     return localStorage.getItem('rannabanna-language') || 'en';
   });
 
+  // Keep <html lang="..."> in sync with current language immediately
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const setLanguage = useCallback((lang) => {
     localStorage.setItem('rannabanna-language', lang);
+    document.documentElement.lang = lang;
     setLanguageState(lang);
   }, []);
 
-  // Sleek, deterministic translation lookup helper
+  // Sleek, deterministic translation lookup helper with automatic numeral localization
   const t = useCallback((key, replacements = {}) => {
     const dict = translations[language] || translations['en'];
     let val = dict[key] || translations['en'][key] || key;
     Object.keys(replacements).forEach(k => {
-      val = val.replaceAll(`{${k}}`, replacements[k]);
+      let repVal = replacements[k];
+      if (language === 'bn' && (typeof repVal === 'number' || /^\d+$/.test(String(repVal)))) {
+        repVal = toBengaliNumber(repVal);
+      }
+      val = val.replaceAll(`{${k}}`, repVal);
     });
     return val;
   }, [language]);
@@ -130,6 +140,7 @@ export function DatabaseProvider({ children }) {
     language,
     setLanguage,
     t,
+    toBengaliNumber,
     fetchRecipeDetail,
     getCuisineById,
     addCustomRecipeToLocalState

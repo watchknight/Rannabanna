@@ -4,7 +4,7 @@ import { useDatabase } from '../context/DatabaseContext'
 
 function RecipeCard({ recipe, selectedIds = [] }) {
   const navigate = useNavigate()
-  const { cuisines, language, t } = useDatabase()
+  const { cuisines, language, t, toBengaliNumber } = useDatabase()
   
   const cuisine = (cuisines || []).find(c => c.id === recipe.cuisineId)
   const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0)
@@ -24,6 +24,9 @@ function RecipeCard({ recipe, selectedIds = [] }) {
   const title = language === 'bn' ? (recipe.titleBn || recipe.title) : recipe.title
   const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
   const cuisineName = language === 'bn' ? (cuisine?.nameBn || cuisine?.name || recipe.cuisineId) : (cuisine?.name || recipe.cuisineId)
+  const displayTime = language === 'bn' ? toBengaliNumber(totalTime) : totalTime
+  const displayCalories = language === 'bn' ? toBengaliNumber(recipe.calories || 0) : (recipe.calories || 0)
+  const displayMatchPct = language === 'bn' ? toBengaliNumber(recipe.matchPercentage) : recipe.matchPercentage
 
   return (
     <div 
@@ -32,14 +35,14 @@ function RecipeCard({ recipe, selectedIds = [] }) {
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardClick(); } }}
       tabIndex={0}
       role="button"
-      aria-label={`${title} (${cuisineName}), ${totalTime} ${t('mins')}, ${recipe.calories || 0} kcal`}
+      aria-label={`${title} (${cuisineName}), ${displayTime} ${t('mins')}, ${displayCalories} ${language === 'bn' ? 'ক্যালোরি' : 'kcal'}`}
       id={`recipe-card-${recipe.id}`}
     >
       <div className="recipe-card-img-placeholder">
         <span className="recipe-card-emoji" role="img" aria-label={title}>{recipe.imageEmoji || '🍲'}</span>
         {recipe.matchPercentage !== undefined && (
           <span className={`badge recipe-match-badge ${getMatchBadgeClass(recipe.matchPercentage)}`}>
-            {recipe.matchPercentage}% {t('matchPercentageBadge')}
+            {displayMatchPct}% {t('matchPercentageBadge')}
           </span>
         )}
       </div>
@@ -59,7 +62,7 @@ function RecipeCard({ recipe, selectedIds = [] }) {
         <div className="recipe-card-meta">
           <div className="recipe-card-meta-item">
             <span role="img" aria-label="Cook time">⏱️</span>
-            <span>{totalTime} {t('mins')}</span>
+            <span>{displayTime} {t('mins')}</span>
           </div>
           <div className="recipe-card-meta-item">
             <span role="img" aria-label="Difficulty">👨‍🍳</span>
@@ -67,7 +70,7 @@ function RecipeCard({ recipe, selectedIds = [] }) {
           </div>
           <div className="recipe-card-meta-item">
             <span role="img" aria-label="Calories">🔥</span>
-            <span>{recipe.calories} kcal</span>
+            <span>{displayCalories} {language === 'bn' ? 'ক্যালোরি' : 'kcal'}</span>
           </div>
         </div>
 
@@ -87,7 +90,7 @@ function RecipeCard({ recipe, selectedIds = [] }) {
               const name = language === 'bn' ? (m.nameBn || m.name) : m.name
               return `${m.emoji} ${name}`
             }).join(', ')}
-            {recipe.missingEssential.length > 3 && ` +${recipe.missingEssential.length - 3} ${language === 'bn' ? 'অন্যান্য' : 'more'}`}
+            {recipe.missingEssential.length > 3 && ` +${language === 'bn' ? toBengaliNumber(recipe.missingEssential.length - 3) : (recipe.missingEssential.length - 3)} ${language === 'bn' ? 'অন্যান্য' : 'more'}`}
           </div>
         )}
       </div>

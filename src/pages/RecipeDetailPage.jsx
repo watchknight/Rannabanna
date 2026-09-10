@@ -8,7 +8,7 @@ import { scaleIngredient, adjustTime } from '../utils/servingsScaler'
 function RecipeDetailPage() {
   const { id } = useParams()
   const [searchParams] = useSearchParams()
-  const { fetchRecipeDetail, cuisines, recipes, ingredients, language, t } = useDatabase()
+  const { fetchRecipeDetail, cuisines, recipes, ingredients, language, t, toBengaliNumber } = useDatabase()
   
   const [recipe, setRecipe] = useState(null)
   const [servings, setServings] = useState(null)
@@ -138,13 +138,13 @@ function RecipeDetailPage() {
 
           <div className="recipe-detail-stats">
             <div className="recipe-detail-stat-card" id="recipe-stat-time">
-              <div className="recipe-detail-stat-val">⏱️ {timeStats.totalTime}</div>
+              <div className="recipe-detail-stat-val">⏱️ {language === 'bn' ? toBengaliNumber(timeStats.totalTime) : timeStats.totalTime}</div>
               <div className="recipe-detail-stat-lbl">
                 {t('mins')} {activeServings !== baseServings ? `(${t('adjustedTime')})` : ''}
               </div>
             </div>
             <div className="recipe-detail-stat-card" id="recipe-stat-calories">
-              <div className="recipe-detail-stat-val">🔥 {Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0)}</div>
+              <div className="recipe-detail-stat-val">🔥 {language === 'bn' ? toBengaliNumber(Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0)) : (Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0))}</div>
               <div className="recipe-detail-stat-lbl">{t('caloriesLabel')}</div>
             </div>
             <div className="recipe-detail-stat-card" id="recipe-stat-difficulty">
@@ -165,7 +165,7 @@ function RecipeDetailPage() {
                 >
                   −
                 </button>
-                <span className="servings-count" id="servings-count-val">👥 {activeServings}</span>
+                <span className="servings-count" id="servings-count-val">👥 {language === 'bn' ? toBengaliNumber(activeServings) : activeServings}</span>
                 <button 
                   type="button" 
                   className="servings-btn" 
@@ -180,7 +180,7 @@ function RecipeDetailPage() {
               <div className="recipe-detail-stat-lbl">{t('servingsLabel')}</div>
               {activeServings !== baseServings && (
                 <div className="servings-adjusted-pill">
-                  {t('originalServings')}: {baseServings}
+                  {t('originalServings')}: {language === 'bn' ? toBengaliNumber(baseServings) : baseServings}
                 </div>
               )}
             </div>
@@ -240,7 +240,7 @@ function RecipeDetailPage() {
                         id={`ing-chk-${ri.ingredientId}`}
                       />
                       <span>
-                        <strong>{scaled.displayQuantity} {unit}</strong> {ingName}
+                        <strong>{language === 'bn' ? toBengaliNumber(scaled.displayQuantity) : scaled.displayQuantity} {unit}</strong> {ingName}
                         {ri.preparation ? `, ${translatePreparation(ri.preparation, language)}` : ''}
                         {ri.isEssential && <span style={{ color: 'var(--brand-orange)', fontSize: '0.75rem', marginLeft: '6px' }}>*</span>}
                         {scaled.isFixed && (
@@ -298,11 +298,11 @@ function RecipeDetailPage() {
               const instruction = language === 'bn' ? (step.instructionBn || step.instruction) : step.instruction
               return (
                 <div key={step.step || step.stepNumber} className="step-item" id={`step-row-${step.step || step.stepNumber}`}>
-                  <div className="step-badge">{step.step || step.stepNumber}</div>
+                  <div className="step-badge">{language === 'bn' ? toBengaliNumber(step.step || step.stepNumber) : (step.step || step.stepNumber)}</div>
                   <div className="step-content">
                     <div className="step-meta">
                       <span className="step-tech">{translateTechnique(step.technique, language)}</span>
-                      <span className="step-duration">⏱️ {step.duration} {t('mins')}</span>
+                      <span className="step-duration">⏱️ {language === 'bn' ? toBengaliNumber(step.duration) : step.duration} {t('mins')}</span>
                     </div>
                     <p className="step-instruction">{instruction}</p>
                   </div>

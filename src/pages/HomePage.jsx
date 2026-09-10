@@ -6,7 +6,7 @@ import RecipeCard from '../components/RecipeCard'
 import { useDatabase } from '../context/DatabaseContext'
 
 function HomePage() {
-  const { cuisines, ingredients, recipes, loading, language, t } = useDatabase()
+  const { cuisines, ingredients, recipes, loading, language, t, toBengaliNumber } = useDatabase()
 
   // Grab top cuisines for home carousel (Bangladeshi, Indian, Pakistani, Chinese, Thai, Italian, Mexican)
   const homeCuisines = useMemo(() => {
@@ -44,15 +44,15 @@ function HomePage() {
       {/* Platform Statistics */}
       <section className="stats-bar glass-panel" id="platform-stats-banner">
         <div className="stat-item">
-          <div className="stat-num">{loading ? '...' : ingredients.length + '+'}</div>
+          <div className="stat-num">{loading ? '...' : (language === 'bn' ? `${toBengaliNumber(ingredients.length)}+` : `${ingredients.length}+`)}</div>
           <div className="stat-label">{t('statsIngredients')}</div>
         </div>
         <div className="stat-item">
-          <div className="stat-num">{loading ? '...' : cuisines.length}</div>
+          <div className="stat-num">{loading ? '...' : (language === 'bn' ? toBengaliNumber(cuisines.length) : cuisines.length)}</div>
           <div className="stat-label">{t('statsCuisines')}</div>
         </div>
         <div className="stat-item">
-          <div className="stat-num">{loading ? '...' : recipes.length}</div>
+          <div className="stat-num">{loading ? '...' : (language === 'bn' ? toBengaliNumber(recipes.length) : recipes.length)}</div>
           <div className="stat-label">{t('statsVerifiedRecipes')}</div>
         </div>
       </section>

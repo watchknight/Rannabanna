@@ -33,7 +33,7 @@ const IngredientChip = React.memo(({ ing, isSelected, language, onClick }) => {
 })
 
 function IngredientSelector({ initialSelectedIds = [] }) {
-  const { ingredients, language, t } = useDatabase()
+  const { ingredients, language, t, toBengaliNumber } = useDatabase()
   const navigate = useNavigate()
   const dropdownRef = useRef(null)
   const tabsRef = useRef(null)
@@ -314,7 +314,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
               onClick={handleFindRecipes}
               id="find-recipes-submit-btn"
             >
-              {t('findRecipes')} ({selectedIds.length} {t('selectedCount')}) →
+              {t('findRecipes')} ({language === 'bn' ? toBengaliNumber(selectedIds.length) : selectedIds.length} {t('selectedCount')}) →
             </button>
           </div>
         )}

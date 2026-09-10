@@ -8,7 +8,7 @@ import { generateLocalCustomRecipe } from '../utils/customChefEngine'
 import { API_BASE } from '../utils/apiConfig.js'
 
 function SearchResultsPage() {
-  const { ingredients, addCustomRecipeToLocalState, language, t, isOffline } = useDatabase()
+  const { ingredients, addCustomRecipeToLocalState, language, t, toBengaliNumber, isOffline } = useDatabase()
   const [searchParams, setSearchParams] = useSearchParams()
   
   // Incremental rendering limits for match categories
@@ -151,7 +151,7 @@ function SearchResultsPage() {
         id="search-summary-card"
       >
         <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', fontWeight: '700' }}>
-          {t('searchingWith')} {selectedIds.length} {language === 'bn' ? 'টি উপকরণ' : (selectedIds.length === 1 ? 'ingredient' : 'ingredients')}
+          {t('searchingWith')} {language === 'bn' ? toBengaliNumber(selectedIds.length) : selectedIds.length} {language === 'bn' ? 'টি উপকরণ' : (selectedIds.length === 1 ? 'ingredient' : 'ingredients')}
         </span>
         
         {/* Visual Removable Chips */}

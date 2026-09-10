@@ -49,6 +49,16 @@
   --nav-height: 72px;
 }
 
+/* Bengali Script Typography */
+html[lang="bn"] {
+  --font-body: 'Hind Siliguri', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Hind Siliguri', 'Outfit', var(--font-body);
+}
+
+html[lang="bn"] body {
+  letter-spacing: 0.01em;
+}
+
 /* Reset */
 *, *::before, *::after {
   box-sizing: border-box;

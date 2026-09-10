@@ -4,7 +4,7 @@ import { useDatabase } from '../context/DatabaseContext'
 
 function CuisineCard({ cuisine }) {
   const navigate = useNavigate()
-  const { recipes, language } = useDatabase()
+  const { recipes, language, toBengaliNumber } = useDatabase()
   
   // Count how many recipes we have in this cuisine
   const recipeCount = recipes.filter(r => r.cuisineId === cuisine.id).length
@@ -34,7 +34,7 @@ function CuisineCard({ cuisine }) {
         <span className="cuisine-card-emoji">{cuisine.emoji}</span>
         <h3 className="cuisine-card-name">{cuisineName}</h3>
         <span className="cuisine-card-count">
-          {language === 'bn' ? `${recipeCount}টি রেসিপি` : `${recipeCount} ${recipeCount === 1 ? 'Recipe' : 'Recipes'}`}
+          {language === 'bn' ? `${toBengaliNumber(recipeCount)}টি রেসিপি` : `${recipeCount} ${recipeCount === 1 ? 'Recipe' : 'Recipes'}`}
         </span>
       </div>
     </div>
