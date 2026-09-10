@@ -16,7 +16,8 @@ import {
   upconvertUnit,
   formatQuantity,
   adjustTime,
-  scaleIngredient
+  scaleIngredient,
+  checkQuantitySatisfaction
 } from './servingsScaler.js';
 
 describe('Servings Scaler - shouldScale', () => {
@@ -137,3 +138,96 @@ describe('Servings Scaler - Unit Down-Conversion', () => {
     assert.equal(scaled.isFixed, false);
   });
 });
+
+describe('Servings Scaler - Recipe-Level Time Overrides', () => {
+  it('respects fixedCookTime override (cook time never scales)', () => {
+    // Recipe with fixedCookTime: true (e.g. baking/simmering fixed duration)
+    const recipe = {
+      prepTime: 20,
+      cookTime: 45,
+      baseServings: 4,
+      timeAdjustment: { fixedCookTime: true }
+    };
+    const times = adjustTime(recipe, 8);
+    assert.equal(times.cookTime, 45); // Cook time remains untouched!
+    assert.ok(times.prepTime > 20);   // Prep time still scales lightly
+  });
+
+  it('respects custom threshold and cap overrides', () => {
+    const customRecipe = {
+      prepTime: 15,
+      cookTime: 30,
+      baseServings: 4,
+      timeAdjustment: {
+        threshold: 2.0, // Cook time does not start increasing until servings > 2x base
+        maxCookMultiplier: 1.15
+      }
+    };
+    // 4 -> 6 servings (ratio 1.5, below threshold 2.0)
+    const timesUnderThreshold = adjustTime(customRecipe, 6);
+    assert.equal(timesUnderThreshold.cookTime, 30); // Cook time unchanged under threshold!
+
+    // 4 -> 12 servings (ratio 3.0, above threshold)
+    const timesOverThreshold = adjustTime(customRecipe, 12);
+    assert.ok(timesOverThreshold.cookTime > 30);
+    assert.ok(timesOverThreshold.cookTime <= Math.round(30 * 1.15)); // Capped at 1.15x
+  });
+});
+
+describe('Servings Scaler - Whole Unit Range & Non-Integer Formatting', () => {
+  it('formats non-integer eggs and whole items as practical ranges without raw decimals', () => {
+    // 3 base servings -> 7 target servings with 1 egg -> 2.33 eggs
+    // Must display "2-3", never raw "2.33 eggs"
+    const scaledEgg = scaleIngredient({ quantity: 1, unit: 'eggs' }, 3, 7);
+    assert.equal(scaledEgg.displayQuantity, '2-3');
+    assert.equal(scaledEgg.displayUnit, 'eggs');
+
+    // 4 base servings -> 6 target servings with 1 piece (1.5) -> "1-2"
+    const scaledPiece = scaleIngredient({ quantity: 1, unit: 'piece' }, 4, 6);
+    assert.equal(scaledPiece.displayQuantity, '1-2');
+  });
+
+  it('recognizes explicit non-scaling flags and tiers', () => {
+    const fixedByFlag = scaleIngredient({ quantity: 10, unit: 'g', scales: false }, 4, 8);
+    assert.equal(fixedByFlag.isFixed, true);
+    assert.equal(fixedByFlag.displayQuantity, '10');
+
+    const fixedByTier = scaleIngredient({ quantity: 5, unit: 'g', tier: 'fixed' }, 4, 8);
+    assert.equal(fixedByTier.isFixed, true);
+    assert.equal(fixedByTier.displayQuantity, '5');
+
+    const pinchOfSalt = scaleIngredient({ quantity: 1, unit: 'pinch', preparation: 'to taste' }, 4, 12);
+    assert.equal(pinchOfSalt.isFixed, true);
+    assert.equal(pinchOfSalt.displayQuantity, '1');
+  });
+});
+
+describe('Servings Scaler - Cross-Cutting On-Hand Quantity Check', () => {
+  it('satisfies requirement when on-hand quantity meets or exceeds scaled quantity', () => {
+    // Recipe needs 200g chicken at 4 servings; scaled to 8 servings -> 400g
+    const ing = { ingredientId: 'chicken', quantity: 200, unit: 'g' };
+    const checkSufficient = checkQuantitySatisfaction(ing, 500, 4, 8);
+    assert.equal(checkSufficient.satisfied, true);
+    assert.equal(checkSufficient.missingQuantity, 0);
+    assert.equal(checkSufficient.scaledQuantity, 400);
+  });
+
+  it('fails satisfaction and calculates shortfall when scaling up exceeds on-hand quantity', () => {
+    // User only had 200g chicken (satisfied base recipe 4 servings)
+    // Scaled to 8 servings -> needs 400g chicken -> shortfall is 200g
+    const ing = { ingredientId: 'chicken', quantity: 200, unit: 'g' };
+    const checkInsufficient = checkQuantitySatisfaction(ing, 200, 4, 8);
+    assert.equal(checkInsufficient.satisfied, false);
+    assert.equal(checkInsufficient.missingQuantity, 200);
+    assert.equal(checkInsufficient.scaledQuantity, 400);
+  });
+
+  it('keeps non-scaling ingredients satisfied when on-hand meets base quantity', () => {
+    const salt = { ingredientId: 'salt', quantity: 1, unit: 'pinch' };
+    const checkSalt = checkQuantitySatisfaction(salt, 1, 4, 12);
+    assert.equal(checkSalt.satisfied, true);
+    assert.equal(checkSalt.isFixed, true);
+    assert.equal(checkSalt.missingQuantity, 0);
+  });
+});
+

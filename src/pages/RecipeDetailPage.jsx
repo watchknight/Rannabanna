@@ -3,7 +3,7 @@ import { useParams, useSearchParams, Link } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
 import RecipeCard from '../components/RecipeCard'
 import { translateCategory, translateUnit, translateTechnique, translatePreparation } from '../utils/translations'
-import { scaleIngredient, adjustTime } from '../utils/servingsScaler'
+import { scaleIngredient, adjustTime, checkQuantitySatisfaction } from '../utils/servingsScaler'
 
 function RecipeDetailPage() {
   const { id } = useParams()
@@ -24,7 +24,8 @@ function RecipeDetailPage() {
       .then(data => {
         if (active) {
           setRecipe(data)
-          setServings(data?.baseServings || data?.servings || 4)
+          const urlServings = parseInt(searchParams.get('servings'), 10)
+          setServings(urlServings || data?.baseServings || data?.servings || 4)
           setLoading(false)
         }
       })
@@ -40,10 +41,23 @@ function RecipeDetailPage() {
     }
   }, [id])
 
-  // Extract selected ingredients from query parameters (so we can highlight matched vs missing items)
-  const selectedIds = useMemo(() => {
+  // Extract selected ingredients and on-hand quantities from query parameters
+  const { selectedIds, onHandMap } = useMemo(() => {
     const raw = searchParams.get('selected')
-    return raw ? raw.split(',').filter(Boolean) : []
+    if (!raw) return { selectedIds: [], onHandMap: {} }
+    const parts = raw.split(',').filter(Boolean)
+    const ids = []
+    const onHand = {}
+    for (const p of parts) {
+      if (p.includes(':')) {
+        const [id, qty] = p.split(':')
+        ids.push(id)
+        if (!isNaN(Number(qty))) onHand[id] = Number(qty)
+      } else {
+        ids.push(p)
+      }
+    }
+    return { selectedIds: ids, onHandMap: onHand }
   }, [searchParams])
 
   const selectedSet = useMemo(() => new Set(selectedIds), [selectedIds])
@@ -90,7 +104,7 @@ function RecipeDetailPage() {
   const dietaryTagsList = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []
 
   // Dynamically adjusted time based on servings count (pure arithmetic calculation)
-  const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings)
+  const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings, recipe.timeAdjustment)
 
   // Group recipe ingredients
   const ingredientGroups = ingredientsList.reduce((acc, ri) => {
@@ -100,11 +114,34 @@ function RecipeDetailPage() {
     return acc
   }, {})
 
-  // Compute missing essential ingredients
-  const missingEssentials = ingredientsList
-    .filter(ri => ri && ri.isEssential && !selectedSet.has(ri.ingredientId))
-    .map(ri => (ingredients || []).find(ing => ing && ing.id === ri.ingredientId))
-    .filter(Boolean)
+  // Compute missing essential ingredients (including on-hand quantity shortfall from scaling)
+  const missingEssentials = useMemo(() => {
+    return ingredientsList
+      .filter(ri => {
+        if (!ri || !ri.isEssential) return false
+        if (!selectedSet.has(ri.ingredientId)) return true
+        const onHand = onHandMap[ri.ingredientId]
+        if (onHand !== undefined) {
+          const check = checkQuantitySatisfaction(ri, onHand, baseServings, activeServings)
+          return !check.satisfied
+        }
+        return false
+      })
+      .map(ri => {
+        const ingObj = (ingredients || []).find(ing => ing && ing.id === ri.ingredientId)
+        const onHand = onHandMap[ri.ingredientId]
+        const check = onHand !== undefined ? checkQuantitySatisfaction(ri, onHand, baseServings, activeServings) : null
+        return {
+          id: ri.ingredientId,
+          name: ingObj?.name || ri.name || ri.ingredientId,
+          nameBn: ingObj?.nameBn || ri.nameBn || ingObj?.name || ri.ingredientId,
+          emoji: ingObj?.emoji || '🧂',
+          shortfall: check?.missingQuantity || 0,
+          unit: ri.unit,
+          isInsufficient: Boolean(check && !check.satisfied)
+        }
+      })
+  }, [ingredientsList, selectedSet, onHandMap, baseServings, activeServings, ingredients])
 
   const title = language === 'bn' ? (recipe.titleBn || recipe.title) : recipe.title
   const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
@@ -219,7 +256,11 @@ function RecipeDetailPage() {
               <div className="ingredients-check-list">
                 {items.map((ri, index) => {
                   const ingObj = (ingredients || []).find(i => i && i.id === ri.ingredientId)
-                  const isMatched = selectedSet.has(ri.ingredientId)
+                  const inKitchen = selectedSet.has(ri.ingredientId)
+                  const onHand = onHandMap[ri.ingredientId]
+                  const satisfaction = onHand !== undefined ? checkQuantitySatisfaction(ri, onHand, baseServings, activeServings) : null
+                  const isMatched = inKitchen && (!satisfaction || satisfaction.satisfied)
+                  const isInsufficient = inKitchen && satisfaction && !satisfaction.satisfied
                   const ingName = language === 'bn' ? (ingObj?.nameBn || ingObj?.name || ri.nameBn || ri.name || ri.ingredientId) : (ingObj?.name || ri.name || ri.ingredientId)
                   
                   // Scale ingredient quantity and unit
@@ -229,14 +270,14 @@ function RecipeDetailPage() {
                   return (
                     <label 
                       key={index} 
-                      className={`ingredient-check-item ${isMatched ? 'matched-ing' : 'missing-ing'}`}
+                      className={`ingredient-check-item ${isMatched ? 'matched-ing' : (isInsufficient ? 'insufficient-ing' : 'missing-ing')}`}
                       id={`ing-item-${ri.ingredientId}`}
                     >
                       <input 
                         type="checkbox" 
                         checked={isMatched} 
                         readOnly
-                        aria-label={`${ingName}: ${isMatched ? 'Available in your kitchen' : 'Missing from kitchen'}`}
+                        aria-label={`${ingName}: ${isMatched ? 'Available in your kitchen' : (isInsufficient ? 'Insufficient in kitchen' : 'Missing from kitchen')}`}
                         id={`ing-chk-${ri.ingredientId}`}
                       />
                       <span>
@@ -246,6 +287,11 @@ function RecipeDetailPage() {
                         {scaled.isFixed && (
                           <span className="badge-fixed" title={t('fixedIngredient')}>
                             {t('fixedIngredient')}
+                          </span>
+                        )}
+                        {isInsufficient && (
+                          <span className="badge" style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24', border: '1px solid rgba(245, 158, 11, 0.3)', marginLeft: '6px', fontSize: '0.65rem' }}>
+                            ⚠️ {language === 'bn' ? `ঘাটতি: আরো ${toBengaliNumber(satisfaction.missingQuantity)} ${unit} প্রয়োজন` : `Shortfall: need ${satisfaction.missingQuantity} ${unit}`}
                           </span>
                         )}
                       </span>
@@ -274,14 +320,24 @@ function RecipeDetailPage() {
               id="missing-essentials-warning"
             >
               <h4 style={{ color: '#f87171', fontSize: '0.95rem', marginBottom: 'var(--spacing-sm)' }}>
-                ⚠️ {language === 'bn' ? 'অনুপস্থিত প্রয়োজনীয় উপকরণসমূহ:' : 'Missing Essential Ingredients:'}
+                ⚠️ {language === 'bn' ? 'অনুপস্থিত বা অপর্যাপ্ত প্রয়োজনীয় উপকরণসমূহ:' : 'Missing or Insufficient Essential Ingredients:'}
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-xs)' }}>
                 {missingEssentials.map(ing => {
                   const ingName = language === 'bn' ? (ing.nameBn || ing.name) : ing.name
+                  const unitText = ing.unit ? translateUnit(ing.unit, language) : ''
                   return (
-                    <span key={ing.id} className="badge badge-match-low" style={{ textTransform: 'none' }}>
+                    <span 
+                      key={ing.id} 
+                      className={ing.isInsufficient ? "badge badge-match-med" : "badge badge-match-low"} 
+                      style={{ textTransform: 'none' }}
+                    >
                       {ing.emoji} {ingName}
+                      {ing.isInsufficient && (
+                        <strong style={{ marginLeft: '4px' }}>
+                          ({language === 'bn' ? `ঘাটতি: ${toBengaliNumber(ing.shortfall)} ${unitText}` : `Need ${ing.shortfall} ${unitText}`})
+                        </strong>
+                      )}
                     </span>
                   )
                 })}

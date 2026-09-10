@@ -1,13 +1,18 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
+import { adjustTime } from '../utils/servingsScaler'
 
-function RecipeCard({ recipe, selectedIds = [] }) {
+function RecipeCard({ recipe, selectedIds = [], targetServings = null }) {
   const navigate = useNavigate()
   const { cuisines, language, t, toBengaliNumber } = useDatabase()
   
   const cuisine = (cuisines || []).find(c => c.id === recipe.cuisineId)
-  const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0)
+  const baseServings = recipe.baseServings || recipe.servings || 4
+  const activeServings = targetServings ? Number(targetServings) : baseServings
+  const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings, recipe.timeAdjustment)
+  const totalTime = timeStats.totalTime
+  const isTimeAdjusted = activeServings !== baseServings
 
   const getMatchBadgeClass = (pct) => {
     if (pct >= 90) return 'badge-match-high'
@@ -16,8 +21,11 @@ function RecipeCard({ recipe, selectedIds = [] }) {
   }
 
   const handleCardClick = () => {
-    // Pass along selected ingredients as a query parameter so the detail page can highlight matches!
-    const query = selectedIds.length > 0 ? `?selected=${selectedIds.join(',')}` : ''
+    // Pass along selected ingredients and target servings as query parameters so detail page stays in sync!
+    const params = new URLSearchParams()
+    if (selectedIds.length > 0) params.set('selected', selectedIds.join(','))
+    if (targetServings && Number(targetServings) !== baseServings) params.set('servings', targetServings)
+    const query = params.toString() ? `?${params.toString()}` : ''
     navigate(`/recipe/${recipe.id}${query}`)
   }
 
@@ -25,7 +33,9 @@ function RecipeCard({ recipe, selectedIds = [] }) {
   const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
   const cuisineName = language === 'bn' ? (cuisine?.nameBn || cuisine?.name || recipe.cuisineId) : (cuisine?.name || recipe.cuisineId)
   const displayTime = language === 'bn' ? toBengaliNumber(totalTime) : totalTime
-  const displayCalories = language === 'bn' ? toBengaliNumber(recipe.calories || 0) : (recipe.calories || 0)
+  const displayCalories = language === 'bn' 
+    ? toBengaliNumber(Math.round(((recipe.calories || 0) * activeServings) / baseServings) || (recipe.calories || 0))
+    : (Math.round(((recipe.calories || 0) * activeServings) / baseServings) || (recipe.calories || 0))
   const displayMatchPct = language === 'bn' ? toBengaliNumber(recipe.matchPercentage) : recipe.matchPercentage
 
   return (
@@ -62,7 +72,10 @@ function RecipeCard({ recipe, selectedIds = [] }) {
         <div className="recipe-card-meta">
           <div className="recipe-card-meta-item">
             <span role="img" aria-label="Cook time">⏱️</span>
-            <span>{displayTime} {t('mins')}</span>
+            <span>
+              {displayTime} {t('mins')}
+              {isTimeAdjusted && <small style={{ color: 'var(--brand-orange)', marginLeft: '4px', fontSize: '0.65rem' }}>({t('adjustedTime')})</small>}
+            </span>
           </div>
           <div className="recipe-card-meta-item">
             <span role="img" aria-label="Difficulty">👨‍🍳</span>

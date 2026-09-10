@@ -76,6 +76,7 @@ db.exec(`
       prepTime INTEGER,
       cookTime INTEGER,
       servings INTEGER,
+      baseServings INTEGER DEFAULT 4,
       calories INTEGER,
       description TEXT,
       descriptionBn TEXT,
@@ -185,8 +186,8 @@ console.log(`✅ Seeded ${ingredients.length} canonical ingredients into GIV.`);
 const allRecipes = recipes;
 
 const insertRecipe = db.prepare(`
-  INSERT OR REPLACE INTO recipes (id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  INSERT OR REPLACE INTO recipes (id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, baseServings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `);
 
 const insertMealType = db.prepare(`
@@ -227,6 +228,7 @@ const insertRecipesTx = db.transaction((list) => {
       item.prepTime,
       item.cookTime,
       item.servings,
+      item.baseServings || item.servings || 4,
       item.calories,
       item.description,
       item.descriptionBn,

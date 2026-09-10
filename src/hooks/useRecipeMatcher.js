@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { recipes as staticRecipes } from '../data/recipes.js'
 import { ingredients as staticIngredients } from '../data/ingredients.js'
+import { adjustTime, checkQuantitySatisfaction } from '../utils/servingsScaler.js'
 import { API_BASE } from '../utils/apiConfig.js'
 
 export const MATCH_THRESHOLDS = {
@@ -95,11 +96,26 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
 function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
   const selectedSet = new Set(selectedIngredientIds)
   const matchedRecipes = []
+  const globalTargetServings = filters.servings ? Number(filters.servings) : null
+  const onHandMap = filters.onHand || {}
 
   for (const recipe of staticRecipes) {
     const rIngredients = recipe.ingredients || []
     const hasAnyMatch = rIngredients.some(ri => selectedSet.has(ri.ingredientId))
     if (!hasAnyMatch) continue
+
+    const base = recipe.baseServings || recipe.servings || 4
+    const currentTargetServings = globalTargetServings || base
+
+    // Verify if on-hand quantity satisfies the requirement
+    const isSatisfied = (ri) => {
+      if (!selectedSet.has(ri.ingredientId)) return false
+      if (onHandMap[ri.ingredientId] !== undefined) {
+        const check = checkQuantitySatisfaction(ri, onHandMap[ri.ingredientId], base, currentTargetServings)
+        return check.satisfied
+      }
+      return true
+    }
 
     const essential = rIngredients.filter(ri => ri.isEssential)
     const optional = rIngredients.filter(ri => !ri.isEssential)
@@ -107,8 +123,8 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
     const essentialTotal = essential.length
     const optionalTotal = optional.length
 
-    const essentialMatched = essential.filter(ri => selectedSet.has(ri.ingredientId)).length
-    const optionalMatched = optional.filter(ri => selectedSet.has(ri.ingredientId)).length
+    const essentialMatched = essential.filter(ri => isSatisfied(ri)).length
+    const optionalMatched = optional.filter(ri => isSatisfied(ri)).length
 
     let matchPercentage = 0
 
@@ -133,17 +149,37 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
     if (matchPercentage < 10) continue
 
     const missingEssential = essential
-      .filter(ri => !selectedSet.has(ri.ingredientId))
+      .filter(ri => !isSatisfied(ri))
       .map(ri => {
         const ingObj = staticIngredients.find(i => i.id === ri.ingredientId)
-        return ingObj ? { id: ingObj.id, name: ingObj.name, nameBn: ingObj.nameBn, emoji: ingObj.emoji } : null
+        if (!ingObj) return null
+        const onHand = onHandMap[ri.ingredientId]
+        const check = checkQuantitySatisfaction(ri, onHand, base, currentTargetServings)
+        return {
+          id: ingObj.id,
+          name: ingObj.name,
+          nameBn: ingObj.nameBn,
+          emoji: ingObj.emoji,
+          shortfall: check.missingQuantity || 0,
+          unit: ri.unit
+        }
       }).filter(Boolean)
 
     const missingOptional = optional
-      .filter(ri => !selectedSet.has(ri.ingredientId))
+      .filter(ri => !isSatisfied(ri))
       .map(ri => {
         const ingObj = staticIngredients.find(i => i.id === ri.ingredientId)
-        return ingObj ? { id: ingObj.id, name: ingObj.name, nameBn: ingObj.nameBn, emoji: ingObj.emoji } : null
+        if (!ingObj) return null
+        const onHand = onHandMap[ri.ingredientId]
+        const check = checkQuantitySatisfaction(ri, onHand, base, currentTargetServings)
+        return {
+          id: ingObj.id,
+          name: ingObj.name,
+          nameBn: ingObj.nameBn,
+          emoji: ingObj.emoji,
+          shortfall: check.missingQuantity || 0,
+          unit: ri.unit
+        }
       }).filter(Boolean)
 
     matchedRecipes.push({
@@ -169,8 +205,10 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
       if (recipe.difficulty !== filters.difficulty) return false
     }
     if (filters.maxTime) {
-      const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0)
-      if (totalTime > filters.maxTime) return false
+      const base = recipe.baseServings || recipe.servings || 4
+      const target = globalTargetServings || base
+      const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, base, target, recipe.timeAdjustment)
+      if (timeStats.totalTime > filters.maxTime) return false
     }
     if (filters.dietary && filters.dietary.length > 0) {
       const recipeTags = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []

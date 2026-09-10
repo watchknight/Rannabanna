@@ -2,7 +2,7 @@ import React from 'react'
 import { useDatabase } from '../context/DatabaseContext'
 
 function FilterPanel({ filters, onChange }) {
-  const { cuisines, language, t } = useDatabase()
+  const { cuisines, language, t, toBengaliNumber } = useDatabase()
   const activeCuisines = filters.cuisines || []
   const activeDietary = filters.dietary || []
 
@@ -35,6 +35,7 @@ function FilterPanel({ filters, onChange }) {
       mealType: 'all',
       difficulty: 'all',
       maxTime: 120,
+      servings: 4,
       dietary: []
     })
   }
@@ -74,7 +75,33 @@ function FilterPanel({ filters, onChange }) {
         </button>
       </div>
 
-      {/* 1. Meal Type Filter */}
+      {/* 1. Servings / People Count Filter */}
+      <div className="filter-group" id="filter-servings-group">
+        <label htmlFor="servings-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
+          👥 {t('servingsFilterLabel')}
+        </label>
+        <select
+          value={filters.servings || 4}
+          onChange={(e) => handleSelectChange('servings', parseInt(e.target.value, 10))}
+          style={{
+            width: '100%',
+            background: 'var(--bg-secondary)',
+            border: '1px solid var(--surface-border)',
+            borderRadius: 'var(--radius-sm)',
+            padding: '8px 12px',
+            cursor: 'pointer'
+          }}
+          id="servings-filter-select"
+        >
+          {[1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20].map(n => (
+            <option key={n} value={n}>
+              {language === 'bn' ? toBengaliNumber(n) : n} {t('people')}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* 2. Meal Type Filter */}
       <div className="filter-group">
         <label htmlFor="meal-type-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
           {t('filterMealTypeLabel')}

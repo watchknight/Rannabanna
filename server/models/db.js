@@ -90,6 +90,13 @@ try {
     db.prepare(`
       CREATE INDEX IF NOT EXISTS idx_gen_history_user ON generation_history(user_id)
     `).run();
+
+    // 4. Recipe baseServings column migration
+    const recipeColumns = db.prepare('PRAGMA table_info(recipes)').all().map(c => c.name);
+    if (recipeColumns.length > 0 && !recipeColumns.includes('baseServings')) {
+      db.prepare('ALTER TABLE recipes ADD COLUMN baseServings INTEGER DEFAULT 4').run();
+      db.prepare('UPDATE recipes SET baseServings = servings WHERE servings IS NOT NULL').run();
+    }
   })();
   console.log('✅ SQLite Migrations completed successfully.');
 } catch (migrationError) {

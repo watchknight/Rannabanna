@@ -24,11 +24,13 @@ function SearchResultsPage() {
   }, [searchParams])
 
   // Local state for active sidebar filters
+  const urlServings = parseInt(searchParams.get('servings'), 10) || 4
   const [filters, setFilters] = useState({
     cuisines: [],
     mealType: 'all',
     difficulty: 'all',
     maxTime: 120,
+    servings: urlServings,
     dietary: []
   })
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false)
@@ -41,6 +43,7 @@ function SearchResultsPage() {
     if (filters.mealType && filters.mealType !== 'all') count += 1
     if (filters.difficulty && filters.difficulty !== 'all') count += 1
     if (filters.maxTime && filters.maxTime < 120) count += 1
+    if (filters.servings && filters.servings !== 4) count += 1
     return count
   }, [filters])
 
@@ -371,7 +374,7 @@ function SearchResultsPage() {
                     </h3>
                     <div className="recipes-grid">
                       {slicedPerfect.map(r => (
-                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} />
+                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} targetServings={filters.servings} />
                       ))}
                     </div>
                     {perfect.length > visiblePerfect && (
@@ -396,7 +399,7 @@ function SearchResultsPage() {
                     </h3>
                     <div className="recipes-grid">
                       {slicedGreat.map(r => (
-                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} />
+                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} targetServings={filters.servings} />
                       ))}
                     </div>
                     {great.length > visibleGreat && (
@@ -421,7 +424,7 @@ function SearchResultsPage() {
                     </h3>
                     <div className="recipes-grid">
                       {slicedGood.map(r => (
-                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} />
+                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} targetServings={filters.servings} />
                       ))}
                     </div>
                     {good.length > visibleGood && (
@@ -446,7 +449,7 @@ function SearchResultsPage() {
                     </h3>
                     <div className="recipes-grid">
                       {slicedExploratory.map(r => (
-                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} />
+                        <RecipeCard key={r.id} recipe={r} selectedIds={selectedIds} targetServings={filters.servings} />
                       ))}
                     </div>
                     {exploratory.length > visibleExploratory && (

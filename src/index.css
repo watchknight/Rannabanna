@@ -1399,6 +1399,13 @@ select:focus-visible,
   vertical-align: middle;
   margin-left: var(--spacing-sm);
 }
+.ingredient-check-item.insufficient-ing {
+  color: #f59e0b;
+  font-weight: 600;
+}
+.ingredient-check-item.insufficient-ing input {
+  accent-color: #f59e0b;
+}
 .ingredient-check-item.missing-ing {
   opacity: 0.8;
 }

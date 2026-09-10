@@ -96,6 +96,10 @@ export const translations = {
     people: "people",
     adjustedTime: "Adjusted Time",
     originalServings: "Original",
+    servingsFilterLabel: "Target Servings",
+    insufficientPantry: "Insufficient in Kitchen",
+    shortfallNotice: "Need {count} more {unit}",
+    missingOrInsufficient: "Missing or Insufficient Ingredients",
     
     // Footer
     footerPlatform: "Platform",
@@ -329,6 +333,10 @@ export const translations = {
     people: "জন",
     adjustedTime: "সামঞ্জস্যপূর্ণ সময়",
     originalServings: "মূল",
+    servingsFilterLabel: "পরিবেশন সংখ্যা",
+    insufficientPantry: "রান্নাঘরে পরিমাণের ঘাটতি",
+    shortfallNotice: "আরও {count} {unit} প্রয়োজন",
+    missingOrInsufficient: "অনুপস্থিত বা অপর্যাপ্ত উপকরণসমূহ",
     
     // Footer
     footerPlatform: "প্ল্যাটফর্ম",
