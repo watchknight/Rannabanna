@@ -375,7 +375,7 @@ select:focus-visible,
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-md);
 }
 .nav-link {
   font-weight: 500;
@@ -383,6 +383,8 @@ select:focus-visible,
   font-size: 0.95rem;
   position: relative;
   padding: 6px 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 .nav-link:hover, .nav-link.active {
   color: #ffffff;
@@ -400,10 +402,166 @@ select:focus-visible,
 .nav-link:hover::after, .nav-link.active::after {
   width: 100%;
 }
+.lang-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  margin-left: var(--spacing-sm);
+}
+.lang-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--surface-border-hover);
+  transform: translateY(-1px);
+}
+.nav-mobile-actions {
+  display: none;
+}
+.mobile-lang-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-full);
+  padding: 6px 12px;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-lang-pill:active {
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(0.96);
+}
 .mobile-toggle {
   display: none;
-  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--surface-border);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  font-size: 1.25rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-toggle:active {
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(0.94);
+}
+.mobile-nav-backdrop {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 998;
+  animation: fadeIn 0.2s ease;
+}
+.mobile-nav-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background: rgba(14, 14, 22, 0.98);
+  border-bottom: 1px solid var(--surface-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md) var(--spacing-lg);
+  gap: var(--spacing-md);
+  z-index: 999;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mob-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.mob-nav-link:hover, .mob-nav-link:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+.mob-nav-link.active {
+  background: rgba(255, 107, 53, 0.12);
+  color: var(--brand-orange);
+  border-left: 3px solid var(--brand-orange);
+}
+.mob-nav-icon {
+  font-size: 1.25rem;
+}
+.mobile-nav-footer {
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--surface-border);
+}
+.mobile-drawer-lang-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
+}
+.mobile-drawer-lang-btn:active {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.98);
+}
+.mobile-drawer-lang-btn .lang-badge {
+  background: var(--brand-gradient);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Footer */
@@ -830,6 +988,13 @@ select:focus-visible,
 }
 .selector-actions:empty {
   margin-top: 0;
+}
+.selector-actions-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 /* Home Section Rhythm */
@@ -1512,6 +1677,33 @@ select:focus-visible,
   margin-bottom: var(--spacing-lg);
   font-size: 0.95rem;
 }
+.search-summary-card {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--surface-border);
+}
+.search-summary-title {
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+}
+.cuisines-page-title {
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  line-height: 1.2;
+}
+.cuisine-detail-emoji {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+}
+.cuisine-detail-title {
+  font-size: clamp(1.85rem, 4.5vw, 3.5rem);
+  line-height: 1.15;
+  word-break: break-word;
+}
+.footer-legal-links {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -1550,10 +1742,19 @@ select:focus-visible,
     text-align: center;
   }
   .nav-links {
-    display: none;
+    display: none !important;
+  }
+  .nav-mobile-actions {
+    display: flex !important;
+    align-items: center;
+    gap: var(--spacing-sm);
   }
   .mobile-toggle {
-    display: block;
+    display: inline-flex !important;
+  }
+  .rannabanna-brand-img {
+    height: 38px;
+    width: auto;
   }
 
   /* 1. Mobile Ingredient Grid: strict 2 columns, tap targets >= 48px */
@@ -1626,6 +1827,77 @@ select:focus-visible,
   .recipe-detail-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
+  }
+
+  /* 6. Custom Chef mobile banner */
+  .custom-chef-banner {
+    padding: var(--spacing-md) !important;
+  }
+
+  /* 7. Footer legal links */
+  .footer-legal-links {
+    justify-content: center !important;
+  }
+}
+
+/* Specific Phone Optimizations (<= 480px) */
+@media (max-width: 480px) {
+  .rannabanna-brand-img {
+    height: 34px !important;
+    width: auto !important;
+  }
+  .selector-actions-inner {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .selector-actions-inner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .stats-bar {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--spacing-xs) !important;
+    padding: var(--spacing-md) var(--spacing-xs) !important;
+  }
+  .stat-num {
+    font-size: 1.85rem !important;
+  }
+  .stat-label {
+    font-size: 0.72rem !important;
+  }
+  .step-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .recipes-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cuisines-carousel .cuisine-card {
+    flex: 0 0 240px !important;
+    height: 160px !important;
+  }
+  .recipe-detail-stat-val {
+    font-size: 1.05rem !important;
+  }
+  .recipe-detail-stat-lbl {
+    font-size: 0.72rem !important;
+  }
+  .steps-panel {
+    padding: var(--spacing-md) !important;
+  }
+  .step-item {
+    gap: var(--spacing-sm) !important;
+  }
+  .step-instruction {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+  .custom-chef-banner > div {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .custom-chef-banner .btn {
+    width: 100% !important;
   }
 }
 

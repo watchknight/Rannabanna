@@ -144,13 +144,7 @@ function SearchResultsPage() {
     <div className="search-results-page animate-fade-in" id="search-results-root">
       {/* Upper header */}
       <div 
-        style={{ 
-          marginBottom: 'var(--spacing-md)', 
-          padding: 'var(--spacing-md) var(--spacing-lg)', 
-          borderRadius: 'var(--radius-md)', 
-          background: 'rgba(255, 255, 255, 0.02)',
-          border: '1px solid var(--surface-border)'
-        }}
+        className="search-summary-card"
         id="search-summary-card"
       >
         <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', fontWeight: '700' }}>
@@ -189,7 +183,7 @@ function SearchResultsPage() {
           </Link>
         </div>
 
-        <h2 style={{ fontSize: '1.75rem' }}>
+        <h2 className="search-summary-title">
           {t('foundRecipes', { count: totalCount })}
         </h2>
 

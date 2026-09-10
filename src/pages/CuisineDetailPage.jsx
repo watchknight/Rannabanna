@@ -79,7 +79,7 @@ function CuisineDetailPage() {
         id="cuisine-detail-hero"
       >
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px' }}>
-          <span style={{ fontSize: '4.5rem', marginBottom: 'var(--spacing-sm)', display: 'inline-block' }}>
+          <span className="cuisine-detail-emoji" style={{ marginBottom: 'var(--spacing-sm)', display: 'inline-block' }}>
             {cuisine.emoji}
           </span>
           <span 
@@ -94,7 +94,7 @@ function CuisineDetailPage() {
           >
             {region} {language === 'bn' ? 'রন্ধনশৈলী পরিচিতি' : 'Cuisine Profile'}
           </span>
-          <h1 style={{ fontSize: '3.5rem', marginTop: 'var(--spacing-xs)', marginBottom: 'var(--spacing-md)' }}>
+          <h1 className="cuisine-detail-title" style={{ marginTop: 'var(--spacing-xs)', marginBottom: 'var(--spacing-md)' }}>
             {name}
           </h1>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.7', opacity: 0.9 }}>

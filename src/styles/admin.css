@@ -448,3 +448,23 @@
   margin-bottom: var(--spacing-lg);
   text-align: left;
 }
+
+/* Admin Responsive Adjustments */
+@media (max-width: 768px) {
+  .admin-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+  }
+  .admin-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .admin-title-group h1 {
+    font-size: 1.5rem;
+  }
+  .admin-tab-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}

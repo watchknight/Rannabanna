@@ -62,7 +62,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Rannabanna. {t('footerCopyright')}</p>
-        <p style={{ display: 'flex', gap: 'var(--spacing-md)' }}>
+        <p className="footer-legal-links">
           <a href="#terms">{t('terms')}</a>
           <a href="#privacy">{t('privacy')}</a>
           <a href="#security">{t('security')}</a>

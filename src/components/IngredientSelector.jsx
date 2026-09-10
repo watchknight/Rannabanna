@@ -301,7 +301,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
       {/* Action Buttons */}
       <div className="selector-actions">
         {selectedIds.length > 0 && (
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--spacing-md)' }}>
+          <div className="selector-actions-inner">
             <button 
               className="btn btn-secondary" 
               onClick={clearAll}
