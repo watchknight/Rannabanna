@@ -23,7 +23,7 @@ export const translations = {
     heroSubtitle: "Select the items in your fridge, pantry, or garden and discover authentic matching dishes from every culinary corner of the globe.",
     
     // Ingredient Selector
-    selectorPlaceholder: "Type to search ingredients (e.g. garlic, chicken, mustard oil)...",
+    selectorPlaceholder: "Type to search ingredients...",
     selectedPlaceholder: "🍋 Select ingredients from below or type in the search bar to start...",
     clearAll: "Clear All",
     findRecipes: "Find Recipes",
@@ -260,7 +260,7 @@ export const translations = {
     heroSubtitle: "আপনার ফ্রিজ, প্যান্ট্রি বা বাগানের উপকরণগুলো সিলেক্ট করুন এবং বিশ্বের প্রতিটি প্রান্তের খাঁটি এবং ঐতিহ্যবাহী সব রেসিপি আবিষ্কার করুন।",
     
     // Ingredient Selector
-    selectorPlaceholder: "উপকরণ খুঁজুন (যেমন: রসুন, মুরগি, সরিষার তেল)...",
+    selectorPlaceholder: "উপকরণ খুঁজুন...",
     selectedPlaceholder: "🍋 শুরু করতে নিচের তালিকা থেকে উপকরণ সিলেক্ট করুন অথবা সার্চ বারে টাইপ করুন...",
     clearAll: "সব মুছুন",
     findRecipes: "রেসিপি খুঁজুন",

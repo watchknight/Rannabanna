@@ -771,9 +771,21 @@ select:focus-visible,
 }
 .selector-search-box input {
   flex: 1;
+  min-width: 0;
+  width: 100%;
   height: 100%;
   font-size: 1.05rem;
   font-weight: 500;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+}
+.selector-search-box input::placeholder {
+  color: var(--text-muted);
+  text-overflow: ellipsis;
+  opacity: 0.85;
 }
 .clear-search-btn {
   color: var(--text-secondary);
@@ -1838,10 +1850,40 @@ select:focus-visible,
   .footer-legal-links {
     justify-content: center !important;
   }
+
+  /* 8. Search bar mobile sizing */
+  .ingredient-selector {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  .search-input-wrapper {
+    height: 50px;
+    padding: 0 16px;
+  }
+  .search-input-icon {
+    font-size: 1.15rem;
+    margin-right: 10px;
+  }
+  .selector-search-box input {
+    font-size: 0.95rem;
+  }
 }
 
 /* Specific Phone Optimizations (<= 480px) */
 @media (max-width: 480px) {
+  .ingredient-selector {
+    padding: var(--spacing-sm) 4px;
+  }
+  .search-input-wrapper {
+    height: 48px;
+    padding: 0 14px;
+  }
+  .search-input-icon {
+    font-size: 1.05rem;
+    margin-right: 8px;
+  }
+  .selector-search-box input {
+    font-size: 0.9rem;
+  }
   .rannabanna-brand-img {
     height: 34px !important;
     width: auto !important;
