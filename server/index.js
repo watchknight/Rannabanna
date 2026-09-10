@@ -180,12 +180,39 @@ app.post('/api/custom-recipe', async (req, res, next) => {
 // ═══════════════════════════════════════════════════════════
 if (fs.existsSync(distPath)) {
   console.log(`📦 Serving production static build from: ${distPath}`);
-  app.use(express.static(distPath));
+  
+  // Serve static assets (js, css, images, robots.txt, etc.) without automatic index.html serving
+  app.use(express.static(distPath, { index: false }));
+
+  // Dynamic HTML handler for root and client-side SPA routes
+  const serveHtml = (req, res) => {
+    try {
+      const indexPath = path.join(distPath, 'index.html');
+      let html = fs.readFileSync(indexPath, 'utf-8');
+      
+      const host = req.get('host') || 'rannabanna.onrender.com';
+      const cleanUrl = `https://${host}${req.originalUrl || '/'}`;
+
+      // Dynamically synchronize OpenGraph & Twitter canonical URLs with requested URL
+      html = html
+        .replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${cleanUrl}"`)
+        .replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${cleanUrl}"`)
+        .replace(/<meta name="twitter:url" content="[^"]*"/, `<meta name="twitter:url" content="${cleanUrl}"`);
+
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+      return res.status(200).send(html);
+    } catch (err) {
+      return res.sendFile(path.join(distPath, 'index.html'));
+    }
+  };
+
+  app.get('/', serveHtml);
 
   // Client-side SPA routing fallback for non-API GET routes (Express 5 compatible)
   app.use((req, res, next) => {
     if (req.method === 'GET' && !req.originalUrl.startsWith('/api')) {
-      return res.sendFile(path.join(distPath, 'index.html'));
+      return serveHtml(req, res);
     }
     next();
   });

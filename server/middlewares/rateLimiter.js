@@ -29,6 +29,24 @@ setInterval(() => {
  * @param {import('express').NextFunction} next
  */
 export function rateLimiter(req, res, next) {
+  // Allow social crawlers and search engine preview unfurl bots without rate limiting
+  const userAgent = (req.headers['user-agent'] || '').toLowerCase();
+  if (
+    userAgent.includes('facebookexternalhit') ||
+    userAgent.includes('facebot') ||
+    userAgent.includes('twitterbot') ||
+    userAgent.includes('discordbot') ||
+    userAgent.includes('whatsapp') ||
+    userAgent.includes('telegrambot') ||
+    userAgent.includes('slackbot') ||
+    userAgent.includes('linkedinbot') ||
+    userAgent.includes('googlebot') ||
+    userAgent.includes('bingbot') ||
+    userAgent.includes('applebot')
+  ) {
+    return next();
+  }
+
   // Safe extraction of remote IP (taking first hop if forwarded, preventing header rotation spoofing)
   const forwarded = typeof req.headers['x-forwarded-for'] === 'string' 
     ? req.headers['x-forwarded-for'].split(',')[0].trim() 
