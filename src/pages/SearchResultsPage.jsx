@@ -76,11 +76,11 @@ function SearchResultsPage() {
     setCustomGenerating(true)
     setCustomError(null)
 
-    // Set up AbortController for a strict 1500ms network timeout
+    // Set up AbortController with generous timeout for AI generation (25 seconds)
     const controller = new AbortController()
     const timeoutId = setTimeout(() => {
       controller.abort()
-    }, 1500)
+    }, 25000)
 
     try {
       const response = await fetch(`${API_BASE}/api/custom-recipe`, {

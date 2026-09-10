@@ -4,7 +4,7 @@ import path from 'node:path';
 import { db as firestoreDb, isFirebaseInitialized } from '../models/firebase.js';
 import { db as sqliteDb } from '../models/db.js';
 import { cacheService } from './cacheService.js';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { generateLocalCustomRecipe } from '../../src/utils/customChefEngine.js';
 import { matchIngredient } from '../../src/utils/ingredientResolver.js';
 import { adjustTime, checkQuantitySatisfaction } from '../../src/utils/servingsScaler.js';
@@ -607,9 +607,7 @@ class RecipeService {
 
     if (apiKey) {
       try {
-        const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-
+        const ai = new GoogleGenAI({ apiKey });
         const prompt = `You are a world-class professional chef. Create an authentic, gourmet, high-quality custom recipe using these selected ingredients: ${ingredientsList.map(i => `${i.name} (${i.id})`).join(', ')}.
 You can also include standard household pantry staples if absolutely necessary (e.g. salt, garlic, water, oil, onions), but prioritize using the selected ingredients.
 
@@ -638,8 +636,16 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
   ]
 }`;
 
-        const result = await model.generateContent(prompt);
-        let text = result.response.text().trim();
+        const result = await ai.models.generateContent({
+          model: 'gemini-3.8-flash',
+          contents: prompt,
+          config: {
+            thinkingConfig: {
+              thinkingLevel: 'low'
+            }
+          }
+        });
+        let text = (result.text || '').trim();
         if (text.startsWith('```json')) {
           text = text.substring(7, text.length - 3);
         } else if (text.startsWith('```')) {

@@ -8,12 +8,33 @@ import { errorHandler } from './middlewares/errorHandler.js';
 import { recipeRouter } from './routes/recipeRoutes.js';
 import { ingredientRouter } from './routes/ingredientRoutes.js';
 import { adminRouter } from './routes/adminRoutes.js';
+import { aiRouter } from './routes/aiRoutes.js';
 import { recipeService } from './services/recipeService.js';
 import { cacheService } from './services/cacheService.js';
+import { generateCustomAiRecipe } from './services/aiRecipeService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distPath = path.resolve(__dirname, '..', 'dist');
+
+// Secure server-side environment variables loader
+const envPaths = [
+  path.resolve(process.cwd(), '.env'),
+  path.resolve(__dirname, '..', '.env'),
+  path.resolve(__dirname, '.env')
+];
+for (const envPath of envPaths) {
+  if (fs.existsSync(envPath)) {
+    try {
+      if (typeof process.loadEnvFile === 'function') {
+        process.loadEnvFile(envPath);
+      }
+      break;
+    } catch {
+      // Gracefully continue if already loaded or unavailable
+    }
+  }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -72,6 +93,7 @@ app.use('/api/recipes', recipeRouter);
 app.use('/api/recipe', recipeRouter);
 app.use('/api/ingredients', ingredientRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/ai', aiRouter);
 
 // ═══════════════════════════════════════════════════════════
 // 2. Legacy Autocomplete & Matchmaker Compatibility Layer
@@ -173,16 +195,40 @@ app.post(['/api/match', '/api/recipes/match'], async (req, res, next) => {
  */
 app.post('/api/custom-recipe', async (req, res, next) => {
   try {
-    const { ingredientIds = [], cuisineId = 'any' } = req.body;
+    const { 
+      ingredientIds = [], 
+      ingredients = [], 
+      cuisineId = 'any', 
+      cuisine = null,
+      filters = {} 
+    } = req.body || {};
 
-    if (ingredientIds.length === 0) {
+    const resolvedIngredients = ingredients.length > 0 ? ingredients : ingredientIds;
+
+    if (!resolvedIngredients || resolvedIngredients.length === 0) {
       return res.status(400).json({ error: 'Please select at least one ingredient to generate a custom recipe.' });
     }
 
     const apiKey = process.env.GEMINI_API_KEY || req.headers['x-gemini-key'];
-    const customRecipe = await recipeService.generateCustomRecipe(ingredientIds, cuisineId, apiKey);
 
-    res.json(customRecipe);
+    if (apiKey) {
+      try {
+        const aiRecipe = await generateCustomAiRecipe({
+          ingredients: resolvedIngredients,
+          cuisine: cuisine || cuisineId,
+          maxTime: filters.maxTime,
+          dietaryRestrictions: filters.dietaryRestrictions || filters.dietary,
+          apiKey
+        });
+        return res.json(aiRecipe);
+      } catch (aiError) {
+        console.warn('⚠️ Gemini AI recipe generation failed, falling back to local recipe engine:', aiError.message);
+      }
+    }
+
+    // High-precision local chef engine failover
+    const fallbackRecipe = await recipeService.generateCustomRecipe(resolvedIngredients, cuisineId, null);
+    res.json(fallbackRecipe);
   } catch (error) {
     next(error);
   }
