@@ -3,6 +3,7 @@ import { useParams, useSearchParams, Link } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
 import RecipeCard from '../components/RecipeCard'
 import { translateCategory, translateUnit, translateTechnique, translatePreparation } from '../utils/translations'
+import { scaleIngredient, adjustTime } from '../utils/servingsScaler'
 
 function RecipeDetailPage() {
   const { id } = useParams()
@@ -10,6 +11,7 @@ function RecipeDetailPage() {
   const { fetchRecipeDetail, cuisines, recipes, ingredients, language, t } = useDatabase()
   
   const [recipe, setRecipe] = useState(null)
+  const [servings, setServings] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -22,6 +24,7 @@ function RecipeDetailPage() {
       .then(data => {
         if (active) {
           setRecipe(data)
+          setServings(data?.baseServings || data?.servings || 4)
           setLoading(false)
         }
       })
@@ -80,10 +83,17 @@ function RecipeDetailPage() {
     )
   }
 
-  const totalTime = recipe.prepTime + recipe.cookTime
+  const baseServings = recipe.baseServings || recipe.servings || 4
+  const activeServings = servings || baseServings
+  const ingredientsList = Array.isArray(recipe.ingredients) ? recipe.ingredients : []
+  const stepsList = Array.isArray(recipe.steps) ? recipe.steps : []
+  const dietaryTagsList = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []
+
+  // Dynamically adjusted time based on servings count (pure arithmetic calculation)
+  const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings)
 
   // Group recipe ingredients
-  const ingredientGroups = recipe.ingredients.reduce((acc, ri) => {
+  const ingredientGroups = ingredientsList.reduce((acc, ri) => {
     const groupName = ri.group || 'Main Ingredients'
     if (!acc[groupName]) acc[groupName] = []
     acc[groupName].push(ri)
@@ -91,9 +101,9 @@ function RecipeDetailPage() {
   }, {})
 
   // Compute missing essential ingredients
-  const missingEssentials = recipe.ingredients
-    .filter(ri => ri.isEssential && !selectedSet.has(ri.ingredientId))
-    .map(ri => ingredients.find(ing => ing.id === ri.ingredientId))
+  const missingEssentials = ingredientsList
+    .filter(ri => ri && ri.isEssential && !selectedSet.has(ri.ingredientId))
+    .map(ri => (ingredients || []).find(ing => ing && ing.id === ri.ingredientId))
     .filter(Boolean)
 
   const title = language === 'bn' ? (recipe.titleBn || recipe.title) : recipe.title
@@ -107,7 +117,7 @@ function RecipeDetailPage() {
       {/* 1. Header segment */}
       <section className="recipe-detail-header">
         <div className="recipe-detail-visual" id="recipe-detail-hero-visual">
-          <span className="recipe-emoji">{recipe.imageEmoji || '🍲'}</span>
+          <span className="recipe-emoji" role="img" aria-label={title}>{recipe.imageEmoji || '🍲'}</span>
         </div>
 
         <div className="recipe-detail-info">
@@ -127,28 +137,57 @@ function RecipeDetailPage() {
           </p>
 
           <div className="recipe-detail-stats">
-            <div className="recipe-detail-stat-card">
-              <div className="recipe-detail-stat-val">⏱️ {totalTime}</div>
-              <div className="recipe-detail-stat-lbl">{t('mins')}</div>
+            <div className="recipe-detail-stat-card" id="recipe-stat-time">
+              <div className="recipe-detail-stat-val">⏱️ {timeStats.totalTime}</div>
+              <div className="recipe-detail-stat-lbl">
+                {t('mins')} {activeServings !== baseServings ? `(${t('adjustedTime')})` : ''}
+              </div>
             </div>
-            <div className="recipe-detail-stat-card">
-              <div className="recipe-detail-stat-val">🔥 {recipe.calories}</div>
+            <div className="recipe-detail-stat-card" id="recipe-stat-calories">
+              <div className="recipe-detail-stat-val">🔥 {Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0)}</div>
               <div className="recipe-detail-stat-lbl">{t('caloriesLabel')}</div>
             </div>
-            <div className="recipe-detail-stat-card">
+            <div className="recipe-detail-stat-card" id="recipe-stat-difficulty">
               <div className="recipe-detail-stat-val" style={{ textTransform: 'capitalize' }}>
                 {t(recipe.difficulty || 'intermediate')}
               </div>
               <div className="recipe-detail-stat-lbl">{t('filterDifficultyLabel')}</div>
             </div>
-            <div className="recipe-detail-stat-card">
-              <div className="recipe-detail-stat-val">👥 {recipe.servings}</div>
+            <div className="recipe-detail-stat-card" id="recipe-stat-servings">
+              <div className="servings-stepper">
+                <button 
+                  type="button" 
+                  className="servings-btn" 
+                  onClick={() => setServings(prev => Math.max(1, (prev || baseServings) - 1))}
+                  disabled={activeServings <= 1}
+                  aria-label="Decrease Servings"
+                  id="servings-decrement-btn"
+                >
+                  −
+                </button>
+                <span className="servings-count" id="servings-count-val">👥 {activeServings}</span>
+                <button 
+                  type="button" 
+                  className="servings-btn" 
+                  onClick={() => setServings(prev => Math.min(24, (prev || baseServings) + 1))}
+                  disabled={activeServings >= 24}
+                  aria-label="Increase Servings"
+                  id="servings-increment-btn"
+                >
+                  +
+                </button>
+              </div>
               <div className="recipe-detail-stat-lbl">{t('servingsLabel')}</div>
+              {activeServings !== baseServings && (
+                <div className="servings-adjusted-pill">
+                  {t('originalServings')}: {baseServings}
+                </div>
+              )}
             </div>
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-xs)', marginTop: 'var(--spacing-sm)' }}>
-            {recipe.dietaryTags.map(tag => (
+            {dietaryTagsList.map(tag => (
               <span key={tag} className="tag" style={{ textTransform: 'capitalize' }}>
                 🌱 {t(tag)}
               </span>
@@ -179,10 +218,13 @@ function RecipeDetailPage() {
               <h3 className="ingredients-group-title">{translateCategory(groupName, language)}</h3>
               <div className="ingredients-check-list">
                 {items.map((ri, index) => {
-                  const ingObj = ingredients.find(i => i.id === ri.ingredientId)
+                  const ingObj = (ingredients || []).find(i => i && i.id === ri.ingredientId)
                   const isMatched = selectedSet.has(ri.ingredientId)
-                  const ingName = language === 'bn' ? (ingObj?.nameBn || ingObj?.name || ri.ingredientId) : (ingObj?.name || ri.ingredientId)
-                  const unit = translateUnit(ri.unit, language)
+                  const ingName = language === 'bn' ? (ingObj?.nameBn || ingObj?.name || ri.nameBn || ri.name || ri.ingredientId) : (ingObj?.name || ri.name || ri.ingredientId)
+                  
+                  // Scale ingredient quantity and unit
+                  const scaled = scaleIngredient(ri, baseServings, activeServings)
+                  const unit = translateUnit(scaled.displayUnit, language)
                   
                   return (
                     <label 
@@ -194,12 +236,18 @@ function RecipeDetailPage() {
                         type="checkbox" 
                         checked={isMatched} 
                         readOnly
+                        aria-label={`${ingName}: ${isMatched ? 'Available in your kitchen' : 'Missing from kitchen'}`}
                         id={`ing-chk-${ri.ingredientId}`}
                       />
                       <span>
-                        <strong>{ri.quantity} {unit}</strong> {ingName}
+                        <strong>{scaled.displayQuantity} {unit}</strong> {ingName}
                         {ri.preparation ? `, ${translatePreparation(ri.preparation, language)}` : ''}
                         {ri.isEssential && <span style={{ color: 'var(--brand-orange)', fontSize: '0.75rem', marginLeft: '6px' }}>*</span>}
+                        {scaled.isFixed && (
+                          <span className="badge-fixed" title={t('fixedIngredient')}>
+                            {t('fixedIngredient')}
+                          </span>
+                        )}
                       </span>
                       {isMatched && (
                         <span className="badge badge-match-high" style={{ fontSize: '0.6rem', padding: '2px 6px' }}>
@@ -246,11 +294,11 @@ function RecipeDetailPage() {
         <div className="steps-panel glass-panel" id="recipe-detail-directions">
           <h2 style={{ fontSize: '1.5rem' }}>{t('cookingSteps')}</h2>
           <div className="steps-list">
-            {recipe.steps.map(step => {
+            {stepsList.map(step => {
               const instruction = language === 'bn' ? (step.instructionBn || step.instruction) : step.instruction
               return (
-                <div key={step.step} className="step-item" id={`step-row-${step.step}`}>
-                  <div className="step-badge">{step.step}</div>
+                <div key={step.step || step.stepNumber} className="step-item" id={`step-row-${step.step || step.stepNumber}`}>
+                  <div className="step-badge">{step.step || step.stepNumber}</div>
                   <div className="step-content">
                     <div className="step-meta">
                       <span className="step-tech">{translateTechnique(step.technique, language)}</span>

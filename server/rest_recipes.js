@@ -32,7 +32,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -86,33 +86,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Khao Soi (Northern Thai Curry Noodles)",
-    "descriptionBn": "Crispy এবং soft ডিম noodles in a rich, highly aromatic নারকেল curry broth দিয়ে chicken.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "খাও সোই (উত্তর থাই কারি নুডলস)",
+    "descriptionBn": "মুরগির সাথে একটি সমৃদ্ধ, অত্যন্ত সুগন্ধযুক্ত নারকেল কারি ঝোলের মধ্যে খাস্তা এবং নরম ডিমের নুডলস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pad-see-ew",
@@ -147,7 +147,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -201,33 +201,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pad See Ew (Wide রাইস নুডলস Stir-Fry)",
-    "descriptionBn": "Stir-fried wide flat রাইস নুডলস দিয়ে Chinese ব্রকলি, ডিম এবং chicken in a savory sweet সয়া সস.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্যাড সি ইউ (ওয়াইড রাইস নুডলস স্টির-ফ্রাই)",
+    "descriptionBn": "একটি সুস্বাদু মিষ্টি সয়া সসে চীনা ব্রোকলি, ডিম এবং মুরগির সাথে ভাজা চওড়া ফ্ল্যাট রাইস নুডলস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "green-curry-special",
@@ -262,7 +262,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -316,33 +316,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kaeng Khiao Wan (Thai Green Curry Chicken)",
-    "descriptionBn": "Vibrant এবং spicy green curry বাটা / পেস্ট simmered দিয়ে chicken, নারকেল দুধ এবং Thai sweet basil.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "কায়েং খিয়াও ওয়ান (থাই গ্রিন কারি চিকেন)",
+    "descriptionBn": "প্রাণবন্ত এবং মশলাদার সবুজ কারি পেস্ট চিকেন, নারকেলের দুধ এবং থাই মিষ্টি তুলসী দিয়ে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "massaman-curry-special",
@@ -377,7 +377,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -431,33 +431,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Massaman Beef Curry",
-    "descriptionBn": "A rich, mild, slightly sweet Southern Thai curry দিয়ে beef chunks, potatoes এবং roasted peanuts.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "মাসামান বিফ কারি",
+    "descriptionBn": "গরুর মাংসের টুকরো, আলু এবং ভাজা চিনাবাদাম সহ একটি সমৃদ্ধ, হালকা, সামান্য মিষ্টি দক্ষিণ থাই কারি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "som-tum-special",
@@ -492,7 +492,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -546,33 +546,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Som Tum (Green Papaya Salad)",
-    "descriptionBn": "Shredded green papaya, cherry tomatoes এবং রসুন pounded in a fiery, sweet-sour-salty কাগজি লেবু dressing.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "সোম তুম (সবুজ পেঁপে সালাদ)",
+    "descriptionBn": "কাটা সবুজ পেঁপে, চেরি টমেটো এবং রসুন একটি জ্বলন্ত, মিষ্টি-টক-নোনতা চুনের ড্রেসিংয়ে থেঁতলে দেওয়া।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "mango-sticky-rice-special",
@@ -607,7 +607,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -661,33 +661,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mango বিনি চাল / স্টিকি রাইস (Khao Niew Mamuang)",
-    "descriptionBn": "Glutinous বিনি চাল / স্টিকি রাইস steamed in sweet নারকেল cream, paired দিয়ে fresh ripe yellow mangoes.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "আম স্টিকি রাইস (খাও নিউ মামুয়াং)",
+    "descriptionBn": "মিষ্টি নারকেল ক্রিমে বাষ্পযুক্ত আঠালো আঠালো চাল, তাজা পাকা হলুদ আমের সাথে জোড়া।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tom-kha-gai-special",
@@ -722,7 +722,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -776,33 +776,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Tom Kha Gai (নারকেল গালাঙ্গাল (থাই আদা) Chicken Soup)",
-    "descriptionBn": "Creamy নারকেল দুধ soup flavored দিয়ে fresh গালাঙ্গাল (থাই আদা), লেমনগ্রাস, লেবু পাতা এবং chicken.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "টম খা গাই (নারকেল গালাঙ্গাল চিকেন স্যুপ)",
+    "descriptionBn": "তাজা গালাঙ্গাল, লেমনগ্রাস, কাফির চুনের পাতা এবং মুরগির স্বাদযুক্ত ক্রিমি নারকেল দুধের স্যুপ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tom-yum-special",
@@ -837,7 +837,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -891,33 +891,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Tom Yum Goong (Spicy & Sour চিংড়ি Soup)",
-    "descriptionBn": "Clear, গরম গরম এবং sour চিংড়ি soup scented দিয়ে fresh লেমনগ্রাস, কাগজি লেবু leaves, গালাঙ্গাল (থাই আদা) এবং chilies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "টম ইয়াম গুং (মশলাদার এবং টক চিংড়ি স্যুপ)",
+    "descriptionBn": "পরিষ্কার, গরম এবং টক চিংড়ির স্যুপ তাজা লেমনগ্রাস, চুনের পাতা, গালাঙ্গাল এবং মরিচ দিয়ে সুগন্ধযুক্ত।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pad-thai-special",
@@ -952,7 +952,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1006,33 +1006,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pad Thai (Authentic Stir-Fried রাইস নুডলস)",
-    "descriptionBn": "Classic stir-fried রাইস নুডলস দিয়ে tofu, ডিম, bean sprouts, crushed peanuts এবং fresh chives in a sweet তেঁতুল sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্যাড থাই (প্রামাণ্য স্টির-ফ্রাইড রাইস নুডলস)",
+    "descriptionBn": "একটি মিষ্টি তেঁতুলের সসে টোফু, ডিম, শিমের স্প্রাউট, চূর্ণ চিনাবাদাম এবং তাজা চিভ সহ ক্লাসিক ভাজা ভাজা নুডলস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "larb-moo",
@@ -1067,7 +1067,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1121,33 +1121,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Larb Moo (Spicy Esan Minced Pork Salad)",
-    "descriptionBn": "Fiery minced pork salad seasoned দিয়ে fresh কাগজি লেবু juice, ফিশ সস, dried chilies এবং toasted বিনি চাল / স্টিকি রাইস powder.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "লার্ব মু (মশলাদার ইসান কিমা শুকরের মাংস সালাদ)",
+    "descriptionBn": "তাজা লেবুর রস, মাছের সস, শুকনো লঙ্কা, এবং টোস্ট করা আঠালো চালের গুঁড়ো দিয়ে তৈরি জ্বলন্ত কিমা শুকরের মাংসের সালাদ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "panang-curry",
@@ -1182,7 +1182,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1236,33 +1236,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Panang Curry Chicken",
-    "descriptionBn": "A thick, creamy red নারকেল curry seasoned দিয়ে finely sliced লেবু পাতা এবং fresh sweet basil.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "পানং কারি চিকেন",
+    "descriptionBn": "একটি পুরু, ক্রিমি লাল নারকেল তরকারি সূক্ষ্মভাবে কাটা কাফির চুনের পাতা এবং তাজা মিষ্টি তুলসী দিয়ে পাকা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "khao-pad-sapbarot",
@@ -1297,7 +1297,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1351,33 +1351,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Khao Pad Sapbarot (Pineapple Fried Rice)",
-    "descriptionBn": "Fragrant জেসমিন চাল stir-fried দিয়ে pineapple chunks, চিংড়ি, cashews, raisins এবং a hint curry powder.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "খাও প্যাড সাপবারোট (আনারস ফ্রাইড রাইস)",
+    "descriptionBn": "সুগন্ধি জুঁই চাল আনারস খণ্ড, চিংড়ি, কাজু, কিসমিস এবং কারি পাউডারের ইঙ্গিত দিয়ে ভাজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pad-kra-prow",
@@ -1412,7 +1412,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1466,33 +1466,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pad Krapow Gai (Holy Basil Chicken Stir-Fry)",
-    "descriptionBn": "A quick, fiery stir-fry minced chicken, holy basil, রসুন এবং fresh bird's eye chilies, served দিয়ে a crispy fried ডিম.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্যাড ক্রাপো গাই (পবিত্র বেসিল চিকেন স্টির-ফ্রাই)",
+    "descriptionBn": "চিকেন, পবিত্র তুলসী, রসুন এবং তাজা পাখির চোখের মরিচের একটি দ্রুত, জ্বলন্ত নাড়া-ভাজা, একটি খাস্তা ভাজা ডিমের সাথে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pla-goong",
@@ -1527,7 +1527,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1581,33 +1581,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pla Goong (Spicy লেমনগ্রাস চিংড়ি Salad)",
-    "descriptionBn": "Quick-seared tiger চিংড়ি tossed in a sharp, herbaceous dressing fresh লেমনগ্রাস, পুদিনা পাতা এবং chili বাটা / পেস্ট.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্লা গোং (মশলাদার লেমনগ্রাস চিংড়ি সালাদ)",
+    "descriptionBn": "তাজা লেমনগ্রাস, পুদিনা এবং মরিচের পেস্টের একটি তীক্ষ্ণ, ভেষজ ড্রেসিংয়ে দ্রুত সিয়ারড টাইগার চিংড়ি ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tod-mun-pla",
@@ -1642,7 +1642,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1696,33 +1696,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Tod Mun Pla (Thai Red Curry Fish Cakes)",
-    "descriptionBn": "Springy fish cakes blended দিয়ে red curry বাটা / পেস্ট এবং finely sliced green beans, deep-fried to golden.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "টড মুন প্লা (থাই রেড কারি ফিশ কেক)",
+    "descriptionBn": "লাল তরকারি পেস্ট এবং সূক্ষ্মভাবে কাটা সবুজ মটরশুটি দিয়ে মিশ্রিত স্প্রিংজি ফিশ কেক, গভীর ভাজা থেকে সোনালি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "khao-pad-gai",
@@ -1757,7 +1757,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1811,33 +1811,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Khao Pad Gai (Thai Jasmine Chicken Fried Rice)",
-    "descriptionBn": "Comforting, home-style fried জেসমিন চাল cooked দিয়ে chicken, ডিম, sweet white onions এবং green onions.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "খাও পদ গাই (থাই জেসমিন চিকেন ফ্রাইড রাইস)",
+    "descriptionBn": "চিকেন, ডিম, মিষ্টি সাদা পেঁয়াজ এবং সবুজ পেঁয়াজ দিয়ে রান্না করা আরামদায়ক, ঘরোয়া স্টাইলের ভাজা জেসমিন চাল।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pad-phrik-king",
@@ -1872,7 +1872,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -1926,33 +1926,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pad Phrik King (Dry Red Curry String Beans)",
-    "descriptionBn": "Sautéed crisp string beans এবং chicken stir-fried in a dry, intensely aromatic red curry বাটা / পেস্ট.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্যাড ফ্রিক কিং (শুকনো রেড কারি স্ট্রিং বিন্স)",
+    "descriptionBn": "একটি শুকনো, তীব্রভাবে সুগন্ধযুক্ত লাল কারি পেস্টে ভাজা খাস্তা স্ট্রিং বিন এবং চিকেন ভাজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "po-pia-tod",
@@ -1987,7 +1987,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2041,33 +2041,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Po Pia Tod (Crispy Thai Vegetable Spring Rolls)",
-    "descriptionBn": "Golden, crispy-fried spring rolls stuffed দিয়ে glass noodles, shredded বাঁধাকপি, carrots এবং wood ear mushrooms.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "পো পিয়া টড (খাস্তা থাই ভেজিটেবল স্প্রিং রোলস)",
+    "descriptionBn": "কাঁচের নুডুলস, টুকরো টুকরো বাঁধাকপি, গাজর এবং কাঠের কানের মাশরুম দিয়ে ভরা সোনালি, খাস্তা-ভাজা স্প্রিং রোলস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "kuay-tiew-reua",
@@ -2102,7 +2102,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2156,33 +2156,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kuay Tiew Reua (Thai Boat Noodle Soup)",
-    "descriptionBn": "Highly seasoned, dark, complex beef noodle soup flavored দিয়ে স্টার অ্যানিস / মৌরি ফুল, cinnamon এবং fresh herbs.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "কুয়ে টিউ রেউয়া (থাই বোট নুডল স্যুপ)",
+    "descriptionBn": "অত্যন্ত পাকা, গাঢ়, জটিল গরুর মাংসের নুডল স্যুপ যার স্বাদ স্টার অ্যানিস, দারুচিনি এবং তাজা ভেষজ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "yam-wun-sen",
@@ -2217,7 +2217,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2271,33 +2271,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Yam Wun Sen (Spicy Glass Noodle Salad)",
-    "descriptionBn": "Refreshing bean thread glass noodles tossed দিয়ে চিংড়ি, minced chicken, raw onions এবং কাগজি লেবু dressing.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "ইয়াম উন সেন (স্পাইসি গ্লাস নুডল সালাদ)",
+    "descriptionBn": "চিংড়ি, কিমা মুরগি, কাঁচা পেঁয়াজ, এবং চুন ড্রেসিং সঙ্গে টস করা রিফ্রেশিং বিন থ্রেড গ্লাস নুডলস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "kai-med-ma-muang",
@@ -2332,7 +2332,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2386,33 +2386,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kai Med Ma-Muang (Cashew Chicken Stir-Fry)",
-    "descriptionBn": "Stir-fried মুরগির বুকের মাংস cubes tossed দিয়ে crispy roasted cashew nuts, bell peppers এবং sweet chili বাটা / পেস্ট.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "কাই মেড মা-মুয়াং (কাজু চিকেন স্টির-ফ্রাই)",
+    "descriptionBn": "নাড়তে ভাজা মুরগির ব্রেস্ট কিউবগুলি খাস্তা ভাজা কাজুবাদাম, বেল মরিচ এবং মিষ্টি মরিচের পেস্টের সাথে টস করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pad-pak-boong",
@@ -2447,7 +2447,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2501,33 +2501,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pad Pak Boong (Stir-Fried Morning Glory)",
-    "descriptionBn": "Stir-fried পানি পালং শাক cooked on blazing high heat দিয়ে salted soy bean বাটা / পেস্ট, রসুন এবং chilies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্যাড পাক বুং (স্টির-ফ্রাইড মর্নিং গ্লোরি)",
+    "descriptionBn": "ভাজা জলের পালং শাক লবণাক্ত সয়া বিন পেস্ট, রসুন এবং লঙ্কা দিয়ে জ্বলন্ত উচ্চ তাপে রান্না করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "nam-tok-mu",
@@ -2562,7 +2562,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2616,33 +2616,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Nam Tok Mu (Spicy Esan Grilled Pork Salad)",
-    "descriptionBn": "Tender slices grilled pork neck tossed দিয়ে fresh পুদিনা পাতা, shallots এবং toasted rice powder dressing.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "নাম টোক মু (স্পাইসি এসান গ্রিলড পোর্ক সালাদ)",
+    "descriptionBn": "তাজা পুদিনা, শ্যালট এবং টোস্ট করা চালের গুঁড়া ড্রেসিং দিয়ে গ্রিলড শুয়োরের মাংসের ঘাড়ের কোমল স্লাইস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "gaeng-som",
@@ -2677,7 +2677,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2731,33 +2731,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Gaeng Som (Spicy & Sour Southern Orange Curry)",
-    "descriptionBn": "A fiery, পানি-based orange curry made দিয়ে turmeric, sour তেঁতুল এবং fresh local fish steaks.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "গায়েং সোম (মশলাদার এবং টক দক্ষিণ কমলা তরকারি)",
+    "descriptionBn": "হলুদ, টক তেঁতুল এবং তাজা স্থানীয় মাছের স্টেক দিয়ে তৈরি একটি জ্বলন্ত, জল-ভিত্তিক কমলা তরকারি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "khanom-jeen",
@@ -2792,7 +2792,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2846,33 +2846,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Khanom Jeen (Fermented রাইস নুডলস দিয়ে Fish Curry)",
-    "descriptionBn": "Soft fermented রাইস নুডলস topped দিয়ে a creamy, rich নারকেল-fish curry sauce, served দিয়ে fresh herbs.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "খানম জিন (মাছের তরকারি দিয়ে গাঁজানো চালের নুডলস)",
+    "descriptionBn": "নরম ফার্মেন্টেড রাইস নুডলসের উপরে একটি ক্রিমি, সমৃদ্ধ নারকেল-মাছের কারি সস, তাজা ভেষজ দিয়ে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "gai-yang",
@@ -2907,7 +2907,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -2961,33 +2961,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Gai Yang (Esan Charcoal-Grilled BBQ Chicken)",
-    "descriptionBn": "Whole chicken marinated in লেমনগ্রাস, রসুন, coriander roots এবং sweet সাদা গোলমরিচ, grilled over charcoal.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "গাই ইয়াং (এসান চারকোল-গ্রিলড BBQ চিকেন)",
+    "descriptionBn": "পুরো মুরগি লেমনগ্রাস, রসুন, ধনে শিকড় এবং মিষ্টি সাদা মরিচ, কাঠকয়লার উপর গ্রিল করা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "miang-kham",
@@ -3022,7 +3022,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3076,33 +3076,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Miang Kham (Herb-Wrapped Leaf Bites)",
-    "descriptionBn": "A fun appetizer where wild piper leaves are wrapped around chopped কাগজি লেবু, আদা, peanuts, toasted নারকেল এবং sweet syrup.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "মিয়াং খাম (ভেষজ-মোড়ানো পাতার কামড়)",
+    "descriptionBn": "একটি মজাদার অ্যাপেটাইজার যেখানে বন্য পাইপারের পাতা কাটা চুন, আদা, চিনাবাদাম, টোস্ট করা নারকেল এবং মিষ্টি শরবতের চারপাশে মোড়ানো হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "chao-kuay",
@@ -3137,7 +3137,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3191,33 +3191,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chao Kuay (Grass Jelly Dessert in Brown Sugar)",
-    "descriptionBn": "ঠান্ডা cubes refreshing grass jelly served over crushed ice, sprinkled দিয়ে dark brown sugar.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "চাও কুয়ে (ব্রাউন সুগারে ঘাস জেলি ডেজার্ট)",
+    "descriptionBn": "গাঢ় বাদামী চিনি দিয়ে ছিটিয়ে চূর্ণ বরফের উপরে পরিবেশিত সতেজ ঘাস জেলির ঠাণ্ডা কিউব।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "bua-loi",
@@ -3252,7 +3252,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3306,33 +3306,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Bua Loi (Sweet Taro Balls in গরম গরম নারকেল দুধ)",
-    "descriptionBn": "Colorful glutinous rice balls filled দিয়ে taro এবং pumpkin mash, simmered in গরম গরম sweet নারকেল দুধ.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "বুয়া লোই (গরম নারকেল দুধে মিষ্টি তারো বল)",
+    "descriptionBn": "উষ্ণ মিষ্টি নারকেল দুধে সিদ্ধ করা রঙিন আঠালো চালের বল ট্যারো এবং কুমড়ার ম্যাশ দিয়ে ভরা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "khanom-crok",
@@ -3367,7 +3367,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3421,33 +3421,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Khanom Crok (Sweet এবং Savory নারকেল Custard)",
-    "descriptionBn": "Crispy-edged, hemispherical sweet নারকেল griddle cakes garnished দিয়ে sliced sweet ভুট্টা.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "খানম ক্রোক (মিষ্টি এবং সুস্বাদু নারকেল কাস্টার্ড)",
+    "descriptionBn": "ক্রিস্পি-ধারযুক্ত, গোলার্ধের মিষ্টি নারকেল ভাজা কেকগুলি কাটা মিষ্টি ভুট্টা দিয়ে সাজানো।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "sangkhaya-fak-thong",
@@ -3482,7 +3482,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3536,33 +3536,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sangkhaya Fak Thong (Pumpkin নারকেল Custard)",
-    "descriptionBn": "A whole sweet kabocha pumpkin hollowed out এবং filled দিয়ে rich নারকেল ডিম custard, steamed whole.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "সাংখায়া ফাক থং (কুমড়া নারকেল কাস্টার্ড)",
+    "descriptionBn": "একটি আস্ত মিষ্টি কাবোচা কুমড়া ফাঁপা এবং সমৃদ্ধ নারকেলের ডিমের কাস্টার্ডে ভরা, পুরো ভাপানো।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pad-cha-talay",
@@ -3597,7 +3597,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3651,33 +3651,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pad Cha Talay (Spicy Searing Seafood Stir-Fry)",
-    "descriptionBn": "Searing seafood stir-fry cooked দিয়ে wild আদা (krachai), fresh peppercorns, holy basil এবং chilies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "পদ চা তালে (মশলাদার সামুদ্রিক খাবার স্টির-ফ্রাই)",
+    "descriptionBn": "বন্য আদা (ক্রাচাই), তাজা গোলমরিচ, পবিত্র তুলসী এবং মরিচ দিয়ে রান্না করা সীফুড স্টির-ফ্রাই।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pla-chuan-chuan",
@@ -3712,7 +3712,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3766,33 +3766,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pla Nueng King (আদা Steamed Whole Fish)",
-    "descriptionBn": "Whole sea bass steamed দিয়ে julienned fresh আদা, scallions, red chilies এবং a light soy broth.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "প্লা নুয়েং কিং (আদা স্টিমড হোল ফিশ)",
+    "descriptionBn": "পুরো সমুদ্র খাদ জুলিয়েন করা তাজা আদা, স্ক্যালিয়ন, লাল মরিচ এবং একটি হালকা সয়া ঝোল দিয়ে ভাপানো হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "gai-pad-king",
@@ -3827,7 +3827,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3881,33 +3881,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Gai Pad King (আদা Chicken Stir-Fry)",
-    "descriptionBn": "Stir-fried মুরগির বুকের মাংস sautéed দিয়ে huge quantities shredded fresh আদা, wood ear mushrooms এবং রসুন.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "গাই প্যাড কিং (আদা চিকেন স্টির-ফ্রাই)",
+    "descriptionBn": "নাড়তে ভাজা মুরগির স্তনটি প্রচুর পরিমাণে কাটা তাজা আদা, কাঠের কানের মাশরুম এবং রসুন দিয়ে ভাজা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "kaeng-hang-ley",
@@ -3942,7 +3942,7 @@ export const restRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Gravy",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "lime",
@@ -3996,33 +3996,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kaeng Hang Ley (Northern Thai শূকরের মাংস (পর্ক বেলি) Curry)",
-    "descriptionBn": "A rich, slow-cooked শূকরের মাংস (পর্ক বেলি) curry flavored দিয়ে আদা, তেঁতুল, রসুন লবঙ্গ এবং Northern spices.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional thai kitchens."
+    "titleBn": "কায়েং হ্যাং লে (উত্তর থাই পর্ক বেলি কারি)",
+    "descriptionBn": "আদা, তেঁতুল, রসুনের লবঙ্গ এবং উত্তরীয় মশলা সহ একটি সমৃদ্ধ, ধীরে-ধীরে রান্না করা শুয়োরের মাংসের পেটের তরকারি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী থাই রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "mapo-tofu-special",
@@ -4095,33 +4095,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mapo Tofu (Sichuan Spicy Bean Curd)",
-    "descriptionBn": "Soft silken tofu cubes slow-simmered in a numbing, fiery সিচুয়ান গোলমরিচ এবং chili bean বাটা / পেস্ট sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ম্যাপো তোফু (সিচুয়ান মসলাযুক্ত বিন দই)",
+    "descriptionBn": "নরম সিল্কেন টোফু কিউবগুলি একটি অসাড়, জ্বলন্ত সিচুয়ান মরিচ এবং চিলি বিন পেস্ট সসে ধীরে ধীরে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "kung-pao-chicken-special",
@@ -4194,33 +4194,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kung Pao Chicken (Gong Bao Ji Ding)",
-    "descriptionBn": "Stir-fried মুরগির বুকের মাংস cubes দিয়ে crunchy peanuts, dry red chilies এবং scallions in a sweet-savory glaze.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "কুং পাও চিকেন (গং বাও জি ডিং)",
+    "descriptionBn": "ভাজা মুরগির স্তনের কিউবগুলি কুঁচি চিনাবাদাম, শুকনো লাল লঙ্কা এবং একটি মিষ্টি-সুস্বাদু গ্লাসে স্ক্যালিয়ন দিয়ে নাড়ুন।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "hong-shao-rou-special",
@@ -4293,33 +4293,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Hong Shao Rou (Red Braised শূকরের মাংস (পর্ক বেলি))",
-    "descriptionBn": "শূকরের মাংস (পর্ক বেলি) cubes slow-cooked in a glossy, dark সয়া সস, rock sugar, শাওক্সিং ওয়াইন এবং স্টার অ্যানিস / মৌরি ফুল glaze.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "হং শাও রু (লাল ব্রেইজড শুয়োরের মাংসের পেট)",
+    "descriptionBn": "শুয়োরের মাংসের পেটের কিউবগুলি একটি চকচকে, গাঢ় সয়া সস, রক সুগার, শাওক্সিং ওয়াইন এবং স্টার অ্যানিস গ্লাসে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tomato-scrambled-eggs-special",
@@ -4392,33 +4392,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "টমেটো Scrambled Eggs (Fan Qie Chao Dan)",
-    "descriptionBn": "ultimate Chinese home comfort comfort meal—soft scrambled eggs cooked দিয়ে sweet tomatoes.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "টমেটো স্ক্র্যাম্বলড ডিম (ফ্যান কি চাও ড্যান)",
+    "descriptionBn": "চূড়ান্ত চীনা বাড়ির আরামদায়ক আরামদায়ক খাবার—মিষ্টি টমেটো দিয়ে রান্না করা নরম স্ক্র্যাম্বল ডিম।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "wonton-soup-special",
@@ -4491,33 +4491,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Clear Pork এবং চিংড়ি Wonton Soup",
-    "descriptionBn": "Hand-folded pork এবং চিংড়ি wontons served in a seasoned, aromatic chicken broth.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "পরিষ্কার শুয়োরের মাংস এবং চিংড়ি Wonton স্যুপ",
+    "descriptionBn": "হাতে ভাঁজ করা শুয়োরের মাংস এবং চিংড়ির ওয়ান্টন একটি পাকা, সুগন্ধযুক্ত মুরগির ঝোল পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "hot-sour-soup-special",
@@ -4590,33 +4590,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sichuan গরম গরম & Sour Tofu Soup",
-    "descriptionBn": "A comforting, thick soup loaded দিয়ে tofu, bamboo shoots এবং mushrooms, balanced দিয়ে সাদা গোলমরিচ এবং ভিনেগার / সিরকা.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "সিচুয়ান গরম এবং টক টফু স্যুপ",
+    "descriptionBn": "সাদা গোলমরিচ এবং ভিনেগারের সাথে ভারসাম্যপূর্ণ একটি আরামদায়ক, ঘন স্যুপ টোফু, বাঁশের অঙ্কুর এবং মাশরুম দিয়ে লোড।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "double-cooked-pork",
@@ -4689,33 +4689,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Double-Cooked Pork (Hui Guo Rou)",
-    "descriptionBn": "Sichuan simmered শূকরের মাংস (পর্ক বেলি) sliced thinly এবং stir-fried দিয়ে sweet leeks এবং গরম গরম chili bean বাটা / পেস্ট.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ডাবল-কুকড শুয়োরের মাংস (হুই গুও রু)",
+    "descriptionBn": "সিচুয়ান সিম করা শুয়োরের মাংসের পেট পাতলা করে কেটে মিষ্টি লিক এবং গরম মরিচের শিমের পেস্ট দিয়ে ভাজা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "sweet-sour-ribs",
@@ -4788,33 +4788,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sweet এবং Sour Pork Ribs (Tang Cu Pai Gu)",
-    "descriptionBn": "Crispy baby pork ribs caramelized in a highly addictive sweet, sour এবং sticky dark soy ভিনেগার / সিরকা glaze.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "মিষ্টি এবং টক শুয়োরের পাঁজর (টাং কু পাই গু)",
+    "descriptionBn": "ক্রিস্পি বেবি শুয়োরের পাঁজরগুলি একটি অত্যন্ত আসক্তিযুক্ত মিষ্টি, টক এবং আঠালো গাঢ় সয়া ভিনেগার গ্লাসে ক্যারামেলাইজড।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pork-dumplings",
@@ -4887,33 +4887,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pork Dumplings (Jiaozi)",
-    "descriptionBn": "Homemade boiled pork dumplings packed দিয়ে ground pork, Chinese বাঁধাকপি, fresh আদা এবং scallions.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "শুকরের মাংস ডাম্পলিংস (জিয়াওজি)",
+    "descriptionBn": "স্থল শুয়োরের মাংস, চাইনিজ বাঁধাকপি, তাজা আদা এবং স্ক্যালিয়ন দিয়ে প্যাক করা ঘরে তৈরি সেদ্ধ শুকরের মাংসের ডাম্পলিং।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "general-tsos-chicken",
@@ -4986,33 +4986,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "General Tso's Chicken",
-    "descriptionBn": "Crispy, deep-fried chicken bites tossed in a sweet, sour এবং mildly spicy red chili soy glaze.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "জেনারেল টিসোর চিকেন",
+    "descriptionBn": "খাস্তা, গভীর-ভাজা মুরগির কামড় একটি মিষ্টি, টক, এবং হালকা মশলাদার লাল মরিচ সয়া গ্লাসে ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "beef-ho-fun",
@@ -5085,33 +5085,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Beef Ho Fun (Wide রাইস নুডলস Stir-Fry)",
-    "descriptionBn": "Dry stir-fried wide flat রাইস নুডলস seared on extremely high wok heat দিয়ে tender beef strips এবং bean sprouts.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "বিফ হো ফান (ওয়াইড রাইস নুডলস স্টির-ফ্রাই)",
+    "descriptionBn": "শুকনো ভাজা চওড়া ফ্ল্যাট রাইস নুডুলস অত্যন্ত উচ্চ তাপে কোমল গরুর মাংসের স্ট্রিপ এবং শিমের স্প্রাউট সহ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "egg-foo-young",
@@ -5184,33 +5184,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "ডিম Foo Young (Chinese Gravy Omelet)",
-    "descriptionBn": "A fluffy Chinese omelet packed দিয়ে shredded বাঁধাকপি, onions এবং চিংড়ি, served দিয়ে an oyster gravy.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ডিম ফু ইয়াং (চীনা গ্রেভি অমলেট)",
+    "descriptionBn": "কাটা বাঁধাকপি, পেঁয়াজ এবং চিংড়ি দিয়ে প্যাক করা একটি তুলতুলে চাইনিজ অমলেট, একটি ঝিনুক গ্রেভির সাথে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "hunan-beef",
@@ -5283,33 +5283,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Hunan Beef (Fiery Stir-Fried Beef এবং Peppers)",
-    "descriptionBn": "Tender beef strips stir-fried at lightning speed দিয়ে fresh গরম গরম green chilies এবং রসুন.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "হুনান গরুর মাংস (জ্বলন্ত নাড়া-ভাজা গরুর মাংস এবং মরিচ)",
+    "descriptionBn": "কোমল গরুর মাংসের স্ট্রিপগুলি তাজা গরম সবুজ মরিচ এবং রসুন দিয়ে বিদ্যুৎ গতিতে ভাজা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "sichuan-cold-noodles",
@@ -5382,33 +5382,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sichuan Cold Noodles (Liangmian)",
-    "descriptionBn": "ঠান্ডা wheat noodles tossed in a rich, numbing এবং creamy sesame-peanut chili sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "সিচুয়ান কোল্ড নুডলস (লিয়াংমিয়ান)",
+    "descriptionBn": "ঠাণ্ডা গমের নুডলস একটি সমৃদ্ধ, অসাড় এবং ক্রিমযুক্ত তিল-চিনাবাদাম মরিচের সসে ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "shrimp-toast",
@@ -5481,33 +5481,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Crispy Fried Sesame চিংড়ি Toast",
-    "descriptionBn": "Crispy fried sandwich triangles coated দিয়ে minced চিংড়ি বাটা / পেস্ট এবং toasted white sesame seeds.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "খাস্তা ভাজা তিল চিংড়ি টোস্ট",
+    "descriptionBn": "ক্রিস্পি ভাজা স্যান্ডউইচ ত্রিভুজগুলি কিমা করা চিংড়ির পেস্ট এবং টোস্ট করা সাদা তিল দিয়ে লেপা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "scallion-noodles",
@@ -5580,33 +5580,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Cong You Ban Mian (পেঁয়াজ পাতা Oil Noodles)",
-    "descriptionBn": "ঠান্ডা noodles tossed in a deeply aromatic, dark oil made by caramelizing green onions in oil এবং soy.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "কং ইউ ব্যান মিয়ান (স্ক্যালিয়ন অয়েল নুডলস)",
+    "descriptionBn": "ঠাণ্ডা নুডলস একটি গভীর সুগন্ধযুক্ত, গাঢ় তেলে ফেলে দেওয়া হয় যা তেল এবং সয়াতে সবুজ পেঁয়াজকে ক্যারামেলাইজ করে তৈরি করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "dan-dan-noodles-special",
@@ -5679,33 +5679,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sichuan Dan Dan Noodles",
-    "descriptionBn": "Noodles tossed in a spicy sesame-chili sauce, topped দিয়ে crispy ground pork এবং pickled mustard greens.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "সিচুয়ান ড্যান ড্যান নুডলস",
+    "descriptionBn": "নুডুলস একটি মশলাদার তিল-মরিচের সসে ফেলে দেওয়া, শীর্ষে খাস্তা গ্রাউন্ড শুয়োরের মাংস এবং আচারযুক্ত সরিষার শাক।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "di-san-xian-special",
@@ -5778,33 +5778,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Di San Xian (Three Earthly Treasures বেগুন)",
-    "descriptionBn": "A rustic, comforting stir-fry crispy potatoes, tender eggplants এবং sweet green bell peppers.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ডি সান জিয়ান (তিনটি পার্থিব ধন বেগুন)",
+    "descriptionBn": "খাস্তা আলু, কোমল বেগুন এবং মিষ্টি সবুজ বেল মরিচের একটি দেহাতি, আরামদায়ক ভাজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "beef-broccoli-special",
@@ -5877,33 +5877,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Beef দিয়ে ব্রকলি",
-    "descriptionBn": "Thinly sliced flank steak seared in a গরম গরম wok, tossed দিয়ে crisp ব্রকলি florets in a glossy oyster-রসুন sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ব্রকলির সাথে গরুর মাংস",
+    "descriptionBn": "একটি চকচকে ঝিনুক-রসুন সসে খাস্তা ব্রোকলি ফ্লোরেটের সাথে টস করা পাতলা স্লাইস করা ফ্ল্যাঙ্ক স্টেক একটি গরম কড়ায় সিদ্ধ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "char-siu-special",
@@ -5976,33 +5976,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Siu (Chinese BBQ Honey Pork ঝলসিয়ে নিন)",
-    "descriptionBn": "Roasted pork shoulder caramelized in a sticky marinade honey, hoisin sauce এবং Chinese পাঁচ মশলা (ফাইভ স্পাইস).",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "চর সিউ (চীনা BBQ মধু শূকরের মাংস)",
+    "descriptionBn": "রোস্টেড শুয়োরের মাংসের কাঁধে মধু, হোইসিন সস এবং চাইনিজ ফাইভ-মসলা দিয়ে স্টিকি ম্যারিনেডে ক্যারামেলাইজ করা হয়েছে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "twice-cooked-tofu",
@@ -6075,33 +6075,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Twice-Cooked Tofu (Homestyle Braised Tofu)",
-    "descriptionBn": "Pan-fried firm tofu slices braised দিয়ে wood ear mushrooms এবং bell peppers in a rich রসুন oyster sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "দুবার রান্না করা তোফু (হোমস্টাইল ব্রেইজড তোফু)",
+    "descriptionBn": "প্যান-ভাজা শক্ত টফু স্লাইসগুলি একটি সমৃদ্ধ রসুন ঝিনুকের সসে কাঠের কানের মাশরুম এবং বেল মরিচ দিয়ে ব্রেস করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "steamed-sea-bass",
@@ -6174,33 +6174,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Cantonese আদা-পেঁয়াজ পাতা Steamed Whole Fish",
-    "descriptionBn": "Whole fish steamed দিয়ে julienned আদা, scallions এবং red chilies, drizzled দিয়ে boiling oil এবং sweet soy.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ক্যান্টনিজ আদা-স্ক্যালিয়ন বাষ্পযুক্ত পুরো মাছ",
+    "descriptionBn": "ফুটন্ত তেল এবং মিষ্টি সয়া দিয়ে গুঁজে দেওয়া আদা, স্ক্যালিয়ন এবং লাল লঙ্কা দিয়ে ভাপানো পুরো মাছ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "egg-tart",
@@ -6273,33 +6273,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Dan Tat (Cantonese Sweet Custard Tarts)",
-    "descriptionBn": "Flaky, buttery puff pastry shells filled দিয়ে a smooth, sweet ডিম custard, baked to golden.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ড্যান ট্যাট (ক্যান্টোনিজ সুইট কাস্টার্ড টার্ট)",
+    "descriptionBn": "ফ্ল্যাকি, বাটারি পাফ পেস্ট্রির শাঁস একটি মসৃণ, মিষ্টি ডিমের কাস্টার্ড দিয়ে ভরা, সোনালি করে বেক করা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "hot-pot",
@@ -6372,33 +6372,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sichuan Spicy Shabu-Shabu গরম গরম Pot",
-    "descriptionBn": "A dynamic communal feast featuring a fiery, aromatic beef tallow broth seasoned দিয়ে Sichuan peppercorns.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "সিচুয়ান স্পাইসি শাবু-শাবু হট পট",
+    "descriptionBn": "একটি গতিশীল সাম্প্রদায়িক ভোজের একটি জ্বলন্ত, সুগন্ধযুক্ত গরুর মাংসের ঝোলের সাথে সিচুয়ান গোলমরিচের ঝোল।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "congee",
@@ -6471,33 +6471,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "White Rice Congee দিয়ে Century ডিম",
-    "descriptionBn": "Comforting, slow-boiled thick rice porridge cooked দিয়ে shredded pork এবং rich century ডিম halves.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "সেঞ্চুরি ডিমের সাথে সাদা চালের কনজি",
+    "descriptionBn": "আরামদায়ক, ধীরে-সেদ্ধ মোটা চালের দোল কাটা শুয়োরের মাংস এবং সমৃদ্ধ সেঞ্চুরি ডিমের অর্ধেক দিয়ে রান্না করা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pekingsduck",
@@ -6570,33 +6570,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Peking Roasted Duck (Crispy Skin Duck)",
-    "descriptionBn": "Legendary roasted duck featuring crispy, honey-glazed skin, served দিয়ে thin pancakes এবং sweet hoisin.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "পিকিং রোস্টেড ডাক (ক্রিস্পি স্কিন ডাক)",
+    "descriptionBn": "কিংবদন্তি রোস্টেড হাঁস যাতে খসখসে, মধু-চকচকে ত্বক, পাতলা প্যানকেক এবং মিষ্টি হোইসিনের সাথে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "lion-head-meatballs",
@@ -6669,33 +6669,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Braised Giant Pork Meatballs (Lion's Head)",
-    "descriptionBn": "Giant, tender ground pork meatballs slow-simmered দিয়ে sweet napa বাঁধাকপি leaves in a light broth.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ব্রেইজড জায়ান্ট শুয়োরের মাংসের বল (সিংহের মাথা)",
+    "descriptionBn": "দৈত্য, কোমল স্থল শুয়োরের মাংসের মাংসের বলগুলি হালকা ঝোলের মধ্যে মিষ্টি নাপা বাঁধাকপির পাতা দিয়ে ধীরে ধীরে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "char-siu-bao",
@@ -6768,33 +6768,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Honey BBQ Pork Buns (Char Siu Bao ভাপে দিন)",
-    "descriptionBn": "Fluffy, sweet steamed white yeast buns filled দিয়ে deeply caramelized, diced BBQ honey pork.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "স্টিমড হানি BBQ শুয়োরের মাংসের বান (চার সিউ বাও)",
+    "descriptionBn": "তুলতুলে, মিষ্টি বাষ্পযুক্ত সাদা খামিরের বানগুলি গভীরভাবে ক্যারামেলাইজড, ডাইস করা BBQ মধু শূকরের মাংসে ভরা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "spring-rolls",
@@ -6867,33 +6867,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Crispy Chinese Fried Spring Rolls",
-    "descriptionBn": "Light, shatteringly crisp rolls stuffed দিয়ে stir-fried বাঁধাকপি, carrots এবং sweet shiitake mushrooms.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ক্রিস্পি চাইনিজ ফ্রাইড স্প্রিং রোলস",
+    "descriptionBn": "ভাজা বাঁধাকপি, গাজর এবং মিষ্টি শিতাকে মাশরুম দিয়ে ভরা হালকা, বিচ্ছিন্নভাবে খাস্তা রোল।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "salt-pepper-squid",
@@ -6966,33 +6966,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Crispy Fried লবণ এবং Pepper Calamari",
-    "descriptionBn": "Crunchy, batter-fried স্কুইড tossed দিয়ে toasted Sichuan peppercorn লবণ, green onions এবং fresh chilies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ক্রিস্পি ফ্রাইড সল্ট এবং পিপার ক্যালামারি",
+    "descriptionBn": "টোস্ট করা সিচুয়ান গোলমরিচ লবণ, সবুজ পেঁয়াজ এবং তাজা লঙ্কা দিয়ে কুঁচকে যাওয়া, পিঠা-ভাজা স্কুইড।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "yangzhou-rice-special",
@@ -7065,33 +7065,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Yangzhou Fried Rice",
-    "descriptionBn": "Classic Chinese fried rice tossed দিয়ে চিংড়ি, Chinese BBQ pork, ডিম, sweet peas এবং scallions.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ইয়াংজু ফ্রাইড রাইস",
+    "descriptionBn": "চিংড়ি, চাইনিজ বারবিকিউ শুয়োরের মাংস, ডিম, মিষ্টি মটর এবং স্ক্যালিয়ন দিয়ে ছোঁড়া ক্লাসিক চাইনিজ ফ্রাইড রাইস।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "jiaozi-veggie",
@@ -7164,33 +7164,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "রসুন Chive & Mushroom Dumplings ভাপে দিন",
-    "descriptionBn": "Hand-folded steamed wheat dumplings packed দিয়ে fragrant রসুন chives এবং sweet shiitake mushrooms.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "স্টিমড গার্লিক চিভ এবং মাশরুম ডাম্পলিংস",
+    "descriptionBn": "হাতে ভাঁজ করা বাষ্পযুক্ত গমের ডাম্পলিংগুলি সুগন্ধি রসুনের চিভস এবং মিষ্টি শিতাকে মাশরুম দিয়ে প্যাক করা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "suan-la-fen",
@@ -7263,33 +7263,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Suan La Fen (গরম গরম এবং Sour Sweet আলু Glass Noodles)",
-    "descriptionBn": "Sweet আলু glass noodles in a fiery, sour broth topped দিয়ে crispy soybeans এবং fresh coriander.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "সুয়ান লা ফেন (গরম এবং টক মিষ্টি আলু গ্লাস নুডলস)",
+    "descriptionBn": "মিষ্টি আলু গ্লাস নুডুলস একটি জ্বলন্ত, টক ঝোলের উপরে খাস্তা সয়াবিন এবং তাজা ধনেপাতা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "zha-jiang-mian",
@@ -7362,33 +7362,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Zha Jiang Mian (Beijing Meat বাটা / পেস্ট Noodles)",
-    "descriptionBn": "Thick wheat noodles topped দিয়ে a rich, dark এবং sweet minced pork sauce made from fermented soybean বাটা / পেস্ট.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ঝা জিয়াং মিয়ান (বেইজিং মিট পেস্ট নুডলস)",
+    "descriptionBn": "ঘন গমের নুডলসের উপরে একটি সমৃদ্ধ, গাঢ় এবং মিষ্টি কিমা করা শুয়োরের মাংসের সস রয়েছে যা গাঁজানো সয়াবিন পেস্ট থেকে তৈরি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "mango-pudding",
@@ -7461,33 +7461,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Creamy Sweet Mango Pudding",
-    "descriptionBn": "A popular Cantonese dim sum dessert—silky smooth mango pudding made দিয়ে sweet mango pulp এবং দুধ.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional chinese kitchens."
+    "titleBn": "ক্রিমি মিষ্টি আমের পুডিং",
+    "descriptionBn": "একটি জনপ্রিয় ক্যান্টনিজ ডিম সাম ডেজার্ট - মিষ্টি আমের সজ্জা এবং দুধ দিয়ে তৈরি সিল্কি মসৃণ আমের পুডিং।",
+    "culturalNoteBn": "ঐতিহ্যবাহী চীনা রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "spaghetti-carbonara-special",
@@ -7549,7 +7549,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -7567,33 +7567,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "স্প্যাগেটি alla Carbonara",
-    "descriptionBn": "Classic Roman pasta tossed দিয়ে crispy cured pork (guanciale), raw ডিম yolks এবং Pecorino Romano.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "স্প্যাগেটি আল্লা কার্বোনারা",
+    "descriptionBn": "ক্লাসিক রোমান পাস্তা খসখসে নিরাময় করা শুয়োরের মাংস (গুয়ানশিয়াল), কাঁচা ডিমের কুসুম এবং পেকোরিনো রোমানো দিয়ে টস করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "caprese-salad-special",
@@ -7655,7 +7655,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -7673,33 +7673,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Caprese Salad (Insalata Caprese)",
-    "descriptionBn": "Simple summer salad sliced sweet tomatoes, creamy mozzarella, fresh basil এবং extra virgin অলিভ অয়েল.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ক্যাপ্রেস সালাদ (ইনসালাটা ক্যাপ্রেস)",
+    "descriptionBn": "কাটা মিষ্টি টমেটো, ক্রিমি মোজারেলা, তাজা তুলসী এবং অতিরিক্ত কুমারী জলপাই তেলের সাধারণ গ্রীষ্মকালীন সালাদ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "minestrone-soup-special",
@@ -7761,7 +7761,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -7779,33 +7779,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Classic Italian Minestrone Soup",
-    "descriptionBn": "Comforting, healthy vegetable soup slow-simmered দিয়ে white beans, pasta এবং fresh herbs.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ক্লাসিক ইতালিয়ান মিনেস্ট্রোন স্যুপ",
+    "descriptionBn": "আরামদায়ক, স্বাস্থ্যকর উদ্ভিজ্জ স্যুপ সাদা মটরশুটি, পাস্তা এবং তাজা ভেষজ দিয়ে ধীরে ধীরে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "focaccia-barese-special",
@@ -7867,7 +7867,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -7885,33 +7885,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Fluffy Rosemary Focaccia Bread",
-    "descriptionBn": "অলিভ অয়েল rich, dimpled Italian yeast bread topped দিয়ে coarse sea লবণ এবং fresh rosemary.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ফ্লফি রোজমেরি ফোকাসিয়া রুটি",
+    "descriptionBn": "জলপাই-তেল সমৃদ্ধ, ডিম্পড ইতালীয় খামির রুটির উপরে মোটা সামুদ্রিক লবণ এবং তাজা রোজমেরি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "cacio-e-pepe-special",
@@ -7973,7 +7973,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -7991,33 +7991,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Roman Cacio e Pepe Pasta",
-    "descriptionBn": "A minimalist pasta dish emulsified দিয়ে toasted black peppercorns এবং sharp Pecorino Romano cheese.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "রোমান ক্যাসিও ই পেপে পাস্তা",
+    "descriptionBn": "টোস্ট করা কালো গোলমরিচ এবং তীক্ষ্ণ পেকোরিনো রোমানো পনির দিয়ে ইমালসিফাইড একটি মিনিমালিস্ট পাস্তা ডিশ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tiramisu-special",
@@ -8079,7 +8079,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8097,33 +8097,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Authentic Espresso Tiramisu",
-    "descriptionBn": "Ladyfinger biscuits soaked in strong espresso এবং rum, layered দিয়ে rich whipped mascarpone cream.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "খাঁটি এসপ্রেসো তিরামিসু",
+    "descriptionBn": "লেডিফিঙ্গার বিস্কুটগুলি শক্তিশালী এসপ্রেসো এবং রমে ভিজিয়ে, সমৃদ্ধ হুইপড মাস্কারপোন ক্রিম দিয়ে স্তরিত।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "osso-buco",
@@ -8185,7 +8185,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8203,28 +8203,28 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "বাছুরের পায়ের মাংসের খণ্ডগুলোতে ময়দা, লবণ ও গোলমরিচ মাখিয়ে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "ভারি পাত্রে অলিভ অয়েল ও মাখন গরম করে মাংসের খণ্ডগুলোর উভয় পাশ গাঢ় বাদামী করে ভেজে তুলে রাখুন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "একই পাত্রে পেঁয়াজ, গাজর, সেলারি ও রসুন কুচি নরম হওয়া পর্যন্ত সাঁতলে নিন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "মাংসের খণ্ডগুলো পাত্রে ফিরিয়ে দিয়ে টমেটো ও ব্রথ ঢেলে দিন।"
       }
     ],
     "titleBn": "ওসো বুকো (ইতালীয় স্টাইল গরুর পায়া বা মাংস)",
@@ -8291,7 +8291,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8309,33 +8309,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Risotto alla Milanese (Saffron Arborio Rice)",
-    "descriptionBn": "Creamy Arborio rice slow-cooked in rich beef broth, scented দিয়ে saffron threads এবং parmesan.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "রিসোটো আল্লা মিলানিজ (জাফরান আরবোরিও রাইস)",
+    "descriptionBn": "ক্রিমি আরবোরিও চাল ধীর-স্থিরভাবে রান্না করা গরুর মাংসের ঝোল, জাফরান থ্রেড এবং পারমেসান দিয়ে সুগন্ধযুক্ত।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "gnocchi-patate",
@@ -8397,7 +8397,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8415,33 +8415,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Gnocchi di Patate (Fluffy আলু Gnocchi)",
-    "descriptionBn": "Soft, pillow-like আলু dumplings tossed in a light, sweet মাখন এবং fresh sage sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "Gnocchi di Patate (Fluffy Potato Gnocchi)",
+    "descriptionBn": "নরম, বালিশের মতো আলুর ডাম্পলিংগুলি হালকা, মিষ্টি মাখন এবং তাজা ঋষি সসে ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "lasagna-bolognese",
@@ -8503,7 +8503,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8521,33 +8521,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Lasagna alla Bolognese (Slow-Braised Ragu)",
-    "descriptionBn": "Layers fresh ডিম pasta, slow-cooked beef ragu, creamy bechamel sauce এবং plenty parmesan.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "লাসাগনা আল্লা বোলোগনিজ (ধীরে-ব্রেজড রাগু)",
+    "descriptionBn": "তাজা ডিম পাস্তার স্তর, ধীরে ধীরে রান্না করা গরুর মাংস রাগু, ক্রিমি বেচামেল সস এবং প্রচুর পারমেসান।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "saltimbocca",
@@ -8609,7 +8609,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8627,33 +8627,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Saltimbocca alla Romana (Veal wrapped in Prosciutto)",
-    "descriptionBn": "Thin veal cutlets topped দিয়ে fresh sage leaves, wrapped in prosciutto এবং pan-fried in white wine.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "সালটিম্বোকা আল্লা রোমানা (প্রোসিউত্তোতে মোড়ানো ভেল)",
+    "descriptionBn": "তাজা ঋষি পাতার সাথে শীর্ষে থাকা পাতলা ভেলের কাটলেট, প্রসিউটোতে মোড়ানো এবং সাদা ওয়াইনে প্যান-ভাজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "bruschetta-pomodoro",
@@ -8715,7 +8715,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8733,33 +8733,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "টমেটো & Basil রসুন Bruschetta",
-    "descriptionBn": "Toasted rustic bread rubbed দিয়ে raw রসুন লবঙ্গ, topped দিয়ে sweet diced tomatoes এবং fresh basil.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "টমেটো এবং বেসিল রসুন ব্রুশেটা",
+    "descriptionBn": "টোস্ট করা দেহাতি রুটি কাঁচা রসুনের লবঙ্গ দিয়ে ঘষে, টমেটো এবং তাজা তুলসী দিয়ে টপ করে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "panzanella",
@@ -8821,7 +8821,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8839,33 +8839,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Panzanella (Tuscan টমেটো & Stale Bread Salad)",
-    "descriptionBn": "A rustic Tuscan summer salad sweet tomatoes, cucumbers এবং soaked stale bread cubes in অলিভ অয়েল.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "প্যানজানেলা (টাসকান টমেটো এবং বাসি রুটি সালাদ)",
+    "descriptionBn": "মিষ্টি টমেটো, শসা এবং জলপাই তেলে ভিজিয়ে রাখা বাসি রুটির কিউবগুলির একটি গ্রামীণ টাস্কান গ্রীষ্মকালীন সালাদ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "panna-cotta",
@@ -8927,7 +8927,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -8945,33 +8945,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Vanilla Bean Panna Cotta দিয়ে Berry Compote",
-    "descriptionBn": "A silky, smooth ঠান্ডা cream dessert flavored দিয়ে vanilla bean, topped দিয়ে a tart berry reduction.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "বেরি কম্পোটের সাথে ভ্যানিলা বিন পান্না কোটা",
+    "descriptionBn": "ভ্যানিলা বিন সহ একটি সিল্কি, মসৃণ ঠাণ্ডা ক্রিম ডেজার্ট স্বাদযুক্ত, একটি টার্ট বেরি হ্রাসের সাথে শীর্ষে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "penne-vodka-special",
@@ -9033,7 +9033,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9051,33 +9051,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Penne alla Vodka",
-    "descriptionBn": "Tossed pasta in a rich, velvety orange sauce crushed tomatoes, ভারী ক্রিম, রসুন এবং vodka.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "পেনে আল্লা ভদকা",
+    "descriptionBn": "চূর্ণ টমেটো, ভারী ক্রিম, রসুন এবং ভদকার একটি সমৃদ্ধ, মখমল কমলা সসে পাস্তা ফেলে দেওয়া।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "margherita-pizza",
@@ -9139,7 +9139,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9157,33 +9157,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "ওভেন সর্বোচ্চ তাপমাত্রায় (প্রায় ২৫০° সেলসিয়াস) প্রি-হিট করে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "পিৎজা ডো হাতের সাহায্যে চেপে গোল ও পাতলা করে ছড়িয়ে নিন, কিনারার অংশ সামান্য মোটা রাখুন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "ডো-এর ওপর টমেটো সস ভালো করে ছড়িয়ে দিন, চারপাশের কিনারা সামান্য ফাঁকা রাখুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "তাজা মোজারেলা পনিরের টুকরো সমানভাবে ছড়িয়ে দিন এবং সামান্য অলিভ অয়েল ছিটিয়ে দিন।"
       }
     ],
-    "titleBn": "পিজ্জা মার্গারিটা (ক্লাসিক নেপোলিটান পিজ্জা)",
-    "descriptionBn": "হাতে গড়া পাতলা ডো এর ওপর তাজা টমেটো সস, মোজারেলা চিজ, তাজা তুলসী পাতা এবং সামান্য অতিরিক্ত ভার্জিন অলিভ অয়েল দিয়ে তৈরি ঐতিহ্যবাহী ইতালীয় পিজ্জা।",
-    "culturalNoteBn": "১৮৮৯ সালে রানী মার্গারিটার সম্মানে ইতালির পতাকার তিন রঙে (লাল টমেটো, সাদা চিজ ও সবুজ তুলসী) এই পিজ্জা প্রথম তৈরি করা হয়।"
+    "titleBn": "মার্গেরিটা পিৎজা (ক্লাসিক ইতালিয়ান পিৎজা)",
+    "descriptionBn": "পাতলা ক্রাস্টের ওপর তাজা টমেটো সস, মোজারেলা পনির, তুলসী পাতা ও অলিভ অয়েল দিয়ে কাঠপোড়া ওভেনে বেক করা ঐতিহ্যবাহী নেপোলিটান পিৎজা।",
+    "culturalNoteBn": "ইতালির রানি মার্গেরিটার সম্মানে ১৮৮৯ সালে এই পিৎজা তৈরি হয়, যার লাল, সাদা ও সবুজ উপাদান ইতালির পতাকাকে নির্দেশ করে।"
   },
   {
     "id": "arancini",
@@ -9245,7 +9245,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9263,33 +9263,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Arancini di Riso (Crispy Cheese-Stuffed Rice Balls)",
-    "descriptionBn": "Crispy deep-fried saffron rice balls stuffed দিয়ে a heart melting mozzarella এবং peas.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "আরানসিনি ডি রিসো (ক্রিস্পি চিজ-স্টাফড রাইস বল)",
+    "descriptionBn": "ক্রিস্পি ডিপ-ভাজা জাফরান চালের বলগুলি গলিত মোজারেলা এবং মটর দিয়ে ভরা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "vitello-tonnato",
@@ -9351,7 +9351,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9369,33 +9369,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Vitello Tonnato (Cold Sliced Veal in Creamy Tuna Sauce)",
-    "descriptionBn": "Thinly sliced cold veal leg topped দিয়ে a luxurious, creamy sauce emulsified tuna, capers এবং anchovies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ভিটেলো টোনাটো (ক্রিমি টুনা সসে কোল্ড স্লাইসড ভিল)",
+    "descriptionBn": "পাতলা করে কাটা কোল্ড ভেলের পায়ে ইমালসিফাইড টুনা, কেপার এবং অ্যাঙ্কোভিসের বিলাসবহুল, ক্রিমি সস দিয়ে শীর্ষে রয়েছে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "polenta-taragna",
@@ -9457,7 +9457,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9475,33 +9475,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Creamy Buttered Cornmeal Polenta",
-    "descriptionBn": "Slow-cooked yellow cornmeal whipped দিয়ে rich মাখন এবং parmesan cheese, served গরম গরম.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ক্রিমি বাটারড কর্নমিল পোলেন্টা",
+    "descriptionBn": "ধীর-স্থির রান্না করা হলুদ ভুট্টা, সমৃদ্ধ মাখন এবং পারমেসান পনির দিয়ে চাবুক, গরম পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "melanzane-parmigiana",
@@ -9563,7 +9563,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9581,33 +9581,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "বেগুন Parmigiana (Baked বেগুন layers)",
-    "descriptionBn": "Layers fried eggplants, rich টমেটো marinara এবং fresh mozzarella baked to bubbly.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "বেগুন পারমিগিয়ানা (বেকড বেগুনের স্তর)",
+    "descriptionBn": "ভাজা বেগুনের স্তর, সমৃদ্ধ টমেটো মেরিনারা, এবং তাজা মোজারেলা বুদবুদ পর্যন্ত বেকড।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pappa-al-pomodoro",
@@ -9669,7 +9669,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9687,33 +9687,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pappa al Pomodoro (Tuscan টমেটো & Bread Soup)",
-    "descriptionBn": "Thick, comforting Tuscan porridge soup made ripe sweet tomatoes, রসুন, stale bread এবং অলিভ অয়েল.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "পাপ্পা আল পোমোডোরো (টাসকান টমেটো এবং রুটির স্যুপ)",
+    "descriptionBn": "পাকা মিষ্টি টমেটো, রসুন, বাসি রুটি এবং জলপাই তেল দিয়ে তৈরি পুরু, আরামদায়ক টাস্কান পোরিজ স্যুপ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "ribollita",
@@ -9775,7 +9775,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9793,33 +9793,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Ribollita (Tuscan White Bean & Kale Stew)",
-    "descriptionBn": "A hearty Tuscan double-boiled peasant soup white cannellini beans, black kale এবং day-old bread.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "রিবোলিটা (টাস্কান হোয়াইট বিন এবং কেল স্টু)",
+    "descriptionBn": "সাদা ক্যানেলিনি মটরশুটি, কালো কেল এবং দিনের পুরানো রুটির একটি হৃদয়গ্রাহী টাস্কান ডাবল-সিদ্ধ কৃষক স্যুপ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "amaretti-cookies",
@@ -9881,7 +9881,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -9899,33 +9899,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Baked Sweet Almond Amaretti Cookies",
-    "descriptionBn": "Chewy, sweet almond-flavored cookies made ground almonds, sugar এবং ডিম whites ফেটিয়ে নিন.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "বেকড মিষ্টি বাদাম আমরেটি কুকিজ",
+    "descriptionBn": "চিবানো, মিষ্টি বাদাম-স্বাদযুক্ত কুকিজ যা মাটির বাদাম, চিনি এবং ডিমের সাদা অংশ দিয়ে তৈরি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pesto-alla-genovese",
@@ -9987,7 +9987,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10005,33 +10005,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "স্প্যাগেটি al Pesto (Fresh Genovese Basil Pesto)",
-    "descriptionBn": "স্প্যাগেটি tossed দিয়ে a raw, vibrant green sauce ground sweet basil, রসুন, pine nuts এবং pecorino.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "স্প্যাগেটি আল পেস্টো (ফ্রেশ জেনোভেস বেসিল পেস্টো)",
+    "descriptionBn": "স্প্যাগেটি মাটির মিষ্টি তুলসী, রসুন, পাইন বাদাম এবং পেকোরিনোর একটি কাঁচা, প্রাণবন্ত সবুজ সস দিয়ে ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "cacciatore",
@@ -10093,7 +10093,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10111,33 +10111,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pollo alla Cacciatore (Hunter's Style Braised Chicken)",
-    "descriptionBn": "Chicken thighs slow-braised দিয়ে sweet bell peppers, red onions, রসুন এবং rosemary in red wine.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "পোলো আল্লা ক্যাকিয়াটোর (হান্টারের স্টাইল ব্রেইজড চিকেন)",
+    "descriptionBn": "মুরগির উরুতে মিষ্টি বেল মরিচ, লাল পেঁয়াজ, রসুন এবং লাল ওয়াইনে রোজমেরি দিয়ে ধীরে ধীরে ব্রেস করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "sfogliatella",
@@ -10199,7 +10199,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10217,33 +10217,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Flaky Neapolitan Shell-shaped Custard Pastries",
-    "descriptionBn": "Incredibly multi-layered, crispy puff pastry shell filled দিয়ে a sweet ricotta এবং সুজি cream.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ফ্ল্যাকি নেপোলিটান শেল আকৃতির কাস্টার্ড পেস্ট্রি",
+    "descriptionBn": "অবিশ্বাস্যভাবে বহু-স্তরযুক্ত, ক্রিস্পি পাফ প্যাস্ট্রি শেল একটি মিষ্টি রিকোটা এবং সুজি ক্রিম দিয়ে ভরা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "cannoli-siciliani",
@@ -10305,7 +10305,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10323,33 +10323,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Crispy Sweet Sheep-দুধ Mascarpone Cannoli",
-    "descriptionBn": "Crispy fried pastry shells stuffed দিয়ে a sweet, creamy filling whipped sheep-দুধ ricotta.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ক্রিস্পি মিষ্টি ভেড়া-দুধ মাস্কারপোন ক্যানোলি",
+    "descriptionBn": "খাস্তা ভাজা পেস্ট্রি শাঁস একটি মিষ্টি, ক্রিমি ভরাট চাবুক ভেড়া-দুধ ricotta সঙ্গে স্টাফ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "ciabatta",
@@ -10411,7 +10411,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10429,33 +10429,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "High-hydration Crusty Italian Ciabatta Loaf",
-    "descriptionBn": "Floury, crusty yeast bread featuring an incredibly airy crumb, perfect for sandwiches.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "উচ্চ-হাইড্রেশন ক্রাস্টি ইতালীয় Ciabatta লোফ",
+    "descriptionBn": "স্যান্ডউইচের জন্য নিখুঁত একটি অবিশ্বাস্যভাবে বাতাসযুক্ত ক্রাম্ব সমন্বিত ময়দার, খসখসে খামিরের রুটি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "cuttlefish-ink-risotto",
@@ -10517,7 +10517,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10535,33 +10535,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Risotto al Nero di Seppia (Black Ink Risotto)",
-    "descriptionBn": "Arborio rice cooked in seafood broth দিয়ে cuttlefish ink, giving it a dramatic black color.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "রিসোটো আল নেরো ডি সেপিয়া (কালো কালি রিসোটো)",
+    "descriptionBn": "আরবোরিও চাল সীফুড ব্রোথে কাটা মাছের কালি দিয়ে রান্না করা হয়, এটি একটি নাটকীয় কালো রঙ দেয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tortellini-in-brodo",
@@ -10623,7 +10623,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10641,33 +10641,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Hand-folded Pork Tortellini in Clear Capon Broth",
-    "descriptionBn": "Tiny hand-folded pasta pockets stuffed দিয়ে pork এবং parmesan, served in steaming clear capon broth.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ক্লিয়ার ক্যাপন ব্রোথে হাত-ভাঁজ করা শুয়োরের মাংস টর্টেলিনি",
+    "descriptionBn": "ছোট হাত-ভাঁজ করা পাস্তা পকেট শুয়োরের মাংস এবং পারমেসান দিয়ে ঠাসা, পরিষ্কার ক্যাপন ব্রোথ বাষ্পে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "bagna-cauda",
@@ -10729,7 +10729,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10747,33 +10747,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Piedmontese গরম গরম রসুন & Anchovy অলিভ অয়েল Dip",
-    "descriptionBn": "A rich, savory গরম গরম dip made melted anchovies, রসুন, অলিভ অয়েল এবং মাখন, served দিয়ে raw veggies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "পাইডমন্টিজ গরম রসুন এবং অ্যাঙ্কোভি অলিভ অয়েল ডিপ",
+    "descriptionBn": "গলিত অ্যাঙ্কোভিস, রসুন, জলপাই তেল এবং মাখন দিয়ে তৈরি একটি সমৃদ্ধ, সুস্বাদু উষ্ণ ডিপ, কাঁচা সবজির সাথে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "limoncello-sorbet",
@@ -10835,7 +10835,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10853,33 +10853,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Refreshing লেবু Zest Limoncello Sorbet",
-    "descriptionBn": "Refreshing icy dessert made squeezed fresh লেবু juice, sugar syrup এবং Limoncello liqueur.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "রিফ্রেশিং লেমন জেস্ট লিমনসেলো শরবত",
+    "descriptionBn": "তাজা লেবুর রস, চিনির শরবত এবং লিমনসেলো লিকার দিয়ে তৈরি রিফ্রেশিং বরফের মিষ্টি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "spaghetti-puttanesca",
@@ -10941,7 +10941,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -10959,33 +10959,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "স্প্যাগেটি alla Puttanesca (Olives & Capers)",
-    "descriptionBn": "Pasta tossed in a savory, aromatic টমেটো sauce দিয়ে black olives, capers, রসুন এবং anchovies.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "স্প্যাগেটি আল্লা পুটানেস্কা (অলিভ এবং ক্যাপার)",
+    "descriptionBn": "কালো জলপাই, ক্যাপার, রসুন এবং অ্যাঙ্কোভিস সহ একটি সুস্বাদু, সুগন্ধযুক্ত টমেটো সসে পাস্তা ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "ragu-napoletano",
@@ -11047,7 +11047,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -11065,33 +11065,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Neapolitan Slow-Cooked Pork Meat Ragu",
-    "descriptionBn": "Pork shoulder slow-simmered for ৬ ঘণ্টা in rich টমেটো বাটা / পেস্ট until meat completely breaks down.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "নেপোলিটান ধীরে-সিদ্ধ শুয়োরের মাংস রাগু",
+    "descriptionBn": "শুয়োরের মাংসের কাঁধে ৬ ঘন্টার জন্য ধীরস্থির টমেটো পেস্টে সিদ্ধ করুন যতক্ষণ না মাংস সম্পূর্ণরূপে ভেঙে যায়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "frittata-d-erbe",
@@ -11153,7 +11153,7 @@ export const restRecipes = [
         "preparation": "grated",
         "isEssential": false,
         "group": "Finishing",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -11171,33 +11171,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Fluffy Garden Herb এবং Parmesan Omelet",
-    "descriptionBn": "Fluffy Italian ডিম frittata cooked দিয়ে fresh পার্সলে পাতা, basil এবং grated parmesan cheese.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional italian kitchens."
+    "titleBn": "ফ্লফি গার্ডেন হার্ব এবং পারমেসান ওমেলেট",
+    "descriptionBn": "ফ্লফি ইতালীয় ডিমের ফ্রিটাটা তাজা পার্সলে, বেসিল এবং গ্রেট করা পারমেসান পনির দিয়ে রান্না করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী ইতালিয়ান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pozole-rojo-special",
@@ -11288,33 +11288,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pozole Rojo (Pork & Hominy Red Soup)",
-    "descriptionBn": "A rich, comforting soup hominy ভুট্টা এবং pork cooked in a red guajillo chili broth.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "পোজোল রোজো (শুয়োরের মাংস এবং হোমিনি রেড স্যুপ)",
+    "descriptionBn": "লাল গুয়াজিলো মরিচের ঝোল দিয়ে রান্না করা হোমিনি কর্ন এবং শুয়োরের মাংসের একটি সমৃদ্ধ, আরামদায়ক স্যুপ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "guacamole-clasico-special",
@@ -11405,33 +11405,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Guacamole Clasico দিয়ে Tortilla Chips",
-    "descriptionBn": "Pounded অ্যাভোকাডো dip mixed দিয়ে fresh jalapeños, onions, tomatoes, coriander এবং কাগজি লেবু.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "টর্টিলা চিপসের সাথে গুয়াকামোল ক্লাসিকো",
+    "descriptionBn": "পাউন্ডেড অ্যাভোকাডো ডিপ তাজা জলপেনো, পেঁয়াজ, টমেটো, ধনে এবং চুনের সাথে মিশ্রিত।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tres-leches-special",
@@ -11522,33 +11522,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Tres Leches Sponge Cake",
-    "descriptionBn": "A dense, delicious sponge cake soaked in condensed, evaporated এবং whole দুধ, topped দিয়ে cream.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ট্রেস লেচেস স্পঞ্জ কেক",
+    "descriptionBn": "একটি ঘন, সুস্বাদু স্পঞ্জ কেক ঘনীভূত, বাষ্পীভূত এবং পুরো দুধে ভিজিয়ে, ক্রিম দিয়ে শীর্ষে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "carne-asada-tacos-special",
@@ -11639,33 +11639,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Carne Asada Tacos দিয়ে কাগজি লেবু & Onion",
-    "descriptionBn": "Flank steak marinated in citrus এবং রসুন, flame-grilled এবং served on soft ভুট্টা tortillas.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "চুন এবং পেঁয়াজের সাথে কার্নে আসাদা টাকোস",
+    "descriptionBn": "ফ্ল্যাঙ্ক স্টেক সাইট্রাস এবং রসুনে ম্যারিনেট করা, শিখা-ভাজা এবং নরম ভুট্টার টর্টিলাগুলিতে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "chilaquiles-rojos-special",
@@ -11756,33 +11756,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chilaquiles Rojos দিয়ে Cotija & Eggs",
-    "descriptionBn": "Crispy ভুট্টার রুটি (টর্টিয়া) chips simmered in a red guajillo sauce, topped দিয়ে cotija cheese এবং fried eggs.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "কোটিজা এবং ডিমের সাথে চিলাকুইলস রোজোস",
+    "descriptionBn": "ক্রিস্পি কর্ন টর্টিলা চিপস একটি লাল গুয়াজিলো সসে সিদ্ধ করা হয়, যার উপরে কোটিজা পনির এবং ভাজা ডিম।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tacos-al-pastor",
@@ -11873,33 +11873,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "মরিচ গুঁড়ো, লেবুর রস, রসুন কুচি, সামান্য পানি ও লবণ মিশিয়ে মসৃণ মেরিনেড তৈরি করুন। শুকরের মাংসের পাতলা টুকরো এতে মেখে ২ ঘণ্টা রাখুন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "শুকনো প্যানে মাংসের টুকরোগুলো উচ্চ আঁচে প্রতি পাশ ২-৩ মিনিট ঝলসে নিন, এরপর ছোট ফালিতে কেটে নিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "একই প্যানে মিষ্টি আনারসের টুকরো দিয়ে ক্যারামেলাইজ হওয়া পর্যন্ত হালকা ভেজে নিন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "শুকনো তাওয়ায় কর্ন তর্তিয়া উভয় পাশে ৩০ সেকেন্ড করে গরম করে নরম করে নিন।"
       }
     ],
-    "titleBn": "টাকোস আল পাস্তোর (মেক্সিকান মশলাদার পর্ক বা চিকেন টাকো)",
-    "descriptionBn": "শুকনো লাল মরিচ ও মশলায় মেরিনেট করা মাংস কয়লার আগুনে পুড়িয়ে তাজা আনারস, পেঁয়াজ ও ধনেপাতা কুচিসহ ভুট্টার টর্টিয়ায় পরিবেশিত টাকো।",
-    "culturalNoteBn": "লেবানিজ অভিবাসীদের শাওয়ার্মা রান্নার কৌশল এবং মেক্সিকান ফ্লেভারের সংমিশ্রণে এই ঐতিহাসিক টাকোটির জন্ম।"
+    "titleBn": "টাকোস আল পাস্টর (মশলাদার পর্ক ও আনারস ট্যাকো)",
+    "descriptionBn": "মরিচ ও লেবুর রসে মেরিনেট করা গ্রিলড মাংস ও ক্যারামেলাইজড আনারসের টুকরো দিয়ে তৈরি ক্লাসিক মেক্সিকান স্ট্রিট ট্যাকো।",
+    "culturalNoteBn": "লেবানিজ অভিবাসীদের শাওয়ার্মা টেকনিক থেকে মেক্সিকোর এই সবচেয়ে বিখ্যাত স্ট্রিট ট্যাকোর জন্ম।"
   },
   {
     "id": "enchiladas-verdes",
@@ -11990,33 +11990,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Enchiladas Verdes (Shredded Chicken Salsa Verde)",
-    "descriptionBn": "Rolled ভুট্টা tortillas stuffed দিয়ে chicken, baked in a sharp tomatillo salsa verde, topped দিয়ে cheese.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "এনচিলাডাস ভার্দেস (কাটা মুরগির সালসা ভার্দে)",
+    "descriptionBn": "রোলড কর্ন টর্টিলা চিকেন দিয়ে ভরা, একটি ধারালো টমাটিলো সালসা ভার্দেতে বেক করা, পনির দিয়ে শীর্ষে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "carnitas-michoacanas",
@@ -12107,33 +12107,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Carnitas (Slow-Simmered Crispy Pork Shoulder)",
-    "descriptionBn": "Pork shoulder slow-simmered in lard, orange peel এবং spices until tender, then fried until crispy.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "কার্নিটাস (ধীরে-সিমার করা ক্রিস্পি পোর্ক শোল্ডার)",
+    "descriptionBn": "শুয়োরের মাংসের কাঁধে ধীরে ধীরে সিদ্ধ করা হয় লার্ড, কমলার খোসা এবং মশলা না হওয়া পর্যন্ত, তারপরে ক্রিস্পি হওয়া পর্যন্ত ভাজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tostadas-tinga",
@@ -12224,33 +12224,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chicken Tinga Tostadas (Chipotle Shredded Chicken)",
-    "descriptionBn": "Crispy flat ভুট্টা tostadas topped দিয়ে shredded chicken slow-simmered in a smoky chipotle-টমেটো sauce.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "চিকেন টিঙ্গা তোস্তাদাস (চিপটল টুকরো টুকরো মুরগি)",
+    "descriptionBn": "ক্রিস্পি ফ্ল্যাট কর্ন টোস্টাডাস শীর্ষে কাটা মুরগির সাথে ধোঁয়াটে চিপটল-টমেটো সস দিয়ে ধীরে ধীরে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "mole-poblano",
@@ -12341,33 +12341,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mole Poblano (Rich Chili-Chocolate Chicken)",
-    "descriptionBn": "Chicken pieces simmered in a highly complex, dark sauce dried chilies, seeds এবং Mexican dark chocolate.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "মোল পোবলানো (রিচ চিলি-চকোলেট চিকেন)",
+    "descriptionBn": "মুরগির টুকরোগুলি শুকনো লঙ্কা, বীজ এবং মেক্সিকান ডার্ক চকোলেটের একটি অত্যন্ত জটিল, গাঢ় সসে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pico-de-gallo",
@@ -12458,33 +12458,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pico de Gallo (Fresh টমেটো, কাগজি লেবু & Onion Salsa)",
-    "descriptionBn": "Fresh salsa chopped red tomatoes, white onions, fresh jalapeños, coriander এবং কাগজি লেবু juice.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "পিকো ডি গ্যালো (তাজা টমেটো, চুন এবং পেঁয়াজ সালসা)",
+    "descriptionBn": "কাটা লাল টমেটো, সাদা পেঁয়াজ, তাজা জলপেনো, ধনে এবং লেবুর রসের তাজা সালসা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "sopa-de-lima",
@@ -12575,33 +12575,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sopa de Lima (Yucatecan Citrus Chicken Soup)",
-    "descriptionBn": "Shredded chicken soup in a light broth scented দিয়ে fragrant Yucatecan sweet limes.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "সোপা ডি লিমা (ইউকেটকান সাইট্রাস চিকেন স্যুপ)",
+    "descriptionBn": "সুগন্ধি ইউকাটেকান মিষ্টি চুন দিয়ে সুগন্ধযুক্ত হালকা ঝোলের মধ্যে কাটা মুরগির স্যুপ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "horchata-mexicana",
@@ -12692,33 +12692,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Agua de Horchata (Sweet Cinnamon Rice দুধ)",
-    "descriptionBn": "ঠান্ডা, sweet এবং highly refreshing drink made blended white rice, cinnamon sticks এবং দুধ.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "Agua de Horchata (মিষ্টি দারুচিনি চালের দুধ)",
+    "descriptionBn": "মিশ্রিত সাদা চাল, দারুচিনি লাঠি এবং দুধ দিয়ে তৈরি ঠান্ডা, মিষ্টি এবং অত্যন্ত সতেজ পানীয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "flan-mexicano",
@@ -12809,33 +12809,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mexican Caramel Flan Custard",
-    "descriptionBn": "A rich, creamy baked custard topped দিয়ে a sweet, bitter caramelized sugar glaze.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "মেক্সিকান ক্যারামেল ফ্লান কাস্টার্ড",
+    "descriptionBn": "একটি সমৃদ্ধ, ক্রিমি বেকড কাস্টার্ডের উপরে একটি মিষ্টি, তেতো ক্যারামেলাইজড চিনির গ্লেজ।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "quesadillas-flor",
@@ -12926,33 +12926,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Squash Blossom এবং Oaxaca Cheese Quesadillas",
-    "descriptionBn": "Soft ভুট্টা tortillas folded over melting string cheese এবং delicate yellow squash blossoms, cooked on a comal.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "স্কোয়াশ ব্লসম এবং ওক্সাকা চিজ কুয়েসাডিলাস",
+    "descriptionBn": "নরম ভুট্টা টর্টিলা গলিত স্ট্রিং পনির এবং সূক্ষ্ম হলুদ স্কোয়াশ ফুলের উপর ভাঁজ করে, একটি কোমলের উপর রান্না করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "tamales-rojos",
@@ -13043,33 +13043,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Pork Tamales in Red Chili Masa Wraps",
-    "descriptionBn": "Nixtamalized ভুট্টা dough stuffed দিয়ে shredded pork in red chili sauce, wrapped in ভুট্টা husks এবং ভাপে দিন.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "লাল মরিচ মাসা মোড়ানো শুকরের মাংস Tamales",
+    "descriptionBn": "লাল মরিচের সসে কাটা শুয়োরের মাংসের সাথে নিক্সটামালাইজড কর্ন ডু স্টাফ করা হয়, ভুট্টার ভুসিতে মুড়িয়ে বাষ্প করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "huevos-rancheros",
@@ -13160,33 +13160,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Huevos Rancheros (Fried Eggs on Tortillas)",
-    "descriptionBn": "Fried eggs served over lightly fried ভুট্টা tortillas, topped দিয়ে গরম গরম, spicy red salsa এবং beans.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "Huevos Rancheros (টরটিলাসে ভাজা ডিম)",
+    "descriptionBn": "ভাজা ডিম হালকা ভাজা কর্ন টর্টিলার উপরে পরিবেশন করা হয়, উপরে উষ্ণ, মশলাদার লাল সালসা এবং মটরশুটি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "cochinita-pibil",
@@ -13277,33 +13277,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Cochinita Pibil (Yucatecan Achiote Roasted Pork)",
-    "descriptionBn": "Pork shoulder marinated in sour orange এবং achiote বাটা / পেস্ট, wrapped in কলা leaves এবং slow-roasted.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "কোচিনিতা পিবিল (ইউকেটকান অ্যাচিওট রোস্টেড শুয়োরের মাংস)",
+    "descriptionBn": "শুয়োরের মাংসের কাঁধে টক কমলা এবং অ্যাচিওট পেস্টে ম্যারিনেট করা, কলা পাতায় মোড়ানো এবং ধীরে ধীরে ভাজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "chiles-en-nogada",
@@ -13394,33 +13394,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chiles en Nogada (Poblano in Walnut Cream)",
-    "descriptionBn": "Poblano chilies stuffed দিয়ে spiced ground beef এবং fruits, topped দিয়ে sweet walnut cream এবং pomegranate.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "চিলিস এন নোগাদা (আখরোট ক্রিমে পোবলানো)",
+    "descriptionBn": "পোবলানো মরিচ মসলাযুক্ত গ্রাউন্ড গরুর মাংস এবং ফল দিয়ে স্টাফ, মিষ্টি আখরোট ক্রিম এবং ডালিম দিয়ে শীর্ষে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "elote-callejero",
@@ -13511,33 +13511,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Elote (Mexican Grilled Street ভুট্টা)",
-    "descriptionBn": "Grilled sweet ভুট্টা on cob brushed দিয়ে mayonnaise, rolled in cotija cheese, মরিচ গুঁড়ো এবং কাগজি লেবু.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "এলোট (মেক্সিকান গ্রিলড স্ট্রিট কর্ন)",
+    "descriptionBn": "মেয়োনিজ দিয়ে ব্রাশ করা কোবের উপর ভাজা সুইট কর্ন, কোটিজা পনির, মরিচের গুঁড়ো এবং চুন দিয়ে ঘূর্ণিত।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "sopa-tarasca",
@@ -13628,33 +13628,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Tarascan Bean Soup দিয়ে Crispy Tortilla Strips",
-    "descriptionBn": "A rich, blended black bean এবং টমেটো soup, garnished দিয়ে crispy fried ভুট্টার রুটি (টর্টিয়া) strips.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ক্রিস্পি টর্টিলা স্ট্রিপ সহ তারাস্কান বিন স্যুপ",
+    "descriptionBn": "একটি সমৃদ্ধ, মিশ্রিত কালো মটরশুটি এবং টমেটো স্যুপ, ক্রিস্পি ভাজা কর্ন টর্টিলা স্ট্রিপ দিয়ে সজ্জিত।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "birria-de-res",
@@ -13745,33 +13745,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Birria Tacos (Juicy Stewed Beef Tacos)",
-    "descriptionBn": "Beef slow-stewed in an adobo dried chilies, stuffed into crispy cheese ভুট্টা tortillas, dipped in consomé.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "বিরিয়া টাকোস (রসালো স্টিউড বিফ টাকোস)",
+    "descriptionBn": "গরুর মাংস শুকনো মরিচের একটি অ্যাডোবোতে ধীরে ধীরে স্টিউ করা হয়, ক্রিস্পি পনির কর্ন টর্টিলাতে ঠাসা, কনসোমে ডুবিয়ে রাখা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "soppes-chorizo",
@@ -13862,33 +13862,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Thick Masa Cakes topped দিয়ে Spicy Chorizo",
-    "descriptionBn": "Thick ভুট্টা masa cakes দিয়ে pinched borders, topped দিয়ে refried beans, spicy pork chorizo এবং cotija.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "মশলাদার চোরিজোর সাথে শীর্ষে মোটা মাসা কেক",
+    "descriptionBn": "চিমটিযুক্ত বর্ডার সহ মোটা কর্ন মাসা কেক, উপরে রেফ্রিড বিন, মশলাদার শুয়োরের মাংস চোরিজো এবং কোটিজা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "churros-con-cajeta",
@@ -13979,33 +13979,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Golden Fried Churros দিয়ে গরম গরম Caramel",
-    "descriptionBn": "Crispy, ridged deep-fried pastry dough rolled in cinnamon sugar, served দিয়ে গরম গরম caramel dip.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "উষ্ণ ক্যারামেল সহ গোল্ডেন ফ্রাইড চুরোস",
+    "descriptionBn": "দারুচিনি চিনিতে রোল করা ক্রিস্পি, ডিপ-ভাজা পেস্ট্রি ময়দা, গরম ক্যারামেল ডিপের সাথে পরিবেশন করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "barbacoa-special",
@@ -14096,33 +14096,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Slow-Cooked Beef Barbacoa",
-    "descriptionBn": "Beef chuck slow-cooked in a steam pot দিয়ে অ্যাভোকাডো leaves, cumin এবং dried chilies until shreddable.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ধীরে ধীরে রান্না করা গরুর মাংস বার্বাকোয়া",
+    "descriptionBn": "গরুর মাংসের চাক আভাকাডো পাতা, জিরা এবং শুকনো লঙ্কা দিয়ে বাষ্পের পাত্রে ধীরে ধীরে রান্না করা হয় যতক্ষণ না কাটা যায়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "aguachile-verde",
@@ -14213,33 +14213,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "চিংড়ি Aguachile Verde (কাগজি লেবু & Jalapeño Marinade)",
-    "descriptionBn": "Raw fresh চিংড়ি butterflied এবং quick-cured in a sharp, blended juice কাগজি লেবু, jalapeño এবং coriander.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "চিংড়ি Aguachile Verde (চুন এবং Jalapeño Marinade)",
+    "descriptionBn": "কাঁচা তাজা চিংড়ি প্রজাপতি এবং চুন, জলপেনো এবং ধনিয়ার ধারালো, মিশ্রিত রসে দ্রুত নিরাময় করা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "salsa-macha",
@@ -14330,33 +14330,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Fiery Chili-Peanut Oil Condiment (Salsa Macha)",
-    "descriptionBn": "An oil-based salsa made fried dried chilies, রসুন, sesame seeds এবং roasted peanuts.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "জ্বলন্ত মরিচ-চিনাবাদাম তেলের মশলা (সালসা মাচা)",
+    "descriptionBn": "ভাজা শুকনো লঙ্কা, রসুন, তিল এবং ভাজা চিনাবাদাম দিয়ে তৈরি তেল-ভিত্তিক সালসা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pambazo",
@@ -14447,33 +14447,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chorizo এবং আলু Pambazo Sandwich",
-    "descriptionBn": "Rustic white bread roll filled দিয়ে আলু-chorizo hash, dipped in red guajillo sauce এবং griddled crisp.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "চোরিজো এবং আলু পাম্বাজো স্যান্ডউইচ",
+    "descriptionBn": "আলু-চোরিজো হ্যাশ দিয়ে ভরা গ্রাম্য সাদা রুটির রোল, লাল গুজিলো সসে ডুবানো, এবং গ্রিড করা খাস্তা।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "caldo-de-res",
@@ -14564,33 +14564,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Traditional Mexican Beef & Vegetable Stew",
-    "descriptionBn": "A comforting, clear গরুর পায়া / নেহারি মাংস broth loaded দিয়ে large chunks sweet ভুট্টা, বাঁধাকপি, carrots এবং squash.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ঐতিহ্যবাহী মেক্সিকান গরুর মাংস এবং সবজি স্টু",
+    "descriptionBn": "মিষ্টি ভুট্টা, বাঁধাকপি, গাজর এবং স্কোয়াশের বড় অংশে লোড করা একটি আরামদায়ক, পরিষ্কার গরুর মাংসের ঝোল।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "camarones-diabla",
@@ -14681,33 +14681,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Deviled চিংড়ি (Spicy Chipotle Glaze)",
-    "descriptionBn": "Juicy চিংড়ি sautéed এবং glazed in an intensely fiery chipotle, টমেটো এবং রসুন reduction.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ডেভিলড চিংড়ি (মশলাদার চিপটল গ্লেজ)",
+    "descriptionBn": "রসালো চিংড়ি একটি তীব্রভাবে জ্বলন্ত চিপটল, টমেটো এবং রসুন হ্রাসে ভাজা এবং চকচকে।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "rajas-con-crema",
@@ -14798,33 +14798,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Rajas con Crema (Poblano strips in Cream)",
-    "descriptionBn": "Roasted poblano chili strips sautéed দিয়ে sliced white onions এবং sweet ভুট্টা kernels in fresh cream.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "রাজাস কন ক্রেমা (ক্রিমে পোবলানো স্ট্রিপস)",
+    "descriptionBn": "রোস্টেড পোবলানো চিলি স্ট্রিপগুলি টুকরো টুকরো সাদা পেঁয়াজ এবং মিষ্টি ভুট্টার কার্নেলগুলি তাজা ক্রিম দিয়ে ভাজা হয়।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "cemita-poblana",
@@ -14915,33 +14915,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Puebla Cemita Sesame Bun Sandwich",
-    "descriptionBn": "Sesame-crusted brioche-like bun stuffed দিয়ে crispy beef milanesa, অ্যাভোকাডো, quesillo এবং papalo herb.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "পুয়েব্লা সেমিটা তিল বান স্যান্ডউইচ",
+    "descriptionBn": "খসখসে গরুর মাংস মিলানেসা, অ্যাভোকাডো, কুইসিলো এবং প্যাপালো ভেষজ দিয়ে ভরা তিল-ক্রস্টেড ব্রোচে-এর মতো বান।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "pastel-de-elote",
@@ -15032,33 +15032,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sweet ভুট্টা Cake Dessert (Pan de Elote)",
-    "descriptionBn": "A dense, moist, slightly sweet cake made fresh sweet ভুট্টা kernels এবং condensed দুধ.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "সুইট কর্ন কেক ডেজার্ট (প্যান ডি এলোট)",
+    "descriptionBn": "একটি ঘন, আর্দ্র, তাজা মিষ্টি ভুট্টার কার্নেল এবং কনডেন্সড মিল্ক দিয়ে তৈরি সামান্য মিষ্টি কেক।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "capirotada",
@@ -15149,33 +15149,33 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Capirotada (Mexican Sweet Bread Pudding)",
-    "descriptionBn": "A unique bread pudding made দিয়ে toasted bolillo bread, cotija cheese, peanuts, raisins এবং spiced syrup.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ক্যাপিরোটাদা (মেক্সিকান মিষ্টি রুটি পুডিং)",
+    "descriptionBn": "টোস্ট করা বলিলো রুটি, কোটিজা পনির, চিনাবাদাম, কিশমিশ এবং মশলাদার সিরাপ দিয়ে তৈরি একটি অনন্য রুটি পুডিং।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   },
   {
     "id": "machaca-con-huevo",
@@ -15266,32 +15266,32 @@ export const restRecipes = [
         "instruction": "Prepare and clean all fresh ingredients. Slice and mince aromatics according to traditional standards.",
         "duration": 5,
         "technique": "prep",
-        "instructionBn": "Prepare এবং clean all fresh ingredients.Slice এবং mince aromatics according to traditional standards."
+        "instructionBn": "সমস্ত তাজা উপাদান প্রস্তুত এবং পরিষ্কার করুন। ঐতিহ্যগত মান অনুযায়ী সুগন্ধি কুচি ও মিহি করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat cooking oil or ghee in a heavy skillet. Add primary spices and aromatics, let them sizzle.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "cooking oil অথবা ঘি in a heavy skillet গরম করুন.primary spices যোগ করুন এবং aromatics, let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে রান্নার তেল বা ঘি গরম করুন। প্রাথমিক মশলা এবং সুগন্ধি যোগ করুন, তাদের সিজল দিন।"
       },
       {
         "step": 3,
         "instruction": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices.",
         "duration": 8,
         "technique": "sautéing",
-        "instructionBn": "Incorporate main ingredients, tossing on medium-high heat to fully absorb spices."
+        "instructionBn": "মশলা সম্পূর্ণরূপে শোষণ করতে মাঝারি-উচ্চ তাপে টসিং, প্রধান উপাদানগুলি অন্তর্ভুক্ত করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer gently with a splash of water or gravy base, letting the flavors mature. Serve hot.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "gently দিয়ে a splash পানি অথবা gravy base, letting flavors mature জ্বাল দিন.গরম গরম পরিবেশন করুন."
+        "instructionBn": "জল বা গ্রেভি বেস দিয়ে আলতোভাবে সিদ্ধ করুন, স্বাদগুলি পরিপক্ক হতে দিন। গরম গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Dry Shredded Beef Scramble দিয়ে Eggs",
-    "descriptionBn": "Dried, shredded beef sautéed দিয়ে onions, green peppers, tomatoes এবং scrambled দিয়ে fresh eggs.",
-    "culturalNoteBn": "An authentic preparation representing rich culinary heritage traditional mexican kitchens."
+    "titleBn": "ডিমের সাথে শুকনো কাটা গরুর মাংস স্ক্র্যাম্বল",
+    "descriptionBn": "শুকনো, কাটা গরুর মাংস পেঁয়াজ, সবুজ মরিচ, টমেটো দিয়ে ভাজুন এবং তাজা ডিম দিয়ে স্ক্র্যাম্বল করুন।",
+    "culturalNoteBn": "ঐতিহ্যবাহী মেক্সিকান রান্নাঘরের সমৃদ্ধ রন্ধনসম্পর্কীয় ঐতিহ্যের প্রতিনিধিত্বকারী একটি খাঁটি প্রস্তুতি।"
   }
 ];

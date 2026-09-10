@@ -19,15 +19,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dbPath = path.resolve(__dirname, 'rannabanna.db');
 
-console.log('🌱 Initializing SQLite database at:', dbPath);
+export function seedDatabase(customDb = null) {
+  console.log('🌱 Initializing SQLite database at:', dbPath);
+  const db = customDb || new Database(dbPath);
 
-const db = new Database(dbPath);
+  // Enable foreign key support
+  db.pragma('foreign_keys = ON');
 
-// Enable foreign key support
-db.pragma('foreign_keys = ON');
-
-// 1. Create schemas (incorporating bilingual columns)
-db.exec(`
+  // 1. Create schemas (incorporating bilingual columns)
+  db.exec(`
   DROP TABLE IF EXISTS recipe_steps;
   DROP TABLE IF EXISTS recipe_ingredients;
   DROP TABLE IF EXISTS recipe_dietary_tags;
@@ -181,8 +181,8 @@ const insertIngredientsTx = db.transaction((list) => {
 insertIngredientsTx(ingredients);
 console.log(`✅ Seeded ${ingredients.length} canonical ingredients into GIV.`);
 
-// 4. Merge and insert recipes
-const allRecipes = [...recipes, ...newRecipes, ...expansionRecipes, ...subcontinentalRecipes, ...restRecipes, ...sauceRecipes];
+// recipes.js already contains all merged recipes — no need to re-merge expansion files
+const allRecipes = recipes;
 
 const insertRecipe = db.prepare(`
   INSERT OR REPLACE INTO recipes (id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji)
@@ -281,6 +281,17 @@ const insertRecipesTx = db.transaction((list) => {
   }
 });
 
-insertRecipesTx(allRecipes);
-console.log(`✅ Seeded ${allRecipes.length} recipes with junction mappings (70 original + 35 wave 1 + ${expansionRecipes.length} wave 2 expansion + ${subcontinentalRecipes.length} subcontinental wave 3 + ${restRecipes.length} global cuisines wave 4!).`);
-console.log('🌿 Database Seeding Complete!');
+  insertRecipesTx(allRecipes);
+  console.log(`✅ Seeded ${allRecipes.length} recipes with junction mappings (70 original + 35 wave 1 + ${expansionRecipes.length} wave 2 expansion + ${subcontinentalRecipes.length} subcontinental wave 3 + ${restRecipes.length} global cuisines wave 4!).`);
+  console.log('🌿 Database Seeding Complete!');
+  return db;
+}
+
+// Auto-run if executed directly via node server/seed.js
+const isDirectExecution = process.argv[1] && (
+  process.argv[1].endsWith('seed.js') || 
+  path.resolve(process.argv[1]) === path.resolve(__filename)
+);
+if (isDirectExecution) {
+  seedDatabase();
+}

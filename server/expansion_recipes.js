@@ -106,48 +106,48 @@ export const expansionRecipes = [
         "instruction": "Marinate beef cubes with ginger-garlic paste, turmeric, chili powder, half the red onions, half the mustard oil, and salt. Rest for 30 minutes.",
         "duration": 30,
         "technique": "marinating",
-        "instructionBn": "Marinate গরুর মাংসের টুকরো দিয়ে আদা-রসুন বাটা / পেস্ট, turmeric, মরিচ গুঁড়ো, half red onions, half সরিষার তেল এবং লবণ.Rest ৩০ মিনিট."
+        "instructionBn": "আদা-রসুন পেস্ট, হলুদ, মরিচের গুঁড়া, অর্ধেক লাল পেঁয়াজ, অর্ধেক সরিষার তেল এবং লবণ দিয়ে গরুর মাংসের কিউব মেরিনেট করুন। ৩০ মিনিটের জন্য বিশ্রাম করুন।"
       },
       {
         "step": 2,
         "instruction": "Place marinated beef in a heavy pot. Cover and cook on medium-low heat. The beef will release its own water; simmer until it dries out and beef is tender.",
         "duration": 45,
         "technique": "simmering",
-        "instructionBn": "marinated beef in a heavy pot রাখুন.ঢেকে দিন এবং মাঝারি-কম আঁচে রান্না করুন.beef will release its own পানি;until it dries out জ্বাল দিন এবং beef is tender."
+        "instructionBn": "একটি ভারী পাত্রে ম্যারিনেট করা গরুর মাংস রাখুন। ঢেকে মাঝারি আঁচে রান্না করুন। গরুর মাংস নিজের জল ছেড়ে দেবে; যতক্ষণ না এটি শুকিয়ে যায় এবং গরুর মাংস কোমল হয় ততক্ষণ সেদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "In a separate pan, heat the remaining mustard oil. Fry the remaining sliced onions until golden brown.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "একটি আলাদা প্যানে, heat অবশিষ্ট সরিষার তেল.অবশিষ্ট sliced onions সোনালী বাদামী হওয়া পর্যন্ত ভাজুন."
+        "instructionBn": "একটি আলাদা প্যানে বাকি সরিষার তেল গরম করুন। বাকি কাটা পেঁয়াজ সোনালি বাদামী হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 4,
         "instruction": "Pour the tempered onions and mustard oil into the beef pot. Stir constantly.",
         "duration": 3,
         "technique": "mixing",
-        "instructionBn": "tempered onions ঢালুন এবং সরিষার তেল into beef pot.অনবরত নাড়ুন."
+        "instructionBn": "গরুর মাংসের পাত্রে টেম্পারড পেঁয়াজ এবং সরিষার তেল ঢেলে দিন। ক্রমাগত নাড়ুন।"
       },
       {
         "step": 5,
         "instruction": "Slowly roast the beef on low heat (Bhuna stage), stirring continuously to prevent sticking, until the meat darkens and turns a rich blackish-brown color without burning.",
         "duration": 15,
         "technique": "roasting",
-        "instructionBn": "Slowly roast beef কম আঁচে (Bhuna stage), stirring continuously to prevent sticking, until meat darkens এবং turns a rich blackish-brown color without burning."
+        "instructionBn": "ধীরে ধীরে গরুর মাংসকে কম আঁচে ভাজুন (ভুনা স্টেজ), লেগে থাকা রোধ করার জন্য ক্রমাগত নাড়তে থাকুন, যতক্ষণ না মাংস কালচে হয়ে যায় এবং পুড়ে না গিয়ে একটি সমৃদ্ধ কালো-বাদামী রঙ হয়।"
       },
       {
         "step": 6,
         "instruction": "Sprinkle garam masala powder on top and let it rest covered for 5 minutes before serving.",
         "duration": 5,
         "technique": "resting",
-        "instructionBn": "গরম মশলা powder on top ছিটিয়ে দিন এবং covered ৫ মিনিট before serving রেখে দিন."
+        "instructionBn": "উপরে গরম মসলা পাউডার ছিটিয়ে পরিবেশনের আগে ৫ মিনিট ঢেকে রেখে দিন।"
       }
     ],
     "imageEmoji": "🥩",
-    "titleBn": "Beef Kala Bhuna (Traditional Bengali Dark Beef Curry)",
-    "descriptionBn": "A legendary dark, deeply fried beef delicacy from Chittagong, slow-cooked in its own juices এবং roasted দিয়ে authentic Bengali whole spices until tender এবং caramelized.",
-    "culturalNoteBn": "Kala Bhuna is a crown jewel Bangladeshi weddings এবং festive banquets, historically prepared in huge brass cauldrons over firewood."
+    "titleBn": "গরুর মাংস কালা ভুনা (ঐতিহ্যবাহী বাংলা গাঢ় গরুর মাংসের তরকারি)",
+    "descriptionBn": "চট্টগ্রামের একটি কিংবদন্তি গাঢ়, গভীরভাবে ভাজা গরুর মাংসের উপাদেয়, নিজের রসে ধীরে-সুস্থে রান্না করা হয় এবং খাঁটি বাংলা পুরো মশলা দিয়ে কোমল এবং ক্যারামেলাইজ করা পর্যন্ত ভাজা হয়।",
+    "culturalNoteBn": "কালা ভুনা হল বাংলাদেশী বিবাহ এবং উত্সব ভোজগুলির একটি মুকুট গহনা, ঐতিহাসিকভাবে কাঠের উপর বিশাল পিতলের কড়াইতে প্রস্তুত করা হয়।"
   },
   {
     "id": "dim-bhuna",
@@ -248,34 +248,34 @@ export const expansionRecipes = [
         "instruction": "Make tiny diagonal slits on the boiled eggs. Rub them with a pinch of turmeric and salt.",
         "duration": 2,
         "technique": "marinating",
-        "instructionBn": "Make tiny diagonal slits on boiled eggs.them দিয়ে a pinch turmeric মাখিয়ে নিন এবং লবণ."
+        "instructionBn": "সিদ্ধ ডিমের উপর ছোট তির্যক চিরা তৈরি করুন। এক চিমটি হলুদ ও লবণ দিয়ে ঘষে নিন।"
       },
       {
         "step": 2,
         "instruction": "Heat mustard oil in a pan. Fry eggs until skin is slightly golden and blistered. Remove eggs.",
         "duration": 3,
         "technique": "shallow-frying",
-        "instructionBn": "সরিষার তেল একটি প্যানে গরম করুন.eggs until skin is slightly golden ভাজুন এবং blistered.eggs তুলে নিন."
+        "instructionBn": "একটি প্যানে সরিষার তেল গরম করুন। ডিম ভাজুন যতক্ষণ না ত্বক কিছুটা সোনালি এবং ফোসকা না হয়। ডিম সরান।"
       },
       {
         "step": 3,
         "instruction": "In the same oil, add onions and fry until translucent. Add tomato, remaining turmeric, chili powder, and salt. Sauté with a splash of water until a thick masala paste forms.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "In same oil, add onions এবং until translucent ভাজুন.টমেটো, remaining turmeric, মরিচ গুঁড়ো যোগ করুন এবং লবণ.দিয়ে a splash পানি until a thick masala বাটা / পেস্ট forms সাঁতলে নিন."
+        "instructionBn": "একই তেলে, পেঁয়াজ যোগ করুন এবং স্বচ্ছ হওয়া পর্যন্ত ভাজুন। টমেটো, বাকি হলুদ, মরিচ গুঁড়ো, এবং লবণ যোগ করুন। ঘন মসলা পেস্ট তৈরি না হওয়া পর্যন্ত জলের ছিটা দিয়ে ভাজুন।"
       },
       {
         "step": 4,
         "instruction": "Add eggs, slit green chilies, and a half cup of water. Simmer on low heat until gravy clings to the eggs.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "eggs, slit green chilies যোগ করুন এবং a half cup পানি.কম আঁচে until gravy clings to eggs জ্বাল দিন."
+        "instructionBn": "ডিম, চেরা সবুজ মরিচ, এবং আধা কাপ জল যোগ করুন। কম আঁচে সিদ্ধ করুন যতক্ষণ না গ্রেভি ডিমে লেগে থাকে।"
       }
     ],
     "imageEmoji": "🥚",
-    "titleBn": "Dim Bhuna (Bengali ডিম Curry)",
-    "descriptionBn": "Hard-boiled eggs lightly fried দিয়ে turmeric, then simmered in a savory, thick onion এবং টমেটো gravy spiced দিয়ে green chilies.",
-    "culturalNoteBn": "ultimate quick এবং budget-friendly comfort food in Bangladeshi households, often prepared when fresh groceries run low."
+    "titleBn": "ডিম ভুনা (বাঙালি ডিমের তরকারি)",
+    "descriptionBn": "শক্ত-সিদ্ধ ডিম হলুদ দিয়ে হালকা ভাজা, তারপর একটি সুস্বাদু, ঘন পেঁয়াজ এবং টমেটো গ্রেভিতে সবুজ মরিচ দিয়ে মশলা দিয়ে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "বাংলাদেশি পরিবারের চূড়ান্ত দ্রুত এবং বাজেট-বান্ধব আরামদায়ক খাবার, প্রায়শই যখন তাজা মুদির দোকান কম থাকে তখন প্রস্তুত করা হয়।"
   },
   {
     "id": "rui-macher-jhol",
@@ -375,34 +375,34 @@ export const expansionRecipes = [
         "instruction": "Rub Rohu steaks with half the turmeric and salt. Pan-fry in hot mustard oil until golden. Set aside.",
         "duration": 5,
         "technique": "shallow-frying",
-        "instructionBn": "Rohu steaks দিয়ে half turmeric মাখিয়ে নিন এবং লবণ.Pan-fry in গরম গরম সরিষার তেল until golden.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "অর্ধেক হলুদ এবং লবণ দিয়ে রোহু স্টেক ঘষুন। গরম সরিষার তেলে সোনালি হওয়া পর্যন্ত ভাজুন। একপাশে সেট করুন।"
       },
       {
         "step": 2,
         "instruction": "In the remaining oil, sauté potato wedges until golden. Remove potato wedges.",
         "duration": 4,
         "technique": "shallow-frying",
-        "instructionBn": "In অবশিষ্ট oil, sauté আলু wedges until golden.আলু wedges তুলে নিন."
+        "instructionBn": "অবশিষ্ট তেলে, আলু ওয়েজগুলি সোনালি হওয়া পর্যন্ত ভাজুন। আলুর ওয়েজগুলি সরান।"
       },
       {
         "step": 3,
         "instruction": "Temper cumin seeds in the oil. Add remaining turmeric, cumin powder, and green chilies with 1.5 cups of water. Bring to a boil.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "Temper জিরা in oil.remaining turmeric, জিরা গুঁড়ো যোগ করুন এবং green chilies দিয়ে ১.৫ cups পানি.ফুটিয়ে নিন."
+        "instructionBn": "তেলে জিরা দিন। বাকি হলুদ, জিরা গুঁড়া এবং সবুজ মরিচ ১.৫ কাপ জল দিয়ে দিন। একটি ফোঁড়া আনুন।"
       },
       {
         "step": 4,
         "instruction": "Slide in the potatoes and Rohu steaks. Cover and simmer until potatoes are soft and fish is cooked.",
         "duration": 8,
         "technique": "simmering",
-        "instructionBn": "in potatoes ছেড়ে দিন এবং Rohu steaks.ঢেকে দিন এবং until potatoes are soft জ্বাল দিন এবং fish is cooked."
+        "instructionBn": "আলু এবং রোহু স্টেকগুলিতে স্লাইড করুন। ঢেকে রাখুন যতক্ষণ না আলু নরম হয় এবং মাছ সেদ্ধ হয়।"
       }
     ],
     "imageEmoji": "🐟",
-    "titleBn": "Rui Macher Jhol (Rohu Fish Curry দিয়ে Potatoes)",
-    "descriptionBn": "Rohu fish steaks fried in সরিষার তেল এবং simmered দিয়ে আলু wedges in a light, comforting cumin এবং turmeric broth.",
-    "culturalNoteBn": "Bengalis are historically referred to as \"Maache-Bhaate Bangali\" (Fish এবং Rice Bengalis).This dish represents daily comfort food at its best."
+    "titleBn": "রুই মাছের ঝোল (আলু দিয়ে রোহু মাছের তরকারি)",
+    "descriptionBn": "রোহু ফিশ স্টেকস সরিষার তেলে ভাজা এবং হালকা আলু দিয়ে সিদ্ধ করা জিরা এবং হলুদের ঝোলকে আরাম দেয়।",
+    "culturalNoteBn": "বাঙালিদের ঐতিহাসিকভাবে \"মাছে-ভাতে বাঙালি\" (মাছে ও ভাতের বাঙালি) বলা হয়। এই থালাটি প্রতিদিনের আরামদায়ক খাবারের সেরা প্রতিনিধিত্ব করে।"
   },
   {
     "id": "patol-bhaja",
@@ -468,20 +468,20 @@ export const expansionRecipes = [
         "instruction": "Rub pointed gourds with turmeric powder and salt, letting them sit for 5 minutes.",
         "duration": 5,
         "technique": "marinating",
-        "instructionBn": "pointed gourds দিয়ে হলুদ গুঁড়ো মাখিয়ে নিন এবং লবণ, letting them sit ৫ মিনিট."
+        "instructionBn": "হলুদ গুঁড়ো এবং লবণ দিয়ে বিন্দু করা লাউ ঘষুন, তাদের ৫ মিনিটের জন্য বসতে দিন।"
       },
       {
         "step": 2,
         "instruction": "Heat mustard oil in a pan. Sauté the gourds on medium heat until blistered and tender.",
         "duration": 10,
         "technique": "pan-frying",
-        "instructionBn": "সরিষার তেল একটি প্যানে গরম করুন.gourds মাঝারি আঁচে until blistered সাঁতলে নিন এবং tender."
+        "instructionBn": "একটি প্যানে সরিষার তেল গরম করুন। মাঝারি আঁচে করলা ফোসকা ও কোমল না হওয়া পর্যন্ত ভাজুন।"
       }
     ],
     "imageEmoji": "🥒",
-    "titleBn": "Patol Bhaja (Fried Pointed Gourd)",
-    "descriptionBn": "Crisp এবং juicy Bengali pointed gourds, lightly scored এবং pan-fried দিয়ে turmeric এবং লবণ in সরিষার তেল.",
-    "culturalNoteBn": "A classic \"Bhaja\" (fried side dish) served alongside lentils (Dal) এবং rice on everyday menus."
+    "titleBn": "পটোল ভাজা (ভাজা বিন্দুর করলা)",
+    "descriptionBn": "সরিষার তেলে হলুদ ও নুন দিয়ে হালকা স্কোর করা এবং কড়াইয়ে ভাজা খাস্তা ও রসালো বাঙালী পটল।",
+    "culturalNoteBn": "একটি ক্লাসিক \"ভাজা\" (ভাজা সাইড ডিশ) প্রতিদিনের মেনুতে মসুর ডাল (ডাল) এবং ভাতের পাশাপাশি পরিবেশন করা হয়।"
   },
   {
     "id": "beguni",
@@ -564,27 +564,27 @@ export const expansionRecipes = [
         "instruction": "Mix flour, turmeric, chili powder, salt, and water to make a smooth, thick coating batter.",
         "duration": 5,
         "technique": "mixing",
-        "instructionBn": "flour, turmeric, মরিচ গুঁড়ো, লবণ মেশান এবং পানি to make a smooth, thick coating batter."
+        "instructionBn": "ময়দা, হলুদ, মরিচের গুঁড়া, লবণ এবং জল মিশিয়ে একটি মসৃণ, ঘন আবরণের ব্যাটার তৈরি করুন।"
       },
       {
         "step": 2,
         "instruction": "Heat mustard oil in a deep pan.",
         "duration": 3,
         "technique": "heating",
-        "instructionBn": "সরিষার তেল in a deep pan গরম করুন."
+        "instructionBn": "একটি গভীর প্যানে সরিষার তেল গরম করুন।"
       },
       {
         "step": 3,
         "instruction": "Dip each eggplant slice in batter, coating it completely, and gently slide into hot oil. Fry until puffed and golden.",
         "duration": 2,
         "technique": "deep-frying",
-        "instructionBn": "Dip each বেগুন slice in batter, coating it completely এবং gently slide into গরম গরম oil.until puffed ভাজুন এবং golden."
+        "instructionBn": "প্রতিটি বেগুনের টুকরো বাটাতে ডুবিয়ে, এটিকে সম্পূর্ণভাবে লেপে, এবং আলতো করে গরম তেলে স্লাইড করুন। ফুলে ও সোনালি হওয়া পর্যন্ত ভাজুন।"
       }
     ],
     "imageEmoji": "🍆",
-    "titleBn": "Beguni (Bengali Crispy বেগুন Fritters)",
-    "descriptionBn": "Thinly sliced eggplants dipped in a spiced chickpea flour batter এবং deep-fried to golden, airy perfection.",
-    "culturalNoteBn": "An absolute must-have snack during Ramadan Iftar এবং rainy afternoons in Bangladesh."
+    "titleBn": "বেগুনী (বাংলা ক্রিস্পি বেগুনের ভাজা)",
+    "descriptionBn": "পাতলা করে কাটা বেগুন একটি মসলাযুক্ত ছোলার ময়দা বাটাতে ডুবিয়ে সোনালি, বায়বীয় পরিপূর্ণতা থেকে গভীর ভাজা হয়।",
+    "culturalNoteBn": "বাংলাদেশে রমজানের ইফতার এবং বৃষ্টির বিকেলের সময় একটি পরম অবশ্যই থাকা নাস্তা।"
   },
   {
     "id": "bengali-masoor-dal",
@@ -677,27 +677,27 @@ export const expansionRecipes = [
         "instruction": "Boil lentils in 3 cups of water with turmeric, green chilies, and salt until completely soft.",
         "duration": 15,
         "technique": "boiling",
-        "instructionBn": "lentils in ৩ cups পানি দিয়ে turmeric, green chilies ফুটিয়ে নিন এবং লবণ until completely soft."
+        "instructionBn": "মসুর ডাল ৩ কাপ জলে হলুদ, কাঁচা মরিচ এবং লবণ দিয়ে সম্পূর্ণ নরম হওয়া পর্যন্ত সিদ্ধ করুন।"
       },
       {
         "step": 2,
         "instruction": "Whisk the lentils until creamy.",
         "duration": 2,
         "technique": "whisking",
-        "instructionBn": "lentils until creamy ফেটিয়ে নিন."
+        "instructionBn": "মসুর ডাল ক্রিমি হওয়া পর্যন্ত নাড়ুন।"
       },
       {
         "step": 3,
         "instruction": "In a small pan, heat mustard oil. Fry onions and panch phoron until aromatic. Pour into boiling lentils.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "In a small pan, heat সরিষার তেল.onions ভাজুন এবং পাঁচফোড়ন until aromatic.into boiling lentils ঢালুন."
+        "instructionBn": "একটি ছোট প্যানে সরিষার তেল গরম করুন। সুগন্ধি হওয়া পর্যন্ত পেঁয়াজ এবং পাঁচফোড়ন ভাজুন। ফুটন্ত মসুর ডালে ঢেলে দিন।"
       }
     ],
     "imageEmoji": "🫘",
-    "titleBn": "Bengali Masoor Dal (Red Lentils tempered দিয়ে পাঁচফোড়ন)",
-    "descriptionBn": "Comforting, light red lentils slow-cooked দিয়ে turmeric, tempered দিয়ে green chilies এবং Bengali পাঁচ মশলা (ফাইভ স্পাইস) (পাঁচফোড়ন) in সরিষার তেল.",
-    "culturalNoteBn": "This soup is daily anchor Bengali lunch, always served গরম ভাতের সাথে এবং a squeeze কাগজি লেবু."
+    "titleBn": "বাঙালি মসুর ডাল (পাঁচ ফোড়নের সাথে লাল মসুর ডাল)",
+    "descriptionBn": "আরামদায়ক, হালকা লাল মসুর ডাল হলুদ দিয়ে ধীরে ধীরে রান্না করা, সবুজ মরিচ দিয়ে মেখে এবং সরিষার তেলে বাঙালী পাঁচ-মসলা (পাঞ্চ ফোরন)।",
+    "culturalNoteBn": "এই স্যুপটি বাঙালির মধ্যাহ্নভোজের প্রতিদিনের নোঙ্গর, সর্বদা বাষ্পযুক্ত ভাত এবং চুনের সাথে পরিবেশন করা হয়।"
   },
   {
     "id": "bengali-chicken-korma",
@@ -797,27 +797,27 @@ export const expansionRecipes = [
         "instruction": "Fry onions in ghee until golden brown. Crush or grind them into a paste. Set aside.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "onions in ঘি সোনালী বাদামী হওয়া পর্যন্ত ভাজুন.Crush অথবা grind them into a বাটা / পেস্ট.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "সোনালি বাদামী হওয়া পর্যন্ত ঘিতে পেঁয়াজ ভাজুন। এগুলিকে পিষে বা পেস্ট করে নিন। একপাশে সেট করুন।"
       },
       {
         "step": 2,
         "instruction": "In the remaining ghee, sizzle green cardamom. Add chicken, ginger paste, and salt, frying for 3 minutes.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "In অবশিষ্ট ঘি, sizzle green cardamom.chicken, আদা বাটা / পেস্ট যোগ করুন এবং লবণ, frying ৩ মিনিট."
+        "instructionBn": "বাকি ঘি-এ সবুজ এলাচ দিয়ে দিন। মুরগির মাংস, আদা পেস্ট এবং লবণ যোগ করুন, ৩ মিনিটের জন্য ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Stir in yogurt, onion paste, sugar, and half cup of water. Simmer covered until chicken is tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "in yogurt, onion বাটা / পেস্ট, sugar নেড়ে দিন এবং half cup পানি.covered until chicken is tender জ্বাল দিন."
+        "instructionBn": "দই, পেঁয়াজ বাটা, চিনি এবং আধা কাপ পানি দিয়ে নাড়ুন। মুরগির মাংস নরম না হওয়া পর্যন্ত ঢেকে রাখুন।"
       }
     ],
     "imageEmoji": "🍗",
-    "titleBn": "Bengali White Chicken Korma",
-    "descriptionBn": "Chicken pieces braised in a velvety, non-spicy, aromatic white gravy made yogurt, onions, আদা, ঘি এবং green chilies.",
-    "culturalNoteBn": "Served alongside Pulao at Bangladeshi dinner parties এবং Eid festivals."
+    "titleBn": "বাংলা সাদা চিকেন কোরমা",
+    "descriptionBn": "দই, পেঁয়াজ, আদা, ঘি এবং সবুজ মরিচ দিয়ে তৈরি মখমল, অ-মশলাদার, সুগন্ধযুক্ত সাদা গ্রেভিতে ব্রেস করা মুরগির টুকরো।",
+    "culturalNoteBn": "বাংলাদেশী ডিনার পার্টি এবং ঈদ উৎসবে পুলাওয়ের পাশাপাশি পরিবেশন করা হয়।"
   },
   {
     "id": "sujir-halwa",
@@ -863,7 +863,7 @@ export const expansionRecipes = [
         "preparation": "warm",
         "isEssential": true,
         "group": "Liquids",
-        "nameBn": "milk-whole"
+        "nameBn": "দুধ"
       },
       {
         "ingredientId": "sugar-white",
@@ -890,7 +890,7 @@ export const expansionRecipes = [
         "preparation": "chopped",
         "isEssential": false,
         "group": "Garnish",
-        "nameBn": "cashews"
+        "nameBn": "কাজুবাদাম"
       }
     ],
     "steps": [
@@ -899,34 +899,34 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a pan. Fry cashews until golden, then set aside.",
         "duration": 2,
         "technique": "frying",
-        "instructionBn": "ঘি একটি প্যানে গরম করুন.cashews until golden, then set aside ভাজুন."
+        "instructionBn": "একটি প্যানে ঘি গরম করুন। সোনালি হওয়া পর্যন্ত কাজু ভাজুন, তারপর একপাশে রাখুন।"
       },
       {
         "step": 2,
         "instruction": "In the same ghee, add cardamom and roast semolina on medium-low heat until fragrant and slightly pinkish.",
         "duration": 5,
         "technique": "roasting",
-        "instructionBn": "In same ঘি, add cardamom এবং roast সুজি মাঝারি-কম আঁচে until fragrant এবং slightly pinkish."
+        "instructionBn": "একই ঘি-তে এলাচ ও সুজি দিয়ে মাঝারি-কম আঁচে সুগন্ধি এবং সামান্য গোলাপি না হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Slowly pour in milk while whisking continuously to avoid lumps. Add sugar and stir.",
         "duration": 3,
         "technique": "mixing",
-        "instructionBn": "Slowly pour in দুধ while whisking continuously to avoid lumps.sugar যোগ করুন এবং নেড়ে দিন."
+        "instructionBn": "গলদ এড়াতে ক্রমাগত নাড়তে গিয়ে ধীরে ধীরে দুধে ঢেলে দিন। চিনি যোগ করুন এবং নাড়ুন।"
       },
       {
         "step": 4,
         "instruction": "Cook until the mixture thickens and leaves the sides of the pan. Garnish with roasted cashews.",
         "duration": 2,
         "technique": "stirring",
-        "instructionBn": "until mixture thickens রান্না করুন এবং leaves sides pan.দিয়ে roasted cashews সাজিয়ে নিন."
+        "instructionBn": "মিশ্রণটি ঘন হওয়া পর্যন্ত রান্না করুন এবং প্যানের পাশ ছেড়ে দিন। ভাজা কাজু দিয়ে সাজিয়ে নিন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Sujir Halwa (Bengali সুজি Dessert)",
-    "descriptionBn": "Roasted সুজি cooked দিয়ে দুধ, ঘি, cardamom এবং sugar, resulting in a rich, comforting dessert pudding.",
-    "culturalNoteBn": "Traditionally prepared during festivals এবং served দিয়ে গরম গরম, puffed Luchi (fried flatbreads) for breakfast."
+    "titleBn": "সুজির হালুয়া (বাংলা সুজি মিষ্টি)",
+    "descriptionBn": "ভাজা সুজি দুধ, ঘি, এলাচ এবং চিনি দিয়ে রান্না করা হয়, ফলে একটি সমৃদ্ধ, আরামদায়ক ডেজার্ট পুডিং হয়।",
+    "culturalNoteBn": "ঐতিহ্যগতভাবে উৎসবের সময় প্রস্তুত করা হয় এবং সকালের নাস্তায় গরম, পাফ করা লুচি (ভাজা ফ্ল্যাটব্রেড) দিয়ে পরিবেশন করা হয়।"
   },
   {
     "id": "dal-makhani",
@@ -964,7 +964,7 @@ export const expansionRecipes = [
         "preparation": "divided use",
         "isEssential": true,
         "group": "Richness",
-        "nameBn": "butter-unsalted"
+        "nameBn": "মাখন (আনসল্টেড)"
       },
       {
         "ingredientId": "ghee",
@@ -1036,28 +1036,28 @@ export const expansionRecipes = [
         "instruction": "Boil soaked kidney beans (and black lentils if available) in a pressure cooker or large pot until completely mushy.",
         "duration": 60,
         "technique": "pressure-cooking",
-        "instructionBn": "soaked kidney beans (এবং black lentils if available) in a pressure cooker অথবা large pot until completely mushy ফুটিয়ে নিন."
+        "instructionBn": "ভিজিয়ে রাখা সাবুত বিউলি ডাল ও রাজমা প্রেসার কুকারে পর্যাপ্ত পানি ও লবণ দিয়ে একদম নরম ও গলানো হওয়া পর্যন্ত সিদ্ধ করুন।"
       },
       {
         "step": 2,
         "instruction": "Heat ghee and 1 tbsp butter. Sauté ginger and garlic. Add tomato paste, chili powder, and salt, frying for 3 minutes.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "ঘি গরম করুন এবং ১ tbsp মাখন.আদা সাঁতলে নিন এবং রসুন.টমেটো বাটা / পেস্ট, মরিচ গুঁড়ো যোগ করুন এবং লবণ, frying ৩ মিনিট."
+        "instructionBn": "প্যানে ঘি ও মাখন গরম করে আদা-রসুন কুচি সাঁতলে টমেটো পিউরি, মরিচ গুঁড়ো ও লবণ দিয়ে ৩ মিনিট কষিয়ে নিন।"
       },
       {
         "step": 3,
         "instruction": "Add boiled lentils, mash them slightly, and simmer on lowest heat for at least 45 minutes, adding water as needed to keep it creamy.",
         "duration": 45,
         "technique": "simmering",
-        "instructionBn": "boiled lentils, mash them slightly যোগ করুন এবং on lowest heat for at least ৪৫ মিনিট, adding পানি as needed to keep it creamy জ্বাল দিন."
+        "instructionBn": "সিদ্ধ ডাল যোগ করে সামান্য চেপে গলিয়ে দিন এবং খুব কম আঁচে অন্তত ৪৫ মিনিট ফুটতে দিন, প্রয়োজনমতো পানি দিয়ে ক্রিমি রাখুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in remaining butter and heavy cream. Simmer for 10 minutes and serve warm.",
         "duration": 10,
         "technique": "finishing",
-        "instructionBn": "in remaining মাখন নেড়ে দিন এবং ভারী ক্রিম.১০ মিনিট জ্বাল দিন এবং গরম গরম পরিবেশন করুন."
+        "instructionBn": "বাকি মাখন ও ফ্রেশ ক্রিম মিশিয়ে ১০ মিনিট অল্প আঁচে দমে রাখুন এবং গরম গরম পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🥣",
@@ -1164,34 +1164,34 @@ export const expansionRecipes = [
         "instruction": "Marinate paneer cubes in yogurt mixed with salt, a pinch of garam masala, and oil. Let it sit for 15 minutes.",
         "duration": 15,
         "technique": "marinating",
-        "instructionBn": "Marinate পনির cubes in yogurt mixed দিয়ে লবণ, a pinch গরম মশলা এবং oil.Let it sit ১৫ মিনিট."
+        "instructionBn": "নুন, এক চিমটি গরম মসলা এবং তেল মিশিয়ে দইয়ে পনিরের কিউব মেরিনেট করুন। এটি ১৫ মিনিটের জন্য বসতে দিন।"
       },
       {
         "step": 2,
         "instruction": "Pan-sear paneer cubes on high heat until lightly charred on the edges. Remove paneer.",
         "duration": 5,
         "technique": "pan-searing",
-        "instructionBn": "Pan-sear পনির cubes উচ্চ আঁচে until lightly charred on edges.পনির তুলে নিন."
+        "instructionBn": "প্রান্তে হালকাভাবে পুড়ে যাওয়া পর্যন্ত উচ্চ তাপে পনিরের কিউবগুলি প্যান-সিয়ার করুন। পনির সরান।"
       },
       {
         "step": 3,
         "instruction": "Heat ghee in a pan. Sauté chopped onions. Add tomato paste, salt, garam masala, and water. Cook to form a smooth gravy.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "ঘি একটি প্যানে গরম করুন.chopped onions সাঁতলে নিন.টমেটো বাটা / পেস্ট, লবণ, গরম মশলা যোগ করুন এবং পানি.to form a smooth gravy রান্না করুন."
+        "instructionBn": "একটি প্যানে ঘি গরম করুন। কাটা পেঁয়াজ ভাজুন। টমেটো পেস্ট, লবণ, গরম মসলা, এবং জল যোগ করুন। একটি মসৃণ গ্রেভি তৈরি করতে রান্না করুন।"
       },
       {
         "step": 4,
         "instruction": "Add paneer cubes and heavy cream. Simmer gently for 5 minutes.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "পনির cubes যোগ করুন এবং ভারী ক্রিম.gently ৫ মিনিট জ্বাল দিন."
+        "instructionBn": "পনির কিউব এবং ভারী ক্রিম যোগ করুন। ৫ মিনিটের জন্য আলতো করে সিদ্ধ করুন।"
       }
     ],
     "imageEmoji": "🧀",
-    "titleBn": "পনির Tikka Masala",
-    "descriptionBn": "Grilled cubes marinated পনির cheese simmered in a rich, creamy, spiced টমেটো-onion masala gravy.",
-    "culturalNoteBn": "A hugely popular dish that blends dry marinated tikka grilling দিয়ে traditional Indian curry gravies."
+    "titleBn": "পনির টিক্কা মসলা",
+    "descriptionBn": "ম্যারিনেট করা পনির পনিরের গ্রিল করা কিউবগুলি একটি সমৃদ্ধ, ক্রিমি, মশলাযুক্ত টমেটো-পেঁয়াজ মসলা গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "একটি অত্যন্ত জনপ্রিয় খাবার যা ঐতিহ্যবাহী ভারতীয় কারি গ্রেভির সাথে শুকনো ম্যারিনেট করা টিক্কা গ্রিলিংয়ের সাথে মিশে যায়।"
   },
   {
     "id": "aloo-gobi",
@@ -1293,21 +1293,21 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a pan. Sizzle cumin seeds and add ginger and green chilies.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি একটি প্যানে গরম করুন.Sizzle জিরা এবং আদা যোগ করুন এবং green chilies."
+        "instructionBn": "প্যানে তেল গরম করে জিরা ফোড়ন দিন। পেঁয়াজ কুচি ও আদা নরম হওয়া পর্যন্ত সাঁতলে নিন।"
       },
       {
         "step": 2,
         "instruction": "Add potato cubes and cauliflower florets. Stir-fry on medium-high heat for 5 minutes.",
         "duration": 5,
         "technique": "stir-frying",
-        "instructionBn": "আলু cubes যোগ করুন এবং ফুলকপি florets.on medium-high heat ৫ মিনিট নেড়েচেড়ে ভাজুন."
+        "instructionBn": "আলুর কিউব ও ফুলকপির টুকরো দিয়ে মাঝারি আঁচে ৩-৪ মিনিট নেড়েচেড়ে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add turmeric powder, salt, and 3 tablespoons of water. Cover tightly and cook on low heat until vegetables are tender.",
         "duration": 10,
         "technique": "steaming",
-        "instructionBn": "হলুদ গুঁড়ো, লবণ যোগ করুন এবং ৩ tablespoons পানি.tightly ঢেকে দিন এবং কম আঁচে until vegetables are tender রান্না করুন."
+        "instructionBn": "হলুদ গুঁড়ো, মরিচ গুঁড়ো, ধনে গুঁড়ো, লবণ ও সামান্য পানি ছিটিয়ে ভালো করে মেশান।"
       }
     ],
     "imageEmoji": "🥦",
@@ -1359,7 +1359,7 @@ export const expansionRecipes = [
         "preparation": "divided",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "butter-unsalted"
+        "nameBn": "মাখন (আনসল্টেড)"
       },
       {
         "ingredientId": "tomato-paste",
@@ -1413,34 +1413,34 @@ export const expansionRecipes = [
         "instruction": "Marinate chicken in yogurt, salt, and half the garam masala for 20 minutes.",
         "duration": 20,
         "technique": "marinating",
-        "instructionBn": "Marinate chicken in yogurt, লবণ এবং half গরম মশলা ২০ মিনিট."
+        "instructionBn": "মুরগির টুকরোগুলোকে দই, আদা-রসুন বাটা, গরম মশলা ও কাসুরি মেথি দিয়ে মাখিয়ে কমপক্ষে ৩০ মিনিট মেরিনেট করে রাখুন।"
       },
       {
         "step": 2,
         "instruction": "Sear chicken pieces in a pan until browned and almost cooked. Set aside.",
         "duration": 8,
         "technique": "pan-searing",
-        "instructionBn": "Sear chicken pieces একটি প্যানে until browned এবং almost cooked.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "একটি প্যানে মাখন গরম করে মেরিনেট করা মুরগির টুকরোগুলো সোনালী হওয়া পর্যন্ত ভেজে তুলে রাখুন।"
       },
       {
         "step": 3,
         "instruction": "In the same pan, melt half the butter. Stir in tomato paste, sugar, remaining garam masala, and 1 cup of water. Simmer until smooth.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "In same pan, melt half মাখন.in টমেটো বাটা / পেস্ট, sugar, remaining গরম মশলা নেড়ে দিন এবং ১ cup পানি.until smooth জ্বাল দিন."
+        "instructionBn": "একই প্যানে পেঁয়াজ, রসুন ও টমেটো হালকা ভেজে কাজুবাদামসহ ব্লেন্ডারে মসৃণ পেস্ট তৈরি করুন।"
       },
       {
         "step": 4,
         "instruction": "Add chicken back, stir in heavy cream and remaining butter, and simmer for 5-8 minutes until glossy.",
         "duration": 7,
         "technique": "simmering",
-        "instructionBn": "chicken back, stir in ভারী ক্রিম যোগ করুন এবং remaining মাখন এবং ৫-৮ মিনিট until glossy জ্বাল দিন."
+        "instructionBn": "প্যানে আরও সামান্য মাখন দিয়ে ব্লেন্ড করা টমেটো পেস্ট, লাল মরিচ গুঁড়ো ও ক্রিম দিয়ে ৫ মিনিট কষিয়ে নিন।"
       }
     ],
     "imageEmoji": "🍗",
     "titleBn": "বাটার চিকেন (ক্রিমি মুরগির তরকারি)",
-    "descriptionBn": "একটি বিশ্বখ্যাত সুস্বাদু উত্তর ভারতীয় পদ যেখানে গ্রিলড تন্দুরি মুরগির টুকরোকে মাখন, টমেটো ও কাজুবাদাম বাটা দিয়ে তৈরি একটি অত্যন্ত ক্রিমি ও মৃদু মিষ্টি গ্রেভিতে রান্না করা হয়।",
-    "culturalNoteBn": "১৯৫০-এর দশকে দিল্লির বিখ্যাত মোতি মহল রেস্তোরাঁয় প্রথম তৈরি হওয়া বাটার চিকেন বর্তমানে বিশ্বজুড়ে ভারতীয় রন্ধনশিল্পের সিগনেচার খাবার।"
+    "descriptionBn": "একটি বিশ্বখ্যাত সুস্বাদু উত্তর ভারতীয় পদ যেখানে গ্রিলড তন্দুরি মুরগির টুকরোকে মাখন, টমেটো ও কাজুবাদাম বাটা দিয়ে তৈরি একটি অত্যন্ত ক্রিমি ও মৃদু মিষ্টি গ্রেভিতে রান্না করা হয়।",
+    "culturalNoteBn": "১৯৫০-এর দশকে দিল্লির বিখ্যাত মোতি মহল রেস্তোরাঁয় বাটার চিকেন প্রথম তৈরি হয় এবং বর্তমানে এটি বিশ্বজুড়ে ভারতের রন্ধনশিল্পের অন্যতম পরিচিত খাবার।"
   },
   {
     "id": "chana-masala",
@@ -1533,27 +1533,27 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a pan. Sauté chopped onions until golden brown.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "ঘি একটি প্যানে গরম করুন.chopped onions সোনালী বাদামী হওয়া পর্যন্ত সাঁতলে নিন."
+        "instructionBn": "একটি প্যানে ঘি গরম করুন। কাটা পেঁয়াজ সোনালি বাদামী হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 2,
         "instruction": "Stir in tomato paste, cumin powder, pomegranate seed powder, and salt. Sauté until oil separates.",
         "duration": 4,
         "technique": "sautéing",
-        "instructionBn": "in টমেটো বাটা / পেস্ট, জিরা গুঁড়ো, pomegranate seed powder নেড়ে দিন এবং লবণ.until oil separates সাঁতলে নিন."
+        "instructionBn": "টমেটো পেস্ট, জিরা গুঁড়া, ডালিম বীজের গুঁড়া এবং লবণ দিয়ে নাড়ুন। তেল আলাদা না হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add boiled chickpeas and 1 cup of water. Simmer covered for 10 minutes until gravy thickens.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "boiled ছোলা / বুট যোগ করুন এবং ১ cup পানি.covered ১০ মিনিট until gravy thickens জ্বাল দিন."
+        "instructionBn": "সিদ্ধ ছোলা এবং ১ কাপ জল যোগ করুন। গ্রেভি ঘন না হওয়া পর্যন্ত ১০ মিনিটের জন্য ঢেকে রাখুন।"
       }
     ],
     "imageEmoji": "🫘",
-    "titleBn": "Chana Masala (Punjabi Style Chickpea Curry)",
-    "descriptionBn": "Tender ছোলা / বুট cooked in a robust, tangy gravy tomatoes, onions, আদা, cumin এবং dry pomegranate seeds.",
-    "culturalNoteBn": "Historically a street-food classic in Punjab, commonly served দিয়ে puffy Bhature অথবা fluffy rice."
+    "titleBn": "চানা মসলা (পাঞ্জাবি স্টাইল ছোলার তরকারি)",
+    "descriptionBn": "কোমল ছোলা টমেটো, পেঁয়াজ, আদা, জিরা এবং শুকনো ডালিম বীজের একটি শক্ত, টেঞ্জ গ্রেভিতে রান্না করা হয়।",
+    "culturalNoteBn": "ঐতিহাসিকভাবে পাঞ্জাবের একটি স্ট্রিট-ফুড ক্লাসিক, সাধারণত ফুচকা ভাতুরে বা তুলতুলে ভাতের সাথে পরিবেশন করা হয়।"
   },
   {
     "id": "kadai-paneer",
@@ -1618,7 +1618,7 @@ export const expansionRecipes = [
         "preparation": "crushed coarsely",
         "isEssential": true,
         "group": "Spices",
-        "nameBn": "coriander-seed"
+        "nameBn": "ধনে বীজ"
       },
       {
         "ingredientId": "green-chili",
@@ -1645,34 +1645,34 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a kadai or pan. Add crushed coriander seeds and green chilies, letting them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a kadai অথবা pan গরম করুন.crushed coriander seeds যোগ করুন এবং green chilies, letting them sizzle."
+        "instructionBn": "কড়াই বা প্যানে ঘি গরম করুন। গুঁড়ো করা আস্ত ধনিয়া এবং সবুজ মরিচ যোগ করুন, সেগুলি সিজল হতে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add bell pepper cubes and sauté for 2 minutes to keep them crunchy.",
         "duration": 2,
         "technique": "sautéing",
-        "instructionBn": "bell pepper cubes যোগ করুন এবং ২ মিনিট to keep them crunchy সাঁতলে নিন."
+        "instructionBn": "গোলমরিচের কিউব যোগ করুন এবং ২ মিনিটের জন্য ভাজুন যাতে সেগুলি কুঁচকে যায়।"
       },
       {
         "step": 3,
         "instruction": "Stir in chopped tomatoes and salt. Cook until tomatoes mash and turn dry.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "in chopped tomatoes নেড়ে দিন এবং লবণ.until tomatoes mash রান্না করুন এবং turn dry."
+        "instructionBn": "কাটা টমেটো এবং লবণ দিয়ে নাড়ুন। টমেটো ম্যাশ করা এবং শুকিয়ে যাওয়া পর্যন্ত রান্না করুন।"
       },
       {
         "step": 4,
         "instruction": "Gently add paneer cubes, stir-fry on high heat for 3 minutes to coat with spices, and serve hot.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "Gently add পনির cubes, stir-fry উচ্চ আঁচে ৩ মিনিট to coat দিয়ে spices এবং গরম গরম পরিবেশন করুন."
+        "instructionBn": "আলতো করে পনির কিউব যোগ করুন, মশলা দিয়ে প্রলেপ দিতে ৩ মিনিটের জন্য উচ্চ তাপে ভাজুন এবং গরম পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🧀",
-    "titleBn": "Kadai পনির",
-    "descriptionBn": "পনির cheese cubes এবং crunchy bell peppers tossed in a spicy, freshly crushed coriander এবং red chili masala.",
-    "culturalNoteBn": "Named after \"Kadai\" (Indian wok) in which it is cooked এবং served."
+    "titleBn": "কদই পনির",
+    "descriptionBn": "পনির পনির কিউব এবং কুঁচি বেল মরিচ একটি মশলাদার, সদ্য গুঁড়ো করা ধনে এবং লাল মরিচ মশলাতে ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "\"কাদাই\" (ভারতীয় ওক) এর নামানুসারে যার মধ্যে এটি রান্না করা হয় এবং পরিবেশন করা হয়।"
   },
   {
     "id": "jeera-rice",
@@ -1738,27 +1738,27 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a pot. Add cumin seeds and let them splutter until highly aromatic.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি একটি পাত্রে গরম করুন.জিরা যোগ করুন এবং let them splutter until highly aromatic."
+        "instructionBn": "একটি পাত্রে ঘি গরম করুন। জিরা যোগ করুন এবং অত্যন্ত সুগন্ধি না হওয়া পর্যন্ত তাদের স্প্লাটার দিন।"
       },
       {
         "step": 2,
         "instruction": "Add drained Basmati rice and sauté gently in ghee for 2 minutes without breaking the grains.",
         "duration": 2,
         "technique": "sautéing",
-        "instructionBn": "drained বাসমতী চাল যোগ করুন এবং gently in ঘি ২ মিনিট without breaking grains সাঁতলে নিন."
+        "instructionBn": "নিষ্কাশন করা বাসমতি চাল যোগ করুন এবং দানা না ভেঙে ২ মিনিটের জন্য ঘি দিয়ে আলতো করে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Pour in 3 cups of water and salt. Bring to a boil, then cover and simmer on low heat for 10 minutes until water is absorbed.",
         "duration": 10,
         "technique": "steaming",
-        "instructionBn": "in ৩ cups পানি ঢালুন এবং লবণ., then cover ফুটিয়ে নিন এবং কম আঁচে ১০ মিনিট until পানি is absorbed জ্বাল দিন."
+        "instructionBn": "৩ কাপ জল এবং লবণ ঢালা। একটি ফোঁড়া আনুন, তারপর ঢেকে দিন এবং কম আঁচে ১০ মিনিটের জন্য সিদ্ধ করুন যতক্ষণ না জল শোষিত হয়।"
       }
     ],
     "imageEmoji": "🍚",
-    "titleBn": "Jeera Rice (Cumin Fragrant Rice)",
-    "descriptionBn": "Fluffy, long-grain বাসমতী চাল tempered দিয়ে plenty toasted জিরা এবং ঘি.",
-    "culturalNoteBn": "standard premium rice pairing in Indian restaurants, elevating plain rice to something fragrant."
+    "titleBn": "জিরা চাল (জিরা সুগন্ধি চাল)",
+    "descriptionBn": "তুলতুলে, লম্বা-দানার বাসমতি চাল প্রচুর টোস্ট করা জিরা এবং ঘি দিয়ে মেজাজ।",
+    "culturalNoteBn": "ভারতীয় রেস্তোরাঁগুলিতে সাধারণ প্রিমিয়াম চালের জুড়ি, সাধারণ চালকে সুগন্ধযুক্ত কিছুতে উন্নীত করে।"
   },
   {
     "id": "kheer",
@@ -1795,7 +1795,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Liquids",
-        "nameBn": "milk-whole"
+        "nameBn": "দুধ"
       },
       {
         "ingredientId": "sugar-white",
@@ -1822,7 +1822,7 @@ export const expansionRecipes = [
         "preparation": "chopped",
         "isEssential": false,
         "group": "Garnish",
-        "nameBn": "cashews"
+        "nameBn": "কাজুবাদাম"
       }
     ],
     "steps": [
@@ -1831,27 +1831,27 @@ export const expansionRecipes = [
         "instruction": "Bring milk to a boil in a thick-bottomed pot. Add the washed basmati rice.",
         "duration": 10,
         "technique": "boiling",
-        "instructionBn": "Bring দুধ to a boil in a thick-bottomed pot.washed বাসমতী চাল যোগ করুন."
+        "instructionBn": "একটি পুরু-নিচের পাত্রে দুধ ফুটিয়ে নিন। ধোয়া বাসমতি চাল যোগ করুন।"
       },
       {
         "step": 2,
         "instruction": "Simmer on low heat, stirring occasionally, until the rice is fully cooked and the milk has reduced to half its volume.",
         "duration": 25,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে, stirring occasionally, until rice is fully cooked জ্বাল দিন এবং দুধ has reduced to half its volume."
+        "instructionBn": "অল্প আঁচে সিদ্ধ করুন, মাঝে মাঝে নাড়তে থাকুন, যতক্ষণ না চাল সম্পূর্ণ সেদ্ধ হয় এবং দুধের পরিমাণ অর্ধেক কমে যায়।"
       },
       {
         "step": 3,
         "instruction": "Stir in sugar and cardamom powder. Cook for another 5 minutes until sugar dissolves and pudding is creamy. Garnish with cashews.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "in sugar নেড়ে দিন এবং cardamom powder.আরও ৫ মিনিট until sugar dissolves রান্না করুন এবং pudding is creamy.দিয়ে cashews সাজিয়ে নিন."
+        "instructionBn": "চিনি ও এলাচ গুঁড়ো দিয়ে নাড়ুন। চিনি দ্রবীভূত হওয়া এবং পুডিং ক্রিমি না হওয়া পর্যন্ত আরও ৫ মিনিট রান্না করুন। কাজু দিয়ে সাজিয়ে নিন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Traditional Rice Kheer (Indian Rice Pudding)",
-    "descriptionBn": "A slow-cooked Indian pudding বাসমতী চাল simmered in whole দুধ, sweetened দিয়ে sugar এবং flavored দিয়ে green cardamom এবং cashews.",
-    "culturalNoteBn": "An auspicious sweet prepared for celebrations, birthdays এবং religious festivals in Indian households."
+    "titleBn": "ঐতিহ্যবাহী চালের খির (ভারতীয় চালের পুডিং)",
+    "descriptionBn": "বাসমতি চালের একটি ধীর রান্না করা ভারতীয় পুডিং পুরো দুধে সিদ্ধ করা হয়, চিনি দিয়ে মিষ্টি করা হয় এবং সবুজ এলাচ এবং কাজু দিয়ে স্বাদযুক্ত।",
+    "culturalNoteBn": "ভারতীয় পরিবারে উদযাপন, জন্মদিন এবং ধর্মীয় উৎসবের জন্য প্রস্তুত একটি শুভ মিষ্টি।"
   },
   {
     "id": "chicken-karahi",
@@ -1951,34 +1951,34 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a wok. Fry chicken pieces with garlic paste and salt on high heat for 5 minutes.",
         "duration": 5,
         "technique": "stir-frying",
-        "instructionBn": "ঘি in a wok গরম করুন.chicken pieces দিয়ে রসুন বাটা / পেস্ট ভাজুন এবং লবণ উচ্চ আঁচে ৫ মিনিট."
+        "instructionBn": "একটি কড়াই বা ওয়াকে উচ্চ আঁচে ঘি গরম করুন। মুরগির মাংস ৫ মিনিট সোনালী হওয়া পর্যন্ত কড়া আঁচে ভাজুন।"
       },
       {
         "step": 2,
         "instruction": "Place halved tomatoes cut-side down on top of the chicken. Cover and let steam for 5 minutes until skin loosens.",
         "duration": 5,
         "technique": "steaming",
-        "instructionBn": "halved tomatoes cut-side down on top chicken রাখুন.ঢেকে দিন এবং let steam ৫ মিনিট until skin loosens."
+        "instructionBn": "রসুন বাটা ও আদার লম্বা কুচি দিয়ে মাংসের সাথে আরও ২ মিনিট সাঁতলে নিন।"
       },
       {
         "step": 3,
         "instruction": "Remove tomato skins with tongs. Stir-fry on high heat, mashing the tomato flesh into a thick red gravy.",
         "duration": 5,
         "technique": "stir-frying",
-        "instructionBn": "টমেটো skins দিয়ে tongs তুলে নিন.উচ্চ আঁচে, mashing টমেটো flesh into a thick red gravy নেড়েচেড়ে ভাজুন."
+        "instructionBn": "টমেটোর অর্ধাংশ কেটে কাটা দিক নিচে দিয়ে মাংসের ওপর বিছিয়ে দিন। ঢাকনা দিয়ে মাঝারি আঁচে ১০ মিনিট রান্না করুন যাতে টমেটো নরম হয়।"
       },
       {
         "step": 4,
         "instruction": "Add julienned ginger, green chilies, and black pepper. Stir-fry until oil separates and chicken is fully tender.",
         "duration": 5,
         "technique": "stir-frying",
-        "instructionBn": "julienned আদা, green chilies যোগ করুন এবং গোলমরিচ.until oil separates নেড়েচেড়ে ভাজুন এবং chicken is fully tender."
+        "instructionBn": "ঢাকনা খুলে চিমটা দিয়ে টমেটোর আলগা খোসাগুলো তুলে ফেলে দিন। চামচ দিয়ে টমেটো চটকে ঘন লাল গ্রেভি তৈরি করুন।"
       }
     ],
     "imageEmoji": "🍲",
-    "titleBn": "চিকেন করাহি (পাকিস্তানি কড়াই চিকেন)",
-    "descriptionBn": "কড়াইয়ে বা করাহিতে মুরগির টুকরো প্রচুর টমেটো, রসুন, আদা, কাঁচা মরিচ এবং তাজা গুঁড়ো মশলার কড়া গ্রেভিতে দীর্ঘ সময় না ভেজে ভুনা করা ক্লাসিক পাকিস্তানি কড়াই চিকেন।",
-    "culturalNoteBn": "পেঁয়াজ ছাড়া শুধু টমেটোর গ্রেভিতে এই কারি রান্না করা হয়। করাচি এবং লাহোরের ধাবাগুলোতে এটি রুটি দিয়ে খাওয়া অত্যন্ত জনপ্রিয়।"
+    "titleBn": "চিকেন কড়াই (লাহোরি স্টাইল চিকেন কারাহি)",
+    "descriptionBn": "ঘিয়ে কড়া আঁচে ভাজা মুরগি, তাজা পাকা টমেটোর ঘন গ্রেভি, আদার লম্বা কুচি ও কাঁচা মরিচে তৈরি বিখ্যাত পাকিস্তানি কড়াই চিকেন।",
+    "culturalNoteBn": "পাকিস্তান ও উত্তর ভারতের ধাবা ও হাইওয়ে রেস্তোরাঁর সবচেয়ে জনপ্রিয় ও দ্রুত প্রস্তুতকৃত খাবার।"
   },
   {
     "id": "nihari",
@@ -2007,7 +2007,7 @@ export const expansionRecipes = [
         "preparation": "with large bone-in marrow",
         "isEssential": true,
         "group": "Main",
-        "nameBn": "গরুর পায়া / নেহারি মাংস"
+        "nameBn": "গরুর পায়া / নেহারি মাংস"
       },
       {
         "ingredientId": "ghee",
@@ -2079,34 +2079,34 @@ export const expansionRecipes = [
         "instruction": "Heat ghee in a large heavy pot. Sear beef shanks with ginger and garlic paste until browned.",
         "duration": 5,
         "technique": "searing",
-        "instructionBn": "ঘি in a large heavy pot গরম করুন.Sear beef shanks দিয়ে আদা এবং রসুন বাটা / পেস্ট until browned."
+        "instructionBn": "একটি বড় ভারী পাত্রে ঘি গরম করুন। বাদামী হওয়া পর্যন্ত আদা এবং রসুনের পেস্ট দিয়ে গরুর মাংসের ঝাঁকুনি দিন।"
       },
       {
         "step": 2,
         "instruction": "Add fennel powder, chili powder, and salt. Pour in 6 cups of water and bring to a boil. Cover and simmer on extremely low heat until meat is meltingly tender.",
         "duration": 150,
         "technique": "simmering",
-        "instructionBn": "fennel powder, মরিচ গুঁড়ো যোগ করুন এবং লবণ.in ৬ cups পানি ঢালুন এবং ফুটিয়ে নিন.ঢেকে দিন এবং on extremely low heat until meat is meltingly tender জ্বাল দিন."
+        "instructionBn": "মৌরি গুঁড়া, লঙ্কা গুঁড়া, এবং লবণ যোগ করুন। ৬ কাপ জলে ঢেলে একটি ফোঁড়া আনুন। ঢেকে রাখুন এবং খুব কম আঁচে সিদ্ধ করুন যতক্ষণ না মাংস গলে যায়।"
       },
       {
         "step": 3,
         "instruction": "Whisk toasted flour with a half cup of water until lump-free. Slowly pour into stew, stirring constantly to thicken slightly.",
         "duration": 5,
         "technique": "mixing",
-        "instructionBn": "toasted flour দিয়ে a half cup পানি until lump-free ফেটিয়ে নিন.Slowly pour into stew, stirring constantly to thicken slightly."
+        "instructionBn": "আধা কাপ পানি দিয়ে টোস্ট করা ময়দা ফেটে নিন যতক্ষণ না পিণ্ডমুক্ত হয়। ধীরে ধীরে স্টুতে ঢেলে দিন, ক্রমাগত নাড়তে থাকুন যাতে কিছুটা ঘন হয়।"
       },
       {
         "step": 4,
         "instruction": "Prepare a separate temper by frying chili powder in 2 tablespoons of ghee, pour over Nihari, and serve with ginger matches and lemon.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prepare a separate temper by frying মরিচ গুঁড়ো in ২ tablespoons ঘি, pour over Nihari এবং দিয়ে আদা matches পরিবেশন করুন এবং লেবু."
+        "instructionBn": "২ টেবিল চামচ ঘিতে মরিচের গুঁড়া ভেজে, নিহারির ওপর ঢেলে আদা ম্যাচ ও লেবু দিয়ে পরিবেশন করে আলাদা টেম্পার তৈরি করুন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Slow Cooked Beef Nihari",
-    "descriptionBn": "A slow-cooked গরুর পায়া / নেহারি মাংস stew cooked overnight দিয়ে warming spices এবং bone marrow, thickened slightly দিয়ে flour.",
-    "culturalNoteBn": "Historically a royal breakfast dish in Delhi এবং Lucknow, now national dish Pakistan."
+    "titleBn": "আস্তে রান্না করা গরুর মাংস নিহারী",
+    "descriptionBn": "ধীরে-ধীরে রান্না করা গরুর মাংসের শ্যাঙ্ক স্টু গরম মশলা এবং অস্থি মজ্জা দিয়ে রাতারাতি রান্না করা হয়, ময়দা দিয়ে কিছুটা ঘন করা হয়।",
+    "culturalNoteBn": "ঐতিহাসিকভাবে দিল্লি এবং লখনউতে একটি রাজকীয় প্রাতঃরাশের খাবার, যা এখন পাকিস্তানের জাতীয় খাবার।"
   },
   {
     "id": "beef-haleem",
@@ -2206,41 +2206,41 @@ export const expansionRecipes = [
         "instruction": "Boil beef with ginger, garlic, garam masala, and salt until extremely soft and shreddable.",
         "duration": 60,
         "technique": "boiling",
-        "instructionBn": "beef দিয়ে আদা, রসুন, গরম মশলা ফুটিয়ে নিন এবং লবণ until extremely soft এবং shreddable."
+        "instructionBn": "গরুর মাংসকে আদা, রসুন, গরম মসলা এবং লবণ দিয়ে সিদ্ধ করুন যতক্ষণ না অত্যন্ত নরম এবং ছিঁড়ে যায়।"
       },
       {
         "step": 2,
         "instruction": "In another pot, boil red and yellow lentils with plenty of water until completely mushy.",
         "duration": 30,
         "technique": "boiling",
-        "instructionBn": "In another pot, boil red এবং yellow lentils দিয়ে plenty পানি until completely mushy."
+        "instructionBn": "অন্য একটি পাত্রে লাল এবং হলুদ মসুর ডালকে প্রচুর পরিমাণে জল দিয়ে সিদ্ধ করুন যতক্ষণ না সম্পূর্ণ মিশে যায়।"
       },
       {
         "step": 3,
         "instruction": "Shred the cooked beef. Combine the beef and lentils in a single large pot.",
         "duration": 10,
         "technique": "mixing",
-        "instructionBn": "Shred cooked beef.beef মিশিয়ে নিন এবং lentils in a single large pot."
+        "instructionBn": "রান্না করা গরুর মাংস ছিঁড়ে নিন। একটি বড় পাত্রে গরুর মাংস এবং মসুর ডাল একত্রিত করুন।"
       },
       {
         "step": 4,
         "instruction": "Use a heavy wooden paddle to vigorously mash and whip the stew until it reaches a thick, elastic, stringy consistency.",
         "duration": 15,
         "technique": "mashing",
-        "instructionBn": "Use a heavy wooden paddle to vigorously mash এবং whip stew until it reaches a thick, elastic, stringy consistency."
+        "instructionBn": "একটি ভারী কাঠের প্যাডেল ব্যবহার করুন জোরালোভাবে ম্যাশ করুন এবং চাবুক করুন যতক্ষণ না এটি একটি পুরু, স্থিতিস্থাপক, স্ট্রিংযুক্ত সামঞ্জস্যে পৌঁছায়।"
       },
       {
         "step": 5,
         "instruction": "Pour hot ghee over the haleem before serving.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "গরম গরম ঘি over haleem before serving ঢালুন."
+        "instructionBn": "পরিবেশনের আগে হালিমের ওপর গরম ঘি ঢেলে দিন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Beef Haleem (Lentil এবং Meat Stew)",
-    "descriptionBn": "A slow-cooked, rich stew beef, wheat berries, barley এবং various lentils, blended এবং to a thick, stringy texture ফেটিয়ে নিন.",
-    "culturalNoteBn": "Historically prepared during Muharram এবং communal gatherings, served দিয়ে fried onions এবং লেবু."
+    "titleBn": "গরুর মাংসের হালিম (মসুর ডাল এবং মাংসের স্টু)",
+    "descriptionBn": "গরুর মাংস, গমের বেরি, বার্লি, এবং বিভিন্ন মসুর ডাল ধীরে ধীরে রান্না করা, সমৃদ্ধ স্টু, মিশ্রিত এবং একটি ঘন, স্ট্রিং টেক্সচারে চাবুক করা হয়।",
+    "culturalNoteBn": "মহরম এবং সাম্প্রদায়িক সমাবেশের সময় ঐতিহাসিকভাবে প্রস্তুত, ভাজা পেঁয়াজ এবং লেবু দিয়ে পরিবেশন করা হয়।"
   },
   {
     "id": "mutton-biryani",
@@ -2340,34 +2340,34 @@ export const expansionRecipes = [
         "instruction": "Marinate mutton in yogurt, garam masala, salt, and ginger-garlic paste for 1 hour.",
         "duration": 60,
         "technique": "marinating",
-        "instructionBn": "Marinate mutton in yogurt, গরম মশলা, লবণ এবং আদা-রসুন বাটা / পেস্ট for ১ ঘণ্টা."
+        "instructionBn": "দই, গরম মসলা, লবণ এবং আদা-রসুন পেস্টে মাটন মেরিনেট করে রাখুন ১ ঘণ্টা।"
       },
       {
         "step": 2,
         "instruction": "Fry onions in ghee until brown. Cook the mutton in this base until meat is perfectly cooked and tender.",
         "duration": 30,
         "technique": "sautéing",
-        "instructionBn": "onions in ঘি until brown ভাজুন.mutton in this base until meat is perfectly cooked রান্না করুন এবং tender."
+        "instructionBn": "ঘিতে পেঁয়াজ বাদামি করে ভেজে নিন। এই বেসে মাটন রান্না করুন যতক্ষণ না মাংস পুরোপুরি সেদ্ধ এবং কোমল হয়।"
       },
       {
         "step": 3,
         "instruction": "Parboil Basmati rice in salted water until 70% cooked. Drain.",
         "duration": 10,
         "technique": "boiling",
-        "instructionBn": "Parboil বাসমতী চাল in salted পানি until ৭০% cooked.পানি ঝরিয়ে নিন."
+        "instructionBn": "বাসমতি চাল ৭০% সিদ্ধ হওয়া পর্যন্ত লবণাক্ত জলে সেদ্ধ করুন। ড্রেন।"
       },
       {
         "step": 4,
         "instruction": "Layer the cooked mutton curry, parboiled rice, mint leaves, and a splash of ghee in a heavy pot. Cover tightly and cook on lowest steam (Dum) for 15 minutes.",
         "duration": 15,
         "technique": "steaming",
-        "instructionBn": "Layer cooked mutton curry, parboiled rice, পুদিনা পাতা leaves এবং a splash ঘি in a heavy pot.tightly ঢেকে দিন এবং on lowest steam (Dum) ১৫ মিনিট রান্না করুন."
+        "instructionBn": "একটি ভারী পাত্রে রান্না করা মাটন কারি, সিদ্ধ চাল, পুদিনা পাতা এবং ঘি ছড়িয়ে দিন। শক্তভাবে ঢেকে রাখুন এবং ১৫ মিনিটের জন্য সর্বনিম্ন বাষ্পে (দম) রান্না করুন।"
       }
     ],
     "imageEmoji": "🍚",
-    "titleBn": "Pakistani Mutton Biryani",
-    "descriptionBn": "Layered বাসমতী চাল এবং rich, highly spiced mutton curry cooked on \"Dum\" steam দিয়ে fresh পুদিনা পাতা এবং saffron color.",
-    "culturalNoteBn": "ultimate celebratory centerpiece in Pakistani households, particularly for weddings এবং Eid."
+    "titleBn": "পাকিস্তানি মাটন বিরিয়ানি",
+    "descriptionBn": "স্তরযুক্ত বাসমতি চাল এবং সমৃদ্ধ, উচ্চ মসলাযুক্ত মাটন কারি \"দম\" বাষ্পে তাজা পুদিনা এবং জাফরান রঙ দিয়ে রান্না করা হয়।",
+    "culturalNoteBn": "পাকিস্তানি পরিবারের চূড়ান্ত উদযাপনের কেন্দ্রবিন্দু, বিশেষ করে বিবাহ এবং ঈদের জন্য।"
   },
   {
     "id": "seekh-kabab",
@@ -2459,27 +2459,27 @@ export const expansionRecipes = [
         "instruction": "Thoroughly knead ground beef with squeezed onions, mint, garam masala, pomegranate seeds, ghee, and salt for 10 minutes to create a cohesive paste.",
         "duration": 10,
         "technique": "kneading",
-        "instructionBn": "Thoroughly knead ground beef দিয়ে squeezed onions, পুদিনা পাতা, গরম মশলা, pomegranate seeds, ঘি এবং লবণ ১০ মিনিট to create a cohesive বাটা / পেস্ট."
+        "instructionBn": "পিঁয়াজ, পুদিনা, গরম মসলা, ডালিমের বীজ, ঘি, এবং লবণ দিয়ে ১০ মিনিটের জন্য পিষে রাখা গরুর মাংস ভালোভাবে মাখুন যাতে একটি সুসংহত পেস্ট তৈরি হয়।"
       },
       {
         "step": 2,
         "instruction": "Shape meat onto metal skewers or into long sausage shapes.",
         "duration": 5,
         "technique": "shaping",
-        "instructionBn": "Shape meat onto metal skewers অথবা into long sausage shapes."
+        "instructionBn": "মাংসকে ধাতব স্ক্যুয়ারে বা লম্বা সসেজ আকারে আকৃতি দিন।"
       },
       {
         "step": 3,
         "instruction": "Grill over charcoal or pan-sear on medium-high heat, basting with extra ghee, until cooked through.",
         "duration": 12,
         "technique": "grilling",
-        "instructionBn": "Grill over charcoal অথবা pan-sear on medium-high heat, basting দিয়ে extra ঘি, until cooked through."
+        "instructionBn": "মাঝারি-উচ্চ তাপে কাঠকয়লা বা প্যান-সিয়ারের উপর গ্রিল করুন, অতিরিক্ত ঘি দিয়ে বেস্ট করুন, যতক্ষণ না রান্না হয়।"
       }
     ],
     "imageEmoji": "🍢",
-    "titleBn": "Beef Seekh Kabab",
-    "descriptionBn": "Spiced ground beef skewers mixed দিয়ে minced onions, পুদিনা পাতা এবং dry pomegranate seeds, flame-grilled অথবা pan-seared.",
-    "culturalNoteBn": "A classic barbecue street food found on every charcoal grill corner in Karachi."
+    "titleBn": "গরুর মাংস সেখ কাবাব",
+    "descriptionBn": "মসলাযুক্ত গ্রাউন্ড গরুর মাংসের স্ক্যুয়ারে কিমা করা পেঁয়াজ, পুদিনা এবং শুকনো ডালিমের বীজ, শিখা-ভাজা বা প্যান-সিয়ারডের সাথে মিশ্রিত করা হয়।",
+    "culturalNoteBn": "করাচির প্রতিটি চারকোল গ্রিল কর্নারে একটি ক্লাসিক বারবিকিউ স্ট্রিট ফুড পাওয়া যায়।"
   },
   {
     "id": "chapli-kabab",
@@ -2535,7 +2535,7 @@ export const expansionRecipes = [
         "preparation": "crushed coarsely",
         "isEssential": true,
         "group": "Spices",
-        "nameBn": "coriander-seed"
+        "nameBn": "ধনে বীজ"
       },
       {
         "ingredientId": "pomegranate-seeds-dry",
@@ -2580,21 +2580,21 @@ export const expansionRecipes = [
         "instruction": "Mix ground beef with onions, diced tomato, crushed coriander, pomegranate seeds, green chilies, and salt.",
         "duration": 10,
         "technique": "kneading",
-        "instructionBn": "ground beef দিয়ে onions, diced টমেটো, crushed coriander, pomegranate seeds, green chilies মেশান এবং লবণ."
+        "instructionBn": "গরুর কিমা মাংসে চর্বিসহ মিহি পেঁয়াজ কুচি, টমেটো কুচি, কাঁচা মরিচ, আদা-রসুন ও ধনেপাতা মেশান।"
       },
       {
         "step": 2,
         "instruction": "Shape into large, thin, flat patties. Press one round tomato slice onto the center of each patty.",
         "duration": 5,
         "technique": "shaping",
-        "instructionBn": "Shape into large, thin, flat patties.Press one round টমেটো slice onto center each patty."
+        "instructionBn": "ভাজা ধনে বীজ গুঁড়ো, জিরা, চিলি ফ্লেক্স, আনারদানা পাউডার ও লবণ যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Shallow fry in hot ghee until dark brown, crispy on edges, and fully cooked.",
         "duration": 6,
         "technique": "shallow-frying",
-        "instructionBn": "Shallow fry in গরম গরম ঘি until dark brown, crispy on edges এবং fully cooked."
+        "instructionBn": "ভুট্টার আটা (মাকাই কা আটা) ও ডিম মিশিয়ে হাত দিয়ে ১০ মিনিট ভালো করে ঠাসে মেখে নিন।"
       }
     ],
     "imageEmoji": "🥩",
@@ -2693,21 +2693,21 @@ export const expansionRecipes = [
         "instruction": "Cook yellow split peas in 4 cups of water with turmeric and salt until completely soft.",
         "duration": 20,
         "technique": "boiling",
-        "instructionBn": "yellow split peas in ৪ cups পানি দিয়ে turmeric রান্না করুন এবং লবণ until completely soft."
+        "instructionBn": "মসুর ডাল ও মুগ ডাল ধুয়ে হলুদ ও লবণসহ পর্যাপ্ত পানিতে একদম নরম ও গলানো হওয়া পর্যন্ত ফুটিয়ে নিন।"
       },
       {
         "step": 2,
         "instruction": "In a small frying pan, heat ghee. Fry sliced garlic and cumin seeds until garlic is golden brown.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "In a small frying pan, heat ঘি.sliced রসুন ভাজুন এবং জিরা until রসুন is সোনালী বাদামী."
+        "instructionBn": "ডাল ঘুঁটনি দিয়ে ডাল ভালো করে ঘুঁটে মসৃণ করে নিন এবং প্রয়োজনমতো পানি দিয়ে পাতলা ঝোল রাখুন।"
       },
       {
         "step": 3,
         "instruction": "Pour the hot garlic and cumin temper directly into the boiling lentils. Serve hot over basmati rice.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "গরম গরম রসুন ঢালুন এবং cumin temper directly into boiling lentils.গরম গরম over বাসমতী চাল পরিবেশন করুন."
+        "instructionBn": "একটি ছোট প্যানে ঘি গরম করে জিরা, রসুন কুচি, শুকনো মরিচ ও হিং দিয়ে সোনালী ফোড়ন তৈরি করুন।"
       }
     ],
     "imageEmoji": "🍚",
@@ -2777,7 +2777,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": false,
         "group": "Garnish",
-        "nameBn": "cashews"
+        "nameBn": "কাজুবাদাম"
       }
     ],
     "steps": [
@@ -2786,27 +2786,27 @@ export const expansionRecipes = [
         "instruction": "Boil sugar and 3 cups of water with cardamom to create a fragrant sweet syrup.",
         "duration": 5,
         "technique": "boiling",
-        "instructionBn": "sugar ফুটিয়ে নিন এবং ৩ cups পানি দিয়ে cardamom to create a fragrant sweet syrup."
+        "instructionBn": "সুগন্ধি মিষ্টি সিরাপ তৈরি করতে এলাচ দিয়ে চিনি ও ৩ কাপ পানি ফুটিয়ে নিন।"
       },
       {
         "step": 2,
         "instruction": "In a separate pan, roast semolina in ghee until aromatic and light golden brown.",
         "duration": 5,
         "technique": "roasting",
-        "instructionBn": "একটি আলাদা প্যানে, roast সুজি in ঘি until aromatic এবং light সোনালী বাদামী."
+        "instructionBn": "একটি পৃথক প্যানে, সুগন্ধি এবং হালকা সোনালি বাদামী হওয়া পর্যন্ত ঘিতে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Carefully pour the hot sugar syrup into the semolina, stirring constantly until thick and smooth. Garnish with cashews.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "Carefully pour গরম গরম sugar syrup into সুজি, stirring constantly until thick এবং smooth.দিয়ে cashews সাজিয়ে নিন."
+        "instructionBn": "সুজিতে সাবধানে গরম চিনির সিরাপ ঢেলে দিন, ঘন এবং মসৃণ হওয়া পর্যন্ত ক্রমাগত নাড়তে থাকুন। কাজু দিয়ে সাজিয়ে নিন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Suji Ka Halwa (Pakistani সুজি Pudding)",
-    "descriptionBn": "Golden-roasted সুজি cooked in a cardamom-infused sugar syrup দিয়ে ঘি এবং cashews.",
-    "culturalNoteBn": "Served alongside fried Puris এবং আলু curry in traditional Pakistani Sunday brunch feast."
+    "titleBn": "সুজি কা হালওয়া (পাকিস্তানি সুজি পুডিং)",
+    "descriptionBn": "এলাচ-মিশ্রিত চিনির সিরায় ঘি এবং কাজু দিয়ে রান্না করা সোনালি-ভাজা সুজি।",
+    "culturalNoteBn": "ঐতিহ্যবাহী পাকিস্তানি সানডে ব্রাঞ্চ ফিস্টে ভাজা পুরি এবং আলুর তরকারির পাশাপাশি পরিবেশন করা হয়।"
   },
   {
     "id": "pad-thai",
@@ -2879,7 +2879,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       },
       {
         "ingredientId": "fish-sauce",
@@ -2897,7 +2897,7 @@ export const expansionRecipes = [
         "preparation": "roasted and crushed",
         "isEssential": true,
         "group": "Garnish",
-        "nameBn": "peanuts"
+        "nameBn": "চিনাবাদাম"
       }
     ],
     "steps": [
@@ -2906,34 +2906,34 @@ export const expansionRecipes = [
         "instruction": "Mix tamarind paste, palm sugar, and fish sauce in a small pan, simmer until sugar dissolves.",
         "duration": 3,
         "technique": "simmering",
-        "instructionBn": "তেঁতুল বাটা / পেস্ট, palm sugar মেশান এবং ফিশ সস in a small pan, simmer until sugar dissolves."
+        "instructionBn": "একটি ছোট প্যানে তেঁতুলের ক্বাথ, পাম চিনি ও ফিশ সস মিশিয়ে কম আঁচে চিনি গলা পর্যন্ত ফুটিয়ে সস তৈরি করুন।"
       },
       {
         "step": 2,
         "instruction": "Heat oil in a wok. Fry shrimp and tofu until shrimp turns pink. Push them to the side.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "oil in a wok গরম করুন.চিংড়ি ভাজুন এবং tofu until চিংড়ি turns pink.Push them to side."
+        "instructionBn": "একটি গরম ওয়াকে তেল দিয়ে চিংড়ি ও টোফু ভেজে নিন যতক্ষণ না চিংড়ি গোলাপি হয়, এরপর একপাশে সরিয়ে রাখুন।"
       },
       {
         "step": 3,
         "instruction": "Crack the egg into the empty space, scramble it, and then toss with the shrimp and tofu.",
         "duration": 1,
         "technique": "scrambling",
-        "instructionBn": "Crack ডিম into empty space, scramble it এবং then toss দিয়ে চিংড়ি এবং tofu."
+        "instructionBn": "ওয়াকের খালি অংশে ডিম ভেঙে দিয়ে স্ক্র্যাম্বল করে চিংড়ি ও টোফুর সাথে মিশিয়ে নিন।"
       },
       {
         "step": 4,
         "instruction": "Add rice noodles and the sauce. Stir-fry rapidly until noodles absorb the sauce. Toss with crushed peanuts and serve with lime wedges.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "রাইস নুডলস যোগ করুন এবং sauce.rapidly until noodles absorb sauce নেড়েচেড়ে ভাজুন.দিয়ে crushed peanuts মিশিয়ে নিন এবং দিয়ে কাগজি লেবু wedges পরিবেশন করুন."
+        "instructionBn": "ভেজানো রাইস নুডলস ও তৈরি সস ঢেলে উচ্চ আঁচে দ্রুত নেড়েচেড়ে ভাজুন। ওপরে ভাজা চীনাবাদাম গুঁড়ো ও লেবুর ফালি দিয়ে পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍜",
-    "titleBn": "প্যাড থাই (ঐতিহ্যবাহী থাই ফ্রাইড নুডলস)",
-    "descriptionBn": "রাইস নুডলস, চিংড়ি বা মুরগি, ডিম, টোফু, চিনেবাদাম গুঁড়ো এবং কুচানো পেঁয়াজ পাতা দিয়ে তেঁতুলের টক-মিষ্টি সসে স্টির-ফ্রাই করা বিশ্ববিখ্যাত থাই নুডলস।",
-    "culturalNoteBn": "প্যাড থাই থাইল্যান্ডের জাতীয় খাবার, যা মিষ্টি, টক ও নোনতা স্বাদের এক চমৎকার ভারসাম্যপূর্ণ স্ট্রিট ফুড।"
+    "titleBn": "প্যাড থাই (থাই ফ্রাইড নুডলস)",
+    "descriptionBn": "থাইল্যান্ডের সিগনেচার স্ট্রিট ফুড, যেখানে রাইস নুডলসকে চিংড়ি, টোফু, ডিম, চীনাবাদাম ও তেঁতুলের মিষ্টি-টক সসে দ্রুত সাঁতলে ভাজা হয়।",
+    "culturalNoteBn": "প্যাড থাই থাইল্যান্ডের জাতীয় খাবার হিসেবে ১৯৩০-এর দশকে পরিচিতি পায় এবং বর্তমানে বিশ্বজুড়ে সমাদৃত।"
   },
   {
     "id": "tom-yum-goong",
@@ -3033,27 +3033,27 @@ export const expansionRecipes = [
         "instruction": "Bring 3 cups of water to a boil. Add lemongrass, galangal, kaffir lime leaves, and green chilies. Boil for 5 minutes until fragrant.",
         "duration": 5,
         "technique": "boiling",
-        "instructionBn": "Bring ৩ cups পানি to a boil.লেমনগ্রাস, গালাঙ্গাল (থাই আদা), লেবু পাতা যোগ করুন এবং green chilies.৫ মিনিট until fragrant ফুটিয়ে নিন."
+        "instructionBn": "একটি পাত্রে ৩ কাপ পানি ফুটিয়ে লেমনগ্রাস, গাল্যাঙ্গাল, লেবু পাতা ও কাঁচা মরিচ দিয়ে ৫ মিনিট জ্বাল দিন যাতে সুবাস বের হয়।"
       },
       {
         "step": 2,
         "instruction": "Slide in the shrimp and simmer for just 3 minutes until cooked through.",
         "duration": 3,
         "technique": "simmering",
-        "instructionBn": "in চিংড়ি ছেড়ে দিন এবং for just ৩ মিনিট until cooked through জ্বাল দিন."
+        "instructionBn": "চিংড়ি মাছ যোগ করে মাত্র ৩ মিনিট কম আঁচে রান্না করুন যাতে চিংড়ি শক্ত না হয়ে নরম থাকে।"
       },
       {
         "step": 3,
         "instruction": "Turn off the heat. Stir in fish sauce, fresh lime juice, and salt. Adjust to taste and serve immediately.",
         "duration": 2,
         "technique": "mixing",
-        "instructionBn": "Turn off heat.in ফিশ সস, fresh কাগজি লেবু juice নেড়ে দিন এবং লবণ.Adjust to taste এবং immediately পরিবেশন করুন."
+        "instructionBn": "চুলা বন্ধ করে ফিশ সস, তাজা লেবুর রস ও লবণ মিশিয়ে গরম গরম পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "টম ইয়াম গুং (থাই টক-ঝাল চিংড়ি স্যুপ)",
-    "descriptionBn": "গলদা চিংড়ি, মাশরুম, লেমনগ্রাস, গালাঙ্গাল ও কাফির লেবু পাতা দিয়ে তৈরি অত্যন্ত সুগন্ধি, ঝাল ও টক চমৎকার থাই স্যুপ।",
-    "culturalNoteBn": "বিশ্বের অন্যতম সেরা স্যুপ হিসেবে পরিচিত টম ইয়াম তার সতেজ ভেষজ উপাদান ও ঔষধি গুণের জন্য অত্যন্ত সমাদৃত।"
+    "titleBn": "টম ইয়াম গুং (টক-ঝাল থাই চিংড়ি স্যুপ)",
+    "descriptionBn": "লেমনগ্রাস, গাল্যাঙ্গাল, কাফির লেবু পাতা এবং কাঁচা মরিচের সুবাসযুক্ত খাঁটি থাই টক-ঝাল চিংড়ি স্যুপ।",
+    "culturalNoteBn": "থাই রন্ধনশৈলীর টক, ঝাল, মিষ্টি ও নোনতা স্বাদের চমৎকার ভারসাম্যের অন্যতম প্রতীক হলো এই স্যুপ।"
   },
   {
     "id": "green-curry-chicken",
@@ -3090,7 +3090,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "bamboo-shoot",
@@ -3117,7 +3117,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Seasoning",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       },
       {
         "ingredientId": "basil-thai",
@@ -3144,34 +3144,34 @@ export const expansionRecipes = [
         "instruction": "Skim 3 tablespoons of thick coconut cream from the top of the can. Heat in a pan on medium-high until it cracks and releases oil.",
         "duration": 3,
         "technique": "reducing",
-        "instructionBn": "Skim ৩ tablespoons thick নারকেল cream from top can.একটি প্যানে on medium-high until it cracks গরম করুন এবং releases oil."
+        "instructionBn": "ক্যানের উপর থেকে ৩ টেবিল চামচ ঘন নারকেল ক্রিম স্কিম করুন। একটি প্যানে মাঝারি আঁচে গরম করুন যতক্ষণ না এটি ফাটল এবং তেল ছেড়ে দেয়।"
       },
       {
         "step": 2,
         "instruction": "Add curry paste or aromatics (green chili, lemongrass, galangal if making scratch) and stir-fry until fragrant.",
         "duration": 2,
         "technique": "stir-frying",
-        "instructionBn": "curry বাটা / পেস্ট অথবা aromatics (কাঁচা মরিচ, লেমনগ্রাস, গালাঙ্গাল (থাই আদা) if making scratch যোগ করুন) এবং until fragrant নেড়েচেড়ে ভাজুন."
+        "instructionBn": "কারি পেস্ট বা সুগন্ধি যোগ করুন (সবুজ মরিচ, লেমনগ্রাস, আঁচড় তৈরি করলে গালাঙ্গাল) এবং সুগন্ধি না হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Pour in the remaining coconut milk, chicken slices, and bamboo shoots. Simmer until chicken is cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "in অবশিষ্ট নারকেল দুধ, chicken slices ঢালুন এবং bamboo shoots.until chicken is cooked through জ্বাল দিন."
+        "instructionBn": "অবশিষ্ট নারকেল দুধ, মুরগির টুকরো এবং বাঁশের অঙ্কুর মধ্যে ঢেলে দিন। মুরগি সিদ্ধ না হওয়া পর্যন্ত সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in fish sauce and palm sugar. Turn off heat, stir in Thai sweet basil leaves, and serve.",
         "duration": 3,
         "technique": "finishing",
-        "instructionBn": "in ফিশ সস নেড়ে দিন এবং palm sugar.Turn off heat, stir in Thai sweet basil leaves এবং পরিবেশন করুন."
+        "instructionBn": "মাছের সস এবং পাম চিনি দিয়ে নাড়ুন। আঁচ বন্ধ করুন, থাই মিষ্টি তুলসী পাতা দিয়ে নাড়ুন এবং পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍲",
-    "titleBn": "Thai Green Curry Chicken (Gaeng Keow Wan)",
-    "descriptionBn": "মুরগির বুকের মাংস pieces cooked in a creamy নারকেল দুধ curry base flavored দিয়ে sweet Thai basil, bamboo shoots এবং green chilies.",
-    "culturalNoteBn": "Green curry gets its distinctive green shade from fresh green bird's eye chilies এবং herbs used in বাটা / পেস্ট."
+    "titleBn": "থাই গ্রিন কারি চিকেন (গ্যাং কিও ওয়ান)",
+    "descriptionBn": "মিষ্টি থাই বেসিল, বাঁশের অঙ্কুর এবং সবুজ মরিচ দিয়ে স্বাদযুক্ত একটি ক্রিমি নারকেল দুধের কারি বেসে রান্না করা মুরগির স্তনের টুকরা।",
+    "culturalNoteBn": "সবুজ তরকারি তাজা সবুজ পাখির চোখের মরিচ এবং পেস্টে ব্যবহৃত ভেষজ থেকে তার স্বতন্ত্র সবুজ ছায়া পায়।"
   },
   {
     "id": "red-curry-shrimp",
@@ -3208,7 +3208,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "bell-pepper-red",
@@ -3235,7 +3235,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Seasoning",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       },
       {
         "ingredientId": "kaffir-lime-leaves",
@@ -3253,27 +3253,27 @@ export const expansionRecipes = [
         "instruction": "Heat a splash of coconut milk in a pan and sauté red curry aromatics until aromatic.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "a splash নারকেল দুধ একটি প্যানে গরম করুন এবং red curry aromatics until aromatic সাঁতলে নিন."
+        "instructionBn": "একটি প্যানে নারকেলের দুধের একটি স্প্ল্যাশ গরম করুন এবং সুগন্ধি না হওয়া পর্যন্ত লাল কারি সুগন্ধি ভাজুন।"
       },
       {
         "step": 2,
         "instruction": "Pour in the remaining coconut milk and bring to a simmer. Add sliced red bell peppers and kaffir lime leaves.",
         "duration": 4,
         "technique": "simmering",
-        "instructionBn": "in অবশিষ্ট নারকেল দুধ ঢালুন এবং bring to a simmer.sliced red bell peppers যোগ করুন এবং লেবু পাতা."
+        "instructionBn": "বাকি নারকেল দুধে ঢেলে আঁচে আনুন। কাটা লাল বেল মরিচ এবং কাফির চুন পাতা যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add shrimp, fish sauce, and palm sugar. Simmer for 3-4 minutes until shrimp are cooked and pink.",
         "duration": 4,
         "technique": "simmering",
-        "instructionBn": "চিংড়ি, ফিশ সস যোগ করুন এবং palm sugar.৩-৪ মিনিট until চিংড়ি are cooked জ্বাল দিন এবং pink."
+        "instructionBn": "চিংড়ি, মাছের সস এবং পাম চিনি যোগ করুন। চিংড়ি সেদ্ধ এবং গোলাপী না হওয়া পর্যন্ত ৩-৪ মিনিটের জন্য সিদ্ধ করুন।"
       }
     ],
     "imageEmoji": "🍤",
-    "titleBn": "Thai Red Curry চিংড়ি (Gaeng Phed Goong)",
-    "descriptionBn": "Juicy চিংড়ি simmered দিয়ে red bell peppers in a fiery নারকেল দুধ curry বাটা / পেস্ট infused দিয়ে কাগজি লেবু leaves.",
-    "culturalNoteBn": "Red curry uses dried long red chilies for a rich, spicy, smoky profile."
+    "titleBn": "থাই রেড কারি চিংড়ি (গ্যাং ফেড গোং)",
+    "descriptionBn": "রসালো চিংড়ি একটি জ্বলন্ত নারকেল দুধের তরকারি পেস্টে চুন পাতা দিয়ে লাল বেল মরিচ দিয়ে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "লাল তরকারি একটি সমৃদ্ধ, মশলাদার, স্মোকি প্রোফাইলের জন্য শুকনো লম্বা লাল লঙ্কা ব্যবহার করে।"
   },
   {
     "id": "massaman-curry-beef",
@@ -3319,7 +3319,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "peanuts",
@@ -3328,7 +3328,7 @@ export const expansionRecipes = [
         "preparation": "roasted whole",
         "isEssential": true,
         "group": "Richness",
-        "nameBn": "peanuts"
+        "nameBn": "চিনাবাদাম"
       },
       {
         "ingredientId": "cardamom-green",
@@ -3364,7 +3364,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Seasoning",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       },
       {
         "ingredientId": "tamarind",
@@ -3382,27 +3382,27 @@ export const expansionRecipes = [
         "instruction": "Simmer beef cubes in 1 cup of coconut milk and 2 cups of water with cardamom and cinnamon until tender.",
         "duration": 60,
         "technique": "braising",
-        "instructionBn": "গরুর মাংসের টুকরো in ১ cup নারকেল দুধ জ্বাল দিন এবং ২ cups পানি দিয়ে cardamom এবং cinnamon until tender."
+        "instructionBn": "১ কাপ নারকেল দুধে গরুর মাংসের কিউব এবং ২ কাপ পানিতে এলাচ ও দারুচিনি দিয়ে কষান না হওয়া পর্যন্ত।"
       },
       {
         "step": 2,
         "instruction": "Add potato cubes, remaining coconut milk, fish sauce, palm sugar, tamarind paste, and roasted peanuts.",
         "duration": 5,
         "technique": "mixing",
-        "instructionBn": "আলু cubes, remaining নারকেল দুধ, ফিশ সস, palm sugar, তেঁতুল বাটা / পেস্ট যোগ করুন এবং roasted peanuts."
+        "instructionBn": "আলুর কিউব, অবশিষ্ট নারকেল দুধ, ফিশ সস, পাম চিনি, তেঁতুলের পেস্ট এবং ভাজা চিনাবাদাম যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Simmer until potatoes are tender and curry is thick and rich.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "until potatoes are tender জ্বাল দিন এবং curry is thick এবং rich."
+        "instructionBn": "আলু কোমল না হওয়া পর্যন্ত সিদ্ধ করুন এবং তরকারি ঘন এবং সমৃদ্ধ হয়।"
       }
     ],
     "imageEmoji": "🍲",
-    "titleBn": "Massaman Beef Curry",
-    "descriptionBn": "A rich, relatively mild Southern Thai curry featuring tender beef chunks, potatoes এবং peanuts in a cardamom এবং cinnamon scented gravy.",
-    "culturalNoteBn": "Influenced by Persian traders in ১৭th century, combining dry Indian spices দিয়ে Southeast Asian herbs."
+    "titleBn": "মাসামান বিফ কারি",
+    "descriptionBn": "এলাচ এবং দারুচিনির সুগন্ধযুক্ত গ্রেভিতে কোমল গরুর মাংসের খণ্ড, আলু এবং চিনাবাদাম সমন্বিত একটি সমৃদ্ধ, অপেক্ষাকৃত হালকা দক্ষিণ থাই কারি।",
+    "culturalNoteBn": "১৭ শতকে পার্সিয়ান ব্যবসায়ীদের দ্বারা প্রভাবিত, দক্ষিণ-পূর্ব এশীয় ভেষজগুলির সাথে শুকনো ভারতীয় মশলাগুলিকে একত্রিত করে।"
   },
   {
     "id": "pad-kra-prow",
@@ -3437,7 +3437,7 @@ export const expansionRecipes = [
         "preparation": "leaves",
         "isEssential": true,
         "group": "Main Aromatic",
-        "nameBn": "holy-basil"
+        "nameBn": "পবিত্র তুলসী (হলি বেসিল)"
       },
       {
         "ingredientId": "garlic",
@@ -3473,7 +3473,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "oyster-sauce"
+        "nameBn": "ওয়েস্টার সস"
       },
       {
         "ingredientId": "sugar-white",
@@ -3500,41 +3500,41 @@ export const expansionRecipes = [
         "instruction": "Pound garlic and green chilies together in a mortar to release oils.",
         "duration": 3,
         "technique": "pounding",
-        "instructionBn": "Pound রসুন এবং green chilies together in a mortar to release oils."
+        "instructionBn": "রসুন এবং কাঁচা মরিচ একসাথে আধা কেজি করে তেল ছেড়ে দিন।"
       },
       {
         "step": 2,
         "instruction": "Heat oil in a wok on high heat. Stir-fry the smashed garlic-chili mixture until fragrant.",
         "duration": 1,
         "technique": "stir-frying",
-        "instructionBn": "oil in a wok উচ্চ আঁচে গরম করুন.smashed রসুন-chili mixture until fragrant নেড়েচেড়ে ভাজুন."
+        "instructionBn": "উচ্চ তাপে একটি কড়াইতে তেল গরম করুন। ভাজা রসুন-মরিচের মিশ্রণটি সুগন্ধি না হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add minced chicken and stir-fry rapidly, breaking it up, until cooked.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "minced chicken যোগ করুন এবং rapidly, breaking it up, until cooked নেড়েচেড়ে ভাজুন."
+        "instructionBn": "মুরগির কিমা যোগ করুন এবং রান্না না হওয়া পর্যন্ত দ্রুত ভাজুন।"
       },
       {
         "step": 4,
         "instruction": "Drizzle in soy sauce, oyster sauce, and sugar. Toss rapidly.",
         "duration": 1,
         "technique": "stir-frying",
-        "instructionBn": "in সয়া সস, oyster sauce ছিটিয়ে দিন এবং sugar.rapidly মিশিয়ে নিন."
+        "instructionBn": "সয়া সস, অয়েস্টার সস এবং চিনিতে গুঁড়ি গুঁড়ি। দ্রুত টস করুন।"
       },
       {
         "step": 5,
         "instruction": "Throw in the holy basil leaves. Turn off heat, toss until basil is wilted, and serve with a fried egg.",
         "duration": 1,
         "technique": "tossing",
-        "instructionBn": "Throw in holy basil leaves.Turn off heat, toss until basil is wilted এবং দিয়ে a fried ডিম পরিবেশন করুন."
+        "instructionBn": "পবিত্র তুলসী পাতা ফেলে দিন। তাপ বন্ধ করুন, তুলসী শুকিয়ে যাওয়া পর্যন্ত টস করুন এবং একটি ভাজা ডিম দিয়ে পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍳",
-    "titleBn": "Pad Kra Prow (Thai Holy Basil Stir-Fry)",
-    "descriptionBn": "Minced chicken stir-fried at high heat দিয়ে রসুন, bird's eye green chilies, সয়া সস এবং aromatic holy basil leaves.",
-    "culturalNoteBn": "absolute default fast-food choice in Thailand, almost always served over rice দিয়ে a crispy fried ডিম on top."
+    "titleBn": "প্যাড ক্রা প্রো (থাই হলি বেসিল স্টির-ফ্রাই)",
+    "descriptionBn": "রসুন, পাখির চোখের সবুজ মরিচ, সয়া সস, এবং সুগন্ধযুক্ত পবিত্র তুলসী পাতা দিয়ে উচ্চ তাপে ভাজা মুরগির কিমা।",
+    "culturalNoteBn": "থাইল্যান্ডের পরম ডিফল্ট ফাস্ট-ফুড পছন্দ, প্রায় সবসময় উপরে একটি খাস্তা ভাজা ডিম দিয়ে ভাতের উপরে পরিবেশন করা হয়।"
   },
   {
     "id": "som-tum",
@@ -3590,7 +3590,7 @@ export const expansionRecipes = [
         "preparation": "roasted",
         "isEssential": true,
         "group": "Topping",
-        "nameBn": "peanuts"
+        "nameBn": "চিনাবাদাম"
       },
       {
         "ingredientId": "fish-sauce",
@@ -3617,7 +3617,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Dressing",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       }
     ],
     "steps": [
@@ -3626,21 +3626,21 @@ export const expansionRecipes = [
         "instruction": "In a large mortar and pestle, lightly crush garlic cloves and green chilies.",
         "duration": 2,
         "technique": "pounding",
-        "instructionBn": "In a large mortar এবং pestle, lightly crush রসুন লবঙ্গ এবং green chilies."
+        "instructionBn": "একটি ঐতিহ্যবাহী কাঠের হামানদিস্তায় রসুন ও থাই কাঁচা মরিচ হালকা থেঁতো করে নিন।"
       },
       {
         "step": 2,
         "instruction": "Add palm sugar, fish sauce, and lime juice. Lightly pound to melt the sugar.",
         "duration": 2,
         "technique": "mixing",
-        "instructionBn": "palm sugar, ফিশ সস যোগ করুন এবং কাগজি লেবু juice.Lightly pound to melt sugar."
+        "instructionBn": "ভাজা চীনাবাদাম, শুকনো চিংড়ি ও পাম চিনি দিয়ে আবার হালকা থেঁতো করুন যাতে স্বাদ মিশে যায়।"
       },
       {
         "step": 3,
         "instruction": "Toss in the shredded green mango and gently bruise it with the pestle while mixing to absorb the dressing flavors. Top with peanuts.",
         "duration": 3,
         "technique": "bruising",
-        "instructionBn": "in shredded green mango মিশিয়ে নিন এবং gently bruise it দিয়ে pestle while mixing to absorb dressing flavors.Top দিয়ে peanuts."
+        "instructionBn": "ফিশ সস ও তাজা লেবুর রস দিয়ে ভালো করে মিশিয়ে মিষ্টি-টক-নোনতা ড্রেসিং তৈরি করুন।"
       }
     ],
     "imageEmoji": "🥭",
@@ -3693,7 +3693,7 @@ export const expansionRecipes = [
         "preparation": "divided",
         "isEssential": true,
         "group": "Coconut Sauce",
-        "nameBn": "coconut-milk"
+        "nameBn": "নারকেলের দুধ"
       },
       {
         "ingredientId": "sugar-palm",
@@ -3702,7 +3702,7 @@ export const expansionRecipes = [
         "preparation": "or white sugar",
         "isEssential": true,
         "group": "Coconut Sauce",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       },
       {
         "ingredientId": "salt",
@@ -3720,27 +3720,27 @@ export const expansionRecipes = [
         "instruction": "Steam soaked sticky rice in a steamer or cheesecloth for 25 minutes until tender.",
         "duration": 25,
         "technique": "steaming",
-        "instructionBn": "soaked বিনি চাল / স্টিকি রাইস in a steamer অথবা cheesecloth ২৫ মিনিট until tender ভাপে দিন."
+        "instructionBn": "একটি স্টিমার বা চিজক্লথে ২৫ মিনিটের জন্য স্নেহপূর্ণ হওয়া পর্যন্ত আঠালো চাল স্টিম করুন।"
       },
       {
         "step": 2,
         "instruction": "In a small pot, simmer half the coconut milk with sugar and half the salt until dissolved. Pour over hot cooked sticky rice and let it rest covered for 15 minutes to absorb.",
         "duration": 15,
         "technique": "resting",
-        "instructionBn": "In a small pot, simmer half নারকেল দুধ দিয়ে sugar এবং half লবণ until dissolved.over গরম গরম cooked বিনি চাল / স্টিকি রাইস ঢালুন এবং covered ১৫ মিনিট to absorb রেখে দিন."
+        "instructionBn": "একটি ছোট পাত্রে, চিনি দিয়ে অর্ধেক নারকেল দুধ এবং অর্ধেক লবণ দ্রবীভূত হওয়া পর্যন্ত সিদ্ধ করুন। গরম রান্না করা আঠালো চালের উপর ঢেলে দিন এবং ১৫ মিনিটের জন্য ঢেকে রেখে দিন যাতে শোষণ হয়।"
       },
       {
         "step": 3,
         "instruction": "Heat remaining coconut milk with remaining salt to make a slightly salty topping sauce. Serve sweet rice with mango slices and coconut drizzle.",
         "duration": 5,
         "technique": "reducing",
-        "instructionBn": "remaining নারকেল দুধ দিয়ে remaining লবণ to make a slightly salty topping sauce গরম করুন.sweet rice দিয়ে mango slices পরিবেশন করুন এবং নারকেল drizzle."
+        "instructionBn": "সামান্য নোনতা টপিং সস তৈরি করতে অবশিষ্ট লবণ দিয়ে অবশিষ্ট নারকেল দুধ গরম করুন। আমের টুকরো এবং নারকেলের গুঁড়ি দিয়ে মিষ্টি ভাত পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🥭",
-    "titleBn": "Thai Mango বিনি চাল / স্টিকি রাইস (Khao Niew Mamuang)",
-    "descriptionBn": "Sweet glutinous বিনি চাল / স্টিকি রাইস cooked in rich নারকেল দুধ, served দিয়ে sweet ripe mango slices.",
-    "culturalNoteBn": "ultimate classic Thai dessert, showcasing beautiful harmony salty-sweet নারকেল cream এবং tropical mango."
+    "titleBn": "থাই আম স্টিকি রাইস (খাও নিউ মামুয়াং)",
+    "descriptionBn": "সমৃদ্ধ নারকেল দুধে রান্না করা মিষ্টি আঠালো আঠালো ভাত, মিষ্টি পাকা আমের টুকরো দিয়ে পরিবেশন করা হয়।",
+    "culturalNoteBn": "নোনতা-মিষ্টি নারকেল ক্রিম এবং গ্রীষ্মমন্ডলীয় আমের সুন্দর সামঞ্জস্য প্রদর্শন করে চূড়ান্ত ক্লাসিক থাই ডেজার্ট।"
   },
   {
     "id": "mapo-tofu",
@@ -3838,34 +3838,34 @@ export const expansionRecipes = [
         "instruction": "Blanch tofu cubes in lightly salted hot water for 2 minutes to make them firm and less prone to breaking. Drain.",
         "duration": 3,
         "technique": "blanching",
-        "instructionBn": "Blanch tofu cubes in lightly salted গরম গরম পানি ২ মিনিট to make them firm এবং less prone to breaking.পানি ঝরিয়ে নিন."
+        "instructionBn": "টোফুর কিউবগুলো ফুটন্ত লবণ পানিতে ১ মিনিট ভাপিয়ে তুলে পানি ঝরিয়ে রাখুন।"
       },
       {
         "step": 2,
         "instruction": "Heat vegetable oil in a wok. Fry minced beef until crispy. Add ginger, garlic, and minced chili bean paste, stir-frying until oil turns red.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "সাদা তেল / ভেজিটেবল অয়েল in a wok গরম করুন.minced beef until crispy ভাজুন.আদা, রসুন যোগ করুন এবং minced chili bean বাটা / পেস্ট, stir-frying until oil turns red."
+        "instructionBn": "গরম ওয়াকে তেল দিয়ে কিমা করা মাংস বাদামী ও মুচমুচে হওয়া পর্যন্ত ভেজে নিন।"
       },
       {
         "step": 3,
         "instruction": "Pour in 1 cup of water, soy sauce, and the tofu. Simmer gently on low heat for 5 minutes.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "in ১ cup পানি, সয়া সস ঢালুন এবং tofu.gently কম আঁচে ৫ মিনিট জ্বাল দিন."
+        "instructionBn": "গাঁজানো চিলি পেস্ট (ডৌবানজিয়াং), রসুন কুচি ও আদা কুচি দিয়ে লাল তেল ও সুবাস ছাড়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 4,
         "instruction": "Thicken gravy with starch slurry. Turn off heat, sprinkle ground Sichuan pepper and scallions on top, and serve.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Thicken gravy দিয়ে starch slurry.Turn off heat, sprinkle ground সিচুয়ান গোলমরিচ এবং scallions on top এবং পরিবেশন করুন."
+        "instructionBn": "চিকেন ব্রথ, সয়া সস ও চিনি মিশিয়ে ফুটিয়ে নিন। সাবধানে ভাপানো টোফু ছেড়ে দিন।"
       }
     ],
     "imageEmoji": "🫛",
-    "titleBn": "মাপো টোফু (সিচুয়ান স্টাইল মশলাদার টোফু)",
-    "descriptionBn": "নরম টোফুর টুকরো বিফ কিমা এবং ঝাল সিচুয়ান গোলমরিচ ও চিলি বিন পেস্টের অত্যন্ত ঝাল ও ধোঁয়াটে সসে রান্না করা ঐতিহ্যবাহী চীনা খাবার।",
-    "culturalNoteBn": "সিচুয়ান রন্ধনশৈলীর \"মা\" (অবশ করা) ও \"লা\" (ঝাল) স্বাদের এক অনন্য উদাহরণ মাপো টোফু।"
+    "titleBn": "মাপো টোফু (মশলাদার সিচুয়ান টোফু)",
+    "descriptionBn": "নরম টোফু, কিমা করা মাংস এবং গাঁজানো চিলি পেস্ট ও সিচুয়ান পেপারের ঝালে তৈরি বিখ্যাত জিভ অবশ করা মশলাদার চীনা খাবার।",
+    "culturalNoteBn": "সিচুয়ান রান্নার ‘মালা’ (ঝাল ও অসাড় অনুভূতি) স্বাদের অনন্য উদাহরণ হলো এই মাপো টোফু।"
   },
   {
     "id": "kung-pao-chicken",
@@ -3900,7 +3900,7 @@ export const expansionRecipes = [
         "preparation": "roasted",
         "isEssential": true,
         "group": "Crunch",
-        "nameBn": "peanuts"
+        "nameBn": "চিনাবাদাম"
       },
       {
         "ingredientId": "soy-sauce",
@@ -3918,7 +3918,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "rice-vinegar"
+        "nameBn": "চালের ভিনেগার"
       },
       {
         "ingredientId": "sugar-white",
@@ -3963,41 +3963,41 @@ export const expansionRecipes = [
         "instruction": "Marinate chicken cubes with 1 tablespoon of soy sauce and a pinch of salt.",
         "duration": 10,
         "technique": "marinating",
-        "instructionBn": "Marinate chicken cubes দিয়ে ১ tablespoon সয়া সস এবং a pinch লবণ."
+        "instructionBn": "মুরগির কিউব টুকরোগুলো ১ টেবিল চামচ সয়া সস ও ১ চা চামচ কর্নস্টার্চ দিয়ে মেখে ১৫ মিনিট রাখুন।"
       },
       {
         "step": 2,
         "instruction": "Mix remaining soy sauce, rice vinegar, sugar, and a splash of water to form the stir-fry glaze.",
         "duration": 2,
         "technique": "mixing",
-        "instructionBn": "remaining সয়া সস, rice ভিনেগার / সিরকা, sugar মেশান এবং a splash পানি to form stir-fry glaze."
+        "instructionBn": "একটি ছোট বাটিতে চিনি, রাইস ভিনেগার, সয়া সস ও কর্নস্টার্চ মিশিয়ে মিষ্টি-টক সস তৈরি করুন।"
       },
       {
         "step": 3,
         "instruction": "Heat oil in a wok. Stir-fry ginger, garlic, and scallions on high heat until fragrant.",
         "duration": 1,
         "technique": "stir-frying",
-        "instructionBn": "oil in a wok গরম করুন.আদা, রসুন নেড়েচেড়ে ভাজুন এবং scallions উচ্চ আঁচে until fragrant."
+        "instructionBn": "গরম ওয়াকে ২ চামচ তেল দিয়ে উচ্চ আঁচে মাংস ৩ মিনিট ভেজে তুলে রাখুন।"
       },
       {
         "step": 4,
         "instruction": "Add chicken cubes and stir-fry until cooked through. Pour in the glaze and toss.",
         "duration": 4,
         "technique": "stir-frying",
-        "instructionBn": "chicken cubes যোগ করুন এবং until cooked through নেড়েচেড়ে ভাজুন.in glaze ঢালুন এবং মিশিয়ে নিন."
+        "instructionBn": "ওয়াকে বাকি তেলে শুকনো মরিচ, রসুন, আদা ও পেঁয়াজ কলি দিয়ে মাঝারি আঁচে সুবাস বের হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 5,
         "instruction": "Stir in the peanuts, toss for 30 seconds, and serve immediately.",
         "duration": 1,
         "technique": "tossing",
-        "instructionBn": "in peanuts, toss for ৩০ seconds নেড়ে দিন এবং immediately পরিবেশন করুন."
+        "instructionBn": "ভেজে রাখা মাংস ওয়াকে ফিরিয়ে দিয়ে একসাথে নেড়েচেড়ে মেশান।"
       }
     ],
     "imageEmoji": "🍗",
-    "titleBn": "কুং পাও চিকেন (বাদাম ও মরিচ সসে মুরগি)",
-    "descriptionBn": "মুরগির কিউব টুকরো, চিনাবাদাম ও শুকনো লাল মরিচ দিয়ে সয়া সসের সুস্বাদু মিষ্টি ও ঝাল সসে দ্রুত স্টির-ফ্রাই করা ক্লাসিক চীনা ডিস।",
-    "culturalNoteBn": "চিনাবাদামের মুচমুচে ফ্লেভার এবং সিচুয়ান গোলমরিচের ঝাল স্বাদের এই মেলবন্ধন বিশ্বজুড়ে চীনা রেস্তোরাঁগুলোর অন্যতম সেরা আকর্ষণ।"
+    "titleBn": "কুং পাও চিকেন (সিচুয়ান স্টাইল মশলাদার চিকেন)",
+    "descriptionBn": "মুরগির কিউব টুকরো, ভাজা চীনাবাদাম, শুকনো মরিচ ও পেঁয়াজ কলি দিয়ে তৈরি বিখ্যাত সিচুয়ান মিষ্টি, ঝাল ও নোনতা খাবার।",
+    "culturalNoteBn": "চীনের কিং রাজবংশের এক কর্মকর্তার নামানুসারে তৈরি এই পদটি চীনা রান্নার অন্যতম জনপ্রিয় প্রতিনিধি।"
   },
   {
     "id": "wonton-soup",
@@ -4050,7 +4050,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Seasoning",
-        "nameBn": "soy-sauce-light"
+        "nameBn": "হালকা সয়া সস"
       },
       {
         "ingredientId": "sesame-oil",
@@ -4086,21 +4086,21 @@ export const expansionRecipes = [
         "instruction": "Mix minced shrimp, beef, soy sauce, sesame oil, scallions, and salt to form a sticky filling.",
         "duration": 10,
         "technique": "mixing",
-        "instructionBn": "minced চিংড়ি, beef, সয়া সস, তিলের তেল, scallions মেশান এবং লবণ to form a sticky filling."
+        "instructionBn": "কিমা মাংস, চিংড়ি কুচি, সয়া সস, তিলের তেল ও পেঁয়াজ কলি মেখে ওনটনের পুর তৈরি করুন।"
       },
       {
         "step": 2,
         "instruction": "Place a teaspoon of filling in each wrapper, fold into triangles, and seal the edges with water.",
         "duration": 15,
         "technique": "shaping",
-        "instructionBn": "a teaspoon filling in each wrapper, fold into triangles রাখুন এবং seal edges দিয়ে পানি."
+        "instructionBn": "প্রতিটি ওনটন র‍্যাপারের মাঝখানে পুর দিয়ে কিনারা পানিতে ভিজিয়ে ত্রিভুজ বা নৌকার আকারে ভাঁজ করে সিল করুন।"
       },
       {
         "step": 3,
         "instruction": "Boil wontons in a pot of water for 4 minutes until they float. Drain and place in bowls with hot chicken broth.",
         "duration": 5,
         "technique": "boiling",
-        "instructionBn": "wontons একটি পাত্রে পানি ৪ মিনিট until they float ফুটিয়ে নিন.পানি ঝরিয়ে নিন এবং in bowls দিয়ে গরম গরম chicken broth রাখুন."
+        "instructionBn": "আলাদা পাত্রে চিকেন ব্রথ, আদা, সয়া সস ও তিলের তেল একসাথে ফুটিয়ে সুগন্ধি স্যুপ বেস তৈরি করুন।"
       }
     ],
     "imageEmoji": "🥟",
@@ -4177,7 +4177,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "soy-sauce-light"
+        "nameBn": "হালকা সয়া সস"
       },
       {
         "ingredientId": "salt",
@@ -4195,34 +4195,34 @@ export const expansionRecipes = [
         "instruction": "Heat oil in a wok. Fry eggs until soft scrambled. Push them aside.",
         "duration": 2,
         "technique": "scrambling",
-        "instructionBn": "oil in a wok গরম করুন.eggs until soft scrambled ভাজুন.Push them aside."
+        "instructionBn": "কড়াইতে তেল গরম করুন। নরম না হওয়া পর্যন্ত ডিম ভাজুন। তাদের একপাশে ঠেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add diced shrimp and corn, stir-frying for 2 minutes.",
         "duration": 2,
         "technique": "stir-frying",
-        "instructionBn": "diced চিংড়ি যোগ করুন এবং ভুট্টা, stir-frying ২ মিনিট."
+        "instructionBn": "কাটা চিংড়ি এবং ভুট্টা যোগ করুন, ২ মিনিটের জন্য ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add cold rice. Stir-fry vigorously, breaking up clumps, until rice grains are hot.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "cold rice যোগ করুন.vigorously, breaking up clumps, until rice grains are গরম গরম নেড়েচেড়ে ভাজুন."
+        "instructionBn": "ঠান্ডা ভাত যোগ করুন। ধানের শীষ গরম না হওয়া পর্যন্ত জোরে ভাজুন, গুঁড়ি ভেঙে দিন।"
       },
       {
         "step": 4,
         "instruction": "Stir in soy sauce, salt, and green scallions. Toss for 1 minute and serve.",
         "duration": 1,
         "technique": "tossing",
-        "instructionBn": "in সয়া সস, লবণ নেড়ে দিন এবং green scallions.১ মিনিট মিশিয়ে নিন এবং পরিবেশন করুন."
+        "instructionBn": "সয়া সস, লবণ এবং সবুজ স্ক্যালিয়নে নাড়ুন। ১ মিনিটের জন্য টস করুন এবং পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍚",
-    "titleBn": "Yangzhou Fried Rice",
-    "descriptionBn": "Fluffy, day-old জেসমিন চাল stir-fried in a গরম গরম wok দিয়ে ডিম, চিংড়ি, sweet ভুট্টা এবং green onions.",
-    "culturalNoteBn": "golden standard Chinese fried rice, originating from city Yangzhou in Jiangsu province."
+    "titleBn": "ইয়াংজু ফ্রাইড রাইস",
+    "descriptionBn": "ডিম, চিংড়ি, মিষ্টি ভুট্টা, এবং সবুজ পেঁয়াজ দিয়ে গরম কড়ায় ভাজা তুলতুলে, দিন-পুরনো জুঁই চাল।",
+    "culturalNoteBn": "জিয়াংসু প্রদেশের ইয়াংঝো শহর থেকে উদ্ভূত চীনা ভাজা চালের সোনালি মান।"
   },
   {
     "id": "tomato-egg-stir-fry",
@@ -4288,7 +4288,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "soy-sauce-light"
+        "nameBn": "হালকা সয়া সস"
       },
       {
         "ingredientId": "salt",
@@ -4306,27 +4306,27 @@ export const expansionRecipes = [
         "instruction": "Heat oil in a wok. Fry beaten eggs until fluffy but still soft. Remove eggs immediately.",
         "duration": 2,
         "technique": "scrambling",
-        "instructionBn": "oil in a wok গরম করুন.beaten eggs until fluffy but still soft ভাজুন.eggs immediately তুলে নিন."
+        "instructionBn": "কড়াইতে তেল গরম করুন। ফেটানো ডিম তুলতুলে হলেও নরম না হওয়া পর্যন্ত ভাজুন। অবিলম্বে ডিম সরান।"
       },
       {
         "step": 2,
         "instruction": "In the same wok, add tomato wedges and stir-fry until softened and juicy.",
         "duration": 3,
         "technique": "stir-frying",
-        "instructionBn": "In same wok, add টমেটো wedges এবং until softened নেড়েচেড়ে ভাজুন এবং juicy."
+        "instructionBn": "একই কড়ায় টমেটো ওয়েজ যোগ করুন এবং নরম ও রসালো হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add sugar, soy sauce, and salt. Return eggs to the wok and toss to combine with the tomato juices.",
         "duration": 2,
         "technique": "tossing",
-        "instructionBn": "sugar, সয়া সস যোগ করুন এবং লবণ.Return eggs to wok এবং to combine দিয়ে টমেটো juices মিশিয়ে নিন."
+        "instructionBn": "চিনি, সয়া সস এবং লবণ যোগ করুন। ডিমগুলিকে কড়ায় ফিরিয়ে দিন এবং টমেটোর রসের সাথে একত্রিত করতে টস করুন।"
       }
     ],
     "imageEmoji": "🍳",
-    "titleBn": "Chinese টমেটো এবং ডিম Stir-Fry",
-    "descriptionBn": "Juicy টমেটো wedges stir-fried দিয়ে fluffy scrambled eggs in a slightly sweet, savory pan sauce.",
-    "culturalNoteBn": "ultimate comforting home-style dish (Jiachangcai) eaten by virtually every Chinese family."
+    "titleBn": "চাইনিজ টমেটো এবং ডিম ভাজুন",
+    "descriptionBn": "রসালো টমেটো ওয়েজগুলি সামান্য মিষ্টি, সুস্বাদু প্যান সসে তুলতুলে স্ক্র্যাম্বল ডিম দিয়ে ভাজা।",
+    "culturalNoteBn": "চূড়ান্ত আরামদায়ক হোম-স্টাইল ডিশ (জিয়াচাংকাই) কার্যত প্রতিটি চীনা পরিবার খেয়ে থাকে।"
   },
   {
     "id": "hot-sour-soup",
@@ -4381,7 +4381,7 @@ export const expansionRecipes = [
         "preparation": "or black vinegar",
         "isEssential": true,
         "group": "Sour",
-        "nameBn": "rice-vinegar"
+        "nameBn": "চালের ভিনেগার"
       },
       {
         "ingredientId": "black-pepper",
@@ -4417,27 +4417,27 @@ export const expansionRecipes = [
         "instruction": "Bring 4 cups of vegetable broth to a boil. Add shiitake mushrooms and simmer for 5 minutes.",
         "duration": 5,
         "technique": "boiling",
-        "instructionBn": "Bring ৪ cups vegetable broth to a boil.shiitake mushrooms যোগ করুন এবং ৫ মিনিট জ্বাল দিন."
+        "instructionBn": "৪ কাপ সবজির ঝোল ফুটিয়ে নিন। শিটকে মাশরুম যোগ করুন এবং ৫ মিনিটের জন্য সিদ্ধ করুন।"
       },
       {
         "step": 2,
         "instruction": "Stir in tofu, vinegar, black pepper, soy sauce, and salt.",
         "duration": 2,
         "technique": "simmering",
-        "instructionBn": "in tofu, ভিনেগার / সিরকা, গোলমরিচ, সয়া সস নেড়ে দিন এবং লবণ."
+        "instructionBn": "টফু, ভিনেগার, কালো মরিচ, সয়া সস এবং লবণ দিয়ে নাড়ুন।"
       },
       {
         "step": 3,
         "instruction": "Thicken soup with a starch slurry. Slowly drizzle in the whisked egg while stirring gently to create thin egg ribbons.",
         "duration": 3,
         "technique": "finishing",
-        "instructionBn": "Thicken soup দিয়ে a starch slurry.Slowly drizzle in whisked ডিম while stirring gently to create thin ডিম ribbons."
+        "instructionBn": "একটি স্টার্চ স্লারি দিয়ে স্যুপ ঘন করুন। পাতলা ডিমের ফিতা তৈরি করার জন্য আস্তে আস্তে নাড়তে নাড়তে ফিসানো ডিমে ধীরে ধীরে গুঁড়ি গুঁড়ি দিন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "গরম গরম এবং Sour Soup",
-    "descriptionBn": "A rich, comforting broth loaded দিয়ে shiitake mushrooms, tofu, ডিম ribbons, heavily spiced দিয়ে সাদা গোলমরিচ এবং black ভিনেগার / সিরকা.",
-    "culturalNoteBn": "A classic northern Chinese soup designed to গরম গরম up cold winters."
+    "titleBn": "গরম এবং টক স্যুপ",
+    "descriptionBn": "একটি সমৃদ্ধ, আরামদায়ক ঝোল যাতে শীতকে মাশরুম, টোফু, ডিমের ফিতা, সাদা মরিচ এবং কালো ভিনেগার দিয়ে প্রচুর মশলা দেওয়া হয়।",
+    "culturalNoteBn": "একটি ক্লাসিক উত্তর চীনা স্যুপ ঠান্ডা শীতে গরম করার জন্য ডিজাইন করা হয়েছে।"
   },
   {
     "id": "sichuan-fish",
@@ -4528,34 +4528,34 @@ export const expansionRecipes = [
         "instruction": "Marinate fish fillets with a pinch of salt and starch. Blanch bok choy and place in the bottom of serving bowls.",
         "duration": 5,
         "technique": "blanching",
-        "instructionBn": "Marinate fish fillets দিয়ে a pinch লবণ এবং starch.Blanch বক চয় এবং in bottom serving bowls রাখুন."
+        "instructionBn": "এক চিমটি লবণ এবং স্টার্চ দিয়ে মাছের ফিললেটগুলিকে ম্যারিনেট করুন। বোক চয় ব্লাঞ্চ করুন এবং পরিবেশন বাটিগুলির নীচে রাখুন।"
       },
       {
         "step": 2,
         "instruction": "Sauté ginger, garlic, and chili bean paste in oil. Add 3 cups of water and salt, bringing to a simmer to create a rich red broth.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "আদা, রসুন সাঁতলে নিন এবং chili bean বাটা / পেস্ট in oil.৩ cups পানি যোগ করুন এবং লবণ, bringing to a simmer to create a rich red broth."
+        "instructionBn": "তেলে আদা, রসুন ও মরিচের পেস্ট দিয়ে ভাজুন। ৩ কাপ জল এবং লবণ যোগ করুন, একটি সমৃদ্ধ লাল ঝোল তৈরি করতে আঁচে আনুন।"
       },
       {
         "step": 3,
         "instruction": "Slide fish fillets into the simmering broth. Poach for just 2 minutes until tender. Pour fish and broth over bok choy.",
         "duration": 2,
         "technique": "poaching",
-        "instructionBn": "fish fillets into simmering broth ছেড়ে দিন.Poach for just ২ মিনিট until tender.fish ঢালুন এবং broth over বক চয়."
+        "instructionBn": "সিদ্ধ করা ঝোলের মধ্যে মাছের ফিললেটগুলি স্লাইড করুন। কোমল না হওয়া পর্যন্ত মাত্র ২ মিনিটের জন্য পোচ করুন। বোক চয়ের উপরে মাছ ও ঝোল ঢেলে দিন।"
       },
       {
         "step": 4,
         "instruction": "Scatter crushed Sichuan peppercorns and garlic on top. Pour a cup of smoking hot oil directly over the spices to blister them.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Scatter crushed Sichuan peppercorns এবং রসুন on top.a cup smoking গরম গরম oil directly over spices to blister them ঢালুন."
+        "instructionBn": "উপরে সিচুয়ান গোলমরিচ গুঁড়ো এবং রসুন ছড়িয়ে দিন। ফোস্কা ফোস্কা করার জন্য মশলার উপর সরাসরি এক কাপ ধূমপানকারী গরম তেল ঢেলে দিন।"
       }
     ],
     "imageEmoji": "🐟",
-    "titleBn": "Sichuan পানি-Boiled Fish (Shuizhu Yu)",
-    "descriptionBn": "Tender fish fillets poached in a spicy, fiery broth, covered in toasted Sichuan peppercorns, dried chilies এবং splashed দিয়ে smoking-গরম গরম oil.",
-    "culturalNoteBn": "A dramatic, sensory masterpiece Sichuan cuisine, emphasizing \"Mala\" numbing-spicy sensation."
+    "titleBn": "সিচুয়ান জল-সিদ্ধ মাছ (শুইঝু ইউ)",
+    "descriptionBn": "কোমল মাছের ফিললেটগুলি একটি মশলাদার, জ্বলন্ত ঝোল, টোস্ট করা সিচুয়ান গোলমরিচ, শুকনো লঙ্কা, এবং ধূমপান-গরম তেল দিয়ে ঢেকে দেওয়া হয়।",
+    "culturalNoteBn": "সিচুয়ান রান্নার একটি নাটকীয়, সংবেদনশীল মাস্টারপিস, \"মালা\" অসাড়-মশলাদার সংবেদনের উপর জোর দেয়।"
   },
   {
     "id": "sweet-sour-chicken",
@@ -4617,7 +4617,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "rice-vinegar"
+        "nameBn": "চালের ভিনেগার"
       },
       {
         "ingredientId": "sugar-white",
@@ -4644,34 +4644,34 @@ export const expansionRecipes = [
         "instruction": "Coat chicken cubes in starch and fry in hot oil until crispy. Set aside.",
         "duration": 6,
         "technique": "deep-frying",
-        "instructionBn": "Coat chicken cubes in starch এবং in গরম গরম oil until crispy ভাজুন.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "মুরগির কিউবগুলিকে স্টার্চ দিয়ে কোট করুন এবং ক্রিস্পি হওয়া পর্যন্ত গরম তেলে ভাজুন। একপাশে সেট করুন।"
       },
       {
         "step": 2,
         "instruction": "Whisk tomato paste, vinegar, sugar, salt, and water together to form the sweet-and-sour sauce.",
         "duration": 2,
         "technique": "mixing",
-        "instructionBn": "টমেটো বাটা / পেস্ট, ভিনেগার / সিরকা, sugar, লবণ ফেটিয়ে নিন এবং পানি together to form sweet-এবং-sour sauce."
+        "instructionBn": "টমেটো পেস্ট, ভিনেগার, চিনি, লবণ এবং জল একসাথে ফেটিয়ে মিষ্টি এবং টক সস তৈরি করুন।"
       },
       {
         "step": 3,
         "instruction": "Sauté onion and bell pepper chunks in a wok. Pour in the sauce and simmer until thick.",
         "duration": 3,
         "technique": "simmering",
-        "instructionBn": "onion সাঁতলে নিন এবং bell pepper chunks in a wok.in sauce ঢালুন এবং until thick জ্বাল দিন."
+        "instructionBn": "পেঁয়াজ এবং গোলমরিচের টুকরোগুলি একটি কড়ায় ভাজুন। সস মধ্যে ঢালা এবং ঘন হওয়া পর্যন্ত সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Add fried chicken, toss rapidly to coat, and serve immediately.",
         "duration": 2,
         "technique": "tossing",
-        "instructionBn": "fried chicken, toss rapidly to coat যোগ করুন এবং immediately পরিবেশন করুন."
+        "instructionBn": "ভাজা মুরগি যোগ করুন, কোটে দ্রুত টস করুন এবং অবিলম্বে পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍗",
-    "titleBn": "Sweet এবং Sour Chicken",
-    "descriptionBn": "Crispy batter-fried chicken breasts tossed দিয়ে onions, bell peppers, in a vibrant, glossy sweet-এবং-sour glaze.",
-    "culturalNoteBn": "A global favorite developed from authentic Cantonese sweet-এবং-sour pork recipes."
+    "titleBn": "মিষ্টি এবং টক চিকেন",
+    "descriptionBn": "ক্রিস্পি পিটা-ভাজা মুরগির স্তনগুলি পেঁয়াজ, গোলমরিচ দিয়ে টস করা, একটি প্রাণবন্ত, চকচকে মিষ্টি এবং টক গ্লাসে।",
+    "culturalNoteBn": "খাঁটি ক্যান্টনিজ মিষ্টি এবং টক শুয়োরের মাংসের রেসিপি থেকে তৈরি একটি বিশ্বব্যাপী প্রিয়।"
   },
   {
     "id": "spaghetti-carbonara",
@@ -4724,7 +4724,7 @@ export const expansionRecipes = [
         "preparation": "grated",
         "isEssential": true,
         "group": "Cheese",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "black-pepper",
@@ -4751,27 +4751,27 @@ export const expansionRecipes = [
         "instruction": "Boil spaghetti in salted water until al dente.",
         "duration": 10,
         "technique": "boiling",
-        "instructionBn": "স্প্যাগেটি in salted পানি until al dente ফুটিয়ে নিন."
+        "instructionBn": "একটি বড় পাত্রে লবণ পানিতে স্প্যাগেটি ফুটতে দিন এবং প্যাকেটের নির্দেশনার চেয়ে ১ মিনিট কম সিদ্ধ করুন। ১ কাপ গরম পাস্তা পানি তুলে রাখুন।"
       },
       {
         "step": 2,
         "instruction": "Sauté pork belly in a pan until crispy. Whisk egg yolks with grated Parmesan and black pepper in a bowl.",
         "duration": 5,
         "technique": "whisking",
-        "instructionBn": "শূকরের মাংস (পর্ক বেলি) একটি প্যানে until crispy সাঁতলে নিন.ডিম yolks দিয়ে grated Parmesan ফেটিয়ে নিন এবং গোলমরিচ একটি বাটিতে."
+        "instructionBn": "প্যানে তেল ছাড়া মাংসের টুকরো দিয়ে মাঝারি আঁচে ভাজুন যতক্ষণ না চর্বি গলে মাংস মুচমুচে ও সোনালী বাদামী হয়।"
       },
       {
         "step": 3,
         "instruction": "Toss hot drained pasta with pork belly and fat. Remove from heat. Pour in the egg mixture and a splash of hot pasta water, tossing rapidly to emulsify into a creamy sauce without cooking the eggs.",
         "duration": 3,
         "technique": "tossing",
-        "instructionBn": "গরম গরম drained pasta দিয়ে শূকরের মাংস (পর্ক বেলি) মিশিয়ে নিন এবং fat.from heat তুলে নিন.in ডিম mixture ঢালুন এবং a splash গরম গরম pasta পানি, tossing rapidly to emulsify into a creamy sauce without cooking eggs."
+        "instructionBn": "একটি বাটিতে ডিমের কুসুম, গ্রেট করা পনির ও গুঁড়ো কালো গোলমরিচ একসাথে ফেটিয়ে ঘন পেস্ট তৈরি করুন।"
       }
     ],
     "imageEmoji": "🍝",
-    "titleBn": "স্প্যাগেটি কার্বিলারা (ক্লাসিক ইতালীয় পাস্তা)",
-    "descriptionBn": "ডিমের কুসুম, পেকোরিনো বা পারমেসান চিজ, কুচানো গোলমরিচ এবং মুচমুচে বেকন বা পর্ক বেলির মিশ্রণে তৈরি অত্যন্ত ক্রিমি ও ঐতিহ্যবাহী রোমান পাস্তা।",
-    "culturalNoteBn": "আসল কার্বোনারা পাস্তায় কোনো ক্রিম ব্যবহার করা হয় না। ডিমের কুসুম ও পনিরের নিখুঁত ইমালশনেই এর ক্রিমি টেক্সচার তৈরি হয়।"
+    "titleBn": "স্প্যাগেটি কার্বোনারা (রোমান স্টাইল ক্রিমি পাস্তা)",
+    "descriptionBn": "ক্রিস্পি শুয়োরের মাংসের চর্বি, ডিমের কুসুম, পেকোরিনো পনির ও তাজা গোলমরিচের মিশ্রণে তৈরি খাঁটি রোমান পাস্তা।",
+    "culturalNoteBn": "খাঁটি ইতালীয় কার্বোনারায় কখনও ক্রিম ব্যবহার করা হয় না; ডিম ও পনিরের জাদুতেই এটি ক্রিমি হয়।"
   },
   {
     "id": "pasta-pomodoro",
@@ -4854,27 +4854,27 @@ export const expansionRecipes = [
         "instruction": "Boil pasta in salted water until al dente.",
         "duration": 10,
         "technique": "boiling",
-        "instructionBn": "pasta in salted পানি until al dente ফুটিয়ে নিন."
+        "instructionBn": "পাস্তা নোনতা জলে আল ডেন্টে পর্যন্ত সিদ্ধ করুন।"
       },
       {
         "step": 2,
         "instruction": "In a pan, cook sliced garlic in olive oil on low heat until soft. Add tomatoes and salt, simmering for 10 minutes.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "একটি প্যানে, cook sliced রসুন in অলিভ অয়েল কম আঁচে until soft.tomatoes যোগ করুন এবং লবণ, simmering ১০ মিনিট."
+        "instructionBn": "একটি প্যানে, অলিভ অয়েলে কাটা রসুন নরম হওয়া পর্যন্ত কম আঁচে রান্না করুন। টমেটো এবং লবণ যোগ করুন, ১০ মিনিটের জন্য সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Toss pasta and fresh basil leaves into the sauce. Drizzle extra virgin olive oil and serve.",
         "duration": 2,
         "technique": "tossing",
-        "instructionBn": "pasta মিশিয়ে নিন এবং fresh basil leaves into sauce.extra virgin অলিভ অয়েল ছিটিয়ে দিন এবং পরিবেশন করুন."
+        "instructionBn": "সস মধ্যে পাস্তা এবং তাজা তুলসী পাতা টস। এক্সট্রা ভার্জিন অলিভ অয়েল ছিটিয়ে পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍅",
-    "titleBn": "স্প্যাগেটি al Pomodoro",
-    "descriptionBn": "Simple, delicate স্প্যাগেটি tossed in a vibrant sauce ripe sweet tomatoes, রসুন, extra virgin অলিভ অয়েল এবং fresh sweet basil.",
-    "culturalNoteBn": "ultimate showcase simplicity Italian home cooking."
+    "titleBn": "স্প্যাগেটি আল পোমোডোরো",
+    "descriptionBn": "পাকা মিষ্টি টমেটো, রসুন, অতিরিক্ত ভার্জিন অলিভ অয়েল এবং তাজা মিষ্টি তুলসীর একটি প্রাণবন্ত সসে ফেলে দেওয়া সহজ, সূক্ষ্ম স্প্যাগেটি।",
+    "culturalNoteBn": "ইতালীয় বাড়ির রান্নার সরলতার চূড়ান্ত প্রদর্শনী।"
   },
   {
     "id": "chicken-parmesan",
@@ -4918,7 +4918,7 @@ export const expansionRecipes = [
         "preparation": "shredded",
         "isEssential": true,
         "group": "Cheese",
-        "nameBn": "mozzarella-cheese"
+        "nameBn": "মোজারেলা চিজ"
       },
       {
         "ingredientId": "parmesan-cheese",
@@ -4927,7 +4927,7 @@ export const expansionRecipes = [
         "preparation": "grated",
         "isEssential": true,
         "group": "Cheese",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "all-purpose-flour",
@@ -4972,27 +4972,27 @@ export const expansionRecipes = [
         "instruction": "Season chicken cutlets. Dredge in flour, dip in beaten egg, and coat with breadcrumbs if available.",
         "duration": 5,
         "technique": "breading",
-        "instructionBn": "chicken cutlets মশলা দিন.Dredge in flour, dip in beaten ডিম এবং coat দিয়ে breadcrumbs if available."
+        "instructionBn": "সিজন চিকেন কাটলেট। ময়দা, ফেটানো ডিমে ডুবিয়ে রাখুন, এবং যদি পাওয়া যায় তবে ব্রেডক্রাম্ব দিয়ে কোট করুন।"
       },
       {
         "step": 2,
         "instruction": "Pan-fry chicken in olive oil until crispy and golden brown on both sides.",
         "duration": 8,
         "technique": "pan-frying",
-        "instructionBn": "Pan-fry chicken in অলিভ অয়েল until crispy এবং সোনালী বাদামী on both sides."
+        "instructionBn": "অলিভ অয়েলে মুরগির মাংস দুই পাশে ক্রিস্পি এবং সোনালি বাদামী হওয়া পর্যন্ত প্যান-ফ্রাই করুন।"
       },
       {
         "step": 3,
         "instruction": "Spread tomato sauce on chicken. Top with mozzarella and parmesan. Bake or cover pan until cheese is melted and bubbly.",
         "duration": 7,
         "technique": "baking",
-        "instructionBn": "টমেটো sauce on chicken ছড়িয়ে দিন.Top দিয়ে mozzarella এবং parmesan.অথবা cover pan until cheese is melted বেক করুন এবং bubbly."
+        "instructionBn": "মুরগির উপর টমেটো সস ছড়িয়ে দিন। Mozzarella এবং parmesan সঙ্গে শীর্ষ। পনির গলে যাওয়া এবং বুদবুদ না হওয়া পর্যন্ত বেক করুন বা কভার করুন।"
       }
     ],
     "imageEmoji": "🧀",
-    "titleBn": "Chicken Parmesan (Chicken Parmigiana)",
-    "descriptionBn": "Crispy breaded chicken breasts baked দিয়ে tangy marinara টমেটো বাটা / পেস্ট sauce, melted mozzarella এবং fresh basil.",
-    "culturalNoteBn": "A beloved Italian-American classic inspired by southern Italian বেগুন parmigiana."
+    "titleBn": "চিকেন পারমেসান (চিকেন পারমিগিয়ানা)",
+    "descriptionBn": "ক্রিস্পি ব্রেডেড মুরগির স্তনগুলি ট্যাঞ্জি মেরিনারা টমেটো পেস্ট সস, গলিত মোজারেলা এবং তাজা তুলসী দিয়ে বেকড।",
+    "culturalNoteBn": "দক্ষিণ ইতালীয় বেগুন পারমিগিয়ানা দ্বারা অনুপ্রাণিত একটি প্রিয় ইতালীয়-আমেরিকান ক্লাসিক।"
   },
   {
     "id": "caprese-salad",
@@ -5022,7 +5022,7 @@ export const expansionRecipes = [
         "preparation": "sliced into thick rounds",
         "isEssential": true,
         "group": "Main",
-        "nameBn": "mozzarella-cheese"
+        "nameBn": "মোজারেলা চিজ"
       },
       {
         "ingredientId": "tomato",
@@ -5067,21 +5067,21 @@ export const expansionRecipes = [
         "instruction": "Alternate overlapping slices of tomato and mozzarella on a serving plate.",
         "duration": 3,
         "technique": "plating",
-        "instructionBn": "Alternate overlapping slices টমেটো এবং mozzarella on a serving plate."
+        "instructionBn": "পাকা রসালো টমেটো সমান গোল স্লাইস করে কেটে নিন।"
       },
       {
         "step": 2,
         "instruction": "Tuck fresh sweet basil leaves between the slices.",
         "duration": 1,
         "technique": "plating",
-        "instructionBn": "Tuck fresh sweet basil leaves between slices."
+        "instructionBn": "তাজা মোজারেলা পনিরও টমেটোর সমান পুরু গোল করে কেটে নিন।"
       },
       {
         "step": 3,
         "instruction": "Drizzle generously with high-quality extra virgin olive oil and sprinkle with sea salt.",
         "duration": 1,
         "technique": "seasoning",
-        "instructionBn": "generously দিয়ে high-quality extra virgin অলিভ অয়েল ছিটিয়ে দিন এবং দিয়ে sea লবণ ছিটিয়ে দিন."
+        "instructionBn": "একটি সুন্দর প্লেটে পর্যায়ক্রমে টমেটো ও পনিরের স্লাইস সাজিয়ে দিন।"
       }
     ],
     "imageEmoji": "🥗",
@@ -5169,27 +5169,27 @@ export const expansionRecipes = [
         "instruction": "Toss diced tomatoes, torn basil, olive oil, and salt in a bowl. Let marinate for 5 minutes.",
         "duration": 5,
         "technique": "marinating",
-        "instructionBn": "diced tomatoes, torn basil, অলিভ অয়েল মিশিয়ে নিন এবং লবণ একটি বাটিতে.Let marinate ৫ মিনিট."
+        "instructionBn": "একটি পাত্রে কাটা টমেটো, ছেঁড়া বেসিল, জলপাই তেল এবং লবণ দিন। ৫ মিনিট ম্যারিনেট করতে দিন।"
       },
       {
         "step": 2,
         "instruction": "Toast bread slices until golden brown. Rub one side of the hot bread vigorously with the raw garlic clove.",
         "duration": 2,
         "technique": "rubbing",
-        "instructionBn": "Toast bread slices সোনালী বাদামী হওয়া পর্যন্ত.one side গরম গরম bread vigorously দিয়ে raw রসুন clove মাখিয়ে নিন."
+        "instructionBn": "সোনালি বাদামী হওয়া পর্যন্ত রুটির টুকরো টোস্ট করুন। গরম রুটির একপাশে কাঁচা রসুনের লবঙ্গ দিয়ে জোরে ঘষে নিন।"
       },
       {
         "step": 3,
         "instruction": "Spoon the tomato mixture onto the toasted bread and serve immediately.",
         "duration": 2,
         "technique": "assembling",
-        "instructionBn": "Spoon টমেটো mixture onto toasted bread এবং immediately পরিবেশন করুন."
+        "instructionBn": "টোস্ট করা রুটির উপর টমেটোর মিশ্রণটি চামচ দিন এবং সাথে সাথে পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍞",
-    "titleBn": "Bruschetta al Pomodoro",
-    "descriptionBn": "Toasted গমের রুটি rubbed দিয়ে fresh রসুন, topped দিয়ে marinated diced tomatoes, basil এবং অলিভ অয়েল.",
-    "culturalNoteBn": "Dating back to ancient Rome, this was used as a rustic way to taste season's fresh-pressed অলিভ অয়েল."
+    "titleBn": "ব্রুশেটা আল পোমোডোরো",
+    "descriptionBn": "টোস্ট করা গমের রুটি তাজা রসুন দিয়ে ঘষে, মেরিনেট করা টমেটো, বেসিল এবং জলপাই তেল দিয়ে উপরে।",
+    "culturalNoteBn": "প্রাচীন রোম থেকে ডেটিং করা, এটি সিজনের তাজা-চাপা জলপাই তেলের স্বাদ নেওয়ার একটি দেহাতি উপায় হিসাবে ব্যবহৃত হয়েছিল।"
   },
   {
     "id": "fettuccine-alfredo",
@@ -5226,7 +5226,7 @@ export const expansionRecipes = [
         "preparation": "room temperature",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "butter-unsalted"
+        "nameBn": "মাখন (আনসল্টেড)"
       },
       {
         "ingredientId": "parmesan-cheese",
@@ -5235,7 +5235,7 @@ export const expansionRecipes = [
         "preparation": "finely grated",
         "isEssential": true,
         "group": "Sauce",
-        "nameBn": "parmesan-cheese"
+        "nameBn": "পারমেসান চিজ"
       },
       {
         "ingredientId": "salt",
@@ -5253,27 +5253,27 @@ export const expansionRecipes = [
         "instruction": "Boil pasta in salted water until al dente. Reserve 1 cup of pasta water.",
         "duration": 10,
         "technique": "boiling",
-        "instructionBn": "pasta in salted পানি until al dente ফুটিয়ে নিন.Reserve ১ cup pasta পানি."
+        "instructionBn": "পাস্তা নোনতা জলে আল ডেন্টে পর্যন্ত সিদ্ধ করুন। ১ কাপ পাস্তা জল সংরক্ষণ করুন।"
       },
       {
         "step": 2,
         "instruction": "In a warm serving bowl, toss the hot pasta with the butter. Slowly add grated Parmesan, tossing rapidly.",
         "duration": 3,
         "technique": "tossing",
-        "instructionBn": "In a গরম গরম serving bowl, toss গরম গরম pasta দিয়ে মাখন.Slowly add grated Parmesan, tossing rapidly."
+        "instructionBn": "একটি উষ্ণ পরিবেশন পাত্রে, মাখন দিয়ে গরম পাস্তা টস করুন। ধীরে ধীরে গ্রেট করা পারমেসান যোগ করুন, দ্রুত টস করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of pasta water, stirring continuously until a creamy cheese emulsion coats the pasta.",
         "duration": 2,
         "technique": "tossing",
-        "instructionBn": "a splash pasta পানি, stirring continuously until a creamy cheese emulsion coats pasta যোগ করুন."
+        "instructionBn": "পাস্তা জলের একটি স্প্ল্যাশ যোগ করুন, ক্রিমযুক্ত পনির ইমালসন পাস্তার আবরণ না হওয়া পর্যন্ত ক্রমাগত নাড়তে থাকুন।"
       }
     ],
     "imageEmoji": "🍝",
-    "titleBn": "Authentic Fettuccine Alfredo",
-    "descriptionBn": "Flat pasta tossed দিয়ে sweet unsalted মাখন এবং aged Parmesan cheese, forming a rich, silky sauce.",
-    "culturalNoteBn": "Authentic Italian Alfredo does not use ভারী ক্রিম;velvety texture relies entirely on emulsion high-quality মাখন, cheese এবং pasta পানি."
+    "titleBn": "খাঁটি ফেটুসিন আলফ্রেডো",
+    "descriptionBn": "ফ্ল্যাট পাস্তা মিষ্টি আনলনাড মাখন এবং বয়স্ক পারমেসান পনির দিয়ে টস করে, একটি সমৃদ্ধ, সিল্কি সস তৈরি করে।",
+    "culturalNoteBn": "খাঁটি ইতালীয় আলফ্রেডো ভারী ক্রিম ব্যবহার করেন না; ভেলভেটি টেক্সচার সম্পূর্ণভাবে উচ্চ-মানের মাখন, পনির এবং পাস্তা জলের ইমালশনের উপর নির্ভর করে।"
   },
   {
     "id": "minestrone-soup",
@@ -5375,21 +5375,21 @@ export const expansionRecipes = [
         "instruction": "Sauté carrots and potato in olive oil in a soup pot until slightly golden.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "carrots সাঁতলে নিন এবং আলু in অলিভ অয়েল in a soup pot until slightly golden."
+        "instructionBn": "বড় পাত্রে অলিভ অয়েল গরম করে পেঁয়াজ, গাজর, সেলারি ও রসুন কুচি ৫ মিনিট সাঁতলে নিন।"
       },
       {
         "step": 2,
         "instruction": "Add zucchini, tomato paste, oregano, beans, and 4 cups of water. Bring to a boil.",
         "duration": 5,
         "technique": "boiling",
-        "instructionBn": "ঝুচিনি, টমেটো বাটা / পেস্ট, oregano, beans যোগ করুন এবং ৪ cups পানি.ফুটিয়ে নিন."
+        "instructionBn": "জুকিনি, আলু, ক্যানড টমেটো ও সবজি ব্রথ ঢেলে দিন এবং ভালো করে ফুটিয়ে নিন।"
       },
       {
         "step": 3,
         "instruction": "Cover and simmer on low heat for 15-20 minutes until all vegetables are tender.",
         "duration": 15,
         "technique": "simmering",
-        "instructionBn": "ঢেকে দিন এবং কম আঁচে ১৫-২০ মিনিট until all vegetables are tender জ্বাল দিন."
+        "instructionBn": "আঁচ কমিয়ে ঢাকনা দিয়ে ২০ মিনিট সবজি সিদ্ধ হওয়া পর্যন্ত রান্না করুন।"
       }
     ],
     "imageEmoji": "🥣",
@@ -5449,7 +5449,7 @@ export const expansionRecipes = [
         "preparation": "for dusting",
         "isEssential": true,
         "group": "Topping",
-        "nameBn": "cocoa-powder"
+        "nameBn": "কোকো পাউডার"
       },
       {
         "ingredientId": "sugar-palm",
@@ -5458,7 +5458,7 @@ export const expansionRecipes = [
         "preparation": "to sweeten coffee dip",
         "isEssential": false,
         "group": "Dip",
-        "nameBn": "sugar-palm"
+        "nameBn": "তালের গুড়"
       }
     ],
     "steps": [
@@ -5467,27 +5467,27 @@ export const expansionRecipes = [
         "instruction": "Whip heavy cream with white sugar until soft peaks form.",
         "duration": 10,
         "technique": "whipping",
-        "instructionBn": "Whip ভারী ক্রিম দিয়ে white sugar until soft peaks form."
+        "instructionBn": "নরম শিখর গঠন পর্যন্ত সাদা চিনি দিয়ে ভারী ক্রিম চাবুক।"
       },
       {
         "step": 2,
         "instruction": "Quickly dip biscuit/bread strips in warm coffee sweetened with palm sugar.",
         "duration": 2,
         "technique": "dipping",
-        "instructionBn": "Quickly dip biscuit/bread strips in গরম গরম coffee sweetened দিয়ে palm sugar."
+        "instructionBn": "পাম চিনি দিয়ে মিষ্টি করা উষ্ণ কফিতে দ্রুত বিস্কুট/রুটির স্ট্রিপ ডুবিয়ে দিন।"
       },
       {
         "step": 3,
         "instruction": "Layer dipped biscuits in a serving tray, spread whipped cream on top. Repeat layers and dust with cocoa powder before chilling.",
         "duration": 8,
         "technique": "assembling",
-        "instructionBn": "Layer dipped biscuits in a serving tray, spread whipped cream on top.Repeat layers এবং dust দিয়ে cocoa powder before chilling."
+        "instructionBn": "একটি পরিবেশন ট্রেতে লেয়ারে ডুবানো বিস্কুট, উপরে হুইপড ক্রিম ছড়িয়ে দিন। ঠাণ্ডা করার আগে কোকো পাউডার দিয়ে স্তর এবং ধুলো পুনরাবৃত্তি করুন।"
       }
     ],
     "imageEmoji": "🍰",
-    "titleBn": "Easy Tiramisu Dessert",
-    "descriptionBn": "A classic Italian coffee-flavored dessert made layers ladyfingers dipped in strong coffee, masked দিয়ে whipped cream.",
-    "culturalNoteBn": "Originated in Treviso in ১৯৬০s;name literally translates to \"pick me up\" due to espresso kick."
+    "titleBn": "সহজ তিরামিসু ডেজার্ট",
+    "descriptionBn": "একটি ক্লাসিক ইতালীয় কফি-স্বাদযুক্ত ডেজার্ট লেডিফিঙ্গার স্তর দিয়ে তৈরি শক্তিশালী কফিতে ডুবানো, হুইপড ক্রিম দিয়ে মুখোশ করা।",
+    "culturalNoteBn": "১৯৬০-এর দশকে ট্রেভিসোতে উদ্ভূত; এসপ্রেসো কিকের কারণে নামটির আক্ষরিক অর্থ হল \"পিক আপ\"।"
   },
   {
     "id": "chicken-tacos",
@@ -5587,27 +5587,27 @@ export const expansionRecipes = [
         "instruction": "Rub chicken strips with smoked paprika, cumin powder, and salt.",
         "duration": 5,
         "technique": "marinating",
-        "instructionBn": "chicken strips দিয়ে smoked paprika, জিরা গুঁড়ো মাখিয়ে নিন এবং লবণ."
+        "instructionBn": "ধূমায়িত পেপারিকা, জিরা গুঁড়ো এবং লবণ দিয়ে মুরগির স্ট্রিপগুলি ঘষুন।"
       },
       {
         "step": 2,
         "instruction": "Sauté chicken in a hot pan until nicely browned and cooked through.",
         "duration": 8,
         "technique": "pan-frying",
-        "instructionBn": "chicken in a গরম গরম pan until nicely browned সাঁতলে নিন এবং cooked through."
+        "instructionBn": "একটি গরম প্যানে মুরগির মাংস ভালোভাবে বাদামী হয়ে সেদ্ধ না হওয়া পর্যন্ত সেদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Warm corn tortillas on a dry skillet until slightly charred. Fill with chicken, and top with onions, cilantro, and a squeeze of lime.",
         "duration": 4,
         "technique": "assembling",
-        "instructionBn": "গরম গরম ভুট্টা tortillas on a dry skillet until slightly charred.Fill দিয়ে chicken এবং top দিয়ে onions, ধনেপাতা এবং a squeeze কাগজি লেবু."
+        "instructionBn": "সামান্য পুড়ে যাওয়া পর্যন্ত একটি শুকনো স্কিললেটে উষ্ণ কর্ন টর্টিলাস। মুরগির মাংস দিয়ে ভরাট করুন, এবং উপরে পেঁয়াজ, ধনেপাতা এবং চুন দিয়ে চেপে দিন।"
       }
     ],
     "imageEmoji": "🌮",
-    "titleBn": "Authentic Mexican Chicken Tacos",
-    "descriptionBn": "Pan-seared spiced মুরগির বুকের মাংস strips loaded onto charred গরম গরম ভুট্টা tortillas, topped দিয়ে onions, কাগজি লেবু এবং ধনেপাতা.",
-    "culturalNoteBn": "quintessential Mexican street food, reflecting pre-Columbian ভুট্টা traditions paired দিয়ে Spanish-introduced meats."
+    "titleBn": "খাঁটি মেক্সিকান চিকেন টাকোস",
+    "descriptionBn": "প্যান-সিয়ার্ড মসলাযুক্ত মুরগির স্তনের স্ট্রিপগুলি পোড়া উষ্ণ ভুট্টার টর্টিলাগুলিতে লোড করা হয়, যার উপরে পেঁয়াজ, চুন এবং ধনেপাতা।",
+    "culturalNoteBn": "মেক্সিকান স্ট্রিট ফুড, স্প্যানিশ-প্রবর্তিত মাংসের সাথে যুক্ত প্রাক-কলম্বিয়ান কর্ন ঐতিহ্যকে প্রতিফলিত করে।"
   },
   {
     "id": "guacamole",
@@ -5692,20 +5692,20 @@ export const expansionRecipes = [
         "instruction": "Mash avocados coarsely in a bowl using a fork, leaving some chunks for texture.",
         "duration": 3,
         "technique": "mashing",
-        "instructionBn": "avocados coarsely একটি বাটিতে using a fork, leaving some chunks for texture মেখে নিন."
+        "instructionBn": "কাঁটাচামচ ব্যবহার করে একটি পাত্রে অ্যাভোকাডো মোটা করে মাখুন, টেক্সচারের জন্য কিছু অংশ রেখে দিন।"
       },
       {
         "step": 2,
         "instruction": "Stir in the lime juice, chopped onion, tomatoes, cilantro, and salt. Mix gently and serve.",
         "duration": 2,
         "technique": "mixing",
-        "instructionBn": "in কাগজি লেবু juice, chopped onion, tomatoes, ধনেপাতা নেড়ে দিন এবং লবণ.gently মেশান এবং পরিবেশন করুন."
+        "instructionBn": "লেবুর রস, কাটা পেঁয়াজ, টমেটো, ধনেপাতা এবং লবণ দিয়ে নাড়ুন। আলতো করে মিশিয়ে পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🥑",
-    "titleBn": "Classic Mexican Guacamole",
-    "descriptionBn": "Creamy mashed avocados blended দিয়ে কাগজি লেবু juice, chopped red onions, tomatoes এবং fresh ধনেপাতা.",
-    "culturalNoteBn": "Dating back to Aztecs, \"Ahuaca-mulli\" remains one world's most popular dips."
+    "titleBn": "ক্লাসিক মেক্সিকান গুয়াকামোল",
+    "descriptionBn": "লেবুর রস, কাটা লাল পেঁয়াজ, টমেটো এবং তাজা ধনেপাতার সাথে মিশ্রিত ক্রিমি ম্যাশ করা অ্যাভোকাডো।",
+    "culturalNoteBn": "অ্যাজটেকদের সাথে ডেটিং করা, \"আহুয়াকা-মুলি\" বিশ্বের সবচেয়ে জনপ্রিয় ডিপগুলির মধ্যে একটি।"
   },
   {
     "id": "quesadillas",
@@ -5742,7 +5742,7 @@ export const expansionRecipes = [
         "preparation": "shredded",
         "isEssential": true,
         "group": "Cheese filling",
-        "nameBn": "cheddar-cheese"
+        "nameBn": "চেডার চিজ"
       },
       {
         "ingredientId": "mozzarella-cheese",
@@ -5751,7 +5751,7 @@ export const expansionRecipes = [
         "preparation": "shredded",
         "isEssential": true,
         "group": "Cheese filling",
-        "nameBn": "mozzarella-cheese"
+        "nameBn": "মোজারেলা চিজ"
       },
       {
         "ingredientId": "butter-unsalted",
@@ -5760,7 +5760,7 @@ export const expansionRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Cooking",
-        "nameBn": "butter-unsalted"
+        "nameBn": "মাখন (আনসল্টেড)"
       }
     ],
     "steps": [
@@ -5769,20 +5769,20 @@ export const expansionRecipes = [
         "instruction": "Melt half the butter in a pan. Place a tortilla down, top with Cheddar and Mozzarella, and cover with a second tortilla.",
         "duration": 2,
         "technique": "assembling",
-        "instructionBn": "Melt half মাখন একটি প্যানে.a tortilla down, top দিয়ে Cheddar রাখুন এবং Mozzarella এবং দিয়ে a second tortilla ঢেকে দিন."
+        "instructionBn": "একটি প্যানে অর্ধেক মাখন গলিয়ে নিন। একটি টর্টিলা নীচে রাখুন, উপরে চেডার এবং মোজারেলা দিয়ে, এবং দ্বিতীয় টর্টিলা দিয়ে ঢেকে দিন।"
       },
       {
         "step": 2,
         "instruction": "Griddle until the bottom tortilla is crisp and cheese starts melting. Flip over and griddle the other side.",
         "duration": 4,
         "technique": "griddling",
-        "instructionBn": "Griddle until bottom tortilla is crisp এবং cheese starts melting.Flip over এবং griddle other side."
+        "instructionBn": "নীচের টর্টিলা খাস্তা না হওয়া পর্যন্ত এবং পনির গলে যাওয়া শুরু না হওয়া পর্যন্ত ভাজুন। উল্টিয়ে অন্য দিকে ভাজুন।"
       }
     ],
     "imageEmoji": "🫓",
-    "titleBn": "Easy Cheese Quesadillas",
-    "descriptionBn": "Crispy, toasted ভুট্টা tortillas filled দিয়ে gooey melted Cheddar এবং Mozzarella cheese.",
-    "culturalNoteBn": "A quick, classic everyday Mexican snack meaning \"little cheesy thing\"."
+    "titleBn": "সহজ পনির Quesadillas",
+    "descriptionBn": "ক্রিস্পি, টোস্ট করা কর্ন টর্টিলা গুলি গলিত চেডার এবং মোজারেলা চিজ দিয়ে ভরা।",
+    "culturalNoteBn": "একটি দ্রুত, ক্লাসিক প্রতিদিনের মেক্সিকান স্ন্যাক যার অর্থ \"সামান্য চিজি জিনিস\"।"
   },
   {
     "id": "enchiladas-rojas",
@@ -5846,7 +5846,7 @@ export const expansionRecipes = [
         "preparation": "shredded",
         "isEssential": true,
         "group": "Cheese",
-        "nameBn": "cheddar-cheese"
+        "nameBn": "চেডার চিজ"
       },
       {
         "ingredientId": "onion-red",
@@ -5873,27 +5873,27 @@ export const expansionRecipes = [
         "instruction": "Simmer tomato paste, smoked paprika, salt, and water to make a smooth red enchilada sauce.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "টমেটো বাটা / পেস্ট, smoked paprika, লবণ জ্বাল দিন এবং পানি to make a smooth red enchilada sauce."
+        "instructionBn": "টমেটো পেস্ট, স্মোকড পেপারিকা, লবণ এবং জল দিয়ে মসৃণ লাল এনচিলাডা সস তৈরি করুন।"
       },
       {
         "step": 2,
         "instruction": "Dip tortillas briefly in the sauce to soften. Fill each with shredded chicken, roll up tightly, and place in a baking dish.",
         "duration": 8,
         "technique": "assembling",
-        "instructionBn": "Dip tortillas briefly in sauce to soften.Fill each দিয়ে shredded chicken, roll up tightly এবং in a baking dish রাখুন."
+        "instructionBn": "নরম করার জন্য সসে অল্প সময়ের জন্য টর্টিলা ডুবিয়ে রাখুন। টুকরো টুকরো মুরগি দিয়ে প্রতিটি পূরণ করুন, শক্তভাবে রোল করুন এবং একটি বেকিং ডিশে রাখুন।"
       },
       {
         "step": 3,
         "instruction": "Pour remaining sauce over the rolls, top with cheese, and bake until melted and bubbly.",
         "duration": 7,
         "technique": "baking",
-        "instructionBn": "remaining sauce over rolls, top দিয়ে cheese ঢালুন এবং until melted বেক করুন এবং bubbly."
+        "instructionBn": "রোলগুলির উপরে অবশিষ্ট সস ঢালা, পনির দিয়ে উপরে, এবং গলে যাওয়া এবং বুদবুদ হওয়া পর্যন্ত বেক করুন।"
       }
     ],
     "imageEmoji": "🫓",
-    "titleBn": "Enchiladas Rojas (Red Chili Enchiladas)",
-    "descriptionBn": "ভুট্টা tortillas rolled around shredded chicken, drenched in a smoky red chili টমেটো sauce, baked দিয়ে cheese.",
-    "culturalNoteBn": "Enchiladas date back to Mayan times, where tortillas were dipped in chili বাটা / পেস্ট."
+    "titleBn": "এনচিলাদাস রোজাস (লাল মরিচ এনচিলাদাস)",
+    "descriptionBn": "কর্ন টর্টিলাগুলি কাটা মুরগির চারপাশে ঘূর্ণায়মান, একটি ধোঁয়াটে লাল মরিচ টমেটো সসে ভিজিয়ে, পনির দিয়ে বেক করা।",
+    "culturalNoteBn": "এনচিলাদাস মায়ান যুগের, যেখানে টর্টিলা মরিচের পেস্টে ডুবানো হত।"
   },
   {
     "id": "black-bean-soup",
@@ -5986,20 +5986,20 @@ export const expansionRecipes = [
         "instruction": "Sauté chopped onion, garlic, and bell peppers in olive oil until soft.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "chopped onion, রসুন সাঁতলে নিন এবং bell peppers in অলিভ অয়েল until soft."
+        "instructionBn": "অলিভ অয়েলে কাটা পেঁয়াজ, রসুন এবং বেল মরিচ নরম না হওয়া পর্যন্ত ভাজুন।"
       },
       {
         "step": 2,
         "instruction": "Stir in cumin powder, boiled black beans, salt, and 2 cups of water. Simmer covered for 15 minutes.",
         "duration": 15,
         "technique": "simmering",
-        "instructionBn": "in জিরা গুঁড়ো, boiled black beans, লবণ নেড়ে দিন এবং ২ cups পানি.covered ১৫ মিনিট জ্বাল দিন."
+        "instructionBn": "জিরা গুঁড়া, সিদ্ধ কালো মটরশুটি, লবণ, এবং ২ কাপ জল নাড়ুন। ১৫ মিনিটের জন্য ঢেকে রাখুন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Mexican Black Bean Soup",
-    "descriptionBn": "A comforting, smoky soup black beans slow-cooked দিয়ে cumin, onions, রসুন এবং sweet bell peppers.",
-    "culturalNoteBn": "Black beans are a vital ancient staple throughout Mesoamerica."
+    "titleBn": "মেক্সিকান ব্ল্যাক বিন স্যুপ",
+    "descriptionBn": "কালো মটরশুটির একটি আরামদায়ক, ধোঁয়াটে স্যুপ যা জিরা, পেঁয়াজ, রসুন এবং মিষ্টি বেল মরিচ দিয়ে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "কালো মটরশুটি মেসোআমেরিকা জুড়ে একটি গুরুত্বপূর্ণ প্রাচীন প্রধান খাদ্য।"
   },
   {
     "id": "chilaquiles-verdes",
@@ -6063,7 +6063,7 @@ export const expansionRecipes = [
         "preparation": "shredded",
         "isEssential": true,
         "group": "Topping",
-        "nameBn": "mozzarella-cheese"
+        "nameBn": "মোজারেলা চিজ"
       },
       {
         "ingredientId": "egg",
@@ -6090,27 +6090,27 @@ export const expansionRecipes = [
         "instruction": "Blend lime juice, cilantro, green chili, salt, and a splash of water to form a bright green sauce.",
         "duration": 3,
         "technique": "blending",
-        "instructionBn": "Blend কাগজি লেবু juice, ধনেপাতা, কাঁচা মরিচ, লবণ এবং a splash পানি to form a bright green sauce."
+        "instructionBn": "একটি উজ্জ্বল সবুজ সস তৈরি করতে লেবুর রস, ধনেপাতা, সবুজ মরিচ, লবণ এবং এক ছিটা জল মিশিয়ে নিন।"
       },
       {
         "step": 2,
         "instruction": "Simmer the green sauce in a pan. Stir in the tortilla chips gently so they absorb the sauce but remain slightly crisp. Top with mozzarella and let melt.",
         "duration": 4,
         "technique": "simmering",
-        "instructionBn": "green sauce একটি প্যানে জ্বাল দিন.in tortilla chips gently so they absorb sauce but remain slightly crisp নেড়ে দিন.Top দিয়ে mozzarella এবং let melt."
+        "instructionBn": "একটি প্যানে সবুজ সস সিদ্ধ করুন। টর্টিলা চিপগুলিতে আলতোভাবে নাড়ুন যাতে তারা সস শোষণ করে তবে কিছুটা খাস্তা থাকে। মোজারেলা দিয়ে উপরে এবং গলতে দিন।"
       },
       {
         "step": 3,
         "instruction": "Serve hot topped with crispy fried eggs.",
         "duration": 3,
         "technique": "assembling",
-        "instructionBn": "গরম গরম topped দিয়ে crispy fried eggs পরিবেশন করুন."
+        "instructionBn": "ক্রিস্পি ভাজা ডিম দিয়ে গরম গরম পরিবেশন করুন।"
       }
     ],
     "imageEmoji": "🍳",
-    "titleBn": "Chilaquiles Verdes (Mexican Breakfast Nachos)",
-    "descriptionBn": "Crispy ভুট্টার রুটি (টর্টিয়া) chips lightly simmered in a tangy green sauce, topped দিয়ে melted mozzarella এবং fried eggs.",
-    "culturalNoteBn": "Historically created as a delicious way to utilize stale leftover ভুট্টা tortillas."
+    "titleBn": "চিলাকুইলস ভার্দেস (মেক্সিকান ব্রেকফাস্ট নাচোস)",
+    "descriptionBn": "ক্রিস্পি কর্ন টর্টিলা চিপগুলি হালকাভাবে একটি ট্যাঞ্জি গ্রিন সসে সিদ্ধ করা হয়েছে, যার উপরে গলিত মোজারেলা এবং ভাজা ডিম রয়েছে।",
+    "culturalNoteBn": "ঐতিহাসিকভাবে বাসি অবশিষ্ট ভুট্টা টর্টিলা ব্যবহার করার একটি সুস্বাদু উপায় হিসাবে তৈরি করা হয়েছে।"
   },
   {
     "id": "pico-de-gallo",
@@ -6195,20 +6195,20 @@ export const expansionRecipes = [
         "instruction": "Combine diced tomatoes, red onions, cilantro, and green chili in a serving bowl.",
         "duration": 5,
         "technique": "mixing",
-        "instructionBn": "diced tomatoes, red onions, ধনেপাতা মিশিয়ে নিন এবং কাঁচা মরিচ in a serving bowl."
+        "instructionBn": "একটি পরিবেশন পাত্রে কাটা টমেটো, লাল পেঁয়াজ, ধনেপাতা এবং সবুজ মরিচ একত্রিত করুন।"
       },
       {
         "step": 2,
         "instruction": "Drizzle lime juice and salt. Toss thoroughly. Rest for 10 minutes before serving to let flavors marry.",
         "duration": 10,
         "technique": "resting",
-        "instructionBn": "কাগজি লেবু juice ছিটিয়ে দিন এবং লবণ.thoroughly মিশিয়ে নিন.Rest ১০ মিনিট before serving to let flavors marry."
+        "instructionBn": "গুঁড়ি গুঁড়ি লেবুর রস এবং লবণ। পুঙ্খানুপুঙ্খভাবে টস। পরিবেশন করার আগে ১০ মিনিটের জন্য বিশ্রাম নিন যাতে স্বাদগুলিকে বিয়ে করা যায়।"
       }
     ],
     "imageEmoji": "🥗",
-    "titleBn": "Pico de Gallo (Fresh Mexican Salsa)",
-    "descriptionBn": "A vibrant, raw salsa made finely diced ripe tomatoes, red onions, fresh ধনেপাতা, green chilies এবং কাগজি লেবু juice.",
-    "culturalNoteBn": "Also called Salsa Bandera (Flag Salsa) due to its patriotic green, white এবং red colors."
+    "titleBn": "পিকো ডি গ্যালো (তাজা মেক্সিকান সালসা)",
+    "descriptionBn": "সূক্ষ্মভাবে কাটা পাকা টমেটো, লাল পেঁয়াজ, তাজা ধনেপাতা, সবুজ মরিচ এবং লেবুর রস দিয়ে তৈরি একটি প্রাণবন্ত, কাঁচা সালসা।",
+    "culturalNoteBn": "দেশপ্রেমিক সবুজ, সাদা এবং লাল রঙের কারণে সালসা বান্দেরা (পতাকা সালসা) নামেও পরিচিত।"
   },
   {
     "id": "tortilla-chips",
@@ -6264,19 +6264,19 @@ export const expansionRecipes = [
         "instruction": "Toss corn tortilla wedges with olive oil and a pinch of salt.",
         "duration": 2,
         "technique": "mixing",
-        "instructionBn": "ভুট্টার রুটি (টর্টিয়া) wedges দিয়ে অলিভ অয়েল মিশিয়ে নিন এবং a pinch লবণ."
+        "instructionBn": "জলপাই তেল এবং এক চিমটি লবণ দিয়ে ভুট্টা টর্টিলা ওয়েজগুলি টস করুন।"
       },
       {
         "step": 2,
         "instruction": "Spread wedges in a single layer on a baking sheet. Bake at 400°F (200°C) until perfectly golden brown and crispy.",
         "duration": 8,
         "technique": "baking",
-        "instructionBn": "wedges in a single layer on a baking sheet ছড়িয়ে দিন.at ৪০০°F (২০০°C) until perfectly সোনালী বাদামী বেক করুন এবং crispy."
+        "instructionBn": "একটি বেকিং শীটে একক স্তরে ওয়েজগুলি ছড়িয়ে দিন। পুরোপুরি সোনালি বাদামী এবং খসখসে হওয়া পর্যন্ত ৪০০°F (২০০°C) এ বেক করুন।"
       }
     ],
     "imageEmoji": "🫓",
-    "titleBn": "Homemade Crispy ভুট্টার রুটি (টর্টিয়া) Chips",
-    "descriptionBn": "Crunchy, freshly baked অথবা fried ভুট্টার রুটি (টর্টিয়া) wedges seasoned lightly দিয়ে sea লবণ.",
-    "culturalNoteBn": "An essential Mexican table starter, historically made to utilize yesterday's leftover ভুট্টা tortillas."
+    "titleBn": "ঘরে তৈরি ক্রিস্পি কর্ন টর্টিলা চিপস",
+    "descriptionBn": "কুড়কুড়ে, তাজা বেকড বা ভাজা কর্ন টর্টিলা ওয়েজেস সামুদ্রিক লবণ দিয়ে হালকাভাবে পাকা।",
+    "culturalNoteBn": "একটি অপরিহার্য মেক্সিকান টেবিল স্টার্টার, ঐতিহাসিকভাবে গতকালের অবশিষ্ট ভুট্টা টর্টিলা ব্যবহার করার জন্য তৈরি।"
   }
 ];

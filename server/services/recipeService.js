@@ -1,7 +1,12 @@
+import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
 import { db as firestoreDb, isFirebaseInitialized } from '../models/firebase.js';
 import { db as sqliteDb } from '../models/db.js';
+import { cacheService } from './cacheService.js';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { generateLocalCustomRecipe } from '../../src/utils/customChefEngine.js';
+import { matchIngredient } from '../../src/utils/ingredientResolver.js';
 import { 
   decorateRecipeTranslations, 
   ingredientTranslations, 
@@ -104,10 +109,58 @@ class RecipeService {
       nameBn: ingredientTranslations[i.id] || i.name
     }));
 
-    // 3. Recipes
-    const sqliteRecipesList = sqliteDb.prepare('SELECT * FROM recipes').all();
-    this.recipesCache = sqliteRecipesList.map(r => {
-      const detailed = this._getRecipeByIdSqlite(r.id);
+    // 3. Recipes (High-performance bulk hydration — eliminates N+1 query loop)
+    const recipes = sqliteDb.prepare('SELECT * FROM recipes').all();
+    const mealTypes = sqliteDb.prepare('SELECT * FROM recipe_meal_types').all();
+    const dietaryTags = sqliteDb.prepare('SELECT * FROM recipe_dietary_tags').all();
+    const steps = sqliteDb.prepare('SELECT recipeId, stepNumber as step, instruction, instructionBn, duration, technique FROM recipe_steps ORDER BY recipeId, stepNumber').all();
+    const ingredients = sqliteDb.prepare(`
+      SELECT ri.recipeId, ri.ingredientId, ri.quantity, ri.unit, ri.preparation, ri.isEssential, ri.ingredientGroup as 'group', i.name, i.emoji
+      FROM recipe_ingredients ri
+      JOIN ingredients i ON ri.ingredientId = i.id
+    `).all();
+
+    const mtMap = new Map();
+    for (const m of mealTypes) {
+      if (!mtMap.has(m.recipeId)) mtMap.set(m.recipeId, []);
+      mtMap.get(m.recipeId).push(m.mealType);
+    }
+
+    const dtMap = new Map();
+    for (const d of dietaryTags) {
+      if (!dtMap.has(d.recipeId)) dtMap.set(d.recipeId, []);
+      dtMap.get(d.recipeId).push(d.dietaryTag);
+    }
+
+    const stMap = new Map();
+    for (const s of steps) {
+      if (!stMap.has(s.recipeId)) stMap.set(s.recipeId, []);
+      stMap.get(s.recipeId).push(s);
+    }
+
+    const ingMap = new Map();
+    for (const i of ingredients) {
+      if (!ingMap.has(i.recipeId)) ingMap.set(i.recipeId, []);
+      ingMap.get(i.recipeId).push({
+        ingredientId: i.ingredientId,
+        quantity: i.quantity,
+        unit: i.unit,
+        preparation: i.preparation,
+        isEssential: i.isEssential === 1,
+        group: i.group,
+        name: i.name,
+        emoji: i.emoji
+      });
+    }
+
+    this.recipesCache = recipes.map(r => {
+      const detailed = {
+        ...r,
+        mealType: mtMap.get(r.id) || [],
+        dietaryTags: dtMap.get(r.id) || [],
+        steps: stMap.get(r.id) || [],
+        ingredients: ingMap.get(r.id) || []
+      };
       return decorateRecipeTranslations(detailed);
     });
   }
@@ -243,7 +296,7 @@ class RecipeService {
           matchPercentage = Math.min(100, matchPercentage + 3);
         }
 
-        if (matchPercentage < 10 && essentialMatched === 0) continue;
+        if (matchPercentage < 10) continue;
 
         const mealTypes = r.mealType || [];
         const dietaryTags = r.dietaryTags || [];
@@ -288,12 +341,13 @@ class RecipeService {
         if (filters.difficulty && filters.difficulty !== 'all') {
           if (recipe.difficulty !== filters.difficulty) return false;
         }
-        if (filters.maxTime && filters.maxTime < 120) {
+        if (filters.maxTime) {
           const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
           if (totalTime > filters.maxTime) return false;
         }
         if (filters.dietary && filters.dietary.length > 0) {
-          const hasAllTags = filters.dietary.every(tag => recipe.dietaryTags.includes(tag));
+          const recipeTags = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : [];
+          const hasAllTags = filters.dietary.every(tag => recipeTags.includes(tag));
           if (!hasAllTags) return false;
         }
         return true;
@@ -386,7 +440,7 @@ class RecipeService {
         matchPercentage = Math.min(100, matchPercentage + 3);
       }
 
-      if (matchPercentage < 10 && essentialMatched === 0) continue;
+      if (matchPercentage < 10) continue;
 
       const mealTypes = mealTypeMap.get(r.id) || [];
       const dietaryTags = dietaryTagMap.get(r.id) || [];
@@ -395,14 +449,14 @@ class RecipeService {
         .filter(ri => !selectedSet.has(ri.ingredientId))
         .map(ri => {
           const ingObj = ingredientMap.get(ri.ingredientId);
-          return ingObj ? { id: ingObj.id, name: ingObj.name, emoji: ingObj.emoji } : null;
+          return ingObj ? { id: ingObj.id, name: ingObj.name, nameBn: ingObj.nameBn || ingObj.name, emoji: ingObj.emoji } : null;
         }).filter(Boolean);
 
       const missingOptional = optional
         .filter(ri => !selectedSet.has(ri.ingredientId))
         .map(ri => {
           const ingObj = ingredientMap.get(ri.ingredientId);
-          return ingObj ? { id: ingObj.id, name: ingObj.name, emoji: ingObj.emoji } : null;
+          return ingObj ? { id: ingObj.id, name: ingObj.name, nameBn: ingObj.nameBn || ingObj.name, emoji: ingObj.emoji } : null;
         }).filter(Boolean);
 
       matchedRecipes.push(decorateRecipeTranslations({
@@ -429,12 +483,13 @@ class RecipeService {
       if (filters.difficulty && filters.difficulty !== 'all') {
         if (recipe.difficulty !== filters.difficulty) return false;
       }
-      if (filters.maxTime && filters.maxTime < 120) {
-        const totalTime = recipe.prepTime + recipe.cookTime;
+      if (filters.maxTime) {
+        const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
         if (totalTime > filters.maxTime) return false;
       }
       if (filters.dietary && filters.dietary.length > 0) {
-        const hasAllTags = filters.dietary.every(tag => recipe.dietaryTags.includes(tag));
+        const recipeTags = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : [];
+        const hasAllTags = filters.dietary.every(tag => recipeTags.includes(tag));
         if (!hasAllTags) return false;
       }
       return true;
@@ -470,7 +525,7 @@ class RecipeService {
 
     const mealTypes = sqliteDb.prepare('SELECT mealType FROM recipe_meal_types WHERE recipeId = ?').all(recipe.id).map(r => r.mealType);
     const dietaryTags = sqliteDb.prepare('SELECT dietaryTag FROM recipe_dietary_tags WHERE recipeId = ?').all(recipe.id).map(r => r.dietaryTag);
-    const steps = sqliteDb.prepare('SELECT stepNumber as step, instruction, duration, technique FROM recipe_steps WHERE recipeId = ? ORDER BY stepNumber').all(recipe.id);
+    const steps = sqliteDb.prepare('SELECT stepNumber as step, instruction, instructionBn, duration, technique FROM recipe_steps WHERE recipeId = ? ORDER BY stepNumber').all(recipe.id);
 
     const recipeIngredients = sqliteDb.prepare(`
       SELECT ri.ingredientId, ri.quantity, ri.unit, ri.preparation, ri.isEssential, ri.ingredientGroup as 'group', i.name, i.emoji
@@ -558,7 +613,7 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
     }
 
     // Save dynamic recipe directly to the database
-    const recipeId = `custom-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+    const recipeId = `custom-${crypto.randomUUID()}`;
     const finalRecipeObj = decorateRecipeTranslations({
       id: recipeId,
       ...recipe,
@@ -627,11 +682,11 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
 
       if (recipe.steps) {
         const insertStep = sqliteDb.prepare(`
-          INSERT INTO recipe_steps (recipeId, stepNumber, instruction, duration, technique)
-          VALUES (?, ?, ?, ?, ?)
+          INSERT INTO recipe_steps (recipeId, stepNumber, instruction, instructionBn, duration, technique)
+          VALUES (?, ?, ?, ?, ?, ?)
         `);
         for (const s of recipe.steps) {
-          insertStep.run(recipeId, s.step, s.instruction, s.duration || 0, s.technique || 'cooking');
+          insertStep.run(recipeId, s.step, s.instruction, s.instructionBn || '', s.duration || 0, s.technique || 'cooking');
         }
       }
 
@@ -642,7 +697,11 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
         `);
         for (const ing of recipe.ingredients) {
           const exists = sqliteDb.prepare('SELECT 1 FROM ingredients WHERE id = ?').get(ing.ingredientId);
-          const validatedId = exists ? ing.ingredientId : 'salt';
+          if (!exists) {
+            console.warn(`⚠️ Skipping unrecognized AI ingredient: ${ing.ingredientId}`);
+            continue;
+          }
+          const validatedId = ing.ingredientId;
           insertIng.run(
             recipeId,
             validatedId,
@@ -732,12 +791,636 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
    */
   async searchIngredients(queryText) {
     await this._ensureCache();
-    const q = queryText.toLowerCase().trim();
-    return this.ingredientsCache.filter(ing => {
-      const name = ing.name.toLowerCase();
-      const nameBn = (ing.nameBn || '').toLowerCase();
-      return ing.id.includes(q) || name.includes(q) || nameBn.includes(q);
-    }).slice(0, 15);
+    if (!queryText || !queryText.trim()) return [];
+    return this.ingredientsCache
+      .filter(ing => matchIngredient(ing, queryText, 'en') || matchIngredient(ing, queryText, 'bn'))
+      .slice(0, 15);
+  }
+
+  /**
+   * Invalidates in-memory caches and clears LRU match cache.
+   */
+  async invalidateCache() {
+    this.cuisinesCache = null;
+    this.ingredientsCache = null;
+    this.recipesCache = null;
+    this.lastHydrated = 0;
+    cacheService.clear();
+    await this._ensureCache();
+  }
+
+  /**
+   * Retrieves aggregated statistics and health metrics for the admin dashboard.
+   */
+  async getAdminStats() {
+    await this._ensureCache();
+
+    const totalRecipes = sqliteDb.prepare('SELECT COUNT(*) as count FROM recipes').get().count;
+    const totalIngredients = sqliteDb.prepare('SELECT COUNT(*) as count FROM ingredients').get().count;
+    const totalCuisines = sqliteDb.prepare('SELECT COUNT(*) as count FROM cuisines').get().count;
+    const totalUsers = sqliteDb.prepare('SELECT COUNT(*) as count FROM users').get().count;
+    const totalSaved = sqliteDb.prepare('SELECT COUNT(*) as count FROM saved_recipes').get().count;
+    const totalGenerations = sqliteDb.prepare('SELECT COUNT(*) as count FROM generation_history').get().count;
+
+    // Cuisine distribution
+    const cuisineDistribution = sqliteDb.prepare(`
+      SELECT c.id, c.name, c.nameBn, c.emoji, c.color, COUNT(r.id) as count
+      FROM cuisines c
+      LEFT JOIN recipes r ON c.id = r.cuisineId
+      GROUP BY c.id
+      ORDER BY count DESC
+    `).all();
+
+    // Top used ingredients
+    const topIngredients = sqliteDb.prepare(`
+      SELECT i.id, i.name, i.nameBn, i.emoji, i.category, COUNT(ri.recipeId) as count
+      FROM ingredients i
+      JOIN recipe_ingredients ri ON i.id = ri.ingredientId
+      GROUP BY i.id
+      ORDER BY count DESC
+      LIMIT 10
+    `).all();
+
+    // Database file size
+    let dbSizeBytes = 0;
+    try {
+      const dbFile = path.resolve(process.cwd(), 'server', 'rannabanna.db');
+      if (fs.existsSync(dbFile)) {
+        dbSizeBytes = fs.statSync(dbFile).size;
+      }
+    } catch {
+      // fallback
+    }
+
+    return {
+      totalRecipes,
+      totalIngredients,
+      totalCuisines,
+      totalUsers,
+      totalSaved,
+      totalGenerations,
+      dbSizeBytes,
+      dbSizeFormatted: (dbSizeBytes / (1024 * 1024)).toFixed(2) + ' MB',
+      uptimeSeconds: Math.floor(process.uptime()),
+      memoryUsageMB: (process.memoryUsage().heapUsed / (1024 * 1024)).toFixed(1),
+      cuisineDistribution,
+      topIngredients
+    };
+  }
+
+  /**
+   * Paginated, searchable recipes list for admin.
+   */
+  async adminGetRecipes({ search = '', cuisineId = '', difficulty = '', page = 1, limit = 20 } = {}) {
+    await this._ensureCache();
+
+    let filtered = this.recipesCache || [];
+
+    if (cuisineId && cuisineId !== 'all') {
+      filtered = filtered.filter(r => r.cuisineId === cuisineId);
+    }
+    if (difficulty && difficulty !== 'all') {
+      filtered = filtered.filter(r => r.difficulty === difficulty);
+    }
+    if (search && search.trim()) {
+      const q = search.toLowerCase().trim();
+      filtered = filtered.filter(r =>
+        (r.id && r.id.toLowerCase().includes(q)) ||
+        (r.title && r.title.toLowerCase().includes(q)) ||
+        (r.titleBn && r.titleBn.toLowerCase().includes(q))
+      );
+    }
+
+    const total = filtered.length;
+    const offset = (page - 1) * limit;
+    const paginated = filtered.slice(offset, offset + limit);
+
+    return {
+      recipes: paginated,
+      total,
+      page: Number(page),
+      limit: Number(limit),
+      totalPages: Math.ceil(total / limit)
+    };
+  }
+
+  /**
+   * Full recipe details for editing in admin.
+   */
+  async adminGetRecipeById(id) {
+    return this.getRecipeById(id);
+  }
+
+  /**
+   * Admin create recipe in SQLite.
+   */
+  async adminCreateRecipe(data) {
+    const {
+      id,
+      title,
+      titleBn = '',
+      cuisineId,
+      difficulty = 'intermediate',
+      prepTime = 15,
+      cookTime = 20,
+      servings = 4,
+      calories = 350,
+      description = '',
+      descriptionBn = '',
+      culturalNote = '',
+      culturalNoteBn = '',
+      imageEmoji = '🍲',
+      mealTypes = [],
+      dietaryTags = [],
+      ingredients = [],
+      steps = []
+    } = data;
+
+    if (!id || !title || !cuisineId) {
+      throw new Error('Recipe "id", "title", and "cuisineId" are required.');
+    }
+
+    // Assert cuisine exists
+    const cuisineExists = sqliteDb.prepare('SELECT 1 FROM cuisines WHERE id = ?').get(cuisineId);
+    if (!cuisineExists) {
+      throw new Error(`Cuisine with id "${cuisineId}" does not exist.`);
+    }
+
+    // Assert id is unique
+    const idExists = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(id);
+    if (idExists) {
+      throw new Error(`A recipe with id "${id}" already exists.`);
+    }
+
+    const tx = sqliteDb.transaction(() => {
+      // 1. Insert recipe
+      sqliteDb.prepare(`
+        INSERT INTO recipes (id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).run(id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji);
+
+      // 2. Meal types
+      const insertMealType = sqliteDb.prepare('INSERT INTO recipe_meal_types (recipeId, mealType) VALUES (?, ?)');
+      for (const mt of mealTypes) {
+        insertMealType.run(id, mt);
+      }
+
+      // 3. Dietary tags
+      const insertDietaryTag = sqliteDb.prepare('INSERT INTO recipe_dietary_tags (recipeId, dietaryTag) VALUES (?, ?)');
+      for (const dt of dietaryTags) {
+        insertDietaryTag.run(id, dt);
+      }
+
+      // 4. Ingredients
+      const insertIng = sqliteDb.prepare(`
+        INSERT INTO recipe_ingredients (recipeId, ingredientId, quantity, unit, preparation, isEssential, ingredientGroup)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `);
+      for (const ing of ingredients) {
+        insertIng.run(
+          id,
+          ing.ingredientId || ing.id,
+          ing.quantity !== undefined ? ing.quantity : 1,
+          ing.unit || '',
+          ing.preparation || '',
+          ing.isEssential !== undefined ? (ing.isEssential ? 1 : 0) : 1,
+          ing.group || ing.ingredientGroup || 'Main'
+        );
+      }
+
+      // 5. Steps
+      const insertStep = sqliteDb.prepare(`
+        INSERT INTO recipe_steps (recipeId, stepNumber, instruction, instructionBn, duration, technique)
+        VALUES (?, ?, ?, ?, ?, ?)
+      `);
+      let stepNum = 1;
+      for (const st of steps) {
+        insertStep.run(
+          id,
+          st.step || stepNum,
+          st.instruction || '',
+          st.instructionBn || '',
+          st.duration || 0,
+          st.technique || 'Cook'
+        );
+        stepNum++;
+      }
+    });
+
+    tx();
+    await this.invalidateCache();
+    return this.getRecipeById(id);
+  }
+
+  /**
+   * Admin update recipe in SQLite.
+   */
+  async adminUpdateRecipe(id, data) {
+    const existing = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(id);
+    if (!existing) {
+      throw new Error(`Recipe with id "${id}" not found.`);
+    }
+
+    const {
+      title,
+      titleBn,
+      cuisineId,
+      difficulty,
+      prepTime,
+      cookTime,
+      servings,
+      calories,
+      description,
+      descriptionBn,
+      culturalNote,
+      culturalNoteBn,
+      imageEmoji,
+      mealTypes,
+      dietaryTags,
+      ingredients,
+      steps
+    } = data;
+
+    const tx = sqliteDb.transaction(() => {
+      // 1. Update recipe fields
+      sqliteDb.prepare(`
+        UPDATE recipes SET
+          title = COALESCE(?, title),
+          titleBn = COALESCE(?, titleBn),
+          cuisineId = COALESCE(?, cuisineId),
+          difficulty = COALESCE(?, difficulty),
+          prepTime = COALESCE(?, prepTime),
+          cookTime = COALESCE(?, cookTime),
+          servings = COALESCE(?, servings),
+          calories = COALESCE(?, calories),
+          description = COALESCE(?, description),
+          descriptionBn = COALESCE(?, descriptionBn),
+          culturalNote = COALESCE(?, culturalNote),
+          culturalNoteBn = COALESCE(?, culturalNoteBn),
+          imageEmoji = COALESCE(?, imageEmoji)
+        WHERE id = ?
+      `).run(
+        title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories,
+        description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji, id
+      );
+
+      // 2. Refresh meal types if provided
+      if (Array.isArray(mealTypes)) {
+        sqliteDb.prepare('DELETE FROM recipe_meal_types WHERE recipeId = ?').run(id);
+        const insertMealType = sqliteDb.prepare('INSERT INTO recipe_meal_types (recipeId, mealType) VALUES (?, ?)');
+        for (const mt of mealTypes) {
+          insertMealType.run(id, mt);
+        }
+      }
+
+      // 3. Refresh dietary tags if provided
+      if (Array.isArray(dietaryTags)) {
+        sqliteDb.prepare('DELETE FROM recipe_dietary_tags WHERE recipeId = ?').run(id);
+        const insertDietaryTag = sqliteDb.prepare('INSERT INTO recipe_dietary_tags (recipeId, dietaryTag) VALUES (?, ?)');
+        for (const dt of dietaryTags) {
+          insertDietaryTag.run(id, dt);
+        }
+      }
+
+      // 4. Refresh ingredients if provided
+      if (Array.isArray(ingredients)) {
+        sqliteDb.prepare('DELETE FROM recipe_ingredients WHERE recipeId = ?').run(id);
+        const insertIng = sqliteDb.prepare(`
+          INSERT INTO recipe_ingredients (recipeId, ingredientId, quantity, unit, preparation, isEssential, ingredientGroup)
+          VALUES (?, ?, ?, ?, ?, ?, ?)
+        `);
+        for (const ing of ingredients) {
+          insertIng.run(
+            id,
+            ing.ingredientId || ing.id,
+            ing.quantity !== undefined ? ing.quantity : 1,
+            ing.unit || '',
+            ing.preparation || '',
+            ing.isEssential !== undefined ? (ing.isEssential ? 1 : 0) : 1,
+            ing.group || ing.ingredientGroup || 'Main'
+          );
+        }
+      }
+
+      // 5. Refresh steps if provided
+      if (Array.isArray(steps)) {
+        sqliteDb.prepare('DELETE FROM recipe_steps WHERE recipeId = ?').run(id);
+        const insertStep = sqliteDb.prepare(`
+          INSERT INTO recipe_steps (recipeId, stepNumber, instruction, instructionBn, duration, technique)
+          VALUES (?, ?, ?, ?, ?, ?)
+        `);
+        let stepNum = 1;
+        for (const st of steps) {
+          insertStep.run(
+            id,
+            st.step || stepNum,
+            st.instruction || '',
+            st.instructionBn || '',
+            st.duration || 0,
+            st.technique || 'Cook'
+          );
+          stepNum++;
+        }
+      }
+    });
+
+    tx();
+    await this.invalidateCache();
+    return this.getRecipeById(id);
+  }
+
+  /**
+   * Admin delete recipe in SQLite.
+   */
+  async adminDeleteRecipe(id) {
+    const existing = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(id);
+    if (!existing) {
+      throw new Error(`Recipe with id "${id}" not found.`);
+    }
+
+    sqliteDb.prepare('DELETE FROM recipes WHERE id = ?').run(id);
+    await this.invalidateCache();
+    return true;
+  }
+
+  /**
+   * Paginated, searchable ingredients list with usage count for admin.
+   */
+  async adminGetIngredients({ search = '', category = '', page = 1, limit = 50 } = {}) {
+    await this._ensureCache();
+
+    let query = `
+      SELECT i.*, COUNT(ri.recipeId) as recipeCount
+      FROM ingredients i
+      LEFT JOIN recipe_ingredients ri ON i.id = ri.ingredientId
+    `;
+    const whereClauses = [];
+    const params = [];
+
+    if (category && category !== 'all') {
+      whereClauses.push('i.category = ?');
+      params.push(category);
+    }
+    if (search && search.trim()) {
+      whereClauses.push('(i.id LIKE ? OR i.name LIKE ? OR i.nameBn LIKE ?)');
+      const q = `%${search.trim()}%`;
+      params.push(q, q, q);
+    }
+
+    if (whereClauses.length > 0) {
+      query += ' WHERE ' + whereClauses.join(' AND ');
+    }
+
+    query += ' GROUP BY i.id ORDER BY recipeCount DESC, i.name ASC';
+
+    const allRows = sqliteDb.prepare(query).all(...params);
+    const total = allRows.length;
+    const offset = (page - 1) * limit;
+    const paginated = allRows.slice(offset, offset + limit);
+
+    return {
+      ingredients: paginated,
+      total,
+      page: Number(page),
+      limit: Number(limit),
+      totalPages: Math.ceil(total / limit)
+    };
+  }
+
+  /**
+   * Admin create ingredient in GIV.
+   */
+  async adminCreateIngredient(data) {
+    const {
+      id,
+      name,
+      nameBn = '',
+      category = 'Pantry & Spices',
+      subCategory = 'General',
+      emoji = '🧂',
+      sweet = 0,
+      salty = 0,
+      sour = 0,
+      bitter = 0,
+      umami = 0,
+      spicy = 0,
+      isCommon = 0
+    } = data;
+
+    if (!id || !name) {
+      throw new Error('Ingredient "id" and "name" are required.');
+    }
+
+    const exists = sqliteDb.prepare('SELECT 1 FROM ingredients WHERE id = ?').get(id);
+    if (exists) {
+      throw new Error(`Ingredient with id "${id}" already exists.`);
+    }
+
+    sqliteDb.prepare(`
+      INSERT INTO ingredients (id, name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy, isCommon)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(id, name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy, isCommon ? 1 : 0);
+
+    await this.invalidateCache();
+    return sqliteDb.prepare('SELECT * FROM ingredients WHERE id = ?').get(id);
+  }
+
+  /**
+   * Admin update ingredient in GIV.
+   */
+  async adminUpdateIngredient(id, data) {
+    const exists = sqliteDb.prepare('SELECT 1 FROM ingredients WHERE id = ?').get(id);
+    if (!exists) {
+      throw new Error(`Ingredient with id "${id}" not found.`);
+    }
+
+    const {
+      name,
+      nameBn,
+      category,
+      subCategory,
+      emoji,
+      sweet,
+      salty,
+      sour,
+      bitter,
+      umami,
+      spicy,
+      isCommon
+    } = data;
+
+    sqliteDb.prepare(`
+      UPDATE ingredients SET
+        name = COALESCE(?, name),
+        nameBn = COALESCE(?, nameBn),
+        category = COALESCE(?, category),
+        subCategory = COALESCE(?, subCategory),
+        emoji = COALESCE(?, emoji),
+        sweet = COALESCE(?, sweet),
+        salty = COALESCE(?, salty),
+        sour = COALESCE(?, sour),
+        bitter = COALESCE(?, bitter),
+        umami = COALESCE(?, umami),
+        spicy = COALESCE(?, spicy),
+        isCommon = COALESCE(?, isCommon)
+      WHERE id = ?
+    `).run(
+      name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy,
+      isCommon !== undefined ? (isCommon ? 1 : 0) : null,
+      id
+    );
+
+    await this.invalidateCache();
+    return sqliteDb.prepare('SELECT * FROM ingredients WHERE id = ?').get(id);
+  }
+
+  /**
+   * Admin delete ingredient from GIV (with safety check against recipes).
+   */
+  async adminDeleteIngredient(id) {
+    const usage = sqliteDb.prepare('SELECT COUNT(*) as count FROM recipe_ingredients WHERE ingredientId = ?').get(id);
+    if (usage && usage.count > 0) {
+      throw new Error(`Cannot delete ingredient "${id}": It is used in ${usage.count} recipe(s). Remove it from those recipes first.`);
+    }
+
+    const result = sqliteDb.prepare('DELETE FROM ingredients WHERE id = ?').run(id);
+    if (result.changes === 0) {
+      throw new Error(`Ingredient with id "${id}" not found.`);
+    }
+
+    await this.invalidateCache();
+    return true;
+  }
+
+  /**
+   * Admin get cuisines with recipe count.
+   */
+  async adminGetCuisines() {
+    await this._ensureCache();
+    return sqliteDb.prepare(`
+      SELECT c.*, COUNT(r.id) as recipeCount
+      FROM cuisines c
+      LEFT JOIN recipes r ON c.id = r.cuisineId
+      GROUP BY c.id
+      ORDER BY c.name ASC
+    `).all();
+  }
+
+  /**
+   * Admin create cuisine.
+   */
+  async adminCreateCuisine(data) {
+    const {
+      id,
+      name,
+      nameBn = '',
+      region = 'Global',
+      regionBn = '',
+      continent = 'Global',
+      description = '',
+      descriptionBn = '',
+      color = '#FF6B35',
+      emoji = '🌍'
+    } = data;
+
+    if (!id || !name) {
+      throw new Error('Cuisine "id" and "name" are required.');
+    }
+
+    const exists = sqliteDb.prepare('SELECT 1 FROM cuisines WHERE id = ?').get(id);
+    if (exists) {
+      throw new Error(`Cuisine with id "${id}" already exists.`);
+    }
+
+    sqliteDb.prepare(`
+      INSERT INTO cuisines (id, name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(id, name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji);
+
+    await this.invalidateCache();
+    return sqliteDb.prepare('SELECT * FROM cuisines WHERE id = ?').get(id);
+  }
+
+  /**
+   * Admin update cuisine.
+   */
+  async adminUpdateCuisine(id, data) {
+    const exists = sqliteDb.prepare('SELECT 1 FROM cuisines WHERE id = ?').get(id);
+    if (!exists) {
+      throw new Error(`Cuisine with id "${id}" not found.`);
+    }
+
+    const {
+      name,
+      nameBn,
+      region,
+      regionBn,
+      continent,
+      description,
+      descriptionBn,
+      color,
+      emoji
+    } = data;
+
+    sqliteDb.prepare(`
+      UPDATE cuisines SET
+        name = COALESCE(?, name),
+        nameBn = COALESCE(?, nameBn),
+        region = COALESCE(?, region),
+        regionBn = COALESCE(?, regionBn),
+        continent = COALESCE(?, continent),
+        description = COALESCE(?, description),
+        descriptionBn = COALESCE(?, descriptionBn),
+        color = COALESCE(?, color),
+        emoji = COALESCE(?, emoji)
+      WHERE id = ?
+    `).run(name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji, id);
+
+    await this.invalidateCache();
+    return sqliteDb.prepare('SELECT * FROM cuisines WHERE id = ?').get(id);
+  }
+
+  /**
+   * Admin delete cuisine.
+   */
+  async adminDeleteCuisine(id) {
+    const count = sqliteDb.prepare('SELECT COUNT(*) as count FROM recipes WHERE cuisineId = ?').get(id);
+    if (count && count.count > 0) {
+      throw new Error(`Cannot delete cuisine "${id}": ${count.count} recipe(s) belong to this cuisine.`);
+    }
+
+    const result = sqliteDb.prepare('DELETE FROM cuisines WHERE id = ?').run(id);
+    if (result.changes === 0) {
+      throw new Error(`Cuisine with id "${id}" not found.`);
+    }
+
+    await this.invalidateCache();
+    return true;
+  }
+
+  /**
+   * Admin get system history / logs.
+   */
+  async adminGetSystemLogs(limit = 50) {
+    const generations = sqliteDb.prepare(`
+      SELECT gh.*, u.name as userName, u.email as userEmail, r.title as recipeTitle
+      FROM generation_history gh
+      LEFT JOIN users u ON gh.user_id = u.id
+      LEFT JOIN recipes r ON gh.generated_recipe_id = r.id
+      ORDER BY gh.created_at DESC
+      LIMIT ?
+    `).all(limit);
+
+    const users = sqliteDb.prepare(`
+      SELECT u.id, u.name, u.email, u.created_at, COUNT(sr.recipe_id) as savedCount
+      FROM users u
+      LEFT JOIN saved_recipes sr ON u.id = sr.user_id
+      GROUP BY u.id
+      ORDER BY u.created_at DESC
+      LIMIT ?
+    `).all(limit);
+
+    return { generations, users };
   }
 }
 

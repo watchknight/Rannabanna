@@ -87,7 +87,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "ভেড়ার মাংসের চপ"
+    "nameBn": "ভেড়ার মাংসের চপ"
   },
   {
     "id": "mutton-cubes",
@@ -333,7 +333,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "গরুর পায়া / নেহারি মাংস"
+    "nameBn": "গরুর পায়া / নেহারি মাংস"
   },
   {
     "id": "onion-red",
@@ -1801,7 +1801,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Coconut Milk"
+    "nameBn": "নারকেলের দুধ"
   },
   {
     "id": "yogurt-plain",
@@ -1861,7 +1861,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Unsalted Butter"
+    "nameBn": "মাখন (আনসল্টেড)"
   },
   {
     "id": "heavy-cream",
@@ -1901,7 +1901,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Whole Milk"
+    "nameBn": "দুধ"
   },
   {
     "id": "parmesan-cheese",
@@ -1921,7 +1921,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Parmesan Cheese"
+    "nameBn": "পারমেসান চিজ"
   },
   {
     "id": "mozzarella-cheese",
@@ -1941,7 +1941,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Mozzarella Cheese"
+    "nameBn": "মোজারেলা চিজ"
   },
   {
     "id": "cheddar-cheese",
@@ -1961,7 +1961,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Cheddar Cheese"
+    "nameBn": "চেডার চিজ"
   },
   {
     "id": "soy-sauce",
@@ -2022,7 +2022,7 @@ export const ingredients = [
     "allergens": [
       "shellfish"
     ],
-    "nameBn": "Oyster Sauce"
+    "nameBn": "ওয়েস্টার সস"
   },
   {
     "id": "sriracha",
@@ -2040,7 +2040,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Sriracha Chili Sauce"
+    "nameBn": "শ্রীরাচা সস"
   },
   {
     "id": "gochujang",
@@ -2133,7 +2133,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Rice Vinegar"
+    "nameBn": "চালের ভিনেগার"
   },
   {
     "id": "tomato-paste",
@@ -2171,7 +2171,7 @@ export const ingredients = [
     "allergens": [
       "shellfish"
     ],
-    "nameBn": "Shrimp Paste"
+    "nameBn": "চিংড়ি পেস্ট"
   },
   {
     "id": "mayonnaise",
@@ -2191,7 +2191,7 @@ export const ingredients = [
     "allergens": [
       "eggs"
     ],
-    "nameBn": "Mayonnaise"
+    "nameBn": "মেয়োনিজ"
   },
   {
     "id": "chili-bean-paste",
@@ -2253,7 +2253,7 @@ export const ingredients = [
       "soy",
       "gluten"
     ],
-    "nameBn": "Hoisin Sauce"
+    "nameBn": "হোইসিন সস"
   },
   {
     "id": "sugar-white",
@@ -2289,7 +2289,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Palm Sugar"
+    "nameBn": "তালের গুড়"
   },
   {
     "id": "honey",
@@ -2307,7 +2307,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Honey"
+    "nameBn": "মধু"
   },
   {
     "id": "jaggery",
@@ -2345,7 +2345,7 @@ export const ingredients = [
     "allergens": [
       "peanuts"
     ],
-    "nameBn": "Peanuts"
+    "nameBn": "চিনাবাদাম"
   },
   {
     "id": "cashews",
@@ -2365,7 +2365,7 @@ export const ingredients = [
     "allergens": [
       "nuts"
     ],
-    "nameBn": "Cashew Nuts"
+    "nameBn": "কাজুবাদাম"
   },
   {
     "id": "sesame-seeds",
@@ -2385,7 +2385,7 @@ export const ingredients = [
     "allergens": [
       "sesame"
     ],
-    "nameBn": "Sesame Seeds"
+    "nameBn": "তিল"
   },
   {
     "id": "raisins",
@@ -2403,7 +2403,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Raisins"
+    "nameBn": "কিশমিশ"
   },
   {
     "id": "cocoa-powder",
@@ -2421,7 +2421,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Cocoa Powder"
+    "nameBn": "কোকো পাউডার"
   },
   {
     "id": "holy-basil",
@@ -2439,7 +2439,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Holy Basil"
+    "nameBn": "পবিত্র তুলসী (হলি বেসিল)"
   },
   {
     "id": "soy-sauce-light",
@@ -2460,7 +2460,7 @@ export const ingredients = [
       "soy",
       "gluten"
     ],
-    "nameBn": "Light Soy Sauce"
+    "nameBn": "হালকা সয়া সস"
   },
   {
     "id": "fennel-seeds",
@@ -2496,7 +2496,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Coriander Seeds"
+    "nameBn": "ধনে বীজ"
   },
   {
     "id": "star-anise",
@@ -2532,7 +2532,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Asafoetida (Hing)"
+    "nameBn": "হিং"
   },
   {
     "id": "fenugreek-seeds",
@@ -2550,7 +2550,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Fenugreek Seeds"
+    "nameBn": "মেথি বীজ"
   },
   {
     "id": "nigella-seeds",
@@ -2568,7 +2568,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Nigella Seeds (Kalo Jeera)"
+    "nameBn": "কালোজিরা"
   },
   {
     "id": "nutmeg",
@@ -2622,7 +2622,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Saffron Threads"
+    "nameBn": "জাফরান"
   },
   {
     "id": "chili-flakes",
@@ -2640,7 +2640,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Red Chili Flakes"
+    "nameBn": "মরিচের ফ্লেক্স"
   },
   {
     "id": "mustard-powder",
@@ -2658,7 +2658,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Mustard Powder"
+    "nameBn": "সরিষা গুঁড়ো"
   },
   {
     "id": "amchur-powder",
@@ -2676,7 +2676,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Dry Mango Powder (Amchur)"
+    "nameBn": "আমচুর গুঁড়ো"
   },
   {
     "id": "marinara-sauce",
@@ -2694,7 +2694,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Marinara Sauce"
+    "nameBn": "মেরিনারা সস"
   },
   {
     "id": "pesto-sauce",
@@ -2715,7 +2715,7 @@ export const ingredients = [
       "nuts",
       "dairy"
     ],
-    "nameBn": "Pesto Genovese Sauce"
+    "nameBn": "পেস্তো সস"
   },
   {
     "id": "bechamel-sauce",
@@ -2736,7 +2736,7 @@ export const ingredients = [
       "dairy",
       "gluten"
     ],
-    "nameBn": "Bechamel White Sauce"
+    "nameBn": "বেশামেল সস"
   },
   {
     "id": "sweet-chili-sauce",
@@ -2754,7 +2754,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Sweet Thai Chili Sauce"
+    "nameBn": "মিষ্টি চিলি সস"
   },
   {
     "id": "schezwan-sauce",
@@ -2774,7 +2774,7 @@ export const ingredients = [
     "allergens": [
       "soy"
     ],
-    "nameBn": "Sichuan Schezwan Sauce"
+    "nameBn": "সেজওয়ান সস"
   },
   {
     "id": "ketchup",
@@ -2792,7 +2792,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Tomato Ketchup"
+    "nameBn": "কেচাপ"
   },
   {
     "id": "hot-sauce",
@@ -2810,7 +2810,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Hot Chili Sauce"
+    "nameBn": "হট সস"
   },
   {
     "id": "chimichurri-sauce",
@@ -2828,7 +2828,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Chimichurri Herb Sauce"
+    "nameBn": "চিমিচুরি সস"
   },
   {
     "id": "mint-chutney",
@@ -2848,7 +2848,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Mint-Coriander Chutney"
+    "nameBn": "পুদিনা চাটনি"
   },
   {
     "id": "tamarind-chutney",
@@ -2866,7 +2866,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Tamarind Sweet Chutney"
+    "nameBn": "তেঁতুলের চাটনি"
   },
   {
     "id": "teriyaki-sauce",
@@ -2887,7 +2887,7 @@ export const ingredients = [
       "soy",
       "gluten"
     ],
-    "nameBn": "Teriyaki Glaze Sauce"
+    "nameBn": "তেরিয়াকি সস"
   },
   {
     "id": "bbq-sauce",
@@ -2905,7 +2905,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Hickory BBQ Sauce"
+    "nameBn": "বারবিকিউ সস"
   },
   {
     "id": "cardamom-black",
@@ -2923,7 +2923,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Black Cardamom"
+    "nameBn": "বড় এলাচ"
   },
   {
     "id": "caraway-seeds",
@@ -2977,7 +2977,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Allspice Powder"
+    "nameBn": "অলস্পাইস"
   },
   {
     "id": "sumac",
@@ -3013,7 +3013,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Garlic Powder"
+    "nameBn": "রসুন গুঁড়ো"
   },
   {
     "id": "onion-powder",
@@ -3031,7 +3031,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Onion Powder"
+    "nameBn": "পেঁয়াজ গুঁড়ো"
   },
   {
     "id": "poppy-seeds",
@@ -3085,7 +3085,7 @@ export const ingredients = [
     },
     "isCommon": false,
     "allergens": [],
-    "nameBn": "Dry Ginger Powder"
+    "nameBn": "আদা গুঁড়ো"
   },
   {
     "id": "kasuri-methi",
@@ -3103,7 +3103,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Dried Fenugreek Leaves (Kasuri Methi)"
+    "nameBn": "কাসুরি মেথি"
   },
   {
     "id": "tahini",
@@ -3143,7 +3143,7 @@ export const ingredients = [
     "allergens": [
       "dairy"
     ],
-    "nameBn": "Tzatziki Yogurt Sauce"
+    "nameBn": "গ্রিক রায়তা / জাজিকি সস"
   },
   {
     "id": "hollandaise-sauce",
@@ -3164,7 +3164,7 @@ export const ingredients = [
       "dairy",
       "eggs"
     ],
-    "nameBn": "Hollandaise Sauce"
+    "nameBn": "হল্যান্ডাইজ সস"
   },
   {
     "id": "sweet-sour-sauce",
@@ -3200,7 +3200,7 @@ export const ingredients = [
     },
     "isCommon": true,
     "allergens": [],
-    "nameBn": "Sichuan Chili Oil"
+    "nameBn": "চিলি অয়েল"
   },
   {
     "id": "worcestershire-sauce",
@@ -3240,7 +3240,7 @@ export const ingredients = [
     "allergens": [
       "eggs"
     ],
-    "nameBn": "Tartar Sauce"
+    "nameBn": "টার্টার সস"
   },
   {
     "id": "kasundi",
@@ -3360,7 +3360,7 @@ export const ingredients = [
     "allergens": [
       "eggs"
     ],
-    "nameBn": "Garlic Aioli Sauce"
+    "nameBn": "গার্লিক আইওলি"
   },
   {
     "id": "ginger-garlic-paste",

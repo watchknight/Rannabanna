@@ -76,7 +76,9 @@ function FilterPanel({ filters, onChange }) {
 
       {/* 1. Meal Type Filter */}
       <div className="filter-group">
-        <h4 className="filter-title">{t('filterMealTypeLabel')}</h4>
+        <label htmlFor="meal-type-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
+          {t('filterMealTypeLabel')}
+        </label>
         <select
           value={filters.mealType || 'all'}
           onChange={(e) => handleSelectChange('mealType', e.target.value)}
@@ -91,18 +93,18 @@ function FilterPanel({ filters, onChange }) {
           id="meal-type-filter-select"
         >
           <option value="all">{t('allMealTypes')}</option>
-          <option value="breakfast">{language === 'bn' ? 'সকালের নাস্তা' : 'Breakfast'}</option>
-          <option value="lunch">{language === 'bn' ? 'দুপুরের খাবার' : 'Lunch'}</option>
-          <option value="dinner">{language === 'bn' ? 'রাতের খাবার' : 'Dinner'}</option>
-          <option value="snack">{t('snacksSides')}</option>
-          <option value="dessert">{language === 'bn' ? 'মিষ্টি জাতীয়' : 'Desserts'}</option>
+          <option value="breakfast" style={{ textTransform: 'capitalize' }}>{t('breakfast')}</option>
+          <option value="lunch" style={{ textTransform: 'capitalize' }}>{t('lunch')}</option>
+          <option value="dinner" style={{ textTransform: 'capitalize' }}>{t('dinner')}</option>
+          <option value="snack" style={{ textTransform: 'capitalize' }}>{t('snack')}</option>
+          <option value="dessert" style={{ textTransform: 'capitalize' }}>{t('dessert')}</option>
         </select>
       </div>
 
       {/* 2. Cuisines Multi-Select Filter */}
       <div className="filter-group">
         <h4 className="filter-title">{t('filterCuisineLabel')}</h4>
-        <div className="filter-checkbox-list" id="cuisine-filter-checkboxes">
+        <div className="filter-checkbox-list" id="cuisine-filter-checkboxes" role="group" aria-label={t('filterCuisineLabel')}>
           {cuisines.map(c => {
             const cuisineName = language === 'bn' ? (c.nameBn || c.name) : c.name
             return (
@@ -113,7 +115,8 @@ function FilterPanel({ filters, onChange }) {
                   onChange={() => handleCuisineToggle(c.id)}
                   id={`cuisine-filter-chk-${c.id}`}
                 />
-                <span>{c.emoji} {cuisineName}</span>
+                <span role="img" aria-hidden="true">{c.emoji}</span>
+                <span>{cuisineName}</span>
               </label>
             )
           })}
@@ -122,13 +125,16 @@ function FilterPanel({ filters, onChange }) {
 
       {/* 3. Max Cooking Time Slider */}
       <div className="filter-group">
-        <h4 className="filter-title">{t('filterMaxTimeLabel')}</h4>
+        <label htmlFor="cooking-time-range-slider" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
+          {t('filterMaxTimeLabel')}
+        </label>
         <div className="filter-slider-container">
           <input
             type="range"
             min="10"
             max="120"
             step="5"
+            aria-label="Maximum cooking time in minutes"
             value={filters.maxTime || 120}
             onChange={handleSliderChange}
             className="filter-slider"
@@ -139,14 +145,16 @@ function FilterPanel({ filters, onChange }) {
             <span style={{ fontWeight: '700', color: 'var(--brand-orange)' }}>
               {filters.maxTime && filters.maxTime < 120 ? `${filters.maxTime} ${t('mins')}` : t('anyTime')}
             </span>
-            <span>2 {language === 'bn' ? 'ঘণ্টা' : 'hours'}</span>
+            <span>2 {t('hours')}</span>
           </div>
         </div>
       </div>
 
       {/* 4. Cooking Difficulty */}
       <div className="filter-group">
-        <h4 className="filter-title">{t('filterDifficultyLabel')}</h4>
+        <label htmlFor="difficulty-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
+          {t('filterDifficultyLabel')}
+        </label>
         <select
           value={filters.difficulty || 'all'}
           onChange={(e) => handleSelectChange('difficulty', e.target.value)}
@@ -161,8 +169,8 @@ function FilterPanel({ filters, onChange }) {
           id="difficulty-filter-select"
         >
           <option value="all">{t('anyLevel')}</option>
-          <option value="beginner">{language === 'bn' ? 'সহজ' : 'Beginner'}</option>
-          <option value="intermediate">{language === 'bn' ? 'মাঝারি' : 'Intermediate'}</option>
+          <option value="beginner" style={{ textTransform: 'capitalize' }}>{t('beginner')}</option>
+          <option value="intermediate" style={{ textTransform: 'capitalize' }}>{t('intermediate')}</option>
           <option value="hard">{t('advanced')}</option>
         </select>
       </div>
@@ -170,7 +178,7 @@ function FilterPanel({ filters, onChange }) {
       {/* 5. Dietary Tags Multi-Select */}
       <div className="filter-group">
         <h4 className="filter-title">{t('filterDietaryLabel')}</h4>
-        <div className="filter-checkbox-list" id="dietary-filter-checkboxes">
+        <div className="filter-checkbox-list" id="dietary-filter-checkboxes" role="group" aria-label={t('filterDietaryLabel')}>
           {dietaryTags.map(tag => {
             const tagName = language === 'bn' ? t(tag.id) : tag.name
             return (

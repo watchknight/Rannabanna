@@ -29,8 +29,11 @@ setInterval(() => {
  * @param {import('express').NextFunction} next
  */
 export function rateLimiter(req, res, next) {
-  // Safe extraction of remote IP
-  const ip = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+  // Safe extraction of remote IP (taking first hop if forwarded, preventing header rotation spoofing)
+  const forwarded = typeof req.headers['x-forwarded-for'] === 'string' 
+    ? req.headers['x-forwarded-for'].split(',')[0].trim() 
+    : null;
+  const ip = req.ip || forwarded || req.socket.remoteAddress || 'unknown';
   const now = Date.now();
 
   if (!requestsStore.has(ip)) {

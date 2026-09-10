@@ -14,6 +14,14 @@ function CuisineCard({ cuisine }) {
     <div 
       className="cuisine-card glass-panel glass-panel-hover"
       onClick={() => navigate(`/cuisine/${cuisine.id}`)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navigate(`/cuisine/${cuisine.id}`);
+        }
+      }}
+      tabIndex={0}
+      role="button"
       id={`cuisine-card-${cuisine.id}`}
     >
       <div 

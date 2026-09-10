@@ -43,8 +43,10 @@ function Navbar() {
           
           {/* Glass Language Selector Toggle */}
           <button 
+            type="button"
             className="lang-toggle-btn glass-panel" 
             onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
+            aria-label={language === 'en' ? 'Switch interface language to Bengali' : 'Switch interface language to English'}
             style={{
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid var(--surface-border)',
@@ -69,9 +71,12 @@ function Navbar() {
         {/* Mobile Toggle Button */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
           <button 
+            type="button"
             className="mobile-toggle" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav-drawer"
             id="nav-mobile-toggle"
           >
             {isMobileMenuOpen ? '✕' : '☰'}
@@ -81,6 +86,7 @@ function Navbar() {
         {/* Mobile Nav Drawer Overlay */}
         {isMobileMenuOpen && (
           <div 
+            id="mobile-nav-drawer"
             style={{
               position: 'fixed',
               top: 'var(--nav-height)',

@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Link } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -9,6 +9,7 @@ const SearchResultsPage = lazy(() => import('./pages/SearchResultsPage'))
 const RecipeDetailPage = lazy(() => import('./pages/RecipeDetailPage'))
 const CuisinesPage = lazy(() => import('./pages/CuisinesPage'))
 const CuisineDetailPage = lazy(() => import('./pages/CuisineDetailPage'))
+const AdminPage = lazy(() => import('./pages/AdminPage'))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -51,21 +52,82 @@ const PageLoadingFallback = () => {
   )
 }
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false, error: null }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('App runtime error caught by ErrorBoundary:', error, errorInfo)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      const language = localStorage.getItem('rannabanna-language') || 'en'
+      const errorTitle = language === 'bn' ? 'কিছু একটা সমস্যা হয়েছে' : 'Something went wrong'
+      const errorDesc = this.state.error?.message || (language === 'bn' ? 'এই পৃষ্ঠাটি লোড করার সময় একটি অপ্রত্যাশিত ত্রুটি ঘটেছে।' : 'An unexpected error occurred while loading this page.')
+      const backHome = language === 'bn' ? 'হোমে ফিরে যান' : 'Back to Home'
+      return (
+        <div className="empty-state glass-panel animate-scale-in" style={{ margin: 'var(--spacing-xxl) auto', maxWidth: '500px', padding: 'var(--spacing-xl)', textAlign: 'center' }}>
+          <div className="empty-state-emoji">⚠️</div>
+          <h3>{errorTitle}</h3>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+            {errorDesc}
+          </p>
+          <button 
+            type="button" 
+            className="btn btn-primary" 
+            onClick={() => { this.setState({ hasError: false, error: null }); window.location.href = '/'; }}
+            style={{ marginTop: 'var(--spacing-md)' }}
+          >
+            {backHome}
+          </button>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+
+function NotFoundPage() {
+  const language = localStorage.getItem('rannabanna-language') || 'en'
+  const title = language === 'bn' ? 'পৃষ্ঠা পাওয়া যায়নি' : 'Page Not Found'
+  const desc = language === 'bn' ? 'আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান নেই।' : "The page you're looking for doesn't exist."
+  const goHome = language === 'bn' ? 'হোমে যান' : 'Go Home'
+  return (
+    <div className="empty-state glass-panel animate-scale-in" style={{ margin: '2rem auto' }}>
+      <div className="empty-state-emoji">🍽️</div>
+      <h3>{title}</h3>
+      <p>{desc}</p>
+      <Link to="/" className="btn btn-primary">{goHome}</Link>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="app-container">
       <ScrollToTop />
       <Navbar />
       <main className="main-content">
-        <Suspense fallback={<PageLoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchResultsPage />} />
-            <Route path="/recipe/:id" element={<RecipeDetailPage />} />
-            <Route path="/cuisines" element={<CuisinesPage />} />
-            <Route path="/cuisine/:id" element={<CuisineDetailPage />} />
-          </Routes>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<PageLoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/search" element={<SearchResultsPage />} />
+              <Route path="/recipe/:id" element={<RecipeDetailPage />} />
+              <Route path="/cuisines" element={<CuisinesPage />} />
+              <Route path="/cuisine/:id" element={<CuisineDetailPage />} />
+              <Route path="/admin/*" element={<AdminPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
     </div>

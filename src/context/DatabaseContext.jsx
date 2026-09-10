@@ -3,6 +3,7 @@ import { cuisines as staticCuisines } from '../data/cuisines.js';
 import { ingredients as staticIngredients } from '../data/ingredients.js';
 import { recipes as staticRecipes } from '../data/recipes.js';
 import { translations } from '../utils/translations.js';
+import { API_BASE } from '../utils/apiConfig.js';
 
 const DatabaseContext = createContext(null);
 
@@ -12,6 +13,7 @@ export function DatabaseProvider({ children }) {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isOffline, setIsOffline] = useState(false);
   
   // Persisted language preference (default is English)
   const [language, setLanguageState] = useState(() => {
@@ -28,7 +30,7 @@ export function DatabaseProvider({ children }) {
     const dict = translations[language] || translations['en'];
     let val = dict[key] || translations['en'][key] || key;
     Object.keys(replacements).forEach(k => {
-      val = val.replace(`{${k}}`, replacements[k]);
+      val = val.replaceAll(`{${k}}`, replacements[k]);
     });
     return val;
   }, [language]);
@@ -41,8 +43,6 @@ export function DatabaseProvider({ children }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        
-        const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 
         const [cuisinesRes, ingredientsRes, recipesRes] = await Promise.all([
           fetch(`${API_BASE}/api/cuisines`, { signal: controller.signal }),
@@ -63,6 +63,7 @@ export function DatabaseProvider({ children }) {
           setIngredients(ingredientsData);
           setRecipes(recipesData);
           setError(null);
+          setIsOffline(false);
           setLoading(false);
         }
       } catch (err) {
@@ -73,7 +74,8 @@ export function DatabaseProvider({ children }) {
             setCuisines(staticCuisines);
             setIngredients(staticIngredients);
             setRecipes(staticRecipes);
-            setError(null); // Clear error to allow the app to work seamlessly
+            setIsOffline(true);
+            setError(null); // Clear blocking error; offline mode is active
             setLoading(false);
           }
         }
@@ -91,13 +93,17 @@ export function DatabaseProvider({ children }) {
   // API helper to fetch a specific recipe with full SQLite detail
   const fetchRecipeDetail = useCallback(async (recipeId) => {
     try {
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
       const res = await fetch(`${API_BASE}/api/recipes/${recipeId}`);
       if (!res.ok) throw new Error('Recipe not found in database');
-      return await res.json();
+      const data = await res.json();
+      if (!data || !data.ingredients || !data.steps) {
+        throw new Error('Incomplete recipe data returned from server');
+      }
+      return data;
     } catch (err) {
       console.warn(`API fetch for recipe ${recipeId} failed, falling back to local static files:`, err);
-      const local = recipes.find(r => r.id === recipeId);
+      // staticRecipes contains full recipe data (ingredients + steps); server-hydrated recipes may be summaries only
+      const local = staticRecipes.find(r => r.id === recipeId);
       if (!local) throw new Error('Recipe not found');
       return local;
     }
@@ -120,6 +126,7 @@ export function DatabaseProvider({ children }) {
     recipes,
     loading,
     error,
+    isOffline,
     language,
     setLanguage,
     t,
@@ -132,6 +139,7 @@ export function DatabaseProvider({ children }) {
     recipes,
     loading,
     error,
+    isOffline,
     language,
     setLanguage,
     t,

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { recipes as staticRecipes } from '../data/recipes.js'
 import { ingredients as staticIngredients } from '../data/ingredients.js'
+import { API_BASE } from '../utils/apiConfig.js'
 
 export const MATCH_THRESHOLDS = {
   PERFECT: 90,
@@ -23,7 +24,6 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
   // ⚡ FIXED: Stabilize dependencies into immutable primitives to prevent infinite re-render loops
   const stableIdsStr = selectedIngredientIds.join(',');
   const stableFiltersStr = JSON.stringify(filters);
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 
   useEffect(() => {
     if (!stableIdsStr) {
@@ -34,6 +34,7 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
         exploratory: [],
         totalCount: 0
       })
+      setLoading(false)
       return
     }
 
@@ -41,43 +42,52 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
     const filterObj = JSON.parse(stableFiltersStr);
 
     let active = true
-    setLoading(true)
+    const controller = new AbortController()
 
-    fetch(`${API_BASE}/api/match`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        ingredientIds: ids,
-        filters: filterObj
+    // ⚡ 150ms debounce to prevent request flooding during rapid filter toggles & slider drags
+    const debounceTimer = setTimeout(() => {
+      setLoading(true)
+
+      fetch(`${API_BASE}/api/match`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ingredientIds: ids,
+          filters: filterObj
+        }),
+        signal: controller.signal
       })
-    })
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to match recipes')
-        return res.json()
-      })
-      .then(result => {
-        if (active) {
-          setData(result)
-          setError(null)
-          setLoading(false)
-        }
-      })
-      .catch(err => {
-        console.warn('API matching failed, falling back to local client-side matching:', err)
-        if (active) {
-          const result = matchRecipesLocally(ids, filterObj)
-          setData(result)
-          setError(null)
-          setLoading(false)
-        }
-      })
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to match recipes')
+          return res.json()
+        })
+        .then(result => {
+          if (active) {
+            setData(result)
+            setError(null)
+            setLoading(false)
+          }
+        })
+        .catch(err => {
+          if (err.name === 'AbortError') return
+          console.warn('API matching failed, falling back to local client-side matching:', err)
+          if (active) {
+            const result = matchRecipesLocally(ids, filterObj)
+            setData(result)
+            setError(err.message || 'API matching failed, using local data')
+            setLoading(false)
+          }
+        })
+    }, 150)
 
     return () => {
       active = false
+      clearTimeout(debounceTimer)
+      controller.abort()
     }
-  }, [stableIdsStr, stableFiltersStr, API_BASE]) // 🚀 Stabilized dependencies
+  }, [stableIdsStr, stableFiltersStr, API_BASE])
 
   return { ...data, loading, error }
 }
@@ -120,7 +130,7 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
       matchPercentage = Math.min(100, matchPercentage + 3)
     }
 
-    if (matchPercentage < 10 && essentialMatched === 0) continue
+    if (matchPercentage < 10) continue
 
     const missingEssential = essential
       .filter(ri => !selectedSet.has(ri.ingredientId))
@@ -158,12 +168,13 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
     if (filters.difficulty && filters.difficulty !== 'all') {
       if (recipe.difficulty !== filters.difficulty) return false
     }
-    if (filters.maxTime && filters.maxTime < 120) {
-      const totalTime = recipe.prepTime + recipe.cookTime
+    if (filters.maxTime) {
+      const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0)
       if (totalTime > filters.maxTime) return false
     }
     if (filters.dietary && filters.dietary.length > 0) {
-      const hasAllTags = filters.dietary.every(tag => recipe.dietaryTags.includes(tag))
+      const recipeTags = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []
+      const hasAllTags = filters.dietary.every(tag => recipeTags.includes(tag))
       if (!hasAllTags) return false
     }
     return true

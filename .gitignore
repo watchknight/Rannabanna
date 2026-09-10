@@ -13,6 +13,12 @@ node_modules/
 # Firebase Private Credentials
 server/config/service-account.json
 
+# Environment Variables (may contain API keys)
+.env
+.env.*
+!.env.example
+!.env.sample
+
 # Production builds
 dist/
 tmp/

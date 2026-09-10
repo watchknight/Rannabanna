@@ -27,7 +27,7 @@ recipeRouter.post('/generate', async (req, res, next) => {
     }
 
     // High-performance Redis-style memory cache check
-    const cacheKey = cacheService.generateKey(ingredientIds, { cuisineId, preferences });
+    const cacheKey = cacheService.generateKey(ingredientIds, { cuisineId, preferences, userId: userId || 'anonymous' });
     const cachedRecipe = cacheService.get(cacheKey);
 
     if (cachedRecipe) {
@@ -80,10 +80,10 @@ recipeRouter.post('/save', async (req, res, next) => {
   try {
     const { userId, recipeId } = req.body;
 
-    if (!userId || !recipeId) {
+    if (!userId || !recipeId || typeof userId !== 'string' || typeof recipeId !== 'string' || !/^[a-zA-Z0-9_.-]+$/.test(userId) || !/^[a-zA-Z0-9_.-]+$/.test(recipeId)) {
       return res.status(400).json({
         error: 'Bad Request',
-        message: 'Both "userId" and "recipeId" are required parameters to save a recipe.'
+        message: 'Valid "userId" and "recipeId" strings are required parameters to save a recipe.'
       });
     }
 

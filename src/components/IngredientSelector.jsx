@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
 import { translateCategory } from '../utils/translations'
+import { matchIngredient } from '../utils/ingredientResolver'
 
 // Memoized chip to prevent heavy layout re-renders on selection toggles
 const IngredientChip = React.memo(({ ing, isSelected, language, onClick }) => {
@@ -129,16 +130,10 @@ function IngredientSelector({ initialSelectedIds = [] }) {
     })
   }, [activeCategory, ingredients])
 
-  // Autocomplete filtering
+  // Autocomplete filtering with alias & plural resolution
   const autocompleteSuggestions = useMemo(() => {
     if (!searchQuery.trim()) return []
-    const query = searchQuery.toLowerCase()
-    return ingredients.filter(ing => {
-      const name = language === 'bn' ? (ing.nameBn || ing.name) : ing.name;
-      return ing.id.toLowerCase().includes(query) || 
-             name.toLowerCase().includes(query) ||
-             ing.name.toLowerCase().includes(query)
-    }).slice(0, 10) // limit to top 10 matches
+    return ingredients.filter(ing => matchIngredient(ing, searchQuery, language)).slice(0, 10)
   }, [searchQuery, ingredients, language])
 
   // Compile selected full objects for display
@@ -181,11 +176,15 @@ function IngredientSelector({ initialSelectedIds = [] }) {
 
       {/* Autocomplete Search input */}
       <div className="selector-search-box" ref={dropdownRef}>
+        <label htmlFor="ingredient-search-input" className="sr-only">
+          {t('selectorPlaceholder')}
+        </label>
         <div className="search-input-wrapper">
-          <span className="search-input-icon">🔍</span>
+          <span className="search-input-icon" role="img" aria-hidden="true">🔍</span>
           <input
             type="text"
             placeholder={t('selectorPlaceholder')}
+            aria-label={t('selectorPlaceholder')}
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value)
@@ -196,8 +195,10 @@ function IngredientSelector({ initialSelectedIds = [] }) {
           />
           {searchQuery && (
             <button 
+              type="button"
               className="clear-search-btn" 
               onClick={() => setSearchQuery('')}
+              aria-label="Clear search input"
               id="clear-search-btn"
             >
               ✕
@@ -207,7 +208,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
 
         {/* Dropdown menu */}
         {isDropdownOpen && autocompleteSuggestions.length > 0 && (
-          <div className="autocomplete-dropdown" id="search-autocomplete-dropdown">
+          <div className="autocomplete-dropdown" id="search-autocomplete-dropdown" role="listbox">
             {autocompleteSuggestions.map(ing => {
               const displayName = language === 'bn' ? (ing.nameBn || ing.name) : ing.name;
               return (
@@ -215,9 +216,13 @@ function IngredientSelector({ initialSelectedIds = [] }) {
                   key={ing.id}
                   className={`autocomplete-item ${selectedIds.includes(ing.id) ? 'selected' : ''}`}
                   onClick={() => toggleIngredient(ing.id)}
+                  role="option"
+                  aria-selected={selectedIds.includes(ing.id)}
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleIngredient(ing.id); } }}
                   id={`autocomplete-item-${ing.id}`}
                 >
-                  <span>{ing.emoji}</span>
+                  <span role="img" aria-label={displayName}>{ing.emoji}</span>
                   <span>{displayName}</span>
                   <span className="autocomplete-category">{translateCategory(ing.category, language)}</span>
                 </div>
@@ -230,14 +235,14 @@ function IngredientSelector({ initialSelectedIds = [] }) {
       {/* Category Selection Tabs */}
       <div className="category-tabs-wrapper">
         {showLeftScroll && (
-          <div className="category-fade-left" />
+          <div className="category-fade-left" aria-hidden="true" />
         )}
         {showLeftScroll && (
           <button 
             type="button"
             className="category-scroll-btn left" 
             onClick={() => handleScroll('left')}
-            aria-label="Scroll left"
+            aria-label="Scroll ingredient categories left"
           >
             ‹
           </button>
@@ -246,11 +251,16 @@ function IngredientSelector({ initialSelectedIds = [] }) {
         <div 
           className="category-tabs" 
           id="category-tabs-list"
+          role="tablist"
+          aria-label="Ingredient Categories"
           ref={tabsRef}
         >
           {categories.map(cat => (
             <button
               key={cat}
+              type="button"
+              role="tab"
+              aria-selected={activeCategory === cat}
               className={`category-tab ${activeCategory === cat ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat)}
               id={`category-tab-${cat.toLowerCase().replace(/\s+/g, '-')}`}

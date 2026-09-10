@@ -23,6 +23,19 @@ function getLevenshteinDistance(a, b) {
   return tmp[a.length][b.length];
 }
 
+let cachedIngredients = null;
+let lastIngredientsFetch = 0;
+const INGREDIENTS_CACHE_TTL = 5 * 60 * 1000;
+
+function getAllIngredientsCached(db) {
+  const now = Date.now();
+  if (!cachedIngredients || (now - lastIngredientsFetch > INGREDIENTS_CACHE_TTL)) {
+    cachedIngredients = db.prepare('SELECT id, name, category, subCategory FROM ingredients').all();
+    lastIngredientsFetch = now;
+  }
+  return cachedIngredients;
+}
+
 /**
  * Validates custom generation request parameters and catches edge cases.
  * 
@@ -32,6 +45,15 @@ function getLevenshteinDistance(a, b) {
  * @returns {object} { isValid: boolean, statusCode: number, message: string, resolution?: string, suggestions?: any[] }
  */
 export function validateCustomRecipeInput(ingredientIds = [], preferences = {}, db) {
+  // Edge Case 0: Type safety — ingredientIds must be an array
+  if (!Array.isArray(ingredientIds)) {
+    return {
+      isValid: false,
+      statusCode: 400,
+      message: 'ingredientIds must be an array of ingredient ID strings.'
+    };
+  }
+
   // Edge Case 1: Empty list
   if (!ingredientIds || ingredientIds.length === 0) {
     return {
@@ -41,8 +63,8 @@ export function validateCustomRecipeInput(ingredientIds = [], preferences = {}, 
     };
   }
 
-  // Pre-fetch ingredients mapping to assert gibberish/unknown elements
-  const allIngredients = db.prepare('SELECT id, name, category, subCategory FROM ingredients').all();
+  // Pre-fetch ingredients mapping to assert gibberish/unknown elements (using cache)
+  const allIngredients = getAllIngredientsCached(db);
   const allIds = allIngredients.map(i => i.id);
   const idMap = new Map(allIngredients.map(i => [i.id, i]));
 
@@ -111,9 +133,17 @@ export function validateCustomRecipeInput(ingredientIds = [], preferences = {}, 
   const isDairyFree = dietaryTags.includes('dairy-free');
 
   if (isVegan) {
-    const nonVeganIds = ['chicken-breast', 'mutton-cubes', 'lamb-chop', 'hilsa-fish', 'rohita-fish', 'beef-cubes', 'shrimp', 'fish-sauce', 'paneer', 'egg', 'ghee', 'butter', 'milk', 'heavy-cream', 'yogurt-plain'];
+    const nonVeganIds = [
+      'chicken-breast', 'chicken-thigh', 'mutton-cubes', 'lamb-chop', 
+      'hilsa-fish', 'rohita-fish', 'salmon', 'cod-fish', 'squid', 
+      'beef-cubes', 'beef-ground', 'beef-shank', 'pork-belly', 
+      'shrimp', 'shrimp-paste', 'fish-sauce', 'oyster-sauce', 
+      'paneer', 'egg', 'ghee', 'butter', 'butter-unsalted', 
+      'milk', 'milk-whole', 'heavy-cream', 'yogurt-plain', 
+      'parmesan-cheese', 'mozzarella-cheese', 'cheddar-cheese', 'cream-cheese', 'mayonnaise'
+    ];
     const conflictingVegan = validObjects.filter(ing => 
-      nonVeganIds.includes(ing.id) || (ing.category === 'Proteins' && !['lentils', 'chana-dal'].includes(ing.id))
+      nonVeganIds.includes(ing.id) || (ing.category === 'Proteins' && !['lentils', 'chana-dal', 'tofu-firm', 'tofu-soft'].includes(ing.id))
     );
 
     if (conflictingVegan.length > 0) {
@@ -126,9 +156,14 @@ export function validateCustomRecipeInput(ingredientIds = [], preferences = {}, 
       };
     }
   } else if (isVegetarian) {
-    const nonVegIds = ['chicken-breast', 'mutton-cubes', 'lamb-chop', 'hilsa-fish', 'rohita-fish', 'beef-cubes', 'shrimp', 'fish-sauce'];
+    const nonVegIds = [
+      'chicken-breast', 'chicken-thigh', 'mutton-cubes', 'lamb-chop', 
+      'hilsa-fish', 'rohita-fish', 'salmon', 'cod-fish', 'squid', 
+      'beef-cubes', 'beef-ground', 'beef-shank', 'pork-belly', 
+      'shrimp', 'shrimp-paste', 'fish-sauce', 'oyster-sauce'
+    ];
     const conflictingMeats = validObjects.filter(ing => 
-      nonVegIds.includes(ing.id) || (ing.category === 'Proteins' && !['paneer', 'lentils', 'chana-dal', 'egg'].includes(ing.id))
+      nonVegIds.includes(ing.id) || (ing.category === 'Proteins' && !['paneer', 'lentils', 'chana-dal', 'egg', 'tofu-firm', 'tofu-soft'].includes(ing.id))
     );
 
     if (conflictingMeats.length > 0) {
@@ -143,7 +178,11 @@ export function validateCustomRecipeInput(ingredientIds = [], preferences = {}, 
   }
 
   if (isDairyFree) {
-    const dairyIds = ['ghee', 'paneer', 'mozzarella-cheese', 'parmesan-cheese'];
+    const dairyIds = [
+      'ghee', 'paneer', 'mozzarella-cheese', 'parmesan-cheese', 'cheddar-cheese', 
+      'butter-unsalted', 'butter', 'milk-whole', 'milk', 'heavy-cream', 
+      'yogurt-plain', 'cream-cheese'
+    ];
     const conflictingDairy = validObjects.filter(ing => dairyIds.includes(ing.id));
 
     if (conflictingDairy.length > 0) {

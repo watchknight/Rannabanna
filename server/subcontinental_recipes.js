@@ -107,41 +107,41 @@ export const subcontinentalRecipes = [
         "instruction": "Marinate beef in yogurt, ginger paste, garlic paste, and salt for 30 minutes.",
         "duration": 30,
         "technique": "marinating",
-        "instructionBn": "Marinate beef in yogurt, আদা বাটা / পেস্ট, রসুন বাটা / পেস্ট এবং লবণ ৩০ মিনিট."
+        "instructionBn": "গরুর মাংসকে দই, আদা পেস্ট, রসুনের পেস্ট এবং লবণ দিয়ে ৩০ মিনিট মেরিনেট করুন।"
       },
       {
         "step": 2,
         "instruction": "Heat ghee in a large pot. Add cardamom and cinnamon stick, letting them splutter.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a large pot গরম করুন.cardamom যোগ করুন এবং দারুচিনি, letting them splutter."
+        "instructionBn": "একটি বড় পাত্রে ঘি গরম করুন। এলাচ এবং দারুচিনি লাঠি যোগ করুন, তাদের splutter যাক।"
       },
       {
         "step": 3,
         "instruction": "Sauté sliced onions in the ghee until golden brown. Slide in the marinated beef.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "sliced onions in ঘি সোনালী বাদামী হওয়া পর্যন্ত সাঁতলে নিন.in মেরিনেট করা beef ছেড়ে দিন."
+        "instructionBn": "টুকরো করা পেঁয়াজ ঘি দিয়ে সোনালি বাদামী হওয়া পর্যন্ত ভাজুন। ম্যারিনেট করা গরুর মাংসে স্লাইড করুন।"
       },
       {
         "step": 4,
         "instruction": "Simmer covered on low heat until beef is tender and gravy is thick and creamy.",
         "duration": 40,
         "technique": "simmering",
-        "instructionBn": "covered কম আঁচে until beef is tender জ্বাল দিন এবং gravy is thick এবং creamy."
+        "instructionBn": "কম আঁচে ঢেকে রাখুন যতক্ষণ না গরুর মাংস কোমল হয় এবং গ্রেভি ঘন ও ক্রিমি হয়।"
       },
       {
         "step": 5,
         "instruction": "Stir in sugar and let it rest covered for 2 minutes before serving.",
         "duration": 2,
         "technique": "resting",
-        "instructionBn": "in sugar নেড়ে দিন এবং covered ২ মিনিট before serving রেখে দিন."
+        "instructionBn": "চিনিতে নাড়ুন এবং পরিবেশনের আগে ২ মিনিটের জন্য ঢেকে রেখে দিন।"
       }
     ],
     "imageEmoji": "🍛",
-    "titleBn": "Beef Rezala (Fragrant Yogurt Beef Curry)",
-    "descriptionBn": "A classic, highly aromatic Bangladeshi beef curry cooked in a rich, sweet-এবং-savory yogurt base, scented দিয়ে cardamom এবং ঘি.",
-    "culturalNoteBn": "Rezala is a signature dish royal Mughal-Bengali cuisine, traditionally served at festive banquets এবং Eid celebrations."
+    "titleBn": "বিফ রেজালা (সুগন্ধি দই বিফ কারি)",
+    "descriptionBn": "এলাচ এবং ঘি দিয়ে সুগন্ধযুক্ত একটি ধনী, মিষ্টি এবং সুস্বাদু দই বেসে রান্না করা একটি ক্লাসিক, অত্যন্ত সুগন্ধযুক্ত বাংলাদেশী গরুর মাংসের তরকারি।",
+    "culturalNoteBn": "রেজালা হল রাজকীয় মুঘল-বাঙালি খাবারের একটি সিগনেচার ডিশ, ঐতিহ্যগতভাবে উত্সব ভোজ এবং ঈদ উদযাপনে পরিবেশন করা হয়।"
   },
   {
     "id": "chicken-roast",
@@ -242,41 +242,41 @@ export const subcontinentalRecipes = [
         "instruction": "Fry sliced onions in ghee until perfectly dark golden brown and crispy (Beresta). Set aside.",
         "duration": 8,
         "technique": "frying",
-        "instructionBn": "sliced onions in ঘি until perfectly dark সোনালী বাদামী ভাজুন এবং crispy (Beresta).একপাশে সরিয়ে রাখুন."
+        "instructionBn": "কাটা পেঁয়াজ ঘি দিয়ে ভাজুন যতক্ষণ না পুরোপুরি গাঢ় সোনালি বাদামী এবং খাস্তা (বেরেস্তা) হয়। একপাশে সেট করুন।"
       },
       {
         "step": 2,
         "instruction": "Rub chicken quarters with salt and lightly fry in the same ghee until skin is blistered and golden. Set aside.",
         "duration": 5,
         "technique": "shallow-frying",
-        "instructionBn": "chicken quarters দিয়ে লবণ মাখিয়ে নিন এবং lightly fry in same ঘি until skin is blistered এবং golden.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "মুরগির কোয়াটার লবণ দিয়ে ঘষুন এবং একই ঘি দিয়ে হালকা করে ভেজে নিন যতক্ষণ না চামড়া ফোসকা ও সোনালি হয়। একপাশে সেট করুন।"
       },
       {
         "step": 3,
         "instruction": "In the remaining ghee, sauté ginger, garlic, green cardamom, and yogurt. Cook until oil separates.",
         "duration": 4,
         "technique": "sautéing",
-        "instructionBn": "In অবশিষ্ট ঘি, sauté আদা, রসুন, green cardamom এবং yogurt.until oil separates রান্না করুন."
+        "instructionBn": "বাকি ঘি-এ আদা, রসুন, সবুজ এলাচ ও দই দিয়ে ভাজুন। তেল আলাদা না হওয়া পর্যন্ত রান্না করুন।"
       },
       {
         "step": 4,
         "instruction": "Slide fried chicken quarters back in. Add half the fried onions, sugar, and a splash of water. Simmer covered until tender.",
         "duration": 15,
         "technique": "simmering",
-        "instructionBn": "fried chicken quarters back in ছেড়ে দিন.half fried onions, sugar যোগ করুন এবং a splash পানি.covered until tender জ্বাল দিন."
+        "instructionBn": "ভাজা মুরগির কোয়ার্টারগুলি আবার ভিতরে স্লাইড করুন। অর্ধেক ভাজা পেঁয়াজ, চিনি এবং জলের ছিটা যোগ করুন। সিদ্ধ হওয়া পর্যন্ত ঢেকে রাখুন।"
       },
       {
         "step": 5,
         "instruction": "Top with the remaining crispy onions before serving hot.",
         "duration": 1,
         "technique": "plating",
-        "instructionBn": "Top দিয়ে অবশিষ্ট crispy onions before serving গরম গরম."
+        "instructionBn": "গরম পরিবেশনের আগে বাকি ক্রিস্পি পেঁয়াজ দিয়ে উপরে দিন।"
       }
     ],
     "imageEmoji": "🍗",
-    "titleBn": "Biye Barir Chicken Roast (Bengali Festive Chicken)",
-    "descriptionBn": "Crispy pan-fried chicken leg quarters slow-cooked in a rich, sweet, deeply caramelized onion এবং yogurt gravy.",
-    "culturalNoteBn": "An absolute centerpiece Bangladeshi wedding menus (\"Biye Bari\"), loved for its rich, aromatic, non-spicy sweet profile."
+    "titleBn": "Biye Barir Chicken Roast (বাঙালি ফেস্টিভ চিকেন)",
+    "descriptionBn": "ক্রিস্পি প্যান-ফ্রাইড চিকেন লেগ কোয়ার্টারগুলি ধীর, মিষ্টি, গভীরভাবে ক্যারামেলাইজড পেঁয়াজ এবং দই গ্রেভিতে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "বাংলাদেশী বিবাহের মেনুগুলির একটি পরম কেন্দ্রবিন্দু (\"বিয়ে বারি\"), এটি তার সমৃদ্ধ, সুগন্ধযুক্ত, অ-মশলাদার মিষ্টি প্রোফাইলের জন্য পছন্দ করে।"
   },
   {
     "id": "shorshe-begun",
@@ -350,27 +350,27 @@ export const subcontinentalRecipes = [
         "instruction": "Rub eggplant slices with salt and turmeric. Shallow fry in mustard oil until soft. Set aside.",
         "duration": 6,
         "technique": "shallow-frying",
-        "instructionBn": "বেগুন slices দিয়ে লবণ মাখিয়ে নিন এবং turmeric.Shallow fry in সরিষার তেল until soft.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "লবণ ও হলুদ দিয়ে বেগুনের টুকরা ঘষে নিন। নরম হওয়া পর্যন্ত সরিষার তেলে শ্যালো ফ্রাই করুন। একপাশে সেট করুন।"
       },
       {
         "step": 2,
         "instruction": "In the remaining oil, sauté green chilies. Mix mustard paste with water, salt, and pour in.",
         "duration": 3,
         "technique": "tempering",
-        "instructionBn": "In অবশিষ্ট oil, sauté green chilies.mustard বাটা / পেস্ট দিয়ে পানি, লবণ মেশান এবং in ঢালুন."
+        "instructionBn": "বাকি তেলে কাঁচা মরিচ দিয়ে ভাজুন। জল, লবণ দিয়ে সরিষার পেস্ট মেশান এবং ঢেলে দিন।"
       },
       {
         "step": 3,
         "instruction": "Add eggplants and simmer on low heat for 5 minutes until gravy turns thick.",
         "duration": 5,
         "technique": "simmering",
-        "instructionBn": "eggplants যোগ করুন এবং কম আঁচে ৫ মিনিট until gravy turns thick জ্বাল দিন."
+        "instructionBn": "বেগুন যোগ করুন এবং গ্রেভি ঘন না হওয়া পর্যন্ত কম আঁচে ৫ মিনিট সিদ্ধ করুন।"
       }
     ],
     "imageEmoji": "🍆",
-    "titleBn": "Shorshe Begun (Eggplants in Mustard Gravy)",
-    "descriptionBn": "Thick বেগুন slices pan-fried in raw সরিষার তেল, then simmered in a sharp, pungent mustard seed বাটা / পেস্ট দিয়ে green chilies.",
-    "culturalNoteBn": "An elegant classic showcasing traditional Bengali love for pairing বেগুন দিয়ে sharp mustard oils."
+    "titleBn": "Shorshe Begun (সরিষা গ্রেভিতে বেগুন)",
+    "descriptionBn": "ঘন বেগুনের টুকরোগুলো কাঁচা সরিষার তেলে ভাজা, তারপর সবুজ মরিচ দিয়ে তীক্ষ্ণ, তীক্ষ্ণ সরিষার পেস্টে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "একটি মার্জিত ক্লাসিক ধারালো সরিষার তেলের সাথে বেগুন জোড়ার জন্য ঐতিহ্যবাহী বাঙালির ভালোবাসাকে তুলে ধরে।"
   },
   {
     "id": "bengali-payesh",
@@ -399,7 +399,7 @@ export const subcontinentalRecipes = [
         "preparation": "",
         "isEssential": true,
         "group": "Liquids",
-        "nameBn": "milk-whole"
+        "nameBn": "দুধ"
       },
       {
         "ingredientId": "jaggery",
@@ -426,7 +426,7 @@ export const subcontinentalRecipes = [
         "preparation": "chopped",
         "isEssential": false,
         "group": "Garnish",
-        "nameBn": "cashews"
+        "nameBn": "কাজুবাদাম"
       }
     ],
     "steps": [
@@ -435,27 +435,27 @@ export const subcontinentalRecipes = [
         "instruction": "Bring whole milk to a boil in a heavy pot. Add the fragrant rice grains and green cardamom.",
         "duration": 10,
         "technique": "boiling",
-        "instructionBn": "Bring whole দুধ to a boil in a heavy pot.fragrant rice grains যোগ করুন এবং green cardamom."
+        "instructionBn": "একটি ভারী পাত্রে পুরো দুধ ফুটিয়ে নিন। সুগন্ধি চালের দানা এবং সবুজ এলাচ যোগ করুন।"
       },
       {
         "step": 2,
         "instruction": "Cook on low heat, stirring continuously to prevent sticking, until milk is reduced to half.",
         "duration": 30,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে, stirring continuously to prevent sticking, until দুধ is reduced to half রান্না করুন."
+        "instructionBn": "কম আঁচে রান্না করুন, অবিরাম নাড়তে থাকুন, যতক্ষণ না দুধ অর্ধেক হয়ে যায়।"
       },
       {
         "step": 3,
         "instruction": "Turn off the heat. Stir in grated jaggery and cashews until fully melted and creamy.",
         "duration": 5,
         "technique": "mixing",
-        "instructionBn": "Turn off heat.in grated গুড় নেড়ে দিন এবং cashews until fully melted এবং creamy."
+        "instructionBn": "আঁচ বন্ধ করুন। সম্পূর্ণরূপে গলে যাওয়া এবং ক্রিমি হওয়া পর্যন্ত গ্রেট করা গুড় এবং কাজুতে নাড়ুন।"
       }
     ],
     "imageEmoji": "🥣",
-    "titleBn": "Chaler Payesh (Bengali Sweet Rice Pudding)",
-    "descriptionBn": "Traditional slow-cooked thick rice pudding made fragrant Chinigura rice boiled in whole দুধ, sweetened দিয়ে গুড়.",
-    "culturalNoteBn": "Payesh is considered an auspicious dish in Bengali culture, universally served on birthdays এবং festivals."
+    "titleBn": "চলে পায়েশ (বাঙালি মিষ্টি চালের পুডিং)",
+    "descriptionBn": "ঐতিহ্যবাহী ধীরে রান্না করা ঘন চালের পুডিং সুগন্ধি চিনিগুড়া চালের তৈরি পুরো দুধে সিদ্ধ করে, গুড় দিয়ে মিষ্টি করা হয়।",
+    "culturalNoteBn": "পায়েশকে বাঙালি সংস্কৃতিতে একটি শুভ খাবার হিসেবে বিবেচনা করা হয়, যা সর্বজনীনভাবে জন্মদিন এবং উৎসবে পরিবেশিত হয়।"
   },
   {
     "id": "street-fuchka",
@@ -538,27 +538,27 @@ export const subcontinentalRecipes = [
         "instruction": "Mix mashed potatoes, boiled yellow split peas, green chilies, coriander powder, and salt.",
         "duration": 10,
         "technique": "mixing",
-        "instructionBn": "mashed potatoes, boiled yellow split peas, green chilies, ধনে গুঁড়ো মেশান এবং লবণ."
+        "instructionBn": "ম্যাশ করা আলু, সিদ্ধ হলুদ বিভক্ত মটর, সবুজ মরিচ, ধনে গুঁড়া, এবং লবণ মেশান।"
       },
       {
         "step": 2,
         "instruction": "Mix tamarind pulp with 1.5 cups of water, a pinch of coriander, and salt to make tangy water.",
         "duration": 5,
         "technique": "mixing",
-        "instructionBn": "তেঁতুল pulp দিয়ে ১ মেশান.৫ cups পানি, a pinch coriander এবং লবণ to make tangy পানি."
+        "instructionBn": "তেঁতুলের পাল্পে ১.৫ কাপ জল, এক চিমটি ধনে এবং লবণ মিশিয়ে ট্যাঞ্জি জল তৈরি করুন।"
       },
       {
         "step": 3,
         "instruction": "Poke a small hole in each puri, stuff with potato filling, and dip into tamarind water to enjoy.",
         "duration": 5,
         "technique": "assembling",
-        "instructionBn": "Poke a small hole in each puri, stuff দিয়ে আলু filling এবং dip into তেঁতুল পানি to enjoy."
+        "instructionBn": "প্রতিটি পুরিতে একটি ছোট ছিদ্র করুন, আলু ভরাট দিয়ে স্টাফ করুন এবং উপভোগ করতে তেঁতুলের জলে ডুবিয়ে দিন।"
       }
     ],
     "imageEmoji": "🪙",
-    "titleBn": "Street-Style Fuchka (Bengali Panipuri)",
-    "descriptionBn": "Crispy, hollow সুজি puris stuffed দিয়ে a highly spiced, tangy আলু এবং yellow split pea mash, served দিয়ে sour তেঁতুল পানি.",
-    "culturalNoteBn": "ultimate street-food king Bangladesh, loved for its explosive combination spice এবং tang."
+    "titleBn": "রাস্তার স্টাইল ফুচকা (বাংলা পানিপুরি)",
+    "descriptionBn": "খাস্তা, ফাঁপা সুজি পুরিগুলি একটি অত্যন্ত মশলাযুক্ত, ট্যাঞ্জি আলু এবং হলুদ স্প্লিট মটর ম্যাশ দিয়ে ভরা, টক তেঁতুলের জল দিয়ে পরিবেশন করা হয়।",
+    "culturalNoteBn": "বাংলাদেশের চূড়ান্ত স্ট্রিট-ফুড রাজা, মশলা এবং ট্যাং এর বিস্ফোরক সংমিশ্রণের জন্য পছন্দ করেন।"
   },
   {
     "id": "begun-bharta-special",
@@ -623,27 +623,27 @@ export const subcontinentalRecipes = [
         "instruction": "Poke holes in the eggplant. Grill directly on a gas flame until skin is completely blackened and inside is soft.",
         "duration": 12,
         "technique": "roasting",
-        "instructionBn": "Poke holes in বেগুন.Grill directly on a gas flame until skin is completely blackened এবং inside is soft."
+        "instructionBn": "বেগুনে ছিদ্র করুন। ত্বক সম্পূর্ণ কালো না হওয়া পর্যন্ত এবং ভিতরে নরম না হওয়া পর্যন্ত সরাসরি গ্যাসের শিখায় গ্রিল করুন।"
       },
       {
         "step": 2,
         "instruction": "Let it cool, peel away the charred skin, and place the soft eggplant flesh in a bowl.",
         "duration": 3,
         "technique": "peeling",
-        "instructionBn": "Let it cool, peel away charred skin এবং soft বেগুন flesh একটি বাটিতে রাখুন."
+        "instructionBn": "এটিকে ঠান্ডা হতে দিন, পোড়া ত্বকের খোসা ছাড়িয়ে নিন এবং একটি পাত্রে নরম বেগুনের মাংস রাখুন।"
       },
       {
         "step": 3,
         "instruction": "Add raw mustard oil, chopped onions, green chilies, and salt. Vigorously mash together with your fingers.",
         "duration": 3,
         "technique": "mashing",
-        "instructionBn": "raw সরিষার তেল, chopped onions, green chilies যোগ করুন এবং লবণ.Vigorously mash together দিয়ে your fingers."
+        "instructionBn": "কাঁচা সরিষার তেল, কাটা পেঁয়াজ, কাঁচা মরিচ এবং লবণ যোগ করুন। আপনার আঙ্গুলগুলি দিয়ে জোরে জোরে ম্যাশ করুন।"
       }
     ],
     "imageEmoji": "🍆",
-    "titleBn": "Begun Bharta (Smoky বেগুন Mash)",
-    "descriptionBn": "Flame-charred smoky বেগুন mashed দিয়ে pungent raw সরিষার তেল, chopped red onions এবং fiery green chilies.",
-    "culturalNoteBn": "A daily comfort food in Bangladeshi households, particularly celebrated during Bengali New Year feasts."
+    "titleBn": "বেগুন ভর্তা (স্মোকি বেগুন ম্যাশ)",
+    "descriptionBn": "তেজপাতা কাঁচা সরিষার তেল, কাটা লাল পেঁয়াজ, এবং জ্বলন্ত সবুজ মরিচ দিয়ে জ্বাল দেওয়া ধোঁয়াটে বেগুন।",
+    "culturalNoteBn": "বাংলাদেশী পরিবারের একটি দৈনিক আরামদায়ক খাবার, বিশেষ করে বাংলা নববর্ষের উৎসবে উদযাপন করা হয়।"
   },
   {
     "id": "dim-kosha-special",
@@ -735,27 +735,27 @@ export const subcontinentalRecipes = [
         "instruction": "Lightly score the eggs, rub with turmeric and salt, and fry in hot mustard oil until golden blistered. Set aside.",
         "duration": 4,
         "technique": "shallow-frying",
-        "instructionBn": "Lightly score eggs, rub দিয়ে turmeric এবং লবণ এবং in গরম গরম সরিষার তেল until golden blistered ভাজুন.একপাশে সরিয়ে রাখুন."
+        "instructionBn": "ডিম হালকাভাবে গোল করুন, হলুদ এবং লবণ দিয়ে ঘষুন এবং সোনালি ফোস্কা না হওয়া পর্যন্ত গরম সরিষার তেলে ভাজুন। একপাশে সেট করুন।"
       },
       {
         "step": 2,
         "instruction": "In the same oil, fry onions until golden. Add ginger-garlic paste, turmeric, chili powder, and salt, roasting with splashes of water.",
         "duration": 6,
         "technique": "sautéing",
-        "instructionBn": "In same oil, fry onions until golden.আদা-রসুন বাটা / পেস্ট, turmeric, মরিচ গুঁড়ো যোগ করুন এবং লবণ, roasting দিয়ে splashes পানি."
+        "instructionBn": "একই তেলে পেঁয়াজ সোনালি হওয়া পর্যন্ত ভাজুন। আদা-রসুন পেস্ট, হলুদ, মরিচ গুঁড়ো এবং লবণ যোগ করুন, জলের ছিটা দিয়ে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add eggs back to the pan, toss to coat with dry spices, and cook for 3 minutes.",
         "duration": 3,
         "technique": "roasting",
-        "instructionBn": "eggs back to pan, toss to coat দিয়ে dry spices যোগ করুন এবং ৩ মিনিট রান্না করুন."
+        "instructionBn": "প্যানে আবার ডিম যোগ করুন, শুকনো মশলা দিয়ে কোট করতে টস করুন এবং ৩ মিনিট রান্না করুন।"
       }
     ],
     "imageEmoji": "🥚",
-    "titleBn": "Spicy Dim Kosha (Bengali Pan-Roasted ডিম Curry)",
-    "descriptionBn": "Boiled eggs pan-roasted in সরিষার তেল, then simmered in an intensely spiced, rich, dry onion-আদা gravy.",
-    "culturalNoteBn": "A step up from standard ডিম curries, \"Kosha\" implies a slow-roasted, thick gravy that clings to ডিম."
+    "titleBn": "মশলাদার ডিম কোশা (বাঙালি প্যান-ভুনা ডিমের তরকারি)",
+    "descriptionBn": "সিদ্ধ ডিম সরিষার তেলে প্যানে ভাজা, তারপর একটি তীব্র মশলাদার, সমৃদ্ধ, শুকনো পেঁয়াজ-আদা গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "সাধারণ ডিমের তরকারি থেকে এক ধাপ উপরে, \"কোশা\" বোঝায় একটি ধীর-ভুজা, ঘন গ্রেভি যা ডিমের সাথে লেগে থাকে।"
   },
   {
     "id": "mezban-beef",
@@ -856,34 +856,34 @@ export const subcontinentalRecipes = [
         "instruction": "Marinate beef in mustard oil, ginger-garlic paste, turmeric, chili powder, and salt for 1 hour.",
         "duration": 60,
         "technique": "marinating",
-        "instructionBn": "Marinate beef in সরিষার তেল, আদা-রসুন বাটা / পেস্ট, turmeric, মরিচ গুঁড়ো এবং লবণ for ১ ঘণ্টা."
+        "instructionBn": "গরুর মাংস সরিষার তেল, আদা-রসুন বাটা, হলুদ, লঙ্কা গুঁড়ো এবং লবণ দিয়ে ১ ঘণ্টা মেরিনেট করুন।"
       },
       {
         "step": 2,
         "instruction": "Heat remaining oil in a large heavy pot. Sauté onions until golden brown. Slide in marinated beef.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "remaining oil in a large heavy pot গরম করুন.onions সোনালী বাদামী হওয়া পর্যন্ত সাঁতলে নিন.in marinated beef ছেড়ে দিন."
+        "instructionBn": "একটি বড় ভারী পাত্রে অবশিষ্ট তেল গরম করুন। সোনালি বাদামী হওয়া পর্যন্ত পেঁয়াজ ভাজুন। ম্যারিনেট করা গরুর মাংসে স্লাইড করুন।"
       },
       {
         "step": 3,
         "instruction": "Cover and slow-cook on medium-low heat. The beef will release its own juices; simmer until fully tender.",
         "duration": 75,
         "technique": "simmering",
-        "instructionBn": "ঢেকে দিন এবং slow-cook মাঝারি-কম আঁচে.beef will release its own juices;until fully tender জ্বাল দিন."
+        "instructionBn": "ঢেকে দিন এবং মাঝারি-নিম্ন আঁচে ধীরে ধীরে রান্না করুন। গরুর মাংস তার নিজস্ব রস ছেড়ে দেবে; সম্পূর্ণ কোমল হওয়া পর্যন্ত সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala and cook on high heat for 5 minutes until gravy turns dark and rich.",
         "duration": 5,
         "technique": "roasting",
-        "instructionBn": "in গরম মশলা নেড়ে দিন এবং উচ্চ আঁচে ৫ মিনিট until gravy turns dark রান্না করুন এবং rich."
+        "instructionBn": "গরম মসলা নাড়ুন এবং গ্রেভি গাঢ় এবং সমৃদ্ধ না হওয়া পর্যন্ত ৫ মিনিটের জন্য উচ্চ তাপে রান্না করুন।"
       }
     ],
     "imageEmoji": "🥩",
-    "titleBn": "Mezban Beef (Chittagonian Traditional Dark Beef Curry)",
-    "descriptionBn": "A deeply spiced, fiery beef curry slow-cooked দিয়ে a custom blend subcontinental spices, utilizing সরিষার তেল.",
-    "culturalNoteBn": "Mezban is a massive Chittagonian community feast dating back centuries, where thousands are served this signature beef curry."
+    "titleBn": "মেজবান গরুর মাংস (চট্টগ্রামের ঐতিহ্যবাহী ডার্ক বিফ কারি)",
+    "descriptionBn": "সরিষার তেল ব্যবহার করে উপমহাদেশীয় মশলার কাস্টম মিশ্রণের সাথে একটি গভীর মশলাদার, জ্বলন্ত গরুর মাংসের তরকারি ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "মেজবান হল একটি বিশাল চট্টগ্রামের জনগোষ্ঠীর ভোজ যা শতাব্দীর পূর্বের, যেখানে হাজার হাজার লোককে এই স্বাক্ষরিত গরুর মাংসের তরকারি পরিবেশন করা হয়।"
   },
   {
     "id": "muri-ghonto",
@@ -956,33 +956,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Muri Ghonto (Bengali Fish Head Rice Mash)",
-    "descriptionBn": "A traditional Bengali delicacy where rohu fish head is broken down এবং slow-cooked দিয়ে fragrant বাসমতী চাল, আদা এবং cumin.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "মুড়ি ঘোঁটো (বাঙালি মাছের মাথা ভাতের মাড়ি)",
+    "descriptionBn": "একটি ঐতিহ্যবাহী বাঙালি খাবার যেখানে রোহু মাছের মাথা ভেঙে সুগন্ধি বাসমতি চাল, আদা এবং জিরা দিয়ে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "phulko-luchi",
@@ -1055,33 +1055,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Phulko Luchi (Bengali Fried Puffy Breads)",
-    "descriptionBn": "Airy, super puffy, golden deep-fried flatbreads made refined flour এবং ঘি, ultimate breakfast standard.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ফুলকো লুচি (বাঙালি ভাজা পাউরুটি)",
+    "descriptionBn": "বায়বীয়, সুপার পাফি, মিহি ময়দা এবং ঘি দিয়ে তৈরি সোনালি গভীর-ভাজা ফ্ল্যাটব্রেড, চূড়ান্ত ব্রেকফাস্ট স্ট্যান্ডার্ড।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "chingri-bhuna",
@@ -1154,33 +1154,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Chingri Bhuna (spiced Bengali চিংড়ি)",
-    "descriptionBn": "Juicy freshwater চিংড়ি quick-seared এবং simmered in a dense, spicy onion-টমেটো reduction gravy.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "চিংরি ভুনা (মশলাদার বাংলা চিংড়ি)",
+    "descriptionBn": "রসালো মিষ্টি জলের চিংড়ি দ্রুত সিদ্ধ হয় এবং ঘন, মশলাদার পেঁয়াজ-টমেটো কমানোর গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "aloo-bharta",
@@ -1253,33 +1253,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Aloo Bharta (Bengali Comfort Mashed Potatoes)",
-    "descriptionBn": "Mashed potatoes blended দিয়ে raw সরিষার তেল, roasted red chilies, finely sliced raw onions এবং লবণ.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "আলু ভর্তা (বাঙালি আরাম মাখা আলু)",
+    "descriptionBn": "কাচা সরিষার তেল, ভাজা লাল লঙ্কা, সূক্ষ্মভাবে কাটা কাঁচা পেঁয়াজ এবং লবণ দিয়ে মিশ্রিত করা আলু।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "dhokar-dalna",
@@ -1352,33 +1352,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Dhokar Dalna (Lentil Cake Curry)",
-    "descriptionBn": "Spiced chana dal cakes fried এবং simmered in a comforting টমেটো-আদা gravy দিয়ে potatoes.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ধোকার ডালনা (মসুর ডাল তরকারি)",
+    "descriptionBn": "মসলাযুক্ত ছানা ডাল কেক ভাজা এবং আলু দিয়ে একটি আরামদায়ক টমেটো-আদা গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "cholar-dal",
@@ -1451,33 +1451,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Cholar Dal (Bengali Split ছোলা / বুট)",
-    "descriptionBn": "Sweet-এবং-savory split ছোলা / বুট cooked দিয়ে turmeric, tempered দিয়ে tiny crispy নারকেল slices এবং ঘি.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ছোলার ডাল (বাঙালি স্প্লিট ছোলা)",
+    "descriptionBn": "মিষ্টি এবং সুস্বাদু বিভক্ত ছোলা হলুদ দিয়ে রান্না করা, ছোট খাস্তা নারকেলের টুকরো এবং ঘি দিয়ে মেখে।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "patol-dulma",
@@ -1550,33 +1550,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Patol Dulma (Stuffed Gourd)",
-    "descriptionBn": "Pointed gourds deseeded এবং stuffed দিয়ে spiced পনির mash, then simmered in a velvety gravy.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "পটল দুলমা (ভর্তি করলা)",
+    "descriptionBn": "সূক্ষ্ম লাউ মসলাযুক্ত পনির ম্যাশ দিয়ে সিদ্ধ করে, তারপর মখমলের গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "shorshe-rui",
@@ -1649,33 +1649,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Shorshe Rui (Rohu Fish in Mustard বাটা / পেস্ট)",
-    "descriptionBn": "Rohu fish steaks slow-cooked in a sharp, aromatic gravy made ground yellow এবং black mustard seeds.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ষোড়শে রুই (সরিষার পেস্টে রোহু মাছ)",
+    "descriptionBn": "রোহু মাছের স্টেকগুলি হলুদ এবং কালো সরিষা দানা দিয়ে তৈরি একটি ধারালো, সুগন্ধযুক্ত গ্রেভিতে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "macher-jhol",
@@ -1748,33 +1748,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Macher Jhol (Simple Bengali Fish Stew)",
-    "descriptionBn": "Light, healthy everyday fish curry cooked দিয়ে আলু wedges এবং green chilies in a cumin broth.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "মাছের ঝোল (সাধারণ বাঙালি মাছের স্টু)",
+    "descriptionBn": "জিরার ঝোলে আলুর ওয়েজ এবং সবুজ লঙ্কা দিয়ে রান্না করা হালকা, স্বাস্থ্যকর প্রতিদিনের মাছের তরকারি।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "lau-ghonto",
@@ -1847,33 +1847,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Lau Ghonto (Bottle Gourd Stir-Fry)",
-    "descriptionBn": "Bottle gourd shredded এবং cooked in its own steam, flavored দিয়ে ঘি, green chilies এবং fresh ধনেপাতা.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "লাউ ঘোঁটো (বোতল লাউ নাড়ুন-ভাজা)",
+    "descriptionBn": "বোতল করলা টুকরো টুকরো করে নিজের বাষ্পে রান্না করা হয়, ঘি, কাঁচা মরিচ এবং তাজা ধনেপাতা দিয়ে স্বাদযুক্ত।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "bhetki-paturi",
@@ -1946,33 +1946,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Bhetki Paturi (Barramundi in কলা Leaves)",
-    "descriptionBn": "Barramundi fillets coated in pungent mustard বাটা / পেস্ট, wrapped in কলা leaves এবং pan-steamed.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ভেটকি পাতুরি (কলা পাতায় বারমুন্ডি)",
+    "descriptionBn": "বারামুন্ডি ফিললেটগুলি তীক্ষ্ণ সরিষার পেস্টে লেপা, কলা পাতায় মোড়ানো, এবং প্যান-স্টিমড।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "doi-maach-special",
@@ -2045,33 +2045,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Doi Maach (Fish in Yogurt Gravy)",
-    "descriptionBn": "Fried freshwater fish steaks simmered in a sweet এবং mildly spiced আদা-yogurt gravy.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "দোই মাচ (দই গ্রেভিতে মাছ)",
+    "descriptionBn": "ভাজা মিষ্টি জলের মাছের স্টেকগুলি একটি মিষ্টি এবং হালকা মশলাযুক্ত আদা-দই গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "khichuri",
@@ -2144,33 +2144,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Khichuri (One-Pot Rice & Lentils)",
-    "descriptionBn": "Fragrant chinigura rice এবং red lentils slow-cooked দিয়ে ঘি, আদা এবং turmeric, served on rainy days.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "খিচুড়ি (এক পাত্র ভাত ও মসুর ডাল)",
+    "descriptionBn": "সুগন্ধি চিনিগুড়া চাল এবং লাল মসুর ডাল ধীরে ধীরে ঘি, আদা এবং হলুদ দিয়ে রান্না করা, বৃষ্টির দিনে পরিবেশন করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "bandhakopi-bhaji",
@@ -2243,33 +2243,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Bandhakopi Bhaji (বাঁধাকপি Stir-Fry)",
-    "descriptionBn": "Stir-fried shredded green বাঁধাকপি cooked দিয়ে tiny আলু cubes, peas এবং mild subcontinental spices.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "বাঁধাকপি ভাজি (বাঁধাকপি ভাজি)",
+    "descriptionBn": "ছোট আলু কিউব, মটর এবং হালকা উপমহাদেশীয় মশলা দিয়ে রান্না করা ভাজা ভাজা কাটা সবুজ বাঁধাকপি।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "dim-posto",
@@ -2342,33 +2342,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Dim Posto (Eggs in Poppy Seed বাটা / পেস্ট)",
-    "descriptionBn": "Hard-boiled pan-fried eggs simmered in a thick, nutty এবং creamy বাটা / পেস্ট poppy/sesame seeds.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ডিম পোস্তো (পোস্ত দানাের পেস্টে ডিম)",
+    "descriptionBn": "শক্ত-সিদ্ধ প্যান-ভাজা ডিমগুলি পোস্ত/তিলের ঘন, বাদাম এবং ক্রিমি পেস্টে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "bengali-sujir-halwa",
@@ -2441,33 +2441,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Sujir Halwa (Bengali সুজি Pudding)",
-    "descriptionBn": "Golden-roasted সুজি cooked in দুধ, ঘি এবং green cardamom, forming a comforting sweet pudding.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "সুজির হালুয়া (বাংলা সুজি পুডিং)",
+    "descriptionBn": "সোনালি ভাজা সুজি দুধ, ঘি এবং সবুজ এলাচ দিয়ে রান্না করা, একটি আরামদায়ক মিষ্টি পুডিং তৈরি করে।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "panta-bhat",
@@ -2540,33 +2540,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Panta Bhat (Fermented New Year Rice)",
-    "descriptionBn": "Fermented overnight rice served cold দিয়ে লবণ, green chilies, fried onions এবং pan-fried ilish fish.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "পান্তা ভাত (গাঁজানো নববর্ষের চাল)",
+    "descriptionBn": "রাতারাতি গাঁজানো ভাতে লবণ, কাঁচা মরিচ, ভাজা পেঁয়াজ এবং প্যান-ভাজা ইলিশ মাছ দিয়ে ঠান্ডা পরিবেশন করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "chaler-roti",
@@ -2639,33 +2639,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Chaler Roti (Bengali চালের গুঁড়ো Flatbreads)",
-    "descriptionBn": "Soft, white flatbreads made kneaded গরম গরম চালের গুঁড়ো dough, traditionally paired দিয়ে meat curries.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "চালের রোটি (বাঙালি চালের আটার রুটি)",
+    "descriptionBn": "কোমল, সাদা ফ্ল্যাট ব্রেডগুলি গরম চালের ময়দার ময়দা দিয়ে তৈরি, ঐতিহ্যগতভাবে মাংসের তরকারিগুলির সাথে যুক্ত।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "mutton-rezala",
@@ -2738,33 +2738,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Mutton Rezala",
-    "descriptionBn": "Rich mutton cooked in a mild white yogurt gravy scented দিয়ে green cardamom এবং saffron.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "মাটন রেজালা",
+    "descriptionBn": "সবুজ এলাচ এবং জাফরান দিয়ে সুগন্ধযুক্ত একটি হালকা সাদা দই গ্রেভিতে রান্না করা সমৃদ্ধ মাটন।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "shobji-khichuri",
@@ -2837,33 +2837,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Shobji Khichuri (Bengali Vegetable Khichuri)",
-    "descriptionBn": "A rich mixture fragrant rice, yellow lentils এবং seasonal vegetables cooked in ঘি এবং turmeric.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "Shobji Khichuri (বাংলা সবজি খিচুড়ি)",
+    "descriptionBn": "ঘি এবং হলুদে রান্না করা সুগন্ধি চাল, হলুদ মসুর ডাল এবং মৌসুমি শাকসবজির একটি সমৃদ্ধ মিশ্রণ।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "rui-macher-bhuna",
@@ -2936,33 +2936,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Rui Macher Bhuna (Spiced Rohu Curry)",
-    "descriptionBn": "Fresh Rohu fish steaks fried এবং simmered in a rich, deeply caramelized onion এবং টমেটো sauce.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "রুই মাছের ভুনা (মসলাযুক্ত রোহু তরকারি)",
+    "descriptionBn": "তাজা রোহু ফিশ স্টেক ভাজা এবং একটি সমৃদ্ধ, গভীরভাবে ক্যারামেলাইজড পেঁয়াজ এবং টমেটো সসে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "ilish-mach-bhaja",
@@ -3035,33 +3035,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Ilish Mach Bhaja (Pan-Fried ইলিশ মাছ)",
-    "descriptionBn": "Traditional crispy ইলিশ মাছ pan-fried in pure সরিষার তেল, rubbed দিয়ে লবণ এবং turmeric.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ইলিশ মাছ ভাজা (প্যান ফ্রাইড ইলিশ মাছ)",
+    "descriptionBn": "ঐতিহ্যবাহী খাস্তা ইলিশ মাছ খাঁটি সরিষার তেলে ভাজা, লবণ ও হলুদ দিয়ে ঘষে।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "dimer-dalna",
@@ -3134,33 +3134,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Dimer Dalna (Bengali ডিম এবং আলু Curry)",
-    "descriptionBn": "Hard-boiled pan-fried eggs cooked দিয়ে soft potatoes in a comforting cumin-আদা gravy.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "ডিমের ডালনা (বাঙালি ডিম এবং আলুর তরকারি)",
+    "descriptionBn": "একটি আরামদায়ক জিরা-আদা গ্রেভিতে নরম আলু দিয়ে রান্না করা শক্ত-সিদ্ধ প্যান-ভাজা ডিম।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "morog-polao-festive",
@@ -3233,33 +3233,33 @@ export const subcontinentalRecipes = [
         "instruction": "Prep the ingredients and heat the mustard oil in a heavy skillet until shimmering.",
         "duration": 5,
         "technique": "tempering",
-        "instructionBn": "Prep ingredients এবং সরিষার তেল in a heavy skillet until shimmering গরম করুন."
+        "instructionBn": "উপাদানগুলি প্রস্তুত করুন এবং একটি ভারী কড়াইতে সরিষার তেল ঝিলমিল না হওয়া পর্যন্ত গরম করুন।"
       },
       {
         "step": 2,
         "instruction": "Add green chilies and basic spices, sautéing on medium heat until fragrant.",
         "duration": 3,
         "technique": "sautéing",
-        "instructionBn": "green chilies যোগ করুন এবং basic spices, sautéing মাঝারি আঁচে until fragrant."
+        "instructionBn": "সবুজ মরিচ এবং মৌলিক মশলা যোগ করুন, সুগন্ধি না হওয়া পর্যন্ত মাঝারি আঁচে ভাজুন।"
       },
       {
         "step": 3,
         "instruction": "Add the main components, tossing well to coat with the spice mixture.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "main components, tossing well to coat দিয়ে spice mixture যোগ করুন."
+        "instructionBn": "মূল উপাদান যোগ করুন, মশলা মিশ্রণ সঙ্গে আবরণ ভাল টস।"
       },
       {
         "step": 4,
         "instruction": "Simmer on low heat with a splash of water until tender, cooking until gravy reaches desired thickness.",
         "duration": 12,
         "technique": "simmering",
-        "instructionBn": "কম আঁচে দিয়ে a splash পানি until tender, cooking until gravy reaches desired thickness জ্বাল দিন."
+        "instructionBn": "মৃদু আঁচে অল্প আঁচে পানির ছিটা দিয়ে সিদ্ধ করুন, যতক্ষণ না গ্রেভি পছন্দসই ঘনত্বে পৌঁছায় ততক্ষণ রান্না করুন।"
       }
     ],
-    "titleBn": "Morog Polao (Bengali Festive Chicken Rice)",
-    "descriptionBn": "A rich, aromatic festive rice dish where chicken is cooked in ঘি এবং yogurt, layered দিয়ে chinigura rice.",
-    "culturalNoteBn": "An essential dish representing rustic, time-honored cooking methods regional Bangladeshi kitchens."
+    "titleBn": "মরগ পোলাও (বাঙালি উৎসবের চিকেন রাইস)",
+    "descriptionBn": "একটি সমৃদ্ধ, সুগন্ধযুক্ত উত্সব ভাতের থালা যেখানে চিকেন ঘি এবং দই দিয়ে রান্না করা হয়, চিনিগুড়া চাল দিয়ে স্তরে স্তরে।",
+    "culturalNoteBn": "আঞ্চলিক বাংলাদেশী রান্নাঘরের গ্রাম্য, সময়-সম্মানিত রান্নার পদ্ধতির প্রতিনিধিত্বকারী একটি অপরিহার্য খাবার।"
   },
   {
     "id": "shahi-paneer",
@@ -3332,33 +3332,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Shahi পনির (Royal Indian Cheese)",
-    "descriptionBn": "পনির cheese cubes in a sweet, velvety cashew এবং almond gravy scented দিয়ে cardamom.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "শাহী পনির (রয়্যাল ইন্ডিয়ান পনির)",
+    "descriptionBn": "এলাচ দিয়ে সুগন্ধযুক্ত একটি মিষ্টি, মখমল কাজু এবং বাদাম গ্রেভিতে পনির পনির কিউব।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "malai-kofta-special",
@@ -3431,33 +3431,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Malai Kofta (পনির-আলু Dumplings)",
-    "descriptionBn": "Crisp পনির-আলু balls simmered in a highly luxurious, creamy, sweet-এবং-savory cashew sauce.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "মালাই কোফতা (পনির-আলু ডাম্পলিং)",
+    "descriptionBn": "খাস্তা পনির-আলুর বলগুলি একটি অত্যন্ত বিলাসবহুল, ক্রিমি, মিষ্টি এবং মুখরোচক কাজু সসে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "baingan-bharta",
@@ -3530,33 +3530,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Baingan Bharta (Smoked বেগুন Stir-Fry)",
-    "descriptionBn": "Smoked, fire-roasted বেগুন cooked দিয়ে chopped onions, sweet tomatoes, আদা এবং গরম গরম green chilies.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "বাইনগান ভর্তা (স্মোকড বেগুন ভাজা)",
+    "descriptionBn": "ধূমপান করা, আগুনে ভাজা বেগুন কাটা পেঁয়াজ, মিষ্টি টমেটো, আদা এবং গরম সবুজ লঙ্কা দিয়ে রান্না করা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "bhindi-masala",
@@ -3629,33 +3629,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Bhindi Masala (Spiced Okra Sauté)",
-    "descriptionBn": "Crispy pan-fried okra tossed দিয়ে dry mango powder, জিরা গুঁড়ো এবং caramelized red onions.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "ভিন্ডি মসলা (মশলাযুক্ত ওকরা সাউটে)",
+    "descriptionBn": "ক্রিস্পি প্যান-ভাজা ওকরা শুকনো আমের গুঁড়া, জিরা গুঁড়া এবং ক্যারামেলাইজড লাল পেঁয়াজ দিয়ে টস করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "rajma-masala",
@@ -3728,33 +3728,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Rajma Masala (Punjabi Kidney Beans)",
-    "descriptionBn": "Spiced red kidney beans slow-cooked in a robust gravy tomatoes, onions, রসুন এবং ঘি.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "রাজমা মসলা (পাঞ্জাবি কিডনি বিনস)",
+    "descriptionBn": "টমেটো, পেঁয়াজ, রসুন এবং ঘি এর একটি শক্ত গ্রেভিতে মশলাযুক্ত লাল কিডনি বিনগুলি ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "paneer-bhurji",
@@ -3827,33 +3827,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "পনির Bhurji (Scrambled পনির Sauté)",
-    "descriptionBn": "Scrambled পনির sautéed দিয়ে onions, green peas, tomatoes এবং green chilies in ঘি.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "পনির ভুর্জি (স্ক্র্যাম্বলড পনির সাউটে)",
+    "descriptionBn": "স্ক্র্যাম্বলড পনিরে পেঁয়াজ, মটর, টমেটো এবং সবুজ লঙ্কা দিয়ে ঘি দিয়ে ভাজুন।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "dal-tadka",
@@ -3926,33 +3926,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Dal Tadka (Tempered Yellow Lentils)",
-    "descriptionBn": "Creamy split peas slow-cooked দিয়ে turmeric, tempered দিয়ে ঘি, জিরা, রসুন এবং dried red chilies.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "ডাল তড়কা (টেম্পারড হলুদ মসুর ডাল)",
+    "descriptionBn": "ক্রিমি স্প্লিট মটরগুলি হলুদ দিয়ে ধীরে ধীরে রান্না করা, ঘি, জিরা, রসুন এবং শুকনো লাল লঙ্কা দিয়ে মেখে।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "chole-bhature-special",
@@ -4025,33 +4025,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Chole Bhature (Punjabi Spiced ছোলা / বুট)",
-    "descriptionBn": "Rich, dark ছোলা / বুট spiced দিয়ে a custom গরম মশলা, served দিয়ে massive, puffed refined flour flatbreads.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "চোলে ভাটুরে (পাঞ্জাবি মশলাদার ছোলা)",
+    "descriptionBn": "একটি কাস্টম গরম মসলার সাথে মশলাযুক্ত ধনী, গাঢ় ছোলা, বিশাল, স্ফীত মিহি ময়দার ফ্ল্যাটব্রেডের সাথে পরিবেশন করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "mutter-paneer",
@@ -4124,33 +4124,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Mutter পনির (পনির এবং Peas)",
-    "descriptionBn": "A classic home-style preparation পনির cheese cubes এবং sweet green peas in a টমেটো gravy.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "মটার পনির (পনির এবং মটর)",
+    "descriptionBn": "টমেটো গ্রেভিতে পনির পনির কিউব এবং মিষ্টি সবুজ মটরের একটি ক্লাসিক হোম-স্টাইল প্রস্তুতি।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "samosa-special",
@@ -4223,33 +4223,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Vegetable Samosa (Indian আলু Pastry)",
-    "descriptionBn": "Crispy, flaky triangular pastries stuffed দিয়ে a savory filling spiced potatoes, green peas এবং cashews.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "ভেজিটেবল সামোসা (ভারতীয় আলু পেস্ট্রি)",
+    "descriptionBn": "মসলাযুক্ত আলু, সবুজ মটর এবং কাজু দিয়ে ভরাট করা খাস্তা, ফ্ল্যাকি ত্রিভুজাকার পেস্ট্রি।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "palak-paneer-special",
@@ -4322,33 +4322,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Palak পনির (পনির in পালং শাক Gravy)",
-    "descriptionBn": "পনির cheese cubes simmered in a smooth, vibrant, lightly spiced green পালং শাক gravy.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "পালক পনির (পালক গ্রেভিতে পনির)",
+    "descriptionBn": "পনির পনির কিউবগুলি একটি মসৃণ, প্রাণবন্ত, হালকা মশলাযুক্ত সবুজ পালং শাকের গ্রেভিতে সিদ্ধ করা হয়েছে।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "gajar-halwa-special",
@@ -4421,33 +4421,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Gajar Halwa (Slow Cooked গাজর Pudding)",
-    "descriptionBn": "Grated sweet carrots slow-cooked in whole দুধ, ঘি এবং cardamom, garnished দিয়ে roasted cashews.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "গজার হালুয়া (ধীরে রান্না করা গাজরের পুডিং)",
+    "descriptionBn": "গ্রেট করা মিষ্টি গাজর পুরো দুধ, ঘি এবং এলাচ দিয়ে ধীরে-সুস্থে রান্না করা, ভাজা কাজু দিয়ে সাজানো।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "gulab-jamun",
@@ -4520,33 +4520,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Gulab Jamun (Rose পানি দুধ Dumplings)",
-    "descriptionBn": "Soft দুধ-solid dumplings fried golden এবং soaked in a গরম গরম cardamom এবং rose পানি sugar syrup.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "গুলাব জামুন (গোলাপ জলের দুধের ডাম্পলিং)",
+    "descriptionBn": "নরম দুধ-কঠিন ডাম্পলিং সোনালি ভাজা এবং একটি উষ্ণ এলাচ এবং গোলাপ জল চিনির সিরায় ভিজিয়ে রাখুন।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "dum-aloo",
@@ -4619,33 +4619,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Kashmiri Dum Aloo (Yogurt Spiced Potatoes)",
-    "descriptionBn": "Baby potatoes parboiled, pricked এবং slow-cooked in a highly aromatic Kashmiri yogurt-fennel gravy.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "কাশ্মীরি দম আলু (দই মসলাযুক্ত আলু)",
+    "descriptionBn": "শিশুর আলুগুলি একটি অত্যন্ত সুগন্ধযুক্ত কাশ্মীরি দই-মৌরি গ্রেভিতে সিদ্ধ, ছেঁকে এবং ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "lemon-rice",
@@ -4718,33 +4718,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "লেবু Rice (Tempered Citrus Rice)",
-    "descriptionBn": "বাসমতী চাল tossed দিয়ে fresh লেবু juice, tempered দিয়ে crispy peanuts, mustard seeds এবং কারিপাতা.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "লেবু চাল (টেম্পারড সাইট্রাস রাইস)",
+    "descriptionBn": "বাসমতি চাল টাটকা লেবুর রস দিয়ে টস করা, খাস্তা চিনাবাদাম, সরিষা দানা এবং কারি পাতা দিয়ে মেখে।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "gobi-paratha",
@@ -4817,33 +4817,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Gobi Paratha (Stuffed ফুলকপি Flatbread)",
-    "descriptionBn": "Flaky, pan-roasted whole wheat flatbread stuffed দিয়ে spiced, grated ফুলকপি এবং cooked দিয়ে ঘি.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "গোবি পরাঠা (ভরা ফুলকপি ফ্ল্যাটব্রেড)",
+    "descriptionBn": "ফ্লেকি, প্যান-রোস্টেড গোটা গমের ফ্ল্যাট রুটি মসলা, গ্রেট করা ফুলকপি এবং ঘি দিয়ে রান্না করা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "rava-upma",
@@ -4916,33 +4916,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Rava Upma (Savory সুজি Breakfast)",
-    "descriptionBn": "Roasted সুজি cooked দিয়ে mixed vegetables, আদা এবং tempered দিয়ে mustard seeds এবং কারিপাতা.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "রাভা উপমা (রসালো সুজি ব্রেকফাস্ট)",
+    "descriptionBn": "ভাজা সুজি মিশ্র সবজি, আদা, এবং সরিষা বীজ এবং কারি পাতা দিয়ে মেজাজ রান্না করা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "methi-thepla",
@@ -5015,33 +5015,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Methi Thepla (Gujarati Fenugreek Flatbreads)",
-    "descriptionBn": "Thin, spiced flatbreads kneaded দিয়ে fresh কাসুরি মেথি, yogurt এবং toasted on a tawa দিয়ে oil.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "মেথি থেপলা (গুজরাটি মেথি ফ্ল্যাটব্রেড)",
+    "descriptionBn": "পাতলা, মসলাযুক্ত ফ্ল্যাটব্রেডগুলি তাজা মেথি পাতা, দই দিয়ে মাখানো এবং তেল দিয়ে তাওয়ায় টোস্ট করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "veg-jalfrezi",
@@ -5114,33 +5114,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Veg Jalfrezi (Sautéed Colorful Veggies)",
-    "descriptionBn": "Sweet bell peppers, carrots, ফুলকপি এবং peas stir-fried in a tangy, thick টমেটো-cumin gravy.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "ভেজ জালফ্রেজি (সট করা রঙিন সবজি)",
+    "descriptionBn": "মিষ্টি বেল মরিচ, গাজর, ফুলকপি, এবং মটরগুলি একটি ট্যাঞ্জি, ঘন টমেটো-জিরা গ্রেভিতে ভাজা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "rasgulla",
@@ -5213,33 +5213,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Rasgulla (Sweet Cheese Sponges)",
-    "descriptionBn": "Light, spongy cottage cheese balls boiled in a গরম গরম, fragrant sugar syrup until perfectly airy.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "রসগুল্লা (মিষ্টি পনির স্পঞ্জ)",
+    "descriptionBn": "হালকা, স্পঞ্জি কটেজ পনির বলগুলি একটি গরম, সুগন্ধি চিনির সিরাপে পুরোপুরি বায়বীয় হওয়া পর্যন্ত সিদ্ধ করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "masala-dosa-special",
@@ -5312,33 +5312,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Masala Dosa (Crisp Rice Crepes)",
-    "descriptionBn": "Fermented rice-lentil crepes stuffed দিয়ে a highly spiced, comforting dry আলু-onion mash.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "মসলা দোসা (খাস্তা রাইস ক্রেপস)",
+    "descriptionBn": "গাঁজন করা চাল-মসুর ডাল ক্রেপস একটি অত্যন্ত মশলাযুক্ত, আরামদায়ক শুকনো আলু-পেঁয়াজ ম্যাশ দিয়ে ভরা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "dal-panchmel",
@@ -5411,33 +5411,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Dal Panchmel (Rajasthani ৫-Lentil Mix)",
-    "descriptionBn": "A rich mixture five distinct lentils slow-cooked এবং tempered দিয়ে ঘি, hing এবং whole cumin.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "ডাল পাঁচমেল (রাজস্থানী ৫-মসুর মিক্স)",
+    "descriptionBn": "পাঁচটি স্বতন্ত্র মসুর ডালের একটি সমৃদ্ধ মিশ্রণ যা ধীরে-ধীরে রান্না করা হয় এবং ঘি, হিং এবং পুরো জিরা দিয়ে মেশায়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "aloo-methi",
@@ -5510,33 +5510,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Aloo Methi (Dry Spiced Potatoes & Fenugreek)",
-    "descriptionBn": "Potatoes এবং fresh কাসুরি মেথি stir-fried dry দিয়ে turmeric, red chilies এবং রসুন.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "আলু মেথি (শুকনো মশলা আলু এবং মেথি)",
+    "descriptionBn": "আলু এবং তাজা মেথি পাতা হলুদ, লাল লঙ্কা এবং রসুন দিয়ে শুকনো ভাজা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "kadhi-pakora",
@@ -5609,33 +5609,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Kadhi Pakora (Yogurt Fritter Stew)",
-    "descriptionBn": "Sour yogurt এবং gram flour gravy slow-simmered এবং loaded দিয়ে deep-fried spiced onion fritters.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "কড়ি পাকোড়া (দই ভাজা স্টু)",
+    "descriptionBn": "টক দই এবং বেসন ময়দার গ্রেভি ধীরে ধীরে সিদ্ধ করা হয় এবং গভীর ভাজা মশলাদার পেঁয়াজ ভাজা দিয়ে লোড করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "gobi-manchurian",
@@ -5708,33 +5708,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Gobi Manchurian (Indo-Chinese ফুলকপি)",
-    "descriptionBn": "Crisp, batter-fried ফুলকপি florets tossed in a গরম গরম, sweet-এবং-sour Indo-Chinese soy glaze.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "গোবি মাঞ্চুরিয়ান (ইন্দো-চীনা ফুলকপি)",
+    "descriptionBn": "খাস্তা, পিঠা-ভাজা ফুলকপি একটি গরম, মিষ্টি এবং টক ইন্দো-চীনা সয়া গ্লাসে ফেলে দেওয়া হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "aloo-gobi-matar",
@@ -5807,33 +5807,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Aloo Gobi Matar (Spiced ফুলকপি, Potatoes, & Peas)",
-    "descriptionBn": "A classic North Indian dry curry potatoes, ফুলকপি florets এবং sweet green peas.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "আলু গোবি মাতর (মশলাযুক্ত ফুলকপি, আলু এবং মটর)",
+    "descriptionBn": "আলু, ফুলকপির ফুলকপি এবং মিষ্টি সবুজ মটরের একটি ক্লাসিক উত্তর ভারতীয় শুকনো তরকারি।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "dhokla",
@@ -5906,33 +5906,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Khaman Dhokla (Steamed Gram Cakes)",
-    "descriptionBn": "Spongy, fermented steamed chickpea flour cakes tempered দিয়ে mustard seeds, green chilies এবং sugar syrup.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "খামন ধোকলা (ভাজা ছোলার কেক)",
+    "descriptionBn": "স্পঞ্জি, গাঁজানো বাষ্পযুক্ত ছোলার আটার কেকগুলি সরিষা দানা, সবুজ মরিচ এবং চিনির সিরাপ দিয়ে মেখে।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "rasmalai",
@@ -6005,33 +6005,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Rasmalai (Creamy Saffron Cheese Dumplings)",
-    "descriptionBn": "Chenna patties soaked in thick, cardamom এবং saffron scented sweetened দুধ, garnished দিয়ে cashews.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "রসমালাই (ক্রিমি জাফরান পনির ডাম্পলিং)",
+    "descriptionBn": "ঘন, এলাচ এবং জাফরান সুগন্ধযুক্ত মিষ্টি দুধে ভেজানো চেন্না প্যাটি, কাজু দিয়ে সাজানো।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "paneer-pasanda",
@@ -6104,33 +6104,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "পনির Pasanda (Cashew Gravy পনির Sandwich)",
-    "descriptionBn": "Fried পনির sandwiches stuffed দিয়ে nuts এবং পুদিনা পাতা, simmered in a highly luxurious, velvety cashew gravy.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "পনির পাসান্দা (কাজু গ্রেভি পনির স্যান্ডউইচ)",
+    "descriptionBn": "ভাজা পনির স্যান্ডউইচ বাদাম এবং পুদিনা দিয়ে ভরা, একটি অত্যন্ত বিলাসবহুল, মখমল কাজু গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "kashmiri-pulao",
@@ -6203,33 +6203,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Kashmiri Pulao (Sweet Fragrant Rice)",
-    "descriptionBn": "Fragrant বাসমতী চাল cooked দিয়ে whole cardamoms, saffron, sweetened দিয়ে raisins এবং topped দিয়ে cashews.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "কাশ্মীরি পুলাও (মিষ্টি সুগন্ধি চাল)",
+    "descriptionBn": "সুগন্ধি বাসমতি চাল পুরো এলাচ, জাফরান দিয়ে রান্না করা, কিসমিস দিয়ে মিষ্টি করা এবং কাজু দিয়ে উপরে।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "tandoori-roti",
@@ -6302,33 +6302,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Tandoori Roti (Clay-Oven Wheat Flatbread)",
-    "descriptionBn": "Whole wheat flatbread baked on walls a tandoor clay-oven, brushed দিয়ে melted ঘি.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "তন্দুরি রোটি (মাটির চুলা গমের ফ্ল্যাটব্রেড)",
+    "descriptionBn": "গলিত ঘি দিয়ে ব্রাশ করা তন্দুর মাটির চুলার দেয়ালে বেক করা পুরো গমের ফ্ল্যাট রুটি।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "masala-vadai",
@@ -6401,33 +6401,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Masala Vadai (Crispy Split Pea Patties)",
-    "descriptionBn": "South Indian crunchy deep-fried split pea patties spiced দিয়ে chopped onions, আদা এবং কারিপাতা.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "মসলা ভাদাই (খাস্তা স্প্লিট মটর প্যাটিস)",
+    "descriptionBn": "কাটা পেঁয়াজ, আদা এবং কারি পাতা দিয়ে মশলাযুক্ত দক্ষিণ ভারতীয় কুড়কুড়ে গভীর ভাজা স্প্লিট মটর প্যাটি।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "kadai-paneer",
@@ -6500,33 +6500,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Kadai পনির (Spiced Bell Pepper Cheese)",
-    "descriptionBn": "পনির cheese cubes sautéed দিয়ে bell peppers এবং onions in a freshly ground coriander-chili spice blend.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "কদাই পনির (মসলাযুক্ত বেল পিপার পনির)",
+    "descriptionBn": "পনির পনির কিউবগুলি একটি তাজা ভুনা ধনে-মরিচ মশলা মিশ্রণে বেল মরিচ এবং পেঁয়াজ দিয়ে ভাজা।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "jeera-aloo",
@@ -6599,33 +6599,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Jeera Aloo (Cumin Sautéed Potatoes)",
-    "descriptionBn": "Soft boiled আলু cubes sautéed dry দিয়ে whole জিরা, turmeric, green chilies এবং fresh coriander.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "জিরা আলু (জিরা ভাজা আলু)",
+    "descriptionBn": "নরম সেদ্ধ আলুর কিউবগুলি আস্ত জিরা, হলুদ, কাঁচা মরিচ এবং তাজা ধনে দিয়ে শুকনো ভাজুন।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "dal-makhani-dhaba",
@@ -6698,33 +6698,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Dal Makhani Dhaba-Style (Creamy Black Lentils)",
-    "descriptionBn": "Rich এবং creamy black lentils slow-cooked overnight দিয়ে cream, মাখন এবং mild smoking.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "ডাল মাখানি ধাবা-স্টাইল (ক্রিমি কালো মসুর ডাল)",
+    "descriptionBn": "ধনী এবং ক্রিমযুক্ত কালো মসুর ডাল ক্রিম, মাখন এবং হালকা ধূমপানের সাথে রাতারাতি ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "kheer-saffron",
@@ -6797,33 +6797,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Kheer (Saffron Rice Pudding)",
-    "descriptionBn": "Traditional sweet rice pudding slow-simmered in দুধ, flavored দিয়ে saffron, cardamom এবং sliced almonds.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "খির (জাফরান চালের পুডিং)",
+    "descriptionBn": "ঐতিহ্যবাহী মিষ্টি চালের পুডিং দুধে ধীরে-ধীরে সিদ্ধ করা, জাফরান, এলাচ এবং কাটা বাদাম দিয়ে স্বাদযুক্ত।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "suji-ka-halwa",
@@ -6896,33 +6896,33 @@ export const subcontinentalRecipes = [
         "instruction": "Melt ghee in a heavy skillet. Add cumin seeds and let them sizzle.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "Melt ঘি in a heavy skillet.জিরা যোগ করুন এবং let them sizzle."
+        "instructionBn": "একটি ভারী কড়াইতে ঘি গলিয়ে নিন। জিরা যোগ করুন এবং তাদের ঢেলে দিন।"
       },
       {
         "step": 2,
         "instruction": "Add prepped main vegetables or protein along with basic spices and salt.",
         "duration": 5,
         "technique": "sautéing",
-        "instructionBn": "prepped main vegetables অথবা protein along দিয়ে basic spices যোগ করুন এবং লবণ."
+        "instructionBn": "প্রাথমিক মশলা এবং লবণের সাথে প্রস্তুত করা প্রধান শাকসবজি বা প্রোটিন যোগ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add a splash of water, cover, and simmer on low heat until cooked through.",
         "duration": 10,
         "technique": "simmering",
-        "instructionBn": "a splash পানি, cover যোগ করুন এবং কম আঁচে until cooked through জ্বাল দিন."
+        "instructionBn": "জলের স্প্ল্যাশ যোগ করুন, ঢেকে দিন এবং রান্না না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Stir in garam masala just before turning off the heat for ultimate fragrance.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "in গরম মশলা just before turning off heat for ultimate fragrance নেড়ে দিন."
+        "instructionBn": "চূড়ান্ত সুবাসের জন্য তাপ বন্ধ করার ঠিক আগে গরম মসলায় নাড়ুন।"
       }
     ],
-    "titleBn": "Suji Ka Halwa (Roasted সুজি Pudding)",
-    "descriptionBn": "গরম গরম সুজি pudding golden-roasted in ঘি এবং cooked দিয়ে sugar syrup এবং cardamom.",
-    "culturalNoteBn": "A benchmark vegetarian delicacy celebrating heritage spice-craft Northern Indian home kitchens."
+    "titleBn": "সুজি কা হালওয়া (ভাজা সুজি পুডিং)",
+    "descriptionBn": "গরম সুজি পুডিং সোনালি-ঘিতে ভাজা এবং চিনির সিরাপ ও এলাচ দিয়ে রান্না করুন।",
+    "culturalNoteBn": "উত্তর ভারতীয় বাড়ির রান্নাঘরের ঐতিহ্যবাহী মশলা-শিল্প উদযাপনের একটি বেঞ্চমার্ক নিরামিষ খাবার।"
   },
   {
     "id": "mutton-karahi",
@@ -6995,33 +6995,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mutton Karahi (Lahori Wok Mutton)",
-    "descriptionBn": "Highly seasoned খাসির মাংসের টুকরো flash-fried in a deep wok দিয়ে গোলমরিচ, fresh আদা এবং green chilies.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "মাটন করাহি (লাহোরি ওয়াক মাটন)",
+    "descriptionBn": "কালো মরিচ, তাজা আদা, এবং সবুজ মরিচ দিয়ে একটি গভীর কড়ায় ভাজা উচ্চ পাকা মাটন কিউব।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "chicken-handi-special",
@@ -7094,33 +7094,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chicken Handi (Clay-Pot Creamy Chicken)",
-    "descriptionBn": "Mild, boneless chicken cubes slow-cooked in a traditional earthenware clay pot দিয়ে yogurt এবং ঘি.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "চিকেন হান্ডি (ক্লে-পট ক্রিমি চিকেন)",
+    "descriptionBn": "হালকা, হাড়বিহীন চিকেন কিউবগুলি দই এবং ঘি দিয়ে একটি ঐতিহ্যবাহী মাটির পাত্রে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "kofta-chana",
@@ -7193,33 +7193,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kofta Chana (Spiced Meatballs দিয়ে ছোলা / বুট)",
-    "descriptionBn": "A popular Lahore breakfast featuring tender ground beef meatballs এবং soft ছোলা / বুট in a rich gravy.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "কোফতা ছানা (ছোলার সাথে মসলাযুক্ত মিটবল)",
+    "descriptionBn": "একটি জনপ্রিয় লাহোর প্রাতঃরাশ যাতে একটি সমৃদ্ধ গ্রেভিতে কোমল গ্রাউন্ড বিফ মিটবল এবং নরম ছোলা থাকে।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "beef-paye",
@@ -7292,33 +7292,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Beef Paye (Slow-Cooked Trotters Stew)",
-    "descriptionBn": "A rich, gelatinous subcontinental stew made slow-cooked cow hoofs simmered overnight দিয়ে warming spices.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "গরুর মাংস পায়ে (ধীরে রান্না করা ট্রটার স্টু)",
+    "descriptionBn": "ধীরগতিতে রান্না করা গরুর খুর দিয়ে তৈরি একটি সমৃদ্ধ, জেলটিনাস উপমহাদেশীয় স্টু গরম মশলা দিয়ে রাতারাতি সিদ্ধ করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "kabuli-pulao",
@@ -7391,33 +7391,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kabuli Pulao (Aromatic Raisin-গাজর Rice)",
-    "descriptionBn": "Long-grain বাসমতী চাল cooked দিয়ে mutton, topped দিয়ে sweet caramelized গাজর matches এবং golden raisins.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "কাবুলি পুলাও (সুগন্ধি কিশমিশ-গাজর চাল)",
+    "descriptionBn": "মাটন দিয়ে রান্না করা লম্বা দানার বাসমতি চাল, উপরে মিষ্টি ক্যারামেলাইজড গাজর ম্যাচ এবং সোনালি কিসমিস।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "dal-mash",
@@ -7490,33 +7490,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Dal Mash (Pakistani Dhaba-Style Lentils)",
-    "descriptionBn": "Urad dal cooked dry-style, tempered দিয়ে plenty julienned আদা, green chilies এবং ঘি.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "ডাল মাশ (পাকিস্তানি ধাবা-স্টাইলের মসুর ডাল)",
+    "descriptionBn": "উরদ ডাল শুকনো স্টাইলে রান্না করা হয়, প্রচুর জুলিয়েন আদা, সবুজ লঙ্কা এবং ঘি দিয়ে মেজাজ।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "chicken-sajji",
@@ -7589,33 +7589,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chicken Sajji (Traditional Balochi Roast)",
-    "descriptionBn": "Balochistan spit-roasted whole chicken, rubbed দিয়ে লবণ এবং tart dry pomegranate seed powder.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "চিকেন সাজি (ঐতিহ্যবাহী বেলুচি রোস্ট)",
+    "descriptionBn": "বেলুচিস্তান থুতু-ভুজা আস্ত মুরগি, লবণ এবং টার্ট শুকনো ডালিম বীজের গুঁড়া দিয়ে ঘষে।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "murgh-cholay",
@@ -7688,33 +7688,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Lahori Murgh Cholay (Chicken & ছোলা / বুট)",
-    "descriptionBn": "A legendary street breakfast curry from Lahore combining chicken এবং split ছোলা / বুট in a spicy gravy.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "লাহোরি মুরঘ চোলে (মুরগি ও ছোলা)",
+    "descriptionBn": "লাহোর থেকে একটি কিংবদন্তি রাস্তার নাস্তার কারি যা একটি মশলাদার গ্রেভিতে চিকেন এবং ছোলার ডালকে একত্রিত করে।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "shami-kabab",
@@ -7787,33 +7787,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Shami Kabab (Velvety Pan-Fried Patties)",
-    "descriptionBn": "Super smooth patties made beef slow-boiled দিয়ে split peas, pureed, dipped in ডিম এবং pan-fried.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "শামি কাবাব (ভেলভেটি প্যান-ভাজা প্যাটিস)",
+    "descriptionBn": "গরুর মাংস দিয়ে তৈরি সুপার মসৃণ প্যাটিগুলি বিভক্ত মটর দিয়ে সিদ্ধ করা, ডিমে ডুবানো এবং প্যান-ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "mutton-kunna-special",
@@ -7886,33 +7886,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mutton Kunna (Chiniot Earthenware Clay Pot Stew)",
-    "descriptionBn": "Slow-cooked mutton shank in a thick, rich gravy prepared inside an earthenware clay pot (Kunna).",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "মাটন কুন্না (চিনিওট মাটির মাটির পাত্র স্ট্যু)",
+    "descriptionBn": "একটি মাটির পাত্রের (কুন্না) ভিতরে প্রস্তুত একটি ঘন, সমৃদ্ধ গ্রেভিতে ধীরে ধীরে রান্না করা মাটন শঙ্ক।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "zarda-rice",
@@ -7985,33 +7985,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Zarda Rice (Sweet Saffron Celebration Rice)",
-    "descriptionBn": "Aromatic বাসমতী চাল cooked দিয়ে sugar, saffron color, ঘি, cardamoms এবং loaded দিয়ে nuts এবং raisins.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "জর্দা চাল (মিষ্টি জাফরান উদযাপন চাল)",
+    "descriptionBn": "চিনি, জাফরান রং, ঘি, এলাচ, বাদাম ও কিশমিশ দিয়ে রান্না করা সুগন্ধি বাসমতি চাল।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "lamb-sajji",
@@ -8084,33 +8084,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Lamb Sajji (Balochi Spit-Roasted Lamb)",
-    "descriptionBn": "Spit-roasted whole lamb shank rubbed দিয়ে লেবু juice, লবণ এবং spices, cooked over slow wood embers.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "ল্যাম্ব সাজি (বেলুচি থুতু-ভুনা ভেড়া)",
+    "descriptionBn": "থুতু-ভুজা পুরো ভেড়ার শাঁক লেবুর রস, লবণ এবং মশলা দিয়ে ঘষে, ধীর কাঠের অঙ্গারে রান্না করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "sheer-khurma-special",
@@ -8183,33 +8183,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sheer Khurma (Eid Sweet সেমাই)",
-    "descriptionBn": "A rich সেমাই pudding slow-cooked in whole দুধ দিয়ে dates, green cardamoms এবং cashews.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "শের খুরমা (ঈদের মিষ্টি ভার্মিসেলি)",
+    "descriptionBn": "একটি সমৃদ্ধ ভার্মিসেলি পুডিং পুরো দুধে খেজুর, সবুজ এলাচ এবং কাজু দিয়ে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "karachi-biryani",
@@ -8282,33 +8282,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Karachi Chicken Biryani (Spicy Layered Rice)",
-    "descriptionBn": "A highly spiced, fiery Karachi-style biryani layering long বাসমতী চাল দিয়ে chicken এবং soft আলু halves.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "করাচি চিকেন বিরিয়ানি (মশলাদার লেয়ার্ড রাইস)",
+    "descriptionBn": "একটি অত্যন্ত মশলাদার, জ্বলন্ত করাচি-স্টাইলের বিরিয়ানি যাতে মুরগির মাংস এবং নরম আলুর অর্ধেক দিয়ে লম্বা বাসমতি চাল থাকে।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "dahi-bhally",
@@ -8381,33 +8381,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Dahi Bhally (Spiced Yogurt Lentil Dumplings)",
-    "descriptionBn": "Soft lentil dumplings in whipped yogurt, topped দিয়ে sweet তেঁতুল sauce, পুদিনা পাতা chutney এবং spices.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "দই ভলি (মসলাযুক্ত দই মসুর ডাম্পলিং)",
+    "descriptionBn": "নরম মসুর ডাম্পলিংস বেটে দই, উপরে মিষ্টি তেঁতুলের সস, পুদিনা চাটনি এবং মশলা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "chicken-jalfrezi",
@@ -8480,33 +8480,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chicken Jalfrezi (Sautéed Spicy Chicken)",
-    "descriptionBn": "Boneless chicken cubes stir-fried দিয়ে red এবং green bell peppers, white onions এবং গরম গরম green chilies.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "চিকেন জালফ্রেজি (সট করা মশলাদার চিকেন)",
+    "descriptionBn": "হাড়বিহীন চিকেন কিউব লাল এবং সবুজ বেল মরিচ, সাদা পেঁয়াজ এবং গরম সবুজ মরিচ দিয়ে ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "shinwari-tikka",
@@ -8579,33 +8579,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Shinwari Tikka (লবণ-Rubbed Flame Grilled Lamb)",
-    "descriptionBn": "Rustic Shinwari barbecued lamb chops seasoned purely দিয়ে sea লবণ এবং fat, flame-grilled on skewers.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "শিনওয়ারি টিক্কা (লবণ-ঘষা শিখা ভাজা মেষশাবক)",
+    "descriptionBn": "দেহাতি শিনওয়ারি বারবিকিউড ল্যাম্ব চপগুলি বিশুদ্ধভাবে সামুদ্রিক লবণ এবং চর্বিযুক্ত, স্ক্যুয়ারগুলিতে শিখা-ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "chana-chaat",
@@ -8678,33 +8678,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chana Chaat (Street Style Tangy ছোলা / বুট)",
-    "descriptionBn": "Tangy chickpea salad loaded দিয়ে chopped red onions, tomatoes, green chilies এবং তেঁতুল পানি.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "ছানা চাট (রাস্তার স্টাইল টং ছোলা)",
+    "descriptionBn": "কাটা লাল পেঁয়াজ, টমেটো, সবুজ মরিচ এবং তেঁতুলের জল দিয়ে লোড করা ট্যাঞ্জি ছোলার সালাদ।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "mutton-korma",
@@ -8777,33 +8777,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mutton Korma (Rich Yogurt Cardamom Mutton)",
-    "descriptionBn": "Royal mutton curry slow-cooked in a highly aromatic, velvety cardamom, yogurt এবং brown onion base.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "মাটন কোরমা (রিচ দই এলাচ মাটন)",
+    "descriptionBn": "রয়্যাল মাটন কারি একটি অত্যন্ত সুগন্ধযুক্ত, মখমল এলাচ, দই, এবং বাদামী পেঁয়াজ বেসে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "reshmi-kabab",
@@ -8876,33 +8876,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Reshmi Kabab (Silky Cream Chicken Skewers)",
-    "descriptionBn": "Minced chicken skewers mixed দিয়ে ভারী ক্রিম, মাখন এবং mild spices, grilled to silky tenderness.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "রেশমি কাবাব (সিল্কি ক্রিম চিকেন স্কেওয়ার)",
+    "descriptionBn": "ভারী ক্রিম, মাখন, এবং হালকা মশলা দিয়ে মিশ্রিত কিমা মুরগির স্ক্যুয়ার্স, সিল্কি কোমলতায় ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "keema-paratha",
@@ -8975,33 +8975,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Keema Paratha (Spiced Beef Stuffed Flatbread)",
-    "descriptionBn": "Flaky, layered whole wheat flatbread stuffed দিয়ে highly spiced minced beef এবং pan-fried দিয়ে ঘি.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "কিমা পরাঠা (মসলাযুক্ত গরুর মাংস স্টাফড ফ্ল্যাটব্রেড)",
+    "descriptionBn": "ফ্ল্যাকি, স্তরযুক্ত গোটা গমের ফ্ল্যাটব্রেডটি অত্যন্ত মসলাযুক্ত কিমা গরুর মাংস এবং প্যানে-ঘি দিয়ে ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "dum-pukht",
@@ -9074,33 +9074,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Dum Pukht Mutton (Slow Steam Dough Sealed Stew)",
-    "descriptionBn": "খাসির মাংসের টুকরো slow-steamed in its own fat দিয়ে potatoes এবং whole রসুন inside a flour-dough sealed pot.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "দম পুখত মাটন (ধীরে বাষ্পের আটা সিল করা স্টু)",
+    "descriptionBn": "একটি ময়দা-ময়দার সিল করা পাত্রের মধ্যে আলু এবং পুরো রসুন দিয়ে মাটন কিউবগুলি তার নিজস্ব চর্বিতে ধীরে ধীরে বাষ্প করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "kat-a-kat",
@@ -9173,33 +9173,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Kat-A-Kat (Lahori Flat Iron Griddle Fry)",
-    "descriptionBn": "A dramatic Lahori street dish chopped organ meats stir-fried on a flat iron griddle using heavy metal spatulas.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "কাট-এ-কাট (লাহোরি ফ্ল্যাট আয়রন গ্রিডল ফ্রাই)",
+    "descriptionBn": "কাটা অঙ্গের মাংসের একটি নাটকীয় লাহোরি স্ট্রিট ডিশ ভারী ধাতব স্প্যাটুলা ব্যবহার করে একটি লোহার ভাজা ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "peshori-karahi",
@@ -9272,33 +9272,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Peshori Karahi (টমেটো & Pepper Chicken)",
-    "descriptionBn": "A minimalist wok chicken curry cooked দিয়ে only tomatoes, green chilies, লবণ এবং freshly ground গোলমরিচ.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "পেশোরি করহি (টমেটো ও পিপার চিকেন)",
+    "descriptionBn": "একটি মিনিমালিস্ট ওয়াক চিকেন কারি যা শুধুমাত্র টমেটো, সবুজ মরিচ, লবণ এবং তাজা কালো মরিচ দিয়ে রান্না করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "gola-kabab",
@@ -9371,33 +9371,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Gola Kabab (Melt-in-Mouth Beef Balls)",
-    "descriptionBn": "Highly spiced round ground beef kababs seasoned দিয়ে raw papaya বাটা / পেস্ট এবং grilled to melt-in-mouth soft.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "গোলা কাবাব (মুখে গলে যাওয়া গরুর মাংসের বল)",
+    "descriptionBn": "উচ্চ মশলাযুক্ত গোলাকার গ্রাউন্ড গরুর মাংস কাবাব কাঁচা পেঁপের পেস্ট দিয়ে গ্রিল করা হয় যাতে মুখের মধ্যে নরম হয়ে যায়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "seekh-kabab-roll",
@@ -9470,33 +9470,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Seekh Kabab Roll (Street Style Paratha Wrap)",
-    "descriptionBn": "Charcoal grilled beef seekh kabab wrapped in a flaky fried paratha দিয়ে green পুদিনা পাতা chutney.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "সেখ কাবাব রোল (স্ট্রিট স্টাইল পরাথা মোড়ানো)",
+    "descriptionBn": "সবুজ পুদিনা চাটনির সাথে একটি ফ্ল্যাকি ভাজা পরাথায় মোড়ানো চারকোল গ্রিলড গরুর মাংসের চাট কাবাব।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "lobia-curry",
@@ -9569,33 +9569,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Lobia Curry (Pakistani Lobia Salan)",
-    "descriptionBn": "Black-eyed peas অথবা kidney beans simmered in a simple, warming onion এবং টমেটো gravy.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "লোবিয়া কারি (পাকিস্তানি লোবিয়া সালান)",
+    "descriptionBn": "কালো চোখের মটর বা কিডনি মটরশুটি একটি সাধারণ, গরম করা পেঁয়াজ এবং টমেটো গ্রেভিতে সিদ্ধ করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "pakistani-chicken-tikka",
@@ -9668,33 +9668,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chicken Tikka Skewers (Spicy Charcoal Chicken)",
-    "descriptionBn": "Fiery, yogurt-marinated মুরগির বুকের মাংস cubes skewered এবং charred over charcoal coals.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "চিকেন টিক্কা স্ক্যুয়ার্স (স্পাইসি চারকোল চিকেন)",
+    "descriptionBn": "জ্বলন্ত, দই-ম্যারিনেট করা মুরগির স্তনের কিউবগুলি কাঠকয়লা কয়লার উপর skewered এবং পুড়ে যায়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "halwa-puri",
@@ -9767,33 +9767,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Halwa Puri (Breakfast Feast Puris)",
-    "descriptionBn": "Crispy fried hollow wheat puriyas paired দিয়ে sweet সুজি halwa এবং spicy chickpea curry.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "হালুয়া পুরি (ব্রেকফাস্ট ফিস্ট পুরি)",
+    "descriptionBn": "মিষ্টি সুজি হালুয়া এবং মশলাদার ছোলার তরকারির সাথে খাস্তা ভাজা ফাঁপা গমের পুরিয়া।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "aloo-gosht",
@@ -9866,33 +9866,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Aloo Gosht (Comfort Mutton আলু Stew)",
-    "descriptionBn": "A deeply comforting everyday Pakistani stew mutton cooked দিয়ে large আলু chunks in a thin broth.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "আলু গোষ্ট (আরামদায়ক মাটন আলু স্টু)",
+    "descriptionBn": "পাতলা ঝোলের মধ্যে বড় আলুর টুকরো দিয়ে রান্না করা মটনের একটি গভীরভাবে আরামদায়ক প্রতিদিনের পাকিস্তানি স্টু।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "mutton-nihari",
@@ -9965,33 +9965,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Mutton Nihari (Slow Cooked Earthenware Mutton)",
-    "descriptionBn": "Mutton shanks slow-simmered overnight in a highly spiced, velvety broth thickened দিয়ে wheat flour.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "মাটন নিহারী (ধীরে রান্না করা মাটির পাত্রের মাটন)",
+    "descriptionBn": "গমের ময়দা দিয়ে ঘন করা একটি অত্যন্ত মশলাযুক্ত, মখমলের ঝোলের মধ্যে মাটনের শাঁকগুলি রাতারাতি ধীরে ধীরে সিদ্ধ হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "peshawari-chapli-kabab",
@@ -10064,33 +10064,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Peshawari Chapli Kabab (Pomegranate Beef Patties)",
-    "descriptionBn": "Flat minced beef patties mixed দিয়ে crushed pomegranate seeds, tomatoes এবং green chilies, shallow-fried.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "পেশোয়ারি চাপলি কাবাব (ডালিমের বিফ প্যাটিস)",
+    "descriptionBn": "চ্যাপ্টা কিমা করা গরুর মাংসের প্যাটিগুলি চূর্ণ ডালিমের বীজ, টমেটো এবং সবুজ মরিচের সাথে মেশানো, অগভীর ভাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "chicken-haleem",
@@ -10163,33 +10163,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Chicken Haleem (Slow Cooked Meat & Grain Stew)",
-    "descriptionBn": "A slow-cooked, deeply comforting stew chicken, barley এবং lentils mashed to a thick বাটা / পেস্ট, topped দিয়ে লেবু.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "মুরগির হালিম (ধীরে রান্না করা মাংস ও শস্যের স্টু)",
+    "descriptionBn": "মুরগি, বার্লি এবং মসুর ডালের একটি ধীরে-সিদ্ধ, গভীরভাবে আরামদায়ক স্টু একটি ঘন পেস্টে মেশানো, লেবু দিয়ে শীর্ষে।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "dum-pukht-biryani-sc",
@@ -10262,33 +10262,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Dum Pukht Biryani (Steam-Sealed Mutton Rice)",
-    "descriptionBn": "Highly aromatic mutton এবং বাসমতী চাল slow-cooked under a dough-sealed pot for ultimate steam infusion.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "দম পুখত বিরিয়ানি (বাষ্পে সিল করা মাটন রাইস)",
+    "descriptionBn": "অত্যন্ত সুগন্ধযুক্ত মাটন এবং বাসমতি চাল চূড়ান্ত বাষ্প আধানের জন্য একটি ময়দা-সিল করা পাত্রের নীচে ধীরে ধীরে রান্না করা হয়।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "sheermal-flatbread",
@@ -10361,33 +10361,33 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Sheermal Flatbread (Saffron Sweet Flatbread)",
-    "descriptionBn": "A rich, saffron-flavored, slightly sweet traditional flatbread baked in a tandoor, brushed দিয়ে ঘি.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "শেরমাল ফ্ল্যাটব্রেড (জাফরান মিষ্টি ফ্ল্যাটব্রেড)",
+    "descriptionBn": "একটি সমৃদ্ধ, জাফরান-গন্ধযুক্ত, সামান্য মিষ্টি ঐতিহ্যবাহী ফ্ল্যাট রুটি একটি তন্দুরে বেকড, ঘি দিয়ে মাজা।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   },
   {
     "id": "namkeen-gosht",
@@ -10460,32 +10460,32 @@ export const subcontinentalRecipes = [
         "instruction": "Heat ghee in a heavy pot or karahi. Toast cumin seeds until spluttering.",
         "duration": 2,
         "technique": "tempering",
-        "instructionBn": "ঘি in a heavy pot অথবা karahi গরম করুন.Toast জিরা until spluttering."
+        "instructionBn": "একটি ভারী পাত্রে বা কড়াইতে ঘি গরম করুন। টোস্ট জিরা যতক্ষণ না স্প্লটার।"
       },
       {
         "step": 2,
         "instruction": "Sear the mutton cubes on high heat with salt and basic aromatics until browned.",
         "duration": 8,
         "technique": "searing",
-        "instructionBn": "Sear খাসির মাংসের টুকরো উচ্চ আঁচে দিয়ে লবণ এবং basic aromatics until browned."
+        "instructionBn": "বাদামী হওয়া পর্যন্ত লবণ এবং বেসিক অ্যারোমেটিকস দিয়ে উচ্চ তাপে মাটন কিউবগুলি সিদ্ধ করুন।"
       },
       {
         "step": 3,
         "instruction": "Add water or yogurt base, cover tightly, and simmer on low heat until meat is extremely tender.",
         "duration": 20,
         "technique": "simmering",
-        "instructionBn": "পানি অথবা yogurt base, cover tightly যোগ করুন এবং কম আঁচে until meat is extremely tender জ্বাল দিন."
+        "instructionBn": "জল বা দই বেস যোগ করুন, শক্তভাবে ঢেকে রাখুন, এবং মাংস অত্যন্ত কোমল না হওয়া পর্যন্ত কম আঁচে সিদ্ধ করুন।"
       },
       {
         "step": 4,
         "instruction": "Dust with fresh garam masala and serve hot with fresh flatbreads.",
         "duration": 2,
         "technique": "finishing",
-        "instructionBn": "Dust দিয়ে fresh গরম মশলা এবং গরম গরম দিয়ে fresh flatbreads পরিবেশন করুন."
+        "instructionBn": "তাজা গরম মসলা দিয়ে ধুলো এবং তাজা ফ্ল্যাটব্রেডের সাথে গরম পরিবেশন করুন।"
       }
     ],
-    "titleBn": "Namkeen Gosht (লবণ-Rubbed Slow Mutton)",
-    "descriptionBn": "Slow-cooked tender mutton shank using only লবণ, আদা, রসুন এবং animal fat, originating from KPK.",
-    "culturalNoteBn": "An authentic Pakistani recipe prepared দিয়ে traditional cooking vessels, highlighting robust regional barbecue এবং slow-cook traditions."
+    "titleBn": "নমকিন গোষ্ট (লবণ-ঘষা ধীর মটন)",
+    "descriptionBn": "কেপিকে থেকে উদ্ভূত লবণ, আদা, রসুন এবং পশুর চর্বি ব্যবহার করে ধীরে ধীরে রান্না করা টেন্ডার মাটন শ্যাঙ্ক।",
+    "culturalNoteBn": "একটি খাঁটি পাকিস্তানি রেসিপি ঐতিহ্যবাহী রান্নার পাত্র দিয়ে প্রস্তুত, শক্তিশালী আঞ্চলিক বারবিকিউ এবং ধীর-রান্নার ঐতিহ্যকে তুলে ধরে।"
   }
 ];

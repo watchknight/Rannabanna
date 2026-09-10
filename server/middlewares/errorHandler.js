@@ -10,14 +10,23 @@
 export function errorHandler(err, req, res, next) {
   console.error('❌ Operational server error occurred:', err);
 
-  const status = err.statusCode || err.status || 500;
-  const message = err.message || 'Internal Server Error';
+  // If headers have already been sent, delegate to Express's default handler
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  const status = typeof err.statusCode === 'number' ? err.statusCode : (typeof err.status === 'number' ? err.status : 500);
+  
+  // Sanitize error messages on 5xx errors in production to avoid leaking internals
+  const message = status >= 500 && process.env.NODE_ENV !== 'development'
+    ? 'Internal Server Error'
+    : (err.message || 'Internal Server Error');
 
   res.status(status).json({
     status: 'error',
     statusCode: status,
     message: message,
-    // Safely hide trace stack dumps in potential production stages
-    stack: process.env.NODE_ENV === 'production' ? undefined : err.stack
+    // Only expose stack traces in explicit development mode
+    stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
   });
 }

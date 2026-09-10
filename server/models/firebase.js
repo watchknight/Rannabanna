@@ -26,10 +26,10 @@ try {
       isFirebaseInitialized = true;
       console.log('🔥 Firebase Admin SDK initialized successfully with service account.');
     } else {
-      console.error('\n❌ FIREBASE CONFIG WARNING:\n   Your "server/config/service-account.json" is still using placeholders!\n   Please download a real private key JSON from the Firebase Console:\n   https://console.firebase.google.com/project/rannabanna-chef/settings/serviceaccounts/adminsdk\n');
+      console.log('ℹ️ Firebase service account using placeholders. Running in local SQLite offline mode.');
     }
   } else {
-    console.error('\n❌ FIREBASE CONFIG ERROR:\n   "server/config/service-account.json" was not found!\n   Please save your Firebase private key JSON file to that path.\n');
+    console.log('ℹ️ Running in local SQLite offline mode (Firebase service account not present).');
   }
 } catch (error) {
   console.error('\n❌ FIREBASE INITIALIZATION ERROR:', error.message, '\n');

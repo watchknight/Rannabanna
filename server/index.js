@@ -1,18 +1,65 @@
 import express from 'express';
 import cors from 'cors';
-import { db } from './models/db.js';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { rateLimiter } from './middlewares/rateLimiter.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { recipeRouter } from './routes/recipeRoutes.js';
 import { ingredientRouter } from './routes/ingredientRoutes.js';
+import { adminRouter } from './routes/adminRoutes.js';
 import { recipeService } from './services/recipeService.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const distPath = path.resolve(__dirname, '..', 'dist');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Register standard core middlewares
-app.use(cors());
-app.use(express.json());
+// Enable trust proxy for secure header and IP resolution
+app.set('trust proxy', 1);
+
+// Security Headers Middleware
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  if (process.env.NODE_ENV === 'production') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  }
+  next();
+});
+
+// Register standard core middlewares with CORS whitelist
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())
+  : ['http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:5173'];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (
+      !origin || 
+      allowedOrigins.includes('*') || 
+      allowedOrigins.includes(origin) || 
+      process.env.NODE_ENV !== 'production' ||
+      origin.endsWith('.onrender.com') ||
+      origin.includes('localhost')
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error('Blocked by CORS policy'));
+    }
+  },
+  credentials: true
+}));
+app.use(express.json({ limit: '1mb' }));
+
+// Health check endpoint for Render / monitoring
+app.get(['/health', '/api/health'], (req, res) => {
+  res.status(200).json({ status: 'ok', uptime: process.uptime(), timestamp: new Date().toISOString() });
+});
 
 // Enable IP Rate Limiting for abuse prevention
 app.use(rateLimiter);
@@ -23,6 +70,7 @@ app.use(rateLimiter);
 app.use('/api/recipes', recipeRouter);
 app.use('/api/recipe', recipeRouter);
 app.use('/api/ingredients', ingredientRouter);
+app.use('/api/admin', adminRouter);
 
 // ═══════════════════════════════════════════════════════════
 // 2. Legacy Autocomplete & Matchmaker Compatibility Layer
@@ -97,7 +145,7 @@ app.get('/api/recipes/:id', async (req, res, next) => {
 /**
  * @desc Legacy weighted matchmaking engine interface
  */
-app.post('/api/match', async (req, res, next) => {
+app.post(['/api/match', '/api/recipes/match'], async (req, res, next) => {
   try {
     const { ingredientIds = [], filters = {} } = req.body;
     const matches = await recipeService.matchRecipes(ingredientIds, filters);
@@ -125,6 +173,31 @@ app.post('/api/custom-recipe', async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+// ═══════════════════════════════════════════════════════════
+// 3. Static Asset Delivery & SPA Fallback for Production
+// ═══════════════════════════════════════════════════════════
+if (fs.existsSync(distPath)) {
+  console.log(`📦 Serving production static build from: ${distPath}`);
+  app.use(express.static(distPath));
+
+  // Client-side SPA routing fallback for non-API GET routes (Express 5 compatible)
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.originalUrl.startsWith('/api')) {
+      return res.sendFile(path.join(distPath, 'index.html'));
+    }
+    next();
+  });
+}
+
+// 404 Catch-All for unmatched API routes
+app.use((req, res) => {
+  res.status(404).json({
+    status: 'error',
+    statusCode: 404,
+    message: `Route not found: ${req.method} ${req.originalUrl}`
+  });
 });
 
 // Register Global Operational Error Handling Middleware

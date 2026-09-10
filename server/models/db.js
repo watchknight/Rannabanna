@@ -1,6 +1,7 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { seedDatabase } from '../seed.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,6 +19,24 @@ export const db = new Database(dbPath);
 
 // Enable foreign keys constraints
 db.pragma('foreign_keys = ON');
+
+// Self-healing check: Ensure core catalog tables exist and are populated
+try {
+  const tableCheck = db.prepare("SELECT count(*) as count FROM sqlite_master WHERE type='table' AND name='recipes'").get();
+  if (!tableCheck || tableCheck.count === 0) {
+    console.log('🌱 Core tables missing in SQLite database. Auto-seeding catalog...');
+    seedDatabase(db);
+  } else {
+    const countCheck = db.prepare("SELECT count(*) as count FROM recipes").get();
+    if (!countCheck || countCheck.count === 0) {
+      console.log('🌱 Recipes table is empty. Auto-seeding catalog...');
+      seedDatabase(db);
+    }
+  }
+} catch (catalogInitErr) {
+  console.log('🌱 Auto-seeding SQLite database on initial boot:', catalogInitErr.message);
+  seedDatabase(db);
+}
 
 // Automatically run DDL migrations for User management and Generation History
 try {

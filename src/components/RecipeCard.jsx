@@ -6,8 +6,8 @@ function RecipeCard({ recipe, selectedIds = [] }) {
   const navigate = useNavigate()
   const { cuisines, language, t } = useDatabase()
   
-  const cuisine = cuisines.find(c => c.id === recipe.cuisineId)
-  const totalTime = recipe.prepTime + recipe.cookTime
+  const cuisine = (cuisines || []).find(c => c.id === recipe.cuisineId)
+  const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0)
 
   const getMatchBadgeClass = (pct) => {
     if (pct >= 90) return 'badge-match-high'
@@ -29,10 +29,14 @@ function RecipeCard({ recipe, selectedIds = [] }) {
     <div 
       className="recipe-card glass-panel glass-panel-hover animate-scale-in"
       onClick={handleCardClick}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardClick(); } }}
+      tabIndex={0}
+      role="button"
+      aria-label={`${title} (${cuisineName}), ${totalTime} ${t('mins')}, ${recipe.calories || 0} kcal`}
       id={`recipe-card-${recipe.id}`}
     >
       <div className="recipe-card-img-placeholder">
-        <span className="recipe-card-emoji">{recipe.imageEmoji || '🍲'}</span>
+        <span className="recipe-card-emoji" role="img" aria-label={title}>{recipe.imageEmoji || '🍲'}</span>
         {recipe.matchPercentage !== undefined && (
           <span className={`badge recipe-match-badge ${getMatchBadgeClass(recipe.matchPercentage)}`}>
             {recipe.matchPercentage}% {t('matchPercentageBadge')}
@@ -54,15 +58,15 @@ function RecipeCard({ recipe, selectedIds = [] }) {
         
         <div className="recipe-card-meta">
           <div className="recipe-card-meta-item">
-            <span>⏱️</span>
+            <span role="img" aria-label="Cook time">⏱️</span>
             <span>{totalTime} {t('mins')}</span>
           </div>
           <div className="recipe-card-meta-item">
-            <span>👨‍🍳</span>
+            <span role="img" aria-label="Difficulty">👨‍🍳</span>
             <span style={{ textTransform: 'capitalize' }}>{t(recipe.difficulty || 'intermediate')}</span>
           </div>
           <div className="recipe-card-meta-item">
-            <span>🔥</span>
+            <span role="img" aria-label="Calories">🔥</span>
             <span>{recipe.calories} kcal</span>
           </div>
         </div>
@@ -76,9 +80,9 @@ function RecipeCard({ recipe, selectedIds = [] }) {
             background: 'rgba(255, 255, 255, 0.04)',
             border: '1px solid rgba(255, 255, 255, 0.06)',
             fontSize: '0.75rem',
-            color: 'var(--text-tertiary, #888)'
+            color: 'var(--text-secondary)'
           }}>
-            <span style={{ color: 'var(--brand-orange)' }}>🛒 {t('needLabel')}: </span>
+            <span style={{ color: 'var(--brand-orange)', fontWeight: '600' }}>🛒 {t('needLabel')}: </span>
             {recipe.missingEssential.slice(0, 3).map(m => {
               const name = language === 'bn' ? (m.nameBn || m.name) : m.name
               return `${m.emoji} ${name}`
