@@ -98,6 +98,7 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
   const matchedRecipes = []
   const globalTargetServings = filters.servings ? Number(filters.servings) : null
   const onHandMap = filters.onHand || {}
+  const staticIngredientsMap = new Map(staticIngredients.map(i => [i.id, i]))
 
   for (const recipe of staticRecipes) {
     const rIngredients = recipe.ingredients || []
@@ -151,7 +152,7 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
     const missingEssential = essential
       .filter(ri => !isSatisfied(ri))
       .map(ri => {
-        const ingObj = staticIngredients.find(i => i.id === ri.ingredientId)
+        const ingObj = staticIngredientsMap.get(ri.ingredientId)
         if (!ingObj) return null
         const onHand = onHandMap[ri.ingredientId]
         const check = checkQuantitySatisfaction(ri, onHand, base, currentTargetServings)
@@ -168,7 +169,7 @@ function matchRecipesLocally(selectedIngredientIds = [], filters = {}) {
     const missingOptional = optional
       .filter(ri => !isSatisfied(ri))
       .map(ri => {
-        const ingObj = staticIngredients.find(i => i.id === ri.ingredientId)
+        const ingObj = staticIngredientsMap.get(ri.ingredientId)
         if (!ingObj) return null
         const onHand = onHandMap[ri.ingredientId]
         const check = checkQuantitySatisfaction(ri, onHand, base, currentTargetServings)

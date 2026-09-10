@@ -83,7 +83,7 @@ export function DatabaseProvider({ children }) {
             // Robust client-side fallback
             setCuisines(staticCuisines);
             setIngredients(staticIngredients);
-            setRecipes(staticRecipes);
+            setRecipes(staticRecipes.map(r => ({ ...r, difficulty: r.difficulty || 'intermediate' })));
             setIsOffline(true);
             setError(null); // Clear blocking error; offline mode is active
             setLoading(false);
@@ -115,7 +115,7 @@ export function DatabaseProvider({ children }) {
       // staticRecipes contains full recipe data (ingredients + steps); server-hydrated recipes may be summaries only
       const local = staticRecipes.find(r => r.id === recipeId);
       if (!local) throw new Error('Recipe not found');
-      return local;
+      return { ...local, difficulty: local.difficulty || 'intermediate' };
     }
   }, [recipes]);
 

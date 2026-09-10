@@ -17,10 +17,10 @@ function SearchResultsPage() {
   const [visibleGood, setVisibleGood] = useState(8)
   const [visibleExploratory, setVisibleExploratory] = useState(8)
 
-  // Extract ingredients from URL query parameter
+  // Extract ingredients from URL query parameter (deduplicated)
   const selectedIds = useMemo(() => {
     const raw = searchParams.get('ingredients')
-    return raw ? raw.split(',').filter(Boolean) : []
+    return raw ? Array.from(new Set(raw.split(',').filter(Boolean))) : []
   }, [searchParams])
 
   // Local state for active sidebar filters
@@ -403,7 +403,7 @@ function SearchResultsPage() {
                           onClick={() => setVisibleGreat(prev => prev + 8)}
                           id="show-more-great-btn"
                         >
-                          {t('showMore')} ({great.length - visibleGreat} {language === 'bn' ? 'অন্যান্য' : 'more'})
+                          {t('showMore')} ({language === 'bn' ? toBengaliNumber(great.length - visibleGreat) : (great.length - visibleGreat)} {language === 'bn' ? 'অন্যান্য' : 'more'})
                         </button>
                       </div>
                     )}
@@ -428,7 +428,7 @@ function SearchResultsPage() {
                           onClick={() => setVisibleGood(prev => prev + 8)}
                           id="show-more-good-btn"
                         >
-                          {t('showMore')} ({good.length - visibleGood} {language === 'bn' ? 'অন্যান্য' : 'more'})
+                          {t('showMore')} ({language === 'bn' ? toBengaliNumber(good.length - visibleGood) : (good.length - visibleGood)} {language === 'bn' ? 'অন্যান্য' : 'more'})
                         </button>
                       </div>
                     )}
@@ -453,7 +453,7 @@ function SearchResultsPage() {
                           onClick={() => setVisibleExploratory(prev => prev + 8)}
                           id="show-more-exploratory-btn"
                         >
-                          {t('showMore')} ({exploratory.length - visibleExploratory} {language === 'bn' ? 'অন্যান্য' : 'more'})
+                          {t('showMore')} ({language === 'bn' ? toBengaliNumber(exploratory.length - visibleExploratory) : (exploratory.length - visibleExploratory)} {language === 'bn' ? 'অন্যান্য' : 'more'})
                         </button>
                       </div>
                     )}
@@ -510,7 +510,7 @@ function SearchResultsPage() {
                 onClick={() => setIsMobileFilterOpen(false)}
                 id="apply-mobile-filters-btn"
               >
-                {language === 'bn' ? `ফলাফল দেখুন (${totalCount})` : `View Results (${totalCount})`}
+                {language === 'bn' ? `ফলাফল দেখুন (${toBengaliNumber(totalCount)})` : `View Results (${totalCount})`}
               </button>
             </div>
           </div>

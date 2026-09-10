@@ -6,7 +6,7 @@ import { translateCategory } from '../utils/translations'
 
 function CuisineDetailPage() {
   const { id } = useParams()
-  const { cuisines, recipes, ingredients, loading, language, t } = useDatabase()
+  const { cuisines, recipes, ingredients, loading, language, t, toBengaliNumber } = useDatabase()
   
   // Incremental recipes rendering to prevent rendering lag (cuisines have 50+ recipes!)
   const [visibleRecipesCount, setVisibleRecipesCount] = useState(8)
@@ -147,7 +147,7 @@ function CuisineDetailPage() {
         {/* Recipes Grid */}
         <div className="steps-panel glass-panel" id="cuisine-recipes-panel">
           <h2 style={{ fontSize: '1.5rem', marginBottom: 'var(--spacing-lg)' }}>
-            {language === 'bn' ? `${name} রেসিপিসমূহ (${cuisineRecipes.length})` : `${name} Recipes (${cuisineRecipes.length})`}
+            {language === 'bn' ? `${name} রেসিপিসমূহ (${toBengaliNumber(cuisineRecipes.length)})` : `${name} Recipes (${cuisineRecipes.length})`}
           </h2>
           
           {cuisineRecipes.length === 0 ? (
@@ -171,7 +171,7 @@ function CuisineDetailPage() {
                     onClick={() => setVisibleRecipesCount(prev => prev + 8)}
                     id="show-more-cuisine-recipes-btn"
                   >
-                    {t('showMore')} ({cuisineRecipes.length - visibleRecipesCount} {language === 'bn' ? 'অন্যান্য' : 'more'})
+                    {t('showMore')} ({language === 'bn' ? toBengaliNumber(cuisineRecipes.length - visibleRecipesCount) : (cuisineRecipes.length - visibleRecipesCount)} {language === 'bn' ? 'অন্যান্য' : 'more'})
                   </button>
                 </div>
               )}

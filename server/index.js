@@ -9,6 +9,7 @@ import { recipeRouter } from './routes/recipeRoutes.js';
 import { ingredientRouter } from './routes/ingredientRoutes.js';
 import { adminRouter } from './routes/adminRoutes.js';
 import { recipeService } from './services/recipeService.js';
+import { cacheService } from './services/cacheService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -148,7 +149,19 @@ app.get('/api/recipes/:id', async (req, res, next) => {
 app.post(['/api/match', '/api/recipes/match'], async (req, res, next) => {
   try {
     const { ingredientIds = [], filters = {} } = req.body;
+
+    if (!Array.isArray(ingredientIds)) {
+      return res.status(400).json({ error: 'ingredientIds must be an array' });
+    }
+
+    const cacheKey = cacheService.generateKey('match', { ingredientIds: [...ingredientIds].sort(), filters });
+    const cached = cacheService.get(cacheKey);
+    if (cached) {
+      return res.json(cached);
+    }
+
     const matches = await recipeService.matchRecipes(ingredientIds, filters);
+    cacheService.set(cacheKey, matches, 10 * 60 * 1000); // 10 minutes TTL
     res.json(matches);
   } catch (error) {
     next(error);

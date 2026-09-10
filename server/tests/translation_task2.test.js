@@ -136,4 +136,38 @@ describe('Task 2 — English to Bangla Translation Verification Suite', () => {
     assert.strictEqual(untranslatedPreps.size, 0, `Untranslated preparations: ${[...untranslatedPreps].join(', ')}`);
   });
 
+  test('11. Dynamic Cultural Notes: 100% of recipes have authentic culturalNoteBn', () => {
+    const missingCulturalBn = [];
+    for (const r of recipes) {
+      if (r.culturalNote && (!r.culturalNoteBn || r.culturalNoteBn === r.culturalNote)) {
+        missingCulturalBn.push(r.id);
+      }
+    }
+    assert.strictEqual(missingCulturalBn.length, 0, `All recipes with culturalNote must have culturalNoteBn. Missing: ${missingCulturalBn.join(', ')}`);
+  });
+
+  test('12. Meal Types Translation: 100% of meal types translate to Bengali', () => {
+    const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack', 'dessert'];
+    for (const mt of mealTypes) {
+      assert.ok(translations.bn[mt], `Missing Bengali translation for mealType: ${mt}`);
+      assert.notStrictEqual(translations.bn[mt], mt, `MealType ${mt} is untranslated`);
+    }
+  });
+
+  test('13. Difficulty Levels Translation: 100% of difficulties translate to Bengali', () => {
+    const difficulties = ['beginner', 'intermediate', 'hard', 'advanced'];
+    for (const diff of difficulties) {
+      assert.ok(translations.bn[diff], `Missing Bengali translation for difficulty: ${diff}`);
+      assert.notStrictEqual(translations.bn[diff], diff, `Difficulty ${diff} is untranslated`);
+    }
+  });
+
+  test('14. Dietary Preferences Translation: 100% of dietary tags translate to Bengali', () => {
+    const tags = ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'nut-free'];
+    for (const tag of tags) {
+      assert.ok(translations.bn[tag], `Missing Bengali translation for dietary tag: ${tag}`);
+      assert.notStrictEqual(translations.bn[tag], tag, `Dietary tag ${tag} is untranslated`);
+    }
+  });
+
 });

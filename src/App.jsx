@@ -2,6 +2,7 @@ import React, { useEffect, Suspense, lazy } from 'react'
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { useDatabase } from './context/DatabaseContext'
 
 // Lazy load route pages to optimize the initial bundle size
 const HomePage = lazy(() => import('./pages/HomePage'))
@@ -22,7 +23,13 @@ function ScrollToTop() {
 }
 
 const PageLoadingFallback = () => {
-  const language = localStorage.getItem('rannabanna-language') || 'en'
+  let language = 'en'
+  try {
+    const db = useDatabase()
+    if (db?.language) language = db.language
+  } catch {
+    language = localStorage.getItem('rannabanna-language') || 'en'
+  }
   return (
     <div 
       className="glass-panel animate-pulse" 
@@ -95,7 +102,7 @@ class ErrorBoundary extends React.Component {
 }
 
 function NotFoundPage() {
-  const language = localStorage.getItem('rannabanna-language') || 'en'
+  const { language } = useDatabase()
   const title = language === 'bn' ? 'পৃষ্ঠা পাওয়া যায়নি' : 'Page Not Found'
   const desc = language === 'bn' ? 'আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান নেই।' : "The page you're looking for doesn't exist."
   const goHome = language === 'bn' ? 'হোমে যান' : 'Go Home'

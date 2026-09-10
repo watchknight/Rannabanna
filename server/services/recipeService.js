@@ -248,7 +248,7 @@ class RecipeService {
    * Runs in under 2ms!
    */
   async matchRecipes(ingredientIds = [], filters = {}) {
-    if (ingredientIds.length === 0) {
+    if (!Array.isArray(ingredientIds) || ingredientIds.length === 0) {
       return { perfect: [], great: [], good: [], exploratory: [], totalCount: 0 };
     }
 
@@ -583,13 +583,16 @@ class RecipeService {
       emoji: r.emoji
     }));
 
-    return {
+    const detailed = {
       ...recipe,
+      baseServings: recipe.baseServings || recipe.servings || 4,
       mealType: mealTypes,
       dietaryTags: dietaryTags,
       steps: steps,
       ingredients: recipeIngredients
     };
+
+    return decorateRecipeTranslations(detailed);
   }
 
   /**

@@ -4,7 +4,7 @@ import { useDatabase } from '../context/DatabaseContext'
 import Logo from './Logo'
 
 function Footer() {
-  const { t, language, cuisines } = useDatabase()
+  const { t, language, cuisines, toBengaliNumber } = useDatabase()
 
   // Look up cuisine names from canonical data for consistency
   const getCuisineName = (cuisineId) => {
@@ -61,7 +61,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Rannabanna. {t('footerCopyright')}</p>
+        <p>&copy; {language === 'bn' ? toBengaliNumber(new Date().getFullYear()) : new Date().getFullYear()} Rannabanna. {t('footerCopyright')}</p>
         <p className="footer-legal-links">
           <a href="#terms">{t('terms')}</a>
           <a href="#privacy">{t('privacy')}</a>
