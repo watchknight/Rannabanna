@@ -13,7 +13,7 @@ export default function Logo({ size = 'nav', className = '' }) {
     large: 76
   };
   const pixelHeight = typeof size === 'number' ? size : heightMap[size] || 44;
-  const pixelWidth = Math.round(pixelHeight * (902 / 560));
+  const pixelWidth = Math.round(pixelHeight * (876 / 554));
 
   return (
     <div 
