@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
+import Logo from './Logo'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -25,8 +26,8 @@ function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="logo-container" id="nav-logo">
-          <span className="emoji">🍳</span> {t('logo')}
+        <Link to="/" className="logo-container" id="nav-logo" aria-label="Rannabanna - Cook the World with What You Have" title="Rannabanna">
+          <Logo size="nav" />
         </Link>
 
         {/* Desktop Nav */}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
+import Logo from './Logo'
 
 function Footer() {
   const { t, language, cuisines } = useDatabase()
@@ -16,7 +17,9 @@ function Footer() {
     <footer className="footer" id="main-footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <h4><span className="emoji">🍳</span> {t('logo')}</h4>
+          <Link to="/" style={{ display: 'inline-flex', textDecoration: 'none', marginBottom: '10px' }} aria-label="Rannabanna Home">
+            <Logo size="footer" />
+          </Link>
           <p>{t('footerDesc')}</p>
           <div className="social-links">
             <a href="#instagram" className="social-icon" aria-label="Instagram">📸</a>
