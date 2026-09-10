@@ -58,7 +58,7 @@ function HomePage() {
       </section>
 
       {/* How it Works Guide */}
-      <section style={{ margin: 'var(--spacing-xxl) 0' }} id="how-it-works-section">
+      <section className="home-section" id="how-it-works-section">
         <div className="section-header">
           <h2>{t('howItWorks')}</h2>
         </div>
@@ -82,7 +82,7 @@ function HomePage() {
       </section>
 
       {/* Featured Cuisines */}
-      <section style={{ margin: 'var(--spacing-xxl) 0' }} id="featured-cuisines-section">
+      <section className="home-section" id="featured-cuisines-section">
         <div className="section-header">
           <h2>{t('featuredCuisines')}</h2>
           <Link to="/cuisines" className="section-header-link" id="view-all-cuisines-link">
@@ -97,7 +97,7 @@ function HomePage() {
       </section>
 
       {/* Popular Recipes Grid */}
-      <section style={{ margin: 'var(--spacing-xxl) 0' }} id="popular-recipes-section">
+      <section className="home-section" id="popular-recipes-section">
         <div className="section-header">
           <h2>{t('popularRecipes')}</h2>
         </div>

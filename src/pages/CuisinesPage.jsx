@@ -46,7 +46,7 @@ function CuisinesPage() {
 
   return (
     <div className="cuisines-page-container animate-fade-in" id="cuisines-page-root">
-      <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xxl)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>
           {language === 'bn' ? 'বিশ্ব ' : 'Explore '}<span className="gradient-text">{language === 'bn' ? 'রন্ধনশৈলী এক্সপ্লোর করুন' : 'World Cuisines'}</span>
         </h1>

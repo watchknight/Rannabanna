@@ -157,7 +157,9 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
+  overflow-x: clip;
 }
 .app-container::before {
   content: '';
@@ -165,17 +167,17 @@ button, input, select, textarea {
   top: 0;
   left: 0;
   width: 100%;
-  height: 600px;
-  background: radial-gradient(circle at 50% -100px, rgba(233, 30, 99, 0.15) 0%, rgba(10, 10, 15, 0) 70%);
+  height: 500px;
+  background: radial-gradient(circle at 50% -80px, rgba(233, 30, 99, 0.15) 0%, rgba(10, 10, 15, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
 .main-content {
   flex: 1;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: calc(var(--nav-height) + var(--spacing-lg)) var(--spacing-md) var(--spacing-xxl);
+  padding: calc(var(--nav-height) + 14px) clamp(12px, 3vw, 24px) var(--spacing-xl);
   z-index: 1;
 }
 
@@ -379,17 +381,17 @@ select:focus-visible,
 .footer {
   background: #06060a;
   border-top: 1px solid var(--surface-border);
-  padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
 .footer-container {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 clamp(12px, 3vw, 24px);
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-xl);
 }
 .footer-brand h4 {
   font-family: var(--font-heading);
@@ -443,9 +445,9 @@ select:focus-visible,
   transform: scale(1.1);
 }
 .footer-bottom {
-  max-width: 1280px;
-  margin: var(--spacing-xxl) auto 0;
-  padding: var(--spacing-md) var(--spacing-md) 0;
+  max-width: 1320px;
+  margin: var(--spacing-lg) auto 0;
+  padding: var(--spacing-md) clamp(12px, 3vw, 24px) 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
@@ -456,7 +458,7 @@ select:focus-visible,
 /* Home Hero Section */
 .hero-section {
   text-align: center;
-  padding: var(--spacing-xxl) 0;
+  padding: var(--spacing-md) 0 var(--spacing-lg);
   position: relative;
 }
 .hero-badge {
@@ -470,13 +472,13 @@ select:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   animation: float 4s ease-in-out infinite;
 }
 .hero-section h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
   line-height: 1.15;
 }
 .hero-section h1 span.gradient-text {
@@ -485,10 +487,10 @@ select:focus-visible,
   -webkit-text-fill-color: transparent;
 }
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto var(--spacing-xxl);
+  margin: 0 auto var(--spacing-lg);
 }
 
 /* Ingredient Selector */
@@ -496,15 +498,15 @@ select:focus-visible,
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 .selected-container {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   min-height: 40px;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
   background: rgba(0, 0, 0, 0.2);
   border: 1px dashed rgba(255, 255, 255, 0.1);
@@ -747,7 +749,7 @@ select:focus-visible,
   max-height: 280px;
   overflow-y: auto;
   padding: var(--spacing-xs);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 0;
 }
 .ingredient-chip {
   display: flex;
@@ -795,6 +797,15 @@ select:focus-visible,
 
 .selector-actions {
   text-align: center;
+  margin-top: var(--spacing-md);
+}
+.selector-actions:empty {
+  margin-top: 0;
+}
+
+/* Home Section Rhythm */
+.home-section {
+  margin: var(--spacing-xl) 0;
 }
 
 /* Statistics Bar */
@@ -802,9 +813,9 @@ select:focus-visible,
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl);
-  margin: var(--spacing-xxl) auto;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: var(--spacing-xl) auto;
   max-width: 900px;
 }
 .stat-item {
@@ -812,7 +823,7 @@ select:focus-visible,
 }
 .stat-num {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: 800;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
@@ -821,7 +832,7 @@ select:focus-visible,
   margin-bottom: var(--spacing-xs);
 }
 .stat-label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 600;
   text-transform: uppercase;
@@ -833,7 +844,7 @@ select:focus-visible,
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 .section-header h2 {
   position: relative;
@@ -1063,20 +1074,20 @@ select:focus-visible,
 .search-page-container {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-lg);
   align-items: start;
 }
 .search-sidebar {
   position: sticky;
-  top: calc(var(--nav-height) + var(--spacing-lg));
-  max-height: calc(100vh - var(--nav-height) - var(--spacing-xxl));
+  top: calc(var(--nav-height) + 14px);
+  max-height: calc(100vh - var(--nav-height) - var(--spacing-xl));
   overflow-y: auto;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 .search-results-content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-xl);
 }
 
 /* Filter Panel styling */
@@ -1185,8 +1196,8 @@ select:focus-visible,
 .recipe-detail-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xxl);
-  margin-bottom: var(--spacing-xxl);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
   align-items: center;
 }
 .recipe-detail-visual {
@@ -1320,14 +1331,14 @@ select:focus-visible,
 .recipe-detail-body {
   display: grid;
   grid-template-columns: 1fr 1.8fr;
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-xl);
   align-items: start;
 }
 .ingredients-list-panel {
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
   position: sticky;
-  top: calc(var(--nav-height) + var(--spacing-lg));
-  max-height: calc(100vh - var(--nav-height) - var(--spacing-xxl));
+  top: calc(var(--nav-height) + 14px);
+  max-height: calc(100vh - var(--nav-height) - var(--spacing-xl));
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.12) transparent;

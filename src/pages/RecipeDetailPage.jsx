@@ -198,7 +198,7 @@ function RecipeDetailPage() {
 
       {/* 2. Cultural Note Callout */}
       {culturalNote && (
-        <section style={{ marginBottom: 'var(--spacing-xxl)' }} id="recipe-cultural-history">
+        <section style={{ marginBottom: 'var(--spacing-lg)' }} id="recipe-cultural-history">
           <div className="cultural-callout">
             <span style={{ fontSize: '1.25rem', marginRight: 'var(--spacing-sm)' }}>📜</span>
             <strong>{t('culturalContext')}:</strong> {culturalNote}
@@ -315,7 +315,7 @@ function RecipeDetailPage() {
 
       {/* 4. Related Cuisines Grid */}
       {relatedRecipes.length > 0 && (
-        <section style={{ marginTop: 'var(--spacing-xxl)' }} id="related-recipes-section">
+        <section style={{ marginTop: 'var(--spacing-xl)' }} id="related-recipes-section">
           <div className="section-header">
             <h2>{language === 'bn' ? `${cuisineName} রন্ধনশৈলী থেকে আরো রেসিপি` : `More from ${cuisineName} Cuisine`}</h2>
           </div>

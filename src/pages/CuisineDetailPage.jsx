@@ -68,11 +68,11 @@ function CuisineDetailPage() {
       <section 
         className="glass-panel" 
         style={{
-          padding: 'var(--spacing-xxl) var(--spacing-lg)',
+          padding: 'var(--spacing-xl) var(--spacing-lg)',
           background: `linear-gradient(135deg, ${cuisine.color}ee 0%, #0a0a0f 100%)`,
           border: 'none',
           borderRadius: 'var(--radius-lg)',
-          marginBottom: 'var(--spacing-xxl)',
+          marginBottom: 'var(--spacing-xl)',
           position: 'relative',
           overflow: 'hidden'
         }}

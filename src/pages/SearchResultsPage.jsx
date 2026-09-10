@@ -142,8 +142,8 @@ function SearchResultsPage() {
       {/* Upper header */}
       <div 
         style={{ 
-          marginBottom: 'var(--spacing-xl)', 
-          padding: 'var(--spacing-lg)', 
+          marginBottom: 'var(--spacing-md)', 
+          padding: 'var(--spacing-md) var(--spacing-lg)', 
           borderRadius: 'var(--radius-md)', 
           background: 'rgba(255, 255, 255, 0.02)',
           border: '1px solid var(--surface-border)'
@@ -245,8 +245,8 @@ function SearchResultsPage() {
           <div className="search-results-content">
             {/* Bespoke Chef Integration */}
             <div className="custom-chef-banner glass-panel animate-slide-up" style={{
-              padding: 'var(--spacing-lg)',
-              marginBottom: 'var(--spacing-xl)',
+              padding: 'var(--spacing-md) var(--spacing-lg)',
+              marginBottom: 'var(--spacing-md)',
               borderRadius: 'var(--radius-md)',
               border: '1px dashed var(--brand-pink)',
               background: 'linear-gradient(135deg, rgba(233, 30, 99, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%)',
