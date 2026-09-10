@@ -74,49 +74,14 @@ function RecipeDetailPage() {
     return recipes.filter(r => r.cuisineId === recipe.cuisineId && r.id !== recipe.id).slice(0, 3)
   }, [recipe, recipes])
 
-  if (loading) {
-    return (
-      <div className="empty-state glass-panel animate-pulse" style={{ padding: 'var(--spacing-xxl)' }} id="recipe-detail-loading">
-        <div className="empty-state-emoji animate-spin" style={{ animationDuration: '3s' }}>🍲</div>
-        <h3>{language === 'bn' ? 'রেসিপি প্রস্তুত করা হচ্ছে...' : 'Loading Recipe Details...'}</h3>
-        <p>{language === 'bn' ? 'ডাটাবেজ থেকে ধাপে ধাপে প্রস্তুত প্রণালী এবং রান্নার গোপনীয় কৌশলগুলো লোড হচ্ছে...' : 'Fetching step-by-step instructions and regional culinary secrets from the database...'}</p>
-      </div>
-    )
-  }
-
-  if (!recipe) {
-    return (
-      <div className="empty-state glass-panel animate-scale-in" id="error-recipe-not-found">
-        <div className="empty-state-emoji">🍽️</div>
-        <h3>{language === 'bn' ? 'রেসিপি পাওয়া যায়নি' : 'Recipe Not Found'}</h3>
-        <p>{language === 'bn' ? 'আমরা যে রেসিপিটি খুঁজছেন তা পাওয়া যায়নি। এটি হয়তো সরানো হয়েছে।' : "We couldn't find the recipe you are looking for. It may have been retired or moved."}</p>
-        <Link to="/" className="btn btn-primary" id="not-found-home-btn">
-          {t('home')}
-        </Link>
-      </div>
-    )
-  }
-
-  const baseServings = recipe.baseServings || recipe.servings || 4
+  const baseServings = recipe?.baseServings || recipe?.servings || 4
   const activeServings = servings || baseServings
-  const ingredientsList = Array.isArray(recipe.ingredients) ? recipe.ingredients : []
-  const stepsList = Array.isArray(recipe.steps) ? recipe.steps : []
-  const dietaryTagsList = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []
-
-  // Dynamically adjusted time based on servings count (pure arithmetic calculation)
-  const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings, recipe.timeAdjustment)
-
-  // Group recipe ingredients
-  const ingredientGroups = ingredientsList.reduce((acc, ri) => {
-    const groupName = ri.group || 'Main Ingredients'
-    if (!acc[groupName]) acc[groupName] = []
-    acc[groupName].push(ri)
-    return acc
-  }, {})
+  const ingredientsList = Array.isArray(recipe?.ingredients) ? recipe.ingredients : []
 
   // Compute missing essential ingredients (including on-hand quantity shortfall from scaling)
   const missingEssentials = useMemo(() => {
-    return ingredientsList
+    if (!recipe || !Array.isArray(recipe.ingredients)) return []
+    return recipe.ingredients
       .filter(ri => {
         if (!ri || !ri.isEssential) return false
         if (!selectedSet.has(ri.ingredientId)) return true
@@ -141,7 +106,44 @@ function RecipeDetailPage() {
           isInsufficient: Boolean(check && !check.satisfied)
         }
       })
-  }, [ingredientsList, selectedSet, onHandMap, baseServings, activeServings, ingredients])
+  }, [recipe, selectedSet, onHandMap, baseServings, activeServings, ingredients])
+
+  if (loading) {
+    return (
+      <div className="empty-state glass-panel animate-pulse" style={{ padding: 'var(--spacing-xxl)' }} id="recipe-detail-loading">
+        <div className="empty-state-emoji animate-spin" style={{ animationDuration: '3s' }}>🍲</div>
+        <h3>{language === 'bn' ? 'রেসিপি প্রস্তুত করা হচ্ছে...' : 'Loading Recipe Details...'}</h3>
+        <p>{language === 'bn' ? 'ডাটাবেজ থেকে ধাপে ধাপে প্রস্তুত প্রণালী এবং রান্নার গোপনীয় কৌশলগুলো লোড হচ্ছে...' : 'Fetching step-by-step instructions and regional culinary secrets from the database...'}</p>
+      </div>
+    )
+  }
+
+  if (!recipe) {
+    return (
+      <div className="empty-state glass-panel animate-scale-in" id="error-recipe-not-found">
+        <div className="empty-state-emoji">🍽️</div>
+        <h3>{language === 'bn' ? 'রেসিপি পাওয়া যায়নি' : 'Recipe Not Found'}</h3>
+        <p>{language === 'bn' ? 'আমরা যে রেসিপিটি খুঁজছেন তা পাওয়া যায়নি। এটি হয়তো সরানো হয়েছে।' : "We couldn't find the recipe you are looking for. It may have been retired or moved."}</p>
+        <Link to="/" className="btn btn-primary" id="not-found-home-btn">
+          {t('home')}
+        </Link>
+      </div>
+    )
+  }
+
+  const stepsList = Array.isArray(recipe.steps) ? recipe.steps : []
+  const dietaryTagsList = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []
+
+  // Dynamically adjusted time based on servings count (pure arithmetic calculation)
+  const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings, recipe.timeAdjustment)
+
+  // Group recipe ingredients
+  const ingredientGroups = ingredientsList.reduce((acc, ri) => {
+    const groupName = ri.group || 'Main Ingredients'
+    if (!acc[groupName]) acc[groupName] = []
+    acc[groupName].push(ri)
+    return acc
+  }, {})
 
   const title = language === 'bn' ? (recipe.titleBn || recipe.title) : recipe.title
   const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
