@@ -758,6 +758,7 @@ select:focus-visible,
   padding: 0 var(--spacing-lg);
   height: 56px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 .search-input-wrapper:focus-within {
   border-color: var(--brand-pink);
@@ -768,6 +769,8 @@ select:focus-visible,
   font-size: 1.25rem;
   color: var(--text-secondary);
   margin-right: var(--spacing-md);
+  flex-shrink: 0;
+  user-select: none;
 }
 .selector-search-box input {
   flex: 1;
@@ -781,10 +784,15 @@ select:focus-visible,
   outline: none;
   color: var(--text-primary);
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 8px;
 }
 .selector-search-box input::placeholder {
   color: var(--text-muted);
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   opacity: 0.85;
 }
 .clear-search-btn {
@@ -1853,11 +1861,12 @@ select:focus-visible,
 
   /* 8. Search bar mobile sizing */
   .ingredient-selector {
-    padding: var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xs);
   }
   .search-input-wrapper {
     height: 50px;
-    padding: 0 16px;
+    padding: 0 18px;
+    overflow: hidden !important;
   }
   .search-input-icon {
     font-size: 1.15rem;
@@ -1871,18 +1880,19 @@ select:focus-visible,
 /* Specific Phone Optimizations (<= 480px) */
 @media (max-width: 480px) {
   .ingredient-selector {
-    padding: var(--spacing-sm) 4px;
+    padding: var(--spacing-sm) 0 !important;
   }
   .search-input-wrapper {
-    height: 48px;
-    padding: 0 14px;
+    height: 46px !important;
+    padding: 0 14px !important;
+    overflow: hidden !important;
   }
   .search-input-icon {
-    font-size: 1.05rem;
-    margin-right: 8px;
+    font-size: 1rem !important;
+    margin-right: 8px !important;
   }
   .selector-search-box input {
-    font-size: 0.9rem;
+    font-size: 0.88rem !important;
   }
   .rannabanna-brand-img {
     height: 34px !important;

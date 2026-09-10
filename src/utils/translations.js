@@ -23,7 +23,7 @@ export const translations = {
     heroSubtitle: "Select the items in your fridge, pantry, or garden and discover authentic matching dishes from every culinary corner of the globe.",
     
     // Ingredient Selector
-    selectorPlaceholder: "Type to search ingredients...",
+    selectorPlaceholder: "Search ingredients...",
     selectedPlaceholder: "🍋 Select ingredients from below or type in the search bar to start...",
     clearAll: "Clear All",
     findRecipes: "Find Recipes",
