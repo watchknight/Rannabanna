@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { cuisines as staticCuisines } from '../data/cuisines.js';
 import { ingredients as staticIngredients } from '../data/ingredients.js';
 import { recipes as staticRecipes } from '../data/recipes.js';
 import { translations, toBengaliNumber } from '../utils/translations.js';
 import { API_BASE } from '../utils/apiConfig.js';
+import { 
+  translateWithGemini, 
+  getCachedTextTranslation, 
+  getCachedRecipeTranslation, 
+  subscribeToTranslations 
+} from '../utils/aiTranslator.js';
 
 const DatabaseContext = createContext(null);
 
@@ -15,6 +21,11 @@ export function DatabaseProvider({ children }) {
   const [error, setError] = useState(null);
   const [isOffline, setIsOffline] = useState(false);
   
+  // Translation in-flight count & dynamic translation cache
+  const [translatingCount, setTranslatingCount] = useState(0);
+  const [dynamicTranslations, setDynamicTranslations] = useState({});
+  const inFlightKeys = useRef(new Set());
+
   // Persisted language preference (default is English)
   const [language, setLanguageState] = useState(() => {
     return localStorage.getItem('rannabanna-language') || 'en';
@@ -25,6 +36,17 @@ export function DatabaseProvider({ children }) {
     document.documentElement.lang = language;
   }, [language]);
 
+  // Subscribe to external cache updates from aiTranslator
+  useEffect(() => {
+    const unsubscribe = subscribeToTranslations(({ type, key, value }) => {
+      if (type === 'text') {
+        const textKey = key.replace(/^bn:/, '');
+        setDynamicTranslations(prev => ({ ...prev, [textKey]: value }));
+      }
+    });
+    return unsubscribe;
+  }, []);
+
   const setLanguage = useCallback((lang) => {
     localStorage.setItem('rannabanna-language', lang);
     document.documentElement.lang = lang;
@@ -32,9 +54,39 @@ export function DatabaseProvider({ children }) {
   }, []);
 
   // Sleek, deterministic translation lookup helper with automatic numeral localization
+  // and on-demand Gemini translation fallback for uncached strings
   const t = useCallback((key, replacements = {}) => {
     const dict = translations[language] || translations['en'];
-    let val = dict[key] || translations['en'][key] || key;
+    let val = dict[key];
+
+    if (!val && language === 'bn') {
+      val = dynamicTranslations[key] || getCachedTextTranslation(key, 'bn') || getCachedTextTranslation(translations.en?.[key] || key, 'bn');
+
+      if (!val) {
+        val = translations['en']?.[key] || key;
+        const sourceToTranslate = translations['en']?.[key] || key;
+        if (typeof window !== 'undefined' && sourceToTranslate && !inFlightKeys.current.has(key)) {
+          inFlightKeys.current.add(key);
+          setTranslatingCount(c => c + 1);
+          translateWithGemini({ text: sourceToTranslate, targetLanguage: 'bn' })
+            .then(res => {
+              if (res?.success && res.translatedText) {
+                setDynamicTranslations(prev => ({ ...prev, [key]: res.translatedText }));
+              }
+            })
+            .catch(() => {})
+            .finally(() => {
+              inFlightKeys.current.delete(key);
+              setTranslatingCount(c => Math.max(0, c - 1));
+            });
+        }
+      }
+    }
+
+    if (!val) {
+      val = translations['en']?.[key] || key;
+    }
+
     Object.keys(replacements).forEach(k => {
       let repVal = replacements[k];
       if (language === 'bn' && (typeof repVal === 'number' || /^\d+$/.test(String(repVal)))) {
@@ -43,7 +95,7 @@ export function DatabaseProvider({ children }) {
       val = val.replaceAll(`{${k}}`, repVal);
     });
     return val;
-  }, [language]);
+  }, [language, dynamicTranslations]);
 
   // Fetch cuisines, ingredients, and recipes list on mount
   useEffect(() => {
@@ -136,6 +188,63 @@ export function DatabaseProvider({ children }) {
     });
   }, []);
 
+  // Translate a recipe object dynamically via Gemini 3.8 Flash with caching & English fallback
+  const translateRecipeViaAi = useCallback(async (recipeObj) => {
+    if (!recipeObj || language !== 'bn') return recipeObj;
+
+    // 1. Check if already has complete Bangla translation
+    const hasFullBn = recipeObj.titleBn && 
+      (!Array.isArray(recipeObj.steps) || recipeObj.steps.length === 0 || recipeObj.steps.every(s => s.instructionBn));
+    if (hasFullBn) {
+      return recipeObj;
+    }
+
+    // 2. Check client-side recipe cache
+    const cached = getCachedRecipeTranslation(recipeObj.id, 'bn');
+    if (cached) {
+      return { ...recipeObj, ...cached };
+    }
+
+    // 3. Cache miss: trigger Gemini translation
+    setTranslatingCount(c => c + 1);
+    try {
+      const result = await translateWithGemini({ recipe: recipeObj, targetLanguage: 'bn' });
+      if (result?.success && result.recipe) {
+        setRecipes(prev => prev.map(r => r.id === result.recipe.id ? { ...r, ...result.recipe } : r));
+        return result.recipe;
+      }
+    } catch (err) {
+      console.warn('⚠️ AI Recipe translation failed, falling back to English:', err.message);
+    } finally {
+      setTranslatingCount(c => Math.max(0, c - 1));
+    }
+
+    return recipeObj;
+  }, [language]);
+
+  // Translate dynamic text on-demand
+  const translateDynamicText = useCallback(async (text) => {
+    if (!text || language !== 'bn') return text;
+    const cached = dynamicTranslations[text] || getCachedTextTranslation(text, 'bn');
+    if (cached) return cached;
+
+    setTranslatingCount(c => c + 1);
+    try {
+      const res = await translateWithGemini({ text, targetLanguage: 'bn' });
+      if (res?.success && res.translatedText) {
+        setDynamicTranslations(prev => ({ ...prev, [text]: res.translatedText }));
+        return res.translatedText;
+      }
+    } catch (err) {
+      console.warn('Dynamic text translation failed, falling back to English:', err.message);
+    } finally {
+      setTranslatingCount(c => Math.max(0, c - 1));
+    }
+    return text;
+  }, [language, dynamicTranslations]);
+
+  const isTranslating = translatingCount > 0;
+
   const value = useMemo(() => ({
     cuisines,
     ingredients,
@@ -149,7 +258,12 @@ export function DatabaseProvider({ children }) {
     toBengaliNumber,
     fetchRecipeDetail,
     getCuisineById,
-    addCustomRecipeToLocalState
+    addCustomRecipeToLocalState,
+    translateRecipeViaAi,
+    translateDynamicText,
+    isTranslating,
+    translatingCount,
+    dynamicTranslations
   }), [
     cuisines,
     ingredients,
@@ -162,7 +276,12 @@ export function DatabaseProvider({ children }) {
     t,
     fetchRecipeDetail,
     getCuisineById,
-    addCustomRecipeToLocalState
+    addCustomRecipeToLocalState,
+    translateRecipeViaAi,
+    translateDynamicText,
+    isTranslating,
+    translatingCount,
+    dynamicTranslations
   ]);
 
   return (

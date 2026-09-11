@@ -17,6 +17,11 @@ import {
   translateText, 
   translateRecipe 
 } from '../services/translationService.js';
+import { 
+  translateWithGemini, 
+  getCachedTextTranslation, 
+  getCachedRecipeTranslation 
+} from '../../src/utils/aiTranslator.js';
 
 describe('Gemini 3.8 Flash Foundation, Custom Recipe & Translation Suite', () => {
   let app;
@@ -37,6 +42,7 @@ describe('Gemini 3.8 Flash Foundation, Custom Recipe & Translation Suite', () =>
       server = app.listen(0, () => {
         const port = server.address().port;
         baseUrl = `http://localhost:${port}`;
+        process.env.VITE_API_BASE_URL = baseUrl;
         resolve();
       });
     });
@@ -390,5 +396,81 @@ describe('Gemini 3.8 Flash Foundation, Custom Recipe & Translation Suite', () =>
     const data = await res.json();
     assert.strictEqual(data.success, false);
     assert.match(data.error, /GEMINI_API_KEY is not configured/);
+  });
+
+  test('19. Client aiTranslator: Returns from client memory cache with 0 network calls', async () => {
+    process.env.GEMINI_API_KEY = originalKey;
+    const cachedPhrase = 'Client cache instant hit test.';
+    const expectedBn = 'ক্লায়েন্ট ক্যাশ তাৎক্ষণিক হিট টেস্ট।';
+
+    // Seed server persistent cache first so translateWithGemini learns it
+    const hash = crypto.createHash('sha256').update(`bn:${cachedPhrase}`).digest('hex');
+    db.prepare(`
+      INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
+      VALUES (?, ?, ?, ?)
+    `).run(hash, cachedPhrase, 'bn', expectedBn);
+
+    // First call fetches and saves to client memory cache
+    const res1 = await translateWithGemini({ text: cachedPhrase, targetLanguage: 'bn' });
+    assert.strictEqual(res1.success, true);
+    assert.strictEqual(res1.translatedText, expectedBn);
+
+    // Second call must hit client_cache synchronously with 0 network calls
+    const res2 = await translateWithGemini({ text: cachedPhrase, targetLanguage: 'bn' });
+    assert.strictEqual(res2.success, true);
+    assert.strictEqual(res2.translatedText, expectedBn);
+    assert.strictEqual(res2.cached, true);
+    assert.strictEqual(res2.source, 'client_cache');
+  });
+
+  test('20. Client aiTranslator: Deduplicates concurrent in-flight requests for same text', async () => {
+    const concurrentText = `Concurrent deduplication test ${Date.now()}`;
+    const expectedBn = 'কনকারেন্ট টেস্ট অনুবাদ।';
+
+    const hash = crypto.createHash('sha256').update(`bn:${concurrentText}`).digest('hex');
+    db.prepare(`
+      INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
+      VALUES (?, ?, ?, ?)
+    `).run(hash, concurrentText, 'bn', expectedBn);
+
+    // Fire 3 simultaneous calls
+    const [p1, p2, p3] = await Promise.all([
+      translateWithGemini({ text: concurrentText, targetLanguage: 'bn' }),
+      translateWithGemini({ text: concurrentText, targetLanguage: 'bn' }),
+      translateWithGemini({ text: concurrentText, targetLanguage: 'bn' })
+    ]);
+
+    assert.strictEqual(p1.translatedText, expectedBn);
+    assert.strictEqual(p2.translatedText, expectedBn);
+    assert.strictEqual(p3.translatedText, expectedBn);
+  });
+
+  test('21. Client aiTranslator: Gracefully falls back to English text if request fails rather than breaking', async () => {
+    const originalUrl = process.env.VITE_API_BASE_URL;
+    process.env.VITE_API_BASE_URL = 'http://127.0.0.1:59999'; // Dead port
+
+    const englishFallbackText = 'Original English text that must not be broken.';
+    const result = await translateWithGemini({ text: englishFallbackText, targetLanguage: 'bn' });
+
+    assert.strictEqual(result.success, false);
+    assert.strictEqual(result.translatedText, englishFallbackText, 'Must gracefully return English text on failure');
+
+    process.env.VITE_API_BASE_URL = originalUrl;
+  });
+
+  test('22. Client aiTranslator: Pre-loaded recipe returns database-cached translation with 0 Gemini calls', async () => {
+    const preloadedRecipe = {
+      id: 'shorshe-ilish',
+      title: 'Mustard Hilsa Curry (Shorshe Ilish)',
+      steps: [
+        { step: 1, instruction: 'Marinate hilsa steaks.' }
+      ]
+    };
+
+    const res = await translateWithGemini({ recipe: preloadedRecipe, targetLanguage: 'bn' });
+    assert.strictEqual(res.success, true);
+    assert.strictEqual(res.cached, true);
+    assert.strictEqual(res.recipe.titleBn, 'সরিষা ইলিশ (ঐতিহ্যবাহী বাঙালি স্টাইল)');
+    assert.strictEqual(res.source, 'database');
   });
 });

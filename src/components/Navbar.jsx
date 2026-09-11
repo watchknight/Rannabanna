@@ -7,7 +7,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const { language, setLanguage, t } = useDatabase()
+  const { language, setLanguage, t, isTranslating } = useDatabase()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,8 +77,10 @@ function Navbar() {
             onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
             aria-label={language === 'en' ? 'Switch interface language to Bengali' : 'Switch interface language to English'}
             id="desktop-lang-toggle"
+            style={isTranslating ? { borderColor: 'rgba(167, 139, 250, 0.6)', boxShadow: '0 0 10px rgba(139, 92, 246, 0.35)' } : {}}
           >
             {language === 'en' ? '🇧🇩 বাংলা' : '🇺🇸 EN'}
+            {isTranslating && <span className="translating-dot" style={{ marginLeft: '6px' }} title="Translating via AI..."></span>}
           </button>
         </div>
 
@@ -93,6 +95,7 @@ function Navbar() {
             id="mobile-header-lang-toggle"
           >
             {language === 'en' ? '🇧🇩 বাংলা' : '🇺🇸 EN'}
+            {isTranslating && <span className="translating-dot" style={{ marginLeft: '4px' }} title="Translating via AI..."></span>}
           </button>
 
           {/* Hamburger Toggle Button */}

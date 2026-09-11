@@ -4,6 +4,7 @@ import { useDatabase } from '../context/DatabaseContext'
 import RecipeCard from '../components/RecipeCard'
 import { translateCategory, translateUnit, translateTechnique, translatePreparation } from '../utils/translations'
 import { scaleIngredient, adjustTime, checkQuantitySatisfaction } from '../utils/servingsScaler'
+import { getCachedRecipeTranslation, translateWithGemini } from '../utils/aiTranslator'
 
 function RecipeDetailPage() {
   const { id } = useParams()
@@ -14,6 +15,7 @@ function RecipeDetailPage() {
   const [servings, setServings] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [recipeTranslating, setRecipeTranslating] = useState(false)
 
   useEffect(() => {
     let active = true
@@ -40,6 +42,44 @@ function RecipeDetailPage() {
       active = false
     }
   }, [id])
+
+  // On-demand Gemini 3.8 Flash translation for uncached recipe details when switching to Bangla
+  useEffect(() => {
+    if (language !== 'bn' || !recipe) return
+
+    // Pre-loaded recipes already have authentic Bangla title and step instructions
+    const needsTranslation = !recipe.titleBn || 
+      (Array.isArray(recipe.steps) && recipe.steps.length > 0 && recipe.steps.some(s => !s.instructionBn))
+
+    if (!needsTranslation) return
+
+    // Check client-side persistent cache first
+    const cached = getCachedRecipeTranslation(recipe.id, 'bn')
+    if (cached) {
+      setRecipe(prev => ({ ...prev, ...cached }))
+      return
+    }
+
+    // Only hit endpoint for content that isn't cached yet!
+    let active = true
+    setRecipeTranslating(true)
+
+    translateWithGemini({ recipe, targetLanguage: 'bn' })
+      .then(res => {
+        if (!active) return
+        if (res?.success && res.recipe) {
+          setRecipe(prev => ({ ...prev, ...res.recipe }))
+        }
+        setRecipeTranslating(false)
+      })
+      .catch(() => {
+        if (active) setRecipeTranslating(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [language, recipe?.id])
 
   // Extract selected ingredients and on-hand quantities from query parameters
   const { selectedIds, onHandMap } = useMemo(() => {
@@ -153,6 +193,15 @@ function RecipeDetailPage() {
   return (
     <div className="recipe-detail-container animate-fade-in" id={`recipe-detail-${recipe.id}`}>
       
+      {/* AI Translation Loading Indicator */}
+      {recipeTranslating && (
+        <div className="recipe-translating-banner" id="recipe-translating-indicator">
+          <span>🌐</span>
+          <span className="translating-dot"></span>
+          <span>{t('translatingViaAi')}</span>
+        </div>
+      )}
+
       {/* 1. Header segment */}
       <section className="recipe-detail-header">
         <div className="recipe-detail-visual" id="recipe-detail-hero-visual">

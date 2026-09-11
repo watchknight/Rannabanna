@@ -55,6 +55,8 @@ export const translations = {
     customChefError: "⚠️ Error: Could not generate custom recipe.",
     aiGeneratedBadge: "✨ AI Generated",
     aiRecipePoweredBy: "Crafted with Gemini 3.8 Flash",
+    translatingViaAi: "Translating via AI...",
+    translatingBadge: "Translating",
     tryAgainBtn: "Try Again",
     
     // Filters Panel
@@ -295,6 +297,8 @@ export const translations = {
     customChefError: "⚠️ ত্রুটি: কাস্টম রেসিপি তৈরি করা সম্ভব হয়নি।",
     aiGeneratedBadge: "✨ এআই রেসিপি",
     aiRecipePoweredBy: "জেমিনি ৩.৮ ফ্ল্যাশ দ্বারা প্রস্তুত",
+    translatingViaAi: "এআই দ্বারা অনুবাদ হচ্ছে...",
+    translatingBadge: "অনুবাদ হচ্ছে",
     tryAgainBtn: "পুনরায় চেষ্টা করুন",
     
     // Filters Panel

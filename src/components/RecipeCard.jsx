@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDatabase } from '../context/DatabaseContext'
 import { adjustTime } from '../utils/servingsScaler'
+import { getCachedRecipeTranslation, translateWithGemini, subscribeToTranslations } from '../utils/aiTranslator'
 
 function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomBespoke = false }) {
   const navigate = useNavigate()
   const { cuisines, language, t, toBengaliNumber } = useDatabase()
+  const [isTranslatingCard, setIsTranslatingCard] = useState(false)
+  const [liveTranslatedRecipe, setLiveTranslatedRecipe] = useState(() => {
+    if (language !== 'bn' || !recipe) return null
+    return getCachedRecipeTranslation(recipe.id, 'bn')
+  })
   
   const isAi = isCustomBespoke || recipe.isAiGenerated || recipe.id?.startsWith('custom-')
   const cuisine = (cuisines || []).find(c => c.id === recipe.cuisineId)
@@ -14,6 +20,46 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
   const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings, recipe.timeAdjustment)
   const totalTime = timeStats.totalTime
   const isTimeAdjusted = activeServings !== baseServings
+
+  // Listen for translation updates
+  useEffect(() => {
+    const unsubscribe = subscribeToTranslations(({ type, key, value }) => {
+      if (type === 'recipe' && key === `bn:${recipe.id}`) {
+        setLiveTranslatedRecipe(value)
+        setIsTranslatingCard(false)
+      }
+    })
+    return unsubscribe
+  }, [recipe?.id])
+
+  // On-demand translation for uncached recipe cards when switched to Bangla
+  useEffect(() => {
+    if (language !== 'bn' || !recipe) return
+    if (recipe.titleBn && recipe.descriptionBn) return
+
+    const cached = getCachedRecipeTranslation(recipe.id, 'bn')
+    if (cached) {
+      setLiveTranslatedRecipe(cached)
+      return
+    }
+
+    let active = true
+    setIsTranslatingCard(true)
+
+    translateWithGemini({ recipe, targetLanguage: 'bn' })
+      .then(res => {
+        if (!active) return
+        if (res?.success && res.recipe) {
+          setLiveTranslatedRecipe(res.recipe)
+        }
+        setIsTranslatingCard(false)
+      })
+      .catch(() => {
+        if (active) setIsTranslatingCard(false)
+      })
+
+    return () => { active = false }
+  }, [language, recipe?.id])
 
   const getMatchBadgeClass = (pct) => {
     if (pct >= 90) return 'badge-match-high'
@@ -30,8 +76,8 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
     navigate(`/recipe/${recipe.id}${query}`)
   }
 
-  const title = language === 'bn' ? (recipe.titleBn || recipe.title) : recipe.title
-  const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
+  const title = language === 'bn' ? (liveTranslatedRecipe?.titleBn || recipe.titleBn || recipe.title) : recipe.title
+  const desc = language === 'bn' ? (liveTranslatedRecipe?.descriptionBn || recipe.descriptionBn || recipe.description) : recipe.description
   const cuisineName = language === 'bn' ? (cuisine?.nameBn || cuisine?.name || recipe.cuisine || recipe.cuisineId) : (cuisine?.name || recipe.cuisine || recipe.cuisineId)
   const displayTime = language === 'bn' ? toBengaliNumber(totalTime) : totalTime
   const displayCalories = language === 'bn' 
@@ -95,7 +141,10 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
           {cuisine?.emoji} {cuisineName}
         </span>
         
-        <h3 className="recipe-card-title">{title}</h3>
+        <h3 className="recipe-card-title">
+          {title}
+          {isTranslatingCard && <span className="translating-dot" style={{ marginLeft: '6px' }} title="Translating via AI..."></span>}
+        </h3>
         
         <p className="recipe-card-desc">{desc}</p>
         
