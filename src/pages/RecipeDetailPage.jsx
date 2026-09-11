@@ -231,7 +231,7 @@ function RecipeDetailPage() {
               e.currentTarget.src = getCuisineImage(recipe.cuisineId);
             }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8, 10, 14, 0.8) 0%, transparent 60%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(8, 10, 14, 0.25)' }} />
         </div>
 
         <div className="recipe-detail-info">
@@ -254,13 +254,13 @@ function RecipeDetailPage() {
               <span 
                 className="badge"
                 style={{
-                  background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)',
+                  background: 'var(--brand-orange)',
                   color: '#ffffff',
                   fontSize: '0.75rem',
                   fontWeight: '700',
                   padding: '3px 10px',
                   borderRadius: '20px',
-                  boxShadow: '0 2px 8px rgba(124, 58, 237, 0.35)',
+                  boxShadow: '0 2px 8px rgba(240, 90, 40, 0.35)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '5px'

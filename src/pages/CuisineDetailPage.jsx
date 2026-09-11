@@ -92,7 +92,7 @@ function CuisineDetailPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to right, rgba(8, 10, 14, 0.95) 0%, rgba(8, 10, 14, 0.75) 50%, rgba(8, 10, 14, 0.4) 100%)'
+            background: 'rgba(10, 13, 20, 0.78)'
           }}
         />
 

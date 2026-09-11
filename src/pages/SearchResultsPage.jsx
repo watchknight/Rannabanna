@@ -280,15 +280,15 @@ function SearchResultsPage() {
                 padding: '24px',
                 marginBottom: '28px',
                 borderRadius: '24px',
-                border: '1px solid rgba(139, 92, 246, 0.3)',
-                background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(255, 107, 53, 0.06) 100%)',
+                border: '1px solid rgba(240, 90, 40, 0.25)',
+                background: '#121622',
                 position: 'relative',
                 overflow: 'hidden'
               }} 
               id="custom-chef-trigger-box"
             >
               <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(139, 92, 246, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#A78BFA' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(240, 90, 40, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--brand-orange)' }}>
                   <Sparkles size={24} />
                 </div>
                 <div className="custom-chef-content" style={{ flex: '1', minWidth: '200px' }}>
@@ -305,9 +305,9 @@ function SearchResultsPage() {
                     onClick={handleGenerateCustom}
                     disabled={customGenerating}
                     style={{
-                      background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)',
+                      background: 'var(--brand-orange)',
                       border: 'none',
-                      boxShadow: '0 4px 16px rgba(124, 58, 237, 0.4)',
+                      boxShadow: '0 4px 16px rgba(240, 90, 40, 0.35)',
                       padding: '12px 22px',
                       fontSize: '0.92rem',
                       fontWeight: '700',
@@ -373,13 +373,13 @@ function SearchResultsPage() {
               <div 
                 className="match-section glass-panel animate-pulse" 
                 style={{
-                  border: '2px dashed rgba(139, 92, 246, 0.5)',
+                  border: '2px dashed rgba(240, 90, 40, 0.4)',
                   borderRadius: '24px',
                   padding: '36px 24px',
                   marginBottom: '28px',
                   textAlign: 'center',
-                  background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(219, 39, 119, 0.08) 100%)',
-                  boxShadow: '0 4px 25px rgba(124, 58, 237, 0.2)'
+                  background: '#121622',
+                  boxShadow: '0 4px 25px rgba(0, 0, 0, 0.4)'
                 }}
                 id="custom-recipe-generating-indicator"
               >
