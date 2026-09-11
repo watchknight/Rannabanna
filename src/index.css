@@ -1112,6 +1112,9 @@ select:focus-visible,
   transform: scale(1.1);
   opacity: 1;
 }
+.cuisine-card-photo {
+  aspect-ratio: 16 / 9;
+}
 .cuisine-card:hover .cuisine-card-photo {
   transform: scale(1.06);
 }
@@ -2710,6 +2713,7 @@ select:focus-visible,
   position: relative;
   width: 100%;
   height: 90px;
+  aspect-ratio: 16 / 10;
   background: #141A26;
   overflow: hidden;
 }
@@ -3090,6 +3094,7 @@ select:focus-visible,
   position: relative;
   width: 100%;
   height: 200px;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   background: #090C12;
 }

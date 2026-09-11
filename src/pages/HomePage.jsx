@@ -70,6 +70,10 @@ function HomePage() {
               src={HERO_CULINARY_IMAGE} 
               alt="Culinary Masterpiece" 
               className="hero-culinary-img"
+              fetchPriority="high"
+              decoding="async"
+              width="480"
+              height="480"
             />
           </div>
         </div>

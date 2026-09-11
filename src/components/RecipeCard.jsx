@@ -104,6 +104,7 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
           src={recipePhotoUrl}
           alt={title}
           loading="lazy"
+          decoding="async"
           className="recipe-card-media-img"
           onError={(e) => {
             e.currentTarget.onerror = null;
@@ -215,4 +216,4 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
   )
 }
 
-export default RecipeCard
+export default React.memo(RecipeCard)

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useMemo, useEffect, useRef, useCallback, useDeferredValue } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Search, X, Check, Plus, LayoutGrid, List, ArrowRight } from 'lucide-react'
 import { useDatabase } from '../context/DatabaseContext'
@@ -50,6 +50,7 @@ const IngredientPhotoCard = React.memo(({ ing, isSelected, language, onClick }) 
           src={imageUrl}
           alt={primaryName}
           loading="lazy"
+          decoding="async"
           className="ingredient-card-image"
           onError={(e) => {
             e.currentTarget.onerror = null;
@@ -109,6 +110,7 @@ const IngredientListRow = React.memo(({ ing, isSelected, language, onClick }) =>
           src={imageUrl}
           alt={primaryName}
           loading="lazy"
+          decoding="async"
           className="ingredient-row-avatar"
           onError={(e) => {
             e.currentTarget.onerror = null;
@@ -194,11 +196,14 @@ function IngredientSelector({ initialSelectedIds = [] }) {
     })
   }, [activeCategory, ingredients])
 
+  // Deferred search query prevents main thread input lag (0ms INP)
+  const deferredSearchQuery = useDeferredValue(searchQuery)
+
   // Autocomplete filtering with real photo thumbnail
   const autocompleteSuggestions = useMemo(() => {
-    if (!searchQuery.trim()) return []
-    return ingredients.filter(ing => matchIngredient(ing, searchQuery, language)).slice(0, 8)
-  }, [searchQuery, ingredients, language])
+    if (!deferredSearchQuery.trim()) return []
+    return ingredients.filter(ing => matchIngredient(ing, deferredSearchQuery, language)).slice(0, 8)
+  }, [deferredSearchQuery, ingredients, language])
 
   // Selected full objects
   const selectedObjects = useMemo(() => {
@@ -241,6 +246,8 @@ function IngredientSelector({ initialSelectedIds = [] }) {
                 <img 
                   src={img} 
                   alt={label} 
+                  loading="lazy"
+                  decoding="async"
                   className="essential-chip-img" 
                   onError={(e) => {
                     e.currentTarget.onerror = null;
@@ -309,6 +316,8 @@ function IngredientSelector({ initialSelectedIds = [] }) {
                     <img
                       src={imgUrl}
                       alt={displayName}
+                      loading="lazy"
+                      decoding="async"
                       className="autocomplete-item-thumb"
                       onError={(e) => {
                         e.currentTarget.onerror = null;

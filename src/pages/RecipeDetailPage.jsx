@@ -224,6 +224,8 @@ function RecipeDetailPage() {
           <img
             src={dishPhotoUrl}
             alt={title}
+            fetchPriority="high"
+            decoding="async"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             onError={(e) => {
               e.currentTarget.onerror = null;

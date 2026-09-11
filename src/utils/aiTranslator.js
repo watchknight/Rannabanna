@@ -129,6 +129,9 @@ export async function translateWithGemini({ text, recipe, targetLanguage = 'bn' 
   }
 
   const promise = (async () => {
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timeoutId = controller ? setTimeout(() => controller.abort(), 12000) : null;
+
     try {
       const payload = {};
       if (typeof text === 'string') payload.text = text;
@@ -141,7 +144,8 @@ export async function translateWithGemini({ text, recipe, targetLanguage = 'bn' 
       let response = await fetch(`${base}/api/ai/translate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller?.signal
       });
 
       // Failover to /api/translate alias if 404
@@ -149,9 +153,12 @@ export async function translateWithGemini({ text, recipe, targetLanguage = 'bn' 
         response = await fetch(`${base}/api/translate`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          signal: controller?.signal
         });
       }
+
+      if (timeoutId) clearTimeout(timeoutId);
 
       const data = await safeParseJson(response);
 
@@ -177,17 +184,24 @@ export async function translateWithGemini({ text, recipe, targetLanguage = 'bn' 
 
       return data;
     } catch (error) {
-      console.warn('⚠️ Gemini translation request failed:', error.message);
+      if (timeoutId) clearTimeout(timeoutId);
+      const isTimeout = error.name === 'AbortError';
+      if (isTimeout) {
+        console.warn('⚠️ Gemini translation request timed out (12s limit).');
+      } else {
+        console.warn('⚠️ Gemini translation request failed:', error.message);
+      }
       // Graceful fallback to English text/original recipe
       return {
         success: false,
-        error: error.message,
+        error: isTimeout ? 'Translation timed out' : error.message,
         cached: false,
         translatedText: typeof text === 'string' ? text : undefined,
         recipe: recipe || undefined,
         targetLanguage: normLang
       };
     } finally {
+      if (timeoutId) clearTimeout(timeoutId);
       inFlightPromises.delete(requestKey);
     }
   })();

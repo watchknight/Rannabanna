@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { 
   Sparkles, 
@@ -86,21 +86,66 @@ function SearchResultsPage() {
   const [customGenerating, setCustomGenerating] = useState(false)
   const [customError, setCustomError] = useState(null)
   const [isColdStarting, setIsColdStarting] = useState(false)
+  const [generationPhase, setGenerationPhase] = useState(0)
+  const abortControllerRef = useRef(null)
+  const timersRef = useRef([])
+
+  const clearPhaseTimers = () => {
+    timersRef.current.forEach(t => clearTimeout(t))
+    timersRef.current = []
+  }
+
+  useEffect(() => {
+    return () => {
+      clearPhaseTimers()
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort()
+      }
+    }
+  }, [])
 
   const handleGenerateCustom = async () => {
     if (selectedIds.length === 0) return
+
+    // Fast-fail if browser is offline
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      setCustomError(language === 'bn' 
+        ? 'আপনি অফলাইনে আছেন। কাস্টম রেসিপি তৈরির জন্য ইন্টারনেট সংযোগ প্রয়োজন।' 
+        : 'You are currently offline. An internet connection is required to generate an AI recipe.')
+      return
+    }
+
+    // Cancel any previous in-flight request
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort()
+    }
+
+    clearPhaseTimers()
     setCustomGenerating(true)
     setCustomError(null)
     setIsColdStarting(false)
+    setGenerationPhase(0)
 
     const controller = new AbortController()
+    abortControllerRef.current = controller
+
+    // Sane 35-second timeout (prevents indefinite hanging on mobile/desktop)
     const timeoutId = setTimeout(() => {
       controller.abort()
-    }, 75000)
+    }, 35000)
+    timersRef.current.push(timeoutId)
 
+    // Render cold start warning if server takes > 6s
     const coldStartTimer = setTimeout(() => {
       setIsColdStarting(true)
     }, 6000)
+    timersRef.current.push(coldStartTimer)
+
+    // Progressive step indicator timings
+    const phase1Timer = setTimeout(() => setGenerationPhase(1), 3500)
+    const phase2Timer = setTimeout(() => setGenerationPhase(2), 9000)
+    const phase3Timer = setTimeout(() => setGenerationPhase(3), 18000)
+    timersRef.current.push(phase1Timer, phase2Timer, phase3Timer)
 
     try {
       const response = await fetch(`${API_BASE}/api/custom-recipe`, {
@@ -120,8 +165,7 @@ function SearchResultsPage() {
         signal: controller.signal
       })
 
-      clearTimeout(timeoutId)
-      clearTimeout(coldStartTimer)
+      clearPhaseTimers()
 
       const data = await response.json().catch(() => null)
 
@@ -144,11 +188,10 @@ function SearchResultsPage() {
       addCustomRecipeToLocalState(generated)
       setCustomRecipe(generated)
     } catch (err) {
-      clearTimeout(timeoutId)
-      clearTimeout(coldStartTimer)
+      clearPhaseTimers()
       const isTimeout = err.name === 'AbortError'
       const errorMsg = isTimeout 
-        ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা শেষ হয়ে গেছে। সার্ভার পুনরায় চালু হচ্ছে, দয়া করে আবার চেষ্টা করুন।' : 'Recipe generation timed out. The server was likely cold-starting; please try again now.')
+        ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা (৩৫ সেকেন্ড) শেষ হয়ে গেছে। সার্ভার পুনরায় চালু হচ্ছে, দয়া করে আবার চেষ্টা করুন।' : 'Recipe generation timed out (35s limit). The server may be cold-starting; please tap retry to proceed.')
         : (err.message || t('customChefError'))
       
       console.warn('Backend custom recipe call failed:', err)
@@ -156,6 +199,8 @@ function SearchResultsPage() {
     } finally {
       setCustomGenerating(false)
       setIsColdStarting(false)
+      setGenerationPhase(0)
+      abortControllerRef.current = null
     }
   }
 
@@ -395,7 +440,7 @@ function SearchResultsPage() {
                 style={{
                   border: '2px dashed rgba(240, 90, 40, 0.4)',
                   borderRadius: '24px',
-                  padding: '48px 24px',
+                  padding: '36px 20px',
                   marginBottom: '28px',
                   textAlign: 'center',
                   background: '#121622',
@@ -412,12 +457,50 @@ function SearchResultsPage() {
                 <h3 style={{ margin: '0 0 10px 0', color: '#ffffff', fontSize: '1.3rem', fontWeight: 700 }}>
                   {language === 'bn' ? 'জেমিনি এআই শেফ আপনার কাস্টম রেসিপি প্রস্তুত করছে...' : 'Gemini AI Chef is crafting your custom recipe...'}
                 </h3>
-                <p style={{ margin: '0 auto', color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '560px', lineHeight: 1.6 }}>
-                  {language === 'bn' 
-                    ? 'আপনার নির্বাচিত উপকরণ ও ফিল্টারের ওপর ভিত্তি করে বাস্তবসম্মত, সুস্বাদু রান্নাপ্রণালী তৈরি হচ্ছে।' 
-                    : 'Analyzing your selected ingredients and cooking preferences to engineer a delicious, authentic step-by-step recipe.'}
-                </p>
-                <div style={{ width: '100%', maxWidth: '420px', height: '5px', background: 'rgba(255,255,255,0.08)', borderRadius: '9999px', margin: '22px auto 0', overflow: 'hidden' }}>
+
+                {/* Progressive Phase Step Indicator (Mobile & Desktop) */}
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', margin: '18px auto 14px', maxWidth: '360px', padding: '0 12px' }}>
+                  {[0, 1, 2, 3].map((step) => (
+                    <div
+                      key={step}
+                      style={{
+                        flex: 1,
+                        height: '5px',
+                        borderRadius: '4px',
+                        background: step <= generationPhase ? 'var(--brand-orange)' : 'rgba(255, 255, 255, 0.12)',
+                        transition: 'background 0.4s ease'
+                      }}
+                    />
+                  ))}
+                </div>
+
+                <div 
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '8px', 
+                    padding: '8px 16px', 
+                    borderRadius: '20px', 
+                    background: 'rgba(240, 90, 40, 0.12)', 
+                    border: '1px solid rgba(240, 90, 40, 0.25)',
+                    color: 'var(--brand-orange)',
+                    fontSize: '0.88rem',
+                    fontWeight: '600',
+                    maxWidth: '90%',
+                    margin: '0 auto 14px'
+                  }}
+                  id="custom-recipe-phase-text"
+                >
+                  <Sparkles size={14} style={{ flexShrink: 0 }} />
+                  <span>
+                    {generationPhase === 0 && (language === 'bn' ? 'উপকরণ এবং স্বাদের সামঞ্জস্য বিশ্লেষণ করা হচ্ছে...' : 'Analyzing selected ingredients and flavor affinities...')}
+                    {generationPhase === 1 && (language === 'bn' ? 'রান্নার ধারাবাহিক ধাপ এবং তাপমাত্রার পরিমাপ তৈরি করা হচ্ছে...' : 'Engineering custom cooking steps and heat profile...')}
+                    {generationPhase === 2 && (language === 'bn' ? 'মসলার অনুপাত ও সুস্বাদু বাঙালি স্বাদ নিশ্চিত করা হচ্ছে...' : 'Balancing regional spices and authentic taste notes...')}
+                    {generationPhase === 3 && (language === 'bn' ? 'পুষ্টিমান এবং বিশেষ পরিবেশন টিপস চূড়ান্ত করা হচ্ছে...' : 'Finalizing nutritional breakdown and chef tips...')}
+                  </span>
+                </div>
+
+                <div style={{ width: '100%', maxWidth: '420px', height: '4px', background: 'rgba(255,255,255,0.08)', borderRadius: '9999px', margin: '10px auto 0', overflow: 'hidden' }}>
                   <div className="rb-shimmer" style={{ width: '100%', height: '100%', background: 'var(--brand-orange)' }} />
                 </div>
                 {isColdStarting && (

@@ -43,6 +43,7 @@ function CuisineCard({ cuisine }) {
           src={imageUrl}
           alt={cuisineName}
           loading="lazy"
+          decoding="async"
           style={{
             width: '100%',
             height: '100%',
@@ -106,4 +107,4 @@ function CuisineCard({ cuisine }) {
   )
 }
 
-export default CuisineCard
+export default React.memo(CuisineCard)
