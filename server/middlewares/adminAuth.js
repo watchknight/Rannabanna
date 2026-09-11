@@ -1,7 +1,8 @@
 import crypto from 'crypto';
 
-// In-memory active admin session tokens with 24-hour expiration
-const activeTokens = new Map();
+// In-memory revoked tokens set (for explicit logout)
+const revokedTokens = new Set();
+const activeTokens = new Map(); // Legacy support
 const SESSION_TTL_MS = 24 * 60 * 60 * 1000;
 
 /**
@@ -12,7 +13,16 @@ export function getAdminSecret() {
 }
 
 /**
- * Verifies admin password and generates an active session token
+ * Generates an HMAC signature for a stateless session token.
+ */
+function signToken(expiresAt, nonce, secret) {
+  return crypto.createHmac('sha256', secret).update(`adm:${expiresAt}:${nonce}`).digest('hex');
+}
+
+/**
+ * Verifies admin password and generates a stateless HMAC-signed session token.
+ * Survives container spin-downs, restarts, and multi-instance restarts.
+ *
  * @param {string} password 
  * @returns {{ success: boolean, token?: string, error?: string }}
  */
@@ -22,11 +32,13 @@ export function authenticateAdmin(password) {
     return { success: false, error: 'Invalid admin credentials' };
   }
 
-  const token = 'adm_' + crypto.randomBytes(32).toString('hex');
-  activeTokens.set(token, {
-    createdAt: Date.now(),
-    expiresAt: Date.now() + SESSION_TTL_MS
-  });
+  const expiresAt = Date.now() + SESSION_TTL_MS;
+  const nonce = crypto.randomBytes(16).toString('hex');
+  const signature = signToken(expiresAt, nonce, secret);
+  const token = `adm_${expiresAt}_${nonce}_${signature}`;
+
+  // Also retain in memory map for backward-compatibility
+  activeTokens.set(token, { createdAt: Date.now(), expiresAt });
 
   return { success: true, token };
 }
@@ -36,7 +48,44 @@ export function authenticateAdmin(password) {
  * @param {string} token 
  */
 export function invalidateAdminToken(token) {
-  activeTokens.delete(token);
+  if (token) {
+    revokedTokens.add(token);
+    activeTokens.delete(token);
+  }
+}
+
+/**
+ * Verifies if a given token string is valid and unexpired.
+ * @param {string} token
+ * @returns {boolean}
+ */
+export function verifyAdminToken(token) {
+  if (!token || typeof token !== 'string') return false;
+  if (revokedTokens.has(token)) return false;
+
+  // 1. Check stateless HMAC token format (adm_<expiresAt>_<nonce>_<signature>)
+  if (token.startsWith('adm_')) {
+    const parts = token.split('_');
+    if (parts.length === 4) {
+      const [prefix, expiresAtStr, nonce, sig] = parts;
+      const expiresAt = parseInt(expiresAtStr, 10);
+      if (isNaN(expiresAt) || Date.now() > expiresAt) {
+        return false;
+      }
+      const secret = getAdminSecret();
+      const expectedSig = signToken(expiresAtStr, nonce, secret);
+      // Constant-time comparison
+      return crypto.timingSafeEqual(Buffer.from(sig, 'hex'), Buffer.from(expectedSig, 'hex'));
+    }
+  }
+
+  // 2. Fallback to memory map (for legacy tokens)
+  const session = activeTokens.get(token);
+  if (session && Date.now() < session.expiresAt) {
+    return true;
+  }
+
+  return false;
 }
 
 /**
@@ -55,19 +104,13 @@ export function adminAuth(req, res, next) {
   // Check Bearer token from header
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.slice(7).trim();
-    const session = activeTokens.get(token);
-
-    if (session) {
-      if (Date.now() < session.expiresAt) {
-        return next();
-      } else {
-        activeTokens.delete(token);
-        return res.status(401).json({
-          error: 'Unauthorized',
-          message: 'Admin session has expired. Please log in again.'
-        });
-      }
+    if (verifyAdminToken(token)) {
+      return next();
     }
+    return res.status(401).json({
+      error: 'Unauthorized',
+      message: 'Admin session is invalid or expired. Please log in again.'
+    });
   }
 
   return res.status(401).json({

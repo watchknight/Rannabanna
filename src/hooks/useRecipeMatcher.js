@@ -46,8 +46,19 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
     const controller = new AbortController()
 
     // ⚡ 150ms debounce to prevent request flooding during rapid filter toggles & slider drags
+    let failoverTimer = null;
     const debounceTimer = setTimeout(() => {
       setLoading(true)
+
+      // ⚡ 5-second cold-start failover: If Render is cold-starting, deliver local match immediately
+      failoverTimer = setTimeout(() => {
+        if (active) {
+          console.info('Render server cold-starting; delivering instant client-side match results.');
+          const localResult = matchRecipesLocally(ids, filterObj);
+          setData(localResult);
+          setLoading(false);
+        }
+      }, 5000);
 
       fetch(`${API_BASE}/api/match`, {
         method: 'POST',
@@ -61,6 +72,7 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
         signal: controller.signal
       })
         .then(res => {
+          clearTimeout(failoverTimer);
           if (!res.ok) throw new Error('Failed to match recipes')
           return res.json()
         })
@@ -72,6 +84,7 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
           }
         })
         .catch(err => {
+          clearTimeout(failoverTimer);
           if (err.name === 'AbortError') return
           console.warn('API matching failed, falling back to local client-side matching:', err)
           if (active) {
@@ -86,6 +99,7 @@ export function useRecipeMatcher(selectedIngredientIds = [], filters = {}) {
     return () => {
       active = false
       clearTimeout(debounceTimer)
+      if (failoverTimer) clearTimeout(failoverTimer)
       controller.abort()
     }
   }, [stableIdsStr, stableFiltersStr, API_BASE])

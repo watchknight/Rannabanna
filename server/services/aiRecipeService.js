@@ -2,6 +2,7 @@ import { GoogleGenAI, Type } from '@google/genai';
 import { cacheService } from './cacheService.js';
 import { decorateRecipeTranslations, ingredientTranslations } from '../utils/translation_engine.js';
 import { logAiFailure } from '../utils/aiLogger.js';
+import { db, executeWithRetry } from '../models/db.js';
 
 /**
  * System Instruction strictly instructing the Gemini 3.8 Flash culinary expert
@@ -196,15 +197,33 @@ export async function generateCustomAiRecipe({
 
   const normalizedFilters = normalizeFilters({ cuisine, maxTime, dietaryRestrictions });
 
-  // 1. Basic In-Memory Caching: Check cache for identical ingredients + filters combination
+  // 1. Check in-memory cache
   const cacheKey = `ai:custom-recipe:${cacheService.generateKey(normalizedIngredients, normalizedFilters)}`;
   const cachedResult = cacheService.get(cacheKey);
   if (cachedResult) {
     console.log('⚡ Returning custom AI recipe from in-memory cache:', cachedResult.title);
     return {
       ...cachedResult,
-      cached: true
+      cached: true,
+      source: 'memory'
     };
+  }
+
+  // 1b. Check SQLite persistent database cache (survives memory resets and container sleep)
+  try {
+    const row = db.prepare('SELECT recipe_json FROM ai_recipes_cache WHERE cache_key = ?').get(cacheKey);
+    if (row && row.recipe_json) {
+      const persistedRecipe = JSON.parse(row.recipe_json);
+      cacheService.set(cacheKey, persistedRecipe, 15 * 60 * 1000);
+      console.log('💾 Returning custom AI recipe from SQLite database cache:', persistedRecipe.title);
+      return {
+        ...persistedRecipe,
+        cached: true,
+        source: 'database'
+      };
+    }
+  } catch (dbCheckErr) {
+    console.warn('⚠️ SQLite custom recipe cache lookup failed:', dbCheckErr.message);
   }
 
   // 2. Resolve Server-side API key
@@ -417,6 +436,19 @@ export async function generateCustomAiRecipe({
 
   // 7. Store in memory cache (TTL: 15 minutes = 900,000 ms)
   cacheService.set(cacheKey, finalRecipe, 15 * 60 * 1000);
+
+  // 8. Persist into SQLite database (survives container spin-downs and memory resets)
+  try {
+    executeWithRetry(() => {
+      db.prepare(`
+        INSERT OR REPLACE INTO ai_recipes_cache (cache_key, recipe_id, title, recipe_json)
+        VALUES (?, ?, ?, ?)
+      `).run(cacheKey, finalRecipe.id, finalRecipe.title, JSON.stringify(finalRecipe));
+    });
+    console.log(`💾 Persisted custom AI recipe to SQLite database: ${finalRecipe.title}`);
+  } catch (persistErr) {
+    console.warn('⚠️ Could not persist custom AI recipe to SQLite database:', persistErr.message);
+  }
 
   return finalRecipe;
 }

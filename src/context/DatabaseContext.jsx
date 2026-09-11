@@ -14,10 +14,21 @@ import {
 const DatabaseContext = createContext(null);
 
 export function DatabaseProvider({ children }) {
-  const [cuisines, setCuisines] = useState([]);
-  const [ingredients, setIngredients] = useState([]);
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [cuisines, setCuisines] = useState(() => staticCuisines);
+  const [ingredients, setIngredients] = useState(() => staticIngredients);
+  const [recipes, setRecipes] = useState(() => {
+    const staticBase = staticRecipes.map(r => ({ ...r, difficulty: r.difficulty || 'intermediate' }));
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const stored = JSON.parse(localStorage.getItem('rannabanna-custom-recipes') || '[]');
+        if (Array.isArray(stored) && stored.length > 0) {
+          return [...stored, ...staticBase];
+        }
+      }
+    } catch {}
+    return staticBase;
+  });
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isOffline, setIsOffline] = useState(false);
   
@@ -104,8 +115,6 @@ export function DatabaseProvider({ children }) {
     
     const fetchData = async () => {
       try {
-        setLoading(true);
-
         const [cuisinesRes, ingredientsRes, recipesRes] = await Promise.all([
           fetch(`${API_BASE}/api/cuisines`, { signal: controller.signal }),
           fetch(`${API_BASE}/api/ingredients`, { signal: controller.signal }),
@@ -123,22 +132,24 @@ export function DatabaseProvider({ children }) {
         if (active) {
           setCuisines(cuisinesData);
           setIngredients(ingredientsData);
-          setRecipes(recipesData);
+          try {
+            const stored = JSON.parse(localStorage.getItem('rannabanna-custom-recipes') || '[]');
+            const customList = Array.isArray(stored) ? stored : [];
+            const serverIds = new Set(recipesData.map(r => r.id));
+            const merged = [...customList.filter(c => !serverIds.has(c.id)), ...recipesData];
+            setRecipes(merged);
+          } catch {
+            setRecipes(recipesData);
+          }
           setError(null);
           setIsOffline(false);
-          setLoading(false);
         }
       } catch (err) {
         if (err.name !== 'AbortError') {
-          console.warn('API hydration failed, falling back to local static files:', err);
+          console.warn('API hydration failed or cold-starting; using local catalog:', err.message);
           if (active) {
-            // Robust client-side fallback
-            setCuisines(staticCuisines);
-            setIngredients(staticIngredients);
-            setRecipes(staticRecipes.map(r => ({ ...r, difficulty: r.difficulty || 'intermediate' })));
             setIsOffline(true);
-            setError(null); // Clear blocking error; offline mode is active
-            setLoading(false);
+            setError(null);
           }
         }
       }

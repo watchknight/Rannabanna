@@ -70,17 +70,24 @@ function SearchResultsPage() {
   const [customRecipe, setCustomRecipe] = useState(null)
   const [customGenerating, setCustomGenerating] = useState(false)
   const [customError, setCustomError] = useState(null)
+  const [isColdStarting, setIsColdStarting] = useState(false)
 
   const handleGenerateCustom = async () => {
     if (selectedIds.length === 0) return
     setCustomGenerating(true)
     setCustomError(null)
+    setIsColdStarting(false)
 
-    // Set up AbortController with generous timeout for AI generation (30 seconds)
+    // Render free-tier spin up takes 30-50s; allow 75s before client abort
     const controller = new AbortController()
     const timeoutId = setTimeout(() => {
       controller.abort()
-    }, 30000)
+    }, 75000)
+
+    // Flag cold start if server takes longer than 6s to respond
+    const coldStartTimer = setTimeout(() => {
+      setIsColdStarting(true)
+    }, 6000)
 
     try {
       const response = await fetch(`${API_BASE}/api/custom-recipe`, {
@@ -101,6 +108,7 @@ function SearchResultsPage() {
       })
 
       clearTimeout(timeoutId)
+      clearTimeout(coldStartTimer)
 
       const data = await response.json().catch(() => null)
 
@@ -114,20 +122,29 @@ function SearchResultsPage() {
         throw new Error(language === 'bn' ? 'অসম্পূর্ণ রেসিপি তৈরি হয়েছে।' : 'Incomplete recipe generated.')
       }
 
+      // Persist into localStorage so custom recipe survives page refresh and Render container spin-down
+      try {
+        const stored = JSON.parse(localStorage.getItem('rannabanna-custom-recipes') || '[]')
+        const updated = [generated, ...stored.filter(r => r.id !== generated.id)].slice(0, 50)
+        localStorage.setItem('rannabanna-custom-recipes', JSON.stringify(updated))
+      } catch {}
+
       // Seed dynamically into the local React state database
       addCustomRecipeToLocalState(generated)
       setCustomRecipe(generated)
     } catch (err) {
       clearTimeout(timeoutId)
+      clearTimeout(coldStartTimer)
       const isTimeout = err.name === 'AbortError'
       const errorMsg = isTimeout 
-        ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা শেষ হয়ে গেছে। পুনরায় চেষ্টা করুন।' : 'Recipe generation timed out. Please try again.')
+        ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা শেষ হয়ে গেছে। সার্ভার পুনরায় চালু হচ্ছে, দয়া করে আবার চেষ্টা করুন।' : 'Recipe generation timed out. The server was likely cold-starting; please try again now.')
         : (err.message || t('customChefError'))
       
       console.warn('Backend custom recipe call failed:', err)
       setCustomError(errorMsg)
     } finally {
       setCustomGenerating(false)
+      setIsColdStarting(false)
     }
   }
 
@@ -351,6 +368,25 @@ function SearchResultsPage() {
                     ? 'আপনার নির্বাচিত উপকরণ ও ফিল্টারের ওপর ভিত্তি করে বাস্তবসম্মত, সুস্বাদু রান্নাপ্রণালী তৈরি হচ্ছে।' 
                     : 'Analyzing your selected ingredients and cooking preferences to engineer a delicious, authentic step-by-step recipe.'}
                 </p>
+                {isColdStarting && (
+                  <div style={{
+                    marginTop: 'var(--spacing-md)',
+                    padding: '8px 12px',
+                    borderRadius: 'var(--radius-sm)',
+                    background: 'rgba(245, 158, 11, 0.12)',
+                    border: '1px solid rgba(245, 158, 11, 0.3)',
+                    color: '#fbbf24',
+                    fontSize: '0.82rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }} id="cold-start-notice">
+                    <span>⏳</span>
+                    <span>{language === 'bn' 
+                      ? 'রেন্ডার সার্ভার স্লিপ মোড থেকে চালু হচ্ছে (~৩০-৪৫ সেকেন্ড লাগতে পারে)... অনুগ্রহ করে অপেক্ষা করুন।' 
+                      : 'Render server is waking up from sleep (~30-45s cold start)... Hang tight, crafting your recipe!'}</span>
+                  </div>
+                )}
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: 'var(--spacing-md)', fontSize: '0.78rem', color: '#A78BFA' }}>
                   <span className="animate-spin" style={{ display: 'inline-block' }}>⚡</span>
                   <span>{language === 'bn' ? 'মডেল: জেমিনি ৩.৮ ফ্ল্যাশ' : 'Powered by Gemini 3.8 Flash'}</span>

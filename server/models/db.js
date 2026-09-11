@@ -12,13 +12,20 @@ const dbPath = path.resolve(__dirname, '..', 'rannabanna.db');
 console.log('⚡ Connecting to SQLite Database at:', dbPath);
 
 /**
- * High-performance synchronous SQLite connection pool
+/**
+ * High-performance synchronous SQLite connection pool with busy timeout and WAL mode
  * @type {Database.Database}
  */
-export const db = new Database(dbPath);
+export const db = new Database(dbPath, { timeout: 7000 });
 
-// Enable foreign keys constraints
+// Enable foreign keys constraints, Write-Ahead Logging (WAL), and busy timeout for concurrent safety on cold starts
 db.pragma('foreign_keys = ON');
+try {
+  db.pragma('journal_mode = WAL');
+  db.pragma('busy_timeout = 5000');
+} catch (pragmaErr) {
+  console.warn('⚠️ Could not set WAL or busy_timeout pragmas:', pragmaErr.message);
+}
 
 // Self-healing check: Ensure core catalog tables exist and are populated
 try {
@@ -113,8 +120,55 @@ try {
     db.prepare(`
       CREATE UNIQUE INDEX IF NOT EXISTS idx_trans_cache_hash ON translation_cache(source_hash)
     `).run();
+
+    // 6. Persistent AI Custom Recipes Cache table (persists generated custom recipes across memory wipes)
+    db.prepare(`
+      CREATE TABLE IF NOT EXISTS ai_recipes_cache (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        cache_key TEXT UNIQUE NOT NULL,
+        recipe_id TEXT NOT NULL,
+        title TEXT NOT NULL,
+        recipe_json TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `).run();
+
+    db.prepare(`
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_recipe_cache_key ON ai_recipes_cache(cache_key)
+    `).run();
   })();
   console.log('✅ SQLite Migrations completed successfully.');
 } catch (migrationError) {
   console.error('❌ Failed running SQLite database migrations:', migrationError);
+}
+
+/**
+ * Resilient SQLite query executor with automatic backoff retry on SQLITE_BUSY / lock contention.
+ * Especially valuable during Render cold-start I/O spikes.
+ *
+ * @template T
+ * @param {() => T} fn - Synchronous database operation to execute
+ * @param {number} [maxRetries=3] - Maximum retry attempts
+ * @param {number} [baseDelayMs=50] - Initial retry backoff in ms
+ * @returns {T}
+ */
+export function executeWithRetry(fn, maxRetries = 3, baseDelayMs = 50) {
+  let attempt = 0;
+  while (true) {
+    try {
+      return fn();
+    } catch (err) {
+      attempt++;
+      const isLockError = err?.code === 'SQLITE_BUSY' || err?.code === 'SQLITE_LOCKED' || (err?.message && err.message.includes('locked'));
+      if (isLockError && attempt <= maxRetries) {
+        const delay = baseDelayMs * Math.pow(2, attempt - 1);
+        const start = Date.now();
+        while (Date.now() - start < delay) {
+          // Synchronous spin-wait
+        }
+        continue;
+      }
+      throw err;
+    }
+  }
 }
