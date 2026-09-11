@@ -94,6 +94,10 @@ app.use('/api/recipe', recipeRouter);
 app.use('/api/ingredients', ingredientRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/ai', aiRouter);
+app.post('/api/translate', (req, res, next) => {
+  req.url = '/translate';
+  aiRouter(req, res, next);
+});
 
 // ═══════════════════════════════════════════════════════════
 // 2. Legacy Autocomplete & Matchmaker Compatibility Layer

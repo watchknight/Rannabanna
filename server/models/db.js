@@ -97,6 +97,22 @@ try {
       db.prepare('ALTER TABLE recipes ADD COLUMN baseServings INTEGER DEFAULT 4').run();
       db.prepare('UPDATE recipes SET baseServings = servings WHERE servings IS NOT NULL').run();
     }
+
+    // 5. Persistent Translation Cache table
+    db.prepare(`
+      CREATE TABLE IF NOT EXISTS translation_cache (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        source_hash TEXT UNIQUE NOT NULL,
+        source_text TEXT NOT NULL,
+        target_lang TEXT NOT NULL DEFAULT 'bn',
+        translated_text TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `).run();
+
+    db.prepare(`
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_trans_cache_hash ON translation_cache(source_hash)
+    `).run();
   })();
   console.log('✅ SQLite Migrations completed successfully.');
 } catch (migrationError) {

@@ -1,6 +1,7 @@
 import express from 'express';
 import { GoogleGenAI } from '@google/genai';
 import { generateCustomAiRecipe } from '../services/aiRecipeService.js';
+import { translateText, translateRecipe } from '../services/translationService.js';
 
 export const aiRouter = express.Router();
 
@@ -110,6 +111,65 @@ aiRouter.post('/custom-recipe', async (req, res, next) => {
     return res.status(error.status || 500).json({
       success: false,
       error: error.message || 'Unable to generate custom recipe at this time.',
+      status: error.status || 500
+    });
+  }
+});
+
+/**
+ * @route   POST /api/ai/translate
+ * @desc    Translate culinary text or a full recipe object to natural Bangla using Gemini 3.8 Flash with persistent caching
+ * @access  Public / Server-side
+ */
+aiRouter.post('/translate', async (req, res, next) => {
+  try {
+    const {
+      text,
+      recipe,
+      targetLanguage = 'bn',
+      targetLang = 'bn'
+    } = req.body || {};
+
+    const resolvedTargetLang = (targetLanguage || targetLang || 'bn').toLowerCase().trim();
+    const apiKey = req.headers['x-gemini-key'] || process.env.GEMINI_API_KEY;
+
+    // 1. Case: Recipe translation
+    if (recipe && typeof recipe === 'object') {
+      const result = await translateRecipe({
+        recipe,
+        targetLanguage: resolvedTargetLang,
+        apiKey
+      });
+      return res.json({
+        success: true,
+        ...result
+      });
+    }
+
+    // 2. Case: Text snippet translation
+    if (typeof text === 'string') {
+      const result = await translateText({
+        text,
+        targetLanguage: resolvedTargetLang,
+        apiKey
+      });
+      return res.json({
+        success: true,
+        ...result
+      });
+    }
+
+    // 3. Neither provided
+    return res.status(400).json({
+      success: false,
+      error: "Please provide either 'text' (string) or 'recipe' (object) to translate.",
+      status: 400
+    });
+  } catch (error) {
+    console.error('Translation endpoint error:', error.message);
+    return res.status(error.status || 500).json({
+      success: false,
+      error: error.message || 'Translation failed.',
       status: error.status || 500
     });
   }
