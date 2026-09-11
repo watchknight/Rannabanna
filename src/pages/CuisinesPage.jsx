@@ -61,8 +61,8 @@ function CuisinesPage() {
 
       {/* Filter Tabs */}
       <div 
-        className="category-pills-bar" 
-        style={{ justifyContent: 'center', marginBottom: '32px' }}
+        className="category-pills-bar centered" 
+        style={{ marginBottom: '32px' }}
         id="continent-filter-tabs"
       >
         {continents.map(cont => (

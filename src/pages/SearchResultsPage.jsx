@@ -12,7 +12,8 @@ import {
   Plus, 
   X, 
   Loader2,
-  UtensilsCrossed
+  UtensilsCrossed,
+  Filter
 } from 'lucide-react'
 import FilterPanel from '../components/FilterPanel'
 import RecipeCard from '../components/RecipeCard'
@@ -47,6 +48,19 @@ function SearchResultsPage() {
     servings: urlServings,
     dietary: []
   })
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false)
+
+  // Compute active filters count for mobile FAB badge
+  const activeFiltersCount = useMemo(() => {
+    let count = 0
+    if (filters.cuisines?.length > 0) count += filters.cuisines.length
+    if (filters.dietary?.length > 0) count += filters.dietary.length
+    if (filters.mealType && filters.mealType !== 'all') count += 1
+    if (filters.difficulty && filters.difficulty !== 'all') count += 1
+    if (filters.maxTime && filters.maxTime < 120) count += 1
+    if (filters.servings && filters.servings !== 4) count += 1
+    return count
+  }, [filters])
 
   // Run the intelligent matching engine hook
   const { perfect, great, good, exploratory, totalCount, loading, error } = useRecipeMatcher(selectedIds, filters)
@@ -269,7 +283,7 @@ function SearchResultsPage() {
         </div>
       ) : (
         /* Main search layout with sidebar */
-        <div className="search-page-container" style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '32px', alignItems: 'start' }}>
+        <div className="search-page-container">
           <FilterPanel filters={filters} onChange={setFilters} />
 
           <div className="search-results-content">
@@ -288,7 +302,7 @@ function SearchResultsPage() {
               id="custom-chef-trigger-box"
             >
               <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(240, 90, 40, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--brand-orange)' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(240, 90, 40, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--brand-orange)', flexShrink: 0 }}>
                   <Sparkles size={24} />
                 </div>
                 <div className="custom-chef-content" style={{ flex: '1', minWidth: '200px' }}>
@@ -309,11 +323,14 @@ function SearchResultsPage() {
                       border: 'none',
                       boxShadow: '0 4px 16px rgba(240, 90, 40, 0.35)',
                       padding: '12px 22px',
+                      minHeight: '48px',
                       fontSize: '0.92rem',
                       fontWeight: '700',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '8px'
+                      justifyContent: 'center',
+                      gap: '8px',
+                      width: '100%'
                     }}
                     id="trigger-custom-chef-btn"
                   >
@@ -358,7 +375,7 @@ function SearchResultsPage() {
                     type="button"
                     onClick={handleGenerateCustom}
                     className="btn btn-secondary"
-                    style={{ fontSize: '0.8rem', padding: '6px 12px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                    style={{ fontSize: '0.8rem', padding: '8px 14px', minHeight: '40px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
                     id="custom-chef-retry-btn"
                   >
                     <RotateCcw size={13} />
@@ -375,7 +392,7 @@ function SearchResultsPage() {
                 style={{
                   border: '2px dashed rgba(240, 90, 40, 0.4)',
                   borderRadius: '24px',
-                  padding: '36px 24px',
+                  padding: '36px 20px',
                   marginBottom: '28px',
                   textAlign: 'center',
                   background: '#121622',
@@ -383,17 +400,23 @@ function SearchResultsPage() {
                 }}
                 id="custom-recipe-generating-indicator"
               >
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
-                  <Sparkles size={40} style={{ color: '#A78BFA' }} className="animate-spin" />
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '18px' }}>
+                  <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(240, 90, 40, 0.12)', border: '1px solid rgba(240, 90, 40, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                    <Loader2 size={32} className="animate-spin" style={{ color: 'var(--brand-orange)' }} />
+                    <Sparkles size={16} style={{ color: '#ffffff', position: 'absolute' }} />
+                  </div>
                 </div>
-                <h3 style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1.25rem', fontWeight: 700 }}>
+                <h3 style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1.2rem', fontWeight: 700 }}>
                   {language === 'bn' ? 'জেমিনি এআই শেফ আপনার কাস্টম রেসিপি প্রস্তুত করছে...' : 'Gemini AI Chef is crafting your custom recipe...'}
                 </h3>
-                <p style={{ margin: '0 auto', color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '520px', lineHeight: 1.6 }}>
+                <p style={{ margin: '0 auto', color: 'var(--text-secondary)', fontSize: '0.88rem', maxWidth: '520px', lineHeight: 1.6 }}>
                   {language === 'bn' 
                     ? 'আপনার নির্বাচিত উপকরণ ও ফিল্টারের ওপর ভিত্তি করে বাস্তবসম্মত, সুস্বাদু রান্নাপ্রণালী তৈরি হচ্ছে।' 
                     : 'Analyzing your selected ingredients and cooking preferences to engineer a delicious, authentic step-by-step recipe.'}
                 </p>
+                <div style={{ width: '100%', maxWidth: '280px', height: '4px', background: 'rgba(255,255,255,0.08)', borderRadius: '9999px', margin: '18px auto 0', overflow: 'hidden' }}>
+                  <div className="rb-shimmer" style={{ width: '100%', height: '100%', background: 'var(--brand-orange)' }} />
+                </div>
                 {isColdStarting && (
                   <div style={{
                     marginTop: '16px',
@@ -590,6 +613,80 @@ function SearchResultsPage() {
                 )}
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Floating Action Button (FAB) for Filters */}
+      {selectedIds.length > 0 && (
+        <button
+          type="button"
+          className="mobile-filter-fab"
+          onClick={() => setIsMobileFilterOpen(true)}
+          aria-label="Open Filters"
+          id="mobile-filter-fab-btn"
+        >
+          <Filter size={18} />
+          <span>{t('filters')}</span>
+          {activeFiltersCount > 0 && (
+            <span className="mobile-filter-fab-badge">
+              {language === 'bn' ? toBengaliNumber(activeFiltersCount) : activeFiltersCount}
+            </span>
+          )}
+        </button>
+      )}
+
+      {/* Mobile Slide-Up Drawer for Filters */}
+      {isMobileFilterOpen && (
+        <div 
+          className="mobile-filter-overlay"
+          onClick={() => setIsMobileFilterOpen(false)}
+          id="mobile-filter-overlay"
+        >
+          <div 
+            className="mobile-filter-drawer"
+            onClick={(e) => e.stopPropagation()}
+            id="mobile-filter-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('filters')}
+          >
+            <div className="mobile-drawer-header">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Filter size={18} style={{ color: 'var(--brand-orange)' }} />
+                <h3 style={{ margin: 0, fontSize: '1.15rem' }}>{t('filters')}</h3>
+                {activeFiltersCount > 0 && (
+                  <span className="badge" style={{ background: 'var(--brand-orange)', color: '#fff', fontSize: '0.75rem', padding: '2px 8px', borderRadius: '12px' }}>
+                    {language === 'bn' ? toBengaliNumber(activeFiltersCount) : activeFiltersCount}
+                  </span>
+                )}
+              </div>
+              <button 
+                type="button"
+                className="mobile-drawer-close"
+                onClick={() => setIsMobileFilterOpen(false)}
+                aria-label="Close Filters Drawer"
+                id="close-mobile-filter-drawer-btn"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="mobile-drawer-body">
+              <FilterPanel filters={filters} onChange={setFilters} />
+            </div>
+
+            <div className="mobile-drawer-footer">
+              <button 
+                type="button"
+                className="btn btn-primary"
+                style={{ width: '100%', minHeight: '48px', fontSize: '1rem', fontWeight: 700 }}
+                onClick={() => setIsMobileFilterOpen(false)}
+                id="apply-mobile-filters-btn"
+              >
+                {language === 'bn' ? `ফলাফল দেখুন (${toBengaliNumber(totalCount)}টি)` : `View Results (${totalCount})`}
+              </button>
+            </div>
           </div>
         </div>
       )}

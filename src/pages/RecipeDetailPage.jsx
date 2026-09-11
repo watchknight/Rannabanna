@@ -209,7 +209,7 @@ function RecipeDetailPage() {
       )}
 
       {/* 1. Header segment with Full-Bleed Real Food Photography */}
-      <section className="recipe-detail-header" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '36px', alignItems: 'center', marginBottom: '40px' }}>
+      <section className="recipe-detail-header">
         <div 
           className="recipe-detail-visual" 
           id="recipe-detail-hero-visual"
@@ -268,7 +268,7 @@ function RecipeDetailPage() {
                 id="recipe-detail-ai-badge"
               >
                 <Sparkles size={12} />
-                <span>{t('aiGeneratedBadge')} • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small></span>
+                <span>{t('aiGeneratedBadge')}<span className="ai-badge-subtext"> • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small></span></span>
               </span>
             )}
           </div>
@@ -279,7 +279,7 @@ function RecipeDetailPage() {
           </p>
 
           {/* Stats Bar with Lucide Icons */}
-          <div className="recipe-detail-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+          <div className="recipe-detail-stats">
             <div className="recipe-detail-stat-card glass-panel" id="recipe-stat-time" style={{ padding: '12px 16px', borderRadius: '16px' }}>
               <div className="recipe-detail-stat-val" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '1.1rem', fontWeight: 700 }}>
                 <Clock size={16} style={{ color: 'var(--brand-orange)' }} />
@@ -315,9 +315,9 @@ function RecipeDetailPage() {
                   disabled={activeServings <= 1}
                   aria-label="Decrease Servings"
                   id="servings-decrement-btn"
-                  style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  <Minus size={12} />
+                  <Minus size={14} />
                 </button>
                 <span className="servings-count" id="servings-count-val" style={{ fontWeight: 700, fontSize: '1.05rem', minWidth: '24px', textAlign: 'center' }}>
                   {language === 'bn' ? toBengaliNumber(activeServings) : activeServings}
@@ -329,9 +329,9 @@ function RecipeDetailPage() {
                   disabled={activeServings >= 24}
                   aria-label="Increase Servings"
                   id="servings-increment-btn"
-                  style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  <Plus size={12} />
+                  <Plus size={14} />
                 </button>
               </div>
               <div className="recipe-detail-stat-lbl" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{t('servingsLabel')}</div>
@@ -363,7 +363,7 @@ function RecipeDetailPage() {
       )}
 
       {/* 3. Main layout containing Ingredients on left and Directions on right */}
-      <section className="recipe-detail-body" style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '36px', alignItems: 'start' }}>
+      <section className="recipe-detail-body">
         
         {/* Ingredients Column */}
         <div className="ingredients-list-panel glass-panel" id="recipe-detail-ingredients" style={{ borderRadius: '24px', padding: '24px' }}>

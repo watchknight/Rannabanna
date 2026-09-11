@@ -425,14 +425,15 @@ select:focus-visible,
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-full);
-  padding: 6px 12px;
+  padding: 8px 14px;
+  min-height: 44px;
   color: var(--text-primary);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: all 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
@@ -445,9 +446,11 @@ select:focus-visible,
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--surface-border);
   color: var(--text-primary);
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
   font-size: 1.25rem;
   cursor: pointer;
   align-items: center;
@@ -1267,9 +1270,17 @@ select:focus-visible,
 .search-page-container {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: var(--spacing-lg);
+  gap: 32px;
   align-items: start;
 }
+
+@media (max-width: 960px) {
+  .search-page-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
 .search-sidebar {
   position: sticky;
   top: calc(var(--nav-height) + 14px);
@@ -1277,6 +1288,7 @@ select:focus-visible,
   overflow-y: auto;
   padding: var(--spacing-md) var(--spacing-lg);
 }
+
 .search-results-content {
   display: flex;
   flex-direction: column;
@@ -1460,8 +1472,8 @@ select:focus-visible,
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--surface-border);
   color: var(--text-primary);
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   font-size: 0.95rem;
   font-weight: 700;
@@ -1471,6 +1483,7 @@ select:focus-visible,
   justify-content: center;
   transition: all var(--transition-fast);
   line-height: 1;
+  -webkit-tap-highlight-color: transparent;
 }
 .servings-btn:hover:not(:disabled) {
   background: var(--brand-orange);
@@ -1817,15 +1830,18 @@ select:focus-visible,
 
   /* 5. Recipe detail mobile layout */
   .recipe-detail-visual {
-    height: 180px !important;
+    height: 220px !important;
   }
   .recipe-detail-title {
     font-size: 1.85rem !important;
     word-break: break-word;
   }
   .recipe-detail-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: var(--spacing-sm);
+  }
+  .ai-badge-subtext {
+    display: none !important;
   }
 
   /* 6. Custom Chef mobile banner */
@@ -2282,6 +2298,7 @@ select:focus-visible,
   overflow-x: auto;
   padding: 2px 2px 8px;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .quick-essentials-strip::-webkit-scrollbar {
   display: none;
@@ -2292,6 +2309,7 @@ select:focus-visible,
   align-items: center;
   gap: 8px;
   padding: 5px 12px 5px 6px;
+  min-height: 38px;
   border-radius: 9999px;
   background: #0E121A;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2303,6 +2321,15 @@ select:focus-visible,
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .essential-chip {
+    min-height: 48px;
+    padding: 8px 14px 8px 8px;
+    font-size: 0.85rem;
+  }
 }
 
 .essential-chip:hover {
@@ -2440,17 +2467,31 @@ select:focus-visible,
   padding: 4px 0 16px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 }
 .category-pills-bar::-webkit-scrollbar {
   display: none;
 }
 
+.category-pills-bar.centered {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .category-pills-bar.centered {
+    justify-content: flex-start !important;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
 .category-pill {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 16px;
+  padding: 8px 16px;
+  min-height: 42px;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2462,6 +2503,15 @@ select:focus-visible,
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .category-pill {
+    padding: 10px 18px;
+    min-height: 48px;
+    font-size: 0.88rem;
+  }
 }
 
 .category-pill:hover {
@@ -2514,6 +2564,7 @@ select:focus-visible,
   padding: 4px 6px 16px 2px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ingredient-catalog-viewport::-webkit-scrollbar {
@@ -2544,6 +2595,13 @@ select:focus-visible,
   width: 100%;
 }
 
+@media (max-width: 640px) {
+  .ingredient-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+}
+
 @media (min-width: 1024px) {
   .ingredient-cards-grid {
     grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
@@ -2561,12 +2619,22 @@ select:focus-visible,
   user-select: none;
   display: flex;
   flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.ingredient-photo-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+.ingredient-photo-card:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ingredient-photo-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  .ingredient-photo-card:hover .ingredient-card-image {
+    transform: scale(1.06);
+  }
 }
 
 .ingredient-photo-card.selected {
@@ -2588,10 +2656,6 @@ select:focus-visible,
   height: 100%;
   object-fit: cover;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ingredient-photo-card:hover .ingredient-card-image {
-  transform: scale(1.06);
 }
 
 .ingredient-card-gradient {
@@ -2685,13 +2749,15 @@ select:focus-visible,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 12px;
+  padding: 8px 12px;
+  min-height: 48px;
   border-radius: 10px;
   background: #0D111A;
   border: 1px solid rgba(255, 255, 255, 0.06);
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .ingredient-list-row:hover {
@@ -2874,6 +2940,36 @@ select:focus-visible,
   color: #ffffff;
 }
 
+@media (max-width: 640px) {
+  .docked-selection-bar {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    bottom: 16px;
+    padding: 6px 8px 6px 14px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .docked-avatars-group {
+    display: none;
+  }
+  .docked-count-text {
+    font-size: 0.82rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .docked-clear-btn {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+    min-height: 44px;
+  }
+  .docked-find-btn {
+    padding: 8px 14px;
+    font-size: 0.88rem;
+    min-height: 44px;
+    gap: 6px;
+  }
+}
+
 /* Full-Bleed Real Photography Recipe Card */
 .recipe-card {
   position: relative;
@@ -2885,12 +2981,22 @@ select:focus-visible,
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.recipe-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(240, 90, 40, 0.15);
+.recipe-card:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .recipe-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(240, 90, 40, 0.15);
+  }
+  .recipe-card:hover .recipe-card-media-img {
+    transform: scale(1.07);
+  }
 }
 
 .recipe-card-media {
@@ -2906,10 +3012,6 @@ select:focus-visible,
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.recipe-card:hover .recipe-card-media-img {
-  transform: scale(1.07);
 }
 
 .recipe-card-media-gradient {
