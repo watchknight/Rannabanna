@@ -1,6 +1,7 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { cacheService } from './cacheService.js';
 import { decorateRecipeTranslations, ingredientTranslations } from '../utils/translation_engine.js';
+import { logAiFailure } from '../utils/aiLogger.js';
 
 /**
  * System Instruction strictly instructing the Gemini 3.8 Flash culinary expert
@@ -137,15 +138,22 @@ export const RECIPE_RESPONSE_SCHEMA = {
 };
 
 /**
- * Normalizes input ingredients whether passed as strings, IDs, or objects.
+ * Normalizes and sanitizes input ingredients whether passed as strings, IDs, or objects.
+ * Defensively caps length and count to safely handle huge or unusual ingredient combinations.
  */
 function normalizeIngredients(ingredients = []) {
   if (!Array.isArray(ingredients)) return [];
-  return ingredients.map(item => {
-    if (typeof item === 'string') return item.trim();
-    if (item && typeof item === 'object') return item.name || item.nameEn || item.id || '';
-    return String(item);
-  }).filter(Boolean);
+  return ingredients
+    .map(item => {
+      let str = '';
+      if (typeof item === 'string') str = item.trim();
+      else if (item && typeof item === 'object') str = (item.name || item.nameEn || item.id || '').trim();
+      else str = String(item).trim();
+      // Sanitize per-ingredient length to prevent prompt overflow or token exhaustion
+      return str.slice(0, 100);
+    })
+    .filter(Boolean)
+    .slice(0, 50); // Cap at 50 ingredients max
 }
 
 /**
@@ -275,10 +283,17 @@ export async function generateCustomAiRecipe({
       lastError = err;
       console.warn(`⚠️ Gemini custom-recipe call attempt ${attempt} failed (status: ${err.status || err.code}): ${err.message}`);
 
-      // If it's a 429 quota error, format friendly message and stop retrying immediately
+      // If it's a 429 quota error, log and stop retrying immediately
       if (err.status === 429 || (err.message && err.message.includes('Quota exceeded'))) {
         const quotaErr = new Error('AI Chef is currently experiencing high demand. Free tier quota limit reached; please retry in a few moments.');
         quotaErr.status = 429;
+        logAiFailure({
+          service: 'CUSTOM_RECIPE',
+          model: 'gemini-3.8-flash',
+          error: quotaErr,
+          context: { ingredients: normalizedIngredients, cuisine: normalizedFilters.cuisine, attempt },
+          fallbackAction: 'Returned 429 quota error to caller'
+        });
         throw quotaErr;
       }
 
@@ -300,6 +315,13 @@ export async function generateCustomAiRecipe({
 
       const formattedErr = new Error(cleanMessage);
       formattedErr.status = err.status || 500;
+      logAiFailure({
+        service: 'CUSTOM_RECIPE',
+        model: 'gemini-3.8-flash',
+        error: formattedErr,
+        context: { ingredients: normalizedIngredients, cuisine: normalizedFilters.cuisine, attempt },
+        fallbackAction: 'Thrown to route error handler'
+      });
       throw formattedErr;
     }
   }
@@ -307,6 +329,13 @@ export async function generateCustomAiRecipe({
   if (!rawJsonText) {
     const error = new Error('AI Chef was unable to generate a recipe response. Please try again with different ingredients.');
     error.status = 502;
+    logAiFailure({
+      service: 'CUSTOM_RECIPE',
+      model: 'gemini-3.8-flash',
+      error,
+      context: { ingredients: normalizedIngredients },
+      fallbackAction: 'Empty response returned'
+    });
     throw error;
   }
 
@@ -318,6 +347,13 @@ export async function generateCustomAiRecipe({
     console.error('Failed to parse Gemini recipe JSON output:', rawJsonText);
     const error = new Error('AI Chef produced an invalid recipe response structure. Please try again.');
     error.status = 502;
+    logAiFailure({
+      service: 'CUSTOM_RECIPE',
+      model: 'gemini-3.8-flash',
+      error,
+      context: { rawSnippet: rawJsonText.slice(0, 150) },
+      fallbackAction: 'JSON parse failure'
+    });
     throw error;
   }
 
@@ -325,6 +361,13 @@ export async function generateCustomAiRecipe({
   if (!recipeData.title || !Array.isArray(recipeData.ingredients) || !Array.isArray(recipeData.steps)) {
     const error = new Error('AI Chef output did not meet the required recipe structure.');
     error.status = 502;
+    logAiFailure({
+      service: 'CUSTOM_RECIPE',
+      model: 'gemini-3.8-flash',
+      error,
+      context: { recipeKeys: Object.keys(recipeData || {}) },
+      fallbackAction: 'Invalid recipe schema fields'
+    });
     throw error;
   }
 

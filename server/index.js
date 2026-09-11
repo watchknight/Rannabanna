@@ -3,7 +3,7 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { rateLimiter } from './middlewares/rateLimiter.js';
+import { rateLimiter, aiRecipeRateLimiter } from './middlewares/rateLimiter.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { recipeRouter } from './routes/recipeRoutes.js';
 import { ingredientRouter } from './routes/ingredientRoutes.js';
@@ -12,6 +12,7 @@ import { aiRouter } from './routes/aiRoutes.js';
 import { recipeService } from './services/recipeService.js';
 import { cacheService } from './services/cacheService.js';
 import { generateCustomAiRecipe } from './services/aiRecipeService.js';
+import { logAiFailure } from './utils/aiLogger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -197,13 +198,13 @@ app.post(['/api/match', '/api/recipes/match'], async (req, res, next) => {
 /**
  * @desc Legacy custom bespoke recipe generation interface
  */
-app.post('/api/custom-recipe', async (req, res, next) => {
+app.post('/api/custom-recipe', aiRecipeRateLimiter, async (req, res, next) => {
   try {
     const { 
       ingredientIds = [], 
       ingredients = [], 
       cuisineId = 'any', 
-      cuisine = null,
+      cuisine = null, 
       filters = {} 
     } = req.body || {};
 
@@ -226,6 +227,13 @@ app.post('/api/custom-recipe', async (req, res, next) => {
         });
         return res.json(aiRecipe);
       } catch (aiError) {
+        logAiFailure({
+          service: 'CUSTOM_RECIPE_LEGACY_ROUTE',
+          model: 'gemini-3.8-flash',
+          error: aiError,
+          context: { ingredientsCount: resolvedIngredients.length, cuisineId },
+          fallbackAction: 'Fell back to local custom recipe engine'
+        });
         console.warn('⚠️ Gemini AI recipe generation failed, falling back to local recipe engine:', aiError.message);
       }
     }

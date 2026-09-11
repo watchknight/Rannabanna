@@ -249,7 +249,7 @@ function SearchResultsPage() {
             }} id="custom-chef-trigger-box">
               <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', flexWrap: 'wrap' }}>
                 <div style={{ fontSize: '2.5rem' }}>👩‍🍳</div>
-                <div style={{ flex: '1', minWidth: '250px' }}>
+                <div className="custom-chef-content" style={{ flex: '1', minWidth: '180px' }}>
                   <h4 style={{ margin: '0 0 4px 0', fontSize: '1.15rem', color: 'var(--brand-pink)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                     {t('bespokeChefTitle')}
                   </h4>
@@ -257,7 +257,7 @@ function SearchResultsPage() {
                     {t('bespokeChefDesc')}
                   </p>
                 </div>
-                <div>
+                <div className="custom-chef-actions">
                   <button 
                     className="btn btn-primary" 
                     onClick={handleGenerateCustom}

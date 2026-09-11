@@ -2,8 +2,41 @@ import express from 'express';
 import { GoogleGenAI } from '@google/genai';
 import { generateCustomAiRecipe } from '../services/aiRecipeService.js';
 import { translateText, translateRecipe } from '../services/translationService.js';
+import { aiRecipeRateLimiter, aiTranslationRateLimiter } from '../middlewares/rateLimiter.js';
+import { logAiFailure, getRecentAiFailures } from '../utils/aiLogger.js';
 
 export const aiRouter = express.Router();
+
+/**
+ * @route   GET /api/ai/health
+ * @desc    Check Gemini AI service status and recent activity
+ * @access  Public / Diagnostics
+ */
+aiRouter.get('/health', (req, res) => {
+  const hasApiKey = Boolean(process.env.GEMINI_API_KEY);
+  const recentFailures = getRecentAiFailures(5);
+  res.json({
+    status: 'ok',
+    geminiConfigured: hasApiKey,
+    model: 'gemini-3.8-flash',
+    recentFailuresCount: recentFailures.length,
+    timestamp: new Date().toISOString()
+  });
+});
+
+/**
+ * @route   GET /api/ai/failures
+ * @desc    View structured Gemini API failure log buffer
+ * @access  Internal / Diagnostics
+ */
+aiRouter.get('/failures', (req, res) => {
+  const limit = parseInt(req.query.limit, 10) || 50;
+  res.json({
+    success: true,
+    count: getRecentAiFailures(limit).length,
+    failures: getRecentAiFailures(limit)
+  });
+});
 
 /**
  * @route   GET /api/ai/test
@@ -16,9 +49,18 @@ aiRouter.all('/test', async (req, res, next) => {
     const apiKey = process.env.GEMINI_API_KEY || req.headers['x-gemini-key'];
 
     if (!apiKey) {
+      const err = new Error('GEMINI_API_KEY is not configured on the server. Please add your GEMINI_API_KEY to the server .env file.');
+      err.status = 500;
+      logAiFailure({
+        service: 'TEST_ENDPOINT',
+        model: 'gemini-3.8-flash',
+        error: err,
+        context: { route: '/api/ai/test' },
+        fallbackAction: 'Returned 500 error'
+      });
       return res.status(500).json({
         success: false,
-        error: 'GEMINI_API_KEY is not configured on the server.',
+        error: err.message,
         message: 'Please add your GEMINI_API_KEY to the server .env file.',
         status: 500
       });
@@ -53,6 +95,13 @@ aiRouter.all('/test', async (req, res, next) => {
       timestamp: new Date().toISOString()
     });
   } catch (error) {
+    logAiFailure({
+      service: 'TEST_ENDPOINT',
+      model: 'gemini-3.8-flash',
+      error,
+      context: { route: '/api/ai/test' },
+      fallbackAction: 'Returned error to client'
+    });
     console.error('Gemini 3.8 Flash test endpoint error:', error);
     return res.status(error.status || 500).json({
       success: false,
@@ -64,10 +113,10 @@ aiRouter.all('/test', async (req, res, next) => {
 
 /**
  * @route   POST /api/ai/custom-recipe
- * @desc    Generate a bespoke custom recipe using Gemini 3.8 Flash with structured JSON output and caching
+ * @desc    Generate a bespoke custom recipe using Gemini 3.8 Flash with rate limiting, structured JSON output and caching
  * @access  Public / Server-side
  */
-aiRouter.post('/custom-recipe', async (req, res, next) => {
+aiRouter.post('/custom-recipe', aiRecipeRateLimiter, async (req, res, next) => {
   try {
     const {
       ingredients = [],
@@ -107,6 +156,16 @@ aiRouter.post('/custom-recipe', async (req, res, next) => {
       recipe
     });
   } catch (error) {
+    logAiFailure({
+      service: 'CUSTOM_RECIPE',
+      model: 'gemini-3.8-flash',
+      error,
+      context: { 
+        ingredientsCount: (req.body?.ingredients || req.body?.ingredientIds || []).length,
+        cuisine: req.body?.cuisine || req.body?.cuisineId 
+      },
+      fallbackAction: 'Returned error response to client'
+    });
     console.error('Custom recipe endpoint error:', error.message);
     return res.status(error.status || 500).json({
       success: false,
@@ -118,10 +177,10 @@ aiRouter.post('/custom-recipe', async (req, res, next) => {
 
 /**
  * @route   POST /api/ai/translate
- * @desc    Translate culinary text or a full recipe object to natural Bangla using Gemini 3.8 Flash with persistent caching
+ * @desc    Translate culinary text or a full recipe object to natural Bangla using Gemini 3.8 Flash with rate limiting and persistent caching
  * @access  Public / Server-side
  */
-aiRouter.post('/translate', async (req, res, next) => {
+aiRouter.post('/translate', aiTranslationRateLimiter, async (req, res, next) => {
   try {
     const {
       text,
@@ -166,6 +225,13 @@ aiRouter.post('/translate', async (req, res, next) => {
       status: 400
     });
   } catch (error) {
+    logAiFailure({
+      service: 'TRANSLATE_ENDPOINT',
+      model: 'gemini-3.8-flash',
+      error,
+      context: { hasText: Boolean(req.body?.text), hasRecipe: Boolean(req.body?.recipe) },
+      fallbackAction: 'Returned error response to client'
+    });
     console.error('Translation endpoint error:', error.message);
     return res.status(error.status || 500).json({
       success: false,

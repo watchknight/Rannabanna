@@ -6,6 +6,7 @@ import { aiRouter } from '../routes/aiRoutes.js';
 import { GoogleGenAI } from '@google/genai';
 import { db } from '../models/db.js';
 import { cacheService } from '../services/cacheService.js';
+import { recipeService } from '../services/recipeService.js';
 import { 
   AI_RECIPE_SYSTEM_INSTRUCTION, 
   RECIPE_RESPONSE_SCHEMA, 
@@ -22,6 +23,16 @@ import {
   getCachedTextTranslation, 
   getCachedRecipeTranslation 
 } from '../../src/utils/aiTranslator.js';
+import { 
+  aiRecipeRateLimiter, 
+  aiTranslationRateLimiter, 
+  createRateLimiter 
+} from '../middlewares/rateLimiter.js';
+import { 
+  logAiFailure, 
+  getRecentAiFailures, 
+  clearRecentAiFailures 
+} from '../utils/aiLogger.js';
 
 describe('Gemini 3.8 Flash Foundation, Custom Recipe & Translation Suite', () => {
   let app;
@@ -36,6 +47,34 @@ describe('Gemini 3.8 Flash Foundation, Custom Recipe & Translation Suite', () =>
     app.post('/api/translate', (req, res, next) => {
       req.url = '/translate';
       aiRouter(req, res, next);
+    });
+    app.post('/api/custom-recipe', aiRecipeRateLimiter, async (req, res, next) => {
+      try {
+        const { ingredients = [], ingredientIds = [], cuisine = 'any', filters = {} } = req.body || {};
+        const resolved = ingredients.length > 0 ? ingredients : ingredientIds;
+        if (!resolved || resolved.length === 0) {
+          return res.status(400).json({ error: 'Please select at least one ingredient to generate a custom recipe.' });
+        }
+        const apiKey = process.env.GEMINI_API_KEY;
+        if (apiKey) {
+          try {
+            const aiRecipe = await generateCustomAiRecipe({ ingredients: resolved, cuisine, apiKey });
+            return res.json(aiRecipe);
+          } catch (aiErr) {
+            logAiFailure({
+              service: 'CUSTOM_RECIPE_LEGACY_ROUTE',
+              model: 'gemini-3.8-flash',
+              error: aiErr,
+              context: { ingredientsCount: resolved.length },
+              fallbackAction: 'Fell back to local custom recipe engine'
+            });
+          }
+        }
+        const fallback = await recipeService.generateCustomRecipe(resolved, cuisine, null);
+        res.json(fallback);
+      } catch (err) {
+        next(err);
+      }
     });
 
     await new Promise((resolve) => {
@@ -473,4 +512,297 @@ describe('Gemini 3.8 Flash Foundation, Custom Recipe & Translation Suite', () =>
     assert.strictEqual(res.recipe.titleBn, 'সরিষা ইলিশ (ঐতিহ্যবাহী বাঙালি স্টাইল)');
     assert.strictEqual(res.source, 'database');
   });
+
+  test('23. Rate Limiting: POST /api/ai/custom-recipe enforces rate limit and returns 429', async () => {
+    aiRecipeRateLimiter.reset();
+
+    // Prime cache so requests that pass don't hit Gemini
+    const testIngredients = ['egg', 'tomato'];
+    const cacheKey = `ai:custom-recipe:${cacheService.generateKey(testIngredients, { cuisine: null, maxTime: null, dietaryRestrictions: [] })}`;
+    cacheService.set(cacheKey, { id: 'mock-1', title: 'Egg Tomato Scramble', ingredients: [], steps: [] }, 60000);
+
+    let lastStatus = 0;
+    let rateLimitedResponse = null;
+
+    // Send 11 requests (limit is 10)
+    for (let i = 0; i < 11; i++) {
+      const res = await fetch(`${baseUrl}/api/ai/custom-recipe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ingredients: testIngredients })
+      });
+      lastStatus = res.status;
+      if (res.status === 429) {
+        rateLimitedResponse = await res.json();
+        break;
+      }
+    }
+
+    assert.strictEqual(lastStatus, 429, '11th request must receive HTTP 429 Too Many Requests');
+    assert.ok(rateLimitedResponse, 'Should receive JSON payload on 429');
+    assert.strictEqual(rateLimitedResponse.success, false);
+    assert.strictEqual(rateLimitedResponse.error, 'Too Many Requests');
+    assert.strictEqual(rateLimitedResponse.limit, 10);
+    assert.ok(rateLimitedResponse.retryAfterSeconds > 0);
+
+    aiRecipeRateLimiter.reset(); // Clean up for other tests
+  });
+
+  test('24. Rate Limiting: POST /api/ai/translate enforces rate limit and returns 429', async () => {
+    aiTranslationRateLimiter.reset();
+
+    // Create a standalone instance of createRateLimiter to test translation limiter mechanics cleanly
+    const testLimiter = createRateLimiter({
+      windowMs: 60000,
+      max: 3,
+      message: 'Translation limit test exceeded',
+      keyPrefix: 'test-trans'
+    });
+
+    const mockReq = { ip: '127.0.0.99', headers: {}, socket: { remoteAddress: '127.0.0.99' } };
+    let finalStatus = 200;
+    let finalJson = null;
+
+    const mockRes = {
+      set: () => {},
+      status: (code) => {
+        finalStatus = code;
+        return {
+          json: (data) => { finalJson = data; }
+        };
+      }
+    };
+
+    // 1st, 2nd, 3rd pass
+    testLimiter(mockReq, mockRes, () => {});
+    testLimiter(mockReq, mockRes, () => {});
+    testLimiter(mockReq, mockRes, () => {});
+    assert.strictEqual(finalStatus, 200);
+
+    // 4th must trigger 429
+    testLimiter(mockReq, mockRes, () => {});
+    assert.strictEqual(finalStatus, 429);
+    assert.strictEqual(finalJson.error, 'Too Many Requests');
+    assert.strictEqual(finalJson.limit, 3);
+  });
+
+  test('25. Structured Failure Logging: Captures Gemini failures with sanitized context and exposes via /api/ai/failures', async () => {
+    clearRecentAiFailures();
+
+    const testError = new Error('Simulated Gemini 503 High Demand Error');
+    testError.status = 503;
+
+    logAiFailure({
+      service: 'CUSTOM_RECIPE',
+      model: 'gemini-3.8-flash',
+      error: testError,
+      context: { 
+        ingredients: ['mustard seeds', 'ilish fish'], 
+        cuisine: 'Bengali',
+        apiKey: 'SECRET_DO_NOT_LOG' 
+      },
+      fallbackAction: 'Fell back to local custom recipe engine'
+    });
+
+    const recent = getRecentAiFailures();
+    assert.ok(recent.length >= 1, 'Should have at least 1 recent failure');
+    const entry = recent[0];
+
+    assert.strictEqual(entry.service, 'CUSTOM_RECIPE');
+    assert.strictEqual(entry.model, 'gemini-3.8-flash');
+    assert.strictEqual(entry.status, 503);
+    assert.strictEqual(entry.error, 'Simulated Gemini 503 High Demand Error');
+    assert.strictEqual(entry.fallbackAction, 'Fell back to local custom recipe engine');
+    assert.strictEqual(entry.context.apiKey, '[REDACTED]', 'Sensitive API keys must be redacted');
+    assert.ok(entry.timestamp, 'Must include timestamp');
+
+    // Test GET /api/ai/failures endpoint
+    const res = await fetch(`${baseUrl}/api/ai/failures`);
+    assert.strictEqual(res.status, 200);
+    const data = await res.json();
+    assert.strictEqual(data.success, true);
+    assert.ok(data.count >= 1);
+    assert.strictEqual(data.failures[0].service, 'CUSTOM_RECIPE');
+  });
+
+  test('26. Edge Case: Empty or missing ingredients input returns 400 Bad Request with zero API calls', async () => {
+    // 1. Empty array
+    const res1 = await fetch(`${baseUrl}/api/ai/custom-recipe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ingredients: [] })
+    });
+    assert.strictEqual(res1.status, 400);
+    const data1 = await res1.json();
+    assert.match(data1.error, /at least one ingredient/);
+
+    // 2. Whitespace array
+    const res2 = await fetch(`${baseUrl}/api/ai/custom-recipe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ingredients: ['  ', ''] })
+    });
+    assert.strictEqual(res2.status, 400);
+
+    // 3. Completely empty body
+    const res3 = await fetch(`${baseUrl}/api/ai/custom-recipe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({})
+    });
+    assert.strictEqual(res3.status, 400);
+  });
+
+  test('27. Edge Case: Huge or unusual ingredient combinations are safely bounded without crashing', async () => {
+    // Create an extreme list with 65 ingredients, emojis, symbols, and long strings
+    const massiveIngredients = [];
+    for (let i = 1; i <= 65; i++) {
+      massiveIngredients.push(`Unusual Ingredient #${i} ${'🌶️'.repeat(i % 3)} with special chars & * % <tag> ${'x'.repeat(150)}`);
+    }
+
+    // Direct service call test for input normalization
+    let thrownError = null;
+    try {
+      // With no API key configured, it will fail at key resolution AFTER normalization passes safely
+      delete process.env.GEMINI_API_KEY;
+      await generateCustomAiRecipe({ ingredients: massiveIngredients });
+    } catch (err) {
+      thrownError = err;
+    }
+
+    assert.ok(thrownError, 'Should throw due to missing key, but NOT due to payload length or syntax error');
+    assert.match(thrownError.message, /GEMINI_API_KEY is not configured/);
+    process.env.GEMINI_API_KEY = originalKey;
+  });
+
+  test('28. Edge Case: Translation text with special characters (HTML, quotes, KaTeX $, Bengali conjuncts)', async () => {
+    const specialText = '<div class="culinary-tip">Heat 2 tbsp mustard oil! Cost: $5. Formula: E = mc^2. ক্ষ, হ্ম, ঞ্চ, ষ্ণ, র্দ্ধ, ্য</div>';
+    const expectedBengali = '<div class="culinary-tip">২ টেবিল চামচ সরিষার তেল গরম করুন! খরচ: $৫। সূত্র: E = mc^2। ক্ষ, হ্ম, ঞ্চ, ষ্ণ, র্দ্ধ, ্য</div>';
+
+    const hash = crypto.createHash('sha256').update(`bn:${specialText}`).digest('hex');
+    db.prepare(`
+      INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
+      VALUES (?, ?, ?, ?)
+    `).run(hash, specialText, 'bn', expectedBengali);
+
+    const res = await fetch(`${baseUrl}/api/ai/translate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: specialText, targetLanguage: 'bn' })
+    });
+
+    assert.strictEqual(res.status, 200);
+    const data = await res.json();
+    assert.strictEqual(data.success, true);
+    assert.strictEqual(data.translatedText, expectedBengali);
+    assert.ok(data.translatedText.includes('ক্ষ, হ্ম, ঞ্চ, ষ্ণ'));
+    assert.ok(data.translatedText.includes('$৫'));
+  });
+
+  test('29. Edge Case: Very long recipe with 25 steps preserves all step numbering without truncation', async () => {
+    const steps25 = [];
+    for (let i = 1; i <= 25; i++) {
+      steps25.push({
+        step: i,
+        instruction: `Step ${i}: Carefully simmer the ingredients and perform technique #${i} for 5 minutes.`,
+        duration: 5
+      });
+    }
+
+    const longRecipe = {
+      id: 'custom-long-recipe-25-steps',
+      title: 'Grand Royal 25-Step Feast',
+      cuisine: 'Bengali',
+      ingredients: [
+        { name: 'Basmati Rice', amount: 500, unit: 'g', quantity: 500 },
+        { name: 'Mutton', amount: 1, unit: 'kg', quantity: 1 }
+      ],
+      steps: steps25
+    };
+
+    const recipeHash = crypto.createHash('sha256').update(
+      `bn:${longRecipe.id}:${longRecipe.title}:${JSON.stringify(longRecipe.steps)}`
+    ).digest('hex');
+
+    const steps25Translated = steps25.map(s => ({
+      step: s.step,
+      instruction: s.instruction,
+      instructionBn: `ধাপ ${s.step}: মৃদু আঁচে উপকরণগুলো ফুটান এবং রান্না করুন।`,
+      duration: s.duration
+    }));
+
+    const translatedLongRecipe = {
+      ...longRecipe,
+      titleBn: 'গ্র্যান্ড রয়্যাল ২৫-ধাপের ভোজ',
+      steps: steps25Translated,
+      ingredients: [
+        { name: 'Basmati Rice', nameBn: 'বাসমতী চাল', amount: 500, unit: 'g', quantity: 500 },
+        { name: 'Mutton', nameBn: 'খাসির মাংস', amount: 1, unit: 'kg', quantity: 1 }
+      ]
+    };
+
+    cacheService.set(`ai:trans:recipe:${recipeHash}`, translatedLongRecipe, 60000);
+
+    const res = await fetch(`${baseUrl}/api/ai/translate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ recipe: longRecipe, targetLanguage: 'bn' })
+    });
+
+    assert.strictEqual(res.status, 200);
+    const data = await res.json();
+    assert.strictEqual(data.success, true);
+    assert.strictEqual(data.recipe.steps.length, 25, 'All 25 steps must be preserved');
+    assert.strictEqual(data.recipe.steps[0].step, 1);
+    assert.strictEqual(data.recipe.steps[24].step, 25);
+    assert.ok(data.recipe.steps.every(s => Boolean(s.instructionBn)));
+  });
+
+  test('30. Edge Case: Temporary API unavailability gracefully falls back without 500 crash', async () => {
+    aiRecipeRateLimiter.reset();
+
+    // 1. Translation fallback: Call translateRecipe with invalid API key
+    const testRecipe = {
+      id: 'custom-temp-fail-1',
+      title: 'Quick Chicken Stir Fry',
+      description: 'A delicious quick stir fry.',
+      steps: [
+        { step: 1, instruction: 'Heat wok and add oil.' },
+        { step: 2, instruction: 'Toss chicken pieces until cooked through.' }
+      ],
+      ingredients: [
+        { name: 'Chicken', amount: 300, unit: 'g' }
+      ]
+    };
+
+    // Missing key triggers local translation engine fallback gracefully
+    const transResult = await translateRecipe({
+      recipe: testRecipe,
+      targetLanguage: 'bn',
+      apiKey: null // Missing key triggers local_fallback
+    });
+
+    assert.strictEqual(transResult.success, true);
+    assert.strictEqual(transResult.source, 'local_fallback', 'Must use local fallback when Gemini is unavailable');
+    assert.ok(transResult.recipe.title, 'Recipe title must remain intact');
+
+    // 2. Legacy custom-recipe route fallback: When Gemini fails, falls back to local recipe engine
+    delete process.env.GEMINI_API_KEY;
+    const recipeRes = await fetch(`${baseUrl}/api/custom-recipe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ingredients: ['chicken', 'onion', 'garlic'],
+        cuisine: 'bengali'
+      })
+    });
+
+    assert.strictEqual(recipeRes.status, 200, 'Must return 200 OK from local chef engine on Gemini unavailability');
+    const recipeData = await recipeRes.json();
+    assert.ok(recipeData.title, 'Local recipe engine must return a valid recipe');
+    assert.ok(recipeData.ingredients.length > 0);
+
+    process.env.GEMINI_API_KEY = originalKey;
+  });
 });
+

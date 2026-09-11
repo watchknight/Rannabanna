@@ -8,6 +8,7 @@ import {
   ingredientTranslations, 
   cuisineTranslations 
 } from '../utils/translation_engine.js';
+import { logAiFailure } from '../utils/aiLogger.js';
 
 /**
  * Authentic Bengali Culinary Translator System Instruction for Gemini 3.8 Flash
@@ -202,6 +203,13 @@ export async function translateText({
     const response = await Promise.race([generatePromise, timeoutPromise]);
     translatedText = (response.text || '').trim();
   } catch (apiErr) {
+    logAiFailure({
+      service: 'TRANSLATE_TEXT',
+      model: 'gemini-3.8-flash',
+      error: apiErr,
+      context: { textLength: cleanText.length, targetLanguage: normalizedLang },
+      fallbackAction: apiErr.status === 429 ? 'Returned 429 quota error' : 'Re-thrown to route handler'
+    });
     console.warn('⚠️ Gemini translation API error:', apiErr.message);
     if (apiErr.status === 429 || apiErr.message?.includes('Quota exceeded')) {
       const quotaErr = new Error('Translation service quota reached. Please try again shortly.');
@@ -417,6 +425,13 @@ Translate the title, description, cultural note, ingredients, and step instructi
       translatedData = JSON.parse(rawJson);
     }
   } catch (apiErr) {
+    logAiFailure({
+      service: 'TRANSLATE_RECIPE',
+      model: 'gemini-3.8-flash',
+      error: apiErr,
+      context: { recipeId: recipe.id, recipeTitle: recipe.title, stepsCount: stepsList.length },
+      fallbackAction: 'Fell back to local dictionary translation engine'
+    });
     console.warn('⚠️ Gemini recipe translation failed:', apiErr.message);
     if (apiErr.status === 429 || apiErr.message?.includes('Quota exceeded')) {
       const quotaErr = new Error('AI Translation service is currently experiencing high demand. Please try again shortly.');

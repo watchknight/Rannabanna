@@ -2090,6 +2090,8 @@ select:focus-visible,
   border: 1px solid rgba(139, 92, 246, 0.3);
   vertical-align: middle;
   line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .translating-dot {
@@ -2099,6 +2101,7 @@ select:focus-visible,
   background-color: #a78bfa;
   display: inline-block;
   animation: pulseGlow 1s infinite alternate;
+  flex-shrink: 0;
 }
 
 .recipe-translating-banner {
@@ -2113,6 +2116,49 @@ select:focus-visible,
   color: #e9d5ff;
   font-size: 0.85rem;
   font-weight: 500;
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.25s ease-out;
+  box-sizing: border-box;
+  width: 100%;
+  word-break: break-word;
 }
+
+/* ═══════════════════════════════════════════════════════════
+ * Mobile Responsiveness & Layout Stability for AI Features
+ * ═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .custom-chef-banner {
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+  }
+  .custom-chef-content {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .custom-chef-actions {
+    width: 100% !important;
+    margin-top: var(--spacing-xs);
+  }
+  .custom-chef-actions button {
+    width: 100% !important;
+    justify-content: center;
+  }
+  .recipe-translating-banner {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+  #custom-recipe-generating-indicator {
+    padding: var(--spacing-md) !important;
+    margin-bottom: var(--spacing-md) !important;
+  }
+  #custom-chef-error {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  #custom-chef-error button {
+    width: 100%;
+    margin-top: 6px;
+    justify-content: center;
+  }
+}
+
 
