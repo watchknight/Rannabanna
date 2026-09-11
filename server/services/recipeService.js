@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { db as firestoreDb, isFirebaseInitialized } from '../models/firebase.js';
-import { db as sqliteDb } from '../models/db.js';
+import { pool, query } from '../models/db.js';
 import { cacheService } from './cacheService.js';
 import { GoogleGenAI } from '@google/genai';
 import { generateLocalCustomRecipe } from '../../src/utils/customChefEngine.js';
@@ -84,77 +84,81 @@ class RecipeService {
 
         console.log('🔥 Live Cloud Firestore collections cached successfully in memory!');
       } else {
-        this._hydrateFromSqlite();
+        await this._hydrateFromPostgres();
       }
       this.lastHydrated = Date.now();
       console.log(`✅ Cache hydrated: ${this.cuisinesCache.length} cuisines, ${this.ingredientsCache.length} ingredients, and ${this.recipesCache.length} recipes ready.`);
     } catch (error) {
-      console.error('❌ Firestore cache hydration failed. Falling back to local SQLite:', error.message);
-      this._hydrateFromSqlite();
+      console.error('❌ Cache hydration failed, retrying from PostgreSQL:', error.message);
+      await this._hydrateFromPostgres();
       this.lastHydrated = Date.now();
     }
   }
 
-  _hydrateFromSqlite() {
-    console.warn('⚠️ Hydrating caches directly from local SQLite database.');
+  async _hydrateFromPostgres() {
+    console.log('🐘 Hydrating caches directly from PostgreSQL (Supabase)...');
     
     // 1. Cuisines
-    this.cuisinesCache = sqliteDb.prepare('SELECT * FROM cuisines').all().map(c => ({
+    const cuisinesRes = await query('SELECT * FROM cuisines');
+    this.cuisinesCache = cuisinesRes.rows.map(c => ({
       ...c,
       ...(cuisineTranslations[c.id] || {})
     }));
 
     // 2. Ingredients
-    this.ingredientsCache = this._getAllIngredientsSqlite().map(i => ({
+    const ingredientsRows = await this._getAllIngredientsPostgres();
+    this.ingredientsCache = ingredientsRows.map(i => ({
       ...i,
       nameBn: ingredientTranslations[i.id] || i.name
     }));
 
-    // 3. Recipes (High-performance bulk hydration — eliminates N+1 query loop)
-    const recipes = sqliteDb.prepare('SELECT * FROM recipes').all();
-    const mealTypes = sqliteDb.prepare('SELECT * FROM recipe_meal_types').all();
-    const dietaryTags = sqliteDb.prepare('SELECT * FROM recipe_dietary_tags').all();
-    const steps = sqliteDb.prepare('SELECT recipeId, stepNumber as step, instruction, instructionBn, duration, technique FROM recipe_steps ORDER BY recipeId, stepNumber').all();
-    const ingredients = sqliteDb.prepare(`
-      SELECT ri.recipeId, ri.ingredientId, ri.quantity, ri.unit, ri.preparation, ri.isEssential, ri.ingredientGroup as 'group', i.name, i.emoji
-      FROM recipe_ingredients ri
-      JOIN ingredients i ON ri.ingredientId = i.id
-    `).all();
+    // 3. Recipes (High-performance bulk hydration)
+    const [recipesRes, mealTypesRes, dietaryTagsRes, stepsRes, ingredientsRes] = await Promise.all([
+      query('SELECT * FROM recipes'),
+      query('SELECT * FROM recipe_meal_types'),
+      query('SELECT * FROM recipe_dietary_tags'),
+      query('SELECT "recipeId", "stepNumber" as step, "instruction", "instructionBn", "duration", "technique" FROM recipe_steps ORDER BY "recipeId", "stepNumber"'),
+      query(`
+        SELECT ri."recipeId", ri."ingredientId", ri."quantity", ri."unit", ri."preparation", ri."isEssential", ri."ingredientGroup" as "group", i."name", i."emoji"
+        FROM recipe_ingredients ri
+        JOIN ingredients i ON ri."ingredientId" = i."id"
+      `)
+    ]);
 
     const mtMap = new Map();
-    for (const m of mealTypes) {
+    for (const m of mealTypesRes.rows) {
       if (!mtMap.has(m.recipeId)) mtMap.set(m.recipeId, []);
       mtMap.get(m.recipeId).push(m.mealType);
     }
 
     const dtMap = new Map();
-    for (const d of dietaryTags) {
+    for (const d of dietaryTagsRes.rows) {
       if (!dtMap.has(d.recipeId)) dtMap.set(d.recipeId, []);
       dtMap.get(d.recipeId).push(d.dietaryTag);
     }
 
     const stMap = new Map();
-    for (const s of steps) {
+    for (const s of stepsRes.rows) {
       if (!stMap.has(s.recipeId)) stMap.set(s.recipeId, []);
       stMap.get(s.recipeId).push(s);
     }
 
     const ingMap = new Map();
-    for (const i of ingredients) {
+    for (const i of ingredientsRes.rows) {
       if (!ingMap.has(i.recipeId)) ingMap.set(i.recipeId, []);
       ingMap.get(i.recipeId).push({
         ingredientId: i.ingredientId,
-        quantity: i.quantity,
+        quantity: i.quantity !== null ? Number(i.quantity) : 1,
         unit: i.unit,
         preparation: i.preparation,
-        isEssential: i.isEssential === 1,
+        isEssential: Boolean(i.isEssential),
         group: i.group,
         name: i.name,
         emoji: i.emoji
       });
     }
 
-    this.recipesCache = recipes.map(r => {
+    this.recipesCache = recipesRes.rows.map(r => {
       const detailed = {
         ...r,
         baseServings: r.baseServings || r.servings || 4,
@@ -165,6 +169,10 @@ class RecipeService {
       };
       return decorateRecipeTranslations(detailed);
     });
+  }
+
+  _hydrateFromSqlite() {
+    return this._hydrateFromPostgres();
   }
 
   /**
@@ -201,24 +209,28 @@ class RecipeService {
     return this.ingredientsCache;
   }
 
-  _getAllIngredientsSqlite() {
-    const rows = sqliteDb.prepare('SELECT * FROM ingredients').all();
-    return rows.map(r => ({
+  async _getAllIngredientsPostgres() {
+    const res = await query('SELECT * FROM ingredients');
+    return res.rows.map(r => ({
       id: r.id,
       name: r.name,
       category: r.category,
       subCategory: r.subCategory,
       emoji: r.emoji,
       flavorProfile: {
-        sweet: r.sweet,
-        salty: r.salty,
-        sour: r.sour,
-        bitter: r.bitter,
-        umami: r.umami,
-        spicy: r.spicy
+        sweet: r.sweet || 0,
+        salty: r.salty || 0,
+        sour: r.sour || 0,
+        bitter: r.bitter || 0,
+        umami: r.umami || 0,
+        spicy: r.spicy || 0
       },
-      isCommon: r.isCommon === 1
+      isCommon: Boolean(r.isCommon)
     }));
+  }
+
+  _getAllIngredientsSqlite() {
+    return this._getAllIngredientsPostgres();
   }
 
   /**
@@ -410,35 +422,43 @@ class RecipeService {
         totalCount: filteredRecipes.length
       };
     } catch (error) {
-      console.error('❌ Cache matchmaking error, falling back to SQLite:', error.message);
-      return this._matchRecipesSqlite(ingredientIds, filters);
+      console.error('❌ Cache matchmaking error, falling back to PostgreSQL:', error.message);
+      return await this._matchRecipesPostgres(ingredientIds, filters);
     }
   }
 
-  _matchRecipesSqlite(ingredientIds = [], filters = {}) {
+  async _matchRecipesPostgres(ingredientIds = [], filters = {}) {
     const selectedSet = new Set(ingredientIds);
 
-    const recipesList = sqliteDb.prepare('SELECT * FROM recipes').all();
-    const allIngredients = sqliteDb.prepare('SELECT * FROM ingredients').all();
+    const [recipesRes, allIngredientsRes, allRecipeIngredientsRes, allMealTypesRes, allDietaryTagsRes] = await Promise.all([
+      query('SELECT * FROM recipes'),
+      query('SELECT * FROM ingredients'),
+      query('SELECT "recipeId", "ingredientId", "isEssential" FROM recipe_ingredients'),
+      query('SELECT "recipeId", "mealType" FROM recipe_meal_types'),
+      query('SELECT "recipeId", "dietaryTag" FROM recipe_dietary_tags')
+    ]);
+
+    const recipesList = recipesRes.rows;
+    const allIngredients = allIngredientsRes.rows;
     const ingredientMap = new Map(allIngredients.map(i => [i.id, i]));
 
-    const allRecipeIngredients = sqliteDb.prepare('SELECT recipeId, ingredientId, isEssential FROM recipe_ingredients').all();
     const recipeIngMap = new Map();
-    for (const ri of allRecipeIngredients) {
+    for (const ri of allRecipeIngredientsRes.rows) {
       if (!recipeIngMap.has(ri.recipeId)) recipeIngMap.set(ri.recipeId, []);
-      recipeIngMap.get(ri.recipeId).push(ri);
+      recipeIngMap.get(ri.recipeId).push({
+        ...ri,
+        isEssential: Boolean(ri.isEssential)
+      });
     }
 
-    const allMealTypes = sqliteDb.prepare('SELECT recipeId, mealType FROM recipe_meal_types').all();
     const mealTypeMap = new Map();
-    for (const mt of allMealTypes) {
+    for (const mt of allMealTypesRes.rows) {
       if (!mealTypeMap.has(mt.recipeId)) mealTypeMap.set(mt.recipeId, []);
       mealTypeMap.get(mt.recipeId).push(mt.mealType);
     }
 
-    const allDietaryTags = sqliteDb.prepare('SELECT recipeId, dietaryTag FROM recipe_dietary_tags').all();
     const dietaryTagMap = new Map();
-    for (const dt of allDietaryTags) {
+    for (const dt of allDietaryTagsRes.rows) {
       if (!dietaryTagMap.has(dt.recipeId)) dietaryTagMap.set(dt.recipeId, []);
       dietaryTagMap.get(dt.recipeId).push(dt.dietaryTag);
     }
@@ -450,8 +470,8 @@ class RecipeService {
       const hasAnyMatch = rIngredients.some(ri => selectedSet.has(ri.ingredientId));
       if (!hasAnyMatch) continue;
 
-      const essential = rIngredients.filter(ri => ri.isEssential === 1);
-      const optional = rIngredients.filter(ri => ri.isEssential === 0);
+      const essential = rIngredients.filter(ri => ri.isEssential);
+      const optional = rIngredients.filter(ri => !ri.isEssential);
 
       const essentialTotal = essential.length;
       const optionalTotal = optional.length;
@@ -551,33 +571,46 @@ class RecipeService {
     };
   }
 
+  _matchRecipesSqlite(ingredientIds = [], filters = {}) {
+    return this._matchRecipesPostgres(ingredientIds, filters);
+  }
+
   /**
    * Fetches detailed recipe.
    */
   async getRecipeById(recipeId) {
     await this._ensureCache();
-    return this.recipesCache.find(r => r.id === recipeId) || null;
+    const cached = this.recipesCache ? this.recipesCache.find(r => r.id === recipeId) : null;
+    if (cached) return cached;
+    return this._getRecipeByIdPostgres(recipeId);
   }
 
-  _getRecipeByIdSqlite(recipeId) {
-    const recipe = sqliteDb.prepare('SELECT * FROM recipes WHERE id = ?').get(recipeId);
-    if (!recipe) return null;
+  async _getRecipeByIdPostgres(recipeId) {
+    const recipeRes = await query('SELECT * FROM recipes WHERE "id" = $1', [recipeId]);
+    if (recipeRes.rows.length === 0) return null;
+    const recipe = recipeRes.rows[0];
 
-    const mealTypes = sqliteDb.prepare('SELECT mealType FROM recipe_meal_types WHERE recipeId = ?').all(recipe.id).map(r => r.mealType);
-    const dietaryTags = sqliteDb.prepare('SELECT dietaryTag FROM recipe_dietary_tags WHERE recipeId = ?').all(recipe.id).map(r => r.dietaryTag);
-    const steps = sqliteDb.prepare('SELECT stepNumber as step, instruction, instructionBn, duration, technique FROM recipe_steps WHERE recipeId = ? ORDER BY stepNumber').all(recipe.id);
+    const [mealTypesRes, dietaryTagsRes, stepsRes, ingredientsRes] = await Promise.all([
+      query('SELECT "mealType" FROM recipe_meal_types WHERE "recipeId" = $1', [recipe.id]),
+      query('SELECT "dietaryTag" FROM recipe_dietary_tags WHERE "recipeId" = $1', [recipe.id]),
+      query('SELECT "stepNumber" as step, "instruction", "instructionBn", "duration", "technique" FROM recipe_steps WHERE "recipeId" = $1 ORDER BY "stepNumber"', [recipe.id]),
+      query(`
+        SELECT ri."ingredientId", ri."quantity", ri."unit", ri."preparation", ri."isEssential", ri."ingredientGroup" as "group", i."name", i."emoji"
+        FROM recipe_ingredients ri
+        JOIN ingredients i ON ri."ingredientId" = i."id"
+        WHERE ri."recipeId" = $1
+      `, [recipe.id])
+    ]);
 
-    const recipeIngredients = sqliteDb.prepare(`
-      SELECT ri.ingredientId, ri.quantity, ri.unit, ri.preparation, ri.isEssential, ri.ingredientGroup as 'group', i.name, i.emoji
-      FROM recipe_ingredients ri
-      JOIN ingredients i ON ri.ingredientId = i.id
-      WHERE ri.recipeId = ?
-    `).all(recipe.id).map(r => ({
+    const mealTypes = mealTypesRes.rows.map(r => r.mealType);
+    const dietaryTags = dietaryTagsRes.rows.map(r => r.dietaryTag);
+    const steps = stepsRes.rows;
+    const recipeIngredients = ingredientsRes.rows.map(r => ({
       ingredientId: r.ingredientId,
-      quantity: r.quantity,
+      quantity: r.quantity !== null ? Number(r.quantity) : 1,
       unit: r.unit,
       preparation: r.preparation,
-      isEssential: r.isEssential === 1,
+      isEssential: Boolean(r.isEssential),
       group: r.group,
       name: r.name,
       emoji: r.emoji
@@ -593,6 +626,10 @@ class RecipeService {
     };
 
     return decorateRecipeTranslations(detailed);
+  }
+
+  _getRecipeByIdSqlite(recipeId) {
+    return this._getRecipeByIdPostgres(recipeId);
   }
 
   /**
@@ -683,11 +720,11 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
         });
         console.log(`🔥 Custom recipe ${recipeId} successfully saved to Firestore!`);
       } catch (error) {
-        console.error('❌ Firestore save generated recipe error, falling back to SQLite:', error.message);
-        this._saveCustomRecipeSqlite(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
+        console.error('❌ Firestore save generated recipe error, falling back to PostgreSQL:', error.message);
+        await this._saveCustomRecipePostgres(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
       }
     } else {
-      this._saveCustomRecipeSqlite(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
+      await this._saveCustomRecipePostgres(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
     }
 
     // Invalidate the cache to ensure the new custom recipe is loaded on subsequent calls
@@ -696,83 +733,122 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
     return finalRecipeObj;
   }
 
-  _saveCustomRecipeSqlite(recipeId, recipe, ingredientIds, cuisineId, userId) {
-    sqliteDb.transaction(() => {
-      sqliteDb.prepare(`
-        INSERT INTO recipes (id, title, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, culturalNote, imageEmoji)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `).run(
+  async _saveCustomRecipePostgres(recipeId, recipe, ingredientIds, cuisineId, userId) {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+
+      await client.query(`
+        INSERT INTO recipes ("id", "title", "titleBn", "cuisineId", "difficulty", "prepTime", "cookTime", "servings", "baseServings", "calories", "description", "descriptionBn", "culturalNote", "culturalNoteBn", "imageEmoji")
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
+        ON CONFLICT ("id") DO NOTHING
+      `, [
         recipeId,
         recipe.title,
+        recipe.titleBn || '',
         recipe.cuisineId || 'bengali',
         recipe.difficulty || 'intermediate',
         recipe.prepTime || 15,
         recipe.cookTime || 20,
         recipe.servings || 4,
+        recipe.baseServings || recipe.servings || 4,
         recipe.calories || 300,
         recipe.description || 'A unique custom recipe crafted by our Chef.',
+        recipe.descriptionBn || '',
         recipe.culturalNote || '',
+        recipe.culturalNoteBn || '',
         recipe.imageEmoji || '🍲'
-      );
+      ]);
 
-      if (recipe.mealType) {
-        const insertMeal = sqliteDb.prepare('INSERT OR REPLACE INTO recipe_meal_types (recipeId, mealType) VALUES (?, ?)');
+      if (Array.isArray(recipe.mealType)) {
         for (const mt of recipe.mealType) {
-          insertMeal.run(recipeId, mt);
+          await client.query(`
+            INSERT INTO recipe_meal_types ("recipeId", "mealType")
+            VALUES ($1, $2)
+            ON CONFLICT ("recipeId", "mealType") DO NOTHING
+          `, [recipeId, mt]);
         }
       }
 
-      if (recipe.dietaryTags) {
-        const insertDiet = sqliteDb.prepare('INSERT OR REPLACE INTO recipe_dietary_tags (recipeId, dietaryTag) VALUES (?, ?)');
+      if (Array.isArray(recipe.dietaryTags)) {
         for (const dt of recipe.dietaryTags) {
-          insertDiet.run(recipeId, dt);
+          await client.query(`
+            INSERT INTO recipe_dietary_tags ("recipeId", "dietaryTag")
+            VALUES ($1, $2)
+            ON CONFLICT ("recipeId", "dietaryTag") DO NOTHING
+          `, [recipeId, dt]);
         }
       }
 
-      if (recipe.steps) {
-        const insertStep = sqliteDb.prepare(`
-          INSERT INTO recipe_steps (recipeId, stepNumber, instruction, instructionBn, duration, technique)
-          VALUES (?, ?, ?, ?, ?, ?)
-        `);
+      if (Array.isArray(recipe.steps)) {
         for (const s of recipe.steps) {
-          insertStep.run(recipeId, s.step, s.instruction, s.instructionBn || '', s.duration || 0, s.technique || 'cooking');
+          await client.query(`
+            INSERT INTO recipe_steps ("recipeId", "stepNumber", "instruction", "instructionBn", "duration", "technique")
+            VALUES ($1, $2, $3, $4, $5, $6)
+          `, [
+            recipeId,
+            s.step || 1,
+            s.instruction,
+            s.instructionBn || '',
+            s.duration || 0,
+            s.technique || 'cooking'
+          ]);
         }
       }
 
-      if (recipe.ingredients) {
-        const insertIng = sqliteDb.prepare(`
-          INSERT INTO recipe_ingredients (recipeId, ingredientId, quantity, unit, preparation, isEssential, ingredientGroup)
-          VALUES (?, ?, ?, ?, ?, ?, ?)
-        `);
+      if (Array.isArray(recipe.ingredients)) {
         for (const ing of recipe.ingredients) {
-          const exists = sqliteDb.prepare('SELECT 1 FROM ingredients WHERE id = ?').get(ing.ingredientId);
-          if (!exists) {
+          const exists = await client.query('SELECT 1 FROM ingredients WHERE "id" = $1', [ing.ingredientId]);
+          if (exists.rowCount === 0) {
             console.warn(`⚠️ Skipping unrecognized AI ingredient: ${ing.ingredientId}`);
             continue;
           }
-          const validatedId = ing.ingredientId;
-          insertIng.run(
+          await client.query(`
+            INSERT INTO recipe_ingredients ("recipeId", "ingredientId", "quantity", "unit", "preparation", "isEssential", "ingredientGroup")
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+          `, [
             recipeId,
-            validatedId,
+            ing.ingredientId,
             ing.quantity || 1,
             ing.unit || 'unit',
             ing.preparation || '',
-            ing.isEssential ? 1 : 0,
-            ing.group || 'Main'
-          );
+            Boolean(ing.isEssential),
+            ing.group || ing.ingredientGroup || 'Main'
+          ]);
         }
       }
 
-      sqliteDb.prepare(`
-        INSERT INTO generation_history (user_id, ingredient_ids, cuisine_id, generated_recipe_id)
-        VALUES (?, ?, ?, ?)
-      `).run(
-        userId,
+      // Check if user exists before adding foreign key reference
+      let validUserId = null;
+      if (userId) {
+        const userCheck = await client.query('SELECT 1 FROM users WHERE "id" = $1', [userId]);
+        if (userCheck.rowCount > 0) {
+          validUserId = userId;
+        }
+      }
+
+      await client.query(`
+        INSERT INTO generation_history ("user_id", "ingredient_ids", "cuisine_id", "generated_recipe_id")
+        VALUES ($1, $2, $3, $4)
+      `, [
+        validUserId,
         JSON.stringify(ingredientIds),
-        cuisineId,
+        cuisineId || 'any',
         recipeId
-      );
-    })();
+      ]);
+
+      await client.query('COMMIT');
+      this.invalidateCache();
+    } catch (err) {
+      await client.query('ROLLBACK');
+      throw err;
+    } finally {
+      client.release();
+    }
+  }
+
+  _saveCustomRecipeSqlite(recipeId, recipe, ingredientIds, cuisineId, userId) {
+    return this._saveCustomRecipePostgres(recipeId, recipe, ingredientIds, cuisineId, userId);
   }
 
   /**
@@ -780,8 +856,8 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
    */
   async saveRecipe(userId, recipeId) {
     if (!isFirebaseInitialized) {
-      console.warn('⚠️ Firebase not initialized. Falling back to SQLite for saveRecipe.');
-      return this._saveRecipeSqlite(userId, recipeId);
+      console.warn('⚠️ Firebase not initialized. Falling back to PostgreSQL for saveRecipe.');
+      return this._saveRecipePostgres(userId, recipeId);
     }
 
     try {
@@ -810,29 +886,33 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
 
       return true;
     } catch (error) {
-      console.error('❌ Firestore saveRecipe error, falling back to SQLite:', error.message);
-      return this._saveRecipeSqlite(userId, recipeId);
+      console.error('❌ Firestore saveRecipe error, falling back to PostgreSQL:', error.message);
+      return this._saveRecipePostgres(userId, recipeId);
     }
   }
 
-  _saveRecipeSqlite(userId, recipeId) {
-    const user = sqliteDb.prepare('SELECT 1 FROM users WHERE id = ?').get(userId);
-    if (!user) {
+  async _saveRecipePostgres(userId, recipeId) {
+    const user = await query('SELECT 1 FROM users WHERE "id" = $1', [userId]);
+    if (user.rowCount === 0) {
       throw new Error(`User not found: "${userId}".`);
     }
 
-    const recipe = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(recipeId);
-    if (!recipe) {
+    const recipe = await query('SELECT 1 FROM recipes WHERE "id" = $1', [recipeId]);
+    if (recipe.rowCount === 0) {
       throw new Error(`Recipe not found: "${recipeId}".`);
     }
 
-    const exists = sqliteDb.prepare('SELECT 1 FROM saved_recipes WHERE user_id = ? AND recipe_id = ?').get(userId, recipeId);
-    if (exists) {
+    const exists = await query('SELECT 1 FROM saved_recipes WHERE "user_id" = $1 AND "recipe_id" = $2', [userId, recipeId]);
+    if (exists.rowCount > 0) {
       return false; 
     }
 
-    sqliteDb.prepare('INSERT INTO saved_recipes (user_id, recipe_id) VALUES (?, ?)').run(userId, recipeId);
+    await query('INSERT INTO saved_recipes ("user_id", "recipe_id") VALUES ($1, $2) ON CONFLICT ("user_id", "recipe_id") DO NOTHING', [userId, recipeId]);
     return true;
+  }
+
+  _saveRecipeSqlite(userId, recipeId) {
+    return this._saveRecipePostgres(userId, recipeId);
   }
 
   /**
@@ -864,41 +944,60 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
   async getAdminStats() {
     await this._ensureCache();
 
-    const totalRecipes = sqliteDb.prepare('SELECT COUNT(*) as count FROM recipes').get().count;
-    const totalIngredients = sqliteDb.prepare('SELECT COUNT(*) as count FROM ingredients').get().count;
-    const totalCuisines = sqliteDb.prepare('SELECT COUNT(*) as count FROM cuisines').get().count;
-    const totalUsers = sqliteDb.prepare('SELECT COUNT(*) as count FROM users').get().count;
-    const totalSaved = sqliteDb.prepare('SELECT COUNT(*) as count FROM saved_recipes').get().count;
-    const totalGenerations = sqliteDb.prepare('SELECT COUNT(*) as count FROM generation_history').get().count;
+    const [
+      recipesRes,
+      ingredientsRes,
+      cuisinesRes,
+      usersRes,
+      savedRes,
+      generationsRes,
+      cuisineDistRes,
+      topIngRes,
+      dbSizeRes
+    ] = await Promise.all([
+      query('SELECT COUNT(*)::int as count FROM recipes'),
+      query('SELECT COUNT(*)::int as count FROM ingredients'),
+      query('SELECT COUNT(*)::int as count FROM cuisines'),
+      query('SELECT COUNT(*)::int as count FROM users'),
+      query('SELECT COUNT(*)::int as count FROM saved_recipes'),
+      query('SELECT COUNT(*)::int as count FROM generation_history'),
+      query(`
+        SELECT c."id", c."name", c."nameBn", c."emoji", c."color", COUNT(r."id")::int as count
+        FROM cuisines c
+        LEFT JOIN recipes r ON c."id" = r."cuisineId"
+        GROUP BY c."id", c."name", c."nameBn", c."emoji", c."color"
+        ORDER BY count DESC
+      `),
+      query(`
+        SELECT i."id", i."name", i."nameBn", i."emoji", i."category", COUNT(ri."recipeId")::int as count
+        FROM ingredients i
+        JOIN recipe_ingredients ri ON i."id" = ri."ingredientId"
+        GROUP BY i."id", i."name", i."nameBn", i."emoji", i."category"
+        ORDER BY count DESC
+        LIMIT 10
+      `),
+      query('SELECT pg_database_size(current_database())::bigint as size').catch(() => ({ rows: [{ size: 0 }] }))
+    ]);
 
-    // Cuisine distribution
-    const cuisineDistribution = sqliteDb.prepare(`
-      SELECT c.id, c.name, c.nameBn, c.emoji, c.color, COUNT(r.id) as count
-      FROM cuisines c
-      LEFT JOIN recipes r ON c.id = r.cuisineId
-      GROUP BY c.id
-      ORDER BY count DESC
-    `).all();
+    const totalRecipes = recipesRes.rows[0]?.count || 0;
+    const totalIngredients = ingredientsRes.rows[0]?.count || 0;
+    const totalCuisines = cuisinesRes.rows[0]?.count || 0;
+    const totalUsers = usersRes.rows[0]?.count || 0;
+    const totalSaved = savedRes.rows[0]?.count || 0;
+    const totalGenerations = generationsRes.rows[0]?.count || 0;
+    const cuisineDistribution = cuisineDistRes.rows;
+    const topIngredients = topIngRes.rows;
 
-    // Top used ingredients
-    const topIngredients = sqliteDb.prepare(`
-      SELECT i.id, i.name, i.nameBn, i.emoji, i.category, COUNT(ri.recipeId) as count
-      FROM ingredients i
-      JOIN recipe_ingredients ri ON i.id = ri.ingredientId
-      GROUP BY i.id
-      ORDER BY count DESC
-      LIMIT 10
-    `).all();
-
-    // Database file size
-    let dbSizeBytes = 0;
-    try {
-      const dbFile = path.resolve(process.cwd(), 'server', 'rannabanna.db');
-      if (fs.existsSync(dbFile)) {
-        dbSizeBytes = fs.statSync(dbFile).size;
+    let dbSizeBytes = Number(dbSizeRes.rows[0]?.size) || 0;
+    if (dbSizeBytes === 0) {
+      try {
+        const dbFile = path.resolve(process.cwd(), 'server', 'rannabanna.db');
+        if (fs.existsSync(dbFile)) {
+          dbSizeBytes = fs.statSync(dbFile).size;
+        }
+      } catch {
+        // fallback
       }
-    } catch {
-      // fallback
     }
 
     return {
@@ -990,83 +1089,98 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
     }
 
     // Assert cuisine exists
-    const cuisineExists = sqliteDb.prepare('SELECT 1 FROM cuisines WHERE id = ?').get(cuisineId);
-    if (!cuisineExists) {
+    const cuisineExists = await query('SELECT 1 FROM cuisines WHERE "id" = $1', [cuisineId]);
+    if (cuisineExists.rowCount === 0) {
       throw new Error(`Cuisine with id "${cuisineId}" does not exist.`);
     }
 
     // Assert id is unique
-    const idExists = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(id);
-    if (idExists) {
+    const idExists = await query('SELECT 1 FROM recipes WHERE "id" = $1', [id]);
+    if (idExists.rowCount > 0) {
       throw new Error(`A recipe with id "${id}" already exists.`);
     }
 
-    const tx = sqliteDb.transaction(() => {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+
       // 1. Insert recipe
-      sqliteDb.prepare(`
-        INSERT INTO recipes (id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `).run(id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji);
+      await client.query(`
+        INSERT INTO recipes ("id", "title", "titleBn", "cuisineId", "difficulty", "prepTime", "cookTime", "servings", "baseServings", "calories", "description", "descriptionBn", "culturalNote", "culturalNoteBn", "imageEmoji")
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
+      `, [
+        id, title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, servings, calories, description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji
+      ]);
 
       // 2. Meal types
-      const insertMealType = sqliteDb.prepare('INSERT INTO recipe_meal_types (recipeId, mealType) VALUES (?, ?)');
       for (const mt of mealTypes) {
-        insertMealType.run(id, mt);
+        await client.query(`
+          INSERT INTO recipe_meal_types ("recipeId", "mealType")
+          VALUES ($1, $2)
+          ON CONFLICT ("recipeId", "mealType") DO NOTHING
+        `, [id, mt]);
       }
 
       // 3. Dietary tags
-      const insertDietaryTag = sqliteDb.prepare('INSERT INTO recipe_dietary_tags (recipeId, dietaryTag) VALUES (?, ?)');
       for (const dt of dietaryTags) {
-        insertDietaryTag.run(id, dt);
+        await client.query(`
+          INSERT INTO recipe_dietary_tags ("recipeId", "dietaryTag")
+          VALUES ($1, $2)
+          ON CONFLICT ("recipeId", "dietaryTag") DO NOTHING
+        `, [id, dt]);
       }
 
       // 4. Ingredients
-      const insertIng = sqliteDb.prepare(`
-        INSERT INTO recipe_ingredients (recipeId, ingredientId, quantity, unit, preparation, isEssential, ingredientGroup)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-      `);
       for (const ing of ingredients) {
-        insertIng.run(
+        await client.query(`
+          INSERT INTO recipe_ingredients ("recipeId", "ingredientId", "quantity", "unit", "preparation", "isEssential", "ingredientGroup")
+          VALUES ($1, $2, $3, $4, $5, $6, $7)
+        `, [
           id,
           ing.ingredientId || ing.id,
           ing.quantity !== undefined ? ing.quantity : 1,
           ing.unit || '',
           ing.preparation || '',
-          ing.isEssential !== undefined ? (ing.isEssential ? 1 : 0) : 1,
+          ing.isEssential !== undefined ? Boolean(ing.isEssential) : true,
           ing.group || ing.ingredientGroup || 'Main'
-        );
+        ]);
       }
 
       // 5. Steps
-      const insertStep = sqliteDb.prepare(`
-        INSERT INTO recipe_steps (recipeId, stepNumber, instruction, instructionBn, duration, technique)
-        VALUES (?, ?, ?, ?, ?, ?)
-      `);
       let stepNum = 1;
       for (const st of steps) {
-        insertStep.run(
+        await client.query(`
+          INSERT INTO recipe_steps ("recipeId", "stepNumber", "instruction", "instructionBn", "duration", "technique")
+          VALUES ($1, $2, $3, $4, $5, $6)
+        `, [
           id,
           st.step || stepNum,
           st.instruction || '',
           st.instructionBn || '',
           st.duration || 0,
           st.technique || 'Cook'
-        );
+        ]);
         stepNum++;
       }
-    });
 
-    tx();
+      await client.query('COMMIT');
+    } catch (err) {
+      await client.query('ROLLBACK');
+      throw err;
+    } finally {
+      client.release();
+    }
+
     await this.invalidateCache();
     return this.getRecipeById(id);
   }
 
   /**
-   * Admin update recipe in SQLite.
+   * Admin update recipe in PostgreSQL.
    */
   async adminUpdateRecipe(id, data) {
-    const existing = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(id);
-    if (!existing) {
+    const existing = await query('SELECT 1 FROM recipes WHERE "id" = $1', [id]);
+    if (existing.rowCount === 0) {
       throw new Error(`Recipe with id "${id}" not found.`);
     }
 
@@ -1090,104 +1204,118 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       steps
     } = data;
 
-    const tx = sqliteDb.transaction(() => {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+
       // 1. Update recipe fields
-      sqliteDb.prepare(`
+      await client.query(`
         UPDATE recipes SET
-          title = COALESCE(?, title),
-          titleBn = COALESCE(?, titleBn),
-          cuisineId = COALESCE(?, cuisineId),
-          difficulty = COALESCE(?, difficulty),
-          prepTime = COALESCE(?, prepTime),
-          cookTime = COALESCE(?, cookTime),
-          servings = COALESCE(?, servings),
-          calories = COALESCE(?, calories),
-          description = COALESCE(?, description),
-          descriptionBn = COALESCE(?, descriptionBn),
-          culturalNote = COALESCE(?, culturalNote),
-          culturalNoteBn = COALESCE(?, culturalNoteBn),
-          imageEmoji = COALESCE(?, imageEmoji)
-        WHERE id = ?
-      `).run(
+          "title" = COALESCE($1, "title"),
+          "titleBn" = COALESCE($2, "titleBn"),
+          "cuisineId" = COALESCE($3, "cuisineId"),
+          "difficulty" = COALESCE($4, "difficulty"),
+          "prepTime" = COALESCE($5, "prepTime"),
+          "cookTime" = COALESCE($6, "cookTime"),
+          "servings" = COALESCE($7, "servings"),
+          "baseServings" = COALESCE($7, "baseServings"),
+          "calories" = COALESCE($8, "calories"),
+          "description" = COALESCE($9, "description"),
+          "descriptionBn" = COALESCE($10, "descriptionBn"),
+          "culturalNote" = COALESCE($11, "culturalNote"),
+          "culturalNoteBn" = COALESCE($12, "culturalNoteBn"),
+          "imageEmoji" = COALESCE($13, "imageEmoji")
+        WHERE "id" = $14
+      `, [
         title, titleBn, cuisineId, difficulty, prepTime, cookTime, servings, calories,
         description, descriptionBn, culturalNote, culturalNoteBn, imageEmoji, id
-      );
+      ]);
 
       // 2. Refresh meal types if provided
       if (Array.isArray(mealTypes)) {
-        sqliteDb.prepare('DELETE FROM recipe_meal_types WHERE recipeId = ?').run(id);
-        const insertMealType = sqliteDb.prepare('INSERT INTO recipe_meal_types (recipeId, mealType) VALUES (?, ?)');
+        await client.query('DELETE FROM recipe_meal_types WHERE "recipeId" = $1', [id]);
         for (const mt of mealTypes) {
-          insertMealType.run(id, mt);
+          await client.query(`
+            INSERT INTO recipe_meal_types ("recipeId", "mealType")
+            VALUES ($1, $2)
+            ON CONFLICT ("recipeId", "mealType") DO NOTHING
+          `, [id, mt]);
         }
       }
 
       // 3. Refresh dietary tags if provided
       if (Array.isArray(dietaryTags)) {
-        sqliteDb.prepare('DELETE FROM recipe_dietary_tags WHERE recipeId = ?').run(id);
-        const insertDietaryTag = sqliteDb.prepare('INSERT INTO recipe_dietary_tags (recipeId, dietaryTag) VALUES (?, ?)');
+        await client.query('DELETE FROM recipe_dietary_tags WHERE "recipeId" = $1', [id]);
         for (const dt of dietaryTags) {
-          insertDietaryTag.run(id, dt);
+          await client.query(`
+            INSERT INTO recipe_dietary_tags ("recipeId", "dietaryTag")
+            VALUES ($1, $2)
+            ON CONFLICT ("recipeId", "dietaryTag") DO NOTHING
+          `, [id, dt]);
         }
       }
 
       // 4. Refresh ingredients if provided
       if (Array.isArray(ingredients)) {
-        sqliteDb.prepare('DELETE FROM recipe_ingredients WHERE recipeId = ?').run(id);
-        const insertIng = sqliteDb.prepare(`
-          INSERT INTO recipe_ingredients (recipeId, ingredientId, quantity, unit, preparation, isEssential, ingredientGroup)
-          VALUES (?, ?, ?, ?, ?, ?, ?)
-        `);
+        await client.query('DELETE FROM recipe_ingredients WHERE "recipeId" = $1', [id]);
         for (const ing of ingredients) {
-          insertIng.run(
+          await client.query(`
+            INSERT INTO recipe_ingredients ("recipeId", "ingredientId", "quantity", "unit", "preparation", "isEssential", "ingredientGroup")
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+          `, [
             id,
             ing.ingredientId || ing.id,
             ing.quantity !== undefined ? ing.quantity : 1,
             ing.unit || '',
             ing.preparation || '',
-            ing.isEssential !== undefined ? (ing.isEssential ? 1 : 0) : 1,
+            ing.isEssential !== undefined ? Boolean(ing.isEssential) : true,
             ing.group || ing.ingredientGroup || 'Main'
-          );
+          ]);
         }
       }
 
       // 5. Refresh steps if provided
       if (Array.isArray(steps)) {
-        sqliteDb.prepare('DELETE FROM recipe_steps WHERE recipeId = ?').run(id);
-        const insertStep = sqliteDb.prepare(`
-          INSERT INTO recipe_steps (recipeId, stepNumber, instruction, instructionBn, duration, technique)
-          VALUES (?, ?, ?, ?, ?, ?)
-        `);
+        await client.query('DELETE FROM recipe_steps WHERE "recipeId" = $1', [id]);
         let stepNum = 1;
         for (const st of steps) {
-          insertStep.run(
+          await client.query(`
+            INSERT INTO recipe_steps ("recipeId", "stepNumber", "instruction", "instructionBn", "duration", "technique")
+            VALUES ($1, $2, $3, $4, $5, $6)
+          `, [
             id,
             st.step || stepNum,
             st.instruction || '',
             st.instructionBn || '',
             st.duration || 0,
             st.technique || 'Cook'
-          );
+          ]);
           stepNum++;
         }
       }
-    });
 
-    tx();
+      await client.query('COMMIT');
+    } catch (err) {
+      await client.query('ROLLBACK');
+      throw err;
+    } finally {
+      client.release();
+    }
+
     await this.invalidateCache();
     return this.getRecipeById(id);
   }
 
   /**
-   * Admin delete recipe in SQLite.
+   * Admin delete recipe in PostgreSQL.
    */
   async adminDeleteRecipe(id) {
-    const existing = sqliteDb.prepare('SELECT 1 FROM recipes WHERE id = ?').get(id);
-    if (!existing) {
+    const existing = await query('SELECT 1 FROM recipes WHERE "id" = $1', [id]);
+    if (existing.rowCount === 0) {
       throw new Error(`Recipe with id "${id}" not found.`);
     }
 
-    sqliteDb.prepare('DELETE FROM recipes WHERE id = ?').run(id);
+    await query('DELETE FROM recipes WHERE "id" = $1', [id]);
     await this.invalidateCache();
     return true;
   }
@@ -1198,31 +1326,32 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
   async adminGetIngredients({ search = '', category = '', page = 1, limit = 50 } = {}) {
     await this._ensureCache();
 
-    let query = `
-      SELECT i.*, COUNT(ri.recipeId) as recipeCount
+    let sql = `
+      SELECT i.*, COUNT(ri."recipeId")::int as "recipeCount"
       FROM ingredients i
-      LEFT JOIN recipe_ingredients ri ON i.id = ri.ingredientId
+      LEFT JOIN recipe_ingredients ri ON i."id" = ri."ingredientId"
     `;
     const whereClauses = [];
     const params = [];
 
     if (category && category !== 'all') {
-      whereClauses.push('i.category = ?');
       params.push(category);
+      whereClauses.push(`i."category" = $${params.length}`);
     }
     if (search && search.trim()) {
-      whereClauses.push('(i.id LIKE ? OR i.name LIKE ? OR i.nameBn LIKE ?)');
-      const q = `%${search.trim()}%`;
-      params.push(q, q, q);
+      params.push(`%${search.trim()}%`);
+      const pIdx = params.length;
+      whereClauses.push(`(i."id" ILIKE $${pIdx} OR i."name" ILIKE $${pIdx} OR i."nameBn" ILIKE $${pIdx})`);
     }
 
     if (whereClauses.length > 0) {
-      query += ' WHERE ' + whereClauses.join(' AND ');
+      sql += ' WHERE ' + whereClauses.join(' AND ');
     }
 
-    query += ' GROUP BY i.id ORDER BY recipeCount DESC, i.name ASC';
+    sql += ' GROUP BY i."id" ORDER BY "recipeCount" DESC, i."name" ASC';
 
-    const allRows = sqliteDb.prepare(query).all(...params);
+    const result = await query(sql, params);
+    const allRows = result.rows;
     const total = allRows.length;
     const offset = (page - 1) * limit;
     const paginated = allRows.slice(offset, offset + limit);
@@ -1253,33 +1382,36 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       bitter = 0,
       umami = 0,
       spicy = 0,
-      isCommon = 0
+      isCommon = false
     } = data;
 
     if (!id || !name) {
       throw new Error('Ingredient "id" and "name" are required.');
     }
 
-    const exists = sqliteDb.prepare('SELECT 1 FROM ingredients WHERE id = ?').get(id);
-    if (exists) {
+    const exists = await query('SELECT 1 FROM ingredients WHERE "id" = $1', [id]);
+    if (exists.rowCount > 0) {
       throw new Error(`Ingredient with id "${id}" already exists.`);
     }
 
-    sqliteDb.prepare(`
-      INSERT INTO ingredients (id, name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy, isCommon)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).run(id, name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy, isCommon ? 1 : 0);
+    await query(`
+      INSERT INTO ingredients ("id", "name", "nameBn", "category", "subCategory", "emoji", "sweet", "salty", "sour", "bitter", "umami", "spicy", "isCommon")
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+    `, [
+      id, name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy, Boolean(isCommon)
+    ]);
 
     await this.invalidateCache();
-    return sqliteDb.prepare('SELECT * FROM ingredients WHERE id = ?').get(id);
+    const created = await query('SELECT * FROM ingredients WHERE "id" = $1', [id]);
+    return created.rows[0];
   }
 
   /**
    * Admin update ingredient in GIV.
    */
   async adminUpdateIngredient(id, data) {
-    const exists = sqliteDb.prepare('SELECT 1 FROM ingredients WHERE id = ?').get(id);
-    if (!exists) {
+    const exists = await query('SELECT 1 FROM ingredients WHERE "id" = $1', [id]);
+    if (exists.rowCount === 0) {
       throw new Error(`Ingredient with id "${id}" not found.`);
     }
 
@@ -1298,42 +1430,44 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       isCommon
     } = data;
 
-    sqliteDb.prepare(`
+    await query(`
       UPDATE ingredients SET
-        name = COALESCE(?, name),
-        nameBn = COALESCE(?, nameBn),
-        category = COALESCE(?, category),
-        subCategory = COALESCE(?, subCategory),
-        emoji = COALESCE(?, emoji),
-        sweet = COALESCE(?, sweet),
-        salty = COALESCE(?, salty),
-        sour = COALESCE(?, sour),
-        bitter = COALESCE(?, bitter),
-        umami = COALESCE(?, umami),
-        spicy = COALESCE(?, spicy),
-        isCommon = COALESCE(?, isCommon)
-      WHERE id = ?
-    `).run(
+        "name" = COALESCE($1, "name"),
+        "nameBn" = COALESCE($2, "nameBn"),
+        "category" = COALESCE($3, "category"),
+        "subCategory" = COALESCE($4, "subCategory"),
+        "emoji" = COALESCE($5, "emoji"),
+        "sweet" = COALESCE($6, "sweet"),
+        "salty" = COALESCE($7, "salty"),
+        "sour" = COALESCE($8, "sour"),
+        "bitter" = COALESCE($9, "bitter"),
+        "umami" = COALESCE($10, "umami"),
+        "spicy" = COALESCE($11, "spicy"),
+        "isCommon" = COALESCE($12, "isCommon")
+      WHERE "id" = $13
+    `, [
       name, nameBn, category, subCategory, emoji, sweet, salty, sour, bitter, umami, spicy,
-      isCommon !== undefined ? (isCommon ? 1 : 0) : null,
+      isCommon !== undefined ? Boolean(isCommon) : null,
       id
-    );
+    ]);
 
     await this.invalidateCache();
-    return sqliteDb.prepare('SELECT * FROM ingredients WHERE id = ?').get(id);
+    const updated = await query('SELECT * FROM ingredients WHERE "id" = $1', [id]);
+    return updated.rows[0];
   }
 
   /**
    * Admin delete ingredient from GIV (with safety check against recipes).
    */
   async adminDeleteIngredient(id) {
-    const usage = sqliteDb.prepare('SELECT COUNT(*) as count FROM recipe_ingredients WHERE ingredientId = ?').get(id);
-    if (usage && usage.count > 0) {
-      throw new Error(`Cannot delete ingredient "${id}": It is used in ${usage.count} recipe(s). Remove it from those recipes first.`);
+    const usage = await query('SELECT COUNT(*)::int as count FROM recipe_ingredients WHERE "ingredientId" = $1', [id]);
+    const usageCount = usage.rows[0]?.count || 0;
+    if (usageCount > 0) {
+      throw new Error(`Cannot delete ingredient "${id}": It is used in ${usageCount} recipe(s). Remove it from those recipes first.`);
     }
 
-    const result = sqliteDb.prepare('DELETE FROM ingredients WHERE id = ?').run(id);
-    if (result.changes === 0) {
+    const result = await query('DELETE FROM ingredients WHERE "id" = $1', [id]);
+    if (result.rowCount === 0) {
       throw new Error(`Ingredient with id "${id}" not found.`);
     }
 
@@ -1346,13 +1480,14 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
    */
   async adminGetCuisines() {
     await this._ensureCache();
-    return sqliteDb.prepare(`
-      SELECT c.*, COUNT(r.id) as recipeCount
+    const res = await query(`
+      SELECT c.*, COUNT(r."id")::int as "recipeCount"
       FROM cuisines c
-      LEFT JOIN recipes r ON c.id = r.cuisineId
-      GROUP BY c.id
-      ORDER BY c.name ASC
-    `).all();
+      LEFT JOIN recipes r ON c."id" = r."cuisineId"
+      GROUP BY c."id"
+      ORDER BY c."name" ASC
+    `);
+    return res.rows;
   }
 
   /**
@@ -1376,26 +1511,27 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       throw new Error('Cuisine "id" and "name" are required.');
     }
 
-    const exists = sqliteDb.prepare('SELECT 1 FROM cuisines WHERE id = ?').get(id);
-    if (exists) {
+    const exists = await query('SELECT 1 FROM cuisines WHERE "id" = $1', [id]);
+    if (exists.rowCount > 0) {
       throw new Error(`Cuisine with id "${id}" already exists.`);
     }
 
-    sqliteDb.prepare(`
-      INSERT INTO cuisines (id, name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).run(id, name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji);
+    await query(`
+      INSERT INTO cuisines ("id", "name", "nameBn", "region", "regionBn", "continent", "description", "descriptionBn", "color", "emoji")
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+    `, [id, name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji]);
 
     await this.invalidateCache();
-    return sqliteDb.prepare('SELECT * FROM cuisines WHERE id = ?').get(id);
+    const res = await query('SELECT * FROM cuisines WHERE "id" = $1', [id]);
+    return res.rows[0];
   }
 
   /**
    * Admin update cuisine.
    */
   async adminUpdateCuisine(id, data) {
-    const exists = sqliteDb.prepare('SELECT 1 FROM cuisines WHERE id = ?').get(id);
-    if (!exists) {
+    const exists = await query('SELECT 1 FROM cuisines WHERE "id" = $1', [id]);
+    if (exists.rowCount === 0) {
       throw new Error(`Cuisine with id "${id}" not found.`);
     }
 
@@ -1411,35 +1547,37 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       emoji
     } = data;
 
-    sqliteDb.prepare(`
+    await query(`
       UPDATE cuisines SET
-        name = COALESCE(?, name),
-        nameBn = COALESCE(?, nameBn),
-        region = COALESCE(?, region),
-        regionBn = COALESCE(?, regionBn),
-        continent = COALESCE(?, continent),
-        description = COALESCE(?, description),
-        descriptionBn = COALESCE(?, descriptionBn),
-        color = COALESCE(?, color),
-        emoji = COALESCE(?, emoji)
-      WHERE id = ?
-    `).run(name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji, id);
+        "name" = COALESCE($1, "name"),
+        "nameBn" = COALESCE($2, "nameBn"),
+        "region" = COALESCE($3, "region"),
+        "regionBn" = COALESCE($4, "regionBn"),
+        "continent" = COALESCE($5, "continent"),
+        "description" = COALESCE($6, "description"),
+        "descriptionBn" = COALESCE($7, "descriptionBn"),
+        "color" = COALESCE($8, "color"),
+        "emoji" = COALESCE($9, "emoji")
+      WHERE "id" = $10
+    `, [name, nameBn, region, regionBn, continent, description, descriptionBn, color, emoji, id]);
 
     await this.invalidateCache();
-    return sqliteDb.prepare('SELECT * FROM cuisines WHERE id = ?').get(id);
+    const res = await query('SELECT * FROM cuisines WHERE "id" = $1', [id]);
+    return res.rows[0];
   }
 
   /**
    * Admin delete cuisine.
    */
   async adminDeleteCuisine(id) {
-    const count = sqliteDb.prepare('SELECT COUNT(*) as count FROM recipes WHERE cuisineId = ?').get(id);
-    if (count && count.count > 0) {
-      throw new Error(`Cannot delete cuisine "${id}": ${count.count} recipe(s) belong to this cuisine.`);
+    const countRes = await query('SELECT COUNT(*)::int as count FROM recipes WHERE "cuisineId" = $1', [id]);
+    const count = countRes.rows[0]?.count || 0;
+    if (count > 0) {
+      throw new Error(`Cannot delete cuisine "${id}": ${count} recipe(s) belong to this cuisine.`);
     }
 
-    const result = sqliteDb.prepare('DELETE FROM cuisines WHERE id = ?').run(id);
-    if (result.changes === 0) {
+    const result = await query('DELETE FROM cuisines WHERE "id" = $1', [id]);
+    if (result.rowCount === 0) {
       throw new Error(`Cuisine with id "${id}" not found.`);
     }
 
@@ -1451,25 +1589,25 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
    * Admin get system history / logs.
    */
   async adminGetSystemLogs(limit = 50) {
-    const generations = sqliteDb.prepare(`
-      SELECT gh.*, u.name as userName, u.email as userEmail, r.title as recipeTitle
+    const generationsRes = await query(`
+      SELECT gh.*, u."name" as "userName", u."email" as "userEmail", r."title" as "recipeTitle"
       FROM generation_history gh
-      LEFT JOIN users u ON gh.user_id = u.id
-      LEFT JOIN recipes r ON gh.generated_recipe_id = r.id
-      ORDER BY gh.created_at DESC
-      LIMIT ?
-    `).all(limit);
+      LEFT JOIN users u ON gh."user_id" = u."id"
+      LEFT JOIN recipes r ON gh."generated_recipe_id" = r."id"
+      ORDER BY gh."created_at" DESC
+      LIMIT $1
+    `, [limit]);
 
-    const users = sqliteDb.prepare(`
-      SELECT u.id, u.name, u.email, u.created_at, COUNT(sr.recipe_id) as savedCount
+    const usersRes = await query(`
+      SELECT u."id", u."name", u."email", u."created_at", COUNT(sr."recipe_id")::int as "savedCount"
       FROM users u
-      LEFT JOIN saved_recipes sr ON u.id = sr.user_id
-      GROUP BY u.id
-      ORDER BY u.created_at DESC
-      LIMIT ?
-    `).all(limit);
+      LEFT JOIN saved_recipes sr ON u."id" = sr."user_id"
+      GROUP BY u."id", u."name", u."email", u."created_at"
+      ORDER BY u."created_at" DESC
+      LIMIT $1
+    `, [limit]);
 
-    return { generations, users };
+    return { generations: generationsRes.rows, users: usersRes.rows };
   }
 }
 

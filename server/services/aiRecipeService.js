@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from '@google/genai';
 import { cacheService } from './cacheService.js';
 import { decorateRecipeTranslations, ingredientTranslations } from '../utils/translation_engine.js';
 import { logAiFailure } from '../utils/aiLogger.js';
-import { db, executeWithRetry } from '../models/db.js';
+import { pool, query, db, executeWithRetry } from '../models/db.js';
 
 /**
  * System Instruction strictly instructing the Gemini 3.8 Flash culinary expert
@@ -209,13 +209,24 @@ export async function generateCustomAiRecipe({
     };
   }
 
-  // 1b. Check SQLite persistent database cache (survives memory resets and container sleep)
+  // 1b. Check persistent database cache (PostgreSQL primary, SQLite fallback)
   try {
-    const row = db.prepare('SELECT recipe_json FROM ai_recipes_cache WHERE cache_key = ?').get(cacheKey);
+    let row = null;
+    try {
+      const res = await query('SELECT "recipe_json" FROM ai_recipes_cache WHERE "cache_key" = $1', [cacheKey]);
+      row = res.rows[0];
+    } catch {}
+
+    if (!row && typeof db.prepare === 'function') {
+      try {
+        row = db.prepare('SELECT recipe_json FROM ai_recipes_cache WHERE cache_key = ?').get(cacheKey);
+      } catch {}
+    }
+
     if (row && row.recipe_json) {
-      const persistedRecipe = JSON.parse(row.recipe_json);
+      const persistedRecipe = typeof row.recipe_json === 'string' ? JSON.parse(row.recipe_json) : row.recipe_json;
       cacheService.set(cacheKey, persistedRecipe, 15 * 60 * 1000);
-      console.log('💾 Returning custom AI recipe from SQLite database cache:', persistedRecipe.title);
+      console.log('💾 Returning custom AI recipe from database cache:', persistedRecipe.title);
       return {
         ...persistedRecipe,
         cached: true,
@@ -223,7 +234,7 @@ export async function generateCustomAiRecipe({
       };
     }
   } catch (dbCheckErr) {
-    console.warn('⚠️ SQLite custom recipe cache lookup failed:', dbCheckErr.message);
+    console.warn('⚠️ Custom recipe cache lookup failed:', dbCheckErr.message);
   }
 
   // 2. Resolve Server-side API key
@@ -437,17 +448,30 @@ export async function generateCustomAiRecipe({
   // 7. Store in memory cache (TTL: 15 minutes = 900,000 ms)
   cacheService.set(cacheKey, finalRecipe, 15 * 60 * 1000);
 
-  // 8. Persist into SQLite database (survives container spin-downs and memory resets)
+  // 8. Persist into PostgreSQL database (survives container spin-downs and memory resets)
   try {
-    executeWithRetry(() => {
+    await executeWithRetry(async () => {
+      await query(`
+        INSERT INTO ai_recipes_cache ("cache_key", "recipe_id", "title", "recipe_json")
+        VALUES ($1, $2, $3, $4)
+        ON CONFLICT ("cache_key") DO UPDATE SET
+          "title" = EXCLUDED."title",
+          "recipe_json" = EXCLUDED."recipe_json",
+          "created_at" = CURRENT_TIMESTAMP
+      `, [cacheKey, finalRecipe.id, finalRecipe.title, JSON.stringify(finalRecipe)]);
+    });
+    console.log(`💾 Persisted custom AI recipe to PostgreSQL database: ${finalRecipe.title}`);
+  } catch (persistErr) {
+    console.warn('⚠️ Could not persist custom AI recipe to PostgreSQL database:', persistErr.message);
+  }
+
+  if (typeof db.prepare === 'function') {
+    try {
       db.prepare(`
         INSERT OR REPLACE INTO ai_recipes_cache (cache_key, recipe_id, title, recipe_json)
         VALUES (?, ?, ?, ?)
       `).run(cacheKey, finalRecipe.id, finalRecipe.title, JSON.stringify(finalRecipe));
-    });
-    console.log(`💾 Persisted custom AI recipe to SQLite database: ${finalRecipe.title}`);
-  } catch (persistErr) {
-    console.warn('⚠️ Could not persist custom AI recipe to SQLite database:', persistErr.message);
+    } catch {}
   }
 
   return finalRecipe;

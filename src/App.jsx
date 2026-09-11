@@ -1,5 +1,6 @@
 import React, { useEffect, Suspense, lazy } from 'react'
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
+import { AlertCircle, UtensilsCrossed, Loader2 } from 'lucide-react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { useDatabase } from './context/DatabaseContext'
@@ -32,7 +33,7 @@ const PageLoadingFallback = () => {
   }
   return (
     <div 
-      className="glass-panel animate-pulse" 
+      className="glass-panel" 
       style={{ 
         display: 'flex', 
         flexDirection: 'column',
@@ -43,12 +44,12 @@ const PageLoadingFallback = () => {
         maxWidth: '500px',
         padding: 'var(--spacing-xl)',
         textAlign: 'center',
-        borderRadius: 'var(--radius-md)',
+        borderRadius: '24px',
         border: '1px solid var(--surface-border)',
-        background: 'rgba(20, 20, 31, 0.4)'
+        background: 'rgba(14, 18, 26, 0.7)'
       }}
     >
-      <div className="empty-state-emoji animate-spin" style={{ animationDuration: '3s', fontSize: '3rem', marginBottom: '12px' }}>🍲</div>
+      <Loader2 size={36} className="animate-spin" style={{ color: 'var(--brand-orange)', marginBottom: '16px' }} />
       <h3 style={{ margin: '0 0 8px 0', fontSize: '1.25rem' }}>
         {language === 'bn' ? 'রান্নাবান্না লোড হচ্ছে...' : 'Loading Rannabanna...'}
       </h3>
@@ -81,7 +82,7 @@ class ErrorBoundary extends React.Component {
       const backHome = language === 'bn' ? 'হোমে ফিরে যান' : 'Back to Home'
       return (
         <div className="empty-state glass-panel animate-scale-in" style={{ margin: 'var(--spacing-xxl) auto', maxWidth: '500px', padding: 'var(--spacing-xl)', textAlign: 'center' }}>
-          <div className="empty-state-emoji">⚠️</div>
+          <AlertCircle size={44} style={{ color: '#ef4444', marginBottom: '16px' }} />
           <h3>{errorTitle}</h3>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
             {errorDesc}
@@ -107,10 +108,10 @@ function NotFoundPage() {
   const desc = language === 'bn' ? 'আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান নেই।' : "The page you're looking for doesn't exist."
   const goHome = language === 'bn' ? 'হোমে যান' : 'Go Home'
   return (
-    <div className="empty-state glass-panel animate-scale-in" style={{ margin: '2rem auto' }}>
-      <div className="empty-state-emoji">🍽️</div>
+    <div className="empty-state glass-panel animate-scale-in" style={{ margin: '2rem auto', textAlign: 'center', padding: 'var(--spacing-xxl)' }}>
+      <UtensilsCrossed size={48} style={{ color: 'var(--brand-orange)', marginBottom: '16px' }} />
       <h3>{title}</h3>
-      <p>{desc}</p>
+      <p style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>{desc}</p>
       <Link to="/" className="btn btn-primary">{goHome}</Link>
     </div>
   )

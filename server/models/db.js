@@ -1,170 +1,131 @@
+import pg from 'pg';
 import Database from 'better-sqlite3';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
-import { seedDatabase } from '../seed.js';
+import { seedPostgresIfEmpty } from '../seed_pg.js';
 
+const { Pool } = pg;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Resolve path to the database in the server root
-const dbPath = path.resolve(__dirname, '..', 'rannabanna.db');
-
-console.log('⚡ Connecting to SQLite Database at:', dbPath);
-
-/**
-/**
- * High-performance synchronous SQLite connection pool with busy timeout and WAL mode
- * @type {Database.Database}
- */
-export const db = new Database(dbPath, { timeout: 7000 });
-
-// Enable foreign keys constraints, Write-Ahead Logging (WAL), and busy timeout for concurrent safety on cold starts
-db.pragma('foreign_keys = ON');
-try {
-  db.pragma('journal_mode = WAL');
-  db.pragma('busy_timeout = 5000');
-} catch (pragmaErr) {
-  console.warn('⚠️ Could not set WAL or busy_timeout pragmas:', pragmaErr.message);
-}
-
-// Self-healing check: Ensure core catalog tables exist and are populated
-try {
-  const tableCheck = db.prepare("SELECT count(*) as count FROM sqlite_master WHERE type='table' AND name='recipes'").get();
-  if (!tableCheck || tableCheck.count === 0) {
-    console.log('🌱 Core tables missing in SQLite database. Auto-seeding catalog...');
-    seedDatabase(db);
-  } else {
-    const countCheck = db.prepare("SELECT count(*) as count FROM recipes").get();
-    if (!countCheck || countCheck.count === 0) {
-      console.log('🌱 Recipes table is empty. Auto-seeding catalog...');
-      seedDatabase(db);
+// Ensure .env is loaded if DATABASE_URL is not yet defined in environment
+if (!process.env.DATABASE_URL) {
+  try {
+    const envPath = path.resolve(__dirname, '../../.env');
+    if (fs.existsSync(envPath)) {
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      for (const line of envContent.split('\n')) {
+        const trimmed = line.trim();
+        if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+          const [key, ...rest] = trimmed.split('=');
+          const val = rest.join('=').trim().replace(/^["']|["']$/g, '');
+          if (!process.env[key.trim()]) {
+            process.env[key.trim()] = val;
+          }
+        }
+      }
     }
+  } catch {
+    // Ignore if unreadable
   }
-} catch (catalogInitErr) {
-  console.log('🌱 Auto-seeding SQLite database on initial boot:', catalogInitErr.message);
-  seedDatabase(db);
 }
 
-// Automatically run DDL migrations for User management and Generation History
-try {
-  db.transaction(() => {
-    // 1. Users table
-    db.prepare(`
-      CREATE TABLE IF NOT EXISTS users (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        email TEXT UNIQUE NOT NULL,
-        password_hash TEXT NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-      )
-    `).run();
+const connectionString = process.env.DATABASE_URL;
 
-    db.prepare(`
-      CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users(email)
-    `).run();
+const isRemote = Boolean(
+  connectionString && 
+  !connectionString.includes('localhost') && 
+  !connectionString.includes('127.0.0.1')
+);
 
-    // 2. Saved Recipes table
-    db.prepare(`
-      CREATE TABLE IF NOT EXISTS saved_recipes (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id TEXT NOT NULL,
-        recipe_id TEXT NOT NULL,
-        saved_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-        FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE,
-        UNIQUE(user_id, recipe_id)
-      )
-    `).run();
-
-    db.prepare(`
-      CREATE INDEX IF NOT EXISTS idx_saved_recipes_user ON saved_recipes(user_id)
-    `).run();
-
-    // 3. Generation History table
-    db.prepare(`
-      CREATE TABLE IF NOT EXISTS generation_history (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id TEXT,
-        ingredient_ids TEXT NOT NULL,
-        cuisine_id TEXT DEFAULT 'any',
-        generated_recipe_id TEXT,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,
-        FOREIGN KEY (generated_recipe_id) REFERENCES recipes(id) ON DELETE SET NULL
-      )
-    `).run();
-
-    db.prepare(`
-      CREATE INDEX IF NOT EXISTS idx_gen_history_user ON generation_history(user_id)
-    `).run();
-
-    // 4. Recipe baseServings column migration
-    const recipeColumns = db.prepare('PRAGMA table_info(recipes)').all().map(c => c.name);
-    if (recipeColumns.length > 0 && !recipeColumns.includes('baseServings')) {
-      db.prepare('ALTER TABLE recipes ADD COLUMN baseServings INTEGER DEFAULT 4').run();
-      db.prepare('UPDATE recipes SET baseServings = servings WHERE servings IS NOT NULL').run();
-    }
-
-    // 5. Persistent Translation Cache table
-    db.prepare(`
-      CREATE TABLE IF NOT EXISTS translation_cache (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        source_hash TEXT UNIQUE NOT NULL,
-        source_text TEXT NOT NULL,
-        target_lang TEXT NOT NULL DEFAULT 'bn',
-        translated_text TEXT NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-      )
-    `).run();
-
-    db.prepare(`
-      CREATE UNIQUE INDEX IF NOT EXISTS idx_trans_cache_hash ON translation_cache(source_hash)
-    `).run();
-
-    // 6. Persistent AI Custom Recipes Cache table (persists generated custom recipes across memory wipes)
-    db.prepare(`
-      CREATE TABLE IF NOT EXISTS ai_recipes_cache (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        cache_key TEXT UNIQUE NOT NULL,
-        recipe_id TEXT NOT NULL,
-        title TEXT NOT NULL,
-        recipe_json TEXT NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-      )
-    `).run();
-
-    db.prepare(`
-      CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_recipe_cache_key ON ai_recipes_cache(cache_key)
-    `).run();
-  })();
-  console.log('✅ SQLite Migrations completed successfully.');
-} catch (migrationError) {
-  console.error('❌ Failed running SQLite database migrations:', migrationError);
+console.log('⚡ Initializing PostgreSQL Database Client (Supabase pg pool)...');
+if (!connectionString) {
+  console.warn('⚠️ DATABASE_URL environment variable is not defined. PostgreSQL client is waiting for connection string.');
 }
 
 /**
- * Resilient SQLite query executor with automatic backoff retry on SQLITE_BUSY / lock contention.
- * Especially valuable during Render cold-start I/O spikes.
+ * Enterprise PostgreSQL Connection Pool for Supabase / Cloud Postgres
+ */
+export const pool = new Pool({
+  connectionString: connectionString || undefined,
+  ssl: isRemote ? { rejectUnauthorized: false } : false,
+  max: process.env.DB_POOL_MAX ? parseInt(process.env.DB_POOL_MAX, 10) : 20,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 10000,
+  allowExitOnIdle: true,
+});
+
+pool.on('error', (err) => {
+  console.error('❌ Unexpected error on idle PostgreSQL client:', err.message);
+});
+
+/**
+ * Executes a parameterized SQL query against the PostgreSQL pool.
+ *
+ * @param {string} text - SQL query string
+ * @param {any[]} [params] - Query parameters
+ * @returns {Promise<import('pg').QueryResult>}
+ */
+export async function query(text, params) {
+  return pool.query(text, params);
+}
+
+// Scoped auto-seed trigger: only executes if DATABASE_URL is set and recipes table is empty
+if (connectionString) {
+  seedPostgresIfEmpty(pool).catch((err) => {
+    console.error('❌ Error during PostgreSQL schema check or auto-seed:', err.message);
+  });
+}
+
+/**
+ * Resilient query executor with automatic exponential backoff retry.
+ * Supports both synchronous SQLite operations and asynchronous PostgreSQL queries.
  *
  * @template T
- * @param {() => T} fn - Synchronous database operation to execute
+ * @param {() => T|Promise<T>} fn - Database operation to execute
  * @param {number} [maxRetries=3] - Maximum retry attempts
  * @param {number} [baseDelayMs=50] - Initial retry backoff in ms
- * @returns {T}
+ * @returns {T|Promise<T>}
  */
 export function executeWithRetry(fn, maxRetries = 3, baseDelayMs = 50) {
   let attempt = 0;
   while (true) {
     try {
-      return fn();
+      const res = fn();
+      if (res && typeof res.then === 'function') {
+        return (async () => {
+          try {
+            return await res;
+          } catch (err) {
+            let asyncAttempt = attempt + 1;
+            while (true) {
+              const isRetryable = err?.code === 'SQLITE_BUSY' || err?.code === 'SQLITE_LOCKED' || err?.code === 'ECONNRESET' || (err?.message && (err.message.includes('locked') || err.message.includes('connection')));
+              if (isRetryable && asyncAttempt <= maxRetries) {
+                const delay = baseDelayMs * Math.pow(2, asyncAttempt - 1);
+                await new Promise((resolve) => setTimeout(resolve, delay));
+                try {
+                  return await fn();
+                } catch (retryErr) {
+                  err = retryErr;
+                  asyncAttempt++;
+                  continue;
+                }
+              }
+              throw err;
+            }
+          }
+        })();
+      }
+      return res;
     } catch (err) {
       attempt++;
-      const isLockError = err?.code === 'SQLITE_BUSY' || err?.code === 'SQLITE_LOCKED' || (err?.message && err.message.includes('locked'));
-      if (isLockError && attempt <= maxRetries) {
+      const isRetryable = err?.code === 'SQLITE_BUSY' || err?.code === 'SQLITE_LOCKED' || err?.code === 'ECONNRESET' || (err?.message && (err.message.includes('locked') || err.message.includes('connection')));
+      if (isRetryable && attempt <= maxRetries) {
         const delay = baseDelayMs * Math.pow(2, attempt - 1);
         const start = Date.now();
         while (Date.now() - start < delay) {
-          // Synchronous spin-wait
+          // Spin-wait for synchronous retry
         }
         continue;
       }
@@ -172,3 +133,28 @@ export function executeWithRetry(fn, maxRetries = 3, baseDelayMs = 50) {
     }
   }
 }
+
+// Transitional bridge: maintains .prepare() compatibility for untouched service files until converted
+const sqliteFallbackPath = path.resolve(__dirname, '..', 'rannabanna.db');
+let _sqliteDb = null;
+function getSqliteFallback() {
+  if (!_sqliteDb) {
+    _sqliteDb = new Database(sqliteFallbackPath, { timeout: 7000 });
+    _sqliteDb.pragma('foreign_keys = ON');
+  }
+  return _sqliteDb;
+}
+
+export const db = new Proxy(pool, {
+  get(target, prop) {
+    if (prop in target) {
+      return target[prop];
+    }
+    // Transitional backward-compatibility for untouched service files
+    const fallback = getSqliteFallback();
+    if (prop in fallback) {
+      return typeof fallback[prop] === 'function' ? fallback[prop].bind(fallback) : fallback[prop];
+    }
+    return undefined;
+  }
+});

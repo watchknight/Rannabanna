@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Pencil, Trash2, Plus, Search, AlertCircle } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { translateCategory } from '../../utils/translations.js';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
+import { getIngredientImage } from '../../utils/imageAssets.js';
 import AdminIngredientModal from './AdminIngredientModal';
 
 const CATEGORIES = [
@@ -65,8 +67,8 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
   const handleDelete = async (id, name, recipeCount) => {
     if (recipeCount > 0) {
       alert(language === 'bn'
-        ? `⚠️ "${name}" উপাদানটি মোছা যাবে না: এটি বর্তমানে ${recipeCount}টি রেসিপিতে ব্যবহৃত হচ্ছে।`
-        : `⚠️ Cannot delete "${name}": It is currently used in ${recipeCount} recipe(s). Please remove it from those recipes first.`);
+        ? `"${name}" উপাদানটি মোছা যাবে না: এটি বর্তমানে ${recipeCount}টি রেসিপিতে ব্যবহৃত হচ্ছে।`
+        : `Cannot delete "${name}": It is currently used in ${recipeCount} recipe(s). Please remove it from those recipes first.`);
       return;
     }
 
@@ -87,10 +89,10 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
       const data = await safeParseJson(res);
       if (!res.ok) throw new Error(data.message || 'Failed to delete ingredient');
 
-      setFeedbackMessage(language === 'bn' ? `✅ "${name}" উপাদান জিআইভি থেকে সফলভাবে মোছা হয়েছে।` : `✅ Ingredient "${name}" deleted from GIV.`);
+      setFeedbackMessage(language === 'bn' ? `"${name}" উপাদান জিআইভি থেকে সফলভাবে মোছা হয়েছে।` : `Ingredient "${name}" deleted from GIV.`);
       fetchIngredients();
     } catch (err) {
-      setFeedbackMessage(`❌ ${err.message}`);
+      setFeedbackMessage(err.message);
     } finally {
       setTimeout(() => setFeedbackMessage(''), 5000);
     }
@@ -99,7 +101,8 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
   return (
     <div className="admin-ingredients-tab">
       {feedbackMessage && (
-        <div className={feedbackMessage.startsWith('✅') ? 'admin-success-banner' : 'admin-error-banner'}>
+        <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <AlertCircle size={16} />
           {feedbackMessage}
         </div>
       )}
@@ -168,13 +171,19 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
               ) : (
                 ingredients.map((ing) => (
                   <tr key={ing.id}>
-                    <td style={{ fontSize: '1.4rem' }}>{ing.emoji || '🧂'}</td>
+                    <td>
+                      <img 
+                        src={getIngredientImage(ing.id, ing.category)} 
+                        alt="" 
+                        style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover' }} 
+                      />
+                    </td>
                     <td>
                       <div className="table-recipe-title">
                         {language === 'bn' && ing.nameBn ? ing.nameBn : ing.name}
                       </div>
                       {ing.nameBn && language !== 'bn' && (
-                        <div className="table-sub" style={{ color: 'var(--brand-pink)' }}>{ing.nameBn}</div>
+                        <div className="table-sub" style={{ color: 'var(--brand-orange)' }}>{ing.nameBn}</div>
                       )}
                       <div className="table-sub" style={{ fontFamily: 'monospace', fontSize: '0.75rem' }}>{ing.id}</div>
                     </td>
@@ -195,12 +204,12 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
                     </td>
                     <td>
                       <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', maxWidth: '200px' }}>
-                        {ing.spicy > 0 && <span className="badge" style={{ background: 'rgba(239, 68, 68, 0.15)', color: '#f87171', fontSize: '0.7rem' }}>🌶️ {ing.spicy}</span>}
-                        {ing.sweet > 0 && <span className="badge" style={{ background: 'rgba(236, 72, 153, 0.15)', color: '#f472b6', fontSize: '0.7rem' }}>🍬 {ing.sweet}</span>}
-                        {ing.sour > 0 && <span className="badge" style={{ background: 'rgba(234, 179, 8, 0.15)', color: '#facc15', fontSize: '0.7rem' }}>🍋 {ing.sour}</span>}
-                        {ing.umami > 0 && <span className="badge" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#34d399', fontSize: '0.7rem' }}>🍄 {ing.umami}</span>}
-                        {ing.salty > 0 && <span className="badge" style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', fontSize: '0.7rem' }}>🧂 {ing.salty}</span>}
-                        {ing.bitter > 0 && <span className="badge" style={{ background: 'rgba(139, 92, 246, 0.15)', color: '#a78bfa', fontSize: '0.7rem' }}>☕ {ing.bitter}</span>}
+                        {ing.spicy > 0 && <span className="badge" style={{ background: 'rgba(239, 68, 68, 0.15)', color: '#f87171', fontSize: '0.7rem' }}>Spicy: {ing.spicy}</span>}
+                        {ing.sweet > 0 && <span className="badge" style={{ background: 'rgba(236, 72, 153, 0.15)', color: '#f472b6', fontSize: '0.7rem' }}>Sweet: {ing.sweet}</span>}
+                        {ing.sour > 0 && <span className="badge" style={{ background: 'rgba(234, 179, 8, 0.15)', color: '#facc15', fontSize: '0.7rem' }}>Sour: {ing.sour}</span>}
+                        {ing.umami > 0 && <span className="badge" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#34d399', fontSize: '0.7rem' }}>Umami: {ing.umami}</span>}
+                        {ing.salty > 0 && <span className="badge" style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', fontSize: '0.7rem' }}>Salty: {ing.salty}</span>}
+                        {ing.bitter > 0 && <span className="badge" style={{ background: 'rgba(139, 92, 246, 0.15)', color: '#a78bfa', fontSize: '0.7rem' }}>Bitter: {ing.bitter}</span>}
                       </div>
                     </td>
                     <td>
@@ -213,18 +222,18 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
                         <button
                           type="button"
                           className="btn-icon"
-                          title={language === 'bn' ? 'উপাদান সম্পাদনা' : 'Edit Ingredient'}
-                          onClick={() => { setEditingIngredient(ing); setIsModalOpen(true); }}
+                          title="Edit Ingredient"
+                          onClick={() => handleOpenEdit(ing)}
                         >
-                          ✏️
+                          <Pencil size={15} />
                         </button>
                         <button
                           type="button"
                           className="btn-icon btn-danger"
-                          title={ing.recipeCount > 0 ? (language === 'bn' ? 'উপাদানটি রেসিপিতে ব্যবহৃত হচ্ছে' : 'Ingredient in use') : (language === 'bn' ? 'উপাদান মুছুন' : 'Delete Ingredient')}
+                          title="Delete Ingredient"
                           onClick={() => handleDelete(ing.id, ing.name, ing.recipeCount)}
                         >
-                          🗑️
+                          <Trash2 size={15} />
                         </button>
                       </div>
                     </td>
@@ -269,7 +278,7 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
         onClose={() => setIsModalOpen(false)}
         onSaved={() => {
           setIsModalOpen(false);
-          setFeedbackMessage('✅ Ingredient saved to GIV and cache re-hydrated.');
+          setFeedbackMessage('Ingredient saved to GIV and cache re-hydrated.');
           fetchIngredients();
           setTimeout(() => setFeedbackMessage(''), 5000);
         }}

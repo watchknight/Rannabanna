@@ -1,10 +1,26 @@
 import React, { useMemo, useState, useEffect } from 'react'
 import { useParams, useSearchParams, Link } from 'react-router-dom'
+import { 
+  Clock, 
+  Flame, 
+  ChefHat, 
+  Users, 
+  Leaf, 
+  BookOpen, 
+  AlertCircle, 
+  Sparkles, 
+  Loader2, 
+  UtensilsCrossed, 
+  ShoppingCart,
+  Minus,
+  Plus
+} from 'lucide-react'
 import { useDatabase } from '../context/DatabaseContext'
 import RecipeCard from '../components/RecipeCard'
 import { translateCategory, translateUnit, translateTechnique, translatePreparation } from '../utils/translations'
 import { scaleIngredient, adjustTime, checkQuantitySatisfaction } from '../utils/servingsScaler'
 import { getCachedRecipeTranslation, translateWithGemini } from '../utils/aiTranslator'
+import { getRecipeImage, getCuisineImage } from '../utils/imageAssets'
 
 function RecipeDetailPage() {
   const { id } = useParams()
@@ -43,24 +59,21 @@ function RecipeDetailPage() {
     }
   }, [id])
 
-  // On-demand Gemini 3.8 Flash translation for uncached recipe details when switching to Bangla
+  // On-demand Gemini 3.8 Flash translation
   useEffect(() => {
     if (language !== 'bn' || !recipe) return
 
-    // Pre-loaded recipes already have authentic Bangla title and step instructions
     const needsTranslation = !recipe.titleBn || 
       (Array.isArray(recipe.steps) && recipe.steps.length > 0 && recipe.steps.some(s => !s.instructionBn))
 
     if (!needsTranslation) return
 
-    // Check client-side persistent cache first
     const cached = getCachedRecipeTranslation(recipe.id, 'bn')
     if (cached) {
       setRecipe(prev => ({ ...prev, ...cached }))
       return
     }
 
-    // Only hit endpoint for content that isn't cached yet!
     let active = true
     setRecipeTranslating(true)
 
@@ -81,7 +94,7 @@ function RecipeDetailPage() {
     }
   }, [language, recipe?.id])
 
-  // Extract selected ingredients and on-hand quantities from query parameters
+  // Extract selected ingredients
   const { selectedIds, onHandMap } = useMemo(() => {
     const raw = searchParams.get('selected')
     if (!raw) return { selectedIds: [], onHandMap: {} }
@@ -90,9 +103,9 @@ function RecipeDetailPage() {
     const onHand = {}
     for (const p of parts) {
       if (p.includes(':')) {
-        const [id, qty] = p.split(':')
-        ids.push(id)
-        if (!isNaN(Number(qty))) onHand[id] = Number(qty)
+        const [itemId, qty] = p.split(':')
+        ids.push(itemId)
+        if (!isNaN(Number(qty))) onHand[itemId] = Number(qty)
       } else {
         ids.push(p)
       }
@@ -102,13 +115,11 @@ function RecipeDetailPage() {
 
   const selectedSet = useMemo(() => new Set(selectedIds), [selectedIds])
 
-  // Cuisine definition
   const cuisine = useMemo(() => {
     if (!recipe || !cuisines) return null
     return cuisines.find(c => c.id === recipe.cuisineId)
   }, [recipe, cuisines])
 
-  // Related recipes from same cuisine (excluding current one)
   const relatedRecipes = useMemo(() => {
     if (!recipe || !recipes) return []
     return recipes.filter(r => r.cuisineId === recipe.cuisineId && r.id !== recipe.id).slice(0, 3)
@@ -118,7 +129,6 @@ function RecipeDetailPage() {
   const activeServings = servings || baseServings
   const ingredientsList = Array.isArray(recipe?.ingredients) ? recipe.ingredients : []
 
-  // Compute missing essential ingredients (including on-hand quantity shortfall from scaling)
   const missingEssentials = useMemo(() => {
     if (!recipe || !Array.isArray(recipe.ingredients)) return []
     return recipe.ingredients
@@ -140,7 +150,6 @@ function RecipeDetailPage() {
           id: ri.ingredientId,
           name: ingObj?.name || ri.name || ri.ingredientId,
           nameBn: ingObj?.nameBn || ri.nameBn || ingObj?.name || ri.ingredientId,
-          emoji: ingObj?.emoji || '🧂',
           shortfall: check?.missingQuantity || 0,
           unit: ri.unit,
           isInsufficient: Boolean(check && !check.satisfied)
@@ -150,8 +159,8 @@ function RecipeDetailPage() {
 
   if (loading) {
     return (
-      <div className="empty-state glass-panel animate-pulse" style={{ padding: 'var(--spacing-xxl)' }} id="recipe-detail-loading">
-        <div className="empty-state-emoji animate-spin" style={{ animationDuration: '3s' }}>🍲</div>
+      <div className="empty-state glass-panel animate-pulse" style={{ padding: '60px 20px', textAlign: 'center', borderRadius: '24px' }} id="recipe-detail-loading">
+        <Loader2 size={40} className="animate-spin" style={{ color: 'var(--brand-orange)', marginBottom: '16px' }} />
         <h3>{language === 'bn' ? 'রেসিপি প্রস্তুত করা হচ্ছে...' : 'Loading Recipe Details...'}</h3>
         <p>{language === 'bn' ? 'ডাটাবেজ থেকে ধাপে ধাপে প্রস্তুত প্রণালী এবং রান্নার গোপনীয় কৌশলগুলো লোড হচ্ছে...' : 'Fetching step-by-step instructions and regional culinary secrets from the database...'}</p>
       </div>
@@ -160,11 +169,11 @@ function RecipeDetailPage() {
 
   if (!recipe) {
     return (
-      <div className="empty-state glass-panel animate-scale-in" id="error-recipe-not-found">
-        <div className="empty-state-emoji">🍽️</div>
+      <div className="empty-state glass-panel animate-scale-in" id="error-recipe-not-found" style={{ textAlign: 'center', padding: '60px 20px', borderRadius: '24px' }}>
+        <UtensilsCrossed size={48} style={{ color: 'var(--brand-orange)', marginBottom: '16px' }} />
         <h3>{language === 'bn' ? 'রেসিপি পাওয়া যায়নি' : 'Recipe Not Found'}</h3>
         <p>{language === 'bn' ? 'আমরা যে রেসিপিটি খুঁজছেন তা পাওয়া যায়নি। এটি হয়তো সরানো হয়েছে।' : "We couldn't find the recipe you are looking for. It may have been retired or moved."}</p>
-        <Link to="/" className="btn btn-primary" id="not-found-home-btn">
+        <Link to="/" className="btn btn-primary" id="not-found-home-btn" style={{ marginTop: '16px' }}>
           {t('home')}
         </Link>
       </div>
@@ -173,11 +182,8 @@ function RecipeDetailPage() {
 
   const stepsList = Array.isArray(recipe.steps) ? recipe.steps : []
   const dietaryTagsList = Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags : []
-
-  // Dynamically adjusted time based on servings count (pure arithmetic calculation)
   const timeStats = adjustTime(recipe.prepTime, recipe.cookTime, baseServings, activeServings, recipe.timeAdjustment)
 
-  // Group recipe ingredients
   const ingredientGroups = ingredientsList.reduce((acc, ri) => {
     const groupName = ri.group || 'Main Ingredients'
     if (!acc[groupName]) acc[groupName] = []
@@ -189,36 +195,60 @@ function RecipeDetailPage() {
   const desc = language === 'bn' ? (recipe.descriptionBn || recipe.description) : recipe.description
   const culturalNote = language === 'bn' ? (recipe.culturalNoteBn || recipe.culturalNote) : recipe.culturalNote
   const cuisineName = language === 'bn' ? (cuisine?.nameBn || cuisine?.name || recipe.cuisineId) : (cuisine?.name || recipe.cuisineId)
+  const dishPhotoUrl = getRecipeImage(recipe.id, recipe.cuisineId)
 
   return (
-    <div className="recipe-detail-container animate-fade-in" id={`recipe-detail-${recipe.id}`}>
+    <div className="recipe-detail-container animate-fade-in" id={`recipe-detail-${recipe.id}`} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
       
       {/* AI Translation Loading Indicator */}
       {recipeTranslating && (
         <div className="recipe-translating-banner" id="recipe-translating-indicator">
-          <span>🌐</span>
-          <span className="translating-dot"></span>
+          <Loader2 size={14} className="animate-spin" />
           <span>{t('translatingViaAi')}</span>
         </div>
       )}
 
-      {/* 1. Header segment */}
-      <section className="recipe-detail-header">
-        <div className="recipe-detail-visual" id="recipe-detail-hero-visual">
-          <span className="recipe-emoji" role="img" aria-label={title}>{recipe.imageEmoji || '🍲'}</span>
+      {/* 1. Header segment with Full-Bleed Real Food Photography */}
+      <section className="recipe-detail-header" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '36px', alignItems: 'center', marginBottom: '40px' }}>
+        <div 
+          className="recipe-detail-visual" 
+          id="recipe-detail-hero-visual"
+          style={{
+            position: 'relative',
+            height: '380px',
+            borderRadius: '28px',
+            overflow: 'hidden',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6)'
+          }}
+        >
+          <img
+            src={dishPhotoUrl}
+            alt={title}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = getCuisineImage(recipe.cuisineId);
+            }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8, 10, 14, 0.8) 0%, transparent 60%)' }} />
         </div>
 
         <div className="recipe-detail-info">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '8px' }}>
             <span 
               className="recipe-card-cuisine" 
               style={{ 
                 color: cuisine?.color || 'var(--brand-orange)',
                 fontSize: '0.85rem',
-                fontWeight: '800'
+                fontWeight: '800',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px'
               }}
             >
-              {cuisine?.emoji} {cuisineName} {language === 'bn' ? 'রন্ধনশৈলী' : 'Cuisine'}
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: cuisine?.color || 'var(--brand-orange)' }} />
+              <span>{cuisineName} {language === 'bn' ? 'রন্ধনশৈলী' : 'Cuisine'}</span>
             </span>
             {(recipe.isAiGenerated || recipe.id?.startsWith('custom-')) && (
               <span 
@@ -237,34 +267,47 @@ function RecipeDetailPage() {
                 }}
                 id="recipe-detail-ai-badge"
               >
-                <span>✨</span> {t('aiGeneratedBadge')} • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small>
+                <Sparkles size={12} />
+                <span>{t('aiGeneratedBadge')} • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small></span>
               </span>
             )}
           </div>
-          <h1 className="recipe-detail-title">{title}</h1>
-          <p className="hero-subtitle" style={{ margin: 0, fontSize: '1.05rem', textAlign: 'left' }}>
+
+          <h1 className="recipe-detail-title" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, margin: '8px 0 12px', lineHeight: 1.2 }}>{title}</h1>
+          <p className="hero-subtitle" style={{ margin: '0 0 24px', fontSize: '1.05rem', textAlign: 'left', lineHeight: 1.6 }}>
             {desc}
           </p>
 
-          <div className="recipe-detail-stats">
-            <div className="recipe-detail-stat-card" id="recipe-stat-time">
-              <div className="recipe-detail-stat-val">⏱️ {language === 'bn' ? toBengaliNumber(timeStats.totalTime) : timeStats.totalTime}</div>
-              <div className="recipe-detail-stat-lbl">
+          {/* Stats Bar with Lucide Icons */}
+          <div className="recipe-detail-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+            <div className="recipe-detail-stat-card glass-panel" id="recipe-stat-time" style={{ padding: '12px 16px', borderRadius: '16px' }}>
+              <div className="recipe-detail-stat-val" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '1.1rem', fontWeight: 700 }}>
+                <Clock size={16} style={{ color: 'var(--brand-orange)' }} />
+                <span>{language === 'bn' ? toBengaliNumber(timeStats.totalTime) : timeStats.totalTime}</span>
+              </div>
+              <div className="recipe-detail-stat-lbl" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
                 {t('mins')} {activeServings !== baseServings ? `(${t('adjustedTime')})` : ''}
               </div>
             </div>
-            <div className="recipe-detail-stat-card" id="recipe-stat-calories">
-              <div className="recipe-detail-stat-val">🔥 {language === 'bn' ? toBengaliNumber(Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0)) : (Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0))}</div>
-              <div className="recipe-detail-stat-lbl">{t('caloriesLabel')}</div>
-            </div>
-            <div className="recipe-detail-stat-card" id="recipe-stat-difficulty">
-              <div className="recipe-detail-stat-val" style={{ textTransform: 'capitalize' }}>
-                {t(recipe.difficulty || 'intermediate')}
+
+            <div className="recipe-detail-stat-card glass-panel" id="recipe-stat-calories" style={{ padding: '12px 16px', borderRadius: '16px' }}>
+              <div className="recipe-detail-stat-val" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '1.1rem', fontWeight: 700 }}>
+                <Flame size={16} style={{ color: '#ef4444' }} />
+                <span>{language === 'bn' ? toBengaliNumber(Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0)) : (Math.round(((recipe.calories || 0) * activeServings) / (baseServings || 4)) || (recipe.calories || 0))}</span>
               </div>
-              <div className="recipe-detail-stat-lbl">{t('filterDifficultyLabel')}</div>
+              <div className="recipe-detail-stat-lbl" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{t('caloriesLabel')}</div>
             </div>
-            <div className="recipe-detail-stat-card" id="recipe-stat-servings">
-              <div className="servings-stepper">
+
+            <div className="recipe-detail-stat-card glass-panel" id="recipe-stat-difficulty" style={{ padding: '12px 16px', borderRadius: '16px' }}>
+              <div className="recipe-detail-stat-val" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '1.1rem', fontWeight: 700, textTransform: 'capitalize' }}>
+                <ChefHat size={16} style={{ color: 'var(--brand-orange)' }} />
+                <span>{t(recipe.difficulty || 'intermediate')}</span>
+              </div>
+              <div className="recipe-detail-stat-lbl" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{t('filterDifficultyLabel')}</div>
+            </div>
+
+            <div className="recipe-detail-stat-card glass-panel" id="recipe-stat-servings" style={{ padding: '12px 16px', borderRadius: '16px' }}>
+              <div className="servings-stepper" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <button 
                   type="button" 
                   className="servings-btn" 
@@ -272,10 +315,13 @@ function RecipeDetailPage() {
                   disabled={activeServings <= 1}
                   aria-label="Decrease Servings"
                   id="servings-decrement-btn"
+                  style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  −
+                  <Minus size={12} />
                 </button>
-                <span className="servings-count" id="servings-count-val">👥 {language === 'bn' ? toBengaliNumber(activeServings) : activeServings}</span>
+                <span className="servings-count" id="servings-count-val" style={{ fontWeight: 700, fontSize: '1.05rem', minWidth: '24px', textAlign: 'center' }}>
+                  {language === 'bn' ? toBengaliNumber(activeServings) : activeServings}
+                </span>
                 <button 
                   type="button" 
                   className="servings-btn" 
@@ -283,23 +329,20 @@ function RecipeDetailPage() {
                   disabled={activeServings >= 24}
                   aria-label="Increase Servings"
                   id="servings-increment-btn"
+                  style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  +
+                  <Plus size={12} />
                 </button>
               </div>
-              <div className="recipe-detail-stat-lbl">{t('servingsLabel')}</div>
-              {activeServings !== baseServings && (
-                <div className="servings-adjusted-pill">
-                  {t('originalServings')}: {language === 'bn' ? toBengaliNumber(baseServings) : baseServings}
-                </div>
-              )}
+              <div className="recipe-detail-stat-lbl" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{t('servingsLabel')}</div>
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-xs)', marginTop: 'var(--spacing-sm)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px' }}>
             {dietaryTagsList.map(tag => (
-              <span key={tag} className="tag" style={{ textTransform: 'capitalize' }}>
-                🌱 {t(tag)}
+              <span key={tag} className="tag" style={{ textTransform: 'capitalize', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                <Leaf size={12} style={{ color: '#10b981' }} />
+                <span>{t(tag)}</span>
               </span>
             ))}
           </div>
@@ -308,25 +351,30 @@ function RecipeDetailPage() {
 
       {/* 2. Cultural Note Callout */}
       {culturalNote && (
-        <section style={{ marginBottom: 'var(--spacing-lg)' }} id="recipe-cultural-history">
-          <div className="cultural-callout">
-            <span style={{ fontSize: '1.25rem', marginRight: 'var(--spacing-sm)' }}>📜</span>
-            <strong>{t('culturalContext')}:</strong> {culturalNote}
+        <section style={{ marginBottom: '32px' }} id="recipe-cultural-history">
+          <div className="cultural-callout glass-panel" style={{ padding: '16px 20px', borderRadius: '16px', borderLeft: '4px solid var(--brand-orange)', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+            <BookOpen size={20} style={{ color: 'var(--brand-orange)', flexShrink: 0, marginTop: '2px' }} />
+            <div>
+              <strong style={{ color: '#ffffff' }}>{t('culturalContext')}: </strong>
+              <span style={{ color: 'var(--text-secondary)' }}>{culturalNote}</span>
+            </div>
           </div>
         </section>
       )}
 
       {/* 3. Main layout containing Ingredients on left and Directions on right */}
-      <section className="recipe-detail-body">
+      <section className="recipe-detail-body" style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '36px', alignItems: 'start' }}>
         
         {/* Ingredients Column */}
-        <div className="ingredients-list-panel glass-panel" id="recipe-detail-ingredients">
-          <h2 style={{ fontSize: '1.5rem', marginBottom: 'var(--spacing-lg)' }}>{t('ingredientsNeeded')}</h2>
+        <div className="ingredients-list-panel glass-panel" id="recipe-detail-ingredients" style={{ borderRadius: '24px', padding: '24px' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '20px' }}>{t('ingredientsNeeded')}</h2>
           
           {Object.entries(ingredientGroups).map(([groupName, items]) => (
-            <div key={groupName} style={{ marginBottom: 'var(--spacing-lg)' }}>
-              <h3 className="ingredients-group-title">{translateCategory(groupName, language)}</h3>
-              <div className="ingredients-check-list">
+            <div key={groupName} style={{ marginBottom: '24px' }}>
+              <h3 className="ingredients-group-title" style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--brand-orange)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
+                {translateCategory(groupName, language)}
+              </h3>
+              <div className="ingredients-check-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {items.map((ri, index) => {
                   const ingObj = (ingredients || []).find(i => i && i.id === ri.ingredientId)
                   const inKitchen = selectedSet.has(ri.ingredientId)
@@ -336,7 +384,6 @@ function RecipeDetailPage() {
                   const isInsufficient = inKitchen && satisfaction && !satisfaction.satisfied
                   const ingName = language === 'bn' ? (ingObj?.nameBn || ingObj?.name || ri.nameBn || ri.name || ri.ingredientId) : (ingObj?.name || ri.name || ri.ingredientId)
                   
-                  // Scale ingredient quantity and unit
                   const scaled = scaleIngredient(ri, baseServings, activeServings)
                   const unit = translateUnit(scaled.displayUnit, language)
                   
@@ -345,31 +392,23 @@ function RecipeDetailPage() {
                       key={index} 
                       className={`ingredient-check-item ${isMatched ? 'matched-ing' : (isInsufficient ? 'insufficient-ing' : 'missing-ing')}`}
                       id={`ing-item-${ri.ingredientId}`}
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 12px', borderRadius: '10px', background: 'rgba(255,255,255,0.03)', fontSize: '0.88rem' }}
                     >
-                      <input 
-                        type="checkbox" 
-                        checked={isMatched} 
-                        readOnly
-                        aria-label={`${ingName}: ${isMatched ? 'Available in your kitchen' : (isInsufficient ? 'Insufficient in kitchen' : 'Missing from kitchen')}`}
-                        id={`ing-chk-${ri.ingredientId}`}
-                      />
-                      <span>
-                        <strong>{language === 'bn' ? toBengaliNumber(scaled.displayQuantity) : scaled.displayQuantity} {unit}</strong> {ingName}
-                        {ri.preparation ? `, ${translatePreparation(ri.preparation, language)}` : ''}
-                        {ri.isEssential && <span style={{ color: 'var(--brand-orange)', fontSize: '0.75rem', marginLeft: '6px' }}>*</span>}
-                        {scaled.isFixed && (
-                          <span className="badge-fixed" title={t('fixedIngredient')}>
-                            {t('fixedIngredient')}
-                          </span>
-                        )}
-                        {isInsufficient && (
-                          <span className="badge" style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24', border: '1px solid rgba(245, 158, 11, 0.3)', marginLeft: '6px', fontSize: '0.65rem' }}>
-                            ⚠️ {language === 'bn' ? `ঘাটতি: আরো ${toBengaliNumber(satisfaction.missingQuantity)} ${unit} প্রয়োজন` : `Shortfall: need ${satisfaction.missingQuantity} ${unit}`}
-                          </span>
-                        )}
-                      </span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <input 
+                          type="checkbox" 
+                          checked={isMatched} 
+                          readOnly
+                          style={{ accentColor: 'var(--brand-orange)', width: '16px', height: '16px' }}
+                          id={`ing-chk-${ri.ingredientId}`}
+                        />
+                        <span>
+                          <strong>{language === 'bn' ? toBengaliNumber(scaled.displayQuantity) : scaled.displayQuantity} {unit}</strong> {ingName}
+                          {ri.preparation ? `, ${translatePreparation(ri.preparation, language)}` : ''}
+                        </span>
+                      </div>
                       {isMatched && (
-                        <span className="badge badge-match-high" style={{ fontSize: '0.6rem', padding: '2px 6px' }}>
+                        <span className="badge badge-match-high" style={{ fontSize: '0.65rem', padding: '2px 8px' }}>
                           {language === 'bn' ? 'মিলেছে' : 'Matched'}
                         </span>
                       )}
@@ -384,33 +423,28 @@ function RecipeDetailPage() {
           {selectedIds.length > 0 && missingEssentials.length > 0 && (
             <div 
               style={{ 
-                marginTop: 'var(--spacing-lg)', 
-                padding: 'var(--spacing-md)', 
-                background: 'rgba(239, 68, 68, 0.05)', 
-                border: '1.5px solid rgba(239, 68, 68, 0.25)', 
-                borderRadius: 'var(--radius-md)' 
+                marginTop: '20px', 
+                padding: '14px 16px', 
+                background: 'rgba(239, 68, 68, 0.06)', 
+                border: '1px solid rgba(239, 68, 68, 0.25)', 
+                borderRadius: '16px' 
               }}
               id="missing-essentials-warning"
             >
-              <h4 style={{ color: '#f87171', fontSize: '0.95rem', marginBottom: 'var(--spacing-sm)' }}>
-                ⚠️ {language === 'bn' ? 'অনুপস্থিত বা অপর্যাপ্ত প্রয়োজনীয় উপকরণসমূহ:' : 'Missing or Insufficient Essential Ingredients:'}
+              <h4 style={{ color: '#f87171', fontSize: '0.88rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
+                <ShoppingCart size={15} />
+                <span>{language === 'bn' ? 'অনুপস্থিত প্রয়োজনীয় উপকরণসমূহ:' : 'Missing Essential Ingredients:'}</span>
               </h4>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-xs)' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {missingEssentials.map(ing => {
                   const ingName = language === 'bn' ? (ing.nameBn || ing.name) : ing.name
-                  const unitText = ing.unit ? translateUnit(ing.unit, language) : ''
                   return (
                     <span 
                       key={ing.id} 
-                      className={ing.isInsufficient ? "badge badge-match-med" : "badge badge-match-low"} 
-                      style={{ textTransform: 'none' }}
+                      className="badge badge-match-low" 
+                      style={{ textTransform: 'none', fontSize: '0.78rem' }}
                     >
-                      {ing.emoji} {ingName}
-                      {ing.isInsufficient && (
-                        <strong style={{ marginLeft: '4px' }}>
-                          ({language === 'bn' ? `ঘাটতি: ${toBengaliNumber(ing.shortfall)} ${unitText}` : `Need ${ing.shortfall} ${unitText}`})
-                        </strong>
-                      )}
+                      {ingName}
                     </span>
                   )
                 })}
@@ -420,20 +454,31 @@ function RecipeDetailPage() {
         </div>
 
         {/* Steps Column */}
-        <div className="steps-panel glass-panel" id="recipe-detail-directions">
-          <h2 style={{ fontSize: '1.5rem' }}>{t('cookingSteps')}</h2>
-          <div className="steps-list">
+        <div className="steps-panel glass-panel" id="recipe-detail-directions" style={{ borderRadius: '24px', padding: '28px' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '24px' }}>{t('cookingSteps')}</h2>
+          <div className="steps-list" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {stepsList.map(step => {
               const instruction = language === 'bn' ? (step.instructionBn || step.instruction) : step.instruction
               return (
-                <div key={step.step || step.stepNumber} className="step-item" id={`step-row-${step.step || step.stepNumber}`}>
-                  <div className="step-badge">{language === 'bn' ? toBengaliNumber(step.step || step.stepNumber) : (step.step || step.stepNumber)}</div>
-                  <div className="step-content">
-                    <div className="step-meta">
-                      <span className="step-tech">{translateTechnique(step.technique, language)}</span>
-                      <span className="step-duration">⏱️ {language === 'bn' ? toBengaliNumber(step.duration) : step.duration} {t('mins')}</span>
+                <div key={step.step || step.stepNumber} className="step-item" id={`step-row-${step.step || step.stepNumber}`} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div className="step-badge" style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--brand-orange)', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.9rem', flexShrink: 0 }}>
+                    {language === 'bn' ? toBengaliNumber(step.step || step.stepNumber) : (step.step || step.stepNumber)}
+                  </div>
+                  <div className="step-content" style={{ flex: 1 }}>
+                    <div className="step-meta" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px' }}>
+                      {step.technique && (
+                        <span className="step-tech badge" style={{ background: 'rgba(255,255,255,0.08)', color: '#ffffff', fontSize: '0.72rem' }}>
+                          {translateTechnique(step.technique, language)}
+                        </span>
+                      )}
+                      {step.duration && (
+                        <span className="step-duration" style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                          <Clock size={12} style={{ color: 'var(--brand-orange)' }} />
+                          <span>{language === 'bn' ? toBengaliNumber(step.duration) : step.duration} {t('mins')}</span>
+                        </span>
+                      )}
                     </div>
-                    <p className="step-instruction">{instruction}</p>
+                    <p className="step-instruction" style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-primary)' }}>{instruction}</p>
                   </div>
                 </div>
               )
@@ -444,9 +489,9 @@ function RecipeDetailPage() {
 
       {/* 4. Related Cuisines Grid */}
       {relatedRecipes.length > 0 && (
-        <section style={{ marginTop: 'var(--spacing-xl)' }} id="related-recipes-section">
-          <div className="section-header">
-            <h2>{language === 'bn' ? `${cuisineName} রন্ধনশৈলী থেকে আরো রেসিপি` : `More from ${cuisineName} Cuisine`}</h2>
+        <section style={{ marginTop: '48px' }} id="related-recipes-section">
+          <div className="section-header" style={{ marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 800 }}>{language === 'bn' ? `${cuisineName} রন্ধনশৈলী থেকে আরো রেসিপি` : `More from ${cuisineName} Cuisine`}</h2>
           </div>
           <div className="recipes-grid">
             {relatedRecipes.map(r => (

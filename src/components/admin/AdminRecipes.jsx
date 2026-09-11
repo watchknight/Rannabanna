@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Pencil, Trash2, Plus, AlertCircle, Sparkles } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
+import { getRecipeImage, getCuisineImage } from '../../utils/imageAssets.js';
 import AdminRecipeModal from './AdminRecipeModal';
 
 export default function AdminRecipes({ token, cuisines = [], initialOpenCreate = false }) {
@@ -68,10 +70,10 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
       const data = await safeParseJson(res);
       if (!res.ok) throw new Error(data.message || 'Failed to delete recipe');
 
-      setFeedbackMessage(language === 'bn' ? `✅ "${title}" রেসিপি সফলভাবে মুছে ফেলা হয়েছে।` : `✅ Recipe "${title}" deleted successfully.`);
+      setFeedbackMessage(language === 'bn' ? `"${title}" রেসিপি সফলভাবে মুছে ফেলা হয়েছে।` : `Recipe "${title}" deleted successfully.`);
       fetchRecipes();
     } catch (err) {
-      setFeedbackMessage(`❌ ${err.message}`);
+      setFeedbackMessage(err.message);
     } finally {
       setTimeout(() => setFeedbackMessage(''), 5000);
     }
@@ -90,7 +92,8 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
   return (
     <div className="admin-recipes-tab">
       {feedbackMessage && (
-        <div className={feedbackMessage.startsWith('✅') ? 'admin-success-banner' : 'admin-error-banner'}>
+        <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <AlertCircle size={16} />
           {feedbackMessage}
         </div>
       )}
@@ -113,7 +116,7 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
           >
             <option value="all">{t('adminAllCuisines')}</option>
             {cuisines.map(c => (
-              <option key={c.id} value={c.id}>{c.emoji} {language === 'bn' && c.nameBn ? c.nameBn : c.name}</option>
+              <option key={c.id} value={c.id}>{language === 'bn' && c.nameBn ? c.nameBn : c.name}</option>
             ))}
           </select>
 
@@ -130,7 +133,8 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
         </div>
 
         <button type="button" className="btn btn-primary" onClick={handleOpenCreate}>
-          + {t('adminCreateRecipe')}
+          <Plus size={16} style={{ display: 'inline', marginRight: '6px' }} />
+          {t('adminCreateRecipe')}
         </button>
       </div>
 
@@ -140,7 +144,7 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
           <table className="admin-table">
             <thead>
               <tr>
-                <th style={{ width: '50px' }}>Icon</th>
+                <th style={{ width: '64px' }}>Visual</th>
                 <th>{language === 'bn' ? 'রেসিপির নাম' : 'Title & Bengali'}</th>
                 <th>{t('cuisines')}</th>
                 <th>{language === 'bn' ? 'কঠিনতা' : 'Difficulty'}</th>
@@ -166,7 +170,19 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
               ) : (
                 recipes.map((r) => (
                   <tr key={r.id}>
-                    <td style={{ fontSize: '1.4rem' }}>{r.imageEmoji || '🍲'}</td>
+                    <td>
+                      <div style={{ width: '42px', height: '42px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <img 
+                          src={getRecipeImage(r.id, r.cuisineId)} 
+                          alt={r.title} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = getCuisineImage(r.cuisineId);
+                          }}
+                        />
+                      </div>
+                    </td>
                     <td>
                       <div className="table-recipe-title">{r.title}</div>
                       {r.titleBn && (
@@ -202,7 +218,7 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
                           title="Edit Recipe"
                           onClick={() => handleOpenEdit(r.id)}
                         >
-                          ✏️
+                          <Pencil size={15} />
                         </button>
                         <button
                           type="button"
@@ -210,7 +226,7 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
                           title="Delete Recipe"
                           onClick={() => handleDelete(r.id, r.title)}
                         >
-                          🗑️
+                          <Trash2 size={15} />
                         </button>
                       </div>
                     </td>
@@ -256,7 +272,7 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
         onClose={() => setIsModalOpen(false)}
         onSaved={() => {
           setIsModalOpen(false);
-          setFeedbackMessage('✅ Recipe saved and in-memory caches synchronized.');
+          setFeedbackMessage('Recipe saved and in-memory caches synchronized.');
           fetchRecipes();
           setTimeout(() => setFeedbackMessage(''), 5000);
         }}

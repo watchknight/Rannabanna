@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Pencil, Plus, X, AlertCircle, Sparkles, Lock, Check, Users, Info, Scale, UtensilsCrossed } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { scaleIngredient, adjustTime, shouldScale } from '../../utils/servingsScaler.js';
 import { translateUnit, translateTechnique, translatePreparation } from '../../utils/translations.js';
@@ -250,8 +251,13 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
     <div className="admin-modal-overlay" onClick={onClose}>
       <div className="admin-modal-dialog" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '900px' }}>
         <div className="admin-modal-header">
-          <h3>{recipeId ? `✏️ Edit Recipe: ${formData.title || recipeId}` : '🍲 Create New Recipe'}</h3>
-          <button type="button" className="btn-icon" onClick={onClose} aria-label="Close modal">✕</button>
+          <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <UtensilsCrossed size={18} style={{ color: 'var(--brand-orange)' }} />
+            {recipeId ? (language === 'bn' ? `রেসিপি সম্পাদনা: ${formData.title || recipeId}` : `Edit Recipe: ${formData.title || recipeId}`) : (language === 'bn' ? 'নতুন রেসিপি তৈরি করুন' : 'Create New Recipe')}
+          </h3>
+          <button type="button" className="btn-icon" onClick={onClose} aria-label="Close modal">
+            <X size={16} />
+          </button>
         </div>
 
         {/* Modal Navigation Tabs */}
@@ -262,7 +268,7 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
             { id: 'ingredients', label: `${t('adminIngTab')} (${formData.ingredients.length})` },
             { id: 'steps', label: `${t('adminStepsTab')} (${formData.steps.length})` },
             { id: 'tags', label: t('adminTagsTab') },
-            { id: 'preview', label: `✨ ${t('adminPreviewTab')}` }
+            { id: 'preview', label: t('adminPreviewTab') }
           ].map(tab => (
             <button
               key={tab.id}
@@ -278,8 +284,9 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
 
         <div className="admin-modal-body">
           {error && (
-            <div className="admin-error-banner">
-              ⚠️ {error}
+            <div className="admin-error-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <AlertCircle size={16} />
+              {error}
             </div>
           )}
 
@@ -339,7 +346,7 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                         onChange={(e) => handleInputChange('cuisineId', e.target.value)}
                       >
                         {cuisines.map(c => (
-                          <option key={c.id} value={c.id}>{c.emoji} {c.name} ({c.nameBn})</option>
+                          <option key={c.id} value={c.id}>{c.name} ({c.nameBn})</option>
                         ))}
                       </select>
                     </div>
@@ -540,7 +547,8 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                               title="Units like pinch, to taste, for frying do not multiply when servings scale"
                               style={{ fontSize: '0.65rem', background: 'rgba(234, 179, 8, 0.18)', color: '#fbbf24', border: '1px solid rgba(234, 179, 8, 0.3)', padding: '2px 4px', whiteSpace: 'nowrap' }}
                             >
-                              🔒 {t('adminNonScalingFixed')}
+                              <Lock size={10} style={{ display: 'inline', marginRight: '3px' }} />
+                              {t('adminNonScalingFixed')}
                             </span>
                           )}
                         </div>
@@ -550,7 +558,7 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                           onClick={() => removeIngredientRow(idx)}
                           disabled={formData.ingredients.length === 1}
                         >
-                          ✕
+                          <X size={14} />
                         </button>
                       </div>
                     ))}
@@ -607,7 +615,7 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                               onClick={() => removeStepRow(idx)}
                               disabled={formData.steps.length === 1}
                             >
-                              ✕
+                              <X size={14} />
                             </button>
                           </div>
                         </div>
@@ -665,7 +673,7 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                               textTransform: 'capitalize'
                             }}
                           >
-                            {meal} {isSelected && '✓'}
+                            {meal} {isSelected && <Check size={12} style={{ display: 'inline', marginLeft: '4px' }} />}
                           </button>
                         );
                       })}
@@ -693,7 +701,7 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                               textTransform: 'capitalize'
                             }}
                           >
-                            {diet} {isSelected && '✓'}
+                            {diet} {isSelected && <Check size={12} style={{ display: 'inline', marginLeft: '4px' }} />}
                           </button>
                         );
                       })}
@@ -713,8 +721,9 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                     <div className="admin-table-card" style={{ padding: '16px 20px', marginBottom: '16px', background: 'rgba(255,255,255,0.03)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                         <div>
-                          <h4 style={{ margin: 0, fontSize: '1rem', color: '#ffffff' }}>
-                            🍽️ {t('adminServingSlider')}
+                          <h4 style={{ margin: 0, fontSize: '1rem', color: '#ffffff', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <Users size={16} style={{ color: 'var(--brand-pink)' }} />
+                            {t('adminServingSlider')}
                           </h4>
                           <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
                             {t('originalServings')}: <strong>{baseServings}</strong> {t('people')} → {t('scaledTo')}: <strong style={{ color: 'var(--brand-pink)' }}>{previewServings}</strong> {t('people')}
@@ -793,15 +802,17 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                     </div>
 
                     {/* Notice about non-scaling units */}
-                    <div style={{ padding: '10px 14px', borderRadius: 'var(--radius-sm)', background: 'rgba(234, 179, 8, 0.1)', border: '1px solid rgba(234, 179, 8, 0.25)', fontSize: '0.8rem', color: '#fde047', marginBottom: '16px' }}>
-                      💡 {t('adminNonScalingNotice')}
+                    <div style={{ padding: '10px 14px', borderRadius: 'var(--radius-sm)', background: 'rgba(234, 179, 8, 0.1)', border: '1px solid rgba(234, 179, 8, 0.25)', fontSize: '0.8rem', color: '#fde047', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Info size={15} />
+                      {t('adminNonScalingNotice')}
                     </div>
 
                     {/* Scaled Ingredients Table */}
                     <div className="admin-table-card" style={{ marginBottom: '16px' }}>
                       <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--surface-border)' }}>
-                        <h4 style={{ margin: 0, fontSize: '0.95rem' }}>
-                          🧂 {language === 'bn' ? 'স্কেলকৃত উপাদানসমূহের তালিকা' : 'Scaled Ingredient Quantities'}
+                        <h4 style={{ margin: 0, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <Scale size={15} style={{ color: 'var(--brand-pink)' }} />
+                          {language === 'bn' ? 'স্কেলকৃত উপাদানসমূহের তালিকা' : 'Scaled Ingredient Quantities'}
                         </h4>
                       </div>
                       <div className="admin-table-responsive">
@@ -839,11 +850,13 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
                                   <td>
                                     {scaled.isFixed ? (
                                       <span className="badge" style={{ background: 'rgba(234, 179, 8, 0.2)', color: '#fbbf24', fontSize: '0.75rem' }}>
-                                        🔒 {t('adminNonScalingFixed')}
+                                        <Lock size={11} style={{ display: 'inline', marginRight: '3px' }} />
+                                        {t('adminNonScalingFixed')}
                                       </span>
                                     ) : (
                                       <span className="badge" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', fontSize: '0.75rem' }}>
-                                        ✓ Scaled ({Math.round((previewServings / baseServings) * 100)}%)
+                                        <Check size={11} style={{ display: 'inline', marginRight: '3px' }} />
+                                        Scaled ({Math.round((previewServings / baseServings) * 100)}%)
                                       </span>
                                     )}
                                   </td>

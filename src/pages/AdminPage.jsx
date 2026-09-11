@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { 
+  ShieldCheck, 
+  Globe, 
+  Home, 
+  LogOut, 
+  LayoutDashboard, 
+  BookOpen, 
+  Apple, 
+  Settings 
+} from 'lucide-react';
 import { useDatabase } from '../context/DatabaseContext';
 import { API_BASE, safeParseJson } from '../utils/apiConfig.js';
 import AdminLogin from '../components/admin/AdminLogin';
@@ -34,7 +44,6 @@ export default function AdminPage() {
         if (res.ok) {
           setCuisines(data);
         } else if (res.status === 401) {
-          // Token expired or invalid
           handleLogout();
         }
       } catch (err) {
@@ -80,79 +89,93 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="admin-wrapper animate-fade-in">
+    <div className="admin-wrapper animate-fade-in" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
       {/* Top Bar */}
-      <div className="admin-top-bar">
+      <div className="admin-top-bar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
         <div className="admin-title-group">
-          <h1>
-            <span>🍳 {t('adminTitle')}</span>
+          <h1 style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: 0, fontSize: '1.6rem' }}>
+            <ShieldCheck size={26} style={{ color: 'var(--brand-orange)' }} />
+            <span>{t('adminTitle')}</span>
             <span className="admin-badge">{t('adminBadge')}</span>
           </h1>
-          <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+          <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '4px' }}>
             {t('adminSubtitle')}
           </div>
         </div>
 
-        <div className="admin-actions">
+        <div className="admin-actions" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <button
             type="button"
             className="btn btn-secondary"
             onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
-            style={{ padding: '8px 14px', fontSize: '0.85rem', fontWeight: 600 }}
+            style={{ padding: '8px 14px', fontSize: '0.85rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '6px' }}
             title="Toggle between English and Bengali"
           >
-            🌐 {language === 'en' ? 'বাংলা' : 'English'}
+            <Globe size={14} />
+            <span>{language === 'en' ? 'বাংলা' : 'English'}</span>
           </button>
-          <Link to="/" className="btn btn-secondary" style={{ padding: '8px 14px', fontSize: '0.85rem' }}>
-            🏠 {t('adminPublicSite')}
+          <Link to="/" className="btn btn-secondary" style={{ padding: '8px 14px', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Home size={14} />
+            <span>{t('adminPublicSite')}</span>
           </Link>
           <button
             type="button"
             className="btn btn-secondary"
             onClick={handleLogout}
-            style={{ padding: '8px 14px', fontSize: '0.85rem', color: '#f87171' }}
+            style={{ padding: '8px 14px', fontSize: '0.85rem', color: '#f87171', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
           >
-            🔒 {t('adminSignOut')}
+            <LogOut size={14} />
+            <span>{t('adminSignOut')}</span>
           </button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="admin-tabs">
+      <div className="admin-tabs" style={{ display: 'flex', gap: '8px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '12px', marginBottom: '24px', overflowX: 'auto' }}>
         <button
           type="button"
           className={`admin-tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
           onClick={() => setActiveTab('overview')}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
-          📊 {t('adminTabOverview')}
+          <LayoutDashboard size={16} />
+          <span>{t('adminTabOverview')}</span>
         </button>
         <button
           type="button"
           className={`admin-tab-btn ${activeTab === 'recipes' ? 'active' : ''}`}
           onClick={() => { setActiveTab('recipes'); setOpenCreateRecipe(false); }}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
-          🍲 {t('adminTabRecipes')}
+          <BookOpen size={16} />
+          <span>{t('adminTabRecipes')}</span>
         </button>
         <button
           type="button"
           className={`admin-tab-btn ${activeTab === 'ingredients' ? 'active' : ''}`}
           onClick={() => { setActiveTab('ingredients'); setOpenCreateIngredient(false); }}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
-          🧂 {t('adminTabIngredients')}
+          <Apple size={16} />
+          <span>{t('adminTabIngredients')}</span>
         </button>
         <button
           type="button"
           className={`admin-tab-btn ${activeTab === 'cuisines' ? 'active' : ''}`}
           onClick={() => setActiveTab('cuisines')}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
-          🌍 {t('adminTabCuisines')}
+          <Globe size={16} />
+          <span>{t('adminTabCuisines')}</span>
         </button>
         <button
           type="button"
           className={`admin-tab-btn ${activeTab === 'system' ? 'active' : ''}`}
           onClick={() => setActiveTab('system')}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
-          ⚙️ {t('adminTabSystem')}
+          <Settings size={16} />
+          <span>{t('adminTabSystem')}</span>
         </button>
       </div>
 

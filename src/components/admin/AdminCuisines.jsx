@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Pencil, Trash2, Plus, X, AlertCircle, Globe } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
+import { getCuisineImage } from '../../utils/imageAssets.js';
 
 export default function AdminCuisines({ token }) {
   const { language, t } = useDatabase();
@@ -84,8 +86,8 @@ export default function AdminCuisines({ token }) {
   const handleDelete = async (id, name, count) => {
     if (count > 0) {
       alert(language === 'bn'
-        ? `⚠️ "${name}" রন্ধনশৈলীটি মোছা যাবে না: ${count}টি রেসিপি এই রন্ধনশৈলীতে যুক্ত আছে।`
-        : `⚠️ Cannot delete "${name}": ${count} recipe(s) are assigned to this cuisine. Please reassign or remove those recipes first.`);
+        ? `"${name}" রন্ধনশৈলীটি মোছা যাবে না: ${count}টি রেসিপি এই রন্ধনশৈলীতে যুক্ত আছে।`
+        : `Cannot delete "${name}": ${count} recipe(s) are assigned to this cuisine. Please reassign or remove those recipes first.`);
       return;
     }
 
@@ -105,10 +107,10 @@ export default function AdminCuisines({ token }) {
       const data = await safeParseJson(res);
       if (!res.ok) throw new Error(data.message || 'Failed to delete cuisine');
 
-      setFeedbackMessage(language === 'bn' ? `✅ "${name}" রন্ধনশৈলী সফলভাবে মোছা হয়েছে।` : `✅ Cuisine "${name}" deleted.`);
+      setFeedbackMessage(language === 'bn' ? `"${name}" রন্ধনশৈলী সফলভাবে মোছা হয়েছে।` : `Cuisine "${name}" deleted.`);
       fetchCuisines();
     } catch (err) {
-      setFeedbackMessage(`❌ ${err.message}`);
+      setFeedbackMessage(err.message);
     } finally {
       setTimeout(() => setFeedbackMessage(''), 5000);
     }
@@ -141,7 +143,7 @@ export default function AdminCuisines({ token }) {
       if (!res.ok) throw new Error(data.message || 'Failed to save cuisine');
 
       setIsModalOpen(false);
-      setFeedbackMessage(`✅ Cuisine "${formData.name}" saved.`);
+      setFeedbackMessage(`Cuisine "${formData.name}" saved.`);
       fetchCuisines();
       setTimeout(() => setFeedbackMessage(''), 5000);
     } catch (err) {
@@ -154,7 +156,8 @@ export default function AdminCuisines({ token }) {
   return (
     <div className="admin-cuisines-tab">
       {feedbackMessage && (
-        <div className={feedbackMessage.startsWith('✅') ? 'admin-success-banner' : 'admin-error-banner'}>
+        <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <AlertCircle size={16} />
           {feedbackMessage}
         </div>
       )}
@@ -164,7 +167,8 @@ export default function AdminCuisines({ token }) {
           <h3 style={{ fontSize: '1.2rem', margin: 0 }}>{t('adminCuisinesCatalog')} ({cuisines.length})</h3>
         </div>
         <button type="button" className="btn btn-primary" onClick={handleOpenCreate}>
-          + {t('adminAddCuisineBtn')}
+          <Plus size={16} style={{ display: 'inline', marginRight: '6px' }} />
+          {t('adminAddCuisineBtn')}
         </button>
       </div>
 
@@ -173,7 +177,7 @@ export default function AdminCuisines({ token }) {
           <table className="admin-table">
             <thead>
               <tr>
-                <th style={{ width: '50px' }}>Icon</th>
+                <th style={{ width: '64px' }}>Visual</th>
                 <th>{language === 'bn' ? 'রন্ধনশৈলী ও বাংলা' : 'Cuisine & Bengali'}</th>
                 <th>{language === 'bn' ? 'অঞ্চল ও মহাদেশ' : 'Region & Continent'}</th>
                 <th>{language === 'bn' ? 'থিম কালার' : 'Theme Color'}</th>
@@ -191,7 +195,15 @@ export default function AdminCuisines({ token }) {
               ) : (
                 cuisines.map(c => (
                   <tr key={c.id}>
-                    <td style={{ fontSize: '1.4rem' }}>{c.emoji || '🌍'}</td>
+                    <td>
+                      <div style={{ width: '42px', height: '42px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <img 
+                          src={getCuisineImage(c.id)} 
+                          alt={c.name} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        />
+                      </div>
+                    </td>
                     <td>
                       <div className="table-recipe-title">
                         {language === 'bn' && c.nameBn ? c.nameBn : c.name}
@@ -226,7 +238,7 @@ export default function AdminCuisines({ token }) {
                           title={t('adminEdit')}
                           onClick={() => handleOpenEdit(c)}
                         >
-                          ✏️
+                          <Pencil size={15} />
                         </button>
                         <button
                           type="button"
@@ -234,7 +246,7 @@ export default function AdminCuisines({ token }) {
                           title={c.recipeCount > 0 ? (language === 'bn' ? 'রেসিপি যুক্ত থাকায় মোছা যাবে না' : 'Cannot delete with active recipes') : t('adminDelete')}
                           onClick={() => handleDelete(c.id, c.name, c.recipeCount)}
                         >
-                          🗑️
+                          <Trash2 size={15} />
                         </button>
                       </div>
                     </td>
@@ -251,14 +263,20 @@ export default function AdminCuisines({ token }) {
         <div className="admin-modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div className="admin-modal-dialog" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '600px' }}>
             <div className="admin-modal-header">
-              <h3>{editingCuisine ? (language === 'bn' ? `✏️ রন্ধনশৈলী সম্পাদনা: ${editingCuisine.name}` : `✏️ Edit Cuisine: ${editingCuisine.name}`) : (language === 'bn' ? '🌍 নতুন রন্ধনশৈলী যোগ করুন' : '🌍 Add New Cuisine')}</h3>
-              <button type="button" className="btn-icon" onClick={() => setIsModalOpen(false)}>✕</button>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Globe size={18} style={{ color: 'var(--brand-orange)' }} />
+                {editingCuisine ? (language === 'bn' ? `রন্ধনশৈলী সম্পাদনা: ${editingCuisine.name}` : `Edit Cuisine: ${editingCuisine.name}`) : (language === 'bn' ? 'নতুন রন্ধনশৈলী যোগ করুন' : 'Add New Cuisine')}
+              </h3>
+              <button type="button" className="btn-icon" onClick={() => setIsModalOpen(false)}>
+                <X size={16} />
+              </button>
             </div>
 
             <div className="admin-modal-body">
               {modalError && (
-                <div className="admin-error-banner">
-                  ⚠️ {modalError}
+                <div className="admin-error-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <AlertCircle size={16} />
+                  {modalError}
                 </div>
               )}
 

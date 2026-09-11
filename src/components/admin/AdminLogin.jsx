@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Lock, Globe, AlertCircle } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
 
@@ -47,20 +48,24 @@ export default function AdminLogin({ onLoginSuccess }) {
           type="button"
           className="btn btn-secondary"
           onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
-          style={{ padding: '6px 12px', fontSize: '0.85rem' }}
+          style={{ padding: '6px 12px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}
         >
-          🌐 {language === 'en' ? 'বাংলা' : 'English'}
+          <Globe size={14} />
+          {language === 'en' ? 'বাংলা' : 'English'}
         </button>
       </div>
 
       <div className="admin-login-card">
-        <div className="admin-login-icon">🔒</div>
+        <div className="admin-login-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Lock size={32} style={{ color: 'var(--brand-orange)' }} />
+        </div>
         <h2>{t('adminLoginTitle')}</h2>
         <p>{t('adminLoginSubtitle')}</p>
 
         {error && (
-          <div className="admin-error-banner">
-            ⚠️ {error}
+          <div className="admin-error-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <AlertCircle size={16} />
+            {error}
           </div>
         )}
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Users, Filter, RotateCcw, Leaf, Sprout, Wheat, Milk, CircleDot } from 'lucide-react'
 import { useDatabase } from '../context/DatabaseContext'
 
 function FilterPanel({ filters, onChange }) {
@@ -6,7 +7,6 @@ function FilterPanel({ filters, onChange }) {
   const activeCuisines = filters.cuisines || []
   const activeDietary = filters.dietary || []
 
-  // Handlers for updating individual filter fields
   const handleCuisineToggle = (cuisineId) => {
     const updated = activeCuisines.includes(cuisineId)
       ? activeCuisines.filter(id => id !== cuisineId)
@@ -19,10 +19,6 @@ function FilterPanel({ filters, onChange }) {
       ? activeDietary.filter(t => t !== tag)
       : [...activeDietary, tag]
     onChange({ ...filters, dietary: updated })
-  }
-
-  const handleSliderChange = (e) => {
-    onChange({ ...filters, maxTime: parseInt(e.target.value, 10) })
   }
 
   const handleSelectChange = (field, val) => {
@@ -41,24 +37,29 @@ function FilterPanel({ filters, onChange }) {
   }
 
   const dietaryTags = [
-    { id: 'vegetarian', name: 'Vegetarian', emoji: '🥗' },
-    { id: 'vegan', name: 'Vegan', emoji: '🌱' },
-    { id: 'gluten-free', name: 'Gluten-Free', emoji: '🌾' },
-    { id: 'dairy-free', name: 'Dairy-Free', emoji: '🥛' },
-    { id: 'nut-free', name: 'Nut-Free', emoji: '🥜' }
+    { id: 'vegetarian', name: 'Vegetarian', nameBn: 'নিরামিষ', icon: <Leaf size={15} /> },
+    { id: 'vegan', name: 'Vegan', nameBn: 'ভেগান', icon: <Sprout size={15} /> },
+    { id: 'gluten-free', name: 'Gluten-Free', nameBn: 'গ্লুটেন-মুক্ত', icon: <Wheat size={15} /> },
+    { id: 'dairy-free', name: 'Dairy-Free', nameBn: 'দুগ্ধ-মুক্ত', icon: <Milk size={15} /> },
+    { id: 'nut-free', name: 'Nut-Free', nameBn: 'বাদাম-মুক্ত', icon: <CircleDot size={15} /> }
   ]
 
   return (
-    <div className="search-sidebar glass-panel" id="search-filter-sidebar">
+    <div className="search-sidebar glass-panel" id="search-filter-sidebar" style={{ borderRadius: '24px', padding: '24px' }}>
       <div 
         style={{ 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center', 
-          marginBottom: 'var(--spacing-lg)' 
+          marginBottom: '20px',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          paddingBottom: '14px'
         }}
       >
-        <h3 style={{ fontSize: '1.2rem' }}>{t('filters')}</h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <Filter size={18} style={{ color: 'var(--brand-orange)' }} />
+          <h3 style={{ fontSize: '1.15rem', margin: 0 }}>{t('filters')}</h3>
+        </div>
         <button 
           onClick={resetAll} 
           style={{ 
@@ -67,18 +68,23 @@ function FilterPanel({ filters, onChange }) {
             fontWeight: '600', 
             cursor: 'pointer',
             background: 'none',
-            border: 'none'
+            border: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px'
           }}
           id="reset-filters-btn"
         >
-          {t('resetAll')}
+          <RotateCcw size={13} />
+          <span>{t('resetAll')}</span>
         </button>
       </div>
 
-      {/* 1. Servings / People Count Filter */}
-      <div className="filter-group" id="filter-servings-group">
-        <label htmlFor="servings-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
-          👥 {t('servingsFilterLabel')}
+      {/* 1. Servings Filter */}
+      <div className="filter-group" id="filter-servings-group" style={{ marginBottom: '20px' }}>
+        <label htmlFor="servings-filter-select" className="filter-title" style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px', fontSize: '0.88rem', fontWeight: 600 }}>
+          <Users size={16} style={{ color: 'var(--brand-orange)' }} />
+          <span>{t('servingsFilterLabel')}</span>
         </label>
         <select
           value={filters.servings || 4}
@@ -87,9 +93,11 @@ function FilterPanel({ filters, onChange }) {
             width: '100%',
             background: 'var(--bg-secondary)',
             border: '1px solid var(--surface-border)',
-            borderRadius: 'var(--radius-sm)',
-            padding: '8px 12px',
-            cursor: 'pointer'
+            borderRadius: '12px',
+            padding: '10px 14px',
+            cursor: 'pointer',
+            color: '#ffffff',
+            fontSize: '0.9rem'
           }}
           id="servings-filter-select"
         >
@@ -102,8 +110,8 @@ function FilterPanel({ filters, onChange }) {
       </div>
 
       {/* 2. Meal Type Filter */}
-      <div className="filter-group">
-        <label htmlFor="meal-type-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
+      <div className="filter-group" style={{ marginBottom: '20px' }}>
+        <label htmlFor="meal-type-filter-select" className="filter-title" style={{ display: 'block', marginBottom: '8px', fontSize: '0.88rem', fontWeight: 600 }}>
           {t('filterMealTypeLabel')}
         </label>
         <select
@@ -113,36 +121,39 @@ function FilterPanel({ filters, onChange }) {
             width: '100%',
             background: 'var(--bg-secondary)',
             border: '1px solid var(--surface-border)',
-            borderRadius: 'var(--radius-sm)',
-            padding: '8px 12px',
-            cursor: 'pointer'
+            borderRadius: '12px',
+            padding: '10px 14px',
+            cursor: 'pointer',
+            color: '#ffffff',
+            fontSize: '0.9rem'
           }}
           id="meal-type-filter-select"
         >
           <option value="all">{t('allMealTypes')}</option>
-          <option value="breakfast" style={{ textTransform: 'capitalize' }}>{t('breakfast')}</option>
-          <option value="lunch" style={{ textTransform: 'capitalize' }}>{t('lunch')}</option>
-          <option value="dinner" style={{ textTransform: 'capitalize' }}>{t('dinner')}</option>
-          <option value="snack" style={{ textTransform: 'capitalize' }}>{t('snack')}</option>
-          <option value="dessert" style={{ textTransform: 'capitalize' }}>{t('dessert')}</option>
+          <option value="breakfast">{t('breakfast')}</option>
+          <option value="lunch">{t('lunch')}</option>
+          <option value="dinner">{t('dinner')}</option>
+          <option value="snack">{t('snack')}</option>
+          <option value="dessert">{t('dessert')}</option>
         </select>
       </div>
 
-      {/* 2. Cuisines Multi-Select Filter */}
-      <div className="filter-group">
-        <h4 className="filter-title">{t('filterCuisineLabel')}</h4>
-        <div className="filter-checkbox-list" id="cuisine-filter-checkboxes" role="group" aria-label={t('filterCuisineLabel')}>
+      {/* 3. Cuisines Multi-Select Filter */}
+      <div className="filter-group" style={{ marginBottom: '20px' }}>
+        <h4 className="filter-title" style={{ marginBottom: '10px', fontSize: '0.88rem', fontWeight: 600 }}>{t('filterCuisineLabel')}</h4>
+        <div className="filter-checkbox-list" id="cuisine-filter-checkboxes" role="group" aria-label={t('filterCuisineLabel')} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {cuisines.map(c => {
             const cuisineName = language === 'bn' ? (c.nameBn || c.name) : c.name
+            const isChecked = activeCuisines.includes(c.id)
             return (
-              <label key={c.id} className="filter-checkbox-label" id={`cuisine-filter-lbl-${c.id}`}>
+              <label key={c.id} className="filter-checkbox-label" id={`cuisine-filter-lbl-${c.id}`} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', cursor: 'pointer' }}>
                 <input
                   type="checkbox"
-                  checked={activeCuisines.includes(c.id)}
+                  checked={isChecked}
                   onChange={() => handleCuisineToggle(c.id)}
-                  id={`cuisine-filter-chk-${c.id}`}
+                  style={{ accentColor: 'var(--brand-orange)', width: '16px', height: '16px' }}
                 />
-                <span role="img" aria-hidden="true">{c.emoji}</span>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: c.color || 'var(--brand-orange)' }} />
                 <span>{cuisineName}</span>
               </label>
             )
@@ -150,73 +161,25 @@ function FilterPanel({ filters, onChange }) {
         </div>
       </div>
 
-      {/* 3. Max Cooking Time Slider */}
+      {/* 4. Dietary Restrictions Multi-Select Filter */}
       <div className="filter-group">
-        <label htmlFor="cooking-time-range-slider" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
-          {t('filterMaxTimeLabel')}
-        </label>
-        <div className="filter-slider-container">
-          <input
-            type="range"
-            min="10"
-            max="120"
-            step="5"
-            aria-label="Maximum cooking time in minutes"
-            value={filters.maxTime || 120}
-            onChange={handleSliderChange}
-            className="filter-slider"
-            id="cooking-time-range-slider"
-          />
-          <div className="filter-slider-labels">
-            <span>10 {t('mins')}</span>
-            <span style={{ fontWeight: '700', color: 'var(--brand-orange)' }}>
-              {filters.maxTime && filters.maxTime < 120 ? `${filters.maxTime} ${t('mins')}` : t('anyTime')}
-            </span>
-            <span>2 {t('hours')}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* 4. Cooking Difficulty */}
-      <div className="filter-group">
-        <label htmlFor="difficulty-filter-select" className="filter-title" style={{ display: 'block', marginBottom: 'var(--spacing-xs)' }}>
-          {t('filterDifficultyLabel')}
-        </label>
-        <select
-          value={filters.difficulty || 'all'}
-          onChange={(e) => handleSelectChange('difficulty', e.target.value)}
-          style={{
-            width: '100%',
-            background: 'var(--bg-secondary)',
-            border: '1px solid var(--surface-border)',
-            borderRadius: 'var(--radius-sm)',
-            padding: '8px 12px',
-            cursor: 'pointer'
-          }}
-          id="difficulty-filter-select"
-        >
-          <option value="all">{t('anyLevel')}</option>
-          <option value="beginner" style={{ textTransform: 'capitalize' }}>{t('beginner')}</option>
-          <option value="intermediate" style={{ textTransform: 'capitalize' }}>{t('intermediate')}</option>
-          <option value="hard">{t('advanced')}</option>
-        </select>
-      </div>
-
-      {/* 5. Dietary Tags Multi-Select */}
-      <div className="filter-group">
-        <h4 className="filter-title">{t('filterDietaryLabel')}</h4>
-        <div className="filter-checkbox-list" id="dietary-filter-checkboxes" role="group" aria-label={t('filterDietaryLabel')}>
+        <h4 className="filter-title" style={{ marginBottom: '10px', fontSize: '0.88rem', fontWeight: 600 }}>{t('filterDietaryLabel')}</h4>
+        <div className="filter-checkbox-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {dietaryTags.map(tag => {
-            const tagName = language === 'bn' ? t(tag.id) : tag.name
+            const isChecked = activeDietary.includes(tag.id)
+            const tagName = language === 'bn' ? tag.nameBn : tag.name
             return (
-              <label key={tag.id} className="filter-checkbox-label" id={`dietary-filter-lbl-${tag.id}`}>
+              <label key={tag.id} className="filter-checkbox-label" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', cursor: 'pointer' }}>
                 <input
                   type="checkbox"
-                  checked={activeDietary.includes(tag.id)}
+                  checked={isChecked}
                   onChange={() => handleDietaryToggle(tag.id)}
-                  id={`dietary-filter-chk-${tag.id}`}
+                  style={{ accentColor: 'var(--brand-orange)', width: '16px', height: '16px' }}
                 />
-                <span>{tag.emoji} {tagName}</span>
+                <span style={{ color: isChecked ? 'var(--brand-orange)' : 'var(--text-secondary)' }}>
+                  {tag.icon}
+                </span>
+                <span>{tagName}</span>
               </label>
             )
           })}

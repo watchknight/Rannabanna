@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { X, AlertCircle, Apple } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
 
@@ -127,14 +128,20 @@ export default function AdminIngredientModal({ isOpen, onClose, onSaved, ingredi
     <div className="admin-modal-overlay" onClick={onClose}>
       <div className="admin-modal-dialog" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '650px' }}>
         <div className="admin-modal-header">
-          <h3>{ingredient ? (language === 'bn' ? `✏️ উপাদান সম্পাদনা: ${ingredient.name}` : `✏️ Edit Ingredient: ${ingredient.name}`) : (language === 'bn' ? '🧂 নতুন জিআইভি উপাদান যোগ করুন' : '🧂 Add Canonical GIV Ingredient')}</h3>
-          <button type="button" className="btn-icon" onClick={onClose} aria-label="Close modal">✕</button>
+          <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Apple size={18} style={{ color: 'var(--brand-orange)' }} />
+            {ingredient ? (language === 'bn' ? `উপাদান সম্পাদনা: ${ingredient.name}` : `Edit Ingredient: ${ingredient.name}`) : (language === 'bn' ? 'নতুন জিআইভি উপাদান যোগ করুন' : 'Add Canonical GIV Ingredient')}
+          </h3>
+          <button type="button" className="btn-icon" onClick={onClose} aria-label="Close modal">
+            <X size={16} />
+          </button>
         </div>
 
         <div className="admin-modal-body">
           {error && (
-            <div className="admin-error-banner">
-              ⚠️ {error}
+            <div className="admin-error-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <AlertCircle size={16} />
+              {error}
             </div>
           )}
 
@@ -235,12 +242,12 @@ export default function AdminIngredientModal({ isOpen, onClose, onSaved, ingredi
               </h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 {[
-                  { key: 'sweet', label: '🍬 Sweet', color: '#ec4899' },
-                  { key: 'salty', label: '🧂 Salty', color: '#3b82f6' },
-                  { key: 'sour', label: '🍋 Sour', color: '#eab308' },
-                  { key: 'bitter', label: '☕ Bitter', color: '#8b5cf6' },
-                  { key: 'umami', label: '🍄 Umami', color: '#10b981' },
-                  { key: 'spicy', label: '🌶️ Spicy', color: '#ef4444' }
+                  { key: 'sweet', label: 'Sweet', color: '#ec4899' },
+                  { key: 'salty', label: 'Salty', color: '#3b82f6' },
+                  { key: 'sour', label: 'Sour', color: '#eab308' },
+                  { key: 'bitter', label: 'Bitter', color: '#8b5cf6' },
+                  { key: 'umami', label: 'Umami', color: '#10b981' },
+                  { key: 'spicy', label: 'Spicy', color: '#ef4444' }
                 ].map(({ key, label, color }) => (
                   <div key={key} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem' }}>

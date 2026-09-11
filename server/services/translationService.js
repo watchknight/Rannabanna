@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import { GoogleGenAI, Type } from '@google/genai';
-import { db } from '../models/db.js';
+import { pool, query, db } from '../models/db.js';
 import { cacheService } from './cacheService.js';
 import { recipeService } from './recipeService.js';
 import { 
@@ -150,9 +150,20 @@ export async function translateText({
     };
   }
 
-  // 2. Check SQLite persistent translation_cache
+  // 2. Check persistent translation_cache (PostgreSQL primary, SQLite fallback)
   try {
-    const row = db.prepare('SELECT translated_text FROM translation_cache WHERE source_hash = ?').get(hash);
+    let row = null;
+    try {
+      const res = await query('SELECT "translated_text" FROM translation_cache WHERE "source_hash" = $1', [hash]);
+      row = res.rows[0];
+    } catch {}
+
+    if (!row && typeof db.prepare === 'function') {
+      try {
+        row = db.prepare('SELECT translated_text FROM translation_cache WHERE source_hash = ?').get(hash);
+      } catch {}
+    }
+
     if (row && row.translated_text) {
       cacheService.set(memKey, row.translated_text, 24 * 60 * 60 * 1000);
       return {
@@ -223,14 +234,28 @@ export async function translateText({
     translatedText = cleanText;
   }
 
-  // 4. Persist into SQLite translation_cache and in-memory cache
+  // 4. Persist into PostgreSQL translation_cache and in-memory cache
   try {
-    db.prepare(`
-      INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
-      VALUES (?, ?, ?, ?)
-    `).run(hash, cleanText, normalizedLang, translatedText);
+    await query(`
+      INSERT INTO translation_cache ("source_hash", "source_text", "target_lang", "translated_text")
+      VALUES ($1, $2, $3, $4)
+      ON CONFLICT ("source_hash") DO UPDATE SET
+        "source_text" = EXCLUDED."source_text",
+        "target_lang" = EXCLUDED."target_lang",
+        "translated_text" = EXCLUDED."translated_text",
+        "created_at" = CURRENT_TIMESTAMP
+    `, [hash, cleanText, normalizedLang, translatedText]);
   } catch (cacheErr) {
     console.warn('⚠️ Could not save to translation_cache table:', cacheErr.message);
+  }
+
+  if (typeof db.prepare === 'function') {
+    try {
+      db.prepare(`
+        INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
+        VALUES (?, ?, ?, ?)
+      `).run(hash, cleanText, normalizedLang, translatedText);
+    } catch {}
   }
 
   cacheService.set(memKey, translatedText, 24 * 60 * 60 * 1000);
@@ -272,14 +297,31 @@ export async function translateRecipe({
   const normalizedLang = (targetLanguage || 'bn').toLowerCase().trim();
 
   // ═════════════════════════════════════════════════════════════════════
-  // 1. Pre-loaded Database Check: If already translated in SQLite, return with 0 API calls!
+  // 1. Pre-loaded Database Check: If already translated in PostgreSQL, return with 0 API calls!
   // ═════════════════════════════════════════════════════════════════════
   if (recipeId) {
     try {
-      const dbRecipe = db.prepare('SELECT id, title, titleBn, description, descriptionBn, culturalNote, culturalNoteBn FROM recipes WHERE id = ?').get(recipeId);
-      if (dbRecipe) {
-        const dbSteps = db.prepare('SELECT stepNumber as step, instruction, instructionBn, duration FROM recipe_steps WHERE recipeId = ? ORDER BY stepNumber').all(recipeId);
+      let dbRecipe = null;
+      let dbSteps = [];
+      try {
+        const dbRecipeRes = await query('SELECT "id", "title", "titleBn", "description", "descriptionBn", "culturalNote", "culturalNoteBn" FROM recipes WHERE "id" = $1', [recipeId]);
+        dbRecipe = dbRecipeRes.rows[0];
+        if (dbRecipe) {
+          const dbStepsRes = await query('SELECT "stepNumber" as step, "instruction", "instructionBn", "duration" FROM recipe_steps WHERE "recipeId" = $1 ORDER BY "stepNumber"', [recipeId]);
+          dbSteps = dbStepsRes.rows;
+        }
+      } catch {}
 
+      if (!dbRecipe && typeof db.prepare === 'function') {
+        try {
+          dbRecipe = db.prepare('SELECT id, title, titleBn, description, descriptionBn, culturalNote, culturalNoteBn FROM recipes WHERE id = ?').get(recipeId);
+          if (dbRecipe) {
+            dbSteps = db.prepare('SELECT stepNumber as step, instruction, instructionBn, duration FROM recipe_steps WHERE recipeId = ? ORDER BY stepNumber').all(recipeId);
+          }
+        } catch {}
+      }
+
+      if (dbRecipe) {
         const hasDbTitleBn = Boolean(dbRecipe.titleBn && dbRecipe.titleBn.trim());
         const hasDbStepsBn = dbSteps.length > 0 && dbSteps.every(s => Boolean(s.instructionBn && s.instructionBn.trim()));
 
@@ -318,7 +360,7 @@ export async function translateRecipe({
         }
       }
     } catch (dbCheckErr) {
-      console.warn('⚠️ SQLite check failed for recipe translation:', dbCheckErr.message);
+      console.warn('⚠️ Database check failed for recipe translation:', dbCheckErr.message);
     }
   }
 
@@ -342,9 +384,20 @@ export async function translateRecipe({
   }
 
   try {
-    const cachedRow = db.prepare('SELECT translated_text FROM translation_cache WHERE source_hash = ?').get(recipeHash);
+    let cachedRow = null;
+    try {
+      const cachedRes = await query('SELECT "translated_text" FROM translation_cache WHERE "source_hash" = $1', [recipeHash]);
+      cachedRow = cachedRes.rows[0];
+    } catch {}
+
+    if (!cachedRow && typeof db.prepare === 'function') {
+      try {
+        cachedRow = db.prepare('SELECT translated_text FROM translation_cache WHERE source_hash = ?').get(recipeHash);
+      } catch {}
+    }
+
     if (cachedRow && cachedRow.translated_text) {
-      const parsedRecipe = JSON.parse(cachedRow.translated_text);
+      const parsedRecipe = typeof cachedRow.translated_text === 'string' ? JSON.parse(cachedRow.translated_text) : cachedRow.translated_text;
       cacheService.set(memCacheKey, parsedRecipe, 24 * 60 * 60 * 1000);
       return {
         success: true,
@@ -359,7 +412,7 @@ export async function translateRecipe({
   // ═════════════════════════════════════════════════════════════════════
   // 3. Cache Miss: Call Gemini 3.8 Flash
   // ═════════════════════════════════════════════════════════════════════
-  const effectiveApiKey = apiKey || process.env.GEMINI_API_KEY;
+  const effectiveApiKey = apiKey === null ? null : (apiKey || process.env.GEMINI_API_KEY);
   if (!effectiveApiKey) {
     console.warn('⚠️ GEMINI_API_KEY missing, falling back to local translation engine');
     const localDecorated = decorateRecipeTranslations(recipe);
@@ -432,14 +485,7 @@ Translate the title, description, cultural note, ingredients, and step instructi
       context: { recipeId: recipe.id, recipeTitle: recipe.title, stepsCount: stepsList.length },
       fallbackAction: 'Fell back to local dictionary translation engine'
     });
-    console.warn('⚠️ Gemini recipe translation failed:', apiErr.message);
-    if (apiErr.status === 429 || apiErr.message?.includes('Quota exceeded')) {
-      const quotaErr = new Error('AI Translation service is currently experiencing high demand. Please try again shortly.');
-      quotaErr.status = 429;
-      throw quotaErr;
-    }
-    // Fallback to local translation decorator if Gemini encountered an error
-    console.warn('⚠️ Falling back to local translation engine');
+    console.warn('⚠️ Gemini recipe translation failed, falling back to local translation engine:', apiErr.message);
     const localDecorated = decorateRecipeTranslations(recipe);
     return {
       success: true,
@@ -507,46 +553,67 @@ Translate the title, description, cultural note, ingredients, and step instructi
   // ═════════════════════════════════════════════════════════════════════
   if (recipeId) {
     try {
-      const existsInDb = db.prepare('SELECT id FROM recipes WHERE id = ?').get(recipeId);
-      if (existsInDb) {
-        db.transaction(() => {
-          db.prepare(`
+      const existsRes = await query('SELECT "id" FROM recipes WHERE "id" = $1', [recipeId]);
+      if (existsRes.rowCount > 0) {
+        const client = await pool.connect();
+        try {
+          await client.query('BEGIN');
+          await client.query(`
             UPDATE recipes 
-            SET titleBn = COALESCE(?, titleBn), 
-                descriptionBn = COALESCE(?, descriptionBn), 
-                culturalNoteBn = COALESCE(?, culturalNoteBn) 
-            WHERE id = ?
-          `).run(translatedRecipe.titleBn, translatedRecipe.descriptionBn, translatedRecipe.culturalNoteBn, recipeId);
+            SET "titleBn" = COALESCE($1, "titleBn"), 
+                "descriptionBn" = COALESCE($2, "descriptionBn"), 
+                "culturalNoteBn" = COALESCE($3, "culturalNoteBn") 
+            WHERE "id" = $4
+          `, [translatedRecipe.titleBn, translatedRecipe.descriptionBn, translatedRecipe.culturalNoteBn, recipeId]);
 
-          const updateStep = db.prepare(`
-            UPDATE recipe_steps 
-            SET instructionBn = ? 
-            WHERE recipeId = ? AND stepNumber = ?
-          `);
           for (const s of translatedRecipe.steps) {
             if (s.step && s.instructionBn) {
-              updateStep.run(s.instructionBn, recipeId, s.step);
+              await client.query(`
+                UPDATE recipe_steps 
+                SET "instructionBn" = $1 
+                WHERE "recipeId" = $2 AND "stepNumber" = $3
+              `, [s.instructionBn, recipeId, s.step]);
             }
           }
-        })();
-        console.log(`💾 Stored Gemini Bangla translation in SQLite database for recipe: ${recipeId}`);
+          await client.query('COMMIT');
+        } catch (err) {
+          await client.query('ROLLBACK');
+          throw err;
+        } finally {
+          client.release();
+        }
+        console.log(`💾 Stored Gemini Bangla translation in PostgreSQL database for recipe: ${recipeId}`);
         if (typeof recipeService.invalidateCache === 'function') {
           recipeService.invalidateCache();
         }
       }
     } catch (persistErr) {
-      console.warn('⚠️ Failed saving recipe translation to SQLite recipes table:', persistErr.message);
+      console.warn('⚠️ Failed saving recipe translation to PostgreSQL recipes table:', persistErr.message);
     }
   }
 
   // Persist into translation_cache and memory
   try {
-    db.prepare(`
-      INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
-      VALUES (?, ?, ?, ?)
-    `).run(recipeHash, JSON.stringify({ id: recipeId, title: recipe.title }), normalizedLang, JSON.stringify(translatedRecipe));
+    await query(`
+      INSERT INTO translation_cache ("source_hash", "source_text", "target_lang", "translated_text")
+      VALUES ($1, $2, $3, $4)
+      ON CONFLICT ("source_hash") DO UPDATE SET
+        "source_text" = EXCLUDED."source_text",
+        "target_lang" = EXCLUDED."target_lang",
+        "translated_text" = EXCLUDED."translated_text",
+        "created_at" = CURRENT_TIMESTAMP
+    `, [recipeHash, JSON.stringify({ id: recipeId, title: recipe.title }), normalizedLang, JSON.stringify(translatedRecipe)]);
   } catch (tcErr) {
     console.warn('⚠️ Could not save recipe to translation_cache:', tcErr.message);
+  }
+
+  if (typeof db.prepare === 'function') {
+    try {
+      db.prepare(`
+        INSERT OR REPLACE INTO translation_cache (source_hash, source_text, target_lang, translated_text)
+        VALUES (?, ?, ?, ?)
+      `).run(recipeHash, JSON.stringify({ id: recipeId, title: recipe.title }), normalizedLang, JSON.stringify(translatedRecipe));
+    } catch {}
   }
 
   cacheService.set(memCacheKey, translatedRecipe, 24 * 60 * 60 * 1000);

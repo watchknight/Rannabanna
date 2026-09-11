@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Settings, Sparkles, Users, RotateCw, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
 
@@ -39,12 +40,12 @@ export default function AdminSystem({ token }) {
       });
       const data = await safeParseJson(res);
       if (res.ok) {
-        setFeedbackMessage(language === 'bn' ? '✅ এসকিউএলআইট ইন-মেমোরি ক্যাশ এবং এলআরইউ ম্যাচ স্টোর সফলভাবে রি-হাইড্রেট করা হয়েছে।' : '✅ SQLite in-memory caches and LRU match store flushed & re-hydrated.');
+        setFeedbackMessage(language === 'bn' ? 'এসকিউএলআইট ইন-মেমোরি ক্যাশ এবং এলআরইউ ম্যাচ স্টোর সফলভাবে রি-হাইড্রেট করা হয়েছে।' : 'SQLite in-memory caches and LRU match store flushed & re-hydrated.');
       } else {
         throw new Error(data.message || 'Cache flush failed');
       }
     } catch (err) {
-      setFeedbackMessage(`❌ ${err.message}`);
+      setFeedbackMessage(err.message);
     } finally {
       setFlushing(false);
       setTimeout(() => setFeedbackMessage(''), 5000);
@@ -54,14 +55,18 @@ export default function AdminSystem({ token }) {
   return (
     <div className="admin-system-tab">
       {feedbackMessage && (
-        <div className={feedbackMessage.startsWith('✅') ? 'admin-success-banner' : 'admin-error-banner'}>
+        <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <AlertCircle size={16} />
           {feedbackMessage}
         </div>
       )}
 
       {/* System Maintenance Card */}
       <div className="admin-table-card" style={{ padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-xl)' }}>
-        <h3 style={{ fontSize: '1.15rem', marginBottom: 'var(--spacing-xs)' }}>⚙️ {t('adminCacheMaintenance')}</h3>
+        <h3 style={{ fontSize: '1.15rem', marginBottom: 'var(--spacing-xs)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <Settings size={18} style={{ color: 'var(--brand-orange)' }} />
+          {t('adminCacheMaintenance')}
+        </h3>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: 'var(--spacing-md)' }}>
           {t('adminCacheDesc')}
         </p>
@@ -70,15 +75,20 @@ export default function AdminSystem({ token }) {
           className="btn btn-secondary"
           onClick={handleFlushCache}
           disabled={flushing}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
         >
-          {flushing ? `⏳ ${t('adminFlushingCache')}` : `🔄 ${t('adminFlushCache')}`}
+          <RotateCw size={14} className={flushing ? 'animate-spin' : ''} />
+          {flushing ? t('adminFlushingCache') : t('adminFlushCache')}
         </button>
       </div>
 
       {/* AI Custom Recipe Generations */}
       <div className="admin-table-card" style={{ marginBottom: 'var(--spacing-xl)' }}>
         <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--surface-border)' }}>
-          <h3 style={{ fontSize: '1.15rem', margin: 0 }}>🤖 {t('adminBespokeHistory')}</h3>
+          <h3 style={{ fontSize: '1.15rem', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Sparkles size={18} style={{ color: 'var(--brand-pink)' }} />
+            {t('adminBespokeHistory')}
+          </h3>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', margin: '4px 0 0 0' }}>
             {t('adminBespokeDesc')}
           </p>
@@ -160,7 +170,10 @@ export default function AdminSystem({ token }) {
       {/* Registered Users */}
       <div className="admin-table-card">
         <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--surface-border)' }}>
-          <h3 style={{ fontSize: '1.15rem', margin: 0 }}>👥 {t('adminRegisteredUsers')}</h3>
+          <h3 style={{ fontSize: '1.15rem', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Users size={18} style={{ color: 'var(--brand-orange)' }} />
+            {t('adminRegisteredUsers')}
+          </h3>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', margin: '4px 0 0 0' }}>
             {t('adminRegisteredUsersDesc')}
           </p>

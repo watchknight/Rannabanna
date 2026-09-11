@@ -4,8 +4,7 @@ logs
 npm-debug.log*
 
 # Runtime SQLite Database
-server/rannabanna.db
-server/rannabanna.db-journal
+server/rannabanna.db*
 
 # Local Node modules
 node_modules/
