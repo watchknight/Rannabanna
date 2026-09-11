@@ -94,6 +94,8 @@ function Navbar() {
           {/* Desktop Glass Language Selector Toggle */}
           <button 
             type="button"
+            role="switch"
+            aria-checked={language === 'bn'}
             className="lang-toggle-btn glass-panel" 
             onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
             aria-label={language === 'en' ? 'Switch interface language to Bengali' : 'Switch interface language to English'}
@@ -111,7 +113,14 @@ function Navbar() {
                 <span>EN</span>
               </>
             )}
-            {isTranslating && <span className="translating-dot" style={{ marginLeft: '4px' }} title="Translating via AI..."></span>}
+            {isTranslating && (
+              <>
+                <span className="translating-dot" style={{ marginLeft: '4px' }} title="Translating via AI..."></span>
+                <span className="sr-only" role="status" aria-live="polite">
+                  {language === 'bn' ? 'পৃষ্ঠা বাংলায় অনুবাদ করা হচ্ছে...' : 'Translating page via AI...'}
+                </span>
+              </>
+            )}
           </button>
         </div>
 
@@ -119,6 +128,8 @@ function Navbar() {
         <div className="nav-mobile-actions">
           <button 
             type="button"
+            role="switch"
+            aria-checked={language === 'bn'}
             className="mobile-lang-pill" 
             onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
             aria-label={language === 'en' ? 'Switch interface language to Bengali' : 'Switch interface language to English'}
@@ -135,7 +146,14 @@ function Navbar() {
                 <span>EN</span>
               </>
             )}
-            {isTranslating && <span className="translating-dot" style={{ marginLeft: '4px' }} title="Translating via AI..."></span>}
+            {isTranslating && (
+              <>
+                <span className="translating-dot" style={{ marginLeft: '4px' }} title="Translating via AI..."></span>
+                <span className="sr-only" role="status" aria-live="polite">
+                  {language === 'bn' ? 'পৃষ্ঠা বাংলায় অনুবাদ করা হচ্ছে...' : 'Translating page via AI...'}
+                </span>
+              </>
+            )}
           </button>
 
           <button 
@@ -209,6 +227,9 @@ function Navbar() {
               <div className="mobile-nav-footer">
                 <button 
                   type="button"
+                  role="switch"
+                  aria-checked={language === 'bn'}
+                  aria-label={language === 'en' ? 'Switch interface language to Bengali' : 'Switch interface language to English'}
                   className="mobile-drawer-lang-btn" 
                   onClick={() => {
                     setLanguage(language === 'en' ? 'bn' : 'en');

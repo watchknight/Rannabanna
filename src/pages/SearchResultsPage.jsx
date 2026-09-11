@@ -357,7 +357,7 @@ function SearchResultsPage() {
                   <h4 style={{ margin: '0 0 6px 0', fontSize: '1.2rem', color: '#ffffff', fontWeight: 700 }}>
                     {t('bespokeChefTitle')}
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                  <p id="custom-chef-desc" style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                     {t('bespokeChefDesc')}
                   </p>
                 </div>
@@ -366,6 +366,11 @@ function SearchResultsPage() {
                     className="btn btn-primary" 
                     onClick={handleGenerateCustom}
                     disabled={customGenerating}
+                    aria-busy={customGenerating}
+                    aria-describedby="custom-chef-desc"
+                    aria-label={customGenerating 
+                      ? (language === 'bn' ? 'কাস্টম এআই রেসিপি প্রস্তুত হচ্ছে, অপেক্ষা করুন...' : 'Generating bespoke AI recipe, please wait...') 
+                      : (language === 'bn' ? 'নির্বাচিত উপকরণ দিয়ে এআই কাস্টম রেসিপি তৈরি করুন' : 'Generate bespoke AI recipe using selected ingredients')}
                     style={{
                       background: 'var(--brand-orange)',
                       border: 'none',
@@ -401,6 +406,8 @@ function SearchResultsPage() {
               {customError && (
                 <div 
                   className="glass-panel"
+                  role="alert"
+                  aria-live="assertive"
                   style={{ 
                     marginTop: '16px', 
                     padding: '12px 16px', 
@@ -437,6 +444,9 @@ function SearchResultsPage() {
             {customGenerating && (
               <div 
                 className="match-section glass-panel animate-pulse" 
+                role="status"
+                aria-live="polite"
+                aria-busy="true"
                 style={{
                   border: '2px dashed rgba(240, 90, 40, 0.4)',
                   borderRadius: '24px',
@@ -490,6 +500,8 @@ function SearchResultsPage() {
                     margin: '0 auto 14px'
                   }}
                   id="custom-recipe-phase-text"
+                  aria-live="polite"
+                  aria-atomic="true"
                 >
                   <Sparkles size={14} style={{ flexShrink: 0 }} />
                   <span>
@@ -550,7 +562,8 @@ function SearchResultsPage() {
             )}
 
             {loading ? (
-              <div className="match-section" id="search-loading-skeletons">
+              <div className="match-section" id="search-loading-skeletons" role="status" aria-live="polite" aria-busy="true">
+                <span className="sr-only">{language === 'bn' ? 'উপযুক্ত রেসিপি খোঁজা হচ্ছে...' : 'Searching matching recipes...'}</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
                   <Loader2 size={20} className="animate-spin" style={{ color: 'var(--brand-orange)' }} />
                   <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-secondary)' }}>
@@ -580,6 +593,10 @@ function SearchResultsPage() {
                   className="btn btn-primary"
                   onClick={handleGenerateCustom}
                   disabled={customGenerating}
+                  aria-busy={customGenerating}
+                  aria-label={customGenerating 
+                    ? (language === 'bn' ? 'কাস্টম এআই রেসিপি প্রস্তুত হচ্ছে, অপেক্ষা করুন...' : 'Generating bespoke AI recipe, please wait...') 
+                    : (language === 'bn' ? 'নির্বাচিত উপকরণ দিয়ে এআই কাস্টম রেসিপি তৈরি করুন' : 'Generate bespoke AI recipe using selected ingredients')}
                   id="empty-state-custom-chef-btn"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
                 >

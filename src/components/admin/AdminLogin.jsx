@@ -71,10 +71,15 @@ export default function AdminLogin({ onLoginSuccess }) {
 
         <form onSubmit={handleSubmit}>
           <div className="admin-form-group">
+            <label htmlFor="admin-password-input" className="sr-only">
+              {t('adminPasswordPlaceholder')}
+            </label>
             <input
+              id="admin-password-input"
               type="password"
               className="admin-form-input"
               placeholder={t('adminPasswordPlaceholder')}
+              aria-label={t('adminPasswordPlaceholder')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               disabled={loading}
@@ -88,6 +93,7 @@ export default function AdminLogin({ onLoginSuccess }) {
             className="btn btn-primary"
             style={{ width: '100%', marginTop: 'var(--spacing-md)' }}
             disabled={loading}
+            aria-busy={loading}
           >
             {loading ? t('adminAuthenticating') : t('adminAccessBtn')}
           </button>

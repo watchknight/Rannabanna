@@ -271,10 +271,13 @@ function IngredientSelector({ initialSelectedIds = [] }) {
         <div className="selector-search-box" ref={dropdownRef}>
           <div className="search-input-wrapper">
             <Search size={18} className="search-input-icon" />
+            <label htmlFor="ingredient-search-input" className="sr-only">
+              {language === 'bn' ? 'উপকরণ অনুসন্ধান করুন' : 'Search ingredients'}
+            </label>
             <input
               type="text"
               placeholder={language === 'bn' ? 'উপাদান অনুসন্ধান করুন (যেমন: চিকেন, রসুন, টমেটো)...' : 'Search ingredients (e.g. Chicken, Garlic, Tomato)...'}
-              aria-label="Search ingredients"
+              aria-label={language === 'bn' ? 'উপকরণ অনুসন্ধান করুন' : 'Search ingredients'}
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value)
@@ -288,7 +291,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
                 type="button"
                 className="clear-search-btn" 
                 onClick={() => setSearchQuery('')}
-                aria-label="Clear search"
+                aria-label={language === 'bn' ? 'অনুসন্ধান মুছুন' : 'Clear search'}
               >
                 <X size={16} />
               </button>
@@ -432,7 +435,7 @@ function IngredientSelector({ initialSelectedIds = [] }) {
       {/* Docked Selection Floating Action Bar */}
       {selectedIds.length > 0 && (
         <div className="docked-selection-bar" id="docked-selection-bar">
-          <div className="docked-avatars-group">
+          <div className="docked-avatars-group" aria-hidden="true">
             {selectedObjects.slice(0, 4).map(ing => (
               <img
                 key={ing.id}

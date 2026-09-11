@@ -19,7 +19,7 @@
   
   --text-primary: #f3f4f6;
   --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-muted: #94a3b8;
   
   --success: #10b981;
   --success-glow: 0 0 15px rgba(16, 185, 129, 0.3);
@@ -254,13 +254,13 @@ button, input, select, textarea {
   border-color: var(--text-secondary);
 }
 .btn-accent {
-  background: rgba(233, 30, 99, 0.1);
-  border: 1px solid rgba(233, 30, 99, 0.3);
-  color: #ff8fa3;
+  background: rgba(240, 90, 40, 0.12);
+  border: 1px solid rgba(240, 90, 40, 0.35);
+  color: #ff8a65;
 }
 .btn-accent:hover {
-  background: rgba(233, 30, 99, 0.2);
-  border-color: var(--brand-pink);
+  background: rgba(240, 90, 40, 0.22);
+  border-color: var(--brand-orange);
 }
 
 /* Global Accessible Keyboard Focus Rings */
@@ -765,8 +765,8 @@ select:focus-visible,
   overflow: hidden;
 }
 .search-input-wrapper:focus-within {
-  border-color: var(--brand-pink);
-  box-shadow: var(--brand-glow), 0 0 0 4px rgba(233, 30, 99, 0.1);
+  border-color: var(--brand-orange);
+  box-shadow: var(--brand-glow), 0 0 0 3px rgba(240, 90, 40, 0.25);
   background: #141424;
 }
 .search-input-icon {
@@ -1401,6 +1401,11 @@ select:focus-visible,
   outline: none;
   margin: var(--spacing-sm) 0;
   cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.filter-slider:focus-visible {
+  outline: 2px solid var(--brand-orange);
+  outline-offset: 4px;
 }
 .filter-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -1408,23 +1413,29 @@ select:focus-visible,
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--brand-gradient);
+  background: var(--brand-orange);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.5);
+  box-shadow: 0 2px 8px rgba(240, 90, 40, 0.5);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.filter-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px #0A0D14, 0 0 0 5px var(--brand-orange);
 }
 .filter-slider::-webkit-slider-thumb:hover {
   transform: scale(1.25);
-  box-shadow: 0 0 12px var(--brand-pink);
+  box-shadow: 0 0 12px var(--brand-orange);
 }
 .filter-slider::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--brand-gradient);
+  background: var(--brand-orange);
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.5);
+  box-shadow: 0 2px 8px rgba(240, 90, 40, 0.5);
+}
+.filter-slider:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 3px #0A0D14, 0 0 0 5px var(--brand-orange);
 }
 .filter-slider-labels {
   display: flex;
@@ -1660,7 +1671,7 @@ select:focus-visible,
 .ingredient-check-item input {
   width: 18px;
   height: 18px;
-  accent-color: var(--brand-pink);
+  accent-color: var(--brand-orange);
   border-radius: var(--radius-sm);
 }
 
@@ -2036,12 +2047,13 @@ select:focus-visible,
     transform: scale(0.95);
   }
   .mobile-filter-fab-badge {
-    background: #ffffff;
-    color: var(--brand-pink);
+    background: #0A0D14;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 0.75rem;
     font-weight: 800;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;

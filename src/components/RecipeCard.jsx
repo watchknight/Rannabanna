@@ -120,13 +120,13 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
               top: '12px',
               left: '12px',
               background: 'var(--brand-orange)',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
-              color: '#ffffff',
+              border: '1px solid rgba(8, 9, 12, 0.3)',
+              color: '#08090C',
               fontSize: '0.74rem',
-              fontWeight: '700',
+              fontWeight: '800',
               padding: '4px 10px',
               borderRadius: '9999px',
-              boxShadow: '0 2px 10px rgba(240, 90, 40, 0.4)',
+              boxShadow: '0 2px 10px rgba(240, 90, 40, 0.45)',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '5px',
@@ -134,7 +134,7 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
             }}
             id={`ai-badge-${recipe.id}`}
           >
-            <Sparkles size={12} />
+            <Sparkles size={12} strokeWidth={2.5} style={{ color: '#08090C' }} />
             <span>{t('aiGeneratedBadge')}</span>
           </span>
         )}

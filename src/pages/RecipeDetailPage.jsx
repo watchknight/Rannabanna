@@ -256,20 +256,21 @@ function RecipeDetailPage() {
                 className="badge"
                 style={{
                   background: 'var(--brand-orange)',
-                  color: '#ffffff',
+                  border: '1px solid rgba(8, 9, 12, 0.3)',
+                  color: '#08090C',
                   fontSize: '0.82rem',
-                  fontWeight: '700',
+                  fontWeight: '800',
                   padding: '4px 12px',
                   borderRadius: '20px',
-                  boxShadow: '0 2px 10px rgba(240, 90, 40, 0.4)',
+                  boxShadow: '0 2px 10px rgba(240, 90, 40, 0.45)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px'
                 }}
                 id="recipe-detail-ai-badge"
               >
-                <Sparkles size={14} />
-                <span>{t('aiGeneratedBadge')}<span className="ai-badge-subtext"> • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small></span></span>
+                <Sparkles size={14} strokeWidth={2.5} style={{ color: '#08090C' }} />
+                <span>{t('aiGeneratedBadge')}<span className="ai-badge-subtext"> • <small style={{ color: '#08090C', fontWeight: 700 }}>{t('aiRecipePoweredBy')}</small></span></span>
               </span>
             )}
           </div>

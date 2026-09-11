@@ -68,7 +68,7 @@ function HomePage() {
           <div className="hero-culinary-wrapper">
             <img 
               src={HERO_CULINARY_IMAGE} 
-              alt="Culinary Masterpiece" 
+              alt={language === 'bn' ? 'সুস্বাদু ও ঐতিহ্যবাহী রন্ধনশিল্প' : 'Appetizing gourmet dish with fresh herbs and spices'} 
               className="hero-culinary-img"
               fetchPriority="high"
               decoding="async"
