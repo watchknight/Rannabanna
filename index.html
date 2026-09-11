@@ -54,9 +54,206 @@
         } catch (e) {}
       })();
     </script>
+    <!-- Critical Inline Shell Styles (Prevents blank screen before JS/CSS load) -->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #0A0D14;
+        color: #F8FAFC;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .rb-shell {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #0A0D14;
+      }
+      .rb-shell-nav {
+        height: 70px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        max-width: 1280px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .rb-shell-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .rb-shell-logo-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: rgba(240, 90, 40, 0.15);
+        border: 1px solid rgba(240, 90, 40, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #F05A28;
+        font-size: 18px;
+      }
+      .rb-shell-logo-text {
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: #FFFFFF;
+      }
+      .rb-shell-logo-text span {
+        color: #F05A28;
+      }
+      .rb-shell-nav-items {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .rb-shell-pill {
+        height: 34px;
+        width: 76px;
+        border-radius: 9999px;
+        background: #121622;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .rb-shell-main {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px 24px;
+        box-sizing: border-box;
+        flex: 1;
+      }
+      .rb-shell-hero {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 36px auto;
+      }
+      .rb-shell-badge {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: 9999px;
+        background: rgba(240, 90, 40, 0.12);
+        border: 1px solid rgba(240, 90, 40, 0.25);
+        color: #F05A28;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .rb-shell-title {
+        font-size: clamp(1.8rem, 4.5vw, 2.9rem);
+        font-weight: 800;
+        line-height: 1.18;
+        margin: 0 0 14px 0;
+        color: #FFFFFF;
+      }
+      .rb-shell-subtitle {
+        font-size: 1.05rem;
+        color: #94A3B8;
+        line-height: 1.5;
+        margin: 0 auto;
+        max-width: 580px;
+      }
+      html[lang="bn"] .rb-shell-en { display: none !important; }
+      html:not([lang="bn"]) .rb-shell-bn { display: none !important; }
+      .rb-shimmer {
+        position: relative;
+        overflow: hidden;
+        background-color: #121622;
+      }
+      .rb-shimmer::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.04) 20%,
+          rgba(255, 255, 255, 0.08) 60%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        animation: rb-shimmer-kf 1.6s infinite;
+        content: '';
+      }
+      @keyframes rb-shimmer-kf {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      .rb-shell-search-box {
+        height: 120px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 40px;
+      }
+      .rb-shell-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .rb-shell-card {
+        height: 300px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      @media (max-width: 640px) {
+        .rb-shell-nav { padding: 0 16px; height: 60px; }
+        .rb-shell-main { padding: 24px 16px; }
+        .rb-shell-search-box { height: 96px; margin-bottom: 28px; }
+        .rb-shell-cards { grid-template-columns: 1fr; }
+        .rb-shell-nav-items .rb-shell-pill:last-child { display: none; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="rb-shell" aria-busy="true" aria-label="Loading Rannabanna">
+        <header class="rb-shell-nav">
+          <div class="rb-shell-logo">
+            <div class="rb-shell-logo-icon">🍳</div>
+            <div class="rb-shell-logo-text">Ranna<span>banna</span></div>
+          </div>
+          <div class="rb-shell-nav-items">
+            <div class="rb-shell-pill"></div>
+            <div class="rb-shell-pill"></div>
+          </div>
+        </header>
+
+        <main class="rb-shell-main">
+          <div class="rb-shell-hero">
+            <div class="rb-shell-badge">
+              <span class="rb-shell-en">Smart Recipe Engine</span>
+              <span class="rb-shell-bn">স্মার্ট রেসিপি ইঞ্জিন</span>
+            </div>
+            <h1 class="rb-shell-title">
+              <span class="rb-shell-en">Cook the World with What You Have</span>
+              <span class="rb-shell-bn">আপনার যা আছে তাই দিয়ে বিশ্বমানের রান্না</span>
+            </h1>
+            <p class="rb-shell-subtitle">
+              <span class="rb-shell-en">Discover recipes tailored to your kitchen ingredients...</span>
+              <span class="rb-shell-bn">আপনার রান্নাঘরের উপাদান নির্বাচন করে সুস্বাদু রেসিপি খুঁজুন...</span>
+            </p>
+          </div>
+
+          <div class="rb-shell-search-box rb-shimmer"></div>
+
+          <div class="rb-shell-cards">
+            <div class="rb-shell-card rb-shimmer"></div>
+            <div class="rb-shell-card rb-shimmer"></div>
+            <div class="rb-shell-card rb-shimmer"></div>
+          </div>
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

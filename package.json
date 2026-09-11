@@ -10,7 +10,8 @@
     "server": "node server/index.js",
     "start": "node server/index.js",
     "db:seed": "node server/seed.js",
-    "build": "vite build && npm run db:seed",
+    "sitemap": "node scripts/generateSitemap.js",
+    "build": "node scripts/generateSitemap.js && vite build && npm run db:seed",
     "test": "node --test src/utils/*.test.js server/tests/*.test.js",
     "preview": "vite preview"
   },
