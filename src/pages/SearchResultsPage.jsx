@@ -166,7 +166,7 @@ function SearchResultsPage() {
   const slicedExploratory = useMemo(() => exploratory.slice(0, visibleExploratory), [exploratory, visibleExploratory])
 
   return (
-    <div className="search-results-page animate-fade-in" id="search-results-page-root" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
+    <div className="search-results-page animate-fade-in" id="search-results-page-root" style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 20px 60px' }}>
       {/* Header Bar with Selected Tags & Counts */}
       <div 
         className="search-summary-card glass-panel"
@@ -196,8 +196,11 @@ function SearchResultsPage() {
                 />
                 <span>{displayName}</span>
                 <button 
+                  type="button"
                   onClick={() => handleRemoveIngredient(ing.id)} 
-                  style={{ background: 'rgba(0, 0, 0, 0.25)', border: 'none', borderRadius: '50%', width: '18px', height: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#ffffff' }}
+                  className="selected-tag-remove-btn"
+                  aria-label={language === 'bn' ? `${displayName} মুছে ফেলুন` : `Remove ${displayName}`}
+                  title={language === 'bn' ? `${displayName} মুছে ফেলুন` : `Remove ${displayName}`}
                 >
                   <X size={11} />
                 </button>
@@ -392,29 +395,29 @@ function SearchResultsPage() {
                 style={{
                   border: '2px dashed rgba(240, 90, 40, 0.4)',
                   borderRadius: '24px',
-                  padding: '36px 20px',
+                  padding: '48px 24px',
                   marginBottom: '28px',
                   textAlign: 'center',
                   background: '#121622',
-                  boxShadow: '0 4px 25px rgba(0, 0, 0, 0.4)'
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)'
                 }}
                 id="custom-recipe-generating-indicator"
               >
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '18px' }}>
-                  <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(240, 90, 40, 0.12)', border: '1px solid rgba(240, 90, 40, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                    <Loader2 size={32} className="animate-spin" style={{ color: 'var(--brand-orange)' }} />
-                    <Sparkles size={16} style={{ color: '#ffffff', position: 'absolute' }} />
+                  <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(240, 90, 40, 0.12)', border: '1px solid rgba(240, 90, 40, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                    <Loader2 size={34} className="animate-spin" style={{ color: 'var(--brand-orange)' }} />
+                    <Sparkles size={18} style={{ color: '#ffffff', position: 'absolute' }} />
                   </div>
                 </div>
-                <h3 style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1.2rem', fontWeight: 700 }}>
+                <h3 style={{ margin: '0 0 10px 0', color: '#ffffff', fontSize: '1.3rem', fontWeight: 700 }}>
                   {language === 'bn' ? 'জেমিনি এআই শেফ আপনার কাস্টম রেসিপি প্রস্তুত করছে...' : 'Gemini AI Chef is crafting your custom recipe...'}
                 </h3>
-                <p style={{ margin: '0 auto', color: 'var(--text-secondary)', fontSize: '0.88rem', maxWidth: '520px', lineHeight: 1.6 }}>
+                <p style={{ margin: '0 auto', color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '560px', lineHeight: 1.6 }}>
                   {language === 'bn' 
                     ? 'আপনার নির্বাচিত উপকরণ ও ফিল্টারের ওপর ভিত্তি করে বাস্তবসম্মত, সুস্বাদু রান্নাপ্রণালী তৈরি হচ্ছে।' 
                     : 'Analyzing your selected ingredients and cooking preferences to engineer a delicious, authentic step-by-step recipe.'}
                 </p>
-                <div style={{ width: '100%', maxWidth: '280px', height: '4px', background: 'rgba(255,255,255,0.08)', borderRadius: '9999px', margin: '18px auto 0', overflow: 'hidden' }}>
+                <div style={{ width: '100%', maxWidth: '420px', height: '5px', background: 'rgba(255,255,255,0.08)', borderRadius: '9999px', margin: '22px auto 0', overflow: 'hidden' }}>
                   <div className="rb-shimmer" style={{ width: '100%', height: '100%', background: 'var(--brand-orange)' }} />
                 </div>
                 {isColdStarting && (

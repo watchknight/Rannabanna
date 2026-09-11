@@ -198,7 +198,7 @@ function RecipeDetailPage() {
   const dishPhotoUrl = getRecipeImage(recipe.id, recipe.cuisineId)
 
   return (
-    <div className="recipe-detail-container animate-fade-in" id={`recipe-detail-${recipe.id}`} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
+    <div className="recipe-detail-container animate-fade-in" id={`recipe-detail-${recipe.id}`} style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 20px 60px' }}>
       
       {/* AI Translation Loading Indicator */}
       {recipeTranslating && (
@@ -215,7 +215,6 @@ function RecipeDetailPage() {
           id="recipe-detail-hero-visual"
           style={{
             position: 'relative',
-            height: '380px',
             borderRadius: '28px',
             overflow: 'hidden',
             border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -256,18 +255,18 @@ function RecipeDetailPage() {
                 style={{
                   background: 'var(--brand-orange)',
                   color: '#ffffff',
-                  fontSize: '0.75rem',
+                  fontSize: '0.82rem',
                   fontWeight: '700',
-                  padding: '3px 10px',
+                  padding: '4px 12px',
                   borderRadius: '20px',
-                  boxShadow: '0 2px 8px rgba(240, 90, 40, 0.35)',
+                  boxShadow: '0 2px 10px rgba(240, 90, 40, 0.4)',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '5px'
+                  gap: '6px'
                 }}
                 id="recipe-detail-ai-badge"
               >
-                <Sparkles size={12} />
+                <Sparkles size={14} />
                 <span>{t('aiGeneratedBadge')}<span className="ai-badge-subtext"> • <small style={{ opacity: 0.9 }}>{t('aiRecipePoweredBy')}</small></span></span>
               </span>
             )}
@@ -315,7 +314,6 @@ function RecipeDetailPage() {
                   disabled={activeServings <= 1}
                   aria-label="Decrease Servings"
                   id="servings-decrement-btn"
-                  style={{ borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   <Minus size={14} />
                 </button>
@@ -329,7 +327,6 @@ function RecipeDetailPage() {
                   disabled={activeServings >= 24}
                   aria-label="Increase Servings"
                   id="servings-increment-btn"
-                  style={{ borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   <Plus size={14} />
                 </button>

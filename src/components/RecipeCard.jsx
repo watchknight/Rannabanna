@@ -96,7 +96,7 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
       role="button"
       aria-label={`${title} (${cuisineName}), ${displayTime} ${t('mins')}, ${displayCalories} ${language === 'bn' ? 'ক্যালোরি' : 'kcal'}`}
       id={`recipe-card-${recipe.id}`}
-      style={isAi ? { border: '1px solid rgba(139, 92, 246, 0.4)', boxShadow: '0 4px 20px rgba(139, 92, 246, 0.15)' } : {}}
+      style={isAi ? { border: '1px solid rgba(240, 90, 40, 0.35)', boxShadow: '0 4px 20px rgba(240, 90, 40, 0.15)' } : {}}
     >
       {/* Full-Bleed Real Culinary Photography Header */}
       <div className="recipe-card-media">
@@ -118,14 +118,14 @@ function RecipeCard({ recipe, selectedIds = [], targetServings = null, isCustomB
               position: 'absolute',
               top: '12px',
               left: '12px',
-              background: '#7C3AED',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              background: 'var(--brand-orange)',
+              border: '1px solid rgba(255, 255, 255, 0.25)',
               color: '#ffffff',
-              fontSize: '0.72rem',
+              fontSize: '0.74rem',
               fontWeight: '700',
               padding: '4px 10px',
               borderRadius: '9999px',
-              boxShadow: '0 2px 10px rgba(124, 58, 237, 0.4)',
+              boxShadow: '0 2px 10px rgba(240, 90, 40, 0.4)',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '5px',

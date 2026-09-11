@@ -43,7 +43,7 @@ function CuisinesPage() {
   }
 
   return (
-    <div className="cuisines-page-container animate-fade-in" id="cuisines-page-root" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
+    <div className="cuisines-page-container animate-fade-in" id="cuisines-page-root" style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 20px 60px' }}>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <div className="hero-pill-badge" style={{ marginBottom: '12px' }}>
           <Globe size={14} />

@@ -61,19 +61,11 @@ function FilterPanel({ filters, onChange }) {
           <h3 style={{ fontSize: '1.15rem', margin: 0 }}>{t('filters')}</h3>
         </div>
         <button 
+          type="button"
           onClick={resetAll} 
-          style={{ 
-            fontSize: '0.8rem', 
-            color: 'var(--brand-orange)', 
-            fontWeight: '600', 
-            cursor: 'pointer',
-            background: 'none',
-            border: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px'
-          }}
+          className="reset-filters-btn"
           id="reset-filters-btn"
+          aria-label={t('resetAll')}
         >
           <RotateCcw size={13} />
           <span>{t('resetAll')}</span>
@@ -81,25 +73,16 @@ function FilterPanel({ filters, onChange }) {
       </div>
 
       {/* 1. Servings Filter */}
-      <div className="filter-group" id="filter-servings-group" style={{ marginBottom: '20px' }}>
+      <div className="filter-group" id="filter-servings-group">
         <label htmlFor="servings-filter-select" className="filter-title" style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px', fontSize: '0.88rem', fontWeight: 600 }}>
           <Users size={16} style={{ color: 'var(--brand-orange)' }} />
           <span>{t('servingsFilterLabel')}</span>
         </label>
         <select
+          id="servings-filter-select"
+          className="filter-select"
           value={filters.servings || 4}
           onChange={(e) => handleSelectChange('servings', parseInt(e.target.value, 10))}
-          style={{
-            width: '100%',
-            background: 'var(--bg-secondary)',
-            border: '1px solid var(--surface-border)',
-            borderRadius: '12px',
-            padding: '10px 14px',
-            cursor: 'pointer',
-            color: '#ffffff',
-            fontSize: '0.9rem'
-          }}
-          id="servings-filter-select"
         >
           {[1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20].map(n => (
             <option key={n} value={n}>
@@ -110,24 +93,15 @@ function FilterPanel({ filters, onChange }) {
       </div>
 
       {/* 2. Meal Type Filter */}
-      <div className="filter-group" style={{ marginBottom: '20px' }}>
+      <div className="filter-group">
         <label htmlFor="meal-type-filter-select" className="filter-title" style={{ display: 'block', marginBottom: '8px', fontSize: '0.88rem', fontWeight: 600 }}>
           {t('filterMealTypeLabel')}
         </label>
         <select
+          id="meal-type-filter-select"
+          className="filter-select"
           value={filters.mealType || 'all'}
           onChange={(e) => handleSelectChange('mealType', e.target.value)}
-          style={{
-            width: '100%',
-            background: 'var(--bg-secondary)',
-            border: '1px solid var(--surface-border)',
-            borderRadius: '12px',
-            padding: '10px 14px',
-            cursor: 'pointer',
-            color: '#ffffff',
-            fontSize: '0.9rem'
-          }}
-          id="meal-type-filter-select"
         >
           <option value="all">{t('allMealTypes')}</option>
           <option value="breakfast">{t('breakfast')}</option>
@@ -139,21 +113,20 @@ function FilterPanel({ filters, onChange }) {
       </div>
 
       {/* 3. Cuisines Multi-Select Filter */}
-      <div className="filter-group" style={{ marginBottom: '20px' }}>
+      <div className="filter-group">
         <h4 className="filter-title" style={{ marginBottom: '10px', fontSize: '0.88rem', fontWeight: 600 }}>{t('filterCuisineLabel')}</h4>
-        <div className="filter-checkbox-list" id="cuisine-filter-checkboxes" role="group" aria-label={t('filterCuisineLabel')} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <div className="filter-checkbox-list" id="cuisine-filter-checkboxes" role="group" aria-label={t('filterCuisineLabel')}>
           {cuisines.map(c => {
             const cuisineName = language === 'bn' ? (c.nameBn || c.name) : c.name
             const isChecked = activeCuisines.includes(c.id)
             return (
-              <label key={c.id} className="filter-checkbox-label" id={`cuisine-filter-lbl-${c.id}`} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', cursor: 'pointer' }}>
+              <label key={c.id} className="filter-checkbox-label" id={`cuisine-filter-lbl-${c.id}`}>
                 <input
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => handleCuisineToggle(c.id)}
-                  style={{ accentColor: 'var(--brand-orange)', width: '16px', height: '16px' }}
                 />
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: c.color || 'var(--brand-orange)' }} />
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: c.color || 'var(--brand-orange)', flexShrink: 0 }} />
                 <span>{cuisineName}</span>
               </label>
             )
@@ -164,19 +137,18 @@ function FilterPanel({ filters, onChange }) {
       {/* 4. Dietary Restrictions Multi-Select Filter */}
       <div className="filter-group">
         <h4 className="filter-title" style={{ marginBottom: '10px', fontSize: '0.88rem', fontWeight: 600 }}>{t('filterDietaryLabel')}</h4>
-        <div className="filter-checkbox-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <div className="filter-checkbox-list">
           {dietaryTags.map(tag => {
             const isChecked = activeDietary.includes(tag.id)
             const tagName = language === 'bn' ? tag.nameBn : tag.name
             return (
-              <label key={tag.id} className="filter-checkbox-label" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', cursor: 'pointer' }}>
+              <label key={tag.id} className="filter-checkbox-label">
                 <input
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => handleDietaryToggle(tag.id)}
-                  style={{ accentColor: 'var(--brand-orange)', width: '16px', height: '16px' }}
                 />
-                <span style={{ color: isChecked ? 'var(--brand-orange)' : 'var(--text-secondary)' }}>
+                <span style={{ color: isChecked ? 'var(--brand-orange)' : 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
                   {tag.icon}
                 </span>
                 <span>{tagName}</span>

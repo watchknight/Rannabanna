@@ -60,7 +60,7 @@ function CuisineDetailPage() {
   const cuisinePhotoUrl = getCuisineImage(cuisine.id)
 
   return (
-    <div className="cuisine-detail-page animate-fade-in" id={`cuisine-detail-${cuisine.id}`} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
+    <div className="cuisine-detail-page animate-fade-in" id={`cuisine-detail-${cuisine.id}`} style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 20px 60px' }}>
       
       {/* 1. Styled panoramic hero with authentic photography */}
       <section 

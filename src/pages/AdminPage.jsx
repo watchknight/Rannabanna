@@ -89,7 +89,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="admin-wrapper animate-fade-in" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px 60px' }}>
+    <div className="admin-wrapper animate-fade-in" style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 20px 60px' }}>
       {/* Top Bar */}
       <div className="admin-top-bar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
         <div className="admin-title-group">

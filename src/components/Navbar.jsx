@@ -98,7 +98,7 @@ function Navbar() {
             onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
             aria-label={language === 'en' ? 'Switch interface language to Bengali' : 'Switch interface language to English'}
             id="desktop-lang-toggle"
-            style={isTranslating ? { borderColor: 'rgba(167, 139, 250, 0.6)', boxShadow: '0 0 10px rgba(139, 92, 246, 0.35)' } : {}}
+            style={isTranslating ? { borderColor: 'rgba(240, 90, 40, 0.6)', boxShadow: '0 0 10px rgba(240, 90, 40, 0.35)' } : {}}
           >
             {language === 'en' ? (
               <>
