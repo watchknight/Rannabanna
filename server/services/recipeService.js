@@ -638,7 +638,20 @@ class RecipeService {
   async generateCustomRecipe(ingredientIds = [], cuisineId = 'any', apiKey = null, userId = null) {
     await this._ensureCache();
     
-    const ingredientsList = this.ingredientsCache.filter(i => ingredientIds.includes(i.id));
+    let ingredientsList = (this.ingredientsCache || []).filter(i => 
+      ingredientIds.includes(i.id) || ingredientIds.includes(i.name)
+    );
+
+    if (ingredientsList.length === 0 && ingredientIds.length > 0) {
+      ingredientsList = ingredientIds.map(id => {
+        const strId = typeof id === 'string' ? id : (id.id || id.name || 'ingredient');
+        return {
+          id: strId,
+          name: typeof id === 'string' ? strId.replace(/-/g, ' ') : (id.name || strId),
+          category: 'Main'
+        };
+      });
+    }
 
     let recipe = null;
 
@@ -698,6 +711,24 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       recipe = generateLocalCustomRecipe(ingredientsList, cuisineId);
     }
 
+    if (!recipe) {
+      const starName = ingredientsList[0]?.name || 'Special';
+      recipe = {
+        title: `Bespoke ${starName} Culinary Creation`,
+        titleBn: `কাস্টম ${ingredientsList[0]?.nameBn || starName} রান্না`,
+        cuisineId: cuisineId !== 'any' ? cuisineId : 'bengali',
+        difficulty: 'intermediate',
+        prepTime: 15,
+        cookTime: 20,
+        servings: 4,
+        calories: 350,
+        description: `A customized dish prepared with ${ingredientsList.map(i => i.name).join(', ')}.`,
+        descriptionBn: 'আপনার নির্বাচিত উপকরণ দিয়ে তৈরি সুস্বাদু ও পুষ্টিকর রেসিপি।',
+        ingredients: ingredientsList.map(i => ({ ingredientId: i.id, quantity: 1, unit: 'portion', isEssential: true })),
+        steps: [{ step: 1, instruction: 'Sauté aromatics, add primary ingredients, and simmer until tender.', instructionBn: 'তেলে মশলা কষিয়ে মূল উপকরণ যোগ করুন এবং সেদ্ধ হওয়া পর্যন্ত রান্না করুন।' }]
+      };
+    }
+
     // Save dynamic recipe directly to the database
     const recipeId = `custom-${crypto.randomUUID()}`;
     const finalRecipeObj = decorateRecipeTranslations({
@@ -707,24 +738,28 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
       dietaryTags: recipe.dietaryTags || []
     });
 
-    if (isFirebaseInitialized) {
-      try {
-        await firestoreDb.collection('recipes').doc(recipeId).set(finalRecipeObj);
-        
-        await firestoreDb.collection('generation_history').add({
-          user_id: userId,
-          ingredient_ids: ingredientIds,
-          cuisine_id: cuisineId,
-          generated_recipe_id: recipeId,
-          timestamp: new Date().toISOString()
-        });
-        console.log(`🔥 Custom recipe ${recipeId} successfully saved to Firestore!`);
-      } catch (error) {
-        console.error('❌ Firestore save generated recipe error, falling back to PostgreSQL:', error.message);
+    try {
+      if (isFirebaseInitialized) {
+        try {
+          await firestoreDb.collection('recipes').doc(recipeId).set(finalRecipeObj);
+          
+          await firestoreDb.collection('generation_history').add({
+            user_id: userId,
+            ingredient_ids: ingredientIds,
+            cuisine_id: cuisineId,
+            generated_recipe_id: recipeId,
+            timestamp: new Date().toISOString()
+          });
+          console.log(`🔥 Custom recipe ${recipeId} successfully saved to Firestore!`);
+        } catch (error) {
+          console.error('❌ Firestore save generated recipe error, falling back to PostgreSQL:', error.message);
+          await this._saveCustomRecipePostgres(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
+        }
+      } else {
         await this._saveCustomRecipePostgres(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
       }
-    } else {
-      await this._saveCustomRecipePostgres(recipeId, finalRecipeObj, ingredientIds, cuisineId, userId);
+    } catch (persistErr) {
+      console.warn('⚠️ Non-fatal error persisting custom recipe:', persistErr.message);
     }
 
     // Invalidate the cache to ensure the new custom recipe is loaded on subsequent calls
@@ -734,7 +769,16 @@ Return ONLY a valid JSON object matching this structure EXACTLY (do not wrap in 
   }
 
   async _saveCustomRecipePostgres(recipeId, recipe, ingredientIds, cuisineId, userId) {
-    const client = await pool.connect();
+    if (!pool || !process.env.DATABASE_URL) {
+      return;
+    }
+    let client;
+    try {
+      client = await pool.connect();
+    } catch (connErr) {
+      console.warn('⚠️ Could not connect to PostgreSQL for custom recipe saving:', connErr.message);
+      return;
+    }
     try {
       await client.query('BEGIN');
 

@@ -21,6 +21,7 @@ import { useRecipeMatcher } from '../hooks/useRecipeMatcher'
 import { useDatabase } from '../context/DatabaseContext'
 import { API_BASE } from '../utils/apiConfig.js'
 import { getIngredientImage } from '../utils/imageAssets'
+import { generateLocalCustomRecipe } from '../utils/customChefEngine.js'
 
 function SearchResultsPage() {
   const { ingredients, addCustomRecipeToLocalState, language, t, toBengaliNumber, isOffline } = useDatabase()
@@ -107,14 +108,6 @@ function SearchResultsPage() {
   const handleGenerateCustom = async () => {
     if (selectedIds.length === 0) return
 
-    // Fast-fail if browser is offline
-    if (typeof navigator !== 'undefined' && !navigator.onLine) {
-      setCustomError(language === 'bn' 
-        ? 'আপনি অফলাইনে আছেন। কাস্টম রেসিপি তৈরির জন্য ইন্টারনেট সংযোগ প্রয়োজন।' 
-        : 'You are currently offline. An internet connection is required to generate an AI recipe.')
-      return
-    }
-
     // Cancel any previous in-flight request
     if (abortControllerRef.current) {
       abortControllerRef.current.abort()
@@ -125,6 +118,40 @@ function SearchResultsPage() {
     setCustomError(null)
     setIsColdStarting(false)
     setGenerationPhase(0)
+
+    const resolvedCuisine = (filters.cuisines && filters.cuisines.length > 0) 
+      ? filters.cuisines[0] 
+      : (filters.cuisine && filters.cuisine !== 'all' ? filters.cuisine : 'any')
+
+    const resolvedSelected = selectedIds.map(id => {
+      const found = ingredients.find(i => i.id === id)
+      if (found) return found
+      return {
+        id,
+        name: id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+        category: 'Main'
+      }
+    })
+
+    // Instant offline generation via local culinary expert engine
+    if ((typeof navigator !== 'undefined' && !navigator.onLine) || isOffline) {
+      const localRecipe = generateLocalCustomRecipe(resolvedSelected, resolvedCuisine)
+      if (localRecipe && localRecipe.title) {
+        try {
+          const stored = JSON.parse(localStorage.getItem('rannabanna-custom-recipes') || '[]')
+          const updated = [localRecipe, ...stored.filter(r => r.id !== localRecipe.id)].slice(0, 50)
+          localStorage.setItem('rannabanna-custom-recipes', JSON.stringify(updated))
+        } catch {}
+        addCustomRecipeToLocalState(localRecipe)
+        setCustomRecipe(localRecipe)
+        setCustomError(null)
+        setCustomGenerating(false)
+        setTimeout(() => {
+          document.getElementById('custom-recipe-featured-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+        return
+      }
+    }
 
     const controller = new AbortController()
     abortControllerRef.current = controller
@@ -148,35 +175,43 @@ function SearchResultsPage() {
     timersRef.current.push(phase1Timer, phase2Timer, phase3Timer)
 
     try {
-      const response = await fetch(`${API_BASE}/api/custom-recipe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-          ingredientIds: selectedIds,
-          cuisineId: filters.cuisine || 'any',
-          cuisine: filters.cuisine !== 'all' ? filters.cuisine : null,
-          filters: {
-            maxTime: filters.maxTime,
-            dietaryRestrictions: filters.dietary
-          }
-        }),
-        signal: controller.signal
-      })
+      let generated = null
+      try {
+        const response = await fetch(`${API_BASE}/api/custom-recipe`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ 
+            ingredientIds: selectedIds,
+            cuisineId: resolvedCuisine,
+            cuisine: resolvedCuisine !== 'any' ? resolvedCuisine : null,
+            filters: {
+              maxTime: filters.maxTime,
+              dietaryRestrictions: filters.dietary
+            }
+          }),
+          signal: controller.signal
+        })
 
-      clearPhaseTimers()
+        clearPhaseTimers()
 
-      const data = await response.json().catch(() => null)
-
-      if (!response.ok || !data) {
-        const errMsg = data?.error || data?.message || (language === 'bn' ? 'কাস্টম রেসিপি তৈরিতে সমস্যা হয়েছে।' : 'Failed to generate custom recipe.')
-        throw new Error(errMsg)
+        const data = await response.json().catch(() => null)
+        if (response.ok && data) {
+          generated = data.recipe || data
+        }
+      } catch (networkErr) {
+        console.warn('Backend custom recipe call failed or was aborted, triggering fallback:', networkErr)
       }
 
-      const generated = data.recipe || data
+      // If backend failed or was unreachable, seamlessly use local expert chef engine
       if (!generated || !generated.title) {
-        throw new Error(language === 'bn' ? 'অসম্পূর্ণ রেসিপি তৈরি হয়েছে।' : 'Incomplete recipe generated.')
+        console.warn('Activating local custom chef engine failover...')
+        generated = generateLocalCustomRecipe(resolvedSelected, resolvedCuisine)
+      }
+
+      if (!generated || !generated.title) {
+        throw new Error(language === 'bn' ? 'কাস্টম রেসিপি তৈরিতে সমস্যা হয়েছে।' : 'Failed to generate custom recipe.')
       }
 
       try {
@@ -187,15 +222,33 @@ function SearchResultsPage() {
 
       addCustomRecipeToLocalState(generated)
       setCustomRecipe(generated)
+      setCustomError(null)
+      setTimeout(() => {
+        document.getElementById('custom-recipe-featured-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
     } catch (err) {
       clearPhaseTimers()
-      const isTimeout = err.name === 'AbortError'
-      const errorMsg = isTimeout 
-        ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা (৩৫ সেকেন্ড) শেষ হয়ে গেছে। সার্ভার পুনরায় চালু হচ্ছে, দয়া করে আবার চেষ্টা করুন।' : 'Recipe generation timed out (35s limit). The server may be cold-starting; please tap retry to proceed.')
-        : (err.message || t('customChefError'))
-      
-      console.warn('Backend custom recipe call failed:', err)
-      setCustomError(errorMsg)
+      // Final attempt to salvage via client-side engine
+      const rescueRecipe = generateLocalCustomRecipe(resolvedSelected, resolvedCuisine)
+      if (rescueRecipe && rescueRecipe.title) {
+        try {
+          const stored = JSON.parse(localStorage.getItem('rannabanna-custom-recipes') || '[]')
+          const updated = [rescueRecipe, ...stored.filter(r => r.id !== rescueRecipe.id)].slice(0, 50)
+          localStorage.setItem('rannabanna-custom-recipes', JSON.stringify(updated))
+        } catch {}
+        addCustomRecipeToLocalState(rescueRecipe)
+        setCustomRecipe(rescueRecipe)
+        setCustomError(null)
+        setTimeout(() => {
+          document.getElementById('custom-recipe-featured-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+      } else {
+        const isTimeout = err.name === 'AbortError'
+        const errorMsg = isTimeout 
+          ? (language === 'bn' ? 'রেসিপি তৈরির সময়সীমা (৩৫ সেকেন্ড) শেষ হয়ে গেছে। সার্ভার পুনরায় চালু হচ্ছে, দয়া করে আবার চেষ্টা করুন।' : 'Recipe generation timed out (35s limit). The server may be cold-starting; please tap retry to proceed.')
+          : (err.message || t('customChefError'))
+        setCustomError(errorMsg)
+      }
     } finally {
       setCustomGenerating(false)
       setIsColdStarting(false)

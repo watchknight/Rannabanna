@@ -13,6 +13,8 @@ import { recipeService } from './services/recipeService.js';
 import { cacheService } from './services/cacheService.js';
 import { generateCustomAiRecipe } from './services/aiRecipeService.js';
 import { logAiFailure } from './utils/aiLogger.js';
+import { generateLocalCustomRecipe } from '../src/utils/customChefEngine.js';
+import { decorateRecipeTranslations } from './utils/translation_engine.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -239,8 +241,23 @@ app.post('/api/custom-recipe', aiRecipeRateLimiter, async (req, res, next) => {
     }
 
     // High-precision local chef engine failover
-    const fallbackRecipe = await recipeService.generateCustomRecipe(resolvedIngredients, cuisineId, null);
-    res.json(fallbackRecipe);
+    try {
+      const fallbackRecipe = await recipeService.generateCustomRecipe(resolvedIngredients, cuisineId, null);
+      if (fallbackRecipe) {
+        return res.json(fallbackRecipe);
+      }
+    } catch (recipeServiceErr) {
+      console.warn('⚠️ recipeService.generateCustomRecipe failed, using in-memory customChefEngine:', recipeServiceErr.message);
+    }
+
+    // Direct in-memory engine fallback guaranteed to work
+    const localRecipe = generateLocalCustomRecipe(resolvedIngredients, cuisineId);
+    if (localRecipe) {
+      const decorated = decorateRecipeTranslations ? decorateRecipeTranslations(localRecipe) : localRecipe;
+      return res.json(decorated);
+    }
+
+    return res.status(500).json({ error: 'Failed to generate custom recipe.' });
   } catch (error) {
     next(error);
   }

@@ -5,15 +5,36 @@ export function generateLocalCustomRecipe(selectedIngredients, requestedCuisine 
     return null;
   }
 
+  // Normalize ingredients to safely handle string IDs or ingredient objects
+  const normalizedIngredients = selectedIngredients.map(ing => {
+    if (typeof ing === 'string') {
+      const cleanName = ing.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return {
+        id: ing,
+        name: cleanName,
+        nameBn: cleanName,
+        category: 'Main'
+      };
+    }
+    return {
+      id: ing?.id || 'ingredient',
+      name: ing?.name || (ing?.id ? ing.id.replace(/-/g, ' ') : 'Ingredient'),
+      nameBn: ing?.nameBn || ing?.name,
+      category: ing?.category || 'Main',
+      subCategory: ing?.subCategory,
+      emoji: ing?.emoji
+    };
+  });
+
   // 1. Identify primary star ingredient (Proteins first, then Vegetables, then Grains, then first selected)
-  const proteins = selectedIngredients.filter(i => i.category === 'Proteins');
-  const vegetables = selectedIngredients.filter(i => i.category === 'Vegetables' || i.category === 'Gourd');
-  const grains = selectedIngredients.filter(i => i.category === 'Grains & Starches');
+  const proteins = normalizedIngredients.filter(i => i.category === 'Proteins');
+  const vegetables = normalizedIngredients.filter(i => i.category === 'Vegetables' || i.category === 'Gourd');
+  const grains = normalizedIngredients.filter(i => i.category === 'Grains & Starches');
 
   const starProtein = proteins.length > 0 ? proteins[0] : null;
   const starVeg = vegetables.length > 0 ? vegetables[0] : null;
   const starGrain = grains.length > 0 ? grains[0] : null;
-  const star = starProtein || starVeg || starGrain || selectedIngredients[0];
+  const star = starProtein || starVeg || starGrain || normalizedIngredients[0] || { id: 'ingredient', name: 'Fresh Ingredient', category: 'Main' };
 
   // 2. Score selected ingredients to identify the most authentic cuisine match
   const scores = {
@@ -26,7 +47,7 @@ export function generateLocalCustomRecipe(selectedIngredients, requestedCuisine 
     mexican: 0
   };
 
-  const idSet = new Set(selectedIngredients.map(i => i.id));
+  const idSet = new Set(normalizedIngredients.map(i => i.id));
 
   for (const id of idSet) {
     if (['mustard-oil', 'panch-phoron', 'hilsa-fish', 'rohita-fish', 'jaggery'].includes(id)) scores.bengali += 5;
@@ -96,7 +117,7 @@ export function generateLocalCustomRecipe(selectedIngredients, requestedCuisine 
   };
 
   // Populate dynamic ingredients list
-  const ingredientsInRecipe = selectedIngredients.map(ing => {
+  const ingredientsInRecipe = normalizedIngredients.map(ing => {
     const cul = getNaturalQuantityAndUnit(ing);
     return {
       ingredientId: ing.id,
@@ -113,21 +134,26 @@ export function generateLocalCustomRecipe(selectedIngredients, requestedCuisine 
   if (!idSet.has('garlic')) ingredientsInRecipe.push(allStaples[1]);
 
   // 4. Expert system to pair context-specific titles, descriptions, and steps
+  const starName = star.name || 'Special';
+  const customId = `custom-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
   const recipe = {
-    title: `Dynamic ${star.name} Sauté`,
+    id: customId,
+    title: `Dynamic ${starName} Sauté`,
     cuisineId: matchedCuisine,
     difficulty: 'intermediate',
     prepTime: 15,
     cookTime: 20,
     servings: 4,
     calories: 320,
-    description: `A custom recipe crafted around the rich flavor profile of ${star.name}, matching your unique selection of fresh ingredients.`,
-    culturalNote: `Our chef engine analyzed the properties of ${star.name} and paired it with traditional aromatics to create this custom delight.`,
+    description: `A custom recipe crafted around the rich flavor profile of ${starName}, matching your unique selection of fresh ingredients.`,
+    culturalNote: `Our chef engine analyzed the properties of ${starName} and paired it with traditional aromatics to create this custom delight.`,
     imageEmoji: star.emoji || '🍛',
     mealType: ['lunch', 'dinner'],
     dietaryTags: ['gluten-free'],
     ingredients: ingredientsInRecipe,
-    steps: []
+    steps: [],
+    isCustom: true,
+    isAiGenerated: false
   };
 
   if (matchedCuisine === 'bengali') {
@@ -253,7 +279,7 @@ export function generateLocalCustomRecipe(selectedIngredients, requestedCuisine 
   }
 
   // 5. Decorate with high-fidelity Bengali translations dynamically
-  const starNameBn = star.nameBn || star.name;
+  const starNameBn = star.nameBn || star.name || starName;
   
   if (matchedCuisine === 'bengali') {
     if (idSet.has('mustard-oil') && (idSet.has('hilsa-fish') || idSet.has('rohita-fish'))) {

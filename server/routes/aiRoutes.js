@@ -4,6 +4,9 @@ import { generateCustomAiRecipe } from '../services/aiRecipeService.js';
 import { translateText, translateRecipe } from '../services/translationService.js';
 import { aiRecipeRateLimiter, aiTranslationRateLimiter } from '../middlewares/rateLimiter.js';
 import { logAiFailure, getRecentAiFailures } from '../utils/aiLogger.js';
+import { recipeService } from '../services/recipeService.js';
+import { generateLocalCustomRecipe } from '../../src/utils/customChefEngine.js';
+import { decorateRecipeTranslations } from '../utils/translation_engine.js';
 
 export const aiRouter = express.Router();
 
@@ -164,9 +167,33 @@ aiRouter.post('/custom-recipe', aiRecipeRateLimiter, async (req, res, next) => {
         ingredientsCount: (req.body?.ingredients || req.body?.ingredientIds || []).length,
         cuisine: req.body?.cuisine || req.body?.cuisineId 
       },
-      fallbackAction: 'Returned error response to client'
+      fallbackAction: 'Fell back to local custom recipe engine'
     });
-    console.error('Custom recipe endpoint error:', error.message);
+    console.warn('⚠️ Custom recipe AI generation failed, engaging failover engine:', error.message);
+
+    try {
+      const fallbackRecipe = await recipeService.generateCustomRecipe(resolvedIngredients, resolvedCuisine, null);
+      if (fallbackRecipe) {
+        return res.json({
+          success: true,
+          recipe: fallbackRecipe,
+          isFallback: true
+        });
+      }
+    } catch (fallbackErr) {
+      console.warn('⚠️ recipeService fallback failed in /api/ai/custom-recipe:', fallbackErr.message);
+    }
+
+    const localRecipe = generateLocalCustomRecipe(resolvedIngredients, resolvedCuisine);
+    if (localRecipe) {
+      const decorated = decorateRecipeTranslations ? decorateRecipeTranslations(localRecipe) : localRecipe;
+      return res.json({
+        success: true,
+        recipe: decorated,
+        isFallback: true
+      });
+    }
+
     return res.status(error.status || 500).json({
       success: false,
       error: error.message || 'Unable to generate custom recipe at this time.',
