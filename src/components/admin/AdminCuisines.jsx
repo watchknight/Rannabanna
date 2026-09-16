@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Pencil, Trash2, Plus, X, AlertCircle, Globe } from 'lucide-react';
+import { Pencil, Trash2, Plus, X, AlertCircle, Globe, RefreshCw, AlertTriangle } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
 import { getCuisineImage } from '../../utils/imageAssets.js';
 
 export default function AdminCuisines({ token }) {
-  const { language, t } = useDatabase();
+  const { language, t, cuisines: localCuisines } = useDatabase();
   const [cuisines, setCuisines] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isOffline, setIsOffline] = useState(false);
+  const [isRetrying, setIsRetrying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingCuisine, setEditingCuisine] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState('');
@@ -27,7 +29,8 @@ export default function AdminCuisines({ token }) {
     emoji: '🌍'
   });
 
-  const fetchCuisines = async () => {
+  const fetchCuisines = async (isExplicitRetry = false) => {
+    if (isExplicitRetry) setIsRetrying(true);
     try {
       setLoading(true);
       const res = await fetch(`${API_BASE}/api/admin/cuisines`, {
@@ -36,10 +39,14 @@ export default function AdminCuisines({ token }) {
       const data = await safeParseJson(res);
       if (!res.ok) throw new Error(data.message || 'Failed to load cuisines');
       setCuisines(data);
+      setIsOffline(false);
     } catch (err) {
-      console.error(err);
+      console.warn('Backend server unreachable, falling back to local cuisines catalog:', err.message);
+      setIsOffline(true);
+      setCuisines(localCuisines || []);
     } finally {
       setLoading(false);
+      setIsRetrying(false);
     }
   };
 
@@ -84,6 +91,13 @@ export default function AdminCuisines({ token }) {
   };
 
   const handleDelete = async (id, name, count) => {
+    if (isOffline) {
+      alert(language === 'bn'
+        ? 'অফলাইন ক্যাটালগ মোডে রন্ধনশৈলী মোছা সম্ভব নয়। ডাটাবেজ আপডেট করতে সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot delete cuisines in Offline Catalog Mode. Start the backend server with "npm run dev" to enable database modifications.');
+      return;
+    }
+
     if (count > 0) {
       alert(language === 'bn'
         ? `"${name}" রন্ধনশৈলীটি মোছা যাবে না: ${count}টি রেসিপি এই রন্ধনশৈলীতে যুক্ত আছে।`
@@ -118,6 +132,13 @@ export default function AdminCuisines({ token }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isOffline) {
+      setModalError(language === 'bn'
+        ? 'অফলাইন মোডে রন্ধনশৈলী সংরক্ষণ করা সম্ভব নয়। সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot save cuisine in Offline Mode. Start backend server with "npm run dev".');
+      return;
+    }
+
     if (!formData.id.trim() || !formData.name.trim()) {
       setModalError('ID and Name are required.');
       return;
@@ -159,6 +180,29 @@ export default function AdminCuisines({ token }) {
         <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <AlertCircle size={16} />
           {feedbackMessage}
+        </div>
+      )}
+
+      {isOffline && (
+        <div className="admin-warning-banner" role="alert">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <AlertTriangle size={18} style={{ color: '#fbbf24', flexShrink: 0 }} />
+            <div>
+              <strong>{language === 'bn' ? 'অফলাইন ক্যাটালগ মোড:' : 'Offline Catalog Mode:'}</strong>{' '}
+              {language === 'bn'
+                ? 'ব্যাকএন্ড সার্ভার অফলাইন থাকায় লোকাল রন্ধনশৈলী ক্যাটালগ প্রদর্শিত হচ্ছে। সার্ভার সংযুক্ত করতে "npm run dev" চালান।'
+                : 'Backend server is offline. Displaying local cuisines catalog. Run "npm run dev" to enable database modifications.'}
+            </div>
+          </div>
+          <button
+            type="button"
+            className="admin-retry-btn"
+            onClick={() => fetchCuisines(true)}
+            disabled={isRetrying || loading}
+          >
+            <RefreshCw size={13} className={isRetrying ? 'animate-spin' : ''} />
+            {isRetrying ? (language === 'bn' ? 'পরীক্ষা হচ্ছে...' : 'Retrying...') : (language === 'bn' ? 'পুনরায় সংযোগ পরীক্ষা' : 'Retry Connection')}
+          </button>
         </div>
       )}
 

@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Pencil, Trash2, Plus, AlertCircle, Sparkles } from 'lucide-react';
+import { Pencil, Trash2, Plus, AlertCircle, Sparkles, RefreshCw, AlertTriangle } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
 import { getRecipeImage, getCuisineImage } from '../../utils/imageAssets.js';
 import AdminRecipeModal from './AdminRecipeModal';
 
 export default function AdminRecipes({ token, cuisines = [], initialOpenCreate = false }) {
-  const { language, t } = useDatabase();
+  const { language, t, recipes: localRecipes } = useDatabase();
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isOffline, setIsOffline] = useState(false);
+  const [isRetrying, setIsRetrying] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [search, setSearch] = useState('');
   const [cuisineFilter, setCuisineFilter] = useState('all');
   const [difficultyFilter, setDifficultyFilter] = useState('all');
@@ -21,9 +24,11 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
   const [editingRecipeId, setEditingRecipeId] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState('');
 
-  const fetchRecipes = useCallback(async () => {
+  const fetchRecipes = useCallback(async (isExplicitRetry = false) => {
+    if (isExplicitRetry) setIsRetrying(true);
     try {
       setLoading(true);
+      setErrorMessage('');
       const params = new URLSearchParams({
         page: page.toString(),
         limit: '20'
@@ -37,22 +42,67 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
       });
 
       const data = await safeParseJson(res);
-      if (!res.ok) throw new Error(data.message || 'Failed to load recipes');
+      if (!res.ok) throw new Error(data.message || 'Failed to load recipes from server');
       setRecipes(data.recipes || []);
       setTotalPages(data.totalPages || 1);
       setTotalCount(data.total || 0);
+      setIsOffline(false);
     } catch (err) {
-      console.error(err);
+      console.warn('Backend server unreachable, falling back to local cached catalog:', err.message);
+      setIsOffline(true);
+      setErrorMessage(err.message || 'Backend connection failed');
+
+      // Filter local catalog from DatabaseContext
+      let filtered = (localRecipes || []).map(r => ({
+        ...r,
+        difficulty: r.difficulty || 'intermediate'
+      }));
+
+      const q = search.trim().toLowerCase();
+      if (q) {
+        filtered = filtered.filter(r => 
+          (r.title && r.title.toLowerCase().includes(q)) ||
+          (r.titleBn && r.titleBn.toLowerCase().includes(q)) ||
+          (r.id && r.id.toLowerCase().includes(q)) ||
+          (r.cuisineId && r.cuisineId.toLowerCase().includes(q))
+        );
+      }
+
+      if (cuisineFilter !== 'all') {
+        filtered = filtered.filter(r => r.cuisineId === cuisineFilter);
+      }
+
+      if (difficultyFilter !== 'all') {
+        filtered = filtered.filter(r => (r.difficulty || 'intermediate').toLowerCase() === difficultyFilter.toLowerCase());
+      }
+
+      const total = filtered.length;
+      const pages = Math.max(1, Math.ceil(total / 20));
+      const currentPage = Math.min(page, pages);
+      const start = (currentPage - 1) * 20;
+      const paged = filtered.slice(start, start + 20);
+
+      setRecipes(paged);
+      setTotalPages(pages);
+      setTotalCount(total);
     } finally {
       setLoading(false);
+      setIsRetrying(false);
     }
-  }, [token, page, search, cuisineFilter, difficultyFilter]);
+  }, [token, page, search, cuisineFilter, difficultyFilter, localRecipes]);
 
   useEffect(() => {
     fetchRecipes();
   }, [fetchRecipes]);
 
   const handleDelete = async (id, title) => {
+    if (isOffline) {
+      alert(language === 'bn'
+        ? 'অফলাইন ক্যাটালগ মোডে রেসিপি মোছা সম্ভব নয়। ডাটাবেজ আপডেট করতে সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot delete recipes in Offline Catalog Mode. Start the backend server with "npm run dev" to enable database modifications.');
+      return;
+    }
+
     const confirmText = language === 'bn'
       ? `আপনি কি নিশ্চিতভাবে "${title}" (${id}) রেসিপিটি মুছে ফেলতে চান? এর সাথে যুক্ত সকল ধাপ ও উপাদান লিংক স্থায়ীভাবে মুছে যাবে।`
       : `Are you sure you want to delete "${title}" (${id})? This will permanently remove all associated steps and ingredient links.`;
@@ -95,6 +145,29 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
         <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <AlertCircle size={16} />
           {feedbackMessage}
+        </div>
+      )}
+
+      {isOffline && (
+        <div className="admin-warning-banner" role="alert">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <AlertTriangle size={18} style={{ color: '#fbbf24', flexShrink: 0 }} />
+            <div>
+              <strong>{language === 'bn' ? 'অফলাইন ক্যাটালগ মোড:' : 'Offline Catalog Mode:'}</strong>{' '}
+              {language === 'bn'
+                ? 'ব্যাকএন্ড সার্ভারের (localhost:3001) সাথে সংযোগ পাওয়া যায়নি। লোকাল ক্যাটালগ প্রদর্শিত হচ্ছে। রেসিপি সংযোজন বা পরিবর্তন করতে "npm run dev" চালান।'
+                : 'Backend server (localhost:3001) is offline or unreachable. Displaying local catalog. Run "npm run dev" to enable database modifications.'}
+            </div>
+          </div>
+          <button
+            type="button"
+            className="admin-retry-btn"
+            onClick={() => fetchRecipes(true)}
+            disabled={isRetrying || loading}
+          >
+            <RefreshCw size={13} className={isRetrying ? 'animate-spin' : ''} />
+            {isRetrying ? (language === 'bn' ? 'সংযোগ পরীক্ষা হচ্ছে...' : 'Retrying...') : (language === 'bn' ? 'পুনরায় সংযোগ পরীক্ষা' : 'Retry Connection')}
+          </button>
         </div>
       )}
 
@@ -279,6 +352,7 @@ export default function AdminRecipes({ token, cuisines = [], initialOpenCreate =
         recipeId={editingRecipeId}
         token={token}
         cuisines={cuisines}
+        isOffline={isOffline}
       />
     </div>
   );

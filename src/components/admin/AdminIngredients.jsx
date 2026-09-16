@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Pencil, Trash2, Plus, Search, AlertCircle } from 'lucide-react';
+import { Pencil, Trash2, Plus, Search, AlertCircle, RefreshCw, AlertTriangle } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext.jsx';
 import { translateCategory } from '../../utils/translations.js';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
@@ -20,9 +20,12 @@ const CATEGORIES = [
 ];
 
 export default function AdminIngredients({ token, initialOpenCreate = false }) {
-  const { language, t } = useDatabase();
+  const { language, t, ingredients: localIngredients, recipes: localRecipes } = useDatabase();
   const [ingredients, setIngredients] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isOffline, setIsOffline] = useState(false);
+  const [isRetrying, setIsRetrying] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [search, setSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [page, setPage] = useState(1);
@@ -34,9 +37,11 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
   const [editingIngredient, setEditingIngredient] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState('');
 
-  const fetchIngredients = useCallback(async () => {
+  const fetchIngredients = useCallback(async (isExplicitRetry = false) => {
+    if (isExplicitRetry) setIsRetrying(true);
     try {
       setLoading(true);
+      setErrorMessage('');
       const params = new URLSearchParams({
         page: page.toString(),
         limit: '30'
@@ -49,22 +54,81 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
       });
 
       const data = await safeParseJson(res);
-      if (!res.ok) throw new Error(data.message || 'Failed to load ingredients');
+      if (!res.ok) throw new Error(data.message || 'Failed to load ingredients from server');
       setIngredients(data.ingredients || []);
       setTotalPages(data.totalPages || 1);
       setTotalCount(data.total || 0);
+      setIsOffline(false);
     } catch (err) {
-      console.error(err);
+      console.warn('Backend server unreachable, falling back to local cached ingredients:', err.message);
+      setIsOffline(true);
+      setErrorMessage(err.message || 'Backend connection failed');
+
+      // Precalculate recipe usage counts for each ingredient across all local recipes
+      const usageCounts = {};
+      (localRecipes || []).forEach(r => {
+        (r.ingredients || []).forEach(item => {
+          const ingId = item.ingredientId || item.id;
+          if (ingId) {
+            usageCounts[ingId] = (usageCounts[ingId] || 0) + 1;
+          }
+        });
+      });
+
+      // Normalize flavor profile and data structure from local ingredients
+      let filtered = (localIngredients || []).map(ing => ({
+        ...ing,
+        spicy: ing.spicy ?? ing.flavorProfile?.spicy ?? 0,
+        sweet: ing.sweet ?? ing.flavorProfile?.sweet ?? 0,
+        sour: ing.sour ?? ing.flavorProfile?.sour ?? 0,
+        bitter: ing.bitter ?? ing.flavorProfile?.bitter ?? 0,
+        umami: ing.umami ?? ing.flavorProfile?.umami ?? 0,
+        salty: ing.salty ?? ing.flavorProfile?.salty ?? 0,
+        recipeCount: ing.recipeCount ?? usageCounts[ing.id] ?? 0
+      }));
+
+      const q = search.trim().toLowerCase();
+      if (q) {
+        filtered = filtered.filter(ing => 
+          (ing.name && ing.name.toLowerCase().includes(q)) ||
+          (ing.nameBn && ing.nameBn.toLowerCase().includes(q)) ||
+          (ing.id && ing.id.toLowerCase().includes(q)) ||
+          (ing.category && ing.category.toLowerCase().includes(q)) ||
+          (ing.subCategory && ing.subCategory.toLowerCase().includes(q))
+        );
+      }
+
+      if (categoryFilter !== 'all') {
+        filtered = filtered.filter(ing => ing.category === categoryFilter);
+      }
+
+      const total = filtered.length;
+      const pages = Math.max(1, Math.ceil(total / 30));
+      const currentPage = Math.min(page, pages);
+      const start = (currentPage - 1) * 30;
+      const paged = filtered.slice(start, start + 30);
+
+      setIngredients(paged);
+      setTotalPages(pages);
+      setTotalCount(total);
     } finally {
       setLoading(false);
+      setIsRetrying(false);
     }
-  }, [token, page, search, categoryFilter]);
+  }, [token, page, search, categoryFilter, localIngredients, localRecipes]);
 
   useEffect(() => {
     fetchIngredients();
   }, [fetchIngredients]);
 
   const handleDelete = async (id, name, recipeCount) => {
+    if (isOffline) {
+      alert(language === 'bn'
+        ? 'অফলাইন ক্যাটালগ মোডে উপাদান মোছা সম্ভব নয়। ডাটাবেজ আপডেট করতে সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot delete ingredients in Offline Catalog Mode. Start the backend server with "npm run dev" to enable database modifications.');
+      return;
+    }
+
     if (recipeCount > 0) {
       alert(language === 'bn'
         ? `"${name}" উপাদানটি মোছা যাবে না: এটি বর্তমানে ${recipeCount}টি রেসিপিতে ব্যবহৃত হচ্ছে।`
@@ -104,6 +168,29 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
         <div className="admin-success-banner" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <AlertCircle size={16} />
           {feedbackMessage}
+        </div>
+      )}
+
+      {isOffline && (
+        <div className="admin-warning-banner" role="alert">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <AlertTriangle size={18} style={{ color: '#fbbf24', flexShrink: 0 }} />
+            <div>
+              <strong>{language === 'bn' ? 'অফলাইন ক্যাটালগ মোড:' : 'Offline Catalog Mode:'}</strong>{' '}
+              {language === 'bn'
+                ? 'ব্যাকএন্ড সার্ভারের (localhost:3001) সাথে সংযোগ পাওয়া যায়নি। লোকাল উপাদান ক্যাটালগ প্রদর্শিত হচ্ছে। উপাদান সংযোজন বা পরিবর্তন করতে "npm run dev" চালান।'
+                : 'Backend server (localhost:3001) is offline or unreachable. Displaying local ingredients catalog. Run "npm run dev" to enable database modifications.'}
+            </div>
+          </div>
+          <button
+            type="button"
+            className="admin-retry-btn"
+            onClick={() => fetchIngredients(true)}
+            disabled={isRetrying || loading}
+          >
+            <RefreshCw size={13} className={isRetrying ? 'animate-spin' : ''} />
+            {isRetrying ? (language === 'bn' ? 'সংযোগ পরীক্ষা হচ্ছে...' : 'Retrying...') : (language === 'bn' ? 'পুনরায় সংযোগ পরীক্ষা' : 'Retry Connection')}
+          </button>
         </div>
       )}
 
@@ -284,6 +371,7 @@ export default function AdminIngredients({ token, initialOpenCreate = false }) {
         }}
         ingredient={editingIngredient}
         token={token}
+        isOffline={isOffline}
       />
     </div>
   );

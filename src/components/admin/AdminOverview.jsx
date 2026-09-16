@@ -9,21 +9,25 @@ import {
   Zap, 
   RotateCcw, 
   Loader2, 
-  Plus 
+  Plus,
+  AlertTriangle
 } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext';
 import { API_BASE, safeParseJson } from '../../utils/apiConfig.js';
 import { getIngredientImage } from '../../utils/imageAssets';
 
 export default function AdminOverview({ token, onNavigateTab }) {
-  const { language, t } = useDatabase();
+  const { language, t, recipes: localRecipes, ingredients: localIngredients, cuisines: localCuisines } = useDatabase();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isOffline, setIsOffline] = useState(false);
+  const [isRetrying, setIsRetrying] = useState(false);
   const [flushing, setFlushing] = useState(false);
   const [flushSuccess, setFlushSuccess] = useState(null);
 
-  const fetchStats = async () => {
+  const fetchStats = async (isExplicitRetry = false) => {
+    if (isExplicitRetry) setIsRetrying(true);
     try {
       setLoading(true);
       setError(null);
@@ -33,13 +37,42 @@ export default function AdminOverview({ token, onNavigateTab }) {
       const data = await safeParseJson(res);
       if (res.ok) {
         setStats(data);
+        setIsOffline(false);
       } else {
-        setError(data.message || 'Failed to fetch admin stats');
+        throw new Error(data.message || 'Failed to fetch admin stats');
       }
     } catch (err) {
-      setError(err.message || 'Network error fetching admin stats');
+      console.warn('Backend server unreachable, deriving overview metrics from local catalog:', err.message);
+      setIsOffline(true);
+      
+      // Calculate metrics from DatabaseContext
+      let customRecipes = [];
+      try {
+        if (typeof window !== 'undefined' && window.localStorage) {
+          customRecipes = JSON.parse(localStorage.getItem('rannabanna-custom-recipes') || '[]');
+        }
+      } catch {}
+
+      setStats({
+        totalRecipes: localRecipes?.length || 414,
+        totalIngredients: localIngredients?.length || 182,
+        totalCuisines: localCuisines?.length || 10,
+        totalGenerations: customRecipes.length || 0,
+        dbSize: 'Local Memory Catalog',
+        sqliteMode: 'Local Bundle Cache',
+        cacheHitRatio: '100% (Pre-compiled)',
+        uptime: 'Offline Mode (Local Client)',
+        recentGenerations: customRecipes.slice(0, 5).map(r => ({
+          id: r.id,
+          title: r.title,
+          titleBn: r.titleBn,
+          cuisineId: r.cuisineId,
+          createdAt: r.createdAt || new Date().toISOString()
+        }))
+      });
     } finally {
       setLoading(false);
+      setIsRetrying(false);
     }
   };
 
@@ -48,6 +81,13 @@ export default function AdminOverview({ token, onNavigateTab }) {
   }, [token]);
 
   const handleFlushCache = async () => {
+    if (isOffline) {
+      setError(language === 'bn'
+        ? 'অফলাইন মোডে ক্যাশ ফ্লাশ করা সম্ভব নয়। ব্যাকএন্ড সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot flush cache in Offline Mode. Start the backend server with "npm run dev".');
+      return;
+    }
+
     try {
       setFlushing(true);
       setFlushSuccess(null);
@@ -80,6 +120,29 @@ export default function AdminOverview({ token, onNavigateTab }) {
 
   return (
     <div className="admin-overview animate-fade-in">
+      {isOffline && (
+        <div className="admin-warning-banner" role="alert">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <AlertTriangle size={18} style={{ color: '#fbbf24', flexShrink: 0 }} />
+            <div>
+              <strong>{language === 'bn' ? 'অফলাইন ওভারভিউ মোড:' : 'Offline Overview Mode:'}</strong>{' '}
+              {language === 'bn'
+                ? 'ব্যাকএন্ড সার্ভার (localhost:3001) অফলাইন থাকায় লোকাল মেমোরি ক্যাটালগের পরিসংখ্যান প্রদর্শিত হচ্ছে। লাইভ সার্ভার সংযুক্ত করতে "npm run dev" চালান।'
+                : 'Backend server (localhost:3001) is offline. Statistics are calculated from the local catalog. Run "npm run dev" to connect live.'}
+            </div>
+          </div>
+          <button
+            type="button"
+            className="admin-retry-btn"
+            onClick={() => fetchStats(true)}
+            disabled={isRetrying || loading}
+          >
+            <RotateCcw size={13} className={isRetrying ? 'animate-spin' : ''} />
+            {isRetrying ? (language === 'bn' ? 'পরীক্ষা হচ্ছে...' : 'Retrying...') : (language === 'bn' ? 'পুনরায় সংযোগ পরীক্ষা' : 'Retry Connection')}
+          </button>
+        </div>
+      )}
+
       {error && (
         <div className="admin-alert danger">
           {error}

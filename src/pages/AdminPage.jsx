@@ -21,13 +21,14 @@ import AdminSystem from '../components/admin/AdminSystem';
 import '../styles/admin.css';
 
 export default function AdminPage() {
-  const { language, setLanguage, t } = useDatabase();
+  const { language, setLanguage, t, cuisines: localCuisines } = useDatabase();
   const [token, setToken] = useState(() => {
     return sessionStorage.getItem('rannabanna_admin_token') || localStorage.getItem('rannabanna_admin_token') || null;
   });
 
   const [activeTab, setActiveTab] = useState('overview');
   const [cuisines, setCuisines] = useState([]);
+  const [isServerOnline, setIsServerOnline] = useState(null);
   const [openCreateRecipe, setOpenCreateRecipe] = useState(false);
   const [openCreateIngredient, setOpenCreateIngredient] = useState(false);
 
@@ -43,16 +44,22 @@ export default function AdminPage() {
         const data = await safeParseJson(res);
         if (res.ok) {
           setCuisines(data);
+          setIsServerOnline(true);
         } else if (res.status === 401) {
           handleLogout();
+        } else {
+          setCuisines(localCuisines || []);
+          setIsServerOnline(false);
         }
       } catch (err) {
-        console.error('Failed to load cuisines:', err);
+        console.warn('Failed to load cuisines from server, using local list:', err.message);
+        setCuisines(localCuisines || []);
+        setIsServerOnline(false);
       }
     };
 
     fetchCuisines();
-  }, [token]);
+  }, [token, localCuisines]);
 
   const handleLoginSuccess = (newToken) => {
     setToken(newToken);
@@ -93,10 +100,22 @@ export default function AdminPage() {
       {/* Top Bar */}
       <div className="admin-top-bar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
         <div className="admin-title-group">
-          <h1 style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: 0, fontSize: '1.6rem' }}>
+          <h1 style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: 0, fontSize: '1.6rem', flexWrap: 'wrap' }}>
             <ShieldCheck size={26} style={{ color: 'var(--brand-orange)' }} />
             <span>{t('adminTitle')}</span>
             <span className="admin-badge">{t('adminBadge')}</span>
+            {isServerOnline === false && (
+              <span className="admin-status-badge offline" title="Backend server offline. Displaying local cached catalog.">
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#fbbf24', display: 'inline-block' }} />
+                {language === 'bn' ? 'অফলাইন মোড' : 'Offline Mode'}
+              </span>
+            )}
+            {isServerOnline === true && (
+              <span className="admin-status-badge online" title="Backend server connected to database.">
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', display: 'inline-block' }} />
+                {language === 'bn' ? 'লাইভ ডাটাবেজ' : 'Live Database'}
+              </span>
+            )}
           </h1>
           <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '4px' }}>
             {t('adminSubtitle')}

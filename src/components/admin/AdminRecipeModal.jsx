@@ -9,8 +9,8 @@ const MEAL_TYPE_OPTIONS = ['breakfast', 'lunch', 'dinner', 'snack', 'dessert'];
 const DIETARY_TAG_OPTIONS = ['vegetarian', 'vegan', 'dairy-free', 'gluten-free', 'nut-free', 'halal', 'kosher'];
 const DIFFICULTY_OPTIONS = ['easy', 'intermediate', 'advanced'];
 
-export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, token, cuisines = [] }) {
-  const { language, t } = useDatabase();
+export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, token, cuisines = [], isOffline = false }) {
+  const { language, t, recipes: localRecipes } = useDatabase();
   const [activeTab, setActiveTab] = useState('basic');
   const [previewServings, setPreviewServings] = useState(4);
   const [loading, setLoading] = useState(false);
@@ -47,16 +47,31 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
     if (!isOpen) return;
 
     if (recipeId) {
-      // Edit mode: fetch recipe details
+      // Edit mode: fetch recipe details or fallback to local
       const fetchRecipe = async () => {
         try {
           setLoading(true);
           setError('');
-          const res = await fetch(`${API_BASE}/api/admin/recipes/${recipeId}`, {
-            headers: { 'Authorization': `Bearer ${token}` }
-          });
-          const data = await safeParseJson(res);
-          if (!res.ok) throw new Error(data.message || 'Failed to load recipe details');
+
+          let data = null;
+          if (!isOffline) {
+            try {
+              const res = await fetch(`${API_BASE}/api/admin/recipes/${recipeId}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+              });
+              const fetched = await safeParseJson(res);
+              if (res.ok) data = fetched;
+            } catch {
+              // fallback to local
+            }
+          }
+
+          if (!data) {
+            data = (localRecipes || []).find(r => r.id === recipeId);
+          }
+
+          if (!data) throw new Error('Recipe not found');
+
           setFormData({
             id: data.id || '',
             title: data.title || '',
@@ -212,6 +227,13 @@ export default function AdminRecipeModal({ isOpen, onClose, onSaved, recipeId, t
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isOffline) {
+      setError(language === 'bn'
+        ? 'অফলাইন মোডে রেসিপি পরিবর্তন বা সংরক্ষণ সম্ভব নয়। ডাটাবেজে সংরক্ষণ করতে ব্যাকএন্ড সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot save changes in Offline Mode. Start the backend server with "npm run dev" to persist modifications to the database.');
+      return;
+    }
+
     if (!formData.id.trim() || !formData.title.trim() || !formData.cuisineId) {
       setError('Recipe ID, Title, and Cuisine are required.');
       return;

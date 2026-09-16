@@ -15,7 +15,7 @@ const CATEGORY_OPTIONS = [
   'Beverages & Liquids'
 ];
 
-export default function AdminIngredientModal({ isOpen, onClose, onSaved, ingredient, token }) {
+export default function AdminIngredientModal({ isOpen, onClose, onSaved, ingredient, token, isOffline = false }) {
   const { language, t } = useDatabase();
   const [formData, setFormData] = useState({
     id: '',
@@ -91,6 +91,13 @@ export default function AdminIngredientModal({ isOpen, onClose, onSaved, ingredi
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isOffline) {
+      setError(language === 'bn'
+        ? 'অফলাইন মোডে উপাদান পরিবর্তন বা সংরক্ষণ সম্ভব নয়। ডাটাবেজে সংরক্ষণ করতে ব্যাকএন্ড সার্ভার চালু করুন (npm run dev)।'
+        : 'Cannot save changes in Offline Mode. Start the backend server with "npm run dev" to persist modifications.');
+      return;
+    }
+
     if (!formData.id.trim() || !formData.name.trim()) {
       setError('Ingredient ID and Name are required.');
       return;
